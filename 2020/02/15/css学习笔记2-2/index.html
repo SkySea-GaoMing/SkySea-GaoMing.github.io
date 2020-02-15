@@ -5,16 +5,19 @@
   
 
   
-  <title>Archives | 高明的博客</title>
+  <title>css学习笔记2-2 | 高明的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="技术博客，Java技术，Java框架，前端技术">
-<meta property="og:type" content="website">
-<meta property="og:title" content="高明的博客">
-<meta property="og:url" content="https://skysea-gaoming.github.io/archives/index.html">
+  <meta name="description" content="参考颜群老师的css学习视频">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css学习笔记2-2">
+<meta property="og:url" content="https://skysea-gaoming.github.io/2020/02/15/css%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02-2/index.html">
 <meta property="og:site_name" content="高明的博客">
-<meta property="og:description" content="技术博客，Java技术，Java框架，前端技术">
+<meta property="og:description" content="参考颜群老师的css学习视频">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-02-15T09:06:09.000Z">
+<meta property="article:modified_time" content="2020-02-15T10:18:27.511Z">
 <meta property="article:author" content="高明">
+<meta property="article:tag" content="css">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="高明的博客" type="application/atom+xml">
@@ -68,173 +71,170 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/02/15/javascript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/" class="archive-article-date">
-  <time datetime="2020-02-15T09:19:20.000Z" itemprop="datePublished">Feb 15</time>
+        <section id="main"><article id="post-css学习笔记2-2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/02/15/css%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02-2/" class="article-date">
+  <time datetime="2020-02-15T09:06:09.000Z" itemprop="datePublished">2020-02-15</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/">前端技术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/15/javascript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/">javascript学习笔记3-3</a>
+    <h1 class="article-title" itemprop="name">
+      css学习笔记2-2
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/02/15/javascript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-2/" class="archive-article-date">
-  <time datetime="2020-02-15T09:16:02.000Z" itemprop="datePublished">Feb 15</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/15/javascript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-2/">javascript学习笔记3-2</a>
-    </h1>
-  
+        <h2 id="css技术博客系列2"><a href="#css技术博客系列2" class="headerlink" title="css技术博客系列2"></a>css技术博客系列2</h2><pre><code>    &lt;title&gt;css2&lt;/title&gt;
+    &lt;!--盒子模型 背景色&lt;背景图片&lt;元素内容--&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+        /*边框*/
+        p
+        {
+            border-style: solid dotted double dashed ;
+            border-color: red yellow blue purple ;
+            border-top-color: black;
+            border-width: 10px;
+        }
+        /*在火狐中child不管用搞不懂什么情况*/
+        /*外边距*/
+        .my
+        {
+            background-color: yellow;
+            margin-top: -20px;
+            margin-bottom: 100px;
+            margin-left: 40px;
+        }
+        /*内边距*/
+        .my1
+        {
+            padding: 30px;
+        }
+    &lt;/style&gt;
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/02/15/javascript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  <time datetime="2020-02-15T09:09:25.000Z" itemprop="datePublished">Feb 15</time>
-</a>
+
+
+    &lt;!--一个盒子 --&gt;
+    &lt;p &gt;
+        fsdfsdfsdfsdfsdfsdfsdfsd&lt;br&gt;
+        fsdfsdfsdfdsfdsfsdf&lt;br&gt;
+        fdsafdsafdsfdsfdsfdsfds
+    &lt;/p&gt;
+    &lt;p class=&quot;my&quot;&gt;
+        fsdfsdfsdffsdfdssdfsdfsdfsdfsdfsdfdsfsd&lt;br&gt;
+        fsdfsdfsdffsdfsdfdsdsfdsfsdf&lt;br&gt;
+        fdsafdsafddfvcxsfdsfdsfdsfds
+    &lt;/p&gt;
+    &lt;p class=&quot;my1&quot;&gt;
+        fsdfsdfsdffsdfdssdfsdfsdfsdfsdfsdfdsfsd&lt;br&gt;
+        fsdfsdfsdffsdfsdfdsdsfdsfsdf&lt;br&gt;
+        fdsafdsafddfvcxsfdsfdsfdsfdsfsdfsd
+    &lt;/p&gt;
+
+
+
+
+
+
+
+
+&lt;title&gt;css&lt;/title&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+    .m
+    {
+        /*空间向左压缩使下面的元素上移*/
+        float:left;
+        /*清除浮动还原换行特性*/
+        clear:left;
+    }
+    div p
+    {
+        width:100px;
+        height:100px;
+        border:solid red 3px;
+        /*隐藏溢出的内容*/
+    /*    overflow:hidden; */
+        /*滚动条*/
+        overflow:scroll;
+        /*定位相对自身*/
+        position:relative;
+        left:50px;
+        top:100px;
+        /*绝对定位参照浏览器,或者已经定位的父元素，会释放空间*/
+    /*    position:absolute;*/
+        /*一直悬浮在固定位置参照浏览器 */
+        position:fixed;
+        /*透明度*/
+        opacity:0.5;
+
+    }
+    img
+    {
+        /*图片居中*/
+        vertical-align:middle;
+    }
+    a:hover
+    {
+        /*变型平移*/
+        transform:translate();
+    }
+&lt;/style&gt;
+
+
+ &lt;div&gt;
+     &lt;div class=&quot;m&quot;&gt;&lt;/div&gt;
+     &lt;div class=&quot;mm&quot;&gt;&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div&gt;
+     &lt;p&gt;fdsfsdfsdfsdfsdfdsfsdfsdfdfsdfdsfdsfsdfdsfdsfd
+     fsdfdsfdxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&lt;/p&gt;
+ &lt;/div&gt;</code></pre>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/15/javascript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">javascript学习笔记3-1</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/02/15/css%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02-2/" class="archive-article-date">
-  <time datetime="2020-02-15T09:06:09.000Z" itemprop="datePublished">Feb 15</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://skysea-gaoming.github.io/2020/02/15/css%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02-2/" data-id="ck6ndm82x0008r0uacwgqfq8j" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/15/css%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02-2/">css学习笔记2-2</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/02/15/css%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02-1/" class="archive-article-date">
-  <time datetime="2020-02-15T09:03:37.000Z" itemprop="datePublished">Feb 15</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/15/css%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02-1/">css学习笔记2-1</a>
-    </h1>
-  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/" rel="tag">css</a></li></ul>
 
-    </header>
+    </footer>
   </div>
-</article>
   
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/02/15/html%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01-3/" class="archive-article-date">
-  <time datetime="2020-02-15T08:54:58.000Z" itemprop="datePublished">Feb 15</time>
-</a>
-      
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/15/html%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01-3/">html学习笔记1-3</a>
-    </h1>
+    <a href="/2020/02/15/javascript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          javascript学习笔记3-1
+        
+      </div>
+    </a>
   
+  
+    <a href="/2020/02/15/css%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">css学习笔记2-1</div>
+    </a>
+  
+</nav>
 
-    </header>
-  </div>
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/02/15/html%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01-2/" class="archive-article-date">
-  <time datetime="2020-02-15T08:50:44.000Z" itemprop="datePublished">Feb 15</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/15/html%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01-2/">html学习笔记1-2</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/02/15/html%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01-1/" class="archive-article-date">
-  <time datetime="2020-02-15T08:30:21.000Z" itemprop="datePublished">Feb 15</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/15/html%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01-1/">html学习笔记1-1</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
 
 </section>
         

@@ -70,10 +70,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-html学习笔记1-1" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-javascript学习笔记3-3" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/02/15/html%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01-1/" class="article-date">
-  <time datetime="2020-02-15T08:30:21.000Z" itemprop="datePublished">2020-02-15</time>
+    <a href="/2020/02/15/javascript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/" class="article-date">
+  <time datetime="2020-02-15T09:19:20.000Z" itemprop="datePublished">2020-02-15</time>
 </a>
     
   <div class="article-category">
@@ -88,7 +88,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/15/html%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01-1/">html学习笔记1</a>
+      <a class="article-title" href="/2020/02/15/javascript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/">javascript学习笔记3-3</a>
     </h1>
   
 
@@ -96,11 +96,1152 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="html技术博客系列1"><a href="#html技术博客系列1" class="headerlink" title="html技术博客系列1"></a>html技术博客系列1</h2><pre><code>&lt;head&gt;
-    &lt;!--css优先级 行内&gt;外部&gt;内部  id选择器&gt;类选择器&gt;标签选择器 --&gt;
-    &lt;title&gt;css&lt;/title&gt;
-    &lt;!-- css内部样式--&gt;
+        <h2 id="javascript技术博客系列3"><a href="#javascript技术博客系列3" class="headerlink" title="javascript技术博客系列3"></a>javascript技术博客系列3</h2><pre><code>&lt;title&gt;拖拽&lt;/title&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+    window.onload=function()
+    {
+        var box1=document.getElementById(&quot;box1&quot;);
+        //鼠标按下时开始拖拽
+        box1.onmousedown=function(event)
+        {
+            var ol=event.pageX-box1.offsetLeft;
+            var ot=event.pageY-box1.offsetTop;
+            //拖拽
+            document.onmousemove=function(event)
+        {
+            var left=event.pageX-ol;
+            var right=event.pageY-ot;
+            box1.style.left=left+&quot;px&quot;;
+            box1.style.top=right+&quot;px&quot;;
+        };
+        //鼠标松开
+        document.onmouseup=function()
+        {
+            document.onmousemove=null;
+            document.onmouseup=null;
+
+        };
+        return false;
+        };
+
+    };
+
+
+    #box1
+    {
+        width:100px;
+        height:100px;
+        background-color:red;
+        position:absolute;
+    }</code></pre><body>
+    <div id="box1"> 
+    </div>
+
+
+
+
+
+
+
+<pre><code>&lt;title&gt;滚轮&lt;/title&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+    window.onload=function()
+    {
+        var box1=document.getElementById(&quot;box1&quot;);
+        box1.onmousewheel=function()
+        {
+            alert(&quot;滚了&quot;);
+        };
+        //firefox
+        box1.addEventListener(&quot;DOMMouseScroll&quot;,function(event)
+        {
+            //获取滚动方向
+            alert(event.detail);
+        },false);
+        //键盘事件一般绑定焦点
+        document.onkeydown=function(event)
+        {
+            console.log(event.keyCode);
+        };
+    };
+
+    #box1{
+        width:200px;
+        height:200px;
+        background-color:red;
+    }
+
+&lt;div id=&quot;box1&quot;&gt;&lt;/div&gt;
+
+
+
+
+
+
+
+&lt;title&gt;navigator&lt;/title&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+    //BOM 浏览器对象模型
+    //Window Navigator Location History Screen
+    //Window代表浏览器窗口
+    //Navigator代表浏览器信息
+    //Location代表地址栏信息
+    //History代表历史记录
+    //Screen代表显示器信息
+    console.log(navigator.appName);
+    console.log(navigator.userAgent);
+    if(/firefox/i.test(navigator.userAgent))
+        alert(&quot;你是火狐&quot;);
+    //访问链接数量
+    alert(history.length);
+    //可以修改路径会自动跳转到指定页面
+    alert(location);
+    //location.assign(&quot;&quot;);
+    //强制清空缓存刷新 ctrl+f5
+    //location.reload(true);
+
+
+
+
+
+&lt;title&gt;json数据交互&lt;/title&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+    //json字符串可以被任意语言识别转换
+    //属性名加&quot;&quot;
+    var obj=&apos;{&quot;name&quot;:&quot;nihi&quot;,&quot;age&quot;:18}&apos;;
+    /*
+        分类：对象 数组
+        允许的值：字符串 数值 布尔值 空值 对象 数组
+    */
+    var arr=&apos;[23,3,true,&quot;fd&quot;]&apos;;
+    //json字符串转换为js对象
+    var objj=JSON.parse(obj);
+    console.log(objj.name);
+    //json字符串转换为数组
+    var arrr=JSON.parse(arr);
+    var o={name:&quot;v&quot;,age:3};
+    var p=[23,4,&quot;fds&quot;];
+    //js对象转为json
+    var oo=JSON.stringify(o);
+    var pp=JSON.stringify(p);</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://skysea-gaoming.github.io/2020/02/15/javascript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/" data-id="ck6ne35rg000lr0uaf45tct50" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-javascript学习笔记3-2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/02/15/javascript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-2/" class="article-date">
+  <time datetime="2020-02-15T09:16:02.000Z" itemprop="datePublished">2020-02-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/">前端技术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/15/javascript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-2/">javascript学习笔记3-2</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="javascript技术博客系列2"><a href="#javascript技术博客系列2" class="headerlink" title="javascript技术博客系列2"></a>javascript技术博客系列2</h2><pre><code>&lt;title&gt;javascript&lt;/title&gt;
+    window.onload=function()
+    {
+        //点击按钮切换图片
+        var pree=document.getElementById(&quot;pre&quot;);
+        var nextt=document.getElementById(&quot;next&quot;);
+        var img=document.getElementsByTagName(&quot;img&quot;)[0];
+        //获取图片路径
+        var imgarr=[&quot;a/a.jpg&quot;,&quot;a/1.jpg&quot;,&quot;a/2.jpg&quot;,&quot;a/2.png&quot;];
+        var i=0;
+        pree.onclick=function()
+        {
+
+            if(i&gt;0)
+                i--;
+            else
+                i=imgarr.length-1;
+            img.src=imgarr[i];
+        };
+        nextt.onclick=function()
+        {
+            if(i&lt;(imgarr.length-1))
+                i++;
+            else
+                i=0;
+            img.src=imgarr[i];
+        };
+        var aa=document.getElementById(&quot;a&quot;);
+        //获取包括文本节点在内的所有节点
+        var an=aa.childNodes;
+        //获取当前元素所有子元素
+        var an2=aa.children;
+        //第一个子节点
+        var an3=aa.firstChild;
+        //第一个子元素
+        var an4=aa.firstElementChild;
+        var aaa=aa.getElementsByTagName(&quot;li&quot;);
+        //获取文本内容除去标签
+        var aaaa=aa.innerText;
+        //checkbox对象
+        var na=document.getElementsByName(&quot;name&quot;);
+        //选中
+        na[0].checked=true;
+        //获取body
+        var body=document.body;
+        //获取html
+        var html=document.html;
+        //获取all所有元素
+        var all=document.all;
+        //根据class获取一组对象
+        var cla=document.getElementsByClassName(&quot;class&quot;);
+        //根据css选择器查询对象只会返回一个
+        var li= document.querySelector(&quot;#a li&quot;);
+        var lis=document.querySelectorAll(&quot;#a li&quot;);
+    };
+
+&lt;img src=&quot;a/2.png&quot; alt=&quot;ss&quot; width=&quot;500&quot; height=&quot;500&quot;&gt;
+&lt;button id=&quot;pre&quot;&gt;上一张&lt;/button&gt;
+&lt;button id=&quot;next&quot;&gt;下一张&lt;/button&gt;
+&lt;ul id=&quot;a&quot;&gt;
+    &lt;li&gt;fd&lt;/li&gt;
+    &lt;li&gt;ff&lt;/li&gt;
+&lt;/ul&gt;
+&lt;form&gt;
+    &lt;input class=&quot;class&quot; type=&quot;checkbox&quot; name=&quot;name&quot;&gt;
+    &lt;input type=&quot;checkbox&quot; name=&quot;name&quot;&gt;
+&lt;/form&gt;
+
+
+
+
+
+
+&lt;title&gt;dfds&lt;/title&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+    #box1{
+        width:200px;
+        height:200px;
+        background-color:red;
+    }
+
+    window.onload=function()
+    {
+        alert(&quot;fds&quot;);
+    var a=document.getElementById(&quot;fd&quot;);
+    //创建一个元素对象
+    var li=document.createElement(&quot;li&quot;);
+    //创建文本内容对象
+    var text=document.createTextNode(&quot;value&quot;);
+    li.appendChild(text);
+    var ul=document.getElementById(&quot;id&quot;);
+    //向父节点添加子节点
+    ul.appendChild(li);
+    //指定节点前插入新节点，父节点调用方法参数是新节点 已有节点
+    var f=document.getElementById(&quot;f&quot;);
+    var lii=document.createElement(&quot;li&quot;);
+    var textt=document.createTextNode(&quot;valuee&quot;);
+    lii.appendChild(textt);
+    ul.insertBefore(lii,f);
+    //替换节点
+//    ul.replaceChild(lii,f);
+    //删除节点
+//  ul.removeChild(f);
+    //获取父元素
+//    f.parentNode;
+    //添加的另一种方式
+//    li.innerHTML=&quot;fsdfsd&quot;;    
+    var a=document.getElementsByTagName(&quot;a&quot;);
+    for(var i=0;i&lt;a.length;i++)
+    {
+        a[i].onclick=function()
+    {
+        var tr=this.parentNode.parentNode;
+        var flag=confirm(&quot;确认删除吗&quot;);
+        tr.parentNode.removeChild(tr);
+        //取消跳转
+        return false;
+    }
+    }
+    var ff=document.getElementById(&quot;btn&quot;);
+    var box1=document.getElementById(&quot;box1&quot;);
+    ff.onclick=function()
+    {
+        box1.style.width=&quot;300px&quot;;
+        box1.style.height=&quot;300px&quot;;
+        //-后的字母大写
+        box1.style.backgroundColor=&quot;blue&quot;;
+    };
+    //获取当前样式值IE，只读
+    box1.currentStyle.width;
+    getComputedStyle(box1,null).width;
+    //如果不存在变量报错，不存在属性返回undefined
+    //window.getComputedStyle  getComputedStyle
+    //disabled属性设置元素是否禁用
+    };
+
+&lt;button id=&quot;fd&quot;&gt;fsd&lt;/button&gt;
+&lt;ul id=&quot;id&quot;&gt; 
+    &lt;li&gt;fd&lt;/li&gt;
+    &lt;li id=&quot;f&quot;&gt;vcz&lt;/li&gt;
+&lt;/ul&gt;
+&lt;a href=&quot;&quot; &gt;delete&lt;/a&gt;
+&lt;a href=&quot;&quot; &gt;delete&lt;/a&gt;
+&lt;button id=&quot;btn&quot;&gt;ff&lt;/button&gt;
+&lt;div id=&quot;box1&quot;&gt;&lt;/div&gt;
+
+
+
+
+
+
+
+&lt;title&gt;事件对象&lt;/title&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+    window.onload=function()
+    {
+        //鼠标在a移动时显示坐标在b
+        var a=document.getElementById(&quot;a1&quot;);
+        var b=document.getElementById(&quot;a2&quot;);
+        //鼠标在元素移动时触发
+        a.onmousemove=function(event)
+        {
+            //事件对象
+            //当事件的响应被触发时浏览器每次都会将一个事件对象作为实参传给响应函数
+            //事件对象包含了事件的一切信息
+            var x=event.clientX;
+            var y=event.clientY;
+            b.innerHTML=&quot;x=&quot;+x+&quot; y=&quot;+y;
+
+        }
+        var box1=document.getElementById(&quot;box1&quot;);
+        document.onmousemove=function(event)
+        {
+            var x=event.pageX;
+            var y=event.pageY;
+            //相对页面
+            box1.style.left=x+&quot;px&quot;;
+            box1.style.top=y+&quot;px&quot;;
+        }
+        //获取浏览器滚动条滚动距离
+        var st=document.documentElement.scrollTop||document.body.scrollTop;
+        //事件冒泡
+        var s1=document.getElementById(&quot;s1&quot;);
+        s1.onclick=function()
+        {
+            alert(&quot;我是span&quot;);
+        };
+        var box2=document.getElementById(&quot;box2&quot;);
+        box2.onclick=function()
+        {
+            alert(&quot;我是div&quot;);
+        }
+        document.body.onclick=function()
+        {
+            alert(&quot;我是body&quot;)；
+        }
+    };
+
+    #a1{
+        width:200px;
+        height:200px;
+        background-color:red;
+    }
+    #a2{
+        width:200px;
+        height:200px;
+        border:solid 1px;
+    }
+    #box1
+    {
+        width:200px;
+        height:200px;
+        background-color:red;
+        position:absolute;
+    }
+
+
+ &lt;div id=&quot;a1&quot; &gt; &lt;/div&gt;
+ &lt;div id=&quot;a2&quot;&gt; &lt;/div&gt;
+ &lt;div id=&quot;box1&quot;&gt; &lt;/div&gt;
+ &lt;div id=&quot;box2&quot;&gt;
+     box2
+     &lt;span id=&quot;s1&quot;&gt;我是span&lt;/span&gt;
+  &lt;/div&gt;
+
+
+
+
+
+
+&lt;title&gt;事件的委派&lt;/title&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+    window.onload=function()
+    {
+        var a=document.getElementById(&quot;a&quot;);
+        var ul=document.getElementById(&quot;ul&quot;);
+        //事件的绑定
+        a.addEventListener(&quot;click&quot;,function()
+            {
+                alert(&quot;1&quot;);
+            },false);
+        a.onclick=function()
+        {
+            var aa=document.createElement(&quot;li&quot;);
+            aa.innerHTML=&quot;&lt;a href=&apos;javascript:;&apos; class=&apos;link&apos;&gt;超链接&lt;/a&gt;&quot;;
+            ul.appendChild(aa);
+        };
+        ul.onclick=function(event)
+        {
+            //target表示触发事件的对象
+            if(event.target.className==&quot;link&quot;)
+            alert(&quot;ddd&quot;);
+        };
+    };
+
+&lt;button id=&quot;a&quot;&gt;添加&lt;/button&gt;
+&lt;ul id=&quot;ul&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;javascript:;&quot; class=&quot;link&quot;&gt;超链接1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;javascript:;&quot; class=&quot;link&quot;&gt;超链接2&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;javascript:;&quot; class=&quot;link&quot;&gt;超链接3&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://skysea-gaoming.github.io/2020/02/15/javascript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-2/" data-id="ck6ndyx49000ir0uaa9g393gs" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-javascript学习笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/02/15/javascript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time datetime="2020-02-15T09:09:25.000Z" itemprop="datePublished">2020-02-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/">前端技术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/15/javascript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">javascript学习笔记3-1</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="javascript技术博客系列1"><a href="#javascript技术博客系列1" class="headerlink" title="javascript技术博客系列1"></a>javascript技术博客系列1</h2><pre><code>    javscript文件中放javascript代码可以由html引用
+    alert(&quot;外部&quot;);
+
+
+
+
+
+
+&lt;!--执行顺序由上往下一条一条执行，一旦引用外部，内部就无法使用，除非创建新的script标签--&gt;
+
+    /*控制浏览器弹出警告框*/
+    alert(&quot;这是我的第一行js代码&quot;);
+    /*在页面中输出内容,实质是向body中写内容*/
+    document.write(&quot;输出内容&quot;);
+    /*向控制台输出内容*/
+    console.log(&quot;在控制台输出&quot;);
+    //声明变量，可以是任意基本类型
+    var a=&quot;fdf&quot;;
+    console.log(a);
+    //typeof 检查变量类型
+    document.write(typeof a);
+    //Infinity 表示无穷
+    //NaN 表示不是一个数字，类型也是Number
+    //undefined 声明但没有赋值
+    var b=123;
+    b=b.toString();
+    console.log(typeof b);
+    //非数字转为NaN，null转为0，true转为1，&quot;&quot;转为0，underfined转为NaN
+    b=Number(b);
+    //parseInt()将字符串有效整数转换从左往右，对于非string先转换为string
+    b=&quot;123px&quot;;
+    b=parseInt(b);
+    //NaN跟任何数运算都为NaN，任何值与字符串相加都为字符串
+    //减法、除法、乘法时字符串转换为Number
+    //对任意数据类型做两次非运算会转换为boolean
+    //&amp;&amp;两个值中有false返回靠前的false 0
+    //&amp;&amp;两个值都为true返回后一个true
+    //||与&amp;&amp;相反
+    //任何值和NaN比较都是false
+    b=0&amp;&amp;NaN;
+    //在比较两个字符串型的数字时一定要转型
+    //{}中的语句要么都执行要么都不执行（好像有点问题），具有分组作用无其它作用
+    {
+        alert(&quot;vvvcvxz&quot;);
+        console.log(&quot;vcvc&quot;);
+    }
+    alert(&quot;c&quot;);
+    //prompt()可以弹出提示框，可以输入内容，作为返回值
+    var c=prompt(&quot;输入字符串&quot;);
+    //swithc判断方式是全等
+    //计时器
+    console.time(&quot;test&quot;);
+    console.timeEnd(&quot;test&quot;);
+    //Math.sqrt()开平方
+
+&lt;script type=&quot;text/javascript&quot; src=&quot;javascript-test1.js&quot;&gt;&lt;/script&gt;
+
+
+&lt;br&gt;
+&lt;!--可以将js代码编写到标签的onclick属性中,点击按钮是js才会执行--&gt;
+&lt;button onclick=&quot;alert(&apos;讨厌&apos;);&quot;&gt;别说话点我&lt;/button&gt;
+&lt;!--可以将及时代码写在超链接中有格式要求，点击之后才会执行--&gt;
+&lt;a href=&quot;javascript:alert(&apos;很讨厌&apos;);&quot;&gt;点我吧&lt;/a&gt;
+&lt;!--点完后没反应--&gt;
+&lt;a href=&quot;javascript:;&quot;&gt;点我没反应&lt;/a&gt;
+
+
+
+
+
+
+
+&lt;title&gt;javascriptobject&lt;/title&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+    //内建对象Math String Number Boolean Function
+    //宿主对象由浏览器提供的对象 BOM DOM
+    //自定义对象
+    var obj=new Object();        
+    obj.name=&quot;gao&quot;;
+    obj.age=21;
+    console.log(obj.name);
+    obj.name=2;
+    console.log(typeof obj.name);
+    //删除属性
+    delete obj.name;
+    console.log(obj.name);
+    //特殊属性名
+    obj[&quot;123&quot;]=12;
+    var n=&quot;123&quot;;
+    //等价[]可以这样写
+    console.log(obj[n]);
+    var obj2=new Object();
+    obj2.name=&quot;c&quot;;
+    obj.nameobj=obj2;
+    console.log(obj);
+    //检查对象是否含有指定属性返回boolean 
+    var bo=&quot;age&quot; in obj;
+    console.log(bo);
+    //使用对象字面量来创建对象，如果使用特殊属性名需要加引号
+    var objj={};
+    var objj2={
+        name:&quot;122&quot;,
+        age:2,
+        test:{
+            name:&quot;vc&quot;,
+            age:1
+        },
+        say:function()
+        {
+
+        }
+    };
+    //创建函数对象
+    var fun=new Function(&quot;console.log(&apos;fsdfsdf&apos;)&quot;);
+    //执行函数
+    fun();
+    fun.name=&quot;56&quot;;
+    //使用函数声明创建函数
+    function fun2(){
+        console.log(&quot;vxcvc&quot;);
+    }
+    fun2();
+    //使用函数表达式创建函数
+    var fun3=function()
+    {
+
+    };
+    //匿名函数
+    /*function()
+    {
+
+    }*/
+    //函数形参，不会检查实参类型和数量
+    function sum(a,b)
+    {
+        console.log(a+b);
+    }
+    sum(3,2);
+    //函数返回值，默认返回undefined
+    function sum2(a,b)
+    {
+        return a+b;
+    }
+    var result=sum2(3,2);
+    //调用匿名函数立即执行
+    (function()
+    {
+
+    })();
+    //枚举遍历属性名
+    for(var n in objj2)
+    {
+        console.log(objj2[n]);
+    }
+    //作用域
+    //全局作用域直接编写在script标签中的，页面打开时创建关闭是销毁
+    //全局作用域中有一个全局对象window
+    var v=3;
+    console.log(window.v);
+    //使用var声明的变量会在所有代码执行前被声明，不会报错
+    //函数声明形式创建的函数在所有代码执行前被创建
+    //函数表达式创建的函数不会被提前创建
+    //函数作用域
+    //在全局作用域中无法访问函数作用域的变量
+    //在函数中不使用var声明的变量都会成为全局变量
+    //this
+    //以函数形式调用this永远是window
+    //以方法形式调用this是调用方法的对象
+    //构造函数
+    function Person(name)
+    {
+        this.name=name;
+        this.age=34;
+        this.say=function()
+        {
+
+        };
+    }
+    var per=new Person(&quot;vc&quot;);
+    function Dog()
+    {
+        this.name=&quot;cc&quot;;
+    }
+    var dog=new Dog();
+    //检查一个对象是否是一个类的实例
+    console.log(dog instanceof Person);
+    console.log(per);
+    //原型对象prototype
+    function Myclass()
+    {
+        this.name=&quot;my&quot;;
+    }
+    Myclass.prototype.a=123;
+    Myclass.prototype.say=function()
+    {
+        alert(&quot;hello&quot;);
+    };
+    var mc=new Myclass();
+    var mcc=new Myclass();
+    console.log(mc.a);
+    //对象是否有除prorotype外的属性
+    console.log(mc.hasOwnProperty(&quot;a&quot;));
+    //使用对象的属性或方法时如果对象没有去原型去找如果原型没有去原型的原型去找
+    console.log(mc.__proto__.__proto__.hasOwnProperty(&quot;hasOwnProperty&quot;));
+    mc.a=2;
+    console.log(Myclass.prototype.a);
+    Myclass.prototype.a=22;
+    console.log(mcc.a);
+    mc.toString=function()
+    {
+        return &quot;修改默认的toString&quot;+this.name;
+    }
+    console.log(mc.a==mcc.a);
+    Myclass.prototype.toString=function()
+    {
+        return &quot;myclass&quot;
+    };
+    //内建对象
+    var arr=new Array();
+    arr[0]=1;
+    arr[1]=&quot;fds&quot;;
+    console.log(arr);
+    console.log(arr.length);
+    var array=[1,2,3,4,5,&quot;43&quot;];
+    var varr=new Array(1,2,3);
+    //创建一个长度为10的数组
+    var vara=new Array(10);
+    //创建一个数组只有一个元素
+    var varayy=[10];
+    varayy.push(32,56);
+    varayy.pop();
+    //在数组开头添加元素
+    varayy.unshift(45);
+    //删除第一个元素
+    varayy.shift();
+    //遍历元素
+    varayy.forEach(function(a)
+    {
+        console.log(a);
+    });
+    varayy.forEach(function(value,index,varayy)
+    {
+
+    });
+    varayy.push(45);
+    varayy.push(65);
+    //从索引0开始到2截止不包括2，-1表示倒数第一个
+    var rr=varayy.slice(0,2);
+    //删除元素0表示索引2表示删除数量56表示增加的新元素
+    var resultt=varayy.splice(0,2,56);
+    var var1=[1,2,3];
+    var var2=[4,5,6];
+    //连接数组
+    var var3=var1.concat(var2,var2,45);
+    //将数组转换为字符串，可以指定一个字符串作为参数将会成为数组元素的连接词默认是,
+    var var4=var3.join(&quot;fds&quot;);
+    //数组元素反转原数组受影响
+    var3.reverse();
+    //数组排序默认按照unicode编码排序
+    var3.sort();
+    var3.sort(function(a,b)
+    {
+        //大于0交换位置否则不交换   
+        return a-b;
+    });
+    //函数对象方法
+    function f()
+    {
+        alert(this);
+    }
+    //调用f函数
+    f.call();
+    f.apply();
+    //obj会成为函数执行的this
+    f.call(obj,2,2);
+    //call方法可以将实参在对象之后依次传递apply不行
+    //apply需要将实参封装到数组中传递
+    f.apply(obj,[2,3]);
+    //arguments是一个类数组对象封装实参不是数组
+    //获取当前时间
+    var d=new Date();
+    //指定一个时间
+    var dd=new Date(&quot;02/11/2020&quot;);
+    //获取几日
+    var day=dd.getDate();
+    //获取星期几 0~6
+    var dayy=dd.getDay();
+    //获取月份 0~11
+    var month=dd.getMonth();
+    var year=dd.getFullYear();
+    //获取时间（毫秒）
+    var time=Date.now();
+    console.log(Math.PI);
+    console.log(Math.abs(-34));
+    //上舍入2
+    console.log(Math.ceil(1.5));
+    //向下取整1
+    console.log(Math.floor(1.1));
+    //四舍五入
+    console.log(Math.round(1.4));
+    //0~1随机数
+    console.log(Math.random());
+    //生成x-y之间的数
+    //console.log(Math.round(Math.random()*(y-x)+x));
+    //包装类
+    var num=new Number(3);
+    var str=new String(&quot;fdd&quot;);
+    var bool=new Boolean(true);
+    num.hello==&quot;fds&quot;;
+    //任何对象转换为boo都为true
+    var strr=&quot;fsdfsd fdsfsd&quot;;
+    strr.charAt(2);
+    strr.length();
+    strr[2];
+    //编码值
+    strr.charCodeAt(2);
+    //根据字符编码获取字符
+    String.fromCharCode(74);
+    //截取从0开始2结束不包括2
+    strr.substring(0,2);
+    //截取从2开始长度为2
+    strr.substr(2,2);
+    //根据,拆分为数组
+    var re=strr.split(&quot;,&quot;);
+    //转换为大写
+    strr.toUpperCase();
+    strr.toLowerCase();
+    //正则表达式定义字符串规则
+    //创建正则表达式对象，第一个参数是正则表达式，第二个参数是匹配模式
+    //忽略大小写
+    var reg=new RegExp(&quot;a&quot;,&quot;i&quot;);
+    var aa=&quot;abc&quot;;
+    //检查字符串中是否含有a
+    reg.test(aa);
+    //使用字面量创建正则表达式
+    var regg=/a/i;
+    //检查是否有a或b
+    regg=/a|b/;
+    regg=/[ab]/;
+    //检查是否有字母
+    regg=/[a-z]/i;
+    regg=/a[bde]c/;
+    //除了ab，只要包含除了a，b以外的值都为true
+    regg=/[^ab]/;
+    str=&quot;1a2b3c4d5e&quot;;
+    //根据正则表达式拆分，可以不指定全局也会全局拆分
+    var ree=str.split(/[a-z]/);
+    str=&quot;abc aec afc&quot;;
+    //返回索引
+    ree=str.search(/a[bef]c/);
+    //提取符合条件的内容默认match只会找到第一个符合的内容返回数组
+    //设置全局匹配模式
+    ree=str.match(/[a-z]/gi);
+    //替换   
+    ree=str.replace(/a/g,&quot;@&quot;);
+    //删除
+    ree=str.replace(/a/g,&quot;&quot;);
+    //量词只对前边的一个值起作用
+    ree=/a{3}/;
+    //用括号限定范围
+    ree=/(ab){3}/;
+    //1次到3次
+    ree=/ab{1,3}c/;
+    //3次以上
+    ree=/ab{1,}c/;
+    //至少一个b
+    ree=/ab+c/;
+    //至少0个b
+    ree=/ab*c/;
+    //0或1个
+    ree=/ab?c/;
+    //检查开头
+    ree=/^a/;
+    //检查结尾
+    ree=/a$/;
+    //即是开头也是结尾只能有一个a
+    ree=/^a$/;
+    //检查手机号
+    ree=/^1[3-9][0-9]{9}$/;
+    //判断是否有.
+    ree=/\./;
+    //检查/
+    ree=/\//;
+    //使用构造函数要使用\\
+    ree=new RegExp(&quot;\\.&quot;);
+    //任意字母数字_
+    ree=/\w/;
+    //跟w相反
+    ree=/\W/;
+    //任意数字
+    ree=/\d/;
+    //除了数字
+    ree=/\D/;
+    //空格
+    ree=/\s/;
+    //除了空格
+    ree=/\S/;
+    //单词边界
+    ree=/\bchild\b/;
+    //除了边界
+    //去除空格
+    ree.replace(/\s/g,&quot;&quot;);
+    //去除前后空格
+    ree.replace(/^\s*|\s*$/g,&quot;&quot;);
+    //邮件
+    ree=/\w{3.}(\.\w+)*@[A-z]{2,5}){1,2}/;
+
+
+
+
+
+
+
+&lt;title&gt;宿主对象DOM&lt;/title&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+    //onload事件会在整个页面加载完成后执行
+    //为window绑定onload事件
+    window.onload=function()
+    {
+    var btn=document.getElementById(&quot;btn&quot;);
+    console.log(btn);
+    //innerHTML为元素内部html代码
+    //对于自结束标签没有html代码
+    btn.innerHTML=&quot;fsdfsd&quot;;
+    //事件就是用户和浏览器之间的交互，设置js代码事件被触发时执行
+    var bbb=document.getElementById(&quot;bbb&quot;);
+    //绑定单击事件
+    bbb.onclick=function(){
+        alert(&quot;hello&quot;);
+    };
+    //双击事件
+    bbb.ondblclick=function()
+    {
+        alert(&quot;hh&quot;);
+    };
+    bbb.onmousemove=function()
+    {
+
+    };
+    //通过标签名获取一组对象封装到数组中
+    var lis=document.getElementsByTagName(&quot;li&quot;);
+    //通过name获取一组对象
+    var inputs=document.getElementsByName(&quot;gender&quot;);
+    for(var i=0;i&lt;inputs.length;i++)
+    {
+        //读取html没有值
+        alert(inputs[i].value);
+        alert(inputs[i].className);
+    }
+    };
+
+
+&lt;button id=&quot;btn&quot; onclick=&quot;alert(&apos;点击&apos;);&quot;&gt;一个按钮&lt;/button&gt;
+&lt;button id=&quot;bbb&quot;&gt;按钮&lt;/button&gt;
+&lt;ul&gt;
+    &lt;li&gt;fd&lt;/li&gt;
+    &lt;li&gt;f&lt;/li&gt;
+    &lt;li&gt;vv&lt;/li&gt;
+&lt;/ul&gt;
+&lt;input class=&quot;hello&quot; type=&quot;radio&quot; name=&quot;gender&quot; value=&quot;male&quot;&gt;
+male
+&lt;input class=&quot;hello&quot; type=&quot;radio&quot; name=&quot;gender&quot; value=&quot;female&quot;&gt;
+female
+&lt;!--代码是从上往下执行先有属性  --&gt;
+&lt;!-- 
+&lt;script type=&quot;text/javascript&quot;&gt;
+    //document代表整个网页
+    var btn=document.getElementById(&quot;btn&quot;);
+    console.log(btn);
+    btn.innerHTML=&quot;fsdfsd&quot;;
+    //事件就是用户和浏览器之间的交互，设置js代码事件被触发时执行
+    var bbb=document.getElementById(&quot;bbb&quot;);
+    //绑定单击事件
+    bbb.onclick=function(){
+        alert(&quot;hello&quot;);
+    };
+    //双击事件
+    bbb.ondblclick=function()
+    {
+        alert(&quot;hh&quot;);
+    };
+    bbb.onmousemove=function()
+    {
+
+    };
+--&gt;</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://skysea-gaoming.github.io/2020/02/15/javascript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" data-id="ck6ndqerf000er0uahmeoa3bw" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-css学习笔记2-2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/02/15/css%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02-2/" class="article-date">
+  <time datetime="2020-02-15T09:06:09.000Z" itemprop="datePublished">2020-02-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/">前端技术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/15/css%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02-2/">css学习笔记2-2</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="css技术博客系列2"><a href="#css技术博客系列2" class="headerlink" title="css技术博客系列2"></a>css技术博客系列2</h2><pre><code>    &lt;title&gt;css2&lt;/title&gt;
+    &lt;!--盒子模型 背景色&lt;背景图片&lt;元素内容--&gt;
     &lt;style type=&quot;text/css&quot;&gt;
+        /*边框*/
+        p
+        {
+            border-style: solid dotted double dashed ;
+            border-color: red yellow blue purple ;
+            border-top-color: black;
+            border-width: 10px;
+        }
+        /*在火狐中child不管用搞不懂什么情况*/
+        /*外边距*/
+        .my
+        {
+            background-color: yellow;
+            margin-top: -20px;
+            margin-bottom: 100px;
+            margin-left: 40px;
+        }
+        /*内边距*/
+        .my1
+        {
+            padding: 30px;
+        }
+    &lt;/style&gt;
+
+
+
+    &lt;!--一个盒子 --&gt;
+    &lt;p &gt;
+        fsdfsdfsdfsdfsdfsdfsdfsd&lt;br&gt;
+        fsdfsdfsdfdsfdsfsdf&lt;br&gt;
+        fdsafdsafdsfdsfdsfdsfds
+    &lt;/p&gt;
+    &lt;p class=&quot;my&quot;&gt;
+        fsdfsdfsdffsdfdssdfsdfsdfsdfsdfsdfdsfsd&lt;br&gt;
+        fsdfsdfsdffsdfsdfdsdsfdsfsdf&lt;br&gt;
+        fdsafdsafddfvcxsfdsfdsfdsfds
+    &lt;/p&gt;
+    &lt;p class=&quot;my1&quot;&gt;
+        fsdfsdfsdffsdfdssdfsdfsdfsdfsdfsdfdsfsd&lt;br&gt;
+        fsdfsdfsdffsdfsdfdsdsfdsfsdf&lt;br&gt;
+        fdsafdsafddfvcxsfdsfdsfdsfdsfsdfsd
+    &lt;/p&gt;
+
+
+
+
+
+
+
+
+&lt;title&gt;css&lt;/title&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+    .m
+    {
+        /*空间向左压缩使下面的元素上移*/
+        float:left;
+        /*清除浮动还原换行特性*/
+        clear:left;
+    }
+    div p
+    {
+        width:100px;
+        height:100px;
+        border:solid red 3px;
+        /*隐藏溢出的内容*/
+    /*    overflow:hidden; */
+        /*滚动条*/
+        overflow:scroll;
+        /*定位相对自身*/
+        position:relative;
+        left:50px;
+        top:100px;
+        /*绝对定位参照浏览器,或者已经定位的父元素，会释放空间*/
+    /*    position:absolute;*/
+        /*一直悬浮在固定位置参照浏览器 */
+        position:fixed;
+        /*透明度*/
+        opacity:0.5;
+
+    }
+    img
+    {
+        /*图片居中*/
+        vertical-align:middle;
+    }
+    a:hover
+    {
+        /*变型平移*/
+        transform:translate();
+    }
+&lt;/style&gt;
+
+
+ &lt;div&gt;
+     &lt;div class=&quot;m&quot;&gt;&lt;/div&gt;
+     &lt;div class=&quot;mm&quot;&gt;&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div&gt;
+     &lt;p&gt;fdsfsdfsdfsdfsdfdsfsdfsdfdfsdfdsfdsfsdfdsfdsfd
+     fsdfdsfdxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&lt;/p&gt;
+ &lt;/div&gt;</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://skysea-gaoming.github.io/2020/02/15/css%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02-2/" data-id="ck6ndm82x0008r0uacwgqfq8j" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/" rel="tag">css</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-css学习笔记2-1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/02/15/css%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02-1/" class="article-date">
+  <time datetime="2020-02-15T09:03:37.000Z" itemprop="datePublished">2020-02-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/">前端技术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/15/css%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02-1/">css学习笔记2-1</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="css技术博客系列1"><a href="#css技术博客系列1" class="headerlink" title="css技术博客系列1"></a>css技术博客系列1</h2><pre><code>    &lt;!--css优先级 行内&gt;外部&gt;内部  id选择器&gt;类选择器&gt;标签选择器 --&gt;
+    &lt;!-- css内部样式--&gt;
         /* 标签选择器*/
         h1{
             /* 颜色支持英文和16进制*/                
@@ -201,9 +1342,8 @@
     &lt;!--css外部样式引入css文件--&gt;
     &lt;!--&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css-test2.css--&gt;
 
-&lt;/head&gt;
 
-&lt;body&gt;
+
     &lt;h1&gt;一级标题&lt;/h1&gt;
        &lt;h1 class=&quot;mystyle&quot;&gt;一级标题&lt;/h1&gt;
        &lt;h2 class=&quot;mystyle&quot;&gt;二级标题&lt;/h2&gt;
@@ -222,11 +1362,629 @@
            &lt;input type=&quot;text&quot; name=&quot;uuu&quot;&gt;
        &lt;/form&gt;
 
-&lt;/body&gt;</code></pre>
+
+
+
+
+放在css文件中
+ /* 标签选择器*/
+        h1{
+            /* 颜色支持英文和16进制*/                
+            color: green;
+            font-size:30px;
+        }
+        p
+        {
+            color:blue;
+        }
+        /*类选择器 可以用于多个*/
+        .mystyle
+        {
+            background-color: green;
+            color:yellow; 
+        }
+        /* id选择器 一次只能选择一个*/
+        #mystyle2
+        {
+            background-color: yellow;
+        }</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://skysea-gaoming.github.io/2020/02/15/html%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01-1/" data-id="ck6ncc6r00000b4uacoknet2e" class="article-share-link">Share</a>
+      <a data-url="https://skysea-gaoming.github.io/2020/02/15/css%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02-1/" data-id="ck6ndiy760007r0ua6em3c8me" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/" rel="tag">css</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-html学习笔记1-3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/02/15/html%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01-3/" class="article-date">
+  <time datetime="2020-02-15T08:54:58.000Z" itemprop="datePublished">2020-02-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/">前端技术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/15/html%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01-3/">html学习笔记1-3</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="html技术博客系列3"><a href="#html技术博客系列3" class="headerlink" title="html技术博客系列3"></a>html技术博客系列3</h2><pre><code>&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;web&lt;/title&gt;
+style type=&quot;text/css&quot;
+    body,ul,h1,li
+    {
+        /*去除列表前的原点*/
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+    }
+    #gamelist ul li a
+    {
+        /*去除下划线*/
+        text-decoration: none;
+        color: black;
+        border-top:purple 1px solid;
+    }
+    /*伪类*/
+    /*鼠标悬浮时的颜色*/
+    #gamelist ul li a:hover
+    {
+        color:red;
+    }
+    /* solid代表实线*/
+    #gamelist 
+    {
+        border:solid purple 5px;
+        width:500px;
+        padding-bottom:20px;
+        background-color:orange;
+        margin:10px auto;
+        padding-left:5px;
+
+    }
+    .gametitle
+    {
+        padding-left:10px;
+        color:blue;
+        font-size:20px;
+        /*行高*/
+        line-height:;
+    }
+    body
+    {
+        /*如果图片重复展示可以去重,设置坐标*/
+        /*background:url(a/1.jpg) no-repeat 2px 2px;*/
+        /*不去重*/
+        /*background-image:url(a/1.jpg) */;
+    }
+    body,div,h1,dl,dt,dd
+    {
+        margin:0px;
+        padding:0px;
+    }
+    #production
+    {
+        background-color:blue;
+        width:262px;
+    }
+    #production h1
+    {
+        /*粗细*/
+        font-weight:normal;
+        /*缩进*/
+        text-indent: 1em ;
+    }
+    #production dl dd
+    {
+        line-height:30px;
+    }
+    #production dt
+    {
+        font-size:20px;
+        /*字体*/
+        font-family:;
+        /*字体风格*/
+        font-style:;
+    }
+    ---
+    layout: false
+    ---
+    .mm
+    {
+        border-bottom:1px dashed;
+    }
+    div li a img:hover
+    {
+        border:1px orange solid;
+        /*鼠标悬浮的样式*/
+        cursor:;
+    }
+    /*未访问时的链接设置默认不写link*/
+    div ul li a:link
+    {
+
+    }
+    /*访问过兼容性不强少用*/
+    div ul li a:visited
+    {
+
+    }
+    /*按键按时那一下的颜色*/
+    div ul li a:active
+    {
+
+    }
+    .mmm ul li a
+    {
+        background-color:yellow;
+    }
+    span
+    {
+        /*阴影 坐标 发散程度*/
+        text-shadow:red 10px 10px 5px;
+    }
+    ---
+    layout: false
+    ---
+    #gamelist ul li
+    {
+        /*变为有序*/
+        list-style-type:decimal;
+/*        list-style-image:url(a/2.png); */
+    }
+    body
+    {
+    /*    background:url(a/2.png) no-repeat; */
+        /*铺满*/
+    /*    background-size:cover; */
+    /*自己画图*/
+    /*background-image:linear-gradient(to bottom,red,purple);*/
+    }
+    .mmmy
+    {
+        width:50px;
+        height:50px;
+        border:5px solid red;
+        border-radius:0px 15px 18px 0px;
+        box-shadow:5px 10px lightgray;
+        /*显示为内联 block none块级，什么都不显示*/
+        /*display:inline;*/
+    }
+    /*全部元素*/
+    *
+    {
+        margin:0px;
+        padding:0px;
+    }
+    .gametitle,.myy,.myy li
+    {
+        display:inline-block;
+    }
+    /*设置等宽的li*/
+    .myy li
+    {
+        width:70px;
+    }
+&lt;/style&gt;</code></pre></head>
+
+<pre><code>&lt;div id=&quot;gamelist&quot;&gt;
+&lt;h1 class=&quot;gametitle&quot;&gt;游戏列表&lt;/h1&gt;
+&lt;ul class=&quot;myy&quot;&gt;
+    &lt;li class=&quot;my&quot;&gt;&lt;a href=&quot;&quot;&gt;王者荣耀&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;&quot;&gt;吃鸡&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;&quot;&gt;拳皇&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;&quot;&gt;哈利波特&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;&quot;&gt;合金弹头&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div &gt;
+    &lt;br&gt;
+    &lt;br&gt;
+    &lt;br&gt;
+    &lt;div id=&quot;production&quot;&gt;
+    &lt;h1&gt;全部分类&lt;/h1&gt;
+    &lt;dl class=&quot;mm&quot;&gt;
+        &lt;dt&gt;电子设备&lt;/dt&gt;
+        &lt;dd&gt;手机/电脑/平板/鼠标/投影仪z&lt;br&gt;
+            fsdfsdfdsfsdfdsfd&lt;br&gt;
+            fsdfdsfsd
+        &lt;/dd&gt;
+    &lt;/dl&gt;
+    &lt;dl&gt;
+        &lt;dt&gt;服装&lt;/dt&gt;
+        &lt;dd&gt;
+            fsdfsdfsdfsdfds&lt;br&gt;
+            vxcvxcv&lt;br&gt;
+            fdsfsdfdsf
+        &lt;/dd&gt;
+    &lt;/dl&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;mmm&quot;&gt;
+        &lt;h1&gt;电子设备&lt;/h1&gt;
+        &lt;ul&gt;
+            &lt;li&gt;
+             &lt;a href=&quot;&quot;&gt;&lt;img src=&quot;a/2.png&quot;&gt;&lt;/a&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+    &lt;!--块级元素会换行可以包含内联--&gt;
+    &lt;div&gt;divdivdiv&lt;/div&gt;
+    &lt;!--内联元素不换行不能包含块级--&gt;
+    &lt;span&gt;fsdfsd&lt;/span&gt;
+    &lt;div class=&quot;mmmy&quot;&gt;
+
+    &lt;/div&gt;
+    &lt;!--导航的意思没有其他作用--&gt;
+    &lt;nav&gt;
+        &lt;!--头部标签没有其他作用--&gt;
+        &lt;header&gt;&lt;/header&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+    ---
+    layout: false
+    ---</code></pre></html>
+
+
+
+<hr>
+<h2 id="layout-false"><a href="#layout-false" class="headerlink" title="layout: false"></a>layout: false</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://skysea-gaoming.github.io/2020/02/15/html%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01-3/" data-id="ck6nd7u3o0001r0uab2whgwic" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/" rel="tag">html</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-html学习笔记1-2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/02/15/html%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01-2/" class="article-date">
+  <time datetime="2020-02-15T08:50:44.000Z" itemprop="datePublished">2020-02-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/">前端技术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/15/html%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01-2/">html学习笔记1-2</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="html技术博客系列2"><a href="#html技术博客系列2" class="headerlink" title="html技术博客系列2"></a>html技术博客系列2</h2><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;fds&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;这是第二个&lt;/h1&gt;
+&lt;h1&gt;这是第二个&lt;/h1&gt;
+&lt;h1&gt;这是第二个&lt;/h1&gt;
+&lt;h1&gt;这是第二个&lt;/h1&gt;
+&lt;h1&gt;这是第二个&lt;/h1&gt;
+&lt;h1&gt;这是第二个&lt;/h1&gt;
+&lt;h1&gt;这是第二个&lt;/h1&gt;
+&lt;h1&gt;这是第二个&lt;/h1&gt;
+&lt;h1&gt;这是第二个&lt;/h1&gt;
+&lt;h1&gt;这是第二个&lt;/h1&gt;
+&lt;h1&gt;这是第二个&lt;/h1&gt;
+&lt;h1&gt;这是第二个&lt;/h1&gt;
+&lt;h1&gt;这是第二个&lt;/h1&gt;
+&lt;h1&gt;这是第二个&lt;/h1&gt;
+&lt;!--name指定唯一位置位置 --&gt;
+&lt;a name=&quot;2&quot;&gt;跳到这&lt;/a&gt;
+&lt;h1&gt;这是第二个&lt;/h1&gt;
+&lt;/body&gt;</code></pre></html>
+
+
+
+
+<hr>
+<h2 id="layout-false"><a href="#layout-false" class="headerlink" title="layout: false"></a>layout: false</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://skysea-gaoming.github.io/2020/02/15/html%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01-2/" data-id="ck6nd5dxj0000r0ua3exf8rs2" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/" rel="tag">html</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-html学习笔记1-1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/02/15/html%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01-1/" class="article-date">
+  <time datetime="2020-02-15T08:30:21.000Z" itemprop="datePublished">2020-02-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/">前端技术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/15/html%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01-1/">html学习笔记1-1</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="html技术博客系列1"><a href="#html技术博客系列1" class="headerlink" title="html技术博客系列1"></a>html技术博客系列1</h2><pre><code>&lt;!-- 这个可以省略，是一个声明--&gt;
+&lt;!DOCTYPE html&gt;
+&lt;!-- 这是最外层html必须包裹在html标签里面，所有标签不区分大小写--&gt;
+&lt;html&gt;
+    &lt;!-- 设置参数，不能显示只有title可以--&gt;
+    &lt;head&gt;
+        &lt;!--标题--&gt;
+        &lt;title&gt;first html&lt;/title&gt;
+        &lt;!-- 设置编码--&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;!-- 关键词 是否能被搜索引擎搜到--&gt;
+        &lt;meta name=&quot;keywords&quot; content=&quot;学习html&quot;&gt;
+        &lt;!-- 搜到本网页时展示的简介内容--&gt;
+        &lt;meta name=&quot;description&quot; content=&quot;这是一个学习html的网页&quot;&gt;
+        &lt;!--css--&gt;
+        &lt;style type=&quot;text/css&quot;&gt;
+            h1{
+                color:red;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;!-- 能显示--&gt;
+    &lt;body&gt;
+           &lt;!--标题标签 越来越小--&gt;
+           &lt;h1&gt;一级标题&lt;/h1&gt;
+           &lt;h1&gt;一级标题&lt;/h1&gt;
+           &lt;h2&gt;二级标题&lt;/h2&gt;
+           &lt;h3&gt;三级标题&lt;/h2&gt;
+           &lt;h4&gt;四级标题&lt;/h2&gt;
+           &lt;h5&gt;五级标题&lt;/h5&gt;
+           &lt;!-- 回车和空格没有用 &lt;br/&gt; 强行回车--&gt;
+           fsdfsadf&lt;br/&gt;  fsdfsd
+           &lt;!--段落标签末尾自带回车--&gt;
+           &lt;p&gt;fsdfsd fsdfsd&lt;/p&gt;
+           fsdfsdf
+           &lt;!-- &lt;hr/&gt;水平线--&gt;
+           &lt;hr/&gt;水平线
+           fdsfsd
+           &lt;!--样式标签，可以嵌套--&gt;
+           &lt;strong&gt;加粗&lt;/strong&gt;
+           &lt;b&gt;加粗&lt;/b&gt;
+           &lt;em&gt;hello倾斜&lt;/em&gt;
+           &lt;strong&gt;&lt;em&gt;加粗倾斜&lt;/em&gt;&lt;/strong&gt;
+           &lt;!--特殊符号--&gt;
+           &lt;!--&amp;lt代表&lt; &amp;gt代表&gt; --&gt;
+           你好&amp;lt&amp;gt&lt;br&gt;
+           &lt;!--&amp;nbsp;代表空格 --&gt;
+           你好&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;啊
+           &lt;!--&amp;quot;代表&quot; --&gt;
+           &amp;quot;你好&amp;quot;
+           &lt;!-- &amp;copy;代表版权--&gt;
+           &lt;br&gt;&amp;copy;2020
+           &lt;!--图片一般用相对路径 --&gt;
+           &lt;img  src=&quot;a/1.jpg&quot; width=&quot;100&quot; height=&quot;100&quot; title=&quot;天海祐希（鼠标悬浮文字）&quot;
+           alt=&quot;图片不存在时的替换路径&quot;&gt;
+           &lt;!-- 超链接--&gt;
+           &lt;a href=&quot;https://www.baidu.com&quot;&gt;点我进百度&lt;/a&gt;
+           &lt;!-- 锚链接跳到指定位置#后写name位置--&gt;
+           &lt;a href=&quot;html-test2.html#2&quot;&gt;进入2&lt;/a&gt;
+           &lt;!--功能性链接 --&gt;
+           &lt;a href=&quot;mailto:1829731045@qq.com&quot;&gt;发邮件&lt;/a&gt;
+           &lt;!-- 列表无序有序--&gt;
+           &lt;ul type=&quot;square&quot;&gt;
+               &lt;li&gt;apple&lt;/li&gt;
+               &lt;li&gt;banana&lt;/li&gt;
+               &lt;li&gt;orange&lt;/li&gt;
+           &lt;/ul&gt;
+           &lt;ol type=&quot;a&quot;&gt;
+               &lt;li&gt;apple&lt;/li&gt;
+               &lt;li&gt;banana&lt;/li&gt;
+               &lt;li&gt;orange&lt;/li&gt;
+           &lt;/ol&gt;
+           &lt;ul&gt;
+               &lt;li &gt;我的电脑&lt;/li&gt;
+               &lt;ul&gt;
+                   &lt;li type=&quot;circle&quot;&gt;本地磁盘c&lt;/li&gt;
+                   &lt;ul type=&quot;square&quot;&gt;
+                       &lt;li&gt;我的文档&lt;/li&gt;
+                       &lt;li&gt;我的收藏&lt;/li&gt;
+                   &lt;/ul&gt;
+               &lt;/ul&gt;
+               &lt;ul&gt;
+                   &lt;li type=&quot;circle&quot;&gt;本地磁盘d&lt;/li&gt;
+                   &lt;ul type=&quot;square&quot;&gt;
+                       &lt;li&gt;我的文档&lt;/li&gt;
+                       &lt;li&gt;我的收藏&lt;/li&gt;
+                   &lt;/ul&gt;
+               &lt;/ul&gt;
+           &lt;/ul&gt;
+           &lt;!--用火狐浏览器发现顺序不对不知道哪里出了问题 --&gt;
+           &lt;ol&gt;
+               &lt;li&gt;css&lt;/li&gt;
+                   &lt;ol&gt;
+                   &lt;li&gt;aaa&lt;/li&gt;
+                   &lt;li&gt;bbb&lt;/li&gt;
+                   &lt;li&gt;ccc&lt;/li&gt;
+                   &lt;/ol&gt;
+               &lt;li&gt;javasript&lt;/li&gt;
+                   &lt;ol&gt;
+                   &lt;li&gt;aaa&lt;/li&gt;
+                   &lt;li&gt;bbb&lt;/li&gt;
+                   &lt;li&gt;ccc&lt;/li&gt;
+                   &lt;/ol&gt;
+           &lt;/ol&gt;
+           &lt;!--定义列表 --&gt;
+           &lt;dl&gt;
+               &lt;dt&gt;标题&lt;/dt&gt;
+               &lt;dd&gt;正文内容&lt;/dd&gt;
+           &lt;/dl&gt;
+           &lt;!--表格行tr和列td--&gt;
+           &lt;!-- 水平移动 left right center--&gt;
+           &lt;!-- 垂直移动 top bottom middle--&gt;
+           &lt;table border=&quot;1&quot; &gt;
+               &lt;tr align=&quot;right&quot;&gt;
+                   &lt;td rowspan=&quot;2&quot;&gt;1-1&lt;br&gt;fdv&lt;/td&gt;
+                   &lt;td valign=&quot;middle&quot; colspan=&quot;2&quot;&gt;1-2&lt;/td&gt;
+               &lt;/tr&gt;
+               &lt;tr&gt;
+                   &lt;td&gt;2-2fdsfa&lt;/td&gt;
+                   &lt;td&gt;2-3&lt;/td&gt;
+               &lt;/tr&gt;
+               &lt;tr&gt;
+                   &lt;td&gt;3-1&lt;/td&gt;
+                   &lt;td valign=&quot;top&quot;&gt;3-2&lt;/td&gt;
+                   &lt;td&gt;3-3&lt;/td&gt;
+               &lt;/tr&gt;
+               &lt;tr&gt;
+                   &lt;td&gt;4-1&lt;/td&gt;
+                   &lt;td&gt;4-2&lt;/td&gt;
+                   &lt;td&gt;4-3&lt;/td&gt;
+               &lt;/tr&gt;
+           &lt;/table&gt;
+           &lt;!--表单--&gt;
+           &lt;form action=&quot;html-test2.html&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;
+               用户名&lt;input type=&quot;text&quot; name=&quot;username&quot; value=&quot;高明&quot;
+               size=&quot;3&quot; maxlength=&quot;10&quot;&gt;
+               &lt;br&gt;
+               密码&lt;input type=&quot;password&quot; name=&quot;userpassword&quot;&gt;
+               &lt;br&gt;
+               &lt;input type=&quot;submit&quot; value=&quot;注册&quot;&gt;
+               &lt;input type=&quot;reset&quot; name=&quot;重置&quot;&gt;&lt;br&gt;
+            兴趣爱好:&lt;br&gt;
+            足球&lt;input type=&quot;checkbox&quot; name=&quot;hobbies&quot;&gt;
+            篮球&lt;input type=&quot;checkbox&quot; name=&quot;hobbies&quot;&gt;
+            乒乓球&lt;input type=&quot;checkbox&quot; name=&quot;hobbies&quot; checked=&quot;checked&quot;&gt;
+            &lt;br&gt;
+            旅游:&lt;br&gt;
+            北京&lt;input type=&quot;checkbox&quot; name=&quot;cities&quot;&gt;
+            上海&lt;input type=&quot;checkbox&quot; name=&quot;cities&quot; checked=&quot;checked&quot;&gt;
+            广州&lt;input type=&quot;checkbox&quot; name=&quot;cities&quot;&gt;
+            &lt;br&gt;
+            性别:&lt;br&gt;
+            男&lt;input type=&quot;radio&quot; name=&quot;sex&quot;&gt;
+            女&lt;input type=&quot;radio&quot; name=&quot;sex&quot;&gt;
+            &lt;br&gt;
+            &lt;select&gt;
+                &lt;option&gt;北京&lt;/option&gt;
+                &lt;option selected=&quot;selected&quot;&gt;上海&lt;/option&gt;
+                &lt;option&gt;深圳&lt;/option&gt;
+            &lt;/select&gt;
+            &lt;input type=&quot;button&quot; value=&quot;普通按钮&quot;  disabled=&quot;disabled&quot;&gt;
+            &lt;br&gt;
+            个人说明:&lt;br&gt;
+            &lt;textarea cols=&quot;30&quot; rows=&quot;5&quot;&gt;
+                默认值  fsdfdsfdsf
+            &lt;/textarea&gt;
+            &lt;input type=&quot;file&quot; name=&quot;file1&quot; &gt;
+            &lt;input type=&quot;hidden&quot; value=&quot;1&quot;&gt;
+            认证名:&lt;input type=&quot;text&quot; value=&quot;高明&quot;  name=&quot;realname&quot; readonly=&quot;readonly&quot;&gt;
+            &lt;!--语义化表单--&gt;
+            &lt;fieldset&gt;
+                &lt;legend&gt;用户信息&lt;/legend&gt;
+                输入&lt;input type=&quot;text&quot; name=&quot;name&quot;&gt;
+            &lt;/fieldset&gt;
+            &lt;!--表单元素的标注--&gt;
+            &lt;label for=&quot;sz&quot;&gt;深圳&lt;/label&gt;
+            &lt;input type=&quot;checkbox&quot; id=&quot;sz&quot;&gt;
+           &lt;/form&gt;
+           &lt;!--HTML5新特性--&gt;
+           &lt;form&gt;
+               &lt;!-- 以下video全都播放--&gt;
+               &lt;video src=&quot;&quot; controls autoplay&gt;&lt;/video&gt;
+               &lt;video src=&quot;&quot; controls&gt;&lt;/video&gt;
+               &lt;!-- 以下video只播放一个，先查类型--&gt;
+               &lt;video controls&gt;
+                   &lt;source src=&quot;&quot; type=&quot;video/webm&quot;&gt;
+                   &lt;source src=&quot;&quot; type=&quot;&quot;&gt;
+               &lt;/video&gt;
+               &lt;audio src=&quot;&quot; controls&gt;&lt;/audio&gt;
+               &lt;audio controls&gt;
+                   &lt;source src=&quot;&quot; type=&quot;&quot;&gt;
+                   &lt;source src=&quot;&quot; type=&quot;&quot;&gt;
+               &lt;/audio&gt;
+           &lt;/form&gt;
+           &lt;!--布局标签--&gt;
+           &lt;header&gt;表示网页的头部&lt;/header&gt;
+           &lt;section&gt;网页的一块区域&lt;/section&gt;
+           &lt;article&gt;网页的文章&lt;/article&gt;
+           &lt;aside&gt;侧边栏&lt;/aside&gt;
+           &lt;nav&gt;网页的导航&lt;/nav&gt;
+           &lt;footer&gt;网页的尾部&lt;/footer&gt;
+           &lt;!-- 校验--&gt;
+           &lt;form&gt;
+               网址&lt;input type=&quot;url&quot; name=&quot;&quot;&gt;
+               数字&lt;input type=&quot;number&quot; name=&quot;&quot; min=&quot;&quot; max=&quot;&quot; step=&quot;&quot;&gt;
+            数字滑块&lt;input type=&quot;range&quot; name=&quot;&quot; min=&quot;&quot; max=&quot;&quot;&gt;
+            搜索&lt;input type=&quot;search&quot; name=&quot;&quot; placeholder=&quot;请输入商品名&quot;&gt;
+            &lt;input type=&quot;text&quot; name=&quot;&quot; required&gt;
+           &lt;/form&gt;
+           &lt;!--内联框架--&gt;
+           &lt;iframe src=&quot;https://www.baidu.com&quot; name=&quot;可以为超链接中的target值，表示iframe中的值为超链接的值&quot;&gt;
+           &lt;/iframe&gt;&lt;br&gt;
+           &lt;iframe src=&quot;html-test2.html&quot; width=&quot;&quot; height=&quot;&quot;&gt;&lt;/iframe&gt;
+           &lt;a href=&quot;&quot; target=&quot;_blank&quot;&gt;开一个新窗口，默认是自身_self&lt;/a&gt;
+    &lt;/body&gt;
+
+&lt;/html&gt;</code></pre><hr>
+<h2 id="layout-false"><a href="#layout-false" class="headerlink" title="layout: false"></a>layout: false</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://skysea-gaoming.github.io/2020/02/15/html%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01-1/" data-id="ck6ncer6f0000s0uade9t80t0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/" rel="tag">html</a></li></ul>
@@ -258,7 +2016,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/" rel="tag">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li></ul>
     </div>
   </div>
 
@@ -268,7 +2026,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/html/" style="font-size: 10px;">html</a>
+      <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/html/" style="font-size: 20px;">html</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a>
     </div>
   </div>
 
@@ -290,7 +2048,23 @@
       <ul>
         
           <li>
-            <a href="/2020/02/15/html%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01-1/">html学习笔记1</a>
+            <a href="/2020/02/15/javascript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/">javascript学习笔记3-3</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/15/javascript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-2/">javascript学习笔记3-2</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/15/javascript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">javascript学习笔记3-1</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/15/css%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02-2/">css学习笔记2-2</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/15/css%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02-1/">css学习笔记2-1</a>
           </li>
         
       </ul>

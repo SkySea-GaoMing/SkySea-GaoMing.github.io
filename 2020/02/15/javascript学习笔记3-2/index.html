@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>javascript学习笔记3-2 | 高明的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="参考尚学堂老的javascript学习视频">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript学习笔记3-2">
+<meta property="og:url" content="https://skysea-gaoming.github.io/2020/02/15/javascript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-2/index.html">
+<meta property="og:site_name" content="高明的博客">
+<meta property="og:description" content="参考尚学堂老的javascript学习视频">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-02-15T09:16:02.000Z">
+<meta property="article:modified_time" content="2020-02-15T10:22:08.399Z">
+<meta property="article:author" content="高明">
+<meta property="article:tag" content="javascript">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="高明的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">高明的博客</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">高明的技术博客</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://SkySea-GaoMing.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-javascript学习笔记3-2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/02/15/javascript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-2/" class="article-date">
+  <time datetime="2020-02-15T09:16:02.000Z" itemprop="datePublished">2020-02-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/">前端技术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      javascript学习笔记3-2
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="javascript技术博客系列2"><a href="#javascript技术博客系列2" class="headerlink" title="javascript技术博客系列2"></a>javascript技术博客系列2</h2><pre><code>&lt;title&gt;javascript&lt;/title&gt;
+    window.onload=function()
+    {
+        //点击按钮切换图片
+        var pree=document.getElementById(&quot;pre&quot;);
+        var nextt=document.getElementById(&quot;next&quot;);
+        var img=document.getElementsByTagName(&quot;img&quot;)[0];
+        //获取图片路径
+        var imgarr=[&quot;a/a.jpg&quot;,&quot;a/1.jpg&quot;,&quot;a/2.jpg&quot;,&quot;a/2.png&quot;];
+        var i=0;
+        pree.onclick=function()
+        {
+
+            if(i&gt;0)
+                i--;
+            else
+                i=imgarr.length-1;
+            img.src=imgarr[i];
+        };
+        nextt.onclick=function()
+        {
+            if(i&lt;(imgarr.length-1))
+                i++;
+            else
+                i=0;
+            img.src=imgarr[i];
+        };
+        var aa=document.getElementById(&quot;a&quot;);
+        //获取包括文本节点在内的所有节点
+        var an=aa.childNodes;
+        //获取当前元素所有子元素
+        var an2=aa.children;
+        //第一个子节点
+        var an3=aa.firstChild;
+        //第一个子元素
+        var an4=aa.firstElementChild;
+        var aaa=aa.getElementsByTagName(&quot;li&quot;);
+        //获取文本内容除去标签
+        var aaaa=aa.innerText;
+        //checkbox对象
+        var na=document.getElementsByName(&quot;name&quot;);
+        //选中
+        na[0].checked=true;
+        //获取body
+        var body=document.body;
+        //获取html
+        var html=document.html;
+        //获取all所有元素
+        var all=document.all;
+        //根据class获取一组对象
+        var cla=document.getElementsByClassName(&quot;class&quot;);
+        //根据css选择器查询对象只会返回一个
+        var li= document.querySelector(&quot;#a li&quot;);
+        var lis=document.querySelectorAll(&quot;#a li&quot;);
+    };
+
+&lt;img src=&quot;a/2.png&quot; alt=&quot;ss&quot; width=&quot;500&quot; height=&quot;500&quot;&gt;
+&lt;button id=&quot;pre&quot;&gt;上一张&lt;/button&gt;
+&lt;button id=&quot;next&quot;&gt;下一张&lt;/button&gt;
+&lt;ul id=&quot;a&quot;&gt;
+    &lt;li&gt;fd&lt;/li&gt;
+    &lt;li&gt;ff&lt;/li&gt;
+&lt;/ul&gt;
+&lt;form&gt;
+    &lt;input class=&quot;class&quot; type=&quot;checkbox&quot; name=&quot;name&quot;&gt;
+    &lt;input type=&quot;checkbox&quot; name=&quot;name&quot;&gt;
+&lt;/form&gt;
+
+
+
+
+
+
+&lt;title&gt;dfds&lt;/title&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+    #box1{
+        width:200px;
+        height:200px;
+        background-color:red;
+    }
+
+    window.onload=function()
+    {
+        alert(&quot;fds&quot;);
+    var a=document.getElementById(&quot;fd&quot;);
+    //创建一个元素对象
+    var li=document.createElement(&quot;li&quot;);
+    //创建文本内容对象
+    var text=document.createTextNode(&quot;value&quot;);
+    li.appendChild(text);
+    var ul=document.getElementById(&quot;id&quot;);
+    //向父节点添加子节点
+    ul.appendChild(li);
+    //指定节点前插入新节点，父节点调用方法参数是新节点 已有节点
+    var f=document.getElementById(&quot;f&quot;);
+    var lii=document.createElement(&quot;li&quot;);
+    var textt=document.createTextNode(&quot;valuee&quot;);
+    lii.appendChild(textt);
+    ul.insertBefore(lii,f);
+    //替换节点
+//    ul.replaceChild(lii,f);
+    //删除节点
+//  ul.removeChild(f);
+    //获取父元素
+//    f.parentNode;
+    //添加的另一种方式
+//    li.innerHTML=&quot;fsdfsd&quot;;    
+    var a=document.getElementsByTagName(&quot;a&quot;);
+    for(var i=0;i&lt;a.length;i++)
+    {
+        a[i].onclick=function()
+    {
+        var tr=this.parentNode.parentNode;
+        var flag=confirm(&quot;确认删除吗&quot;);
+        tr.parentNode.removeChild(tr);
+        //取消跳转
+        return false;
+    }
+    }
+    var ff=document.getElementById(&quot;btn&quot;);
+    var box1=document.getElementById(&quot;box1&quot;);
+    ff.onclick=function()
+    {
+        box1.style.width=&quot;300px&quot;;
+        box1.style.height=&quot;300px&quot;;
+        //-后的字母大写
+        box1.style.backgroundColor=&quot;blue&quot;;
+    };
+    //获取当前样式值IE，只读
+    box1.currentStyle.width;
+    getComputedStyle(box1,null).width;
+    //如果不存在变量报错，不存在属性返回undefined
+    //window.getComputedStyle  getComputedStyle
+    //disabled属性设置元素是否禁用
+    };
+
+&lt;button id=&quot;fd&quot;&gt;fsd&lt;/button&gt;
+&lt;ul id=&quot;id&quot;&gt; 
+    &lt;li&gt;fd&lt;/li&gt;
+    &lt;li id=&quot;f&quot;&gt;vcz&lt;/li&gt;
+&lt;/ul&gt;
+&lt;a href=&quot;&quot; &gt;delete&lt;/a&gt;
+&lt;a href=&quot;&quot; &gt;delete&lt;/a&gt;
+&lt;button id=&quot;btn&quot;&gt;ff&lt;/button&gt;
+&lt;div id=&quot;box1&quot;&gt;&lt;/div&gt;
+
+
+
+
+
+
+
+&lt;title&gt;事件对象&lt;/title&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+    window.onload=function()
+    {
+        //鼠标在a移动时显示坐标在b
+        var a=document.getElementById(&quot;a1&quot;);
+        var b=document.getElementById(&quot;a2&quot;);
+        //鼠标在元素移动时触发
+        a.onmousemove=function(event)
+        {
+            //事件对象
+            //当事件的响应被触发时浏览器每次都会将一个事件对象作为实参传给响应函数
+            //事件对象包含了事件的一切信息
+            var x=event.clientX;
+            var y=event.clientY;
+            b.innerHTML=&quot;x=&quot;+x+&quot; y=&quot;+y;
+
+        }
+        var box1=document.getElementById(&quot;box1&quot;);
+        document.onmousemove=function(event)
+        {
+            var x=event.pageX;
+            var y=event.pageY;
+            //相对页面
+            box1.style.left=x+&quot;px&quot;;
+            box1.style.top=y+&quot;px&quot;;
+        }
+        //获取浏览器滚动条滚动距离
+        var st=document.documentElement.scrollTop||document.body.scrollTop;
+        //事件冒泡
+        var s1=document.getElementById(&quot;s1&quot;);
+        s1.onclick=function()
+        {
+            alert(&quot;我是span&quot;);
+        };
+        var box2=document.getElementById(&quot;box2&quot;);
+        box2.onclick=function()
+        {
+            alert(&quot;我是div&quot;);
+        }
+        document.body.onclick=function()
+        {
+            alert(&quot;我是body&quot;)；
+        }
+    };
+
+    #a1{
+        width:200px;
+        height:200px;
+        background-color:red;
+    }
+    #a2{
+        width:200px;
+        height:200px;
+        border:solid 1px;
+    }
+    #box1
+    {
+        width:200px;
+        height:200px;
+        background-color:red;
+        position:absolute;
+    }
+
+
+ &lt;div id=&quot;a1&quot; &gt; &lt;/div&gt;
+ &lt;div id=&quot;a2&quot;&gt; &lt;/div&gt;
+ &lt;div id=&quot;box1&quot;&gt; &lt;/div&gt;
+ &lt;div id=&quot;box2&quot;&gt;
+     box2
+     &lt;span id=&quot;s1&quot;&gt;我是span&lt;/span&gt;
+  &lt;/div&gt;
+
+
+
+
+
+
+&lt;title&gt;事件的委派&lt;/title&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+    window.onload=function()
+    {
+        var a=document.getElementById(&quot;a&quot;);
+        var ul=document.getElementById(&quot;ul&quot;);
+        //事件的绑定
+        a.addEventListener(&quot;click&quot;,function()
+            {
+                alert(&quot;1&quot;);
+            },false);
+        a.onclick=function()
+        {
+            var aa=document.createElement(&quot;li&quot;);
+            aa.innerHTML=&quot;&lt;a href=&apos;javascript:;&apos; class=&apos;link&apos;&gt;超链接&lt;/a&gt;&quot;;
+            ul.appendChild(aa);
+        };
+        ul.onclick=function(event)
+        {
+            //target表示触发事件的对象
+            if(event.target.className==&quot;link&quot;)
+            alert(&quot;ddd&quot;);
+        };
+    };
+
+&lt;button id=&quot;a&quot;&gt;添加&lt;/button&gt;
+&lt;ul id=&quot;ul&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;javascript:;&quot; class=&quot;link&quot;&gt;超链接1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;javascript:;&quot; class=&quot;link&quot;&gt;超链接2&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;javascript:;&quot; class=&quot;link&quot;&gt;超链接3&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://skysea-gaoming.github.io/2020/02/15/javascript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-2/" data-id="ck6ndyx49000ir0uaa9g393gs" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/02/15/javascript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          javascript学习笔记3-3
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/02/15/javascript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">javascript学习笔记3-1</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/">前端技术</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/" rel="tag">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/html/" style="font-size: 20px;">html</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/02/15/javascript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/">javascript学习笔记3-3</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/15/javascript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-2/">javascript学习笔记3-2</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/15/javascript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">javascript学习笔记3-1</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/15/css%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02-2/">css学习笔记2-2</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/15/css%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02-1/">css学习笔记2-1</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 高明<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
