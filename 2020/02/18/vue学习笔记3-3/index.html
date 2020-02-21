@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>vue学习笔记3-3 | 高明的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="参考B站ilovecoding的vue学习视频">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue学习笔记3-3">
+<meta property="og:url" content="https://skysea-gaoming.github.io/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/index.html">
+<meta property="og:site_name" content="高明的博客">
+<meta property="og:description" content="参考B站ilovecoding的vue学习视频">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://skysea-gaoming.github.io/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number1.jpg">
+<meta property="og:image" content="https://skysea-gaoming.github.io/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number2.jpg">
+<meta property="og:image" content="https://skysea-gaoming.github.io/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number3.jpg">
+<meta property="og:image" content="https://skysea-gaoming.github.io/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number4.jpg">
+<meta property="og:image" content="https://skysea-gaoming.github.io/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number5.jpg">
+<meta property="og:image" content="https://skysea-gaoming.github.io/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number6.jpg">
+<meta property="og:image" content="https://skysea-gaoming.github.io/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number7.jpg">
+<meta property="og:image" content="https://skysea-gaoming.github.io/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number8.jpg">
+<meta property="og:image" content="https://skysea-gaoming.github.io/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number9.png">
+<meta property="og:image" content="https://skysea-gaoming.github.io/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number10.png">
+<meta property="og:image" content="https://skysea-gaoming.github.io/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number11.jpg">
+<meta property="og:image" content="https://skysea-gaoming.github.io/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number12.jpg">
+<meta property="og:image" content="https://skysea-gaoming.github.io/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number13.jpg">
+<meta property="og:image" content="https://skysea-gaoming.github.io/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number14.jpg">
+<meta property="og:image" content="https://skysea-gaoming.github.io/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number15.jpg">
+<meta property="og:image" content="https://skysea-gaoming.github.io/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number16.jpg">
+<meta property="og:image" content="https://skysea-gaoming.github.io/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number17.jpg">
+<meta property="og:image" content="https://skysea-gaoming.github.io/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number18.jpg">
+<meta property="og:image" content="https://skysea-gaoming.github.io/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number19.jpg">
+<meta property="og:image" content="https://skysea-gaoming.github.io/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number20.jpg">
+<meta property="og:image" content="https://skysea-gaoming.github.io/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number21.jpg">
+<meta property="og:image" content="https://skysea-gaoming.github.io/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number22.jpg">
+<meta property="article:published_time" content="2020-02-18T09:56:49.000Z">
+<meta property="article:modified_time" content="2020-02-21T03:23:30.502Z">
+<meta property="article:author" content="高明">
+<meta property="article:tag" content="vue">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://skysea-gaoming.github.io/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number1.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="高明的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">高明的博客</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">高明的技术博客</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://SkySea-GaoMing.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-vue学习笔记3-3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/" class="article-date">
+  <time datetime="2020-02-18T09:56:49.000Z" itemprop="datePublished">2020-02-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/">前端技术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      vue学习笔记3-3
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="vue学习系列3"><a href="#vue学习系列3" class="headerlink" title="vue学习系列3"></a>vue学习系列3</h2><h2 id="v-if-v-else-if-v-else"><a href="#v-if-v-else-if-v-else" class="headerlink" title="v-if v-else-if v-else"></a>v-if v-else-if v-else</h2><p>一般写在computed中<br><img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number1.jpg" alt></p>
+<h2 id="补漏html知识"><a href="#补漏html知识" class="headerlink" title="补漏html知识"></a>补漏html知识</h2><p>label for=’user’用户账号  for与id对应<br>input type=’text’ id=’user’ 点击label内容是会提示你在id中输入</p>
+<p>v-show<br>与v-if语法形式基本相同，但是当v-if为false时元素不会存在于dom中，v-show为false时只是给元素增加一个行内样式：display: none<br>如果显示与隐藏切换频率高时使用v-show<br>v-for<br>如果需要获取索引需要改写为 (item,index) in array<br>如果遍历对象属性改写为 (value,key) in obj，如果只写一个默认是value</p>
+<h2 id="数组与响应式"><a href="#数组与响应式" class="headerlink" title="数组与响应式"></a>数组与响应式</h2><p>数组响应式方法<br>push pop shift（删除数组中第一个元素）unshift(‘value’)（数组开头添加元素）<br>splice（删除、插入、替换元素）（删除位置,删除数量）（插入位置,0,插入值）（替换位置,1,替换值）sort reverse<br>非响应式<br>array[index]=’change’（可以使用Vue.set(array,index,value)或者splice）</p>
+<h2 id="小案例图书购物车"><a href="#小案例图书购物车" class="headerlink" title="小案例图书购物车"></a>小案例图书购物车</h2><p><img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number2.jpg" alt> <img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number3.jpg" alt> <img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number4.jpg" alt> <img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number5.jpg" alt> <img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number6.jpg" alt></p>
+<h2 id="javascript高阶函数的使用"><a href="#javascript高阶函数的使用" class="headerlink" title="javascript高阶函数的使用"></a>javascript高阶函数的使用</h2><p>let array=[2,3,5,67];<br>let newarray=array.filter(function(n){ return n&lt;10});//得到小于10的元素<br>let newarray=array.map(function(n){ return n*2});//所有元素乘2</p>
+<h2 id="表单绑定v-model"><a href="#表单绑定v-model" class="headerlink" title="表单绑定v-model"></a>表单绑定v-model</h2><p>双向绑定，改变text中的内容，message也会改变<br>v-model相当于:value加上@input指令<br><img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number7.jpg" alt><br>结合checkbox，单选框对应bool值，多选框对应数组类型<br><img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number8.jpg" alt><br>修饰符<br>lazy v-model.lazy 取消实时绑定，失去焦点或回车时更新<br>number v-model默认是string v-model.number绑定为number<br>trim v-model.trim去除前置和后置空格</p>
+<h2 id="组件化"><a href="#组件化" class="headerlink" title="组件化"></a>组件化</h2><p>将复杂问题分解为小问题。将一个页面拆分为一个个小的功能块，每个块完成自己独立的功能，有利于页面的维护和管理，扩展性更强<br><img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number9.png" alt><br>组件的使用步骤<br><img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number10.png" alt><br>1、创建组件构造器<br>2、注册组件<br>3、使用组件<br>es6语法补充：`` 可以换行<br>Vue.extend()创建一个组件构造器。传入template代表自定义的模板，该模板就是用到组件的地方要显示的HTML代码<br>Vue.component()将组件构造器注册为一个钻进传递两个参数，一个是组件标签名一个是组件构造器<br>组件必须挂载在某个vue实例下否则不会生效<br><img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number11.jpg" alt></p>
+<h2 id="全局组件和局部组件"><a href="#全局组件和局部组件" class="headerlink" title="全局组件和局部组件"></a>全局组件和局部组件</h2><p>全局组件可以在多个vue实例下使用，局部组件挂载在某个vue中在指定vue实例中使用<br><img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number12.jpg" alt></p>
+<h2 id="父组件和子组件"><a href="#父组件和子组件" class="headerlink" title="父组件和子组件"></a>父组件和子组件</h2><p>cpnc2是父组件，cpnc1是子组件，cpnc1不能再vue实例中单独使用如果要使用必须也注册在vue实例中<br><img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number13.jpg" alt><br>注册全局组件语法糖 Vue.component(‘cpnc1’,{template: })<br>注册局部组件语法糖 components: {‘cpnc1’: {template: } }</p>
+<h2 id="组件模板抽离写法"><a href="#组件模板抽离写法" class="headerlink" title="组件模板抽离写法"></a>组件模板抽离写法</h2><p>第一种方式，也可以使用template标签，形式跟之前一样<br><img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number14.jpg" alt></p>
+<h2 id="组件数据存放问题"><a href="#组件数据存放问题" class="headerlink" title="组件数据存放问题"></a>组件数据存放问题</h2><p>组件不能直接访问vue实例中的数据，组件自身也有data属性用于存放数据，此data属性不是对象<br>类型而是一个函数，返回一个实例对象保存数据<br>data是一个函数，因此组件可以实现复用多个组件数据相互之间不会影响因为返回的是不同的数据对象<br><img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number15.jpg" alt> <img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number16.jpg" alt></p>
+<h2 id="父子组件的通信"><a href="#父子组件的通信" class="headerlink" title="父子组件的通信"></a>父子组件的通信</h2><p>子组件不能引用父组件或者vue实例的数据</p>
+<h2 id="通过props-properties-向子组件传递数据"><a href="#通过props-properties-向子组件传递数据" class="headerlink" title="通过props(properties)向子组件传递数据"></a>通过props(properties)向子组件传递数据</h2><p>1、字符串数组，数组中的字符串就是传递是的名称<br>2、对象，对象可以设置传递时的类型，也可以设置默认值<br>如果以对象传递可以指定类型 String Number Boolean Array Object Date Function Symbol<br>如果类型是数组或者对象默认值必须是一个函数 default(){return []|{}}<br><img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number17.jpg" alt> <img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number18.jpg" alt> <img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number19.jpg" alt><br>props的驼峰标识<br>cpn标签中不支持驼峰写法 例如cName无效需要改为c-name chuldMessage改为child-message</p>
+<h2 id="子组件通过自定义事件向父组件发送消息"><a href="#子组件通过自定义事件向父组件发送消息" class="headerlink" title="子组件通过自定义事件向父组件发送消息"></a>子组件通过自定义事件向父组件发送消息</h2><p>子组件需要向父组件传递数据是就要用到自定义事件<br>v-on不仅可以用于监听DOM事件也可以监听组件的自定义事件<br>子组件中通过$emit()来触发事件 父组件中通过v-on来监听子组件事件<br>流程：首先监听子组件的btn方法，当点击按钮时触发，在btn方法中向父组件传递事件itemclick，父组件监听此事件<br><img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number20.jpg" alt> <img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number21.jpg" alt> <img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number22.jpg" alt></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://skysea-gaoming.github.io/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/" data-id="ck6rptph90000j4ua7tgs2u8g" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/" rel="tag">vue</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-2/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">vue学习笔记3-2</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/">前端技术</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/" rel="tag">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/" rel="tag">vue</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/html/" style="font-size: 20px;">html</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/">vue学习笔记3-3</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-2/">vue学习笔记3-2</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-1/">vue学习笔记3-1</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/15/javascript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/">javascript学习笔记3-3</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/15/javascript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-2/">javascript学习笔记3-2</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 高明<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

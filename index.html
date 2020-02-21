@@ -70,6 +70,63 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-vue学习笔记3-3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/" class="article-date">
+  <time datetime="2020-02-18T09:56:49.000Z" itemprop="datePublished">2020-02-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/">前端技术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/">vue学习笔记3-3</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="vue学习系列3"><a href="#vue学习系列3" class="headerlink" title="vue学习系列3"></a>vue学习系列3</h2><h2 id="v-if-v-else-if-v-else"><a href="#v-if-v-else-if-v-else" class="headerlink" title="v-if v-else-if v-else"></a>v-if v-else-if v-else</h2><p>一般写在computed中<br><img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number1.jpg" alt></p>
+<h2 id="补漏html知识"><a href="#补漏html知识" class="headerlink" title="补漏html知识"></a>补漏html知识</h2><p>label for=’user’用户账号  for与id对应<br>input type=’text’ id=’user’ 点击label内容是会提示你在id中输入</p>
+<p>v-show<br>与v-if语法形式基本相同，但是当v-if为false时元素不会存在于dom中，v-show为false时只是给元素增加一个行内样式：display: none<br>如果显示与隐藏切换频率高时使用v-show<br>v-for<br>如果需要获取索引需要改写为 (item,index) in array<br>如果遍历对象属性改写为 (value,key) in obj，如果只写一个默认是value</p>
+<h2 id="数组与响应式"><a href="#数组与响应式" class="headerlink" title="数组与响应式"></a>数组与响应式</h2><p>数组响应式方法<br>push pop shift（删除数组中第一个元素）unshift(‘value’)（数组开头添加元素）<br>splice（删除、插入、替换元素）（删除位置,删除数量）（插入位置,0,插入值）（替换位置,1,替换值）sort reverse<br>非响应式<br>array[index]=’change’（可以使用Vue.set(array,index,value)或者splice）</p>
+<h2 id="小案例图书购物车"><a href="#小案例图书购物车" class="headerlink" title="小案例图书购物车"></a>小案例图书购物车</h2><p><img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number2.jpg" alt> <img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number3.jpg" alt> <img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number4.jpg" alt> <img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number5.jpg" alt> <img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number6.jpg" alt></p>
+<h2 id="javascript高阶函数的使用"><a href="#javascript高阶函数的使用" class="headerlink" title="javascript高阶函数的使用"></a>javascript高阶函数的使用</h2><p>let array=[2,3,5,67];<br>let newarray=array.filter(function(n){ return n&lt;10});//得到小于10的元素<br>let newarray=array.map(function(n){ return n*2});//所有元素乘2</p>
+<h2 id="表单绑定v-model"><a href="#表单绑定v-model" class="headerlink" title="表单绑定v-model"></a>表单绑定v-model</h2><p>双向绑定，改变text中的内容，message也会改变<br>v-model相当于:value加上@input指令<br><img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number7.jpg" alt><br>结合checkbox，单选框对应bool值，多选框对应数组类型<br><img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number8.jpg" alt><br>修饰符<br>lazy v-model.lazy 取消实时绑定，失去焦点或回车时更新<br>number v-model默认是string v-model.number绑定为number<br>trim v-model.trim去除前置和后置空格</p>
+<h2 id="组件化"><a href="#组件化" class="headerlink" title="组件化"></a>组件化</h2><p>将复杂问题分解为小问题。将一个页面拆分为一个个小的功能块，每个块完成自己独立的功能，有利于页面的维护和管理，扩展性更强<br><img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number9.png" alt><br>组件的使用步骤<br><img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number10.png" alt><br>1、创建组件构造器<br>2、注册组件<br>3、使用组件<br>es6语法补充：`` 可以换行<br>Vue.extend()创建一个组件构造器。传入template代表自定义的模板，该模板就是用到组件的地方要显示的HTML代码<br>Vue.component()将组件构造器注册为一个钻进传递两个参数，一个是组件标签名一个是组件构造器<br>组件必须挂载在某个vue实例下否则不会生效<br><img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number11.jpg" alt></p>
+<h2 id="全局组件和局部组件"><a href="#全局组件和局部组件" class="headerlink" title="全局组件和局部组件"></a>全局组件和局部组件</h2><p>全局组件可以在多个vue实例下使用，局部组件挂载在某个vue中在指定vue实例中使用<br><img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number12.jpg" alt></p>
+<h2 id="父组件和子组件"><a href="#父组件和子组件" class="headerlink" title="父组件和子组件"></a>父组件和子组件</h2><p>cpnc2是父组件，cpnc1是子组件，cpnc1不能再vue实例中单独使用如果要使用必须也注册在vue实例中<br><img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number13.jpg" alt><br>注册全局组件语法糖 Vue.component(‘cpnc1’,{template: })<br>注册局部组件语法糖 components: {‘cpnc1’: {template: } }</p>
+<h2 id="组件模板抽离写法"><a href="#组件模板抽离写法" class="headerlink" title="组件模板抽离写法"></a>组件模板抽离写法</h2><p>第一种方式，也可以使用template标签，形式跟之前一样<br><img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number14.jpg" alt></p>
+<h2 id="组件数据存放问题"><a href="#组件数据存放问题" class="headerlink" title="组件数据存放问题"></a>组件数据存放问题</h2><p>组件不能直接访问vue实例中的数据，组件自身也有data属性用于存放数据，此data属性不是对象<br>类型而是一个函数，返回一个实例对象保存数据<br>data是一个函数，因此组件可以实现复用多个组件数据相互之间不会影响因为返回的是不同的数据对象<br><img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number15.jpg" alt> <img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number16.jpg" alt></p>
+<h2 id="父子组件的通信"><a href="#父子组件的通信" class="headerlink" title="父子组件的通信"></a>父子组件的通信</h2><p>子组件不能引用父组件或者vue实例的数据</p>
+<h2 id="通过props-properties-向子组件传递数据"><a href="#通过props-properties-向子组件传递数据" class="headerlink" title="通过props(properties)向子组件传递数据"></a>通过props(properties)向子组件传递数据</h2><p>1、字符串数组，数组中的字符串就是传递是的名称<br>2、对象，对象可以设置传递时的类型，也可以设置默认值<br>如果以对象传递可以指定类型 String Number Boolean Array Object Date Function Symbol<br>如果类型是数组或者对象默认值必须是一个函数 default(){return []|{}}<br><img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number17.jpg" alt> <img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number18.jpg" alt> <img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number19.jpg" alt><br>props的驼峰标识<br>cpn标签中不支持驼峰写法 例如cName无效需要改为c-name chuldMessage改为child-message</p>
+<h2 id="子组件通过自定义事件向父组件发送消息"><a href="#子组件通过自定义事件向父组件发送消息" class="headerlink" title="子组件通过自定义事件向父组件发送消息"></a>子组件通过自定义事件向父组件发送消息</h2><p>子组件需要向父组件传递数据是就要用到自定义事件<br>v-on不仅可以用于监听DOM事件也可以监听组件的自定义事件<br>子组件中通过$emit()来触发事件 父组件中通过v-on来监听子组件事件<br>流程：首先监听子组件的btn方法，当点击按钮时触发，在btn方法中向父组件传递事件itemclick，父组件监听此事件<br><img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number20.jpg" alt> <img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number21.jpg" alt> <img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number22.jpg" alt></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://skysea-gaoming.github.io/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/" data-id="ck6rptph90000j4ua7tgs2u8g" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/" rel="tag">vue</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-vue学习笔记3-2" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-2/" class="article-date">
@@ -1838,266 +1895,12 @@ style type=&quot;text/css&quot;
 
 
   
-    <article id="post-html学习笔记1-1" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/02/15/html%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01-1/" class="article-date">
-  <time datetime="2020-02-15T08:30:21.000Z" itemprop="datePublished">2020-02-15</time>
-</a>
+
+
+  <nav id="page-nav">
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/">前端技术</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/15/html%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01-1/">html学习笔记1-1</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="html技术博客系列1"><a href="#html技术博客系列1" class="headerlink" title="html技术博客系列1"></a>html技术博客系列1</h2><pre><code>&lt;!-- 这个可以省略，是一个声明--&gt;
-&lt;!DOCTYPE html&gt;
-&lt;!-- 这是最外层html必须包裹在html标签里面，所有标签不区分大小写--&gt;
-&lt;html&gt;
-    &lt;!-- 设置参数，不能显示只有title可以--&gt;
-    &lt;head&gt;
-        &lt;!--标题--&gt;
-        &lt;title&gt;first html&lt;/title&gt;
-        &lt;!-- 设置编码--&gt;
-        &lt;meta charset=&quot;utf-8&quot;&gt;
-        &lt;!-- 关键词 是否能被搜索引擎搜到--&gt;
-        &lt;meta name=&quot;keywords&quot; content=&quot;学习html&quot;&gt;
-        &lt;!-- 搜到本网页时展示的简介内容--&gt;
-        &lt;meta name=&quot;description&quot; content=&quot;这是一个学习html的网页&quot;&gt;
-        &lt;!--css--&gt;
-        &lt;style type=&quot;text/css&quot;&gt;
-            h1{
-                color:red;
-            }
-        &lt;/style&gt;
-    &lt;/head&gt;
-    &lt;!-- 能显示--&gt;
-    &lt;body&gt;
-           &lt;!--标题标签 越来越小--&gt;
-           &lt;h1&gt;一级标题&lt;/h1&gt;
-           &lt;h1&gt;一级标题&lt;/h1&gt;
-           &lt;h2&gt;二级标题&lt;/h2&gt;
-           &lt;h3&gt;三级标题&lt;/h2&gt;
-           &lt;h4&gt;四级标题&lt;/h2&gt;
-           &lt;h5&gt;五级标题&lt;/h5&gt;
-           &lt;!-- 回车和空格没有用 &lt;br/&gt; 强行回车--&gt;
-           fsdfsadf&lt;br/&gt;  fsdfsd
-           &lt;!--段落标签末尾自带回车--&gt;
-           &lt;p&gt;fsdfsd fsdfsd&lt;/p&gt;
-           fsdfsdf
-           &lt;!-- &lt;hr/&gt;水平线--&gt;
-           &lt;hr/&gt;水平线
-           fdsfsd
-           &lt;!--样式标签，可以嵌套--&gt;
-           &lt;strong&gt;加粗&lt;/strong&gt;
-           &lt;b&gt;加粗&lt;/b&gt;
-           &lt;em&gt;hello倾斜&lt;/em&gt;
-           &lt;strong&gt;&lt;em&gt;加粗倾斜&lt;/em&gt;&lt;/strong&gt;
-           &lt;!--特殊符号--&gt;
-           &lt;!--&amp;lt代表&lt; &amp;gt代表&gt; --&gt;
-           你好&amp;lt&amp;gt&lt;br&gt;
-           &lt;!--&amp;nbsp;代表空格 --&gt;
-           你好&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;啊
-           &lt;!--&amp;quot;代表&quot; --&gt;
-           &amp;quot;你好&amp;quot;
-           &lt;!-- &amp;copy;代表版权--&gt;
-           &lt;br&gt;&amp;copy;2020
-           &lt;!--图片一般用相对路径 --&gt;
-           &lt;img  src=&quot;a/1.jpg&quot; width=&quot;100&quot; height=&quot;100&quot; title=&quot;天海祐希（鼠标悬浮文字）&quot;
-           alt=&quot;图片不存在时的替换路径&quot;&gt;
-           &lt;!-- 超链接--&gt;
-           &lt;a href=&quot;https://www.baidu.com&quot;&gt;点我进百度&lt;/a&gt;
-           &lt;!-- 锚链接跳到指定位置#后写name位置--&gt;
-           &lt;a href=&quot;html-test2.html#2&quot;&gt;进入2&lt;/a&gt;
-           &lt;!--功能性链接 --&gt;
-           &lt;a href=&quot;mailto:1829731045@qq.com&quot;&gt;发邮件&lt;/a&gt;
-           &lt;!-- 列表无序有序--&gt;
-           &lt;ul type=&quot;square&quot;&gt;
-               &lt;li&gt;apple&lt;/li&gt;
-               &lt;li&gt;banana&lt;/li&gt;
-               &lt;li&gt;orange&lt;/li&gt;
-           &lt;/ul&gt;
-           &lt;ol type=&quot;a&quot;&gt;
-               &lt;li&gt;apple&lt;/li&gt;
-               &lt;li&gt;banana&lt;/li&gt;
-               &lt;li&gt;orange&lt;/li&gt;
-           &lt;/ol&gt;
-           &lt;ul&gt;
-               &lt;li &gt;我的电脑&lt;/li&gt;
-               &lt;ul&gt;
-                   &lt;li type=&quot;circle&quot;&gt;本地磁盘c&lt;/li&gt;
-                   &lt;ul type=&quot;square&quot;&gt;
-                       &lt;li&gt;我的文档&lt;/li&gt;
-                       &lt;li&gt;我的收藏&lt;/li&gt;
-                   &lt;/ul&gt;
-               &lt;/ul&gt;
-               &lt;ul&gt;
-                   &lt;li type=&quot;circle&quot;&gt;本地磁盘d&lt;/li&gt;
-                   &lt;ul type=&quot;square&quot;&gt;
-                       &lt;li&gt;我的文档&lt;/li&gt;
-                       &lt;li&gt;我的收藏&lt;/li&gt;
-                   &lt;/ul&gt;
-               &lt;/ul&gt;
-           &lt;/ul&gt;
-           &lt;!--用火狐浏览器发现顺序不对不知道哪里出了问题 --&gt;
-           &lt;ol&gt;
-               &lt;li&gt;css&lt;/li&gt;
-                   &lt;ol&gt;
-                   &lt;li&gt;aaa&lt;/li&gt;
-                   &lt;li&gt;bbb&lt;/li&gt;
-                   &lt;li&gt;ccc&lt;/li&gt;
-                   &lt;/ol&gt;
-               &lt;li&gt;javasript&lt;/li&gt;
-                   &lt;ol&gt;
-                   &lt;li&gt;aaa&lt;/li&gt;
-                   &lt;li&gt;bbb&lt;/li&gt;
-                   &lt;li&gt;ccc&lt;/li&gt;
-                   &lt;/ol&gt;
-           &lt;/ol&gt;
-           &lt;!--定义列表 --&gt;
-           &lt;dl&gt;
-               &lt;dt&gt;标题&lt;/dt&gt;
-               &lt;dd&gt;正文内容&lt;/dd&gt;
-           &lt;/dl&gt;
-           &lt;!--表格行tr和列td--&gt;
-           &lt;!-- 水平移动 left right center--&gt;
-           &lt;!-- 垂直移动 top bottom middle--&gt;
-           &lt;table border=&quot;1&quot; &gt;
-               &lt;tr align=&quot;right&quot;&gt;
-                   &lt;td rowspan=&quot;2&quot;&gt;1-1&lt;br&gt;fdv&lt;/td&gt;
-                   &lt;td valign=&quot;middle&quot; colspan=&quot;2&quot;&gt;1-2&lt;/td&gt;
-               &lt;/tr&gt;
-               &lt;tr&gt;
-                   &lt;td&gt;2-2fdsfa&lt;/td&gt;
-                   &lt;td&gt;2-3&lt;/td&gt;
-               &lt;/tr&gt;
-               &lt;tr&gt;
-                   &lt;td&gt;3-1&lt;/td&gt;
-                   &lt;td valign=&quot;top&quot;&gt;3-2&lt;/td&gt;
-                   &lt;td&gt;3-3&lt;/td&gt;
-               &lt;/tr&gt;
-               &lt;tr&gt;
-                   &lt;td&gt;4-1&lt;/td&gt;
-                   &lt;td&gt;4-2&lt;/td&gt;
-                   &lt;td&gt;4-3&lt;/td&gt;
-               &lt;/tr&gt;
-           &lt;/table&gt;
-           &lt;!--表单--&gt;
-           &lt;form action=&quot;html-test2.html&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;
-               用户名&lt;input type=&quot;text&quot; name=&quot;username&quot; value=&quot;高明&quot;
-               size=&quot;3&quot; maxlength=&quot;10&quot;&gt;
-               &lt;br&gt;
-               密码&lt;input type=&quot;password&quot; name=&quot;userpassword&quot;&gt;
-               &lt;br&gt;
-               &lt;input type=&quot;submit&quot; value=&quot;注册&quot;&gt;
-               &lt;input type=&quot;reset&quot; name=&quot;重置&quot;&gt;&lt;br&gt;
-            兴趣爱好:&lt;br&gt;
-            足球&lt;input type=&quot;checkbox&quot; name=&quot;hobbies&quot;&gt;
-            篮球&lt;input type=&quot;checkbox&quot; name=&quot;hobbies&quot;&gt;
-            乒乓球&lt;input type=&quot;checkbox&quot; name=&quot;hobbies&quot; checked=&quot;checked&quot;&gt;
-            &lt;br&gt;
-            旅游:&lt;br&gt;
-            北京&lt;input type=&quot;checkbox&quot; name=&quot;cities&quot;&gt;
-            上海&lt;input type=&quot;checkbox&quot; name=&quot;cities&quot; checked=&quot;checked&quot;&gt;
-            广州&lt;input type=&quot;checkbox&quot; name=&quot;cities&quot;&gt;
-            &lt;br&gt;
-            性别:&lt;br&gt;
-            男&lt;input type=&quot;radio&quot; name=&quot;sex&quot;&gt;
-            女&lt;input type=&quot;radio&quot; name=&quot;sex&quot;&gt;
-            &lt;br&gt;
-            &lt;select&gt;
-                &lt;option&gt;北京&lt;/option&gt;
-                &lt;option selected=&quot;selected&quot;&gt;上海&lt;/option&gt;
-                &lt;option&gt;深圳&lt;/option&gt;
-            &lt;/select&gt;
-            &lt;input type=&quot;button&quot; value=&quot;普通按钮&quot;  disabled=&quot;disabled&quot;&gt;
-            &lt;br&gt;
-            个人说明:&lt;br&gt;
-            &lt;textarea cols=&quot;30&quot; rows=&quot;5&quot;&gt;
-                默认值  fsdfdsfdsf
-            &lt;/textarea&gt;
-            &lt;input type=&quot;file&quot; name=&quot;file1&quot; &gt;
-            &lt;input type=&quot;hidden&quot; value=&quot;1&quot;&gt;
-            认证名:&lt;input type=&quot;text&quot; value=&quot;高明&quot;  name=&quot;realname&quot; readonly=&quot;readonly&quot;&gt;
-            &lt;!--语义化表单--&gt;
-            &lt;fieldset&gt;
-                &lt;legend&gt;用户信息&lt;/legend&gt;
-                输入&lt;input type=&quot;text&quot; name=&quot;name&quot;&gt;
-            &lt;/fieldset&gt;
-            &lt;!--表单元素的标注--&gt;
-            &lt;label for=&quot;sz&quot;&gt;深圳&lt;/label&gt;
-            &lt;input type=&quot;checkbox&quot; id=&quot;sz&quot;&gt;
-           &lt;/form&gt;
-           &lt;!--HTML5新特性--&gt;
-           &lt;form&gt;
-               &lt;!-- 以下video全都播放--&gt;
-               &lt;video src=&quot;&quot; controls autoplay&gt;&lt;/video&gt;
-               &lt;video src=&quot;&quot; controls&gt;&lt;/video&gt;
-               &lt;!-- 以下video只播放一个，先查类型--&gt;
-               &lt;video controls&gt;
-                   &lt;source src=&quot;&quot; type=&quot;video/webm&quot;&gt;
-                   &lt;source src=&quot;&quot; type=&quot;&quot;&gt;
-               &lt;/video&gt;
-               &lt;audio src=&quot;&quot; controls&gt;&lt;/audio&gt;
-               &lt;audio controls&gt;
-                   &lt;source src=&quot;&quot; type=&quot;&quot;&gt;
-                   &lt;source src=&quot;&quot; type=&quot;&quot;&gt;
-               &lt;/audio&gt;
-           &lt;/form&gt;
-           &lt;!--布局标签--&gt;
-           &lt;header&gt;表示网页的头部&lt;/header&gt;
-           &lt;section&gt;网页的一块区域&lt;/section&gt;
-           &lt;article&gt;网页的文章&lt;/article&gt;
-           &lt;aside&gt;侧边栏&lt;/aside&gt;
-           &lt;nav&gt;网页的导航&lt;/nav&gt;
-           &lt;footer&gt;网页的尾部&lt;/footer&gt;
-           &lt;!-- 校验--&gt;
-           &lt;form&gt;
-               网址&lt;input type=&quot;url&quot; name=&quot;&quot;&gt;
-               数字&lt;input type=&quot;number&quot; name=&quot;&quot; min=&quot;&quot; max=&quot;&quot; step=&quot;&quot;&gt;
-            数字滑块&lt;input type=&quot;range&quot; name=&quot;&quot; min=&quot;&quot; max=&quot;&quot;&gt;
-            搜索&lt;input type=&quot;search&quot; name=&quot;&quot; placeholder=&quot;请输入商品名&quot;&gt;
-            &lt;input type=&quot;text&quot; name=&quot;&quot; required&gt;
-           &lt;/form&gt;
-           &lt;!--内联框架--&gt;
-           &lt;iframe src=&quot;https://www.baidu.com&quot; name=&quot;可以为超链接中的target值，表示iframe中的值为超链接的值&quot;&gt;
-           &lt;/iframe&gt;&lt;br&gt;
-           &lt;iframe src=&quot;html-test2.html&quot; width=&quot;&quot; height=&quot;&quot;&gt;&lt;/iframe&gt;
-           &lt;a href=&quot;&quot; target=&quot;_blank&quot;&gt;开一个新窗口，默认是自身_self&lt;/a&gt;
-    &lt;/body&gt;
-
-&lt;/html&gt;</code></pre><hr>
-<h2 id="layout-false"><a href="#layout-false" class="headerlink" title="layout: false"></a>layout: false</h2>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://skysea-gaoming.github.io/2020/02/15/html%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01-1/" data-id="ck6ncer6f0000s0uade9t80t0" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/" rel="tag">html</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+  </nav>
 
 </section>
         
@@ -2127,7 +1930,7 @@ style type=&quot;text/css&quot;
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/html/" style="font-size: 20px;">html</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a>
+      <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/html/" style="font-size: 20px;">html</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a>
     </div>
   </div>
 
@@ -2149,6 +1952,10 @@ style type=&quot;text/css&quot;
       <ul>
         
           <li>
+            <a href="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/">vue学习笔记3-3</a>
+          </li>
+        
+          <li>
             <a href="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-2/">vue学习笔记3-2</a>
           </li>
         
@@ -2162,10 +1969,6 @@ style type=&quot;text/css&quot;
         
           <li>
             <a href="/2020/02/15/javascript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-2/">javascript学习笔记3-2</a>
-          </li>
-        
-          <li>
-            <a href="/2020/02/15/javascript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">javascript学习笔记3-1</a>
           </li>
         
       </ul>
