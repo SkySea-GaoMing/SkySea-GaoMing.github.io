@@ -70,9 +70,65 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-vue学习笔记3-3" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-vue学习笔记4-4" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/" class="article-date">
+    <a href="/2020/02/21/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-4/" class="article-date">
+  <time datetime="2020-02-21T03:34:19.000Z" itemprop="datePublished">2020-02-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/">前端技术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/21/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-4/">vue学习笔记4-4</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="vue学习系列4"><a href="#vue学习系列4" class="headerlink" title="vue学习系列4"></a>vue学习系列4</h2><h2 id="组件化开发"><a href="#组件化开发" class="headerlink" title="组件化开发"></a>组件化开发</h2><h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>父组件向子组件传递数据时，如果通过v-model双向绑定props改变数据时会警告，此时应该在子组件定义data数据，将此数据传给父组件不会警告<br>方法的参数默认都是字符串，如果传number需要转换</p>
+<h2 id="父组件访问子组件-children-refs"><a href="#父组件访问子组件-children-refs" class="headerlink" title="父组件访问子组件$children|$refs"></a>父组件访问子组件$children|$refs</h2><p>$children是一个数组只能通过索引操作数组中的组件对象一般不使用<br><img src="/2020/02/21/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-4/number1.jpg" alt> <img src="/2020/02/21/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-4/number2.jpg" alt> <img src="/2020/02/21/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-4/number3.jpg" alt><br>$refs默认是一个对象 在要使用的组件中加入ref指定名字 就可以通过$refs.名字获取组件<br><img src="/2020/02/21/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-4/number4.jpg" alt> <img src="/2020/02/21/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-4/number5.jpg" alt> <img src="/2020/02/21/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-4/number6.jpg" alt></p>
+<h2 id="子组件访问父组件（一般不使用）"><a href="#子组件访问父组件（一般不使用）" class="headerlink" title="子组件访问父组件（一般不使用）"></a>子组件访问父组件（一般不使用）</h2><p>$parent，与父组件耦合度太高不适合复用<br>$root 根组件</p>
+<h2 id="slot"><a href="#slot" class="headerlink" title="slot"></a>slot</h2><p>译为插槽,目的使原有设备具备更多扩展性<br>组件的插槽 使封装的组件更加具有扩展性，让使用者决定组件的内部的一些内容展示什么<br>抽取共性到组件中，预留不同的插槽<br>slot中可以有默认值，如果不向cpn中输入内容就用默认值,如果多个值同时放入一个slot中都是替换值<br><img src="/2020/02/21/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-4/number7.jpg" alt></p>
+<h2 id="具名插槽"><a href="#具名插槽" class="headerlink" title="具名插槽"></a>具名插槽</h2><p>slot标签中加入name属性，在cpn中如果需要加入内容就需要slot=name来绑定对应的slot<br><img src="/2020/02/21/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-4/number8.jpg" alt></p>
+<h2 id="编译作用域"><a href="#编译作用域" class="headerlink" title="编译作用域"></a>编译作用域</h2><p>父组件模板的所有东西都会在父级作用域中编译，子组件模板的所有东西都会在子级作域中编译<br>也就是子组件中的data只能在template中使用，父组件中的data会在父级范围使用</p>
+<h2 id="作用域插槽"><a href="#作用域插槽" class="headerlink" title="作用域插槽"></a>作用域插槽</h2><p>父组件替换插槽的标签但是内容由子组件提供<br>使用一个名字data获取array数据，使用slot-scope=name获取插槽对象，然后就可以在父级中使用子级数据<br><img src="/2020/02/21/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-4/number9.jpg" alt></p>
+<h2 id="模块化开发"><a href="#模块化开发" class="headerlink" title="模块化开发"></a>模块化开发</h2><p>CommonJS规范：导入 导出（了解）<br>es6规范：export/import 每一个模块都有自己的空间不能使用别的模块的数据<br>export基本使用，导出之后别的模块可以使用<br>import 可以使用别的模块的数据<br>在b.js文件中导出 m.js文件中导入<br><img src="/2020/02/21/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-4/number10.jpg" alt><br><img src="/2020/02/21/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-4/number11.jpg" alt><br><img src="/2020/02/21/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-4/number12.jpg" alt><br><img src="/2020/02/21/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-4/number13.jpg" alt><br><img src="/2020/02/21/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-4/number14.jpg" alt></p>
+<h2 id="webpack"><a href="#webpack" class="headerlink" title="webpack"></a>webpack</h2><p>webpack是一个现代的javascript应用的静态模块打包工具</p>
+<h2 id="前端模块化"><a href="#前端模块化" class="headerlink" title="前端模块化"></a>前端模块化</h2><p>例如commonJS,es6<br>webpack依赖node环境，node环境依赖各种包，npm工具管理各种包<br>将各种资源模块进行打包合成一个或多个包（bundle）<br>webpack打包成一个文件夹部署到服务器</p>
+<h2 id="安装webpack"><a href="#安装webpack" class="headerlink" title="安装webpack"></a>安装webpack</h2><p>在terminal中输入以下指令，webpack改为3.6.0版本<br><img src="/2020/02/21/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-4/number17.jpg" alt> <img src="/2020/02/21/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-4/number15.jpg" alt><br>src保存源码，然后打包放入dist(distribution)文件夹，webpack会自动处理模块之间的依赖生成最终的js文件<br>项目的默认入口main.js，打包后的文件可以跟之前的组件一样引用<br>打包指令 webpack 原js文件 打包成的js文件<br><img src="/2020/02/21/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-4/number16.jpg" alt></p>
+<h2 id="注意-1"><a href="#注意-1" class="headerlink" title="注意"></a>注意</h2><p>文件路径一定要写对有时候有一个.有时候有两个.</p>
+<h2 id="webpack配置"><a href="#webpack配置" class="headerlink" title="webpack配置"></a>webpack配置</h2><p>创建webpack.config.js文件，在文件中可以指定入口和出口，打包的时候就会按设置的出入口打包，直接写webpack指令即可<br><img src="/2020/02/21/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-4/number18.jpg" alt><br>如果没有package.json文件创建package.json文件 执行 npm init指令 直接回车创建，name就叫meetwebpack<br>webpack与npm run build映射，在package.json文件中scripts中<br><img src="/2020/02/21/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-4/number19.jpg" alt> <img src="/2020/02/21/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-4/number20.jpg" alt></p>
+<h2 id="loader"><a href="#loader" class="headerlink" title="loader"></a>loader</h2><p>处理css、图片等文件，将css代码打包到dist文件中<br>安装loader输入指令 npm install –save-dev css-loader<br>npm install style-loader –save-dev<br>创建css文件，在b.js文件中导入css<br><img src="/2020/02/21/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-4/number21.jpg" alt><br><img src="/2020/02/21/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-4/number22.jpg" alt><br>在webpack.config.js文件中配置<br><img src="/2020/02/21/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-4/number23.jpg" alt> <img src="/2020/02/21/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-4/number24.jpg" alt></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://skysea-gaoming.github.io/2020/02/21/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-4/" data-id="ck6vnrpxd000bdwuafy4i1o6i" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/" rel="tag">vue</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-vue学习笔记4-3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-3/" class="article-date">
   <time datetime="2020-02-18T09:56:49.000Z" itemprop="datePublished">2020-02-18</time>
 </a>
     
@@ -88,7 +144,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/">vue学习笔记3-3</a>
+      <a class="article-title" href="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-3/">vue学习笔记4-3</a>
     </h1>
   
 
@@ -96,26 +152,26 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="vue学习系列3"><a href="#vue学习系列3" class="headerlink" title="vue学习系列3"></a>vue学习系列3</h2><h2 id="v-if-v-else-if-v-else"><a href="#v-if-v-else-if-v-else" class="headerlink" title="v-if v-else-if v-else"></a>v-if v-else-if v-else</h2><p>一般写在computed中<br><img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number1.jpg" alt></p>
+        <h2 id="vue学习系列3"><a href="#vue学习系列3" class="headerlink" title="vue学习系列3"></a>vue学习系列3</h2><h2 id="v-if-v-else-if-v-else"><a href="#v-if-v-else-if-v-else" class="headerlink" title="v-if v-else-if v-else"></a>v-if v-else-if v-else</h2><p>一般写在computed中<br><img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-3/number1.jpg" alt></p>
 <h2 id="补漏html知识"><a href="#补漏html知识" class="headerlink" title="补漏html知识"></a>补漏html知识</h2><p>label for=’user’用户账号  for与id对应<br>input type=’text’ id=’user’ 点击label内容是会提示你在id中输入</p>
 <p>v-show<br>与v-if语法形式基本相同，但是当v-if为false时元素不会存在于dom中，v-show为false时只是给元素增加一个行内样式：display: none<br>如果显示与隐藏切换频率高时使用v-show<br>v-for<br>如果需要获取索引需要改写为 (item,index) in array<br>如果遍历对象属性改写为 (value,key) in obj，如果只写一个默认是value</p>
 <h2 id="数组与响应式"><a href="#数组与响应式" class="headerlink" title="数组与响应式"></a>数组与响应式</h2><p>数组响应式方法<br>push pop shift（删除数组中第一个元素）unshift(‘value’)（数组开头添加元素）<br>splice（删除、插入、替换元素）（删除位置,删除数量）（插入位置,0,插入值）（替换位置,1,替换值）sort reverse<br>非响应式<br>array[index]=’change’（可以使用Vue.set(array,index,value)或者splice）</p>
-<h2 id="小案例图书购物车"><a href="#小案例图书购物车" class="headerlink" title="小案例图书购物车"></a>小案例图书购物车</h2><p><img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number2.jpg" alt> <img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number3.jpg" alt> <img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number4.jpg" alt> <img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number5.jpg" alt> <img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number6.jpg" alt></p>
+<h2 id="小案例图书购物车"><a href="#小案例图书购物车" class="headerlink" title="小案例图书购物车"></a>小案例图书购物车</h2><p><img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-3/number2.jpg" alt> <img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-3/number3.jpg" alt> <img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-3/number4.jpg" alt> <img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-3/number5.jpg" alt> <img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-3/number6.jpg" alt></p>
 <h2 id="javascript高阶函数的使用"><a href="#javascript高阶函数的使用" class="headerlink" title="javascript高阶函数的使用"></a>javascript高阶函数的使用</h2><p>let array=[2,3,5,67];<br>let newarray=array.filter(function(n){ return n&lt;10});//得到小于10的元素<br>let newarray=array.map(function(n){ return n*2});//所有元素乘2</p>
-<h2 id="表单绑定v-model"><a href="#表单绑定v-model" class="headerlink" title="表单绑定v-model"></a>表单绑定v-model</h2><p>双向绑定，改变text中的内容，message也会改变<br>v-model相当于:value加上@input指令<br><img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number7.jpg" alt><br>结合checkbox，单选框对应bool值，多选框对应数组类型<br><img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number8.jpg" alt><br>修饰符<br>lazy v-model.lazy 取消实时绑定，失去焦点或回车时更新<br>number v-model默认是string v-model.number绑定为number<br>trim v-model.trim去除前置和后置空格</p>
-<h2 id="组件化"><a href="#组件化" class="headerlink" title="组件化"></a>组件化</h2><p>将复杂问题分解为小问题。将一个页面拆分为一个个小的功能块，每个块完成自己独立的功能，有利于页面的维护和管理，扩展性更强<br><img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number9.png" alt><br>组件的使用步骤<br><img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number10.png" alt><br>1、创建组件构造器<br>2、注册组件<br>3、使用组件<br>es6语法补充：`` 可以换行<br>Vue.extend()创建一个组件构造器。传入template代表自定义的模板，该模板就是用到组件的地方要显示的HTML代码<br>Vue.component()将组件构造器注册为一个钻进传递两个参数，一个是组件标签名一个是组件构造器<br>组件必须挂载在某个vue实例下否则不会生效<br><img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number11.jpg" alt></p>
-<h2 id="全局组件和局部组件"><a href="#全局组件和局部组件" class="headerlink" title="全局组件和局部组件"></a>全局组件和局部组件</h2><p>全局组件可以在多个vue实例下使用，局部组件挂载在某个vue中在指定vue实例中使用<br><img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number12.jpg" alt></p>
-<h2 id="父组件和子组件"><a href="#父组件和子组件" class="headerlink" title="父组件和子组件"></a>父组件和子组件</h2><p>cpnc2是父组件，cpnc1是子组件，cpnc1不能再vue实例中单独使用如果要使用必须也注册在vue实例中<br><img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number13.jpg" alt><br>注册全局组件语法糖 Vue.component(‘cpnc1’,{template: })<br>注册局部组件语法糖 components: {‘cpnc1’: {template: } }</p>
-<h2 id="组件模板抽离写法"><a href="#组件模板抽离写法" class="headerlink" title="组件模板抽离写法"></a>组件模板抽离写法</h2><p>第一种方式，也可以使用template标签，形式跟之前一样<br><img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number14.jpg" alt></p>
-<h2 id="组件数据存放问题"><a href="#组件数据存放问题" class="headerlink" title="组件数据存放问题"></a>组件数据存放问题</h2><p>组件不能直接访问vue实例中的数据，组件自身也有data属性用于存放数据，此data属性不是对象<br>类型而是一个函数，返回一个实例对象保存数据<br>data是一个函数，因此组件可以实现复用多个组件数据相互之间不会影响因为返回的是不同的数据对象<br><img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number15.jpg" alt> <img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number16.jpg" alt></p>
+<h2 id="表单绑定v-model"><a href="#表单绑定v-model" class="headerlink" title="表单绑定v-model"></a>表单绑定v-model</h2><p>双向绑定，改变text中的内容，message也会改变<br>v-model相当于:value加上@input指令<br><img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-3/number7.jpg" alt><br>结合checkbox，单选框对应bool值，多选框对应数组类型<br><img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-3/number8.jpg" alt><br>修饰符<br>lazy v-model.lazy 取消实时绑定，失去焦点或回车时更新<br>number v-model默认是string v-model.number绑定为number<br>trim v-model.trim去除前置和后置空格</p>
+<h2 id="组件化"><a href="#组件化" class="headerlink" title="组件化"></a>组件化</h2><p>将复杂问题分解为小问题。将一个页面拆分为一个个小的功能块，每个块完成自己独立的功能，有利于页面的维护和管理，扩展性更强<br><img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-3/number9.png" alt><br>组件的使用步骤<br><img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-3/number10.png" alt><br>1、创建组件构造器<br>2、注册组件<br>3、使用组件<br>es6语法补充：`` 可以换行<br>Vue.extend()创建一个组件构造器。传入template代表自定义的模板，该模板就是用到组件的地方要显示的HTML代码<br>Vue.component()将组件构造器注册为一个钻进传递两个参数，一个是组件标签名一个是组件构造器<br>组件必须挂载在某个vue实例下否则不会生效<br><img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-3/number11.jpg" alt></p>
+<h2 id="全局组件和局部组件"><a href="#全局组件和局部组件" class="headerlink" title="全局组件和局部组件"></a>全局组件和局部组件</h2><p>全局组件可以在多个vue实例下使用，局部组件挂载在某个vue中在指定vue实例中使用<br><img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-3/number12.jpg" alt></p>
+<h2 id="父组件和子组件"><a href="#父组件和子组件" class="headerlink" title="父组件和子组件"></a>父组件和子组件</h2><p>cpnc2是父组件，cpnc1是子组件，cpnc1不能再vue实例中单独使用如果要使用必须也注册在vue实例中<br><img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-3/number13.jpg" alt><br>注册全局组件语法糖 Vue.component(‘cpnc1’,{template: })<br>注册局部组件语法糖 components: {‘cpnc1’: {template: } }</p>
+<h2 id="组件模板抽离写法"><a href="#组件模板抽离写法" class="headerlink" title="组件模板抽离写法"></a>组件模板抽离写法</h2><p>第一种方式，也可以使用template标签，形式跟之前一样<br><img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-3/number14.jpg" alt></p>
+<h2 id="组件数据存放问题"><a href="#组件数据存放问题" class="headerlink" title="组件数据存放问题"></a>组件数据存放问题</h2><p>组件不能直接访问vue实例中的数据，组件自身也有data属性用于存放数据，此data属性不是对象<br>类型而是一个函数，返回一个实例对象保存数据<br>data是一个函数，因此组件可以实现复用多个组件数据相互之间不会影响因为返回的是不同的数据对象<br><img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-3/number15.jpg" alt> <img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-3/number16.jpg" alt></p>
 <h2 id="父子组件的通信"><a href="#父子组件的通信" class="headerlink" title="父子组件的通信"></a>父子组件的通信</h2><p>子组件不能引用父组件或者vue实例的数据</p>
-<h2 id="通过props-properties-向子组件传递数据"><a href="#通过props-properties-向子组件传递数据" class="headerlink" title="通过props(properties)向子组件传递数据"></a>通过props(properties)向子组件传递数据</h2><p>1、字符串数组，数组中的字符串就是传递是的名称<br>2、对象，对象可以设置传递时的类型，也可以设置默认值<br>如果以对象传递可以指定类型 String Number Boolean Array Object Date Function Symbol<br>如果类型是数组或者对象默认值必须是一个函数 default(){return []|{}}<br><img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number17.jpg" alt> <img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number18.jpg" alt> <img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number19.jpg" alt><br>props的驼峰标识<br>cpn标签中不支持驼峰写法 例如cName无效需要改为c-name chuldMessage改为child-message</p>
-<h2 id="子组件通过自定义事件向父组件发送消息"><a href="#子组件通过自定义事件向父组件发送消息" class="headerlink" title="子组件通过自定义事件向父组件发送消息"></a>子组件通过自定义事件向父组件发送消息</h2><p>子组件需要向父组件传递数据是就要用到自定义事件<br>v-on不仅可以用于监听DOM事件也可以监听组件的自定义事件<br>子组件中通过$emit()来触发事件 父组件中通过v-on来监听子组件事件<br>流程：首先监听子组件的btn方法，当点击按钮时触发，在btn方法中向父组件传递事件itemclick，父组件监听此事件<br><img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number20.jpg" alt> <img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number21.jpg" alt> <img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/number22.jpg" alt></p>
+<h2 id="通过props-properties-向子组件传递数据"><a href="#通过props-properties-向子组件传递数据" class="headerlink" title="通过props(properties)向子组件传递数据"></a>通过props(properties)向子组件传递数据</h2><p>1、字符串数组，数组中的字符串就是传递是的名称<br>2、对象，对象可以设置传递时的类型，也可以设置默认值<br>如果以对象传递可以指定类型 String Number Boolean Array Object Date Function Symbol<br>如果类型是数组或者对象默认值必须是一个函数 default(){return []|{}}<br><img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-3/number17.jpg" alt> <img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-3/number18.jpg" alt> <img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-3/number19.jpg" alt><br>props的驼峰标识<br>cpn标签中不支持驼峰写法 例如cName无效需要改为c-name chuldMessage改为child-message</p>
+<h2 id="子组件通过自定义事件向父组件发送消息"><a href="#子组件通过自定义事件向父组件发送消息" class="headerlink" title="子组件通过自定义事件向父组件发送消息"></a>子组件通过自定义事件向父组件发送消息</h2><p>子组件需要向父组件传递数据是就要用到自定义事件<br>v-on不仅可以用于监听DOM事件也可以监听组件的自定义事件<br>子组件中通过$emit()来触发事件 父组件中通过v-on来监听子组件事件<br>流程：首先监听子组件的btn方法，当点击按钮时触发，在btn方法中向父组件传递事件itemclick，父组件监听此事件<br><img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-3/number20.jpg" alt> <img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-3/number21.jpg" alt> <img src="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-3/number22.jpg" alt></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://skysea-gaoming.github.io/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/" data-id="ck6rptph90000j4ua7tgs2u8g" class="article-share-link">Share</a>
+      <a data-url="https://skysea-gaoming.github.io/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-3/" data-id="ck6vnrj810008dwuahpez2bj7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/" rel="tag">vue</a></li></ul>
@@ -127,9 +183,9 @@
 
 
   
-    <article id="post-vue学习笔记3-2" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-vue学习笔记4-2" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-2/" class="article-date">
+    <a href="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-2/" class="article-date">
   <time datetime="2020-02-16T14:07:35.000Z" itemprop="datePublished">2020-02-16</time>
 </a>
     
@@ -145,7 +201,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-2/">vue学习笔记3-2</a>
+      <a class="article-title" href="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-2/">vue学习笔记4-2</a>
     </h1>
   
 
@@ -153,20 +209,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="vue学习系列2"><a href="#vue学习系列2" class="headerlink" title="vue学习系列2"></a>vue学习系列2</h2><p>v-pre 如果不希望vue解析双括号中的内容 直接展示标签的内容<br>v-cloak 如果vue解析延迟可能直接先展示字符串然后更新为解析的内容<br>如果我们不希望展示两次，Vue解析之后该指令会消失，以后使用虚拟DOM一般不需要此指令了解即可<br><img src="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-2/number1.jpg" alt><br>v-bind 除了内容需要动态决定有些属性也需要动态绑定<br>比如a元素的href属性，img元素的src属性 此时Mustache语法不能用<br>v-bind语法糖：简写为 :<br>v-bind动态绑定class属性与之前形式一样<br>class中也可以添加一个对象其中放入Key :Boolean<br>其中boolean依然可以动态指定</p>
-<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>当在class中直接写data属性名时在style中要写 .data属性值<br>当在class中是一个对象（key:boolean）时key不属于data，直接就是class属性值 style中写 .key<br>图片中data里面有al和line实际不需要<br><img src="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-2/number2.jpg" alt><br><img src="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-2/number3.jpg" alt> <img src="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-2/number4.jpg" alt><br>class对象语法<br>class=”{al: isale, line: false}”可以改写为函数class=”getClasses()”一定要加括号分情况<br>在methods中添加函数getClass()内容是 return {al: isale, line: false} 这样写更简洁</p>
+        <h2 id="vue学习系列2"><a href="#vue学习系列2" class="headerlink" title="vue学习系列2"></a>vue学习系列2</h2><p>v-pre 如果不希望vue解析双括号中的内容 直接展示标签的内容<br>v-cloak 如果vue解析延迟可能直接先展示字符串然后更新为解析的内容<br>如果我们不希望展示两次，Vue解析之后该指令会消失，以后使用虚拟DOM一般不需要此指令了解即可<br><img src="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-2/number1.jpg" alt><br>v-bind 除了内容需要动态决定有些属性也需要动态绑定<br>比如a元素的href属性，img元素的src属性 此时Mustache语法不能用<br>v-bind语法糖：简写为 :<br>v-bind动态绑定class属性与之前形式一样<br>class中也可以添加一个对象其中放入Key :Boolean<br>其中boolean依然可以动态指定</p>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>当在class中直接写data属性名时在style中要写 .data属性值<br>当在class中是一个对象（key:boolean）时key不属于data，直接就是class属性值 style中写 .key<br>图片中data里面有al和line实际不需要<br><img src="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-2/number2.jpg" alt><br><img src="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-2/number3.jpg" alt> <img src="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-2/number4.jpg" alt><br>class对象语法<br>class=”{al: isale, line: false}”可以改写为函数class=”getClasses()”一定要加括号分情况<br>在methods中添加函数getClass()内容是 return {al: isale, line: false} 这样写更简洁</p>
 <h2 id="v-bind动态绑定style"><a href="#v-bind动态绑定style" class="headerlink" title="v-bind动态绑定style"></a>v-bind动态绑定style</h2><p>对象语法 Key（css属性名）value（css属性值）</p>
-<h2 id="注意-1"><a href="#注意-1" class="headerlink" title="注意"></a>注意</h2><p>font-size不管用，以后改写为fontSize这种驼峰形式<br><img src="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-2/number5.jpg" alt></p>
-<h2 id="计算属性"><a href="#计算属性" class="headerlink" title="计算属性"></a>计算属性</h2><p>fullname当一个属性的方式使用不用加括号<br><img src="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-2/number6.jpg" alt></p>
-<h2 id="计算属性的setter和getter"><a href="#计算属性的setter和getter" class="headerlink" title="计算属性的setter和getter"></a>计算属性的setter和getter</h2><p>因为只操作get函数，所以可以简化为上图的写法<br><img src="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-2/number7.jpg" alt></p>
+<h2 id="注意-1"><a href="#注意-1" class="headerlink" title="注意"></a>注意</h2><p>font-size不管用，以后改写为fontSize这种驼峰形式<br><img src="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-2/number5.jpg" alt></p>
+<h2 id="计算属性"><a href="#计算属性" class="headerlink" title="计算属性"></a>计算属性</h2><p>fullname当一个属性的方式使用不用加括号<br><img src="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-2/number6.jpg" alt></p>
+<h2 id="计算属性的setter和getter"><a href="#计算属性的setter和getter" class="headerlink" title="计算属性的setter和getter"></a>计算属性的setter和getter</h2><p>因为只操作get函数，所以可以简化为上图的写法<br><img src="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-2/number7.jpg" alt></p>
 <h2 id="计算属性的缓存以及与methods的对比"><a href="#计算属性的缓存以及与methods的对比" class="headerlink" title="计算属性的缓存以及与methods的对比"></a>计算属性的缓存以及与methods的对比</h2><p>通过methods形式语法与计算属性基本相同，但是计算属性性能更高<br>如果多次打印fullname，methods每次都会重新执行函数，而计算属性有缓存机制不会重新执行除非数据改变</p>
 <h2 id="es6语法补充学习"><a href="#es6语法补充学习" class="headerlink" title="es6语法补充学习"></a>es6语法补充学习</h2><p>let/const/var<br>let有块级作用域var没有块级作用域，for循环变量作用域<br>for(var i=0;i&lt;length;i++)<br>{<br>   click[i]:{<br>    console.log(i);<br>   }<br>}<br>这是一段简化代码，比如进行点击操作时，控制台永远都会打印length，如果改为let问题就会得到解决，可以理解为for的每一段循环都是一个块级<br>const: 将变量变为常量，不可以再次赋值，但是对象的属性可以修改，优先使用const<br>对象字面量增强写法<br>const name=’fd’;    直接将name赋给对象obj<br>const obj={name};<br>函数增强写法<br>const obj={ run: function(){}}变为 const obj={run(){}}</p>
-<h2 id="事件监听"><a href="#事件监听" class="headerlink" title="事件监听"></a>事件监听</h2><p>与用户进行交互时监听点击、拖拽、键盘事件等<br>v-on:<br>作用：绑定事件监听器 缩写：@<br>调用一个方法时可以加括号也可以不加如果这个函方法不需要参数则没有区别<br>如果是一个需要传参数的方法，加括号但不传值则是undefined值，如果不加括号默认传递浏览器生成的Event对象<br>如果一个方法需要event对象，也需要其它参数时 需要传入$event<br><img src="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-2/number8.jpg" alt><br>v-on修饰符:<br>stop 点击按钮时根据冒泡也会打印bbb，如果不希望冒泡可以改为 click.stop<br>prevent 阻止默认事件<br>KeyAlias 监听键盘点击事件，如果只监听enter键可以改为keyup.enter<br>once click.once 只有第一次点击有反应之后就失效<br><img src="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-2/number9.jpg" alt> <img src="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-2/number10.jpg" alt></p>
+<h2 id="事件监听"><a href="#事件监听" class="headerlink" title="事件监听"></a>事件监听</h2><p>与用户进行交互时监听点击、拖拽、键盘事件等<br>v-on:<br>作用：绑定事件监听器 缩写：@<br>调用一个方法时可以加括号也可以不加如果这个函方法不需要参数则没有区别<br>如果是一个需要传参数的方法，加括号但不传值则是undefined值，如果不加括号默认传递浏览器生成的Event对象<br>如果一个方法需要event对象，也需要其它参数时 需要传入$event<br><img src="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-2/number8.jpg" alt><br>v-on修饰符:<br>stop 点击按钮时根据冒泡也会打印bbb，如果不希望冒泡可以改为 click.stop<br>prevent 阻止默认事件<br>KeyAlias 监听键盘点击事件，如果只监听enter键可以改为keyup.enter<br>once click.once 只有第一次点击有反应之后就失效<br><img src="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-2/number9.jpg" alt> <img src="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-2/number10.jpg" alt></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://skysea-gaoming.github.io/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-2/" data-id="ck6p3yy66000078uaglpc6z7t" class="article-share-link">Share</a>
+      <a data-url="https://skysea-gaoming.github.io/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-2/" data-id="ck6vnrbi50005dwuaabte60id" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/" rel="tag">vue</a></li></ul>
@@ -178,9 +234,9 @@
 
 
   
-    <article id="post-vue学习笔记3-1" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-vue学习笔记4-1" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-1/" class="article-date">
+    <a href="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-1/" class="article-date">
   <time datetime="2020-02-16T03:31:18.000Z" itemprop="datePublished">2020-02-16</time>
 </a>
     
@@ -196,7 +252,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-1/">vue学习笔记3-1</a>
+      <a class="article-title" href="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-1/">vue学习笔记4-1</a>
     </h1>
   
 
@@ -204,19 +260,19 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="vue学习系列1"><a href="#vue学习系列1" class="headerlink" title="vue学习系列1"></a>vue学习系列1</h2><p>准备环境：IDEA node.js（默认方式安装）<br>打开cmd查看下载是否完成<br><img src="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-1/number1.jpg" alt><br>IDEA中下载插件vue.js<br><img src="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-1/number5.jpg" alt><br>Editor File Types中配置HTML添加vue<br><img src="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-1/number6.jpg" alt><br>配置ECMAScript6<br><img src="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-1/number7.jpg" alt><br>打开IDEA Create New Project &gt; Static Web&gt;填写project name和选择保存的工作空间&gt;Finish<br>打开IDEA Terminal依次输入以下命令<br>国内镜像：<br>npm i -g cnpm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a><br>npm i -g vue-cli<br>测试是否安装成功：<br>vue -V<br>vue init webpack demo<br>demo为你前面新建的项目名。初始化会进行设置。可参考此处设置<br><img src="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-1/number2.png" alt><br>然后依次输入：<br>cd demo<br>npm install<br>npm run dev<br>完成后，会提示在哪个端口可以访问，此处现在是8080<br><img src="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-1/number3.jpg" alt><br>在根目录下创建一个html文件hellofirst<br><img src="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-1/number4.jpg" alt><br>在根目录下创建一个html文件hellosecond<br>总结{<br>    新的属性：methods,该属性用于在Vue对象中定义方法<br>    新的指令：@click，该指令用于监听某个元素的点击事件在指令点击<br>    时发生<br>    新的指令：@v-for，用于简化遍历操作<br>    语法糖：v-on 简写<br>}<br><img src="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-1/number8.jpg" alt><br><img src="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-1/number9.jpg" alt><br><img src="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-1/number10.jpg" alt></p>
-<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>data数据可以写在vue外 vue依然可以直接使用obj的数据<br><img src="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-1/number11.jpg" alt></p>
+        <h2 id="vue学习系列1"><a href="#vue学习系列1" class="headerlink" title="vue学习系列1"></a>vue学习系列1</h2><p>准备环境：IDEA node.js（默认方式安装）<br>打开cmd查看下载是否完成<br><img src="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-1/number1.jpg" alt><br>IDEA中下载插件vue.js<br><img src="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-1/number5.jpg" alt><br>Editor File Types中配置HTML添加vue<br><img src="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-1/number6.jpg" alt><br>配置ECMAScript6<br><img src="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-1/number7.jpg" alt><br>打开IDEA Create New Project &gt; Static Web&gt;填写project name和选择保存的工作空间&gt;Finish<br>打开IDEA Terminal依次输入以下命令<br>国内镜像：<br>npm i -g cnpm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a><br>npm i -g vue-cli<br>测试是否安装成功：<br>vue -V<br>vue init webpack demo<br>demo为你前面新建的项目名。初始化会进行设置。可参考此处设置<br><img src="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-1/number2.png" alt><br>然后依次输入：<br>cd demo<br>npm install<br>npm run dev<br>完成后，会提示在哪个端口可以访问，此处现在是8080<br><img src="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-1/number3.jpg" alt><br>在根目录下创建一个html文件hellofirst<br><img src="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-1/number4.jpg" alt><br>在根目录下创建一个html文件hellosecond<br>总结{<br>    新的属性：methods,该属性用于在Vue对象中定义方法<br>    新的指令：@click，该指令用于监听某个元素的点击事件在指令点击<br>    时发生<br>    新的指令：@v-for，用于简化遍历操作<br>    语法糖：v-on 简写<br>}<br><img src="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-1/number8.jpg" alt><br><img src="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-1/number9.jpg" alt><br><img src="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-1/number10.jpg" alt></p>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>data数据可以写在vue外 vue依然可以直接使用obj的数据<br><img src="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-1/number11.jpg" alt></p>
 <h2 id="MVVM-model-view-view-model"><a href="#MVVM-model-view-view-model" class="headerlink" title="MVVM model view view model"></a>MVVM model view view model</h2><p>view:视图层，前端开发中通常就是DOM层，主要作用是给用户展示各种信息<br>model:数据层，大部分来自服务器<br>viewmodel:视图模型层分为两部分<br>Data Binding 实现数据绑定，将model的改变实时反应到view中<br>DOM Listener DOM监听，当DOM发生一些事件（点击，滚动，touch），可以监听到并在需要的<br>情况下改变对应的Data</p>
 <h2 id="创建Vue实例传入的options"><a href="#创建Vue实例传入的options" class="headerlink" title="创建Vue实例传入的options"></a>创建Vue实例传入的options</h2><p>{<br>    el:类型：string|HTMLElement 作用：决定Vue实例管理哪个DOM<br>    data:类型：Object|Function（组件当中data必须是一个函数） 作用：Vue实例对应的数据对象<br>    methods:类型：{[Key string]:Function} 作用：定义属于Vue的一些方法，可以在Vue中调用也可以在指令中使用<br>}</p>
-<h2 id="Vue的生命周期"><a href="#Vue的生命周期" class="headerlink" title="Vue的生命周期"></a>Vue的生命周期</h2><p>生命周期：事物从诞生到消亡的过程<br>在github中下载稳定版本的vue源码<br>创建一个Vue实例时内部源码通过一系列初始化过程会回调创建的函数这时就可以知道内部进行到哪一步然后就会做<br>相应操作<br><img src="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-1/number12.jpg" alt></p>
-<h2 id="Vue的template"><a href="#Vue的template" class="headerlink" title="Vue的template"></a>Vue的template</h2><p>File -&gt; settings -&gt; Editor -&gt; Code style -&gt; live templates-&gt; vue<br>写需要变为模板的代码，vue+Tab则可以自动生成<br><img src="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-1/number13.jpg" alt></p>
+<h2 id="Vue的生命周期"><a href="#Vue的生命周期" class="headerlink" title="Vue的生命周期"></a>Vue的生命周期</h2><p>生命周期：事物从诞生到消亡的过程<br>在github中下载稳定版本的vue源码<br>创建一个Vue实例时内部源码通过一系列初始化过程会回调创建的函数这时就可以知道内部进行到哪一步然后就会做<br>相应操作<br><img src="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-1/number12.jpg" alt></p>
+<h2 id="Vue的template"><a href="#Vue的template" class="headerlink" title="Vue的template"></a>Vue的template</h2><p>File -&gt; settings -&gt; Editor -&gt; Code style -&gt; live templates-&gt; vue<br>写需要变为模板的代码，vue+Tab则可以自动生成<br><img src="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-1/number13.jpg" alt></p>
 <h2 id="Mustache语法"><a href="#Mustache语法" class="headerlink" title="Mustache语法"></a>Mustache语法</h2><p>在双括号中可以直接写变量或表达式</p>
-<p>在标签中加入 v-once指令，其后不需要跟任何表达式（比如v-for后需要跟表达式），该指令表示元素和组件只渲染一次不会随数据的<br>改变而改变<br>v-html=”url” 会解析url中的字符串，如果不加v-html则只得到字符串，一般用于字符串带有标签需要解析的<br><img src="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-1/number14.jpg" alt><br>v-text=”message” 跟Mustache作用相似，但是不灵活一般不使用<br><img src="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-1/number15.jpg" alt></p>
+<p>在标签中加入 v-once指令，其后不需要跟任何表达式（比如v-for后需要跟表达式），该指令表示元素和组件只渲染一次不会随数据的<br>改变而改变<br>v-html=”url” 会解析url中的字符串，如果不加v-html则只得到字符串，一般用于字符串带有标签需要解析的<br><img src="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-1/number14.jpg" alt><br>v-text=”message” 跟Mustache作用相似，但是不灵活一般不使用<br><img src="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-1/number15.jpg" alt></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://skysea-gaoming.github.io/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-1/" data-id="ck6ohbo9a0000rsua45yz1vs7" class="article-share-link">Share</a>
+      <a data-url="https://skysea-gaoming.github.io/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-1/" data-id="ck6vnr3x40002dwuah5tn9kb1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/" rel="tag">vue</a></li></ul>
@@ -1824,77 +1880,6 @@ style type=&quot;text/css&quot;
 
 
   
-    <article id="post-html学习笔记1-2" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/02/15/html%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01-2/" class="article-date">
-  <time datetime="2020-02-15T08:50:44.000Z" itemprop="datePublished">2020-02-15</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/">前端技术</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/15/html%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01-2/">html学习笔记1-2</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="html技术博客系列2"><a href="#html技术博客系列2" class="headerlink" title="html技术博客系列2"></a>html技术博客系列2</h2><pre><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;title&gt;fds&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;h1&gt;这是第二个&lt;/h1&gt;
-&lt;h1&gt;这是第二个&lt;/h1&gt;
-&lt;h1&gt;这是第二个&lt;/h1&gt;
-&lt;h1&gt;这是第二个&lt;/h1&gt;
-&lt;h1&gt;这是第二个&lt;/h1&gt;
-&lt;h1&gt;这是第二个&lt;/h1&gt;
-&lt;h1&gt;这是第二个&lt;/h1&gt;
-&lt;h1&gt;这是第二个&lt;/h1&gt;
-&lt;h1&gt;这是第二个&lt;/h1&gt;
-&lt;h1&gt;这是第二个&lt;/h1&gt;
-&lt;h1&gt;这是第二个&lt;/h1&gt;
-&lt;h1&gt;这是第二个&lt;/h1&gt;
-&lt;h1&gt;这是第二个&lt;/h1&gt;
-&lt;h1&gt;这是第二个&lt;/h1&gt;
-&lt;!--name指定唯一位置位置 --&gt;
-&lt;a name=&quot;2&quot;&gt;跳到这&lt;/a&gt;
-&lt;h1&gt;这是第二个&lt;/h1&gt;
-&lt;/body&gt;</code></pre></html>
-
-
-
-
-<hr>
-<h2 id="layout-false"><a href="#layout-false" class="headerlink" title="layout: false"></a>layout: false</h2>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://skysea-gaoming.github.io/2020/02/15/html%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01-2/" data-id="ck6nd5dxj0000r0ua3exf8rs2" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/" rel="tag">html</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 
   <nav id="page-nav">
@@ -1930,7 +1915,7 @@ style type=&quot;text/css&quot;
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/html/" style="font-size: 20px;">html</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a>
+      <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/html/" style="font-size: 15px;">html</a> <a href="/tags/javascript/" style="font-size: 15px;">javascript</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a>
     </div>
   </div>
 
@@ -1952,23 +1937,23 @@ style type=&quot;text/css&quot;
       <ul>
         
           <li>
-            <a href="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/">vue学习笔记3-3</a>
+            <a href="/2020/02/21/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-4/">vue学习笔记4-4</a>
           </li>
         
           <li>
-            <a href="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-2/">vue学习笔记3-2</a>
+            <a href="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-3/">vue学习笔记4-3</a>
           </li>
         
           <li>
-            <a href="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-1/">vue学习笔记3-1</a>
+            <a href="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-2/">vue学习笔记4-2</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-1/">vue学习笔记4-1</a>
           </li>
         
           <li>
             <a href="/2020/02/15/javascript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/">javascript学习笔记3-3</a>
-          </li>
-        
-          <li>
-            <a href="/2020/02/15/javascript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-2/">javascript学习笔记3-2</a>
           </li>
         
       </ul>
