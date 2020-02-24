@@ -70,6 +70,269 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-html学习笔记1-3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/02/15/html%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01-3/" class="article-date">
+  <time datetime="2020-02-15T08:54:58.000Z" itemprop="datePublished">2020-02-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/">前端技术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/15/html%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01-3/">html学习笔记1-3</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="html技术博客系列3"><a href="#html技术博客系列3" class="headerlink" title="html技术博客系列3"></a>html技术博客系列3</h2><pre><code>&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;web&lt;/title&gt;
+style type=&quot;text/css&quot;
+    body,ul,h1,li
+    {
+        /*去除列表前的原点*/
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+    }
+    #gamelist ul li a
+    {
+        /*去除下划线*/
+        text-decoration: none;
+        color: black;
+        border-top:purple 1px solid;
+    }
+    /*伪类*/
+    /*鼠标悬浮时的颜色*/
+    #gamelist ul li a:hover
+    {
+        color:red;
+    }
+    /* solid代表实线*/
+    #gamelist 
+    {
+        border:solid purple 5px;
+        width:500px;
+        padding-bottom:20px;
+        background-color:orange;
+        margin:10px auto;
+        padding-left:5px;
+
+    }
+    .gametitle
+    {
+        padding-left:10px;
+        color:blue;
+        font-size:20px;
+        /*行高*/
+        line-height:;
+    }
+    body
+    {
+        /*如果图片重复展示可以去重,设置坐标*/
+        /*background:url(a/1.jpg) no-repeat 2px 2px;*/
+        /*不去重*/
+        /*background-image:url(a/1.jpg) */;
+    }
+    body,div,h1,dl,dt,dd
+    {
+        margin:0px;
+        padding:0px;
+    }
+    #production
+    {
+        background-color:blue;
+        width:262px;
+    }
+    #production h1
+    {
+        /*粗细*/
+        font-weight:normal;
+        /*缩进*/
+        text-indent: 1em ;
+    }
+    #production dl dd
+    {
+        line-height:30px;
+    }
+    #production dt
+    {
+        font-size:20px;
+        /*字体*/
+        font-family:;
+        /*字体风格*/
+        font-style:;
+    }
+    ---
+    layout: false
+    ---
+    .mm
+    {
+        border-bottom:1px dashed;
+    }
+    div li a img:hover
+    {
+        border:1px orange solid;
+        /*鼠标悬浮的样式*/
+        cursor:;
+    }
+    /*未访问时的链接设置默认不写link*/
+    div ul li a:link
+    {
+
+    }
+    /*访问过兼容性不强少用*/
+    div ul li a:visited
+    {
+
+    }
+    /*按键按时那一下的颜色*/
+    div ul li a:active
+    {
+
+    }
+    .mmm ul li a
+    {
+        background-color:yellow;
+    }
+    span
+    {
+        /*阴影 坐标 发散程度*/
+        text-shadow:red 10px 10px 5px;
+    }
+    ---
+    layout: false
+    ---
+    #gamelist ul li
+    {
+        /*变为有序*/
+        list-style-type:decimal;
+/*        list-style-image:url(a/2.png); */
+    }
+    body
+    {
+    /*    background:url(a/2.png) no-repeat; */
+        /*铺满*/
+    /*    background-size:cover; */
+    /*自己画图*/
+    /*background-image:linear-gradient(to bottom,red,purple);*/
+    }
+    .mmmy
+    {
+        width:50px;
+        height:50px;
+        border:5px solid red;
+        border-radius:0px 15px 18px 0px;
+        box-shadow:5px 10px lightgray;
+        /*显示为内联 block none块级，什么都不显示*/
+        /*display:inline;*/
+    }
+    /*全部元素*/
+    *
+    {
+        margin:0px;
+        padding:0px;
+    }
+    .gametitle,.myy,.myy li
+    {
+        display:inline-block;
+    }
+    /*设置等宽的li*/
+    .myy li
+    {
+        width:70px;
+    }
+&lt;/style&gt;</code></pre></head>
+
+<pre><code>&lt;div id=&quot;gamelist&quot;&gt;
+&lt;h1 class=&quot;gametitle&quot;&gt;游戏列表&lt;/h1&gt;
+&lt;ul class=&quot;myy&quot;&gt;
+    &lt;li class=&quot;my&quot;&gt;&lt;a href=&quot;&quot;&gt;王者荣耀&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;&quot;&gt;吃鸡&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;&quot;&gt;拳皇&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;&quot;&gt;哈利波特&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;&quot;&gt;合金弹头&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div &gt;
+    &lt;br&gt;
+    &lt;br&gt;
+    &lt;br&gt;
+    &lt;div id=&quot;production&quot;&gt;
+    &lt;h1&gt;全部分类&lt;/h1&gt;
+    &lt;dl class=&quot;mm&quot;&gt;
+        &lt;dt&gt;电子设备&lt;/dt&gt;
+        &lt;dd&gt;手机/电脑/平板/鼠标/投影仪z&lt;br&gt;
+            fsdfsdfdsfsdfdsfd&lt;br&gt;
+            fsdfdsfsd
+        &lt;/dd&gt;
+    &lt;/dl&gt;
+    &lt;dl&gt;
+        &lt;dt&gt;服装&lt;/dt&gt;
+        &lt;dd&gt;
+            fsdfsdfsdfsdfds&lt;br&gt;
+            vxcvxcv&lt;br&gt;
+            fdsfsdfdsf
+        &lt;/dd&gt;
+    &lt;/dl&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;mmm&quot;&gt;
+        &lt;h1&gt;电子设备&lt;/h1&gt;
+        &lt;ul&gt;
+            &lt;li&gt;
+             &lt;a href=&quot;&quot;&gt;&lt;img src=&quot;a/2.png&quot;&gt;&lt;/a&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+    &lt;!--块级元素会换行可以包含内联--&gt;
+    &lt;div&gt;divdivdiv&lt;/div&gt;
+    &lt;!--内联元素不换行不能包含块级--&gt;
+    &lt;span&gt;fsdfsd&lt;/span&gt;
+    &lt;div class=&quot;mmmy&quot;&gt;
+
+    &lt;/div&gt;
+    &lt;!--导航的意思没有其他作用--&gt;
+    &lt;nav&gt;
+        &lt;!--头部标签没有其他作用--&gt;
+        &lt;header&gt;&lt;/header&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+    ---
+    layout: false
+    ---</code></pre></html>
+
+
+
+<hr>
+<h2 id="layout-false"><a href="#layout-false" class="headerlink" title="layout: false"></a>layout: false</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://skysea-gaoming.github.io/2020/02/15/html%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01-3/" data-id="ck6nda9ij0000ycua3eu64ufx" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/" rel="tag">html</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-html学习笔记1-2" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/02/15/html%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01-2/" class="article-date">
@@ -457,6 +720,10 @@
       <ul>
         
           <li>
+            <a href="/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/">vue学习笔记4-5</a>
+          </li>
+        
+          <li>
             <a href="/2020/02/21/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-4/">vue学习笔记4-4</a>
           </li>
         
@@ -470,10 +737,6 @@
         
           <li>
             <a href="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-1/">vue学习笔记4-1</a>
-          </li>
-        
-          <li>
-            <a href="/2020/02/15/javascript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/">javascript学习笔记3-3</a>
           </li>
         
       </ul>

@@ -70,6 +70,59 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-vue学习笔记4-5" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/" class="article-date">
+  <time datetime="2020-02-23T05:59:27.000Z" itemprop="datePublished">2020-02-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/">前端技术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/">vue学习笔记4-5</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="vue学习系列5"><a href="#vue学习系列5" class="headerlink" title="vue学习系列5"></a>vue学习系列5</h2><h2 id="webpack图片文件"><a href="#webpack图片文件" class="headerlink" title="webpack图片文件"></a>webpack图片文件</h2><p>terminal中输入指令 npm install –save-dev url-loader<br>当图片大于limit是需要输入 npm install file-loader –save-dev<br><img src="/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number3.jpg" alt><br>在webpack.config.js中配置<br><img src="/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number2.jpg" alt><br>大于limit的图片会打包到dist中这时需要该路径在output中加入 publicPath路径<br><img src="/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number1.jpg" alt></p>
+<h2 id="webpack配置vue"><a href="#webpack配置vue" class="headerlink" title="webpack配置vue"></a>webpack配置vue</h2><p>输入指令 npm install vue –save<br>在webpack.config.js文件中配置<br><img src="/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number4.jpg" alt></p>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>id写在前面，script引用写在后面<br><img src="/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number5.jpg" alt> <img src="/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number6.jpg" alt></p>
+<h2 id="Vue的template"><a href="#Vue的template" class="headerlink" title="Vue的template"></a>Vue的template</h2><p>在实际开发中，可能只有一个html文件，Vue绑定的div中不写内容，把内容写在Vue的template中<br>template会替换el<br><img src="/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number7.jpg" alt><br>进一步分离，创建一个App.js文件，默认导出<br><img src="/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number8.jpg" alt><br><img src="/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number9.jpg" alt><br>将App中的模板和js代码分离，内容写在vue文件中<br>安装vue-loader  npm install –save-dev vue-loader vue-template-compiler<br><img src="/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number11.jpg" alt><br><img src="/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number12.jpg" alt><br>App.vue中可以引用Cpn等组件，注意所有内容都必须写在标签中，要不然可能报错<br><img src="/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number13.jpg" alt><br><img src="/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number14.jpg" alt><br><img src="/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number15.jpg" alt><br>在webpack.config.js文件中配置vue<br><img src="/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number10.jpg" alt></p>
+<h2 id="注意-1"><a href="#注意-1" class="headerlink" title="注意"></a>注意</h2><p>如果修改package.json文件，那么之后 必须执行npm install指令</p>
+<h2 id="版权plugin"><a href="#版权plugin" class="headerlink" title="版权plugin"></a>版权plugin</h2><p>BannerPlugin webpack自带插件声明版权<br><img src="/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number16.jpg" alt></p>
+<h2 id="打包html的plugin"><a href="#打包html的plugin" class="headerlink" title="打包html的plugin"></a>打包html的plugin</h2><p>发布项目时需要将html文件打包到dist中<br>安装HtmlWebpackPlugin插件 可以自动生成index.html文件，将打包的js文件通过script标签插入body中<br>npm install html-webpack-plugin –save-dev<br>修改配置文件<br><img src="/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number17.jpg" alt></p>
+<h2 id="js压缩的plugin"><a href="#js压缩的plugin" class="headerlink" title="js压缩的plugin"></a>js压缩的plugin</h2><p>对js代码进行压缩，删去空格修改变量名<br>npm install <a href="mailto:uglifyjs-webpack-plugin@1.1.1">uglifyjs-webpack-plugin@1.1.1</a> –save-dev<br>修改配置文件<br><img src="/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number18.jpg" alt></p>
+<h2 id="注意-2"><a href="#注意-2" class="headerlink" title="注意"></a>注意</h2><p>IDEA中out of memory，暂时不使用本地服务器以下只了解即可</p>
+<h2 id="搭建本地服务器"><a href="#搭建本地服务器" class="headerlink" title="搭建本地服务器"></a>搭建本地服务器</h2><p>npm install –save-dev <a href="mailto:webpack-dev-server@2.9.1">webpack-dev-server@2.9.1</a><br>修改配置文件<br><img src="/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number19.jpg" alt><br>在package.json中scripts标签中加入  “dev”: “webpack-dev-server “<br>启动服务器 npm run dev</p>
+<h2 id="webpack配置文件的分离"><a href="#webpack配置文件的分离" class="headerlink" title="webpack配置文件的分离"></a>webpack配置文件的分离</h2><p>开发与生产时配置文件不同，创建多个配置文件，base.js放公共配置，prod.js放生产配置，dev.js放开发配置<br>安装 npm install webpack-merge,可以合并配置文件<br>引入 const webpackMerge=require(‘webpack-mrege’)<br>例如合并base.js与prod.js 在prod.js中引入base.js,然后module.exports=webpack(base,{})<br><img src="/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number20.jpg" alt><br><img src="/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number21.jpg" alt><br><img src="/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number22.jpg" alt><br>修改package.json文件，删除webpack.config.js文件<br><img src="/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number23.jpg" alt></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://skysea-gaoming.github.io/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/" data-id="ck6ymhwgl0000joua3jbh5xld" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/" rel="tag">vue</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-vue学习笔记4-4" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/02/21/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-4/" class="article-date">
@@ -1617,269 +1670,6 @@ female
 
 
   
-    <article id="post-html学习笔记1-3" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/02/15/html%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01-3/" class="article-date">
-  <time datetime="2020-02-15T08:54:58.000Z" itemprop="datePublished">2020-02-15</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/">前端技术</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/15/html%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01-3/">html学习笔记1-3</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="html技术博客系列3"><a href="#html技术博客系列3" class="headerlink" title="html技术博客系列3"></a>html技术博客系列3</h2><pre><code>&lt;html&gt;
-&lt;head&gt;
-&lt;title&gt;web&lt;/title&gt;
-style type=&quot;text/css&quot;
-    body,ul,h1,li
-    {
-        /*去除列表前的原点*/
-        list-style: none;
-        margin: 0px;
-        padding: 0px;
-    }
-    #gamelist ul li a
-    {
-        /*去除下划线*/
-        text-decoration: none;
-        color: black;
-        border-top:purple 1px solid;
-    }
-    /*伪类*/
-    /*鼠标悬浮时的颜色*/
-    #gamelist ul li a:hover
-    {
-        color:red;
-    }
-    /* solid代表实线*/
-    #gamelist 
-    {
-        border:solid purple 5px;
-        width:500px;
-        padding-bottom:20px;
-        background-color:orange;
-        margin:10px auto;
-        padding-left:5px;
-
-    }
-    .gametitle
-    {
-        padding-left:10px;
-        color:blue;
-        font-size:20px;
-        /*行高*/
-        line-height:;
-    }
-    body
-    {
-        /*如果图片重复展示可以去重,设置坐标*/
-        /*background:url(a/1.jpg) no-repeat 2px 2px;*/
-        /*不去重*/
-        /*background-image:url(a/1.jpg) */;
-    }
-    body,div,h1,dl,dt,dd
-    {
-        margin:0px;
-        padding:0px;
-    }
-    #production
-    {
-        background-color:blue;
-        width:262px;
-    }
-    #production h1
-    {
-        /*粗细*/
-        font-weight:normal;
-        /*缩进*/
-        text-indent: 1em ;
-    }
-    #production dl dd
-    {
-        line-height:30px;
-    }
-    #production dt
-    {
-        font-size:20px;
-        /*字体*/
-        font-family:;
-        /*字体风格*/
-        font-style:;
-    }
-    ---
-    layout: false
-    ---
-    .mm
-    {
-        border-bottom:1px dashed;
-    }
-    div li a img:hover
-    {
-        border:1px orange solid;
-        /*鼠标悬浮的样式*/
-        cursor:;
-    }
-    /*未访问时的链接设置默认不写link*/
-    div ul li a:link
-    {
-
-    }
-    /*访问过兼容性不强少用*/
-    div ul li a:visited
-    {
-
-    }
-    /*按键按时那一下的颜色*/
-    div ul li a:active
-    {
-
-    }
-    .mmm ul li a
-    {
-        background-color:yellow;
-    }
-    span
-    {
-        /*阴影 坐标 发散程度*/
-        text-shadow:red 10px 10px 5px;
-    }
-    ---
-    layout: false
-    ---
-    #gamelist ul li
-    {
-        /*变为有序*/
-        list-style-type:decimal;
-/*        list-style-image:url(a/2.png); */
-    }
-    body
-    {
-    /*    background:url(a/2.png) no-repeat; */
-        /*铺满*/
-    /*    background-size:cover; */
-    /*自己画图*/
-    /*background-image:linear-gradient(to bottom,red,purple);*/
-    }
-    .mmmy
-    {
-        width:50px;
-        height:50px;
-        border:5px solid red;
-        border-radius:0px 15px 18px 0px;
-        box-shadow:5px 10px lightgray;
-        /*显示为内联 block none块级，什么都不显示*/
-        /*display:inline;*/
-    }
-    /*全部元素*/
-    *
-    {
-        margin:0px;
-        padding:0px;
-    }
-    .gametitle,.myy,.myy li
-    {
-        display:inline-block;
-    }
-    /*设置等宽的li*/
-    .myy li
-    {
-        width:70px;
-    }
-&lt;/style&gt;</code></pre></head>
-
-<pre><code>&lt;div id=&quot;gamelist&quot;&gt;
-&lt;h1 class=&quot;gametitle&quot;&gt;游戏列表&lt;/h1&gt;
-&lt;ul class=&quot;myy&quot;&gt;
-    &lt;li class=&quot;my&quot;&gt;&lt;a href=&quot;&quot;&gt;王者荣耀&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;&quot;&gt;吃鸡&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;&quot;&gt;拳皇&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;&quot;&gt;哈利波特&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;&quot;&gt;合金弹头&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div &gt;
-    &lt;br&gt;
-    &lt;br&gt;
-    &lt;br&gt;
-    &lt;div id=&quot;production&quot;&gt;
-    &lt;h1&gt;全部分类&lt;/h1&gt;
-    &lt;dl class=&quot;mm&quot;&gt;
-        &lt;dt&gt;电子设备&lt;/dt&gt;
-        &lt;dd&gt;手机/电脑/平板/鼠标/投影仪z&lt;br&gt;
-            fsdfsdfdsfsdfdsfd&lt;br&gt;
-            fsdfdsfsd
-        &lt;/dd&gt;
-    &lt;/dl&gt;
-    &lt;dl&gt;
-        &lt;dt&gt;服装&lt;/dt&gt;
-        &lt;dd&gt;
-            fsdfsdfsdfsdfds&lt;br&gt;
-            vxcvxcv&lt;br&gt;
-            fdsfsdfdsf
-        &lt;/dd&gt;
-    &lt;/dl&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;mmm&quot;&gt;
-        &lt;h1&gt;电子设备&lt;/h1&gt;
-        &lt;ul&gt;
-            &lt;li&gt;
-             &lt;a href=&quot;&quot;&gt;&lt;img src=&quot;a/2.png&quot;&gt;&lt;/a&gt;
-            &lt;/li&gt;
-        &lt;/ul&gt;
-    &lt;/div&gt;
-    &lt;!--块级元素会换行可以包含内联--&gt;
-    &lt;div&gt;divdivdiv&lt;/div&gt;
-    &lt;!--内联元素不换行不能包含块级--&gt;
-    &lt;span&gt;fsdfsd&lt;/span&gt;
-    &lt;div class=&quot;mmmy&quot;&gt;
-
-    &lt;/div&gt;
-    &lt;!--导航的意思没有其他作用--&gt;
-    &lt;nav&gt;
-        &lt;!--头部标签没有其他作用--&gt;
-        &lt;header&gt;&lt;/header&gt;
-        &lt;ul&gt;
-            &lt;li&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-    &lt;/nav&gt;
-    ---
-    layout: false
-    ---</code></pre></html>
-
-
-
-<hr>
-<h2 id="layout-false"><a href="#layout-false" class="headerlink" title="layout: false"></a>layout: false</h2>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://skysea-gaoming.github.io/2020/02/15/html%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01-3/" data-id="ck6nda9ij0000ycua3eu64ufx" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/" rel="tag">html</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 
   <nav id="page-nav">
@@ -1937,6 +1727,10 @@ style type=&quot;text/css&quot;
       <ul>
         
           <li>
+            <a href="/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/">vue学习笔记4-5</a>
+          </li>
+        
+          <li>
             <a href="/2020/02/21/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-4/">vue学习笔记4-4</a>
           </li>
         
@@ -1950,10 +1744,6 @@ style type=&quot;text/css&quot;
         
           <li>
             <a href="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-1/">vue学习笔记4-1</a>
-          </li>
-        
-          <li>
-            <a href="/2020/02/15/javascript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-3/">javascript学习笔记3-3</a>
           </li>
         
       </ul>

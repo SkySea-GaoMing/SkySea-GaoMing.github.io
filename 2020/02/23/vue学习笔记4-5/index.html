@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>vue学习笔记4-5 | 高明的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="参考B站ilovecoding的vue学习视频">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue学习笔记4-5">
+<meta property="og:url" content="https://skysea-gaoming.github.io/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/index.html">
+<meta property="og:site_name" content="高明的博客">
+<meta property="og:description" content="参考B站ilovecoding的vue学习视频">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://skysea-gaoming.github.io/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number3.jpg">
+<meta property="og:image" content="https://skysea-gaoming.github.io/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number2.jpg">
+<meta property="og:image" content="https://skysea-gaoming.github.io/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number1.jpg">
+<meta property="og:image" content="https://skysea-gaoming.github.io/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number4.jpg">
+<meta property="og:image" content="https://skysea-gaoming.github.io/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number5.jpg">
+<meta property="og:image" content="https://skysea-gaoming.github.io/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number6.jpg">
+<meta property="og:image" content="https://skysea-gaoming.github.io/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number7.jpg">
+<meta property="og:image" content="https://skysea-gaoming.github.io/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number8.jpg">
+<meta property="og:image" content="https://skysea-gaoming.github.io/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number9.jpg">
+<meta property="og:image" content="https://skysea-gaoming.github.io/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number11.jpg">
+<meta property="og:image" content="https://skysea-gaoming.github.io/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number12.jpg">
+<meta property="og:image" content="https://skysea-gaoming.github.io/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number13.jpg">
+<meta property="og:image" content="https://skysea-gaoming.github.io/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number14.jpg">
+<meta property="og:image" content="https://skysea-gaoming.github.io/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number15.jpg">
+<meta property="og:image" content="https://skysea-gaoming.github.io/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number10.jpg">
+<meta property="og:image" content="https://skysea-gaoming.github.io/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number16.jpg">
+<meta property="og:image" content="https://skysea-gaoming.github.io/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number17.jpg">
+<meta property="og:image" content="https://skysea-gaoming.github.io/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number18.jpg">
+<meta property="og:image" content="https://skysea-gaoming.github.io/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number19.jpg">
+<meta property="og:image" content="https://skysea-gaoming.github.io/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number20.jpg">
+<meta property="og:image" content="https://skysea-gaoming.github.io/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number21.jpg">
+<meta property="og:image" content="https://skysea-gaoming.github.io/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number22.jpg">
+<meta property="og:image" content="https://skysea-gaoming.github.io/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number23.jpg">
+<meta property="article:published_time" content="2020-02-23T05:59:27.000Z">
+<meta property="article:modified_time" content="2020-02-24T07:02:04.756Z">
+<meta property="article:author" content="高明">
+<meta property="article:tag" content="vue">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://skysea-gaoming.github.io/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number3.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="高明的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">高明的博客</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">高明的技术博客</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://SkySea-GaoMing.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-vue学习笔记4-5" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/" class="article-date">
+  <time datetime="2020-02-23T05:59:27.000Z" itemprop="datePublished">2020-02-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/">前端技术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      vue学习笔记4-5
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="vue学习系列5"><a href="#vue学习系列5" class="headerlink" title="vue学习系列5"></a>vue学习系列5</h2><h2 id="webpack图片文件"><a href="#webpack图片文件" class="headerlink" title="webpack图片文件"></a>webpack图片文件</h2><p>terminal中输入指令 npm install –save-dev url-loader<br>当图片大于limit是需要输入 npm install file-loader –save-dev<br><img src="/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number3.jpg" alt><br>在webpack.config.js中配置<br><img src="/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number2.jpg" alt><br>大于limit的图片会打包到dist中这时需要该路径在output中加入 publicPath路径<br><img src="/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number1.jpg" alt></p>
+<h2 id="webpack配置vue"><a href="#webpack配置vue" class="headerlink" title="webpack配置vue"></a>webpack配置vue</h2><p>输入指令 npm install vue –save<br>在webpack.config.js文件中配置<br><img src="/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number4.jpg" alt></p>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>id写在前面，script引用写在后面<br><img src="/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number5.jpg" alt> <img src="/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number6.jpg" alt></p>
+<h2 id="Vue的template"><a href="#Vue的template" class="headerlink" title="Vue的template"></a>Vue的template</h2><p>在实际开发中，可能只有一个html文件，Vue绑定的div中不写内容，把内容写在Vue的template中<br>template会替换el<br><img src="/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number7.jpg" alt><br>进一步分离，创建一个App.js文件，默认导出<br><img src="/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number8.jpg" alt><br><img src="/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number9.jpg" alt><br>将App中的模板和js代码分离，内容写在vue文件中<br>安装vue-loader  npm install –save-dev vue-loader vue-template-compiler<br><img src="/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number11.jpg" alt><br><img src="/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number12.jpg" alt><br>App.vue中可以引用Cpn等组件，注意所有内容都必须写在标签中，要不然可能报错<br><img src="/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number13.jpg" alt><br><img src="/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number14.jpg" alt><br><img src="/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number15.jpg" alt><br>在webpack.config.js文件中配置vue<br><img src="/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number10.jpg" alt></p>
+<h2 id="注意-1"><a href="#注意-1" class="headerlink" title="注意"></a>注意</h2><p>如果修改package.json文件，那么之后 必须执行npm install指令</p>
+<h2 id="版权plugin"><a href="#版权plugin" class="headerlink" title="版权plugin"></a>版权plugin</h2><p>BannerPlugin webpack自带插件声明版权<br><img src="/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number16.jpg" alt></p>
+<h2 id="打包html的plugin"><a href="#打包html的plugin" class="headerlink" title="打包html的plugin"></a>打包html的plugin</h2><p>发布项目时需要将html文件打包到dist中<br>安装HtmlWebpackPlugin插件 可以自动生成index.html文件，将打包的js文件通过script标签插入body中<br>npm install html-webpack-plugin –save-dev<br>修改配置文件<br><img src="/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number17.jpg" alt></p>
+<h2 id="js压缩的plugin"><a href="#js压缩的plugin" class="headerlink" title="js压缩的plugin"></a>js压缩的plugin</h2><p>对js代码进行压缩，删去空格修改变量名<br>npm install <a href="mailto:uglifyjs-webpack-plugin@1.1.1">uglifyjs-webpack-plugin@1.1.1</a> –save-dev<br>修改配置文件<br><img src="/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number18.jpg" alt></p>
+<h2 id="注意-2"><a href="#注意-2" class="headerlink" title="注意"></a>注意</h2><p>IDEA中out of memory，暂时不使用本地服务器以下只了解即可</p>
+<h2 id="搭建本地服务器"><a href="#搭建本地服务器" class="headerlink" title="搭建本地服务器"></a>搭建本地服务器</h2><p>npm install –save-dev <a href="mailto:webpack-dev-server@2.9.1">webpack-dev-server@2.9.1</a><br>修改配置文件<br><img src="/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number19.jpg" alt><br>在package.json中scripts标签中加入  “dev”: “webpack-dev-server “<br>启动服务器 npm run dev</p>
+<h2 id="webpack配置文件的分离"><a href="#webpack配置文件的分离" class="headerlink" title="webpack配置文件的分离"></a>webpack配置文件的分离</h2><p>开发与生产时配置文件不同，创建多个配置文件，base.js放公共配置，prod.js放生产配置，dev.js放开发配置<br>安装 npm install webpack-merge,可以合并配置文件<br>引入 const webpackMerge=require(‘webpack-mrege’)<br>例如合并base.js与prod.js 在prod.js中引入base.js,然后module.exports=webpack(base,{})<br><img src="/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number20.jpg" alt><br><img src="/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number21.jpg" alt><br><img src="/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number22.jpg" alt><br>修改package.json文件，删除webpack.config.js文件<br><img src="/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/number23.jpg" alt></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://skysea-gaoming.github.io/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/" data-id="ck6ymhwgl0000joua3jbh5xld" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/" rel="tag">vue</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/02/21/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-4/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">vue学习笔记4-4</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/">前端技术</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/" rel="tag">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/" rel="tag">vue</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/html/" style="font-size: 15px;">html</a> <a href="/tags/javascript/" style="font-size: 15px;">javascript</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/">vue学习笔记4-5</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/21/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-4/">vue学习笔记4-4</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-3/">vue学习笔记4-3</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-2/">vue学习笔记4-2</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-1/">vue学习笔记4-1</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 高明<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
