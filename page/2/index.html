@@ -70,6 +70,195 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-css学习笔记2-1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/02/15/css%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02-1/" class="article-date">
+  <time datetime="2020-02-15T09:03:37.000Z" itemprop="datePublished">2020-02-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/">前端技术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/15/css%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02-1/">css学习笔记2-1</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="css技术博客系列1"><a href="#css技术博客系列1" class="headerlink" title="css技术博客系列1"></a>css技术博客系列1</h2><pre><code>    &lt;!--css优先级 行内&gt;外部&gt;内部  id选择器&gt;类选择器&gt;标签选择器 --&gt;
+    &lt;!-- css内部样式--&gt;
+        /* 标签选择器*/
+        h1{
+            /* 颜色支持英文和16进制*/                
+            font-size:30px;
+        }
+        p{
+            color:blue;
+        }
+        /*类选择器 可以用于多个*/
+        .mystyle
+        {
+            background-color: green;
+            color:yellow; 
+        }
+        /* id选择器 一次只能选择一个*/
+        #mystyle2
+        {
+            background-color: yellow;
+        }
+        /* 后代选择器*/
+        ul strong
+        {
+            color: red;
+        }
+        /*交集选择器不能继承，连续书写 */
+        li.mystyle3
+        {
+            color: green;
+        }
+        /*并集选择器 */
+        ul,h1
+        {
+            color: blue;
+        }
+        /*层次选择器*/
+        ul&gt;li&gt;strong
+        {
+            color: red;
+        }
+        /*相邻同辈选择器（后面）只对h1相邻的h2有效*/
+        h4+h5
+        {
+            background-color: purple;
+        }
+        /*通用同辈选择器（只对后面的有效）h1后的所有h2*/
+        h4~h5
+        {
+            background-color: red;
+        }
+        /*伪类选择器 在火狐用不了不知道是不是写错了
+        li : first-child
+        {
+            background-size: 3px;
+        }
+        li : last-child
+        {
+            background-color: blue;
+        }
+        li : nth-child(2)
+        {
+            background-color: red;
+        } 
+        li: first-of-type
+        {
+            background-color: purple;
+        }
+        li: nth-of-type(2)
+        {
+
+        } */
+        /*选择有input和name*/
+        /*以u开头*/
+        input[name^=u]
+        {
+            background-color: yellow;
+        }
+        /*以na结尾*/ 
+        input[name$=na]
+        {
+
+        }
+        /*有name属性*/
+        input[name]
+        {
+
+        }
+        /*name等于username*/
+        input[name=username]
+        {
+
+        }
+        /*包含rn*/
+        input[name*=rn]
+        {
+
+        }
+    &lt;/style&gt;
+    &lt;!--css外部样式引入css文件--&gt;
+    &lt;!--&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css-test2.css--&gt;
+
+
+
+    &lt;h1&gt;一级标题&lt;/h1&gt;
+       &lt;h1 class=&quot;mystyle&quot;&gt;一级标题&lt;/h1&gt;
+       &lt;h2 class=&quot;mystyle&quot;&gt;二级标题&lt;/h2&gt;
+       &lt;h2 id=&quot;mystyle2&quot;&gt;二级标题&lt;/h2&gt;
+       &lt;p class=&quot;mystyle&quot;&gt;fdsdfsdfsd&lt;/p&gt;
+       &lt;!--css行内样式 --&gt;
+       &lt;h4 style=&quot;color: red&quot;&gt;fdsfsd&lt;/h4&gt;
+       &lt;h5&gt;vcvc&lt;/h5&gt;
+       &lt;ul&gt;
+           &lt;li&gt;f&lt;strong&gt;ds&lt;/strong&gt;&lt;/li&gt;
+           &lt;li class=&quot;mystyle3&quot;&gt;vv&lt;/li&gt;
+       &lt;/ul&gt;
+       &lt;form&gt;
+           &lt;input type=&quot;text&quot; name=&quot;username&quot;&gt;
+           &lt;input type=&quot;password&quot; name=&quot;passw&quot;&gt;
+           &lt;input type=&quot;text&quot; name=&quot;uuu&quot;&gt;
+       &lt;/form&gt;
+
+
+
+
+
+放在css文件中
+ /* 标签选择器*/
+        h1{
+            /* 颜色支持英文和16进制*/                
+            color: green;
+            font-size:30px;
+        }
+        p
+        {
+            color:blue;
+        }
+        /*类选择器 可以用于多个*/
+        .mystyle
+        {
+            background-color: green;
+            color:yellow; 
+        }
+        /* id选择器 一次只能选择一个*/
+        #mystyle2
+        {
+            background-color: yellow;
+        }</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://skysea-gaoming.github.io/2020/02/15/css%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02-1/" data-id="ck6ngs07b0000okua19vx53rf" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/" rel="tag">css</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-html学习笔记1-3" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/02/15/html%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01-3/" class="article-date">
@@ -720,6 +909,10 @@ style type=&quot;text/css&quot;
       <ul>
         
           <li>
+            <a href="/2020/02/24/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-6/">vue学习笔记4-6</a>
+          </li>
+        
+          <li>
             <a href="/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/">vue学习笔记4-5</a>
           </li>
         
@@ -733,10 +926,6 @@ style type=&quot;text/css&quot;
         
           <li>
             <a href="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-2/">vue学习笔记4-2</a>
-          </li>
-        
-          <li>
-            <a href="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-1/">vue学习笔记4-1</a>
           </li>
         
       </ul>

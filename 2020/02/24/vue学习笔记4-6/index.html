@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>vue学习笔记4-6 | 高明的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="参考B站ilovecoding的vue学习视频">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue学习笔记4-6">
+<meta property="og:url" content="https://skysea-gaoming.github.io/2020/02/24/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-6/index.html">
+<meta property="og:site_name" content="高明的博客">
+<meta property="og:description" content="参考B站ilovecoding的vue学习视频">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://skysea-gaoming.github.io/2020/02/24/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-6/number1.jpg">
+<meta property="og:image" content="https://skysea-gaoming.github.io/2020/02/24/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-6/number2.jpg">
+<meta property="og:image" content="https://skysea-gaoming.github.io/2020/02/24/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-6/number3.jpg">
+<meta property="og:image" content="https://skysea-gaoming.github.io/2020/02/24/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-6/number4.jpg">
+<meta property="og:image" content="https://skysea-gaoming.github.io/2020/02/24/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-6/number5.jpg">
+<meta property="article:published_time" content="2020-02-24T10:05:58.000Z">
+<meta property="article:modified_time" content="2020-02-25T13:08:12.411Z">
+<meta property="article:author" content="高明">
+<meta property="article:tag" content="vue">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://skysea-gaoming.github.io/2020/02/24/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-6/number1.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="高明的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">高明的博客</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">高明的技术博客</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://SkySea-GaoMing.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-vue学习笔记4-6" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/02/24/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-6/" class="article-date">
+  <time datetime="2020-02-24T10:05:58.000Z" itemprop="datePublished">2020-02-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/">前端技术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      vue学习笔记4-6
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="vue学习系列6"><a href="#vue学习系列6" class="headerlink" title="vue学习系列6"></a>vue学习系列6</h2><h2 id="vuecli-脚手架"><a href="#vuecli-脚手架" class="headerlink" title="vuecli-脚手架"></a>vuecli-脚手架</h2><p>cli Command-Line Interface<br>可以快速搭建vue开发环境以及对应的webpack配置<br>安装node和NPM<br>NPM Node Package Manager<br>之前已经安装了脚手架2.9.6，参考4-1<br>直接创建新项目vuesecond<br>vue init webpack vuesecond 创建项目文件夹<br>? project name (vuesecond) 这里默认项目名时vuesecond，直接回车<br>? Project description (A Vue.js project) 默认描述信息，可以修改没有什么影响<br>? Author (SkySea-GaoMing <a href="mailto:&#49;&#x38;&#52;&#x39;&#55;&#x33;&#x31;&#48;&#x34;&#x35;&#64;&#113;&#113;&#x2e;&#x63;&#111;&#109;">&#49;&#x38;&#52;&#x39;&#55;&#x33;&#x31;&#48;&#x34;&#x35;&#64;&#113;&#113;&#x2e;&#x63;&#111;&#109;</a>) 读取gitconfig<br>Runtime + Compiler 先选这个，以后用下一个<br>? Install vue-router? 暂时选择n,以后再安装<br>Use ESLint to lint your code? 检测代码规范，如果不规范就会报错<br>set up unit tests? 单元测试，一般不用<br>Setup e2e tests with Nightwatch? 端到端测试，一般用不到<br>管理项目使用NPM,yarn是新推出的也可以使用<br><img src="/2020/02/24/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-6/number1.jpg" alt><br><img src="/2020/02/24/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-6/number2.jpg" alt></p>
+<h2 id="vuecli2的目录结构解析"><a href="#vuecli2的目录结构解析" class="headerlink" title="vuecli2的目录结构解析"></a>vuecli2的目录结构解析</h2><p>chrome使用v8引擎直接将javascript编译成二进制文件<br>之前如果要执行javascript代码必须要有html文件并且在浏览器中执行，node使用v8引擎可以在终端运行<br><img src="/2020/02/24/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-6/number3.jpg" alt><br>build和config都是配置文件<br>node_modules当前项目依赖的包<br>src中是要开发的代码<br>src/assets 放静态文件<br>static 放静态资源，会复制到dist文件夹中<br>.babelrc 将es6转为es5<br>.editconfig 对代码进行统一规范<br>.gitignore 不需要上传服务器的内容</p>
+<h2 id="compiler-runtime和runtime-only的区别"><a href="#compiler-runtime和runtime-only的区别" class="headerlink" title="compiler+runtime和runtime-only的区别"></a>compiler+runtime和runtime-only的区别</h2><p>runtime-compiler : template-&gt;ast-&gt;render-&gt;vdom-&gt;UI<br>runtime-only : render-&gt;vdom-&gt;UI 性能更高，代码量更少</p>
+<h2 id="vuecli3"><a href="#vuecli3" class="headerlink" title="vuecli3"></a>vuecli3</h2><p>vue create vuethird 创建项目<br>Manually select features 手动选择需要的东西<br>目前只选择babel<br>单独选择生成配置文件<br><img src="/2020/02/24/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-6/number4.jpg" alt><br>启动项目 npm run serve<br>可以在 vue ui中查看和修改配置</p>
+<h2 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h2><p><img src="/2020/02/24/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-6/number5.jpg" alt><br>箭头函数中的this引用的是最近作用域中的this</p>
+<h2 id="vue-router详解"><a href="#vue-router详解" class="headerlink" title="vue-router详解"></a>vue-router详解</h2><p>路由就是通过互联的网络把信息从源地址传输到目的地址的活动</p>
+<h2 id="前端渲染和后端渲染"><a href="#前端渲染和后端渲染" class="headerlink" title="前端渲染和后端渲染"></a>前端渲染和后端渲染</h2><p>后端渲染：jsp php<br>后端路由：后端处理url和页面之间的映射关系<br>缺点：整个页面都是由后端开发，html和Java代码混杂在一起<br>随着Ajax出现，前后端分离<br>前端渲染：浏览器中显示的网页中的大部分内容都是由前端写的js代码在浏览器中<br>执行最终渲染出来的网页<br>前端路由：单页富应用，整个网页只有一个html页面，静态资源服务器中可能只有一个html文件<br>一个css文件，一个javascript文件，url和页面组件的映射关系是由前端路由管理<br>url发生改变时会抽取相应的组件，整个页面并没有刷新</p>
+<h2 id="url的hash"><a href="#url的hash" class="headerlink" title="url的hash"></a>url的hash</h2><p>直接修改hash<br>html5的history.pushState history.back,类似一个栈结构 history.go()向前或向后<br>history.replaceState不会保留之前访问的页面</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://skysea-gaoming.github.io/2020/02/24/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-6/" data-id="ck70ar2ey0000zkua0b9r2oh7" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/" rel="tag">vue</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">vue学习笔记4-5</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/">前端技术</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/" rel="tag">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/" rel="tag">vue</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/html/" style="font-size: 15px;">html</a> <a href="/tags/javascript/" style="font-size: 15px;">javascript</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/02/24/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-6/">vue学习笔记4-6</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/">vue学习笔记4-5</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/21/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-4/">vue学习笔记4-4</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-3/">vue学习笔记4-3</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-2/">vue学习笔记4-2</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 高明<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
