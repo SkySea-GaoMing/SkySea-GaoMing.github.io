@@ -1,114 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-
-  
-  <title>vue学习笔记4-2 | 高明的博客</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="参考B站ilovecoding的vue学习视频">
-<meta property="og:type" content="article">
-<meta property="og:title" content="vue学习笔记4-2">
-<meta property="og:url" content="https://skysea-gaoming.github.io/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-2/index.html">
-<meta property="og:site_name" content="高明的博客">
-<meta property="og:description" content="参考B站ilovecoding的vue学习视频">
-<meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://skysea-gaoming.github.io/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-2/number1.jpg">
-<meta property="og:image" content="https://skysea-gaoming.github.io/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-2/number2.jpg">
-<meta property="og:image" content="https://skysea-gaoming.github.io/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-2/number3.jpg">
-<meta property="og:image" content="https://skysea-gaoming.github.io/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-2/number4.jpg">
-<meta property="og:image" content="https://skysea-gaoming.github.io/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-2/number5.jpg">
-<meta property="og:image" content="https://skysea-gaoming.github.io/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-2/number6.jpg">
-<meta property="og:image" content="https://skysea-gaoming.github.io/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-2/number7.jpg">
-<meta property="og:image" content="https://skysea-gaoming.github.io/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-2/number8.jpg">
-<meta property="og:image" content="https://skysea-gaoming.github.io/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-2/number9.jpg">
-<meta property="og:image" content="https://skysea-gaoming.github.io/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-2/number10.jpg">
-<meta property="article:published_time" content="2020-02-16T14:07:35.000Z">
-<meta property="article:modified_time" content="2020-02-21T04:11:37.477Z">
-<meta property="article:author" content="高明">
-<meta property="article:tag" content="vue">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://skysea-gaoming.github.io/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-2/number1.jpg">
-  
-    <link rel="alternate" href="/atom.xml" title="高明的博客" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  
-<link rel="stylesheet" href="/css/style.css">
-
-<meta name="generator" content="Hexo 4.2.0"></head>
-
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">高明的博客</a>
-      </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">高明的技术博客</a>
-        </h2>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://SkySea-GaoMing.github.io"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-vue学习笔记4-2" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-2/" class="article-date">
-  <time datetime="2020-02-16T14:07:35.000Z" itemprop="datePublished">2020-02-16</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/">前端技术</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      vue学习笔记4-2
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="vue学习系列2"><a href="#vue学习系列2" class="headerlink" title="vue学习系列2"></a>vue学习系列2</h2><p>v-pre 如果不希望vue解析双括号中的内容 直接展示标签的内容<br>v-cloak 如果vue解析延迟可能直接先展示字符串然后更新为解析的内容<br>如果我们不希望展示两次，Vue解析之后该指令会消失，以后使用虚拟DOM一般不需要此指令了解即可<br><img src="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-2/number1.jpg" alt><br>v-bind 除了内容需要动态决定有些属性也需要动态绑定<br>比如a元素的href属性，img元素的src属性 此时Mustache语法不能用<br>v-bind语法糖：简写为 :<br>v-bind动态绑定class属性与之前形式一样<br>class中也可以添加一个对象其中放入Key :Boolean<br>其中boolean依然可以动态指定</p>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="参考B站ilovecoding的vue学习视频"><meta name="keywords" content="vue"><meta name="author" content="高明"><meta name="copyright" content="高明"><title>vue学习笔记4-2 | SkySea-GaoMing's Blog</title><link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.7.0"><link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css?version=1.7.0"><meta name="format-detection" content="telephone=no"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  }
+} </script><meta name="generator" content="Hexo 4.2.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="Toggle article">Toggle site</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#vue学习系列2"><span class="toc-number">1.</span> <span class="toc-text">vue学习系列2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注意"><span class="toc-number">2.</span> <span class="toc-text">注意</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#v-bind动态绑定style"><span class="toc-number">3.</span> <span class="toc-text">v-bind动态绑定style</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注意-1"><span class="toc-number">4.</span> <span class="toc-text">注意</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#计算属性"><span class="toc-number">5.</span> <span class="toc-text">计算属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#计算属性的setter和getter"><span class="toc-number">6.</span> <span class="toc-text">计算属性的setter和getter</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#计算属性的缓存以及与methods的对比"><span class="toc-number">7.</span> <span class="toc-text">计算属性的缓存以及与methods的对比</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#es6语法补充学习"><span class="toc-number">8.</span> <span class="toc-text">es6语法补充学习</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#事件监听"><span class="toc-number">9.</span> <span class="toc-text">事件监听</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1582898893694&amp;di=15958b0625c3bcbdd505353b8b5deaa4&amp;imgtype=0&amp;src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farticle%2F068c0cbf1b1571976ada2e55a53b3a079e1614c5.jpg"></div><div class="author-info__name text-center">高明</div><div class="author-info__description text-center">技术博客，Java技术，Java框架，前端技术</div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">Articles</span><span class="pull-right">16</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">Tags</span><span class="pull-right">5</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">Categories</span><span class="pull-right">2</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1582887545110&amp;di=c0427815f56b46f90d0beae680440130&amp;imgtype=0&amp;src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F01786e56570a716ac7251c94aa512e.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">SkySea-GaoMing's Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a></span><span class="pull-right"></span></div><div id="post-info"><div id="post-title">vue学习笔记4-2</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-02-16</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/">前端技术</a><span class="post-meta__separator">|</span><i class="fa fa-comment-o post-meta__icon" aria-hidden="true"></i><a href="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-2/#disqus_thread"><span class="disqus-comment-count" data-disqus-identifier="2020/02/16/vue学习笔记4-2/"></span></a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h2 id="vue学习系列2"><a href="#vue学习系列2" class="headerlink" title="vue学习系列2"></a>vue学习系列2</h2><p>v-pre 如果不希望vue解析双括号中的内容 直接展示标签的内容<br>v-cloak 如果vue解析延迟可能直接先展示字符串然后更新为解析的内容<br>如果我们不希望展示两次，Vue解析之后该指令会消失，以后使用虚拟DOM一般不需要此指令了解即可<br><img src="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-2/number1.jpg" alt><br>v-bind 除了内容需要动态决定有些属性也需要动态绑定<br>比如a元素的href属性，img元素的src属性 此时Mustache语法不能用<br>v-bind语法糖：简写为 :<br>v-bind动态绑定class属性与之前形式一样<br>class中也可以添加一个对象其中放入Key :Boolean<br>其中boolean依然可以动态指定</p>
 <h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>当在class中直接写data属性名时在style中要写 .data属性值<br>当在class中是一个对象（key:boolean）时key不属于data，直接就是class属性值 style中写 .key<br>图片中data里面有al和line实际不需要<br><img src="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-2/number2.jpg" alt><br><img src="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-2/number3.jpg" alt> <img src="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-2/number4.jpg" alt><br>class对象语法<br>class=”{al: isale, line: false}”可以改写为函数class=”getClasses()”一定要加括号分情况<br>在methods中添加函数getClass()内容是 return {al: isale, line: false} 这样写更简洁</p>
 <h2 id="v-bind动态绑定style"><a href="#v-bind动态绑定style" class="headerlink" title="v-bind动态绑定style"></a>v-bind动态绑定style</h2><p>对象语法 Key（css属性名）value（css属性值）</p>
 <h2 id="注意-1"><a href="#注意-1" class="headerlink" title="注意"></a>注意</h2><p>font-size不管用，以后改写为fontSize这种驼峰形式<br><img src="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-2/number5.jpg" alt></p>
@@ -117,154 +16,17 @@
 <h2 id="计算属性的缓存以及与methods的对比"><a href="#计算属性的缓存以及与methods的对比" class="headerlink" title="计算属性的缓存以及与methods的对比"></a>计算属性的缓存以及与methods的对比</h2><p>通过methods形式语法与计算属性基本相同，但是计算属性性能更高<br>如果多次打印fullname，methods每次都会重新执行函数，而计算属性有缓存机制不会重新执行除非数据改变</p>
 <h2 id="es6语法补充学习"><a href="#es6语法补充学习" class="headerlink" title="es6语法补充学习"></a>es6语法补充学习</h2><p>let/const/var<br>let有块级作用域var没有块级作用域，for循环变量作用域<br>for(var i=0;i&lt;length;i++)<br>{<br>   click[i]:{<br>    console.log(i);<br>   }<br>}<br>这是一段简化代码，比如进行点击操作时，控制台永远都会打印length，如果改为let问题就会得到解决，可以理解为for的每一段循环都是一个块级<br>const: 将变量变为常量，不可以再次赋值，但是对象的属性可以修改，优先使用const<br>对象字面量增强写法<br>const name=’fd’;    直接将name赋给对象obj<br>const obj={name};<br>函数增强写法<br>const obj={ run: function(){}}变为 const obj={run(){}}</p>
 <h2 id="事件监听"><a href="#事件监听" class="headerlink" title="事件监听"></a>事件监听</h2><p>与用户进行交互时监听点击、拖拽、键盘事件等<br>v-on:<br>作用：绑定事件监听器 缩写：@<br>调用一个方法时可以加括号也可以不加如果这个函方法不需要参数则没有区别<br>如果是一个需要传参数的方法，加括号但不传值则是undefined值，如果不加括号默认传递浏览器生成的Event对象<br>如果一个方法需要event对象，也需要其它参数时 需要传入$event<br><img src="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-2/number8.jpg" alt><br>v-on修饰符:<br>stop 点击按钮时根据冒泡也会打印bbb，如果不希望冒泡可以改为 click.stop<br>prevent 阻止默认事件<br>KeyAlias 监听键盘点击事件，如果只监听enter键可以改为keyup.enter<br>once click.once 只有第一次点击有反应之后就失效<br><img src="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-2/number9.jpg" alt> <img src="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-2/number10.jpg" alt></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://skysea-gaoming.github.io/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-2/" data-id="ck6vnrbi50005dwuaabte60id" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/" rel="tag">vue</a></li></ul>
-
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-3/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          vue学习笔记4-3
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-1/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">vue学习笔记4-1</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/">前端技术</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/" rel="tag">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/" rel="tag">vue</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/html/" style="font-size: 15px;">html</a> <a href="/tags/javascript/" style="font-size: 15px;">javascript</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2020/02/24/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-6/">vue学习笔记4-6</a>
-          </li>
-        
-          <li>
-            <a href="/2020/02/23/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-5/">vue学习笔记4-5</a>
-          </li>
-        
-          <li>
-            <a href="/2020/02/21/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-4/">vue学习笔记4-4</a>
-          </li>
-        
-          <li>
-            <a href="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-3/">vue学习笔记4-3</a>
-          </li>
-        
-          <li>
-            <a href="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-2/">vue学习笔记4-2</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2020 高明<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
-  
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-  </div>
-</body>
-</html>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">高明</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://skysea-gaoming.github.io/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-2/">https://skysea-gaoming.github.io/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-2/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/vue/">vue</a></div><nav id="pagination"><div class="prev-post pull-left"><a href="/2020/02/18/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-3/"><i class="fa fa-chevron-left">  </i><span>vue学习笔记4-3</span></a></div><div class="next-post pull-right"><a href="/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-1/"><span>vue学习笔记4-1</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="disqus_thread"></div><script>var unused = null;
+var disqus_config = function () {
+  this.page.url = 'https://skysea-gaoming.github.io/2020/02/16/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04-2/';
+  this.page.identifier = '2020/02/16/vue学习笔记4-2/';
+  this.page.title = 'vue学习笔记4-2';
+}
+var d = document, s = d.createElement('script');
+s.src = "https://" + '你的disqus的 short-name' +".disqus.com/embed.js";
+s.setAttribute('data-timestamp', '' + +new Date());
+(d.head || d.body).appendChild(s);</script><script id="dsq-count-scr" src="https://你的disqus的 short-name.disqus.com/count.js" async></script></div></div><footer class="footer-bg" style="background-image: url(https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1582887545110&amp;di=c0427815f56b46f90d0beae680440130&amp;imgtype=0&amp;src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F01786e56570a716ac7251c94aa512e.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2013 - 2020 By 高明</div><div class="framework-info"><span>Driven - </span><a href="http://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody" target="_blank" rel="noopener"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file-o"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="/js/third-party/anime.min.js"></script><script src="/js/third-party/jquery.min.js"></script><script src="/js/third-party/jquery.fancybox.min.js"></script><script src="/js/third-party/velocity.min.js"></script><script src="/js/third-party/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.7.0"></script><script src="/js/fancybox.js?version=1.7.0"></script><script src="/js/sidebar.js?version=1.7.0"></script><script src="/js/copy.js?version=1.7.0"></script><script src="/js/fireworks.js?version=1.7.0"></script><script src="/js/transition.js?version=1.7.0"></script><script src="/js/scroll.js?version=1.7.0"></script><script src="/js/head.js?version=1.7.0"></script><script id="ribbon" src="/js/third-party/canvas-ribbon.js" size="150" alpha="0.6" zIndex="-1" data-click="false"></script><script>if(/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+  $('#top-container').addClass('is-mobile')
+}</script></body></html>
