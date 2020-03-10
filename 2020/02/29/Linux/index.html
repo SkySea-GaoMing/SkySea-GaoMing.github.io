@@ -37,10 +37,26 @@
 <li>/ 剩余空间</li>
 </ol>
 <h3 id="终端使用和联网"><a href="#终端使用和联网" class="headerlink" title="终端使用和联网"></a>终端使用和联网</h3><p>cd /etc/sysconfig/network-scripts/ 修改配置<br><img src="/2020/02/29/Linux/number2.jpg" alt><br>vi ifcfg-ens33 修改配置<br><img src="/2020/02/29/Linux/number3.jpg" alt><br>IPADDR前三个数需要与以太网ip前三个相同，编辑中虚拟网络编辑器查看网关和子网掩码<br><img src="/2020/02/29/Linux/number4.jpg" alt> <img src="/2020/02/29/Linux/number5.jpg" alt> </p>
-<h3 id="设置DNS"><a href="#设置DNS" class="headerlink" title="设置DNS"></a>设置DNS</h3><p>vi /etc/resolv.conf    //编辑 resolv.conf文件<br>nameserver 114.114.114.114   //添加DNS地址<br>阿里  223.5.5.5  或者  223.6.6.6<br>谷歌  8.8.8.8<br>国内移动、电信和联通通用的DNS  114.114.114.114 </p>
+<h3 id="设置DNS"><a href="#设置DNS" class="headerlink" title="设置DNS"></a>设置DNS</h3><p>vi /etc/resolv.conf    编辑 resolv.conf文件<br>nameserver 114.114.114.114   //添加DNS地址<br>阿里  223.5.5.5  或者  223.6.6.6<br>谷歌  8.8.8.8<br>国内移动、电信和联通通用的DNS  114.114.114.114 </p>
 <h3 id="查看是否能访问外网"><a href="#查看是否能访问外网" class="headerlink" title="查看是否能访问外网"></a>查看是否能访问外网</h3><p>输入 service network restart<br><img src="/2020/02/29/Linux/number6.jpg" alt></p>
 <h2 id="vmtools的安装和使用"><a href="#vmtools的安装和使用" class="headerlink" title="vmtools的安装和使用"></a>vmtools的安装和使用</h2><p>安装之后可以直接粘贴命令在windows和centos之间，可以设置两者的共享文件<br>./vmware-install.pl</p>
-<h2 id="文件系统目录结构"><a href="#文件系统目录结构" class="headerlink" title="文件系统目录结构"></a>文件系统目录结构</h2></div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">高明</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://skysea-gaoming.github.io/2020/02/29/Linux/">https://skysea-gaoming.github.io/2020/02/29/Linux/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/System/">System</a></div><nav id="pagination"><div class="prev-post pull-left"><a href="/2020/02/29/ComputerNetwork/"><i class="fa fa-chevron-left">  </i><span>ComputerNetwork</span></a></div><div class="next-post pull-right"><a href="/2020/02/28/JavaScript2/"><span>JavaScript2</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="disqus_thread"></div><script>var unused = null;
+<h2 id="文件系统目录结构"><a href="#文件系统目录结构" class="headerlink" title="文件系统目录结构"></a>文件系统目录结构</h2><p>Linux的文件系统采用级层式的树状目录结构，在此结构的最上层是根目录 “/“<br>在Linux世界中一切皆文件</p>
+<ul>
+<li>/ 只有一个根目录</li>
+<li>/bin 存放最经常使用的命令</li>
+<li>/home 普通用户的主目录</li>
+<li>/root </li>
+<li>/boot 启动时使用的核心文件</li>
+<li>/dev 所有的硬件以文件的形式存储</li>
+<li>/etc 配置文件</li>
+<li>/user 应用程序和文件</li>
+<li>/media 自动识别的设备例如u盘、光驱会挂载到这个目录下</li>
+<li>/mnt </li>
+<li>/opt 安装软件所放的目录</li>
+<li>/user/local 软件安装后放的目录</li>
+<li>/var 日志文件</li>
+</ul>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">高明</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://skysea-gaoming.github.io/2020/02/29/Linux/">https://skysea-gaoming.github.io/2020/02/29/Linux/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/System/">System</a></div><nav id="pagination"><div class="prev-post pull-left"><a href="/2020/02/29/ComputerNetwork/"><i class="fa fa-chevron-left">  </i><span>ComputerNetwork</span></a></div><div class="next-post pull-right"><a href="/2020/02/28/JavaScript2/"><span>JavaScript2</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="disqus_thread"></div><script>var unused = null;
 var disqus_config = function () {
   this.page.url = 'https://skysea-gaoming.github.io/2020/02/29/Linux/';
   this.page.identifier = '2020/02/29/Linux/';
