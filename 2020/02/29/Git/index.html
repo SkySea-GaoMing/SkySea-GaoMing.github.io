@@ -44,11 +44,14 @@
 <li>git commit<br>暂存区到版本库（对象区）</li>
 <li>git push<br>将自己的版本库推送到远程仓库（github)</li>
 <li>git pull<br>远程仓库内容放入版本库</li>
+<li>git checkout – file<br>如果某个文件已提交并且又进行了修改可以放弃修改还原到已提交状态</li>
 </ol>
-<h3 id="进一步理解版本库"><a href="#进一步理解版本库" class="headerlink" title="进一步理解版本库"></a>进一步理解版本库</h3><p>本地有很多版本库，就是一个个分支master。<br>msysgit.github.io 安装git,注意 use git frm git bash only,其余默认<br><img src="/2020/02/29/Git/number1.jpg" alt><br>在git bash中配置用户名和邮箱</p>
+<h3 id="进一步理解版本库"><a href="#进一步理解版本库" class="headerlink" title="进一步理解版本库"></a>进一步理解版本库</h3><p>本地有很多版本库，就是一个个分支master。<br>msysgit.github.io 安装git,注意 use git frm git bash only,其余默认<br><img src="/2020/02/29/Git/number1.jpg" alt><br>在git bash中配置用户名和邮箱，–global是给计算机一次性设置，–system是给当前系统<br>用户一次性设置, –local给当前项目一次性设置，如果同时设置越精确优先级越高</p>
 <ul>
 <li>git config –global user.name “SkySea-GaoMing”</li>
 <li>git config –global user.email “…”  </li>
+<li>git config –local –unset user.name  重置配置信息</li>
+<li>.gitignore文件中配不需要提交的文件</li>
 </ul>
 <p>在C盘用户中.gitconfig查看配置信息</p>
 <h3 id="搭建git服务器，相当于远程仓库"><a href="#搭建git服务器，相当于远程仓库" class="headerlink" title="搭建git服务器，相当于远程仓库"></a>搭建git服务器，相当于远程仓库</h3><p>git有统一的托管网站github，配置免秘钥可以不需要密码就能执行pull和push操作  </p>
@@ -63,9 +66,15 @@
 <ul>
 <li>git add . 当前全部文件到暂存区</li>
 <li>git rm –cached  暂存区回到工作区</li>
-<li>git commit -m “注释内容” 暂存区到对象区</li>
+<li>git reset head   暂存区回到工作区</li>
+<li>git commit -m “注释内容” 暂存区到对象区，只有文件修改之后提交才有效</li>
 <li>git push -u origin master 第一次提交</li>
-<li>git log 查看提交日志，发现一长串数字就是id生成器生成的，用于区分哪一次提交<br><img src="/2020/02/29/Git/number7.jpg" alt> <img src="/2020/02/29/Git/number8.jpg" alt></li>
+<li>git rm file 删除的文件会被放入暂存区，如果要彻底删除需要 commit 也就是提交删除命令</li>
+<li>git reset Head file 使用git方式删除后悔了,执行后回到工作区，执行 checkout指令即可</li>
+<li>rm file 删除文件，回到工作区。然后执行 add 和commit才彻底删除文件</li>
+<li>git log 查看提交日志，发现一长串数字就是id生成器生成的，用于区分哪一次提交,github中<br>会记录所有的提交信息</li>
+<li>git mv filename1 filename2 重命名</li>
+<li>git commit –amend -m “重写最新一次提交的注释”<br><img src="/2020/02/29/Git/number7.jpg" alt> <img src="/2020/02/29/Git/number8.jpg" alt></li>
 </ul>
 <h3 id="第一次下载项目"><a href="#第一次下载项目" class="headerlink" title="第一次下载项目"></a>第一次下载项目</h3><p>远程到本地，新建gitclonep文件夹，git bash,获取项目的唯一ssh</p>
 <ul>
