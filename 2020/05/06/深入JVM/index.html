@@ -7,7 +7,7 @@
     error: 'Copy error',
     noSupport: 'The browser does not support'
   }
-} </script><meta name="generator" content="Hexo 4.2.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="Toggle article">Toggle site</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#参考《深入理解JVM虚拟机》"><span class="toc-number">1.</span> <span class="toc-text">参考《深入理解JVM虚拟机》</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Java简介"><span class="toc-number">1.1.</span> <span class="toc-text">Java简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JVM架构"><span class="toc-number">1.2.</span> <span class="toc-text">JVM架构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JVM的生命周期"><span class="toc-number">1.3.</span> <span class="toc-text">JVM的生命周期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Java内存区域"><span class="toc-number">1.4.</span> <span class="toc-text">Java内存区域</span></a></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1582898893694&amp;di=15958b0625c3bcbdd505353b8b5deaa4&amp;imgtype=0&amp;src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farticle%2F068c0cbf1b1571976ada2e55a53b3a079e1614c5.jpg"></div><div class="author-info__name text-center">高明</div><div class="author-info__description text-center">JAVA</div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">Articles</span><span class="pull-right">29</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">Tags</span><span class="pull-right">11</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">Categories</span><span class="pull-right">6</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1591954918112&amp;di=2bc6f4358ea0e880687f5ced03157daf&amp;imgtype=0&amp;src=http%3A%2F%2Fyouimg1.c-ctrip.com%2Ftarget%2Ftg%2F620%2F406%2F859%2Fe7db3299a728401eb7b42effae33dadb.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">SkySea-GaoMing</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a></span><span class="pull-right"></span></div><div id="post-info"><div id="post-title">深入JVM</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-05-06</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF/">后端技术</a><span class="post-meta__separator">|</span><i class="fa fa-comment-o post-meta__icon" aria-hidden="true"></i><a href="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/#disqus_thread"><span class="disqus-comment-count" data-disqus-identifier="2020/05/06/深入JVM/"></span></a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h2 id="参考《深入理解JVM虚拟机》"><a href="#参考《深入理解JVM虚拟机》" class="headerlink" title="参考《深入理解JVM虚拟机》"></a>参考《深入理解JVM虚拟机》</h2><p>世界上没有完美的程序，但是我们并不因此沮丧，因为写程序本来就是一个不断追求完美的过程</p>
+} </script><meta name="generator" content="Hexo 4.2.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="Toggle article">Toggle site</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#参考《深入理解JVM虚拟机》"><span class="toc-number">1.</span> <span class="toc-text">参考《深入理解JVM虚拟机》</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Java简介"><span class="toc-number">1.1.</span> <span class="toc-text">Java简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JVM架构"><span class="toc-number">1.2.</span> <span class="toc-text">JVM架构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JVM的生命周期"><span class="toc-number">1.3.</span> <span class="toc-text">JVM的生命周期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#类加载器"><span class="toc-number">1.4.</span> <span class="toc-text">类加载器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#链接"><span class="toc-number">1.4.1.</span> <span class="toc-text">链接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#初始化"><span class="toc-number">1.4.2.</span> <span class="toc-text">初始化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#类加载器分类"><span class="toc-number">1.4.3.</span> <span class="toc-text">类加载器分类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#双亲委派机制"><span class="toc-number">1.4.4.</span> <span class="toc-text">双亲委派机制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#沙箱安全机制"><span class="toc-number">1.4.5.</span> <span class="toc-text">沙箱安全机制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#补充"><span class="toc-number">1.4.6.</span> <span class="toc-text">补充</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#运行时数据区内部结构"><span class="toc-number">2.</span> <span class="toc-text">运行时数据区内部结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#内存"><span class="toc-number">2.1.</span> <span class="toc-text">内存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#线程"><span class="toc-number">2.2.</span> <span class="toc-text">线程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#程序计数器介绍"><span class="toc-number">2.3.</span> <span class="toc-text">程序计数器介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#PC-Register"><span class="toc-number">2.3.1.</span> <span class="toc-text">PC Register</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#作用"><span class="toc-number">2.3.2.</span> <span class="toc-text">作用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#例子"><span class="toc-number">2.3.3.</span> <span class="toc-text">例子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#两个常见问题"><span class="toc-number">2.3.4.</span> <span class="toc-text">两个常见问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CPU时间片"><span class="toc-number">2.3.5.</span> <span class="toc-text">CPU时间片</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#虚拟机栈"><span class="toc-number">2.4.</span> <span class="toc-text">虚拟机栈</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#虚拟机栈的概述"><span class="toc-number">2.4.1.</span> <span class="toc-text">虚拟机栈的概述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#栈帧的粗略描述"><span class="toc-number">2.4.2.</span> <span class="toc-text">栈帧的粗略描述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#栈的优点"><span class="toc-number">2.4.3.</span> <span class="toc-text">栈的优点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#栈中可能出现的异常"><span class="toc-number">2.4.4.</span> <span class="toc-text">栈中可能出现的异常</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#设置栈内存大小"><span class="toc-number">2.4.5.</span> <span class="toc-text">设置栈内存大小</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#栈的存储单位"><span class="toc-number">2.4.6.</span> <span class="toc-text">栈的存储单位</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#栈运行原理"><span class="toc-number">2.4.7.</span> <span class="toc-text">栈运行原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#栈帧的内部结构"><span class="toc-number">2.4.8.</span> <span class="toc-text">栈帧的内部结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#局部变量表"><span class="toc-number">2.4.9.</span> <span class="toc-text">局部变量表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#字节码中方法内部结构剖析"><span class="toc-number">2.4.10.</span> <span class="toc-text">字节码中方法内部结构剖析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Slot"><span class="toc-number">2.4.11.</span> <span class="toc-text">Slot</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#静态变量与局部变量的对比"><span class="toc-number">2.4.12.</span> <span class="toc-text">静态变量与局部变量的对比</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#操作数栈"><span class="toc-number">2.4.13.</span> <span class="toc-text">操作数栈</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代码追踪"><span class="toc-number">2.4.14.</span> <span class="toc-text">代码追踪</span></a></li></ol></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1582898893694&amp;di=15958b0625c3bcbdd505353b8b5deaa4&amp;imgtype=0&amp;src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farticle%2F068c0cbf1b1571976ada2e55a53b3a079e1614c5.jpg"></div><div class="author-info__name text-center">高明</div><div class="author-info__description text-center">JAVA</div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">Articles</span><span class="pull-right">30</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">Tags</span><span class="pull-right">11</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">Categories</span><span class="pull-right">6</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1591954918112&amp;di=2bc6f4358ea0e880687f5ced03157daf&amp;imgtype=0&amp;src=http%3A%2F%2Fyouimg1.c-ctrip.com%2Ftarget%2Ftg%2F620%2F406%2F859%2Fe7db3299a728401eb7b42effae33dadb.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">SkySea-GaoMing</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a></span><span class="pull-right"></span></div><div id="post-info"><div id="post-title">深入JVM</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-05-06</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF/">后端技术</a><span class="post-meta__separator">|</span><i class="fa fa-comment-o post-meta__icon" aria-hidden="true"></i><a href="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/#disqus_thread"><span class="disqus-comment-count" data-disqus-identifier="2020/05/06/深入JVM/"></span></a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h2 id="参考《深入理解JVM虚拟机》"><a href="#参考《深入理解JVM虚拟机》" class="headerlink" title="参考《深入理解JVM虚拟机》"></a>参考《深入理解JVM虚拟机》</h2><p>世界上没有完美的程序，但是我们并不因此沮丧，因为写程序本来就是一个不断追求完美的过程</p>
 <h3 id="Java简介"><a href="#Java简介" class="headerlink" title="Java简介"></a>Java简介</h3><ol>
 <li>Java的一大特点就是摆脱了硬件平台的束缚，一次编写到处运行 <img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number6.jpg" alt></li>
 <li>java虚拟机的功能比Java要强大，实际上是跨语言的平台，不同的编程语言编写的程序<br>也可以编译成字节码文件，如果符合虚拟机规范也可以在虚拟机上运行，实际上能在jvm平台<br>执行的字节码格式都是一样的，统称为jvm字节码 <img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number7.jpg" alt></li>
@@ -22,13 +22,15 @@
 </ul>
 <h3 id="JVM架构"><a href="#JVM架构" class="headerlink" title="JVM架构"></a>JVM架构</h3><ol>
 <li>对于Java程序员，在虚拟机自动内存管理机制的帮助下，不需要为每一个new操作去写配对的<br>delete/free代码，一般情况下不会出现内存泄漏和内存溢出的情况</li>
+<li>HotSpot虚拟机 <img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number12.jpg" alt></li>
 <li>JVM的整体结构 <img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number2.jpg" alt></li>
 </ol>
 <ul>
 <li>Java代码执行流程 <img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number9.jpg" alt></li>
 <li>指令集架构分为两种，Java编译器输入的指令流基本上是一种基于栈的指令集架构<br><img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number10.jpg" alt> <img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number11.jpg" alt></li>
 </ul>
-<h3 id="JVM的生命周期"><a href="#JVM的生命周期" class="headerlink" title="JVM的生命周期"></a>JVM的生命周期</h3><ol>
+<h3 id="JVM的生命周期"><a href="#JVM的生命周期" class="headerlink" title="JVM的生命周期"></a>JVM的生命周期</h3><p><img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number13.jpg" alt></p>
+<ol>
 <li>虚拟机的启动 通过引导类加载器创建一个初始类来完成，这个类是由虚拟机的具体实现指定</li>
 <li>虚拟机的执行 执行Java程序，程序开始执行时执行，程序结束时结束。实际上执行的是一个<br>进程</li>
 <li>虚拟机的退出</li>
@@ -39,29 +41,113 @@
 <li>操作系统错误</li>
 <li>Runtime类或System类的exit方法</li>
 </ul>
-<h3 id="Java内存区域"><a href="#Java内存区域" class="headerlink" title="Java内存区域"></a>Java内存区域</h3><ul>
-<li>程序计数器 可是一块较小的内存空间，以看成当前线程所执行的字节码的行号指示器，字节码<br>解释器工作时就是通过改变这个计数器的值选取下一条需要执行的字节码指令，可以看成%rip</li>
-<li>Java虚拟机的多线程是通过线程轮流切换实现的，一个确定的时刻一个处理器只会执行一个线程，<br>为了线程切换后能恢复到正确的执行位置，每个线程都有一个独立的程序计数器，这类内存区域是<br>线程私有的内存</li>
-<li>如果线程在执行一个Java方法，那么计数器记录的就是正在执行的虚拟机字节码的指令地址，如果<br>正在执行一个Native方法，这个计数器的值为空。这部分内存区域是唯一一个没有OutOfMemoryError<br>的区域</li>
-</ul>
-<ol start="3">
-<li>Java虚拟机栈也是线程私有的，它的生命周期与线程相同，描述的是Java方法执行的内存模型，<br>每个方法在执行时都会创建一个帧栈。每一个方法从调用到结束的过程都对应一个帧栈在虚拟机栈中<br>从入栈到出栈的过程 <img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number3.jpg" alt></li>
+<h3 id="类加载器"><a href="#类加载器" class="headerlink" title="类加载器"></a>类加载器</h3><p><img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number14.jpg" alt> <img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number15.jpg" alt></p>
+<ol>
+<li>加载</li>
 </ol>
 <ul>
-<li>局部变量表 保存编译期可知的各种基本数据类型、对象引用和returnAddress。64位的long和<br>double会占据2个局部变量空间(Slot)，其余数据类型占据一个局部变量空间。局部变量表所需的<br>内存空间在编译期间完成分配之后不会改变 <img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number4.jpg" alt></li>
+<li>通过一个类的全限定名获取定义此类的二进制字节流 <img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number16.jpg" alt></li>
+<li>将这个字节流所代表的静态存储结构转化为方法区的运行时数据区</li>
+<li>在内存中生成一个代表这个类的java.lang.Class对象，作为方法区这个类的各种数据的访问入口</li>
 </ul>
-<ol start="4">
-<li>本地方法栈 为Native方法服务</li>
-<li>Java堆 对于大多数应用，Java堆是Java虚拟机所管理的内存中最大的一块并且被所有线程共享的<br>内存区域。在Java虚拟机规范中的描述是：所有的对象实例以及数组都要在堆上分配内存。Java堆可以<br>处于物理上不连续的内存空间中，重要逻辑上是连续的即可</li>
-<li>方法区 是线程共享的内存区域 <img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number5.jpg" alt></li>
-<li>运行时常量池 属于方法区的一部分，Class文件除了有类的版本、字段、方法、接口等描述信息描述<br>信息外，还有一项信息就是常量池，用于存放编译期生成的各种字面量和符号引用，这部分内容在类加<br>在后进入方法区的运行时常量池中存放</li>
-<li>直接内存 直接内存并不是虚拟机运行时数据集区的一部分，也不是Java虚拟机规范中定义的内存<br>区域。使用Native函数库直接分配堆外内存，然后通过一个存储在Java堆中的DirectByteBuffer对象<br>作为这块内存的引用进行操作。这块区域不会受到Java堆大小的限制，但是会受到总内存的限制</li>
-<li>对象的创建 Java程序运行过程中无时无刻都有对象被创建出来，创建对象通常就是一个关键字new<br>而已。</li>
+<h4 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h4><p><img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number17.jpg" alt> <img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number18.jpg" alt></p>
+<ol>
+<li>Verify 字节码文件的开头都是cafebabe</li>
+<li>Prepare 这个阶段a=0<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloApp</span></span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> a=<span class="number">1</span>;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h4 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h4><p><img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number19.jpg" alt></p>
+<ol>
+<li>以下代码是允许的，链接时将num和number都赋值为0，初始化时将赋值动作和静态代码块按顺<br>序执，最终number的值为1，但是不能有打印语句，在number声明之前可以赋值但是不能引用</li>
+<li>如果不存在类变量或static代码块就不会存在clinit方法，类变量必须要加static，否则就是<br>实例变量</li>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Init</span></span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> num=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">static</span> &#123;</span><br><span class="line">		num=<span class="number">2</span>;</span><br><span class="line">		number=<span class="number">10</span>;</span><br><span class="line">		<span class="comment">//System.out.println(number);</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> number=<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h4 id="类加载器分类"><a href="#类加载器分类" class="headerlink" title="类加载器分类"></a>类加载器分类</h4><p><img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number20.jpg" alt></p>
+<ol>
+<li>引导类加载器 <img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number24.jpg" alt></li>
+<li>自定义类加载器，Java虚拟机规范定定义所有派生于抽象类ClassLoader的类加载器都划分为<br>自定义类加载器 <img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number21.jpg" alt> <img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number22.jpg" alt> <img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number23.jpg" alt></li>
+<li><img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number25.jpg" alt> <img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number26.jpg" alt></li>
+<li>用户自定义类加载器 <img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number27.jpg" alt></li>
 </ol>
 <ul>
-<li>虚拟机遇到一条new指令时，首先检查这个指令的参数是否能在常量池中定位到一个类的符号引用，<br>并检查这个符号引用代表的类是否已被加载、解析和初始化</li>
-<li>类加载检查通过后，接下来虚拟机为新生对象分配内存，对象创建后init方法还没有执行，所有的<br>字段都还为0，执行new指令之后紧接着执行init方法，按照程序员的意愿初始化对象</li>
+<li>隔离加载类</li>
+<li>修改类加载的方式</li>
+<li>扩展加载源</li>
+<li>防止源码泄露</li>
 </ul>
+<ol start="5">
+<li>ClassLoader 是一个抽象类，所有类加载器都继承自ClassLoader（除了引导类加载器）<br><img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number28.jpg" alt> <img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number29.jpg" alt></li>
+</ol>
+<h4 id="双亲委派机制"><a href="#双亲委派机制" class="headerlink" title="双亲委派机制"></a>双亲委派机制</h4><p><img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number30.jpg" alt> <img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number31.jpg" alt><br>自己定义了一个java.lang.String类，系统类加载器加载时首先往上委托，发现引导类加载器可以<br>加载java.lang.String，所以自己定义的java.lang.String不会被加载</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">String</span></span>&#123;</span><br><span class="line">	<span class="keyword">static</span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"自己定义的String类"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		java.lang.String a=<span class="keyword">new</span> java.lang.String();</span><br><span class="line">		System.out.println(<span class="string">"到底加载了哪个String"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number32.jpg" alt> 优势是避免类的重复加载，保护程序安全，防止核心API被随意篡改</p>
+<h4 id="沙箱安全机制"><a href="#沙箱安全机制" class="headerlink" title="沙箱安全机制"></a>沙箱安全机制</h4><p><img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number33.jpg" alt></p>
+<h4 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h4><ol>
+<li>在JVM中表示两个Class对象是否为同一个类存在两个必要条件</li>
+</ol>
+<ul>
+<li>类的完整类名必须一致，包括包名</li>
+<li>加载这个类的ClassLoader必须相同</li>
+</ul>
+<ol start="2">
+<li>JVM必须知道一个类型是由哪个类加载器加载的（是启动还是用户）。如果是用户类加载器加载<br>的，那么JVM会将这个类加载器的一个引用作为类型信息的一部分保存在方法区中。当解析一个类型<br>到另一个类型的引用时，JVM需要保证这两个类型的类加载器是相同的</li>
+<li><img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number34.jpg" alt></li>
+</ol>
+<h2 id="运行时数据区内部结构"><a href="#运行时数据区内部结构" class="headerlink" title="运行时数据区内部结构"></a>运行时数据区内部结构</h2><p>一个进程对应一个红色区域，一个线程对应一个灰色区域  <img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number35.jpg" alt></p>
+<h3 id="内存"><a href="#内存" class="headerlink" title="内存"></a>内存</h3><p><img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number36.jpg" alt> <img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number37.jpg" alt> <img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number38.jpg" alt> <img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number39.jpg" alt></p>
+<h3 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h3><p><img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number40.jpg" alt> <img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number41.jpg" alt></p>
+<h3 id="程序计数器介绍"><a href="#程序计数器介绍" class="headerlink" title="程序计数器介绍"></a>程序计数器介绍</h3><h4 id="PC-Register"><a href="#PC-Register" class="headerlink" title="PC Register"></a>PC Register</h4><p>java虚拟机中存在PC寄存器，也可以叫做程序计数器 <img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number42.jpg" alt></p>
+<h4 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h4><ol>
+<li>是一块很小的内存空间，也是运行速度最快的存储区域</li>
+<li>每个线程都有自己的程序计数器，生命周期与线程的生命周期一致</li>
+<li>任何时间一个线程都只有一个方法在执行，也就是当前方法，程序计数器会存储当前线程<br>正在执行的Java方法的JVM指令地址，如果执行native方法则未指定值 <img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number43.jpg" alt></li>
+</ol>
+<h4 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h4><p>虚拟机执行字节码指令实际是通过生成机器指令执行的 <img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number44.jpg" alt></p>
+<h4 id="两个常见问题"><a href="#两个常见问题" class="headerlink" title="两个常见问题"></a>两个常见问题</h4><ol>
+<li><img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number45.jpg" alt></li>
+<li><img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number46.jpg" alt> <img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number47.jpg" alt></li>
+</ol>
+<h4 id="CPU时间片"><a href="#CPU时间片" class="headerlink" title="CPU时间片"></a>CPU时间片</h4><ul>
+<li>串行 线程排成队依次被CPU执行</li>
+<li>并行 多个线程同时被执行</li>
+<li>并发 一个CPU快速切换线程，看起来像是并行<br><img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number48.jpg" alt></li>
+</ul>
+<h3 id="虚拟机栈"><a href="#虚拟机栈" class="headerlink" title="虚拟机栈"></a>虚拟机栈</h3><h4 id="虚拟机栈的概述"><a href="#虚拟机栈的概述" class="headerlink" title="虚拟机栈的概述"></a>虚拟机栈的概述</h4><p>java虚拟机栈早期也叫Java栈，每个线程创建时都会创建一个虚拟机栈，其内部保存一个个栈帧，<br>对应一次次的Java方法调用，生命周期和线程一致，主管Java程序的运行，保存方法的局部变量<br>、部分结果，并参与方法的调用和返回。局部变量包括8中基本数据类型和对象的引用地址<br><img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number49.jpg" alt> <img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number50.jpg" alt></p>
+<h4 id="栈帧的粗略描述"><a href="#栈帧的粗略描述" class="headerlink" title="栈帧的粗略描述"></a>栈帧的粗略描述</h4><p><img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number51.jpg" alt></p>
+<h4 id="栈的优点"><a href="#栈的优点" class="headerlink" title="栈的优点"></a>栈的优点</h4><p><img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number52.jpg" alt></p>
+<h4 id="栈中可能出现的异常"><a href="#栈中可能出现的异常" class="headerlink" title="栈中可能出现的异常"></a>栈中可能出现的异常</h4><p><img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number53.jpg" alt></p>
+<h4 id="设置栈内存大小"><a href="#设置栈内存大小" class="headerlink" title="设置栈内存大小"></a>设置栈内存大小</h4><p><img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number54.jpg" alt> <img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number55.jpg" alt> <img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number56.jpg" alt></p>
+<h4 id="栈的存储单位"><a href="#栈的存储单位" class="headerlink" title="栈的存储单位"></a>栈的存储单位</h4><p><img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number57.jpg" alt> <img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number58.jpg" alt> <img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number59.jpg" alt></p>
+<h4 id="栈运行原理"><a href="#栈运行原理" class="headerlink" title="栈运行原理"></a>栈运行原理</h4><p><img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number60.jpg" alt></p>
+<h4 id="栈帧的内部结构"><a href="#栈帧的内部结构" class="headerlink" title="栈帧的内部结构"></a>栈帧的内部结构</h4><p><img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number61.jpg" alt></p>
+<h4 id="局部变量表"><a href="#局部变量表" class="headerlink" title="局部变量表"></a>局部变量表</h4><p><img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number62.jpg" alt> <img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number66.jpg" alt>  解析字节码文件 <img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number63.jpg" alt> </p>
+<ol>
+<li>main方法所在的栈帧中 locals=3 表示局部变量表的长度 <img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number64.jpg" alt><br><img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number65.jpg" alt></li>
+</ol>
+<h4 id="字节码中方法内部结构剖析"><a href="#字节码中方法内部结构剖析" class="headerlink" title="字节码中方法内部结构剖析"></a>字节码中方法内部结构剖析</h4><p>在IDEA插件中下载jclasslib，在view中show bytecode <img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number70.jpg" alt></p>
+<ul>
+<li>public static + void + main，参数是String型数组 <img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number71.jpg" alt></li>
+<li><img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number72.jpg" alt></li>
+</ul>
+<h4 id="Slot"><a href="#Slot" class="headerlink" title="Slot"></a>Slot</h4><p><img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number67.jpg" alt> 静态方法的局部变量表中没有this，所以不能在静态方法中引用this<br><img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number68.jpg" alt> <img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number69.jpg" alt> <img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number73.jpg" alt><br>变量c使用之前已经销毁的变量b占据的slot的位置 <img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number74.jpg" alt></p>
+<h4 id="静态变量与局部变量的对比"><a href="#静态变量与局部变量的对比" class="headerlink" title="静态变量与局部变量的对比"></a>静态变量与局部变量的对比</h4><ol>
+<li>按数据类型分类 基本数据类型和引用数据类型</li>
+<li>按照在类中声明的位置 成员变量和局部变量，成员变量又可分为是否用static修饰。如果static<br>修饰就是类变量否则就是实例变量</li>
+<li>成员变量在使用前都被默认初始化，在类加载过程的链接中的准备阶段给类变量默认赋值，在<br>initial阶段给类变量显式赋值以及静态代码块赋值。实例变量随着对象的创建会在堆空间中分配<br>实例变量空间并进行默认赋值</li>
+<li>局部变量在使用前必须进行显式赋值</li>
+<li>如果局部变量表中没有指向堆的一个引用那么就会进行垃圾回收 <img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number75.jpg" alt></li>
+</ol>
+<h4 id="操作数栈"><a href="#操作数栈" class="headerlink" title="操作数栈"></a>操作数栈</h4><p><img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number76.jpg" alt> <img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number77.jpg" alt> <img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number78.jpg" alt> <img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number79.jpg" alt></p>
+<h4 id="代码追踪"><a href="#代码追踪" class="headerlink" title="代码追踪"></a>代码追踪</h4><p><img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number80.jpg" alt> </p>
+<ol>
+<li>一开始指令地址指向0，局部变量表中只有this，将15（int）放入操作数栈，然后指令地址<br>指向2，执行出栈操作，同时局部变量表中加入15 <img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number81.jpg" alt></li>
+<li><img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number82.jpg" alt></li>
+<li>从局部变量表中依次取出索引为1和2的数据放入操作数栈中 <img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number83.jpg" alt></li>
+<li>iadd指令被执行引擎翻译成机器指令被CPU执行，将操作数栈中的两个数出栈然后进行加法<br>运算将结果放入操作数栈中 <img src="/2020/05/06/%E6%B7%B1%E5%85%A5JVM/number84.jpg" alt></li>
+</ol>
 </div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">高明</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://skysea-gaoming.github.io/2020/05/06/%E6%B7%B1%E5%85%A5JVM/">https://skysea-gaoming.github.io/2020/05/06/%E6%B7%B1%E5%85%A5JVM/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Java/">Java</a></div><nav id="pagination"><div class="prev-post pull-left"><a href="/2020/05/08/%E4%BA%BA%E9%97%B4%E9%9A%8F%E6%83%B3/"><i class="fa fa-chevron-left">  </i><span>随想</span></a></div><div class="next-post pull-right"><a href="/2020/04/12/Java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"><span>Java基础知识</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="disqus_thread"></div><script>var unused = null;
 var disqus_config = function () {
   this.page.url = 'https://skysea-gaoming.github.io/2020/05/06/%E6%B7%B1%E5%85%A5JVM/';
