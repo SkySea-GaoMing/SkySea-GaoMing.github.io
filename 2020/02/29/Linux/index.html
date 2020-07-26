@@ -15,7 +15,7 @@
 <li>服务器</li>
 <li>嵌入式</li>
 </ul>
-<p>Linux是一款免费、开源、安全、高效、稳定的操作系统，处理高并发非常强，很多企业级项目都部署<br>到Linux服务器上运行。创始人 Linus Torvalds<br>Linux主要发行版本，以下这些都是在Linux内核基础上进行修改，相当于二次开发。</p>
+<p>Linux是一款免费、开源、安全、高效、稳定的操作系统，处理高并发非<br>常强，很多企业级项目都部署  到Linux服务器上运行。创始人 Linus Torvalds<br>Linux主要发行版本，以下这些都是在Linux内核基础上进行修改，相当于二次开发。</p>
 <ul>
 <li>Centos</li>
 <li>Redhat</li>
@@ -24,12 +24,12 @@
 <li>红旗</li>
 </ul>
 <h3 id="主要操作系统"><a href="#主要操作系统" class="headerlink" title="主要操作系统"></a>主要操作系统</h3><p>windows ios android mac Linux</p>
-<h3 id="Linux和Unix"><a href="#Linux和Unix" class="headerlink" title="Linux和Unix"></a>Linux和Unix</h3><p>Unix是由c语言之父用c语言开发出来，Unix出现之后并未开源，后来Richard Stallman<br>提出GNU计划，崇尚软件开源，Linux是在Unix基础上开发出来<br>应用软件-&gt; shell层 -&gt; 操作系统（Linux) -&gt; 硬件</p>
-<h3 id="Linux与windows的比较"><a href="#Linux与windows的比较" class="headerlink" title="Linux与windows的比较"></a>Linux与windows的比较</h3><p>windows收费，安全性稍微弱一些，Linux不收费安全性高，windows不可定制，Linux开源<br>可以定制</p>
-<h3 id="VMWare安装"><a href="#VMWare安装" class="headerlink" title="VMWare安装"></a>VMWare安装</h3><p>先创建一个虚拟机，然后在虚拟机上安装Centos。<br>VM虚拟机可以虚拟一个操作系统，首先创建一个虚拟机空间，在空间中安装Centos系统。<br>这个系统相当于一系列文件，可以移植到别的主机的VM中<br><img src="/2020/02/29/Linux/number1.jpg" alt></p>
+<h3 id="Linux和Unix"><a href="#Linux和Unix" class="headerlink" title="Linux和Unix"></a>Linux和Unix</h3><p>Unix是由c语言之父用c语言开发出来，Unix出现之后并未开源，后来<br>Richard Stallman  提出GNU计划，崇尚软件开源，Linux是在Unix<br>基础上开发出来  应用软件-&gt; shell层 -&gt; 操作系统（Linux) -&gt; 硬件</p>
+<h3 id="Linux与windows的比较"><a href="#Linux与windows的比较" class="headerlink" title="Linux与windows的比较"></a>Linux与windows的比较</h3><p>windows收费，安全性稍微弱一些，Linux不收费安全性高，windows<br>不可定制，Linux开源可以定制</p>
+<h3 id="VMWare安装"><a href="#VMWare安装" class="headerlink" title="VMWare安装"></a>VMWare安装</h3><p>先创建一个虚拟机，然后在虚拟机上安装Centos。VM虚拟机可以虚拟一个<br>操作系统，首先创建一个虚拟机空间，在空间中安装Centos系统<br>。  这个系统相当于一系列文件，可以移植到别的主机的VM中 <img src="/2020/02/29/Linux/number1.jpg" alt></p>
 <h3 id="虚拟机网络连接的三种形式"><a href="#虚拟机网络连接的三种形式" class="headerlink" title="虚拟机网络连接的三种形式"></a>虚拟机网络连接的三种形式</h3><ol>
-<li>桥连接模式。比如有两台windows主机在同一网段，分别是192.168.0.20和192.168.0.10，<br>在一台主机上安装Linux系统，那么也在同一个网段地址也是192.168.0.xx。容易导致ip地址冲突<br>，因为ip地址有限。</li>
-<li>NAT模式。根据以上情况，如果还有一台主机192.168.0.40也在同一网段安装Linux系统，<br>，但是windows系统会出现两个ip地址，另一个ip是192.168.100.10，此时Linux的ip地址不会<br>占用192.168.0这个网段而是跟新的ip在一个网段例如192.168.100.20，别的主机无法找到Linux<br>而Linux可以通过192.168.0.40找到别的主机</li>
+<li>桥连接模式。比如有两台windows主机在同一网段，分别是192.168.0.20<br>和192.168.0.10，在一台主机上安装Linux系统，那么也在同一个网段地址<br>也是192.168.0.xx。容易导致ip地址冲突，因为ip地址有限。</li>
+<li>NAT模式。根据以上情况，如果还有一台主机192.168.0.40也在<br>同一网段安装Linux系统，但是windows系统会出现两个ip地址，另<br>一个ip是192.168.100.10，此时Linux的ip地址不会占用192.168.0<br>这个网段而是跟新的ip在一个网段例如192.168.100.20，别的主机无<br>法找到Linux而Linux可以通过192.168.0.40找到别的主机</li>
 <li>主机模式。Linux是一个独立的主机不能访问外网</li>
 </ol>
 <h3 id="标准分区"><a href="#标准分区" class="headerlink" title="标准分区"></a>标准分区</h3><ol>
@@ -37,7 +37,7 @@
 <li>swap 当系统内存不足是暂时替代，一般是物理内存的两倍 512MB</li>
 <li>/ 剩余空间</li>
 </ol>
-<h3 id="终端使用和联网"><a href="#终端使用和联网" class="headerlink" title="终端使用和联网"></a>终端使用和联网</h3><p>cd /etc/sysconfig/network-scripts/ 修改配置<br><img src="/2020/02/29/Linux/number2.jpg" alt><br>vi ifcfg-ens33 修改配置<br><img src="/2020/02/29/Linux/number3.jpg" alt><br>IPADDR前三个数需要与以太网ip前三个相同，编辑中虚拟网络编辑器查看网关和子网掩码<br><img src="/2020/02/29/Linux/number4.jpg" alt> <img src="/2020/02/29/Linux/number5.jpg" alt> </p>
+<h3 id="终端使用和联网"><a href="#终端使用和联网" class="headerlink" title="终端使用和联网"></a>终端使用和联网</h3><p>cd /etc/sysconfig/network-scripts/ 修改配置<br><img src="/2020/02/29/Linux/number2.jpg" alt><br>vi ifcfg-ens33 修改配置<br><img src="/2020/02/29/Linux/number3.jpg" alt><br>IPADDR前三个数需要与以太网ip前三个相同，编辑中虚拟网络编辑器<br>查看网关和子网掩码 <img src="/2020/02/29/Linux/number4.jpg" alt> <img src="/2020/02/29/Linux/number5.jpg" alt> </p>
 <h3 id="设置DNS"><a href="#设置DNS" class="headerlink" title="设置DNS"></a>设置DNS</h3><p>vi /etc/resolv.conf    编辑 resolv.conf文件<br>nameserver 114.114.114.114   //添加DNS地址<br>阿里  223.5.5.5  或者  223.6.6.6<br>谷歌  8.8.8.8<br>国内移动、电信和联通通用的DNS  114.114.114.114 </p>
 <h3 id="查看是否能访问外网"><a href="#查看是否能访问外网" class="headerlink" title="查看是否能访问外网"></a>查看是否能访问外网</h3><p>输入 service network restart<br><img src="/2020/02/29/Linux/number6.jpg" alt></p>
 <h2 id="vmtools的安装和使用"><a href="#vmtools的安装和使用" class="headerlink" title="vmtools的安装和使用"></a>vmtools的安装和使用</h2><p>安装之后可以直接粘贴命令在windows和centos之间，可以设置两者的共享文件<br>./vmware-install.pl</p>
