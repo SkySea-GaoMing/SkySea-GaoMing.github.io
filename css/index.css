@@ -547,7 +547,7 @@ footer.is-mobile {
   -webkit-align-items: center;
   align-items: center;
   padding: 0 1rem;
-  height: 80vh;
+  height: 90vh;
 }
 #site-title,
 #site-sub-title {
@@ -1066,8 +1066,8 @@ footer.is-mobile {
   cursor: pointer;
 }
 #pagination .page-number.current {
-  background: #2e2e2e;
-  color: #2e2e2e;
+  background: #00c4b6;
+  color: #fff;
   cursor: default;
 }
 #post-title {
@@ -1173,7 +1173,7 @@ footer.is-mobile {
   align-items: center;
   padding: 0 1rem;
   width: 100%;
-  height: 80vh;
+  height: 90vh;
   color: #eee;
   text-align: center;
 }
