@@ -317,6 +317,8 @@
 
 <h3 id="Math"><a href="#Math" class="headerlink" title="Math"></a>Math</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">Math</span> </span>&#123;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 
+
+
 <h2 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h2><p>Java5之前，将一个对象加入一个集合中，集合会忘记对象的类型，将所有对象<br>都当成Object处理，从集合中取出对象时需要进行强制类型转换。增加泛型后<br>的集合，会在编译时检查集合中元素的类型，如果向集合中加入不满足类型要<br>求的对象，编译器就会报错</p>
 <h3 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h3><p>引入泛型之前，取出的对象编译类型是Object，运行类型没变，导致任意的对象<br>都可以放入集合，取出时还要进行强制类型转换，增加编程难度</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">List list=<span class="keyword">new</span> ArrayList();</span><br><span class="line">list.add(<span class="string">"fsd"</span>);</span><br><span class="line">list.add(<span class="string">"vaf"</span>);</span><br><span class="line">list.add(<span class="number">5</span>);</span><br><span class="line"><span class="comment">//Integer不能强制转换为String</span></span><br><span class="line">list.forEach(str-&gt; System.println(((String)str).length()));</span><br></pre></td></tr></table></figure>

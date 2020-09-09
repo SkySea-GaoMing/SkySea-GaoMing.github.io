@@ -212,6 +212,7 @@
 <li>movb 传送字节</li>
 <li>movw 存送字</li>
 <li>movl 存送双字</li>
+<li>movq 传送四字</li>
 </ul>
 <ol start="2">
 <li>x86-64 <img src="/2020/02/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/number126.jpg" alt> </li>
@@ -245,7 +246,7 @@
 <li>有效地址 leaq指令实际是movq指令的变形，目的操作数必须是一个寄存器<br><img src="/2020/02/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/number143.jpg" alt> </li>
 <li>一元操作和二元操作 <img src="/2020/02/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/number146.jpg" alt></li>
 <li>移位操作  <img src="/2020/02/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/number147.jpg" alt> </li>
-<li>特殊的算术操作 <img src="/2020/02/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/number204.jpg" alt> <img src="/2020/02/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/number149.jpg" alt> </li>
+<li>特殊的算术操作 idivq指令除法结果应该是 R[%rax]<br><img src="/2020/02/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/number204.jpg" alt> <img src="/2020/02/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/number149.jpg" alt> </li>
 </ol>
 <h3 id="条件码"><a href="#条件码" class="headerlink" title="条件码"></a>条件码</h3><ol>
 <li>除了整数寄存器，CPU还维护一组单个位的条件吗寄存器，用于描述最近的<br>算术或逻辑操作的属性 <img src="/2020/02/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/number205.jpg" alt></li>
