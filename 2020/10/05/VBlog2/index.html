@@ -115,11 +115,19 @@
 <h4 id="菜单查询接口"><a href="#菜单查询接口" class="headerlink" title="菜单查询接口"></a>菜单查询接口</h4><p>根据用户查询出对应菜单的步骤是</p>
 <ul>
 <li>利用shiro获取当前用户登录的id</li>
-<li>根据用户id查询出该用户对应的所有角色id</li>
-<li>根据这些角色的 id，查询出所有可访问的菜单项</li>
+<li>根据用户id查询出该用户对应的所有角色id，这里一个用户应该可以对应多个<br>角色</li>
+<li>根据这些角色的id，查询出所有可访问的菜单项</li>
 <li>根据parentId把子菜单放进父菜单对象中，整理返回有正确层级关系的菜单数据</li>
 </ul>
 <p>为了实现这个接口，我们需要新增AdminUserRoleDAO、AdminRoleMenuDAO、<br>AdminMenuDAO 三个数据库访问对象并编写 Service 对象</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>整合查询出的菜单数据的思路如下</p>
+<ul>
+<li>遍历菜单项，根据每一项的id查询出该项所有的子项，并放进children属性</li>
+<li>剔除掉所有的子项，只保留第一层的父项。比如c是b的子项，b是a的子项，<br>只需要保留a就行，因为a包含b和c<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handleMenus</span><span class="params">(List&lt;AdminMenu&gt; menus)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (AdminMenu menu : menus) &#123;</span><br><span class="line">	    List&lt;AdminMenu&gt; children = getAllByParentId(menu.getId());</span><br><span class="line">	    menu.setChildren(children);</span><br><span class="line">	&#125;</span><br><span class="line">	Iterator&lt;AdminMenu&gt; iterator = menus.iterator();</span><br><span class="line">	<span class="keyword">while</span> (iterator.hasNext()) &#123;</span><br><span class="line">	    AdminMenu menu = iterator.next();</span><br><span class="line">	    <span class="keyword">if</span> (menu.getParentId() != <span class="number">0</span>) &#123;</span><br><span class="line">	        iterator.remove();</span><br><span class="line">	    &#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
 <h4 id="前端实现"><a href="#前端实现" class="headerlink" title="前端实现"></a>前端实现</h4><p>前端要做的事情就是处理后端传来的数据，并传递给路由和导航菜单，以<br>实现动态渲染</p>
 <h4 id="后台页面设计"><a href="#后台页面设计" class="headerlink" title="后台页面设计"></a>后台页面设计</h4><p>需要创建的组件如下图 <img src="/2020/10/05/VBlog2/5.jpg" alt><br>这是首页的图片 <img src="/2020/10/05/VBlog2/6.jpg" alt></p>
 <h4 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h4><p>之前设计 AdminMenu 表，实际上包含了前端路由（router）与导航菜单需要的信<br>息，从后台传来的数据，需要被整理成路由能够识别的格式。导航菜单倒是无所谓，<br>赋给相应的属性就行，进行格式转换的方法如下</p>
