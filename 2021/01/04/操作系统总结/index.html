@@ -1,0 +1,67 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="操作系统总结"><meta name="keywords" content="Java"><meta name="author" content="高明"><meta name="copyright" content="高明"><title>操作系统总结 | SkySea-GaoMing</title><link rel="shortcut icon" href="/img/favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.7.0"><link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css?version=1.7.0"><meta name="format-detection" content="telephone=no"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  }
+} </script><meta name="generator" content="Hexo 4.2.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="Toggle article">Toggle site</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">1.</span> <span class="toc-text">参考</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#面试题"><span class="toc-number">2.</span> <span class="toc-text">面试题</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2762516417,1589137703&amp;fm=26&amp;gp=0.jpg"></div><div class="author-info__name text-center">高明</div><div class="author-info__description text-center">JAVA工程师</div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">Articles</span><span class="pull-right">50</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">Tags</span><span class="pull-right">11</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">Categories</span><span class="pull-right">8</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fi2.hdslb.com%2Fbfs%2Farchive%2F7fe26ede962c3e048f6e8f1f8c12b3f803e1457f.jpg&amp;refer=http%3A%2F%2Fi2.hdslb.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=jpeg?sec=1611849565&amp;t=29a8f8fb1f5f28e19cc5104ad7f885e5)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">SkySea-GaoMing</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a></span><span class="pull-right"></span></div><div id="post-info"><div id="post-title">操作系统总结</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-01-04</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E9%9D%A2%E8%AF%95/">面试</a><span class="post-meta__separator">|</span><i class="fa fa-comment-o post-meta__icon" aria-hidden="true"></i><a href="/2021/01/04/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%80%BB%E7%BB%93/#disqus_thread"><span class="disqus-comment-count" data-disqus-identifier="2021/01/04/操作系统总结/"></span></a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>《现代操作系统》</p>
+<h2 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h2><ol>
+<li>进程和线程的区别（资源、调度、开销、通信方式等上去作答）<br><a href="https://blog.csdn.net/JMW1407/article/details/107646230" target="_blank" rel="noopener">https://blog.csdn.net/JMW1407/article/details/107646230</a><br>进程可以认为是程序执行的一个实例，进程是系统进行资源分配的最小单位，<br>线程又被称为轻量级的进程，线程是操作系统可识别的最小执行和调度单位。</li>
+</ol>
+<p>切换：每个进程都有属于自己的、私有的、地址连续的虚拟内存，当然我们知<br>道最终进程的数据及代码必然要放到物理内存上，那么必须有某种机制能记<br>住虚拟地址空间中的某个数据被放到了哪个物理内存地址上，这就是所谓的<br>地址空间映射，也就是虚拟内存地址与物理内存地址的映射关系，那么操作<br>系统是如何记住这种映射关系的呢，答案就是页表。<br>进程切换比线程切换开销大是因为进程切换时要切页表，而且往往伴<br>随着页调度，因为进程的数据段代码段要换出去，以便把将要执行的进程的<br>内容换进来。本来进程的内容就是线程的超集。而且线程只需要保存线程的<br>上下文（相关寄存器状态和栈的信息）就好了，动作很小</p>
+<p>通信：由于同一进程中的多个线程具有相同的地址空间，致使它们之间的同<br>步和通信的实现，也变得比较容易。进程间通信IPC，线程间可以直接读写<br>进程数据段（如全局变量）来进行通信——需要进程同步和互斥手段的辅助<br>，以保证数据的一致性</p>
+<p>资源：进程之间私有和共享的资源</p>
+<ul>
+<li>私有：地址空间、堆、全局变量、栈、寄存器</li>
+<li>共享：代码段，公共数据，进程目录，进程 ID</li>
+</ul>
+<p>线程之间私有和共享的资源</p>
+<ul>
+<li>私有：线程栈，寄存器，程序计数器</li>
+<li>共享：堆，地址空间，全局变量，静态变量</li>
+</ul>
+<ol start="2">
+<li><p>进程间通信方式（六种方式，各自的概念，区别都要搞清楚）<br><a href="https://blog.csdn.net/watermelonmk/article/details/109002753" target="_blank" rel="noopener">https://blog.csdn.net/watermelonmk/article/details/109002753</a><br><a href="https://blog.csdn.net/qq_34796146/article/details/107825875" target="_blank" rel="noopener">https://blog.csdn.net/qq_34796146/article/details/107825875</a><br>管道：管道传输的数据是单向的， 如果想相互通信，需要创建两个管道<br>消息队列：消息队列是保存在内核中的消息链表，在发送数据时，会分成一个<br>一个独立的数据单元，也就是消息体（数据块），消息体是用户自定义的数据<br>类型，消息的发送方和接收方要约定好消息体的数据类型，所以每个消息体都<br>是固定大小的存储块，不像管道是无格式的字节流数据。如果进程从消息队列<br>中读取了消息体，内核就会把这个消息体删除<br>共享内存：共享内存的机制，就是拿出一块虚拟地址空间来，映射到相同的物<br>理内存中<br>信号量：信号量其实是一个整型的计数器，主要用于实现进程间的互斥与同步<br>，而不是用于缓存进程间通信的数据<br>信号：信号是进程间通信机制中唯一的异步通信机制<br>SOCKET：前面提到的管道、消息队列、共享内存、信号量和信号都是在同一台主<br>机上进行进程间通信，那要想跨网络与不同主机上的进程之间通信，就需要<br>Socket通信了</p>
+</li>
+<li><p>进程的状态转换<br>如果正在运行的进程由于需要I/O操作或者其他因素，需要等待一段时间才可<br>以继续运行，就会进入阻塞状态，如果I/O执行完毕，就会进入就绪状态，再<br>次等待运行</p>
+</li>
+</ol>
+<ul>
+<li>运行态 该时刻进程实际占用CPU</li>
+<li>就绪态 可运行，当因为其他进程正在运行而暂时停止</li>
+<li>阻塞态 除非某种外部事件发生，否则进程不能运行</li>
+</ul>
+<ol start="4">
+<li>进程同步的方式</li>
+</ol>
+<ul>
+<li>信号量 用于进程间传递信号的一个整数值。在信号量上只有三种操作可以<br>进行：初始化，P操作和V操作，这三种操作都是原子操作。P操作(递减操作)<br>可以用于阻塞一个进程，V操作(增加操作)可以用于解除阻塞一个进程</li>
+<li>管程 管程是由一个或多个过程、一个初始化序列和局部数据组成的软件模块</li>
+<li>消息传递 消息传递的实际功能以一对原语的形式提供</li>
+</ul>
+<ol start="5">
+<li>死锁是什么？产生的原因和解决方法？<br>指如果一个进程集合中的每个进程都在等待只能由该进程集合中的其他进程<br>才能引发的事件，那么该进程集合就是死锁。定位方法：jstack分析线程的<br>栈信息可以定位出来，或者使用ThreadMXBean相关的api在程序中打印出<br>相关的死锁信息</li>
+<li>死锁检测和死锁恢复<br>抢占资源：从一个或多个进程中抢占足够数量的资源分配给死锁进程，以解除<br>死锁状态。终止（或撤销）进程：终止或撤销系统中的一个或多个死锁进程，<br>直至打破死锁状态</li>
+<li>虚拟内存<br>虚拟内存：每个程序有自己的地址空间，把这个空间分割为多块，每一块称为<br>一页或页面（page）,每一页都有连续的地址范围，执行时这些页映射到物理<br>内存。当程序执行哪一页时，硬件就去执行，从而不必把所有页都加载到内存</li>
+</ol>
+<ol start="8">
+<li>页面置换算法<br>在发送缺页中断时，需要选择一个页面，将其换出内存，如果每次都选择<br>不常使用的页面会提升系统性能，如果一个频繁使用的页面被置换出去会<br>带来不必要的开销</li>
+<li>磁盘调度算法<br>先来先去服务，最短寻道时间优先，扫描算法，循环扫描算法，LOOK与C-LOOK<br>算法</li>
+</ol>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">高明</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://skysea-gaoming.github.io/2021/01/04/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%80%BB%E7%BB%93/">https://skysea-gaoming.github.io/2021/01/04/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%80%BB%E7%BB%93/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Java/">Java</a></div><nav id="pagination"><div class="next-post pull-right"><a href="/2021/01/04/MySQL%E9%9D%A2%E8%AF%95%E9%A2%98/"><span>MySQL总结</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="disqus_thread"></div><script>var unused = null;
+var disqus_config = function () {
+  this.page.url = 'https://skysea-gaoming.github.io/2021/01/04/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%80%BB%E7%BB%93/';
+  this.page.identifier = '2021/01/04/操作系统总结/';
+  this.page.title = '操作系统总结';
+}
+var d = document, s = d.createElement('script');
+s.src = "https://" + '你的disqus的 short-name' +".disqus.com/embed.js";
+s.setAttribute('data-timestamp', '' + +new Date());
+(d.head || d.body).appendChild(s);</script><script id="dsq-count-scr" src="https://你的disqus的 short-name.disqus.com/count.js" async></script></div></div><footer class="footer-bg" style="background-image: url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fi2.hdslb.com%2Fbfs%2Farchive%2F7fe26ede962c3e048f6e8f1f8c12b3f803e1457f.jpg&amp;refer=http%3A%2F%2Fi2.hdslb.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=jpeg?sec=1611849565&amp;t=29a8f8fb1f5f28e19cc5104ad7f885e5)"><div class="layout" id="footer"><div class="copyright">&copy;2013 - 2021 By 高明</div><div class="framework-info"><span>Driven - </span><a href="http://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody" target="_blank" rel="noopener"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file-o"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="/js/third-party/anime.min.js"></script><script src="/js/third-party/jquery.min.js"></script><script src="/js/third-party/jquery.fancybox.min.js"></script><script src="/js/third-party/velocity.min.js"></script><script src="/js/third-party/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.7.0"></script><script src="/js/fancybox.js?version=1.7.0"></script><script src="/js/sidebar.js?version=1.7.0"></script><script src="/js/copy.js?version=1.7.0"></script><script src="/js/fireworks.js?version=1.7.0"></script><script src="/js/transition.js?version=1.7.0"></script><script src="/js/scroll.js?version=1.7.0"></script><script src="/js/head.js?version=1.7.0"></script><script>if(/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+  $('#top-container').addClass('is-mobile')
+}</script></body></html>
