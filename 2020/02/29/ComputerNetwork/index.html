@@ -123,22 +123,38 @@
 <h3 id="常用端口"><a href="#常用端口" class="headerlink" title="常用端口"></a>常用端口</h3><p><img src="/2020/02/29/ComputerNetwork/47.jpg" alt></p>
 <h4 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h4><p>指一系列的信息交换，而这一系列的信息交换是一个不可分割的整体，也就是说要<br>么所有的信息交换都完成或者一次交换也不进行</p>
 <h3 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h3><p>HTTP协议定义了浏览器怎样向万维网服务器请求万维网文档，以及服务器怎么把文<br>档传送给浏览器。从层次的角度看HTTP是面向事务的应用层协议，它是万维网能够<br>可靠交换文件（文本、声音、图像）的重要基础<br><img src="/2020/02/29/ComputerNetwork/number2.jpg" alt><br>每个万维网网点都有一个服务器进程，它不断监听TCP的端口80，以便发现是否有浏<br>览器向它发出建立连接的请求，一旦监听到连接请求并建立TCP连接之后，浏览器就<br>会发出页面请求，服务器返回页面作为响应，最后TCP连接就被释放。在浏览器和服<br>务器之间的请求和响应的交互，必须按照规定的格式和遵循一定的规则，这些格式<br>和规则就是超文本传送协议HTTP。HTTP协议本身是无连接，通信双方在交换HTTP<br>报文之前不需要建立HTTP连接，同时也是无状态的</p>
-<ul>
-<li>HTTP/1.0 每请求一个文档都有两倍RTT的开销和文档的传输时间，另一种开销<br>是每一次建立新的TCP连接都要分配缓存和变量。一个RTT用于连接TCP连接，另一<br>个RTT用于请求和接收万维网文档 <img src="/2020/02/29/ComputerNetwork/24.jpg" alt></li>
-<li>HTTP/1.1 使用持续连接，也就是说服务器在发送响应后仍然在一段时间内保持<br>这条连接，使同一个客户和该服务器可以继续在这条连接上传送后续的HTTP请求<br>和响应报文</li>
-</ul>
+<ol>
+<li>HTTP/1.0 每请求一个文档都有两倍RTT的开销和文档的传输时间，另一<br>种开销是每一次建立新的TCP连接都要分配缓存和变量。一个RTT用于连接<br>TCP连接。另一个RTT用于请求和接收万维网文档 <img src="/2020/02/29/ComputerNetwork/24.jpg" alt></li>
+<li>HTTP/1.1 使用持续连接，也就是说服务器在发送响应后仍然在一段时间内保<br>持这条连接，使同一个客户和该服务器可以继续在这条连接上传送后续的HTTP请求和响应报文</li>
+</ol>
 <p>HTTP/1.1协议的持续连接有两种工作方式，即非流水线方式和流水线方式</p>
 <ol>
-<li>非流水线 客户在收到一个响应后才能发出下一个请求，因此TCP建立连接后<br>客户每访问一次对象都要用去一个往返时间RTT，缺点在于服务器发送完一个对<br>象，其TCP就处于空闲状态，浪费了服务器的资源</li>
-<li>流水线 客户在收到HTTP的响应报文之前就能够接着发送新的请求报文，于<br>是一个接一个的请求报文到达服务器后服务器就可连续发回响应报文，客户访<br>问所有的对象只需要花费一个RTT时间</li>
+<li>非流水线 客户在收到一个响应后才能发出下一个请求，因此TCP建立连接<br>后客户每访问一次对象都要用去一个往返时间RTT，缺点在于服务器发送完一<br>个对象，其TCP就处于空闲状态，浪费了服务器的资源</li>
+<li>流水线 客户在收到HTTP的响应报文之前就能够接着发送新的请求报文，<br>于是一个接一个的请求报文到达服务器后服务器就可连续发回响应报文，客<br>户访问所有的对象只需要花费一个RTT时间</li>
 </ol>
 <h4 id="代理服务器"><a href="#代理服务器" class="headerlink" title="代理服务器"></a>代理服务器</h4><p>代理服务器(proxy server)是一种网络实体，又称为万维网高速缓存服务器，<br>把最近的一些请求和响应暂存在本地磁盘。浏览器请求服务时先与代理服务器建<br>立TCP连接，如果代理服务器已经存放了请求的对象则直接返回否则代表用户与<br>其他服务器建立TCP连接</p>
 <h4 id="HTTP报文结构"><a href="#HTTP报文结构" class="headerlink" title="HTTP报文结构"></a>HTTP报文结构</h4><p>有两类报文</p>
 <ul>
-<li>请求报文 客户想服务器发出请求 <img src="/2020/02/29/ComputerNetwork/25.jpg" alt></li>
+<li>请求报文 客户向服务器发出请求 <img src="/2020/02/29/ComputerNetwork/25.jpg" alt></li>
 <li>响应报文 服务器响应请求 <img src="/2020/02/29/ComputerNetwork/27.jpg" alt></li>
 </ul>
-<p>方法 <img src="/2020/02/29/ComputerNetwork/26.jpg" alt><br>状态码 <img src="/2020/02/29/ComputerNetwork/28.jpg" alt></p>
+<p>方法 <img src="/2020/02/29/ComputerNetwork/26.jpg" alt><br>状态码 <img src="/2020/02/29/ComputerNetwork/28.jpg" alt><br>请求报文具体结构如下</p>
+<ul>
+<li>第一行是包含了请求方法、URL、协议版本</li>
+<li>接下来的多行都是请求首部 Header，每个首部都有一个首部名称，以及对应的值</li>
+<li>一个空行用来分隔首部和内容主体 Body</li>
+<li>最后是请求的内容主体</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">GET http:&#x2F;&#x2F;www.example.com&#x2F; HTTP&#x2F;1.1</span><br><span class="line">Accept: text&#x2F;html,application&#x2F;xhtml+xml,application&#x2F;xml;q&#x3D;0.9,image&#x2F;webp,</span><br><span class="line">image&#x2F;apng,*&#x2F;*;q&#x3D;0.8,application&#x2F;signed-exchange;v&#x3D;b3;q&#x3D;0.9</span><br><span class="line">Accept-Encoding: gzip, deflate</span><br><span class="line">Accept-Language: zh-CN,zh;q&#x3D;0.9,en;q&#x3D;0.8</span><br><span class="line">Cache-Control: max-age&#x3D;0</span><br><span class="line">Host: www.example.com</span><br><span class="line">If-Modified-Since: Thu, 17 Oct 2019 07:18:26 GMT</span><br><span class="line">If-None-Match: &quot;3147526947+gzip&quot;</span><br><span class="line">Proxy-Connection: keep-alive</span><br><span class="line">Upgrade-Insecure-Requests: 1</span><br><span class="line">User-Agent: Mozilla&#x2F;5.0 xxx</span><br><span class="line"></span><br><span class="line">param1&#x3D;1&amp;param2&#x3D;2</span><br></pre></td></tr></table></figure>
+<p>响应报文具体结构如下</p>
+<ul>
+<li>第一行包含协议版本、状态码以及描述，最常见的是 200 OK 表示请求成功了</li>
+<li>接下来多行也是首部内容</li>
+<li>一个空行分隔首部和内容主体</li>
+<li>最后是响应的内容主体</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">HTTP&#x2F;1.1 200 OK</span><br><span class="line">Age: 529651</span><br><span class="line">Cache-Control: max-age&#x3D;604800</span><br><span class="line">Connection: keep-alive</span><br><span class="line">Content-Encoding: gzip</span><br><span class="line">Content-Length: 648</span><br><span class="line">Content-Type: text&#x2F;html; charset&#x3D;UTF-8</span><br><span class="line">Date: Mon, 02 Nov 2020 17:53:39 GMT</span><br><span class="line">Etag: &quot;3147526947+ident+gzip&quot;</span><br><span class="line">Expires: Mon, 09 Nov 2020 17:53:39 GMT</span><br><span class="line">Keep-Alive: timeout&#x3D;4</span><br><span class="line">Last-Modified: Thu, 17 Oct 2019 07:18:26 GMT</span><br><span class="line">Proxy-Connection: keep-alive</span><br><span class="line">Server: ECS (sjc&#x2F;16DF)</span><br><span class="line">Vary: Accept-Encoding</span><br><span class="line">X-Cache: HIT</span><br><span class="line"></span><br><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;title&gt;Example Domain&lt;&#x2F;title&gt;</span><br><span class="line">	&#x2F;&#x2F; 省略... </span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+
 <h4 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h4><p>HTTP是无状态的，但是网上购物时服务器必须记住用户的身份，可以在HTTP中<br>使用，万维网站点可以使用Cookie来跟踪用户，可以表示为在用户和服务器之<br>间传递的状态信息。当用户A浏览一个使用Cookie的网站时，该网站的服务器<br>就会为A产生唯一一个识别码，并以此作为索引在服务器的后端数据库中产生<br>一个项目，接着在给A的HTTP响应报文中添加一个叫做Set-cookie的首部行<br>，这里首部字段名就是Set-cookie，值就是赋予用户的识别码，比如</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Set-cookie: 31d3h432h4u23</span><br></pre></td></tr></table></figure>
 <p>A接收到响应之后浏览器就在它管理的特定Cookie文件中添加一行，其中就包括<br>这个服务器的主机名和Set-cookie后面给出的识别码，当A继续浏览网站时每<br>发送一个HTTP请求报文其浏览器就会从Cookie文件中取出这个网站的识别码<br>并放到HTTP请求报文的Cookie首部行中，于是网站就能够持续跟踪这个用户<br>的活动</p>
