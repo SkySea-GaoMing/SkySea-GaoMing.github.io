@@ -80,7 +80,7 @@
 <li>request.getSession().setAttribute(“num”,value) 有效范围是一个<br>session周期，在session过期之前或者用户关闭页面之前是有效的，可以通<br>过sessionID得到自己的session，将参数存储在session中，即使重定向客<br>户端也没事，这个值可以在多个页面上使用。<br>比如访问一个网站，登录后用户信息被保存到session中，在session过期之前<br>或者用户关闭页面之前，用户信息可以通过request.getSession().<br>getAttribute()方式获得</li>
 </ol>
 <h3 id="注册流程"><a href="#注册流程" class="headerlink" title="注册流程"></a>注册流程</h3><ol>
-<li>前端展示注册页面，发送手机号获取otp验证码，然后跳转到注册页面</li>
+<li>前端展示注册页面，发送学号获取otp验证码，然后跳转到注册页面</li>
 <li>后端收到手机号，生成5位验证码，这里通过random.nextInt(90000)</li>
 </ol>
 <p>+10000生成，random可以生成[0,n)的随机数。HTTP请求头中的所有信息<br>都封装在httpServletRequest，然后通过httpSession将手机号和验证<br>码以key-value的形式绑定，后端验证码返回给前端</p>
@@ -114,7 +114,7 @@
 <li>密码采用加盐加密的方式，本质就是在密码后加一段字符串然后再hash，<br>hash后的值存入密码表中，盐也存入密码表中。盐通过RandomStringUtils<br>生成16位字符串，使用DigestUtils.md5Hex将字符串进行hash加密，然后<br>将数据插入到数据库学生表和密码表中，使用的是insertselective</li>
 </ol>
 <h3 id="登录流程"><a href="#登录流程" class="headerlink" title="登录流程"></a>登录流程</h3><ol>
-<li>在前端登录界面输入学生好和密码，前端将数据发送给后端</li>
+<li>在前端登录界面输入学生号和密码，前端将数据发送给后端</li>
 <li>在service层调用登录方法，首先根据学号获取用户信息，如果不存<br>在该用户那么说明没有注册这个学号，密码表中的外键userId和加盐表<br>中的外键userId就对应用户表中的主键id，将传来的密码和盐拼接再hash<br>与密码表中的密码进行比较，判断是否一致</li>
 <li>用户登录成功后就将登录状态和用户信息保存在session中，进行抢课<br>操作时就会从session中取出登录状态和用户信息进行操作</li>
 </ol>
@@ -127,7 +127,6 @@
 </ol>
 <h3 id="展示课程列表"><a href="#展示课程列表" class="headerlink" title="展示课程列表"></a>展示课程列表</h3><ol>
 <li>在itemService中添加展示所有课程的功能，通过选课人数有高到低进行排<br>序，将课程信息存放在一个List集合中，使用 Stream 流将 ItemDO 转化为<br>temModel，也就是将课程信息和选课人数组合在一起存入List集合中返回<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">List&lt;ItemModel&gt; itemModelList = itemDOList.stream().map(itemDO -&gt; </span><br><span class="line">&#123;</span><br><span class="line">          ItemStockDO itemStockDO = itemStockDOMapper.selectByItemId(</span><br><span class="line">          	itemDO.getId());</span><br><span class="line">          ItemModel itemModel = <span class="keyword">this</span>.convertModelFromDataObject(</span><br><span class="line">          	itemDO, itemStockDO);</span><br><span class="line">          <span class="keyword">return</span> itemModel;</span><br><span class="line">      &#125;).collect(Collectors.toList());</span><br></pre></td></tr></table></figure>
-
 
 </li>
 </ol>
@@ -163,11 +162,12 @@
 <h3 id="创建课程订单功能"><a href="#创建课程订单功能" class="headerlink" title="创建课程订单功能"></a>创建课程订单功能</h3><p>创建课程订单功能也必须保证是一个事务级别的功能，要么完全成功或失败。<br>一个订单的创建分为4大步</p>
 <ol>
 <li>校验下单状态 也就是判断需要下单的课程是否存在，学生信息是否存在，<br>选课数量是否合法，这里设定数量只能为1。然后根据promoId的值判断是否<br>可以选课，如果为null表示可以选课，如果为1表示不能选课，如果为2表示<br>可以选课，如果为3表示选择时间结束</li>
-<li>落单减容量 一旦落单成功那么相应的课程容量就会被这个用户占有扣减1，<br>这里操作的是课程容量表，判断是否还有相应的课程容量，如果有那么减容量<br>操作成功，这里调用service层的减库存方法，也是一个事务级别的功能，因<br>为如果</li>
-<li>订单入库 如果落单减容量操作完成那么就可以创建一条订单信息，除了<br>学生和课程相应信息外还要生成一个交易流水号，这个交易流水号有16位，<br>前8位表示时间信息，也就是创建课程订单的时间，中间6位是自增序列，最<br>后两位随机，创建订单也是一个事务级别的功能，传播级别是REQUIRES_NEW<br>，表示不会受外部事务的影响</li>
+<li>落单减容量 一旦落单成功那么相应的课程容量就会被这个用户占有扣减1，<br>这里操作的是课程容量表，判断是否还有相应的课程容量，如果有那么减容量<br>操作成功，这里调用service层的减库存方法，也是一个事务级别的功能</li>
+<li>订单入库 如果落单减容量操作完成那么就可以创建一条订单信息，除了<br>学生和课程相应信息外还要生成一个交易流水号，这个交易流水号有16位，<br>前8位表示时间信息，也就是创建课程订单的时间，中间6位是自增序列，最<br>后两位随机，创建订单也是一个事务级别的功能，传播级别是REQUIRES_NEW<br>，表示不会受外部事务的影响，但是该事务异常会影响外部事务</li>
 <li>增加选课人数信息 相应的课程选课数量也要增加，与课程容量表减容量<br>操作类似，也是一个事务级别的操作</li>
 </ol>
-<h3 id="实现跨域操作"><a href="#实现跨域操作" class="headerlink" title="实现跨域操作"></a>实现跨域操作</h3><ol>
+<h3 id="实现跨域操作"><a href="#实现跨域操作" class="headerlink" title="实现跨域操作"></a>实现跨域操作</h3><p>使用CORS跨域资源共享的方式</p>
+<ol>
 <li>前端vue.config.js文件中配置后端的地址并changeOrigin设置为true</li>
 <li>后端创建配置类实现WebMvcConfigurer接口，在addCorsMappings方法<br>中添加允许所有请求格式的配置</li>
 </ol>
