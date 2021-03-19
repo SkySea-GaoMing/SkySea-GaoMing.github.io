@@ -65,7 +65,7 @@
 <li>使用JUC 中的线程安全类来替代，比如使用 CopyOnWriteArrayList来<br>替代ArrayList，使用ConcurrentHashMap 来替代HashMap 。concurrent<br>包下的容器都是安全失败的，可以在多线程下并发使用和并发修改。安全失<br>败方式遍历的容器有ConcerrentHashMap和CopyOnWriteArrayList等</li>
 </ol>
 <h3 id="什么是安全失败机制？"><a href="#什么是安全失败机制？" class="headerlink" title="什么是安全失败机制？"></a>什么是安全失败机制？</h3><p>采用安全失败机制的集合容器，在遍历时不是直接在集合内容上访问的，而是<br>先复制原有集合内容，在拷贝的集合上进行遍历。由于迭代时是对原集合的拷<br>贝进行遍历，所以在遍历过程中对原集合所作的修改并不能被迭代器检测到<br>，所以不会触发ConcurrentModificationException</p>
-<h3 id="什么情况下modCount会增加？"><a href="#什么情况下modCount会增加？" class="headerlink" title="什么情况下modCount会增加？"></a>什么情况下modCount会增加？</h3><p>add和remove方法修改数组会增加modCount，set方法不会增加modcount<br>，modCountb表是结构上面的修改，而不是简单的修改集合元素的内容</p>
+<h3 id="什么情况下modCount会增加？"><a href="#什么情况下modCount会增加？" class="headerlink" title="什么情况下modCount会增加？"></a>什么情况下modCount会增加？</h3><p>add和remove方法修改数组会增加modCount，set方法不会增加modcount<br>，modCountb表示结构上面的修改，而不是简单的修改集合元素的内容</p>
 <h3 id="怎么确保一个集合不能被修改？"><a href="#怎么确保一个集合不能被修改？" class="headerlink" title="怎么确保一个集合不能被修改？"></a>怎么确保一个集合不能被修改？</h3><ol>
 <li>可以使 Collections.unmodifiableCollection(Collection c)方法<br>来创建一个只读集合，因为它不是将原本的比如list集合对象增加了限制不<br>能修改，而是将原本的集合的值copy了一份，定义为了一个新的集合这样改<br>变集合的任何操作都会抛出UnsupportedOperationException 异常</li>
 <li>使用Arrays.asList创建的集合 通过Arrays.asList方法创建了一个集<br>合，但不是我们传统中使用的ArrayList集合，两者继承同一个父类，但是<br>内部却又不同的实现，Arrays.asList 创建的ArrayList中没有重写其父<br>类AbstractList的add、remove 方法，所以不持支新增和删除。如果强行<br>调用，虽然不会出现编译错误，调用的是父类的该方法，则会报出<br>UnsupportedOperationException异常</li>
@@ -176,7 +176,7 @@ CopyOnWriteArrayList 的思想是写时复制</li>
 <li>内存占用：在写操作时需要复制一个新的数组，使得内存占用为原来的两<br>倍左右</li>
 <li>数据不一致：读操作不能读取实时性的数据，因为部分写操作的数据还未<br>同步到读数组中。只能保证数据的最终一致性，不能保证数据的实时一致性。</li>
 </ul>
-<h2 id="映射集合类有哪些？"><a href="#映射集合类有哪些？" class="headerlink" title="映射集合类有哪些？"></a>映射集合类有哪些？</h2><h3 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h3><p>HashMap提供了一种高效的两种数据之间的映射能力。内部提供了一个table数<br>组，数组元素为自定义的实现了Map.Entry 接口的对象。Map.Entry就描述了<br>一个完整的键值对对象。通过键的hash 值来决定当前键值对元素所在的数组<br>下标。其默认的初始元素容量为 16，扩容因子默认为0.75，当容量达到当前<br>最大容量* 扩容因子的值时进行扩容。 每次扩容的时候容量翻倍。这样保证<br>每次进行键值对进行hash时可以通过位运算来代替取余操作（防止得到的数<br>组下标越界）提高效率。当出现 hash 值冲突的时候，先采用链地址法处理<br>（使用单链表将冲突的元素连接），当某个冲突链表的长度不小于8 时，将<br>其树化（转换为红黑树，加快查找速度）。 HashMap 是非线程安全的类</p>
+<h2 id="映射集合类有哪些？"><a href="#映射集合类有哪些？" class="headerlink" title="映射集合类有哪些？"></a>映射集合类有哪些？</h2><h3 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h3><p>HashMap提供了一种高效的两种数据之间的映射能力。内部提供了一个table数<br>组，数组元素为自定义的实现了Map.Entry 接口的对象。Map.Entry就描述了<br>一个完整的键值对对象。通过键的hash 值来决定当前键值对元素所在的数组<br>下标。其默认的初始元素容量为 16，扩容因子默认为0.75，当容量达到当前<br>最大容量* 扩容因子的值时进行扩容。 每次扩容的时候容量翻倍。这样保证<br>每次进行键值对进行hash时可以通过位运算来代替取余操作（防止得到的数<br>组下标越界）提高效率。当出现 hash 值冲突的时候，先采用链地址法处理<br>（使用单链表将冲突的元素连接），当某个冲突链表的长度大于8 并且数组<br>长度大于等于64时，将其树化（转换为红黑树，加快查找速度）。HashMap<br> 是非线程安全的类</p>
 <h4 id="HashMap用哪个类保存键值对？"><a href="#HashMap用哪个类保存键值对？" class="headerlink" title="HashMap用哪个类保存键值对？"></a>HashMap用哪个类保存键值对？</h4><p>在HashMap中通过一个名为Node的静态内部类来实现Map.Entry接口并实现接<br>口中的方法。Node类中有键的哈希值、key、value、next指针用于指向下一个<br>Node（用于处理冲突）</p>
 <h4 id="HashMap的loadFactor和threshold两个字段有什么用？"><a href="#HashMap的loadFactor和threshold两个字段有什么用？" class="headerlink" title="HashMap的loadFactor和threshold两个字段有什么用？"></a>HashMap的loadFactor和threshold两个字段有什么用？</h4><ol>
 <li>loadFactor 意为负载因子，这个值用于计算出下一次需要对HashMap进<br>行扩容时HashMap中包含的最大元素（即键值对）数</li>
@@ -208,7 +208,7 @@ CopyOnWriteArrayList 的思想是写时复制</li>
 <h4 id="HashMap中key的存储索引是怎么计算的？"><a href="#HashMap中key的存储索引是怎么计算的？" class="headerlink" title="HashMap中key的存储索引是怎么计算的？"></a>HashMap中key的存储索引是怎么计算的？</h4><p>首先根据key的值计算出hashcode的值，然后根据hashcode计算出hash值<br>，最后通过hash&amp;(length-1)计算得到存储的位置</p>
 <h4 id="HashMap在JDK1-7和1-8中的hash函数如何实现的？"><a href="#HashMap在JDK1-7和1-8中的hash函数如何实现的？" class="headerlink" title="HashMap在JDK1.7和1.8中的hash函数如何实现的？"></a>HashMap在JDK1.7和1.8中的hash函数如何实现的？</h4><p>首先取key的hashCode值、根据hashcode计算出hash值。JDK1.7和1.8的<br>不同之处在于根据hashcode计算出hash值</p>
 <ol>
-<li>JDK1.7 扰动4次，先是右移20位和右移12位异或取得的值又右移7位<br>与右移4位异或，为了让每一位都参与位运算，让相近的数最后通过hash<br>能分散开并减少碰撞，采用多次位移和异或，多一次与key的hashCode<br>异或，也是为了尽量减少碰撞</li>
+<li>JDK1.7 扰动9次，先是右移20位和右移12位异或取得的值又右移7位<br>与右移4位异或，为了让每一位都参与位运算，让相近的数最后通过hash<br>能分散开并减少碰撞，采用多次位移和异或，多一次与key的hashCode<br>异或，也是为了尽量减少碰撞</li>
 <li>JDK1.8 hashCode值与其右移16位的值进行异或操作<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> <span class="title">hash</span><span class="params">(Object key)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> h;</span><br><span class="line">        <span class="keyword">return</span> key == <span class="keyword">null</span> ? <span class="number">0</span> : (h = key.hashCode()) ^ h &gt;&gt;&gt; <span class="number">16</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
 </li>
@@ -289,9 +289,9 @@ CopyOnWriteArrayList 的思想是写时复制</li>
 </ol>
 <h4 id="HashMap将旧数组复制到新数组的过程是怎样的？"><a href="#HashMap将旧数组复制到新数组的过程是怎样的？" class="headerlink" title="HashMap将旧数组复制到新数组的过程是怎样的？"></a>HashMap将旧数组复制到新数组的过程是怎样的？</h4><p>如果旧数组不为null的话还要把之前数组的元素复制到新数组，复制过程如下</p>
 <ol>
-<li>如果原数组元素引用不为null，并且这个元素没有next节点，证明没有元<br>素和它产生冲突，那么直接复制到新数组，注意这个索引位置有变化，用新长<br>度-1与hash值进行按位与操作。注意如果是TreeNode类型的节点也有next，<br>因为TreeNode继承了Node类</li>
-<li>如果有冲突，并且节点类型是TreeNode类型，会调用split方法，处理树<br>中元素的重排</li>
-<li>如果有冲突，并且节点类型是链表节点类型，元素的位置在原来的位置，或<br>者原来的位置+oldCap ，如果有些节点还在相同的位置那么这条链表的相对顺<br>序也不会改变</li>
+<li>如果原数组元素引用不为null，并且这个元素没有next节点，证明没有<br>元素和它产生冲突，那么直接复制到新数组，注意这个索引位置有变化，<br>用新长度-1与hash值进行按位与操作。注意如果是TreeNode类型的节点<br>也有next，因为TreeNode继承了Node类</li>
+<li>如果有冲突，并且节点类型是TreeNode类型，会调用split方法，处理<br>树中元素的重排</li>
+<li>如果有冲突，并且节点类型是链表节点类型，元素的位置在原来的位置，<br>或者原来的位置+oldCap ，如果有些节点还在相同的位置那么这条链表的相<br>对顺序也不会改变</li>
 </ol>
 <h4 id="HashMap中如何通过键获取相应的值？"><a href="#HashMap中如何通过键获取相应的值？" class="headerlink" title="HashMap中如何通过键获取相应的值？"></a>HashMap中如何通过键获取相应的值？</h4><ol>
 <li>首先判断数组table是否为null，如果为null说明根本没有这个键值对，<br>直接返回null</li>
@@ -318,7 +318,7 @@ CopyOnWriteArrayList 的思想是写时复制</li>
 <h4 id="不用红黑树，用二叉查找树可以么？"><a href="#不用红黑树，用二叉查找树可以么？" class="headerlink" title="不用红黑树，用二叉查找树可以么？"></a>不用红黑树，用二叉查找树可以么？</h4><p>可以。但是二叉查找树在特殊情况下会变成一条线性结构（这就跟原来使用链<br>表结构一样了，造成很深的问题），遍历查找会非常慢</p>
 <h4 id="当链表转为红黑树后，什么时候退化为链表？"><a href="#当链表转为红黑树后，什么时候退化为链表？" class="headerlink" title="当链表转为红黑树后，什么时候退化为链表？"></a>当链表转为红黑树后，什么时候退化为链表？</h4><p>为6的时候退转为链表。中间有个差值7可以防止链表和树之间频繁的转换。假设<br>一下，如果设计成链表个数达到8则链表转换成树结构，链表个数小于8则树结<br>构转换成链表，如果一个HashMap不停的插入、删除元素，链表个数在8左右徘<br>徊，就会频繁的发生树转链表、链表转树，效率会很低</p>
 <h4 id="为什么链表改为红黑树的阈值是8，而不是7或20？"><a href="#为什么链表改为红黑树的阈值是8，而不是7或20？" class="headerlink" title="为什么链表改为红黑树的阈值是8，而不是7或20？"></a>为什么链表改为红黑树的阈值是8，而不是7或20？</h4><ol>
-<li>由于treenodes的大小大约是常规节点的两倍，因此我们仅在容器包含足<br>够的节点以保证使用时才使用它们，当它们变得太小（由于移除或调整大小）<br>时，它们会被转换回普通的node节点，容器中节点分布在hash桶中的频率遵<br>循泊松分布，桶的长度超过8的概率非常非常小。所以作者应该是根据概率统<br>计而选择了8作为阀值</li>
+<li>由于treenodes的大小大约是常规节点的两倍，因此我们仅在容器包含<br>足够的节点以保证使用时才使用它们，当它们变得太小（由于移除或调整<br>大小）时，它们会被转换回普通的node节点，容器中节点分布在hash 桶<br>中的频率遵循泊松分布，桶的长度超过8的概率非常非常小。所以作者应<br>该是根据概率统计而选择了8作为阀值</li>
 </ol>
 <h4 id="HashMap中key的存储索引是怎么计算的？-1"><a href="#HashMap中key的存储索引是怎么计算的？-1" class="headerlink" title="HashMap中key的存储索引是怎么计算的？"></a>HashMap中key的存储索引是怎么计算的？</h4><p>首先根据key的值计算出hashcode的值，然后根据hashcode计算出hash值，最后<br>通过hash&amp;（length-1）计算得到存储的位置。这里的 Hash 算法本质上就是三<br>步：取key的 hashCode值、根据 hashcode 计算出hash值、通过取模计算下标</p>
 <h4 id="JDK1-8为什么要hashcode异或其右移十六位的值？"><a href="#JDK1-8为什么要hashcode异或其右移十六位的值？" class="headerlink" title="JDK1.8为什么要hashcode异或其右移十六位的值？"></a>JDK1.8为什么要hashcode异或其右移十六位的值？</h4><p>因为在JDK 1.7 中扰动了4次，计算 hash 值的性能会稍差一点点。 从速度、功效<br>、质量来考虑，JDK1.8 优化了高位运算的算法，通过hashCode()的高16位异或低<br>16位实现：(h = k.hashCode()) ^ (h &gt;&gt;&gt; 16)。这么做可以在数组 table 的<br>length比较小的时候，也能保证考虑到高低Bit都参与到Hash的计算中，同时不<br>会有太大的开销</p>
@@ -346,9 +346,12 @@ CopyOnWriteArrayList 的思想是写时复制</li>
 </ol>
 <h3 id="ConcurrentHashMap"><a href="#ConcurrentHashMap" class="headerlink" title="ConcurrentHashMap"></a>ConcurrentHashMap</h3><p>用ConcurrentHashMap 替代HashMap，可以解决线程安全的问题，但是<br>ConcurrentHashMap 也是有jdk1.7 和jdk1.8 的区别。</p>
 <ol>
-<li>数据结构 jdk1.7 采用Segment分段锁方式。jdk1.8 采用数组+链表</li>
+<li>数据结构 jdk1.7 采用Segment分段锁方式。jdk1.8 采用数组+链表<br>和红黑树实现</li>
+<li>保证线程安全机制 jdk1.7 采用Segment分段锁方式保证线程安全，<br>其中Segment 继承自ReentrantLock，jdk1.8采用CAS和synchronized<br>来保证线程安全</li>
+<li>锁的粒度 jdk1.7 将数据分成一段一段的存储，然后每一段数据单独<br>一个锁，所以当一个线程占用一个锁访问其中的一段数据时，其他段的数<br>据可以被其他线程访问，包含一个Segment数组，数组中的每个Segment<br>都包含一个HashEntry 数组，每个HashEntry 是一个链表结构的元素。<br>jdk1.8 锁的锁更细粒度了，synchronized 只锁定当前链表或红黑树<br>的首节点，只要hash不冲突，就不会有线程安全问题，效率大幅提升</li>
+<li>链表转化为红黑树 定位节点的 hash 算法简化会带来弊端，hash<br>冲突加剧，因此在链表节点数量大于 8（且数据总量大于等于 64）时<br>，会将链表转化为红黑树进行存储</li>
+<li>查询时间复杂度 从 JDK1.7的遍历链表O(n)， JDK1.8 变成遍历红<br>黑树O(logN)</li>
 </ol>
-<p>+红黑树实现<br>2. 保证线程安全机制 jdk1.7 采用Segment分段锁方式保证线程安全，<br>其中Segment 继承自ReentrantLock，jdk1.8采用CAS和synchronized<br>来保证线程安全<br>3. 锁的粒度 jdk1.7 将数据分成一段一段的存储，然后每一段数据单独<br>一个锁，所以当一个线程占用一个锁访问其中的一段数据时，其他段的数<br>据可以被其他线程访问，包含一个Segment数组，数组中的每个Segment<br>都包含一个HashEntry 数组，每个HashEntry 是一个链表结构的元素。<br>jdk1.8 锁的锁更细粒度了，synchronized 只锁定当前链表或红黑树<br>的首节点，只要hash不冲突，就不会有线程安全问题，效率大幅提升<br>4. 链表转化为红黑树 定位节点的 hash 算法简化会带来弊端，hash<br>冲突加剧，因此在链表节点数量大于 8（且数据总量大于等于 64）时<br>，会将链表转化为红黑树进行存储<br>5. 查询时间复杂度 从 JDK1.7的遍历链表O(n)， JDK1.8 变成遍历红<br>黑树O(logN)</p>
 <h4 id="Segment是什么？"><a href="#Segment是什么？" class="headerlink" title="Segment是什么？"></a>Segment是什么？</h4><p>Segment是ConcurrentHashMap 的一个静态内部类，保存一个HashEntry数<br>组，继承了ReentrantLock，所以Segment是一种可重入锁，扮演锁的角色。<br>Segment 默认为16，也就是并发度为16</p>
 <h4 id="HashEntry是什么？"><a href="#HashEntry是什么？" class="headerlink" title="HashEntry是什么？"></a>HashEntry是什么？</h4><p>保存key 和value 以及一个指向下一个节点的引用，用volatile 修饰了<br>HashEntry 的数据 value 和 下一个节点 next，保证了多线程环境下<br>数据获取时的可见性</p>
 <h4 id="实现原理？"><a href="#实现原理？" class="headerlink" title="实现原理？"></a>实现原理？</h4><ol>
@@ -392,13 +395,13 @@ CopyOnWriteArrayList 的思想是写时复制</li>
 <li>如果并发度设置的过小，会带来严重的锁竞争问题，如果并发度设置的过<br>大，原本位于同一个Segment内的访问会扩散到不同Segment中，CPU cache<br>命中率会下降，从而引起程序性能下降</li>
 <li>在JDK1.8中，已经摒弃了Segment的概念，选择了Node数组+链表+红黑树<br>结构，并发度大小依赖于数组的大小</li>
 </ol>
-<h4 id="ConcurrentHashMap-迭代器是强一致性还是弱一致性？"><a href="#ConcurrentHashMap-迭代器是强一致性还是弱一致性？" class="headerlink" title="ConcurrentHashMap 迭代器是强一致性还是弱一致性？"></a>ConcurrentHashMap 迭代器是强一致性还是弱一致性？</h4><p>与HashMap 迭代器是强一致性不同，ConcurrentHashMap迭代器是弱一致性。<br>ConcurrentHashMap 的迭代器创建后，就会按照哈希表结构遍历每个元素，<br>但在遍历过程中，内部元素可能会发生变化，如果变化发生在已遍历过的部分<br>，迭代器就不会反映出来，而如果变化发生在未遍历过的部分，迭代器就会发<br>现并反映出来，这就是弱一致性。这样迭代器线程可以使用原来老的数据，而<br>写线程也可以并发的完成改变，更重要的，这保证了多个线程并发执行的连<br>续性和扩展性，是性能提升的关键</p>
+<h4 id="ConcurrentHashMap-迭代器是强一致性还是弱一致性？"><a href="#ConcurrentHashMap-迭代器是强一致性还是弱一致性？" class="headerlink" title="ConcurrentHashMap 迭代器是强一致性还是弱一致性？"></a>ConcurrentHashMap 迭代器是强一致性还是弱一致性？</h4><p>与HashMap 迭代器是强一致性不同，ConcurrentHashMap迭代器是弱一致性。<br>ConcurrentHashMap 的迭代器创建后，就会按照哈希表结构遍历每个元素，<br>但在遍历过程中，内部元素可能会发生变化，如果变化发生在已遍历过的部分<br>，迭代器就不会反映出来，而如果变化发生在未遍历过的部分，迭代器就会发<br>现并反映出来，这就是弱一致性。这样迭代器线程可以使用原来老的数据，而<br>写线程也可以并发的完成改变，更重要的，这保证了多个线程并发执行的连<br>续性和扩展性，是性能提升的关键，无法保证读取到的数据是原集合中最新<br>的数据，即迭代器进行遍历的是拷贝的集合，在遍历期间原集合发生的修改<br>，迭代器是检测不到的</p>
 <h4 id="ConcurrentHashMap能完全替代Hashtable吗？"><a href="#ConcurrentHashMap能完全替代Hashtable吗？" class="headerlink" title="ConcurrentHashMap能完全替代Hashtable吗？"></a>ConcurrentHashMap能完全替代Hashtable吗？</h4><p>不能</p>
 <ol>
 <li>线程安全 ConcurrentHashMap 和 Hashtable 都是线程安全的</li>
 <li>底层数据结构 ConcurrentHashMap 的底层数据结构： jdk1.7 是用分<br>段数组+链表实现，jdk1.8 是用数组+链表+红黑树实现，红黑树可以保证查<br>找效率，Hashtable 底层数据结构是用 数组+链表 实现</li>
 <li>保证线程安全的方式 ConcurrentHashMap jdk1.7 是用分段锁的方式保<br>证线程安全，jdk1.8 是用synchronized和CAS 保证线程安全，Hashtable<br>是用全表锁来保证线程安全（既一个Hashtable 只用一把锁），这种的方式<br>的效率非常低</li>
-<li>一致性  ConcurrentHashMap的迭起器是弱一致性的，而Hashtable的迭<br>代器是强一致性的。弱一致性是指当数据更新后，后续对该数据的读取操作可<br>能得到更新后的值，也可能是更改前的值。强一致性是指当更新操作完成之后<br>，在任何时刻所有的用户或者进程查询到的都是最近一次成功更新的数据。强<br>一致性是程度最高一致性要求，也是最难实现的</li>
+<li>一致性 ConcurrentHashMap 的迭起器是弱一致性的，而Hashtable 的<br>迭代器是强一致性的。弱一致性是指当数据更新后，后续对该数据的读取操<br>作可能得到更新后的值，也可能是更改前的值。强一致性是指当更新操作完<br>成之后，在任何时刻所有的用户或者进程查询到的都是最近一次成功更新<br>的数据。强一致性是程度最高一致性要求，也是最难实现的</li>
 </ol>
 <h4 id="size操作？"><a href="#size操作？" class="headerlink" title="size操作？"></a>size操作？</h4><ol>
 <li>JDK1.7 每个Segment 维护了一个count 变量来统计该Segment 中的键<br>值对个数，在执行size 操作时，需要遍历所有Segment 然后把count 累计<br>起来。 在执行size 操作时先尝试不加锁，如果连续两次不加锁操作得到的<br>结果一致，那么可以认为这个结果是正确的。尝试次数为3 ，如果尝试的次<br>数超过3次，就需要对每个Segment 加锁</li>
