@@ -1,0 +1,159 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="计算机网络3"><meta name="keywords" content="NetWork"><meta name="author" content="高明"><meta name="copyright" content="高明"><title>计算机网络3 | SkySea-GaoMing</title><link rel="shortcut icon" href="/img/favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.7.0"><link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css?version=1.7.0"><meta name="format-detection" content="telephone=no"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  }
+} </script><meta name="generator" content="Hexo 4.2.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="Toggle article">Toggle site</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">1.</span> <span class="toc-text">参考</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TCP-IP参考模型"><span class="toc-number">2.</span> <span class="toc-text">TCP&#x2F;IP参考模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP-IP、OSI的相同点"><span class="toc-number">2.1.</span> <span class="toc-text">TCP&#x2F;IP、OSI的相同点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP-IP、OSI的不同点"><span class="toc-number">2.2.</span> <span class="toc-text">TCP&#x2F;IP、OSI的不同点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#五层参考模型结构"><span class="toc-number">2.3.</span> <span class="toc-text">五层参考模型结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#五层参考模型数据封装与解封装"><span class="toc-number">2.4.</span> <span class="toc-text">五层参考模型数据封装与解封装</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#物理层设备"><span class="toc-number">3.</span> <span class="toc-text">物理层设备</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#中继器"><span class="toc-number">3.1.</span> <span class="toc-text">中继器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#集线器"><span class="toc-number">3.2.</span> <span class="toc-text">集线器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据链路层"><span class="toc-number">4.</span> <span class="toc-text">数据链路层</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#组帧"><span class="toc-number">5.</span> <span class="toc-text">组帧</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#封装成帧、帧定界、帧同步"><span class="toc-number">5.1.</span> <span class="toc-text">封装成帧、帧定界、帧同步</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字符填充的首尾定界法"><span class="toc-number">5.2.</span> <span class="toc-text">字符填充的首尾定界法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#零比特填充的首尾标志法"><span class="toc-number">5.3.</span> <span class="toc-text">零比特填充的首尾标志法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#违规编码法"><span class="toc-number">5.4.</span> <span class="toc-text">违规编码法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#差错控制"><span class="toc-number">6.</span> <span class="toc-text">差错控制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么会出现差错？"><span class="toc-number">6.1.</span> <span class="toc-text">为什么会出现差错？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#检验和纠正差错的编码方法"><span class="toc-number">6.2.</span> <span class="toc-text">检验和纠正差错的编码方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关于数据链路层和物理层的编码区别"><span class="toc-number">6.3.</span> <span class="toc-text">关于数据链路层和物理层的编码区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#冗余编码"><span class="toc-number">6.4.</span> <span class="toc-text">冗余编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#检错编码"><span class="toc-number">6.5.</span> <span class="toc-text">检错编码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#流量控制"><span class="toc-number">7.</span> <span class="toc-text">流量控制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是流量控制？"><span class="toc-number">7.1.</span> <span class="toc-text">什么是流量控制？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是可靠传输机制？"><span class="toc-number">7.2.</span> <span class="toc-text">什么是可靠传输机制？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是滑动窗口机制？"><span class="toc-number">7.3.</span> <span class="toc-text">什么是滑动窗口机制？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#可靠传输、流量控制、滑动窗口之间的关系"><span class="toc-number">7.4.</span> <span class="toc-text">可靠传输、流量控制、滑动窗口之间的关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#停止-等待协议"><span class="toc-number">7.5.</span> <span class="toc-text">停止-等待协议</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#为什么要有停止-等待协议？"><span class="toc-number">7.5.1.</span> <span class="toc-text">为什么要有停止-等待协议？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#研究停止等待协议的前提"><span class="toc-number">7.5.2.</span> <span class="toc-text">研究停止等待协议的前提</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#停止-等待协议有几种应用情况？"><span class="toc-number">7.5.3.</span> <span class="toc-text">停止-等待协议有几种应用情况？</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#停止等待协议性能分析"><span class="toc-number">7.6.</span> <span class="toc-text">停止等待协议性能分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多帧滑动窗口与后退N帧协议（GBN）"><span class="toc-number">7.7.</span> <span class="toc-text">多帧滑动窗口与后退N帧协议（GBN）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GBN接受方要做的事"><span class="toc-number">7.8.</span> <span class="toc-text">GBN接受方要做的事</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一张图了解GBN发送方和接受方之间的传输过程"><span class="toc-number">7.9.</span> <span class="toc-text">一张图了解GBN发送方和接受方之间的传输过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GBN滑动窗口的限制"><span class="toc-number">7.10.</span> <span class="toc-text">GBN滑动窗口的限制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GBN重点知识"><span class="toc-number">7.11.</span> <span class="toc-text">GBN重点知识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GBN性能分析"><span class="toc-number">7.12.</span> <span class="toc-text">GBN性能分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多帧滑动窗口与选择重传协议（SR）"><span class="toc-number">7.13.</span> <span class="toc-text">多帧滑动窗口与选择重传协议（SR）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#SR的滑动窗口图"><span class="toc-number">7.13.1.</span> <span class="toc-text">SR的滑动窗口图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SR发送方必须响应的三件事"><span class="toc-number">7.13.2.</span> <span class="toc-text">SR发送方必须响应的三件事</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SR接受方要做的事"><span class="toc-number">7.14.</span> <span class="toc-text">SR接受方要做的事</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一张图了解SR发送方和接受方之间的传输过程"><span class="toc-number">7.15.</span> <span class="toc-text">一张图了解SR发送方和接受方之间的传输过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SR滑动窗口的大小限制"><span class="toc-number">7.16.</span> <span class="toc-text">SR滑动窗口的大小限制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SR重点知识"><span class="toc-number">7.17.</span> <span class="toc-text">SR重点知识</span></a></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2762516417,1589137703&amp;fm=26&amp;gp=0.jpg"></div><div class="author-info__name text-center">高明</div><div class="author-info__description text-center">JAVA工程师</div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">Articles</span><span class="pull-right">75</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">Tags</span><span class="pull-right">15</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">Categories</span><span class="pull-right">10</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2333247715,1420619508&amp;fm=26&amp;gp=0.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">SkySea-GaoMing</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a></span><span class="pull-right"></span></div><div id="post-info"><div id="post-title">计算机网络3</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-05-08</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/">网络技术</a><span class="post-meta__separator">|</span><i class="fa fa-comment-o post-meta__icon" aria-hidden="true"></i><a href="/2021/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C3/#disqus_thread"><span class="disqus-comment-count" data-disqus-identifier="2021/05/08/计算机网络3/"></span></a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>《网络是怎样连接的》 《计算机网络》 <a href="http://www.cyc2018.xyz" target="_blank" rel="noopener">http://www.cyc2018.xyz</a><br><a href="https://bithachi.blog.csdn.net/article/details/104722679" target="_blank" rel="noopener">https://bithachi.blog.csdn.net/article/details/104722679</a></p>
+<h2 id="TCP-IP参考模型"><a href="#TCP-IP参考模型" class="headerlink" title="TCP/IP参考模型"></a>TCP/IP参考模型</h2><p>结构图 <img src="/2021/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C3/1.jpg" alt></p>
+<h3 id="TCP-IP、OSI的相同点"><a href="#TCP-IP、OSI的相同点" class="headerlink" title="TCP/IP、OSI的相同点"></a>TCP/IP、OSI的相同点</h3><ol>
+<li>都分层 将复杂问题化解为子问题</li>
+<li>基于独立的协议栈概念</li>
+<li>可以实现异构网络互联，实现不同厂家生产的计算机之间的通信</li>
+</ol>
+<h3 id="TCP-IP、OSI的不同点"><a href="#TCP-IP、OSI的不同点" class="headerlink" title="TCP/IP、OSI的不同点"></a>TCP/IP、OSI的不同点</h3><p><img src="/2021/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C3/2.jpg" alt></p>
+<h3 id="五层参考模型结构"><a href="#五层参考模型结构" class="headerlink" title="五层参考模型结构"></a>五层参考模型结构</h3><p><img src="/2021/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C3/3.jpg" alt></p>
+<h3 id="五层参考模型数据封装与解封装"><a href="#五层参考模型数据封装与解封装" class="headerlink" title="五层参考模型数据封装与解封装"></a>五层参考模型数据封装与解封装</h3><p><img src="/2021/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C3/4.jpg" alt></p>
+<h2 id="物理层设备"><a href="#物理层设备" class="headerlink" title="物理层设备"></a>物理层设备</h2><h3 id="中继器"><a href="#中继器" class="headerlink" title="中继器"></a>中继器</h3><p><img src="/2021/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C3/5.jpg" alt></p>
+<h3 id="集线器"><a href="#集线器" class="headerlink" title="集线器"></a>集线器</h3><p><img src="/2021/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C3/6.jpg" alt></p>
+<h2 id="数据链路层"><a href="#数据链路层" class="headerlink" title="数据链路层"></a>数据链路层</h2><p>基本概念 <img src="/2021/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C3/7.jpg" alt><br>功能概述 <img src="/2021/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C3/8.jpg" alt><br>因为物理层可能会把数据弄丢，所以数据链路层需要进行一些设置来使得<br>物理层可以可靠的传输数据 <img src="/2021/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C3/9.jpg" alt></p>
+<h2 id="组帧"><a href="#组帧" class="headerlink" title="组帧"></a>组帧</h2><h3 id="封装成帧、帧定界、帧同步"><a href="#封装成帧、帧定界、帧同步" class="headerlink" title="封装成帧、帧定界、帧同步"></a>封装成帧、帧定界、帧同步</h3><p><img src="/2021/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C3/10.jpg" alt><br>关于组帧的四种方法我们还得了解一下透明传输的概念 <img src="/2021/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C3/11.jpg" alt></p>
+<h3 id="字符填充的首尾定界法"><a href="#字符填充的首尾定界法" class="headerlink" title="字符填充的首尾定界法"></a>字符填充的首尾定界法</h3><p>发送方在封装帧时，数据的可能有图中两种类型，传输数据时可能会出现图<br>中所述的错误 <img src="/2021/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C3/12.jpg" alt><br>可以在特殊字符（SOH、EOT、ESC）前面填充一个转义字符来区分，发送方<br>在封装帧时，进行扫描，扫描到SOH、EOT、ESC（转义字符）时在其前面添<br>加转义字符，以区分，告诉接受方这个和特殊字符相同的字符是数据，当<br>然这些约定由双方之间的协议完成 <img src="/2021/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C3/13.jpg" alt></p>
+<h3 id="零比特填充的首尾标志法"><a href="#零比特填充的首尾标志法" class="headerlink" title="零比特填充的首尾标志法"></a>零比特填充的首尾标志法</h3><p><img src="/2021/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C3/14.jpg" alt></p>
+<h3 id="违规编码法"><a href="#违规编码法" class="headerlink" title="违规编码法"></a>违规编码法</h3><p><img src="/2021/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C3/15.jpg" alt></p>
+<h2 id="差错控制"><a href="#差错控制" class="headerlink" title="差错控制"></a>差错控制</h2><p><img src="/2021/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C3/16.jpg" alt></p>
+<h3 id="为什么会出现差错？"><a href="#为什么会出现差错？" class="headerlink" title="为什么会出现差错？"></a>为什么会出现差错？</h3><p><img src="/2021/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C3/17.jpg" alt></p>
+<h3 id="检验和纠正差错的编码方法"><a href="#检验和纠正差错的编码方法" class="headerlink" title="检验和纠正差错的编码方法"></a>检验和纠正差错的编码方法</h3><ol>
+<li>检错编码 奇偶校验码和循环冗余码</li>
+<li>纠错编码 海明码</li>
+</ol>
+<h3 id="关于数据链路层和物理层的编码区别"><a href="#关于数据链路层和物理层的编码区别" class="headerlink" title="关于数据链路层和物理层的编码区别"></a>关于数据链路层和物理层的编码区别</h3><p><img src="/2021/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C3/18.jpg" alt></p>
+<h3 id="冗余编码"><a href="#冗余编码" class="headerlink" title="冗余编码"></a>冗余编码</h3><p><img src="/2021/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C3/19.jpg" alt></p>
+<h3 id="检错编码"><a href="#检错编码" class="headerlink" title="检错编码"></a>检错编码</h3><ol>
+<li>关于检验码和纠错码中的奇偶校验码、循环冗余码(CRC)、海明码可参考我<br>之前写的：校验码（一文带你分析搞懂：奇偶校验码、海明码、CRC码）</li>
+<li>以下只给出简单的大致图解</li>
+</ol>
+<ul>
+<li>奇偶校验码 <img src="/2021/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C3/20.jpg" alt></li>
+<li>循环冗余码 <img src="/2021/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C3/21.jpg" alt></li>
+<li>纠错编码 海明码可以发现双比特错误，纠正单比特错误 <img src="/2021/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C3/22.jpg" alt></li>
+<li>确定校验码位数r <img src="/2021/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C3/23.jpg" alt></li>
+<li>确定校验码和数据的位置 <img src="/2021/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C3/25.jpg" alt></li>
+<li>求出校验码的值</li>
+<li>检错与纠错 <img src="/2021/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C3/24.jpg" alt></li>
+</ul>
+<h2 id="流量控制"><a href="#流量控制" class="headerlink" title="流量控制"></a>流量控制</h2><p>思维导图 <img src="/2021/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C3/26.jpg" alt> <img src="/2021/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C3/27.jpg" alt></p>
+<h3 id="什么是流量控制？"><a href="#什么是流量控制？" class="headerlink" title="什么是流量控制？"></a>什么是流量控制？</h3><ol>
+<li>流量控制是数据链路层的一种功能，流量控制对数据链路上的帧的发送速率<br>进行控制，以使接收方有足够的缓冲空间来接受每个帧</li>
+<li>流量控制的基本方法是由接收方控制发送方发送数据的速率</li>
+<li>常见的流量控制方式有两种：停止-等待协议、滑动窗口协议</li>
+</ol>
+<h3 id="什么是可靠传输机制？"><a href="#什么是可靠传输机制？" class="headerlink" title="什么是可靠传输机制？"></a>什么是可靠传输机制？</h3><ol>
+<li>可靠传输机制是为了使数据可以正确稳定的传输和接收而制定的规则</li>
+<li>数据链路层的可靠传输通常使用确认和超时重传两种机制来完成。</li>
+<li>确认是一种无数据的控制帧，这种控制帧使得接收方可以让发送方知道哪<br>些内容被正确接收。有些情况下为了提高传输效率，将确认捎带在一个回复帧<br>中，称为捎带确认</li>
+<li>超时重传是指发送方在发送某一个数据帧以后就开始一个计时器，在一定<br>时间内如果没有得到发送的数据帧的确认帧，那么就重新发送该数据帧，直<br>到发送成功为止</li>
+<li>自动重传请求（Auto Repeat reQuest，ARQ），通过接收方请求发送方<br>重传出错的数据帧来恢复出错的帧，是通信中用于处理信道所带来差错的方<br>法之一</li>
+<li>传统自动重传请求分为三种，即停等式（Stop-and-Wait）ARQ、后退N帧<br>（Go-Back-N）ARQ以及选择性重传（Selective Repeat）ARQ。后两种协议<br>是滑动窗口技术与请求重发技术的结合，由于窗口尺寸开到足够大，帧在线<br>路上可以连续地流动，因此又称为连续ARQ协议</li>
+</ol>
+<h3 id="什么是滑动窗口机制？"><a href="#什么是滑动窗口机制？" class="headerlink" title="什么是滑动窗口机制？"></a>什么是滑动窗口机制？</h3><ol>
+<li>滑动窗口协议的基本原理就是在任意时刻，发送方都维持了一个连续的允<br>许发送的帧的序号，称为发送窗口；同时，接收方也维持了一个连续的允许<br>接收的帧的序号，称为接收窗口</li>
+<li>发送窗口和接收窗口的序号的上下界不一定要一样，甚至大小也可以不同</li>
+<li>不同的滑动窗口协议窗口大小一般不同</li>
+<li>发送方窗口内的序列号代表了那些已经被发送，但是还没有被确认的帧，<br>或者是那些可以被发送的帧</li>
+</ol>
+<p><img src="/2021/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C3/28.jpg" alt> <img src="/2021/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C3/29.jpg" alt><br>在发送端，每收到一个确认帧，发送窗口就向前滑动一个帧的位置，当发送窗<br>口内没有可以发送的帧（即窗口内的帧全部是已发送但未收到确认的帧），发<br>送方就会停止发送，直到收到接受方发送的确认帧使窗口移动，窗口内有可以<br>发送的帧，之后才开始继续发送。<br>在接受端，当收到数据帧后，将窗口向前移一个位置，并发回确认帧，若收到<br>的数据帧落在接受窗口之外则一律丢弃。<br>滑动窗口有以下重要特性：</p>
+<ol>
+<li>只有接受窗口向前滑动时（同时接受方发送确认帧），发送窗口才有可能<br>（只有发送方收到确认帧才是一定）向前滑动</li>
+<li>从滑动窗口的概念看，停止-等待协议、后退N帧协议和选择重传协议只有在<br>发送窗口大小和接收窗口大小有所差别</li>
+<li>停止-等待协议：发送窗口大小=1，接受窗口大小=1</li>
+<li>后退N帧协议：发送窗口大小&gt;1，接受窗口大小=1</li>
+<li>选择重传协议：发送窗口大小&gt;1，接受窗口大小&gt;1</li>
+<li>当接受窗口的大小为1时，可保证帧的有序接受</li>
+</ol>
+<h3 id="可靠传输、流量控制、滑动窗口之间的关系"><a href="#可靠传输、流量控制、滑动窗口之间的关系" class="headerlink" title="可靠传输、流量控制、滑动窗口之间的关系"></a>可靠传输、流量控制、滑动窗口之间的关系</h3><p><img src="/2021/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C3/30.jpg" alt></p>
+<h3 id="停止-等待协议"><a href="#停止-等待协议" class="headerlink" title="停止-等待协议"></a>停止-等待协议</h3><ol>
+<li>停止-等待协议也称为单帧滑动窗口与停止-等待协议</li>
+<li>当发送窗口和接收窗口的大小固定为1时，滑动窗口协议退化为停等协议</li>
+<li>该协议规定发送方每发送一帧后就要停下来，等待接收方已正确接收的确认<br>返回后才能继续发送下一帧。</li>
+<li>由于接收方需要判断接收到的帧是新发的帧还是重新发送的帧，因此发送方<br>要为每一个帧加一个序号</li>
+<li>由于停等协议规定只有一帧完全发送成功后才能发送新的帧，因而只用一<br>比特来编号就够了</li>
+</ol>
+<h4 id="为什么要有停止-等待协议？"><a href="#为什么要有停止-等待协议？" class="headerlink" title="为什么要有停止-等待协议？"></a>为什么要有停止-等待协议？</h4><p><img src="/2021/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C3/31.jpg" alt></p>
+<h4 id="研究停止等待协议的前提"><a href="#研究停止等待协议的前提" class="headerlink" title="研究停止等待协议的前提"></a>研究停止等待协议的前提</h4><p>虽然现在常用全双工通信方式，但是为了讨论方便，我们仅考虑一方发送数<br>据（发送方），一方接收数据</p>
+<h4 id="停止-等待协议有几种应用情况？"><a href="#停止-等待协议有几种应用情况？" class="headerlink" title="停止-等待协议有几种应用情况？"></a>停止-等待协议有几种应用情况？</h4><p>两种：无差错和有差错</p>
+<ol>
+<li>无差错情况 <img src="/2021/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C3/32.jpg" alt></li>
+<li>有差错情况</li>
+</ol>
+<ul>
+<li>数据帧丢失或检测到帧出错 <img src="/2021/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C3/33.jpg" alt></li>
+<li>ACK确认帧丢失 <img src="/2021/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C3/34.jpg" alt></li>
+<li>ACK确认帧迟到超时 <img src="/2021/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C3/35.jpg" alt></li>
+</ul>
+<h3 id="停止等待协议性能分析"><a href="#停止等待协议性能分析" class="headerlink" title="停止等待协议性能分析"></a>停止等待协议性能分析</h3><p><img src="/2021/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C3/36.jpg" alt><br>发送方从开始发送数据到收到第一个确认帧ACK为止，这段时间称为一个发<br>送周期，信道利用率=发送时间/发送周期 <img src="/2021/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C3/37.jpg" alt><br>由于停等协议要为每一个帧进行确认后才继续发送下一帧，大大降低了信道<br>利用率，因此又提出了后退n帧协议（GBN）和选择重传协议（SR）<img src="/2021/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C3/38.jpg" alt></p>
+<h3 id="多帧滑动窗口与后退N帧协议（GBN）"><a href="#多帧滑动窗口与后退N帧协议（GBN）" class="headerlink" title="多帧滑动窗口与后退N帧协议（GBN）"></a>多帧滑动窗口与后退N帧协议（GBN）</h3><ol>
+<li>后退n协议中，发送方在发完一个数据帧后，不停下来等待应答帧，而是<br>连续发送若干个数据帧，即使在连续发送过程中收到了接收方发来的应答帧<br>，也可以继续发送。且发送方在每发送完一个数据帧时都要设置超时定时器<br>。只要在所设置的超时时间内仍未收到确认帧，就要重发相应的数据帧</li>
+<li>如：当发送方发送了N个帧后，若发现该N帧的前一个帧在计时器超时后<br>仍未返回其确认信息，则该帧被判为出错或丢失，此时发送方就不得不重<br>新发送出错帧及其后的N帧。</li>
+<li>从这里不难看出，后退n协议一方面因连续发送数据帧而提高了效率，但<br>另一方面，在重传时又必须把原来已正确传送过的数据帧进行重传（仅因这<br>些数据帧之前有一个数据帧出了错），这种做法又使传送效率降低</li>
+<li>由此可见，若传输信道的传输质量很差因而误码率较大时，连续测协议<br>不一定优于停止等待协议。此协议中的发送窗口的大小为k，接收窗口仍是1</li>
+</ol>
+<p>后退N帧协议（GBN）的滑动窗口 <img src="/2021/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C3/39.jpg" alt><br>GBN发送方响应的三件事</p>
+<ul>
+<li>上层的调用<br>上层要发送数据时，发送方先检查发送窗口是否已满，如果未满，则产生一<br>个帧并将其发送;如果窗口己满，发送方只需将数据返回给上层，暗示上层<br>窗口已满。上层等一 会再发送。 ( 实际实现中，发送方可以缓存这些数据<br>，窗口不满时再发送帧) <img src="/2021/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C3/40.jpg" alt></li>
+<li>收到一个ACK GBN协议中，对n号帧的确认采用·累积确认·的方式，标明<br>接收方已经收到n号帧和它之前的全部帧</li>
+<li>超时事件</li>
+<li><ul>
+<li>协议的名字为后退N帧/回退N帧，来源于出现丢失和时延过长帧时发送<br>方的行为</li>
+</ul>
+</li>
+<li><ul>
+<li>就像在停等协议中一样，定时器将再次用于恢复数据帧或确认帧的丢失</li>
+</ul>
+</li>
+<li><ul>
+<li>如果出现超时，发送方重传所有已发送但未被确认的帧</li>
+</ul>
+</li>
+</ul>
+<h3 id="GBN接受方要做的事"><a href="#GBN接受方要做的事" class="headerlink" title="GBN接受方要做的事"></a>GBN接受方要做的事</h3><p><img src="/2021/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C3/41.jpg" alt></p>
+<h3 id="一张图了解GBN发送方和接受方之间的传输过程"><a href="#一张图了解GBN发送方和接受方之间的传输过程" class="headerlink" title="一张图了解GBN发送方和接受方之间的传输过程"></a>一张图了解GBN发送方和接受方之间的传输过程</h3><p><img src="/2021/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C3/42.jpg" alt></p>
+<h3 id="GBN滑动窗口的限制"><a href="#GBN滑动窗口的限制" class="headerlink" title="GBN滑动窗口的限制"></a>GBN滑动窗口的限制</h3><p><img src="/2021/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C3/43.jpg" alt></p>
+<h3 id="GBN重点知识"><a href="#GBN重点知识" class="headerlink" title="GBN重点知识"></a>GBN重点知识</h3><p><img src="/2021/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C3/44.jpg" alt> <img src="/2021/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C3/45.jpg" alt></p>
+<h3 id="GBN性能分析"><a href="#GBN性能分析" class="headerlink" title="GBN性能分析"></a>GBN性能分析</h3><p><img src="/2021/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C3/46.jpg" alt></p>
+<h3 id="多帧滑动窗口与选择重传协议（SR）"><a href="#多帧滑动窗口与选择重传协议（SR）" class="headerlink" title="多帧滑动窗口与选择重传协议（SR）"></a>多帧滑动窗口与选择重传协议（SR）</h3><ol>
+<li>在后退n协议中，接收方若发现错误帧就不再接收后续的帧，即使是正确<br>到达的帧，这显然是一种浪费。由此诞生了SR（SELECTICE REPEAT）</li>
+<li>SR工作原理：当接收方发现某帧出错后，其后继续送来的正确的帧虽然<br>不能立即递交给接收方的高层，但接收方仍可收下来，存放在一个缓冲区<br>中，同时要求发送方重新传送出错的那一帧。一旦收到重新传来的帧后，<br>就可以将已存于缓冲区中的其余帧一并按正确的顺序递交上一层</li>
+<li>显然，选择重发减少了浪费，但要求接收方有足够大的缓冲区空间</li>
+</ol>
+<h4 id="SR的滑动窗口图"><a href="#SR的滑动窗口图" class="headerlink" title="SR的滑动窗口图"></a>SR的滑动窗口图</h4><p><img src="/2021/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C3/47.jpg" alt></p>
+<h4 id="SR发送方必须响应的三件事"><a href="#SR发送方必须响应的三件事" class="headerlink" title="SR发送方必须响应的三件事"></a>SR发送方必须响应的三件事</h4><ol>
+<li>上层的调用<br>从上层收到数据后，SR发送方检查下一个可用于该帧的序号，如果序号位于<br>发送窗口内，则发送数据帧;否则就像GBN一样，要么将数据缓存，要么返<br>回给上层之后再传输</li>
+<li>收到一个ACK确认帧<br>如果收到ACK，加入该帧序号在窗口内，则SR发送方将那个被确认的帧标记<br>为已接收。如果该帧序号是窗口的下界(最左边第-一个窗口对应的序号)，<br>则窗口向前移动到具有最小序号的未确认帧处。如果窗口移动了并且有序<br>号在窗口内的未发送帧，则发送这些帧 <img src="/2021/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C3/48.jpg" alt></li>
+<li>超时处理<br>每个帧都有自己的定时器，一个超时事件发生后只重传一个帧</li>
+</ol>
+<h3 id="SR接受方要做的事"><a href="#SR接受方要做的事" class="headerlink" title="SR接受方要做的事"></a>SR接受方要做的事</h3><p>SR接收方将确认-一个正确接收的帧而不管其是否按序。失序的帧将被缓存，<br>并返回给发送方一个该帧的确认帧[收谁确认谁]，直到所有帧(即序号更小<br>的帧)皆被收到为止，这时才可以将一批帧按序交付给上层，然后向前移动<br>滑动窗口 <img src="/2021/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C3/49.jpg" alt></p>
+<h3 id="一张图了解SR发送方和接受方之间的传输过程"><a href="#一张图了解SR发送方和接受方之间的传输过程" class="headerlink" title="一张图了解SR发送方和接受方之间的传输过程"></a>一张图了解SR发送方和接受方之间的传输过程</h3><p><img src="/2021/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C3/50.jpg" alt></p>
+<h3 id="SR滑动窗口的大小限制"><a href="#SR滑动窗口的大小限制" class="headerlink" title="SR滑动窗口的大小限制"></a>SR滑动窗口的大小限制</h3><p><img src="/2021/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C3/51.jpg" alt></p>
+<h3 id="SR重点知识"><a href="#SR重点知识" class="headerlink" title="SR重点知识"></a>SR重点知识</h3><ol>
+<li>对数据帧逐一确认，收一个确认一个</li>
+<li>只重传出错帧</li>
+<li>接收方有缓存<br><img src="/2021/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C3/52.jpg" alt></li>
+</ol>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">高明</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://skysea-gaoming.github.io/2021/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C3/">https://skysea-gaoming.github.io/2021/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C3/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/NetWork/">NetWork</a></div><nav id="pagination"><div class="prev-post pull-left"><a href="/2021/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C4/"><i class="fa fa-chevron-left">  </i><span>计算机网络4</span></a></div><div class="next-post pull-right"><a href="/2021/04/29/%E9%AB%98%E5%B9%B6%E5%8F%91%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A02/"><span>高并发项目学习2</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="disqus_thread"></div><script>var unused = null;
+var disqus_config = function () {
+  this.page.url = 'https://skysea-gaoming.github.io/2021/05/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C3/';
+  this.page.identifier = '2021/05/08/计算机网络3/';
+  this.page.title = '计算机网络3';
+}
+var d = document, s = d.createElement('script');
+s.src = "https://" + '你的disqus的 short-name' +".disqus.com/embed.js";
+s.setAttribute('data-timestamp', '' + +new Date());
+(d.head || d.body).appendChild(s);</script><script id="dsq-count-scr" src="https://你的disqus的 short-name.disqus.com/count.js" async></script></div></div><footer class="footer-bg" style="background-image: url(https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2333247715,1420619508&amp;fm=26&amp;gp=0.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2013 - 2021 By 高明</div><div class="framework-info"><span>Driven - </span><a href="http://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody" target="_blank" rel="noopener"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file-o"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="/js/third-party/anime.min.js"></script><script src="/js/third-party/jquery.min.js"></script><script src="/js/third-party/jquery.fancybox.min.js"></script><script src="/js/third-party/velocity.min.js"></script><script src="/js/third-party/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.7.0"></script><script src="/js/fancybox.js?version=1.7.0"></script><script src="/js/sidebar.js?version=1.7.0"></script><script src="/js/copy.js?version=1.7.0"></script><script src="/js/fireworks.js?version=1.7.0"></script><script src="/js/transition.js?version=1.7.0"></script><script src="/js/scroll.js?version=1.7.0"></script><script src="/js/head.js?version=1.7.0"></script><script>if(/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+  $('#top-container').addClass('is-mobile')
+}</script></body></html>
