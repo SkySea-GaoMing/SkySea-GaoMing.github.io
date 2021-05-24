@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="计算机网络"><meta name="keywords" content="NetWork"><meta name="author" content="高明"><meta name="copyright" content="高明"><title>计算机网络 | SkySea-GaoMing</title><link rel="shortcut icon" href="/img/favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.7.0"><link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css?version=1.7.0"><meta name="format-detection" content="telephone=no"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><script>var GLOBAL_CONFIG = { 
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="应用层总结"><meta name="keywords" content="NetWork"><meta name="author" content="高明"><meta name="copyright" content="高明"><title>应用层总结 | SkySea-GaoMing</title><link rel="shortcut icon" href="/img/favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.7.0"><link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css?version=1.7.0"><meta name="format-detection" content="telephone=no"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><script>var GLOBAL_CONFIG = { 
   root: '/',
   algolia: undefined,
   localSearch: undefined,
@@ -7,527 +7,412 @@
     error: 'Copy error',
     noSupport: 'The browser does not support'
   }
-} </script><meta name="generator" content="Hexo 4.2.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="Toggle article">Toggle site</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">1.</span> <span class="toc-text">参考</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#计算机网络概述"><span class="toc-number">2.</span> <span class="toc-text">计算机网络概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#计算机网络基本概念"><span class="toc-number">2.1.</span> <span class="toc-text">计算机网络基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#计算机网络的组成"><span class="toc-number">2.2.</span> <span class="toc-text">计算机网络的组成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#计算机网络的功能"><span class="toc-number">2.3.</span> <span class="toc-text">计算机网络的功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#计算机网络的分类"><span class="toc-number">2.4.</span> <span class="toc-text">计算机网络的分类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#计算机网络的性能指标"><span class="toc-number">3.</span> <span class="toc-text">计算机网络的性能指标</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#速率"><span class="toc-number">3.1.</span> <span class="toc-text">速率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#带宽"><span class="toc-number">3.2.</span> <span class="toc-text">带宽</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#吞吐量"><span class="toc-number">3.3.</span> <span class="toc-text">吞吐量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#时延"><span class="toc-number">3.4.</span> <span class="toc-text">时延</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#时延带宽积"><span class="toc-number">3.5.</span> <span class="toc-text">时延带宽积</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#往返时延（RTT）"><span class="toc-number">3.6.</span> <span class="toc-text">往返时延（RTT）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#信道利用率"><span class="toc-number">3.7.</span> <span class="toc-text">信道利用率</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#计算机网络的分层"><span class="toc-number">4.</span> <span class="toc-text">计算机网络的分层</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么分层"><span class="toc-number">4.1.</span> <span class="toc-text">为什么分层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分层的原则"><span class="toc-number">4.2.</span> <span class="toc-text">分层的原则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分层结构"><span class="toc-number">4.3.</span> <span class="toc-text">分层结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OSI参考模型"><span class="toc-number">5.</span> <span class="toc-text">OSI参考模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#OSI的结构"><span class="toc-number">5.1.</span> <span class="toc-text">OSI的结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OSI数据传输"><span class="toc-number">5.2.</span> <span class="toc-text">OSI数据传输</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OSI七层概述"><span class="toc-number">5.3.</span> <span class="toc-text">OSI七层概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#网络层"><span class="toc-number">5.4.</span> <span class="toc-text">网络层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据链路层"><span class="toc-number">5.5.</span> <span class="toc-text">数据链路层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#物理层"><span class="toc-number">5.6.</span> <span class="toc-text">物理层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#通信方式"><span class="toc-number">5.7.</span> <span class="toc-text">通信方式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#客户-服务器方式"><span class="toc-number">5.7.1.</span> <span class="toc-text">客户-服务器方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#对等连接方式"><span class="toc-number">5.7.2.</span> <span class="toc-text">对等连接方式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C-S和B-S架构"><span class="toc-number">5.8.</span> <span class="toc-text">C&#x2F;S和B&#x2F;S架构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#C-S架构"><span class="toc-number">5.8.1.</span> <span class="toc-text">C&#x2F;S架构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#B-S架构"><span class="toc-number">5.8.2.</span> <span class="toc-text">B&#x2F;S架构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#B-S架构的几种形式"><span class="toc-number">5.8.3.</span> <span class="toc-text">B&#x2F;S架构的几种形式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#域名系统DNS"><span class="toc-number">5.9.</span> <span class="toc-text">域名系统DNS</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#域名结构"><span class="toc-number">5.9.1.</span> <span class="toc-text">域名结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#域名服务器"><span class="toc-number">5.9.2.</span> <span class="toc-text">域名服务器</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#FTP"><span class="toc-number">5.10.</span> <span class="toc-text">FTP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TFTP"><span class="toc-number">5.11.</span> <span class="toc-text">TFTP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TELNET"><span class="toc-number">5.12.</span> <span class="toc-text">TELNET</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#浏览器生成消息"><span class="toc-number">6.</span> <span class="toc-text">浏览器生成消息</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#DNS查询IP"><span class="toc-number">6.1.</span> <span class="toc-text">DNS查询IP</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#IP"><span class="toc-number">6.1.1.</span> <span class="toc-text">IP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#硬件地址"><span class="toc-number">6.1.2.</span> <span class="toc-text">硬件地址</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#子网和超网"><span class="toc-number">6.2.</span> <span class="toc-text">子网和超网</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#划分子网"><span class="toc-number">6.2.1.</span> <span class="toc-text">划分子网</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#子网掩码"><span class="toc-number">6.2.2.</span> <span class="toc-text">子网掩码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#万维网WWW"><span class="toc-number">6.3.</span> <span class="toc-text">万维网WWW</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#URL"><span class="toc-number">6.3.1.</span> <span class="toc-text">URL</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#动态主机配置协议"><span class="toc-number">6.4.</span> <span class="toc-text">动态主机配置协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用端口"><span class="toc-number">6.5.</span> <span class="toc-text">常用端口</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#事务"><span class="toc-number">6.5.1.</span> <span class="toc-text">事务</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP"><span class="toc-number">6.6.</span> <span class="toc-text">HTTP</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#代理服务器"><span class="toc-number">6.6.1.</span> <span class="toc-text">代理服务器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HTTP报文结构"><span class="toc-number">6.6.2.</span> <span class="toc-text">HTTP报文结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Cookie"><span class="toc-number">6.6.3.</span> <span class="toc-text">Cookie</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTPS"><span class="toc-number">6.7.</span> <span class="toc-text">HTTPS</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#HTTP和HTTPS的区别"><span class="toc-number">6.7.1.</span> <span class="toc-text">HTTP和HTTPS的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#TLS握手过程"><span class="toc-number">6.7.2.</span> <span class="toc-text">TLS握手过程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代理服务器-1"><span class="toc-number">6.7.3.</span> <span class="toc-text">代理服务器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HTTP的报文结构"><span class="toc-number">6.7.4.</span> <span class="toc-text">HTTP的报文结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#报文内容"><span class="toc-number">6.7.5.</span> <span class="toc-text">报文内容</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#体系结构"><span class="toc-number">7.</span> <span class="toc-text">体系结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#按范围进行分类的网络"><span class="toc-number">7.1.</span> <span class="toc-text">按范围进行分类的网络</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#广域网WAN"><span class="toc-number">7.1.1.</span> <span class="toc-text">广域网WAN</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#城域网MAN"><span class="toc-number">7.1.2.</span> <span class="toc-text">城域网MAN</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#局域网LAN"><span class="toc-number">7.1.3.</span> <span class="toc-text">局域网LAN</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#个人区域网PAN"><span class="toc-number">7.1.4.</span> <span class="toc-text">个人区域网PAN</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#计算机网络性能"><span class="toc-number">7.2.</span> <span class="toc-text">计算机网络性能</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#速率-1"><span class="toc-number">7.2.1.</span> <span class="toc-text">速率</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#吞吐量-1"><span class="toc-number">7.2.2.</span> <span class="toc-text">吞吐量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#往返时间RTT"><span class="toc-number">7.2.3.</span> <span class="toc-text">往返时间RTT</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#利用率"><span class="toc-number">7.2.4.</span> <span class="toc-text">利用率</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OSI七层模型"><span class="toc-number">7.3.</span> <span class="toc-text">OSI七层模型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#应用层"><span class="toc-number">7.3.1.</span> <span class="toc-text">应用层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#表示层"><span class="toc-number">7.3.2.</span> <span class="toc-text">表示层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#会话层"><span class="toc-number">7.3.3.</span> <span class="toc-text">会话层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#运输层"><span class="toc-number">7.3.4.</span> <span class="toc-text">运输层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#网络层-1"><span class="toc-number">7.3.5.</span> <span class="toc-text">网络层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数据链路层-1"><span class="toc-number">7.3.6.</span> <span class="toc-text">数据链路层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#物理层-1"><span class="toc-number">7.3.7.</span> <span class="toc-text">物理层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#通信特点"><span class="toc-number">7.3.8.</span> <span class="toc-text">通信特点</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP-IP四层协议模型"><span class="toc-number">7.4.</span> <span class="toc-text">TCP&#x2F;IP四层协议模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据在各层之间的传递过程"><span class="toc-number">7.5.</span> <span class="toc-text">数据在各层之间的传递过程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#物理层-2"><span class="toc-number">8.</span> <span class="toc-text">物理层</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#信道"><span class="toc-number">8.1.</span> <span class="toc-text">信道</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#单工通信"><span class="toc-number">8.1.1.</span> <span class="toc-text">单工通信</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#半双工通信"><span class="toc-number">8.1.2.</span> <span class="toc-text">半双工通信</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#全双工通信"><span class="toc-number">8.1.3.</span> <span class="toc-text">全双工通信</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#宽带接入技术"><span class="toc-number">8.1.4.</span> <span class="toc-text">宽带接入技术</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据链路层-2"><span class="toc-number">9.</span> <span class="toc-text">数据链路层</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#封装成帧"><span class="toc-number">9.1.</span> <span class="toc-text">封装成帧</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#透明传输"><span class="toc-number">9.2.</span> <span class="toc-text">透明传输</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#差错检测"><span class="toc-number">9.3.</span> <span class="toc-text">差错检测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据链路层常见协议"><span class="toc-number">9.4.</span> <span class="toc-text">数据链路层常见协议</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#点对点ppp协议"><span class="toc-number">9.4.1.</span> <span class="toc-text">点对点ppp协议</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#局域网"><span class="toc-number">9.4.2.</span> <span class="toc-text">局域网</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一对多的以太网"><span class="toc-number">9.5.</span> <span class="toc-text">一对多的以太网</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#适配器"><span class="toc-number">9.6.</span> <span class="toc-text">适配器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MAC地址"><span class="toc-number">9.7.</span> <span class="toc-text">MAC地址</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#网桥"><span class="toc-number">9.7.1.</span> <span class="toc-text">网桥</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#交换机"><span class="toc-number">9.8.</span> <span class="toc-text">交换机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#虚拟局域网"><span class="toc-number">9.9.</span> <span class="toc-text">虚拟局域网</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#网络安全"><span class="toc-number">10.</span> <span class="toc-text">网络安全</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#对称加密算法"><span class="toc-number">10.1.</span> <span class="toc-text">对称加密算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#非对称加密算法"><span class="toc-number">10.2.</span> <span class="toc-text">非对称加密算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常见攻击方式"><span class="toc-number">10.3.</span> <span class="toc-text">常见攻击方式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#XSS"><span class="toc-number">10.3.1.</span> <span class="toc-text">XSS</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CSRF"><span class="toc-number">10.3.2.</span> <span class="toc-text">CSRF</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#网络层-2"><span class="toc-number">11.</span> <span class="toc-text">网络层</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#分类的IP地址"><span class="toc-number">11.1.</span> <span class="toc-text">分类的IP地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#硬件地址-1"><span class="toc-number">11.2.</span> <span class="toc-text">硬件地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ARP"><span class="toc-number">11.3.</span> <span class="toc-text">ARP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IP数据报"><span class="toc-number">11.4.</span> <span class="toc-text">IP数据报</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#划分子网-1"><span class="toc-number">11.5.</span> <span class="toc-text">划分子网</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#子网掩码-1"><span class="toc-number">11.5.1.</span> <span class="toc-text">子网掩码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#无分类编址CIDR"><span class="toc-number">11.6.</span> <span class="toc-text">无分类编址CIDR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#网际控制报文协议ICMP"><span class="toc-number">11.7.</span> <span class="toc-text">网际控制报文协议ICMP</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ping"><span class="toc-number">11.7.1.</span> <span class="toc-text">ping</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Traceroute"><span class="toc-number">11.7.2.</span> <span class="toc-text">Traceroute</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IPv6"><span class="toc-number">11.8.</span> <span class="toc-text">IPv6</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#虚拟专用网VPN"><span class="toc-number">11.9.</span> <span class="toc-text">虚拟专用网VPN</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#网络地址转换NAT"><span class="toc-number">11.10.</span> <span class="toc-text">网络地址转换NAT</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#路由器"><span class="toc-number">11.11.</span> <span class="toc-text">路由器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#路由器分组转发的流程"><span class="toc-number">11.11.1.</span> <span class="toc-text">路由器分组转发的流程</span></a></li></ol></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2762516417,1589137703&amp;fm=26&amp;gp=0.jpg"></div><div class="author-info__name text-center">高明</div><div class="author-info__description text-center">JAVA工程师</div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">Articles</span><span class="pull-right">75</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">Tags</span><span class="pull-right">15</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">Categories</span><span class="pull-right">10</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2333247715,1420619508&amp;fm=26&amp;gp=0.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">SkySea-GaoMing</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a></span><span class="pull-right"></span></div><div id="post-info"><div id="post-title">计算机网络</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-02-29</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/">网络技术</a><span class="post-meta__separator">|</span><i class="fa fa-comment-o post-meta__icon" aria-hidden="true"></i><a href="/2020/02/29/ComputerNetwork/#disqus_thread"><span class="disqus-comment-count" data-disqus-identifier="2020/02/29/ComputerNetwork/"></span></a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>《网络是怎样连接的》 《计算机网络》 <a href="http://www.cyc2018.xyz" target="_blank" rel="noopener">http://www.cyc2018.xyz</a><br><a href="https://bithachi.blog.csdn.net/article/details/104722679" target="_blank" rel="noopener">https://bithachi.blog.csdn.net/article/details/104722679</a></p>
-<h2 id="计算机网络概述"><a href="#计算机网络概述" class="headerlink" title="计算机网络概述"></a>计算机网络概述</h2><p>思维导图 <img src="/2020/02/29/ComputerNetwork/48.jpg" alt></p>
-<h3 id="计算机网络基本概念"><a href="#计算机网络基本概念" class="headerlink" title="计算机网络基本概念"></a>计算机网络基本概念</h3><p><img src="/2020/02/29/ComputerNetwork/49.jpg" alt></p>
+} </script><meta name="generator" content="Hexo 4.2.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="Toggle article">Toggle site</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">1.</span> <span class="toc-text">参考</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#应用层概述"><span class="toc-number">2.</span> <span class="toc-text">应用层概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#应用层术语"><span class="toc-number">2.1.</span> <span class="toc-text">应用层术语</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#计算机之间的通信方式"><span class="toc-number">2.2.</span> <span class="toc-text">计算机之间的通信方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#P2P的优缺点"><span class="toc-number">2.3.</span> <span class="toc-text">P2P的优缺点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#动态IP和静态IP"><span class="toc-number">2.4.</span> <span class="toc-text">动态IP和静态IP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#B-S和C-S"><span class="toc-number">2.5.</span> <span class="toc-text">B&#x2F;S和C&#x2F;S</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#B-S和C-S的区别"><span class="toc-number">2.6.</span> <span class="toc-text">B&#x2F;S和C&#x2F;S的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#域名结构"><span class="toc-number">2.7.</span> <span class="toc-text">域名结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#域名解析过程"><span class="toc-number">2.8.</span> <span class="toc-text">域名解析过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#递归查询和迭代查询"><span class="toc-number">2.9.</span> <span class="toc-text">递归查询和迭代查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入一个URL到打开网页的过程"><span class="toc-number">2.10.</span> <span class="toc-text">输入一个URL到打开网页的过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP协议"><span class="toc-number">2.11.</span> <span class="toc-text">HTTP协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#长连接和短连接的区别与使用场景"><span class="toc-number">2.12.</span> <span class="toc-text">长连接和短连接的区别与使用场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP-1-1的流水线和非流水线"><span class="toc-number">2.13.</span> <span class="toc-text">HTTP&#x2F;1.1的流水线和非流水线</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#请求报文和响应报文"><span class="toc-number">2.14.</span> <span class="toc-text">请求报文和响应报文</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#请求方法"><span class="toc-number">2.15.</span> <span class="toc-text">请求方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常见状态码"><span class="toc-number">2.16.</span> <span class="toc-text">常见状态码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#301和302状态码的区别"><span class="toc-number">2.17.</span> <span class="toc-text">301和302状态码的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#http-常见字段"><span class="toc-number">2.18.</span> <span class="toc-text">http 常见字段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP1-0和HTTP1-1的区别"><span class="toc-number">2.19.</span> <span class="toc-text">HTTP1.0和HTTP1.1的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GET和POST的区别？"><span class="toc-number">2.20.</span> <span class="toc-text">GET和POST的区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cookie"><span class="toc-number">2.21.</span> <span class="toc-text">Cookie</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DHCP"><span class="toc-number">2.22.</span> <span class="toc-text">DHCP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#系统调用"><span class="toc-number">2.23.</span> <span class="toc-text">系统调用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Cookie-1"><span class="toc-number">2.23.1.</span> <span class="toc-text">Cookie</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#怎么理解WebSocket协议？"><span class="toc-number">2.24.</span> <span class="toc-text">怎么理解WebSocket协议？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么使用WebSocket？"><span class="toc-number">2.25.</span> <span class="toc-text">为什么使用WebSocket？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WebSocket和Socket的区别是什么？"><span class="toc-number">2.26.</span> <span class="toc-text">WebSocket和Socket的区别是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Http与WebSocket的区别？"><span class="toc-number">2.27.</span> <span class="toc-text">Http与WebSocket的区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DNS什么情况使用UDP和TCP？"><span class="toc-number">2.28.</span> <span class="toc-text">DNS什么情况使用UDP和TCP？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安全方法和不安全方法有哪些？"><span class="toc-number">2.29.</span> <span class="toc-text">安全方法和不安全方法有哪些？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#幂等性了解吗？"><span class="toc-number">2.30.</span> <span class="toc-text">幂等性了解吗？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP的特性有哪些？"><span class="toc-number">2.31.</span> <span class="toc-text">HTTP的特性有哪些？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP-2-0了解吗？"><span class="toc-number">2.32.</span> <span class="toc-text">HTTP&#x2F;2.0了解吗？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP-2-0优点有哪些？"><span class="toc-number">2.33.</span> <span class="toc-text">HTTP&#x2F;2.0优点有哪些？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP-3是什么？"><span class="toc-number">2.34.</span> <span class="toc-text">HTTP&#x2F;3是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Session的作用是什么？"><span class="toc-number">2.35.</span> <span class="toc-text">Session的作用是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Session与Cookie的区别有哪些？"><span class="toc-number">2.36.</span> <span class="toc-text">Session与Cookie的区别有哪些？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cookie被禁用怎么办？"><span class="toc-number">2.37.</span> <span class="toc-text">Cookie被禁用怎么办？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cookie-的属性有哪些？"><span class="toc-number">2.38.</span> <span class="toc-text">Cookie 的属性有哪些？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#反向代理是什么？"><span class="toc-number">2.39.</span> <span class="toc-text">反向代理是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#跨域产生的原因？"><span class="toc-number">2.40.</span> <span class="toc-text">跨域产生的原因？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cookie如何跨域？"><span class="toc-number">2.41.</span> <span class="toc-text">Cookie如何跨域？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何解决跨域？"><span class="toc-number">2.42.</span> <span class="toc-text">如何解决跨域？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代理和网关是什么？"><span class="toc-number">2.43.</span> <span class="toc-text">代理和网关是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cookie的类型？"><span class="toc-number">2.44.</span> <span class="toc-text">Cookie的类型？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTPS的优缺点有哪些？"><span class="toc-number">2.45.</span> <span class="toc-text">HTTPS的优缺点有哪些？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#http通信存在的问题"><span class="toc-number">2.46.</span> <span class="toc-text">http通信存在的问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTPS-怎么建立连接？"><span class="toc-number">2.47.</span> <span class="toc-text">HTTPS 怎么建立连接？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#https（问为什么要对称加密数据，而不用非对称加密数据呢）？"><span class="toc-number">2.48.</span> <span class="toc-text">https（问为什么要对称加密数据，而不用非对称加密数据呢）？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么http一定要用TCP呢？"><span class="toc-number">2.49.</span> <span class="toc-text">为什么http一定要用TCP呢？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#长连接的好处？"><span class="toc-number">2.50.</span> <span class="toc-text">长连接的好处？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#写一个简单的webserver？"><span class="toc-number">2.51.</span> <span class="toc-text">写一个简单的webserver？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-server实现了什么？"><span class="toc-number">2.52.</span> <span class="toc-text">web server实现了什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#URI和URL的区别是什么？"><span class="toc-number">2.53.</span> <span class="toc-text">URI和URL的区别是什么？</span></a></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2762516417,1589137703&amp;fm=26&amp;gp=0.jpg"></div><div class="author-info__name text-center">高明</div><div class="author-info__description text-center">JAVA工程师</div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">Articles</span><span class="pull-right">81</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">Tags</span><span class="pull-right">17</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">Categories</span><span class="pull-right">12</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2333247715,1420619508&amp;fm=26&amp;gp=0.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">SkySea-GaoMing</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a></span><span class="pull-right"></span></div><div id="post-info"><div id="post-title">应用层总结</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-02-29</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/">网络技术</a><span class="post-meta__separator">|</span><i class="fa fa-comment-o post-meta__icon" aria-hidden="true"></i><a href="/2020/02/29/ComputerNetwork/#disqus_thread"><span class="disqus-comment-count" data-disqus-identifier="2020/02/29/ComputerNetwork/"></span></a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>《网络是怎样连接的》 《计算机网络》 <a href="http://www.cyc2018.xyz" target="_blank" rel="noopener">http://www.cyc2018.xyz</a><br><a href="https://bithachi.blog.csdn.net/article/details/104722679" target="_blank" rel="noopener">https://bithachi.blog.csdn.net/article/details/104722679</a></p>
+<h2 id="应用层概述"><a href="#应用层概述" class="headerlink" title="应用层概述"></a>应用层概述</h2><h3 id="应用层术语"><a href="#应用层术语" class="headerlink" title="应用层术语"></a>应用层术语</h3><ol>
+<li>域名系统（DNS）：域名系统将人类可读的域名转换为机器可读的IP地址</li>
+<li>文件传输协议（FTP）：用于Internet 上的控制文件的双向传输。用户<br>经常遇到两个概念：”下载”和”上传”。 “下载”文件就是从远程主机拷贝文<br>件至自己的计算机上；”上传”文件就是将文件从自己的计算机中拷贝至远<br>程主机上</li>
+<li>简单文件传输协议（TFTP）：是TCP/IP 协议族中的一个用来在客<br>户机与服务器之间进行简单文件传输的协议，提供不复杂、开销不大的<br>文件传输服务。端口号为69，使用UDP数据报</li>
+<li>远程终端协议（TELNET）：Telnet 协议是 TCP/IP 协议族中的<br>一员，是Internet 远程登陆服务的标准协议和主要方式。它为用户提<br>供了在本地计算机上完成远程主机工作的能力。在终端使用者的电脑上<br>使用telnet 程序，用它连接到服务器。终端使用者可以在telnet 程<br>序中输入命令，这些命令会在服务器上运行，就像直接在服务器的控<br>制台上输入一样。可以在本地就能控制服务器。要开始一个telnet会<br>话，必须输入用户名和密码来登录服务器。Telnet 是常用的远程控<br>制Web 服务器的方法，使用TCP连接</li>
+<li>万维网（WWW）是环球信息网的缩写，英文全称为“World Wide Web<br>”，中文名字为“万维网”，常简称为 Web。分为Web 客户端和Web 服务<br>器程序。WWW 可以让 Web 客户端（常用浏览器）访问浏览Web 服务器<br>上的页面。是一个由许多互相链接的超文本组成的系统，通过互联网访<br>问。在这个系统中，每个有用的事物，称为一样“资源”；并且由一个全<br>局“统一资源标识符”（URI）标识；这些资源通过超文本传输协议传送<br>给用户，而后者通过点击链接来获得资源</li>
+<li>统一资源定位符（URL）：统一资源定位符是对可以从互联网上得<br>到的资源的位置和访问方法的一种简洁的表示，是互联网上标准资源<br>的地址。互联网上的每个文件都有一个唯一的 URL，它包含的信息指<br>出文件的位置以及浏览器应该怎么处理它。由四部分组成：<br>协议://主机:端口/路径</li>
+<li>超文本传输协议（HTTP）：是互联网上应用最为广泛的一种网络<br>协议。所有的WWW 文件都必须遵守这个标准。设计HTTP 最初的目的是<br>为了提供一种发布和接收HTML页面的方法</li>
+<li>代理服务器：代理服务器是一种网络实体，它又称为万维网高速缓<br>存。代理服务器把最近的一些请求和响应暂存在本地磁盘中。当新请求到<br>达时，若代理服务器发现这个请求与暂时存放的的请求相同，就返回暂<br>存的响应，而不需要按 URL 的地址再次去互联网访问该资源。代理服<br>务器可在客户端或服务器工作，也可以在中间系统工作</li>
+<li>简单邮件传输协议(SMTP) : 即简单邮件传输协议,它是一组用于由<br>源地址到目的地址传送邮件的规则，由它来控制信件的中转方式。 SMTP<br>协议属于TCP/IP协议簇，它帮助每台计算机在发送或中转信件时找到下<br>一个目的地。 通过SMTP 协议所指定的服务器,就可以把E-mail 寄到收<br>信人的服务器上了，整个过程只要几分钟。SMTP 服务器则是遵循 SMTP 协议的发送邮件服务器，用来发送或中转发出的电子邮件</li>
+<li>脚本：指一个程序，它被另一个程序而不是计算机的处理机来解释<br>或执行</li>
+<li>搜索引擎:是指根据一定的策略、运用特定的计算机程序从互联网上<br>搜集信息，在对信息进行组织和处理后，为用户提供检索服务，将用户<br>检索相关的信息展示给用户的系统。搜索引擎包括全文索引、目录索引</li>
+</ol>
+<h3 id="计算机之间的通信方式"><a href="#计算机之间的通信方式" class="headerlink" title="计算机之间的通信方式"></a>计算机之间的通信方式</h3><p>计算机之间的通信方式可以分为两类：客户-服务器方式和对等方式</p>
 <ol>
-<li>一般认为，计算机网络是一个分散的(地理位置不同的)、具有独立功能<br>的计算机系统，通过通信设备(路由等)与线路(光纤等)连接起来，由功能<br>完善的软件实现资源共享和信息传递的系统</li>
-<li>计算机网络是一些互联的、自治的计算机系统的集合</li>
+<li>客户-服务器方式 C/S<br>客户是请求方，服务器是服务提供方，B/S是浏览器-服务器方式，是C/S<br>的一种特例。客户和服务器的通信建立连接后通信是双向的</li>
+<li>对等连接方式 P2P<br>不区分请求方和服务方，两台主机都运行了对等连接软件</li>
 </ol>
-<h3 id="计算机网络的组成"><a href="#计算机网络的组成" class="headerlink" title="计算机网络的组成"></a>计算机网络的组成</h3><ol>
-<li>从组成部分来看</li>
+<h3 id="P2P的优缺点"><a href="#P2P的优缺点" class="headerlink" title="P2P的优缺点"></a>P2P的优缺点</h3><ol>
+<li>P2P的优点 减轻了服务器的计算压力，消除了对某个服务器的完全依<br>赖，可扩展性好，网络健壮性强单个结点的失效不会影响其他部分的结点</li>
+<li>P2P的缺点 在获取服务的同时，还要给其他结点提供服务，因此会占<br>用较多的内存，影响整机速度</li>
+</ol>
+<h3 id="动态IP和静态IP"><a href="#动态IP和静态IP" class="headerlink" title="动态IP和静态IP"></a>动态IP和静态IP</h3><p>动态IP需要在连接网络时自动获取IP地址以供用户正常上网，而静态IP是<br>ISP在装机时分配给用户的IP地址，可以直接连接上网不需要获取IP地址</p>
+<h3 id="B-S和C-S"><a href="#B-S和C-S" class="headerlink" title="B/S和C/S"></a>B/S和C/S</h3><ol>
+<li>B/S 即浏览器/服务器结构 只是要求安装一个浏览器</li>
+<li>C/S 即客户机/服务器结构 客户端需要安装专用的客户软件</li>
+</ol>
+<h3 id="B-S和C-S的区别"><a href="#B-S和C-S的区别" class="headerlink" title="B/S和C/S的区别"></a>B/S和C/S的区别</h3><ol>
+<li>硬件要求不同 c/s一般建立在专用的网络上，是小范围的网络环境，<br>而B/S一般构建于广域网上，不需要专门的网络硬件环境，只要能接入网<br>络即可</li>
+<li>维护成本 c/s维护成本高，发生一次升级，则所有客户端的程序都需<br>要改变</li>
+<li>响应速度 c/s安全性能高，由于只有一层交互，因此响应速度较快</li>
+<li>逻辑处理 c/s会处理一些运算，业务逻辑的处理。b/s极少数事务逻辑<br>在前端实现</li>
+</ol>
+<h3 id="域名结构"><a href="#域名结构" class="headerlink" title="域名结构"></a>域名结构</h3><ol>
+<li>因特网采用层次树状结构的命名方法。采用这种命名方法，任何一个连接<br>到因特网的主机或路由器，都有一个唯一的层次结构名称，即域名</li>
+<li>不区分大小写，级别低在左边级别高在右边</li>
+<li>顶级域名分为如下三大类:</li>
 </ol>
 <ul>
-<li>一个完整的计算机网络主要由硬件、软件和协议三大部分组成，缺一不可</li>
-<li>硬件主要由主机(也称端系统)，通信链路(如双绞线、光纤)、交换设备(<br>如路由、交换机等)和通信处理机(如网卡)等组成</li>
-<li>软件主要包括各种实现资源共享的软件和方便用户使用的各种工具软件(<br>如网络操作系统、邮件收发程序、FTP程序、聊天程序等)</li>
-<li>协议是计算机网络的核心，协议规定了网络传输数据时所遵循的规范。就<br>如同我们现实生活中的法律一样，网络世界也必须遵循一定的规则</li>
+<li>国家顶级域名 如“.cn”表示中国，“.us”表示美国，.uk”表示英国。</li>
+<li>通用顶级域名 常见的有“.com” (公司)、“.net” (网络服务机构)、“.org”<br>(非营利性组织)和“.gov” (国家或政府部门)等</li>
+<li>基础结构域名 这种顶级域名只有一个，即arpa,用于反向域名解析，因此<br>又称反向域名。反向域名解析与通常的正向域名解析相反，提供IP地址到域<br>名的对应</li>
+</ul>
+<h3 id="域名解析过程"><a href="#域名解析过程" class="headerlink" title="域名解析过程"></a>域名解析过程</h3><p>共使用8个UDP报文如下:假定某客户机想获知域名为y.abc.com主机的IP地址</p>
+<ol>
+<li>客户机向其本地域名服务器发出DNS请求报文</li>
+<li>本地域名服务器收到请求后，查询本地缓存，若没有该记录，则以DNS客<br>户的身份向根域名服务器发出解析请求</li>
+<li>根域名服务器收到请求后，判断该域名属于.com域，将对应的顶级域名<br>服务器dns.com的IP地址返回给本地域名服务器</li>
+<li>本地域名服务器向顶级域名服务器dns.com发出解析请求报文</li>
+<li>顶级域名服务器dns.com收到请求后，判断该域名属于abc.com域，因此<br>将对应的授权域名服务器dns.abc.com的IP地址返回给本地域名服务器</li>
+<li>本地域名服务器向授权域名服务器dns.abc.com发起解析请求报文</li>
+<li>授权域名服务器dns.abc.com收到请求后，将查询结果返回给本地域名服<br>务器</li>
+<li>本地域名服务器将查询结果保存到本地缓存，同时返回给客户机</li>
+</ol>
+<h3 id="递归查询和迭代查询"><a href="#递归查询和迭代查询" class="headerlink" title="递归查询和迭代查询"></a>递归查询和迭代查询</h3><ol>
+<li>主机向本地域名服务器的查询采用的是递归查询</li>
+<li>本地域名服务器向根域名服务器的查询采用迭代查询</li>
+</ol>
+<h3 id="输入一个URL到打开网页的过程"><a href="#输入一个URL到打开网页的过程" class="headerlink" title="输入一个URL到打开网页的过程"></a>输入一个URL到打开网页的过程</h3><ol>
+<li>DHCP 配置主机信息 如果最初没有IP地址等信息的话，那么就需要先<br>使用DHCP来获取。主机生成一个DHCP请求报文，并将这个报文放入具有目<br>的端口67和源端口68的UDP 报文段中，放入具有广播IP目的地址(255.</li>
+<li>255.255)和源IP地址(0.0.0.0)的IP数据报中。DHCP服务器最后<br>就会把相关信息发送给主机</li>
+<li>ARP解析MAC地址 DHCP过程只知道网关路由器的IP地址，为了获取网关<br>路由器的MAC地址，需要使用ARP协议</li>
+<li>DNS解析 首先查找域名服务器获取相应域名的IP地址，首先以UDP数据<br>报的形式发送给本地域名服务器。主机向本地域名服务器的查询一般采用递<br>归查询，递归查询就是如果主机询问的本地域名服务器不知道被查询的IP<br>地址，那么本地域名服务器就会以DNS客户的身份器其他根域名服务器查询<br>，主机不会进行下一步查询。本地域名服务器向根域名服务器查询分为两种<br>方式，通常采用迭代查询：当根域名服务器收到本地域名服务器的请求时<br>会告诉本地域名服务器应该去哪一个域名服务器查询而不是帮助本地域名<br>服务器查询。本地服务器也可以采用递归查询，取决于最初查询请求报文<br>的设置是哪一种方式。为了提高DNS 查询效率在域名服务器和主机中都是<br>用了高速缓存</li>
+<li>HTTP协议建立在TCP协议之上，HTTP请求前，必须先与HTTP服务器<br>进行三次握手来建立连接</li>
+<li>HTTP协议生成请求报文 生成针对目标Web服务器的HTTP请求报文</li>
+<li>HTTP协议对请求进行处理，比如返回相应的资源，HTTP响应报文</li>
+<li>HTML页面的解析与渲染 抽取出Web页面内容，浏览器之后进行渲染，显<br>示Web页面</li>
+</ol>
+<h3 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h3><ol>
+<li>HTTP定义了浏览器怎样向万维网服务器请求万维网文档，以及服务器怎<br>样把文档传送给浏览器</li>
+<li>HTTP是无状态的。也就是说，同一个客户第二次访问同一个服务器上的页<br>面时，服务器的响应与第一次被访问时的相同。因为服务器并不记得曾经访问<br>过的这个客户，也不记得为该客户曾经服务过多少次。HTTP的无状态特性简<br>化了服务器的设计，使服务器更容易支持大量并发的HTTP请求</li>
+<li>每请求一个文档都需要两倍RTT开销，每一次新建TCP连接都要分配缓存<br>和变量</li>
+</ol>
+<h3 id="长连接和短连接的区别与使用场景"><a href="#长连接和短连接的区别与使用场景" class="headerlink" title="长连接和短连接的区别与使用场景"></a>长连接和短连接的区别与使用场景</h3><ol>
+<li>短连接：例如普通的web请求，在三次握手之后建立连接，发送数据包并<br>得到服务器返回的结果之后，通过客户端和服务端的四次握手进行关闭断开</li>
+<li>长连接：区别于短连接，由于三次握手链接及四次握手断开，在请求频繁<br>的情况下，链接请求和断开请求的开销较大，影响效率。采用长连接方式，执<br>行三次握手链接后，不断开链接，保持客户端和服务端通信，直到服务器超<br>时自动断开链接，或者客户端主动断开链接。持久连接的特点是，只要任意<br>一端没有明确提出断开连接，则保持TCP 连接状态<br>短连接：适用于网页浏览等数据刷新频度较低的场景<br>长连接：适用于客户端和服务端通信频繁的场景，例如聊天室，实时游戏等</li>
+</ol>
+<h3 id="HTTP-1-1的流水线和非流水线"><a href="#HTTP-1-1的流水线和非流水线" class="headerlink" title="HTTP/1.1的流水线和非流水线"></a>HTTP/1.1的流水线和非流水线</h3><ol>
+<li>对于非流水线方式，客户在收到前一个响应后才能发出下一个请求</li>
+<li>HTTP/1.1 的默认方式是使用流水线的持久连接。这种情况下，客户每<br>遇到一个对象引用就立即发出一个请求，因而客户可以逐个地连续发出对<br>各个引用对象的请求。如果所有的请求和响应都是连续发送的，那么所有<br>引用的对象共计经历1个RTT延迟，而不是像非流水线方式那样，每个引<br>用都必须有1个RTT延迟</li>
+</ol>
+<h3 id="请求报文和响应报文"><a href="#请求报文和响应报文" class="headerlink" title="请求报文和响应报文"></a>请求报文和响应报文</h3><ol>
+<li>请求报文</li>
+</ol>
+<ul>
+<li>请求行 请求方法、URL、协议版本</li>
+<li>首部行 为请求报文添加了一些附加信息，头部字段名和值</li>
+<li>实体主体 可选部分，比如GET 请求就没有请求正文</li>
 </ul>
 <ol start="2">
-<li>从工作方式来看 <img src="/2020/02/29/ComputerNetwork/50.jpg" alt></li>
+<li>响应报文</li>
 </ol>
 <ul>
-<li>计算机网络(主要指Internet)可分为边缘部分和核心部分</li>
-<li>边缘部分由所有连接到因特网上、供用户直接使用的主机组成，用来进行<br>通信(如传输数据、音频或视频)和资源共享</li>
-<li>核心部分由大量的网络和连接这些网络的路由器组成，它为边缘部分提供<br>连通性和交换服务</li>
+<li>状态行 协议版本、状态码以及描述</li>
+<li>首部行 响应报文添加了一些附加信息，头部字段名和值</li>
+<li>实体主体 响应的内容主体</li>
 </ul>
-<ol start="3">
-<li>从功能组成来看 <img src="/2020/02/29/ComputerNetwork/51.jpg" alt></li>
+<h3 id="请求方法"><a href="#请求方法" class="headerlink" title="请求方法"></a>请求方法</h3><ol>
+<li>OPTION 请求选项信息</li>
+<li>GET 读取URL标志的信息</li>
+<li>POST 添加信息</li>
+<li>DELETE 删除URL资源</li>
+</ol>
+<h3 id="常见状态码"><a href="#常见状态码" class="headerlink" title="常见状态码"></a>常见状态码</h3><ol>
+<li>1xx：表示请求已接收，正在处理</li>
 </ol>
 <ul>
-<li>计算机网络由通信子网和资源子网组成</li>
-<li>通信子网由各种传输介质、通信设备和相应的网络协议组成，它使网络具<br>有数据传输、交换、控制和存储的能力，实现计算机之间的数据通信</li>
-<li>资源子网是实现资源共享功能的设备及其软件的集合，向网络用户提供共<br>享其他计算机上的硬件资源、软件资源和数据资源的服务</li>
-</ul>
-<h3 id="计算机网络的功能"><a href="#计算机网络的功能" class="headerlink" title="计算机网络的功能"></a>计算机网络的功能</h3><ol>
-<li>数据通信<br>数据通信是计算机网络最基本和最重要的功能，实现联网计算机之间的<br>各种信息传输，并将分散在不同地理位置的计算机联系起来，进行统一<br>的调配、控制和管理</li>
-<li>资源共享</li>
-</ol>
-<ul>
-<li>资源共享可以是软件共享、数据共享和硬件共享</li>
-<li>计算机网络中的资源互通有无，分工协作，从而极大地提高硬件资源、软<br>件资源和数据资源的利用率</li>
-</ul>
-<ol start="3">
-<li>分布式处理<br>当计算机网络中的某个计算机系统负荷过重时，可以将其处理的某个复杂任<br>务分配给网络中的其它计算机系统，让它帮你处理，从而利用空闲计算机资<br>源以提高整个系统的利用率</li>
-<li>提高可靠性<br>计算机网络中的各台计算机可以通过网络互为替代机，当一台计算机崩了，<br>可以让另一台计算机来完成它的工作</li>
-<li>负载均衡<br>将工作任务均衡的分配给计算机网络中的各台计算机</li>
-</ol>
-<h3 id="计算机网络的分类"><a href="#计算机网络的分类" class="headerlink" title="计算机网络的分类"></a>计算机网络的分类</h3><ol>
-<li>按分布范围分类 <img src="/2020/02/29/ComputerNetwork/52.jpg" alt> <img src="/2020/02/29/ComputerNetwork/53.jpg" alt></li>
-</ol>
-<ul>
-<li>广域网（WAN）。也称远程网。关于网提供长距离通信，通常是几十千米到<br>几千千米的区域，比如跨国通信。连接关于网的各结点交换机的链路一般都<br>是高速链路，具有较大的通信容量</li>
-<li>城域网（MAN）。覆盖范围跨越几个街区甚至整个城市，覆盖范围约5~50<br>km，城域网大多采用以太网技术，因此有时也常并入局域网的范围进行讨论</li>
-<li>局域网（LAN）。范围几十米到几千米的区域。一般用微机或工作站通过高<br>速线路相连。传统上，局域网使用广播技术，而广域网使用交换技术</li>
-<li>个人区域网（PAN）。覆盖范围大约十米左右。指在个人工作的地方将消费<br>电子设备（如平板电脑、智能手机等）用无线技术连接起来的网络，也常称<br>为无线个人区域网（WPAN）</li>
+<li>100 表明到目前为止都很正常，客户端可以继续发送请求或者忽略<br>这个响应</li>
 </ul>
 <ol start="2">
-<li>按传输技术分类</li>
+<li>2xx：成功 表示请求已被成功接收、理解、接受</li>
 </ol>
 <ul>
-<li>广播式网络。所有联网计算机都共享一个公共通信信道。当一台计算机利<br>用共享通信信道发送报文分组时，所有其他计算机都会收听到这个分组。<br>接受到该分组的计算机将通过检查目的地之来决定是否接受该分组</li>
-<li>点对点网络。每条物理线路连接一对计算机</li>
+<li>200 OK 正在被正确处理</li>
+<li>204 No Content 请求已经成功处理，但是返回的响应报文不包含实体的主<br>体部分。一般在只需要从客户端往服务器发送信息，而不需要返回数据时使用</li>
+<li>206 Partial Content 是应用于 HTTP 分块下载或断电续传，表示响应返<br>回的 body 数据并不是资源的全部，而是其中的一部分，也是服务器处理成功<br>的状态</li>
 </ul>
 <ol start="3">
-<li>按拓扑结构分类 <img src="/2020/02/29/ComputerNetwork/54.jpg" alt></li>
+<li>3xx：重定向–要完成请求必须进行更进一步的操作，虽然 HTTP 协议规定<br>301、302 状态下重定向时不允许把 POST 方法改成 GET 方法，但是大多数<br>浏览器都会在 301、302 和303 状态下的重定向把 POST方法改成GET方法</li>
 </ol>
 <ul>
-<li>网络拓扑结构是指网络总的结点（路由器、主机等）于通信线路（网线）<br>之间的几何关系（如总线形、环形）表示的网路结构，主要指通信子网的拓<br>扑结构</li>
-<li>分为四类：总线形、星形、环形、网状形</li>
-<li><ul>
-<li>总线形：用单根传输线把计算机连接起来</li>
-</ul>
-</li>
-<li><ul>
-<li>星形：每个终端或计算机都以单独的线路和中央设备相连</li>
-</ul>
-</li>
-<li><ul>
-<li>环形：所有计算机接口设备连接成一个环</li>
-</ul>
-</li>
-<li><ul>
-<li>网状形：一般情况下，每个结点至少有两条路径与其他结点相连，多<br>用于广域网</li>
-</ul>
-</li>
+<li>301 Moved Permanently 永久性重定向，资源分配性的URL</li>
+<li>302 Found 临时性重定向，说明请求的资源还在，但暂时需要用另一个<br>URL 来访问</li>
+<li>303 See Other 和 302 有着相同的功能，但是 303 明确要求客户端应<br>该采用 GET 方法获取资源</li>
+<li>304 Not Modified 如果请求报文首部包含一些条件，例如： If-Match，<br>If-Modified-Since，If-None-Match，If-Range，If-Unmodified-Since<br>，允许访问但是不满足条件，则服务器会返回 304 状态码</li>
+<li>307 Temporary Redirect 临时重定向，与 302 的含义类似，但是307<br>要求浏览器不会把重定向请求的改变</li>
 </ul>
 <ol start="4">
-<li>按使用者分类</li>
+<li>4xx：客户端错误–请求有语法错误或请求无法实现</li>
 </ol>
 <ul>
-<li>公用网（Public Network）。也称公众网。指电信公司出资建造的大<br>型网络</li>
-<li>专用网（Private Network）。指某个部门为满足本单位特殊业务需要<br>而建造的网络。这种网络不向本单位以外人提供服务。如铁路、典礼、军队<br>等部门专用网络</li>
+<li>400 Bad Request 请求报文中存在语法错误</li>
+<li>401 Unauthorized 该状态码表示发送的请求需要有认证信息（BASIC<br>认证、DIGEST 认证）。如果之前已进行过一次请求，则表示用户认证失败</li>
+<li>403 Forbidden 请求资源被服务器拒绝，实体部分返回原因描述</li>
+<li>404 Not Found</li>
 </ul>
 <ol start="5">
-<li>按交换技术分类</li>
+<li>5xx：服务器端错误–服务器未能处理合法的请求</li>
 </ol>
 <ul>
-<li>电路交换网络。在源结点和目的结点之间建立起一条专用的通路用于传<br>输数据，包括建立连接（占用通信资源）、传输数据（一直占用通信资源<br>）和断开连接（释放通信资源）三个阶段。最典型的电路交换网是传统电<br>话网络。该类网络的特点是整个报文的比特流连续的从源点直达终点，好<br>像在一条管道中传送 <img src="/2020/02/29/ComputerNetwork/55.jpg" alt></li>
-<li>报文交换网络。也称存储-转发网络。用户数据加上源地址、目的地址、校<br>验码等辅助信息，然后封装成报文、这个报文传送到相邻结点，全部存储<br>后，再转发给下一个结点，重复这一过程直到到达目的结点，每个报文<br>可以单独选择到达目的结点的路径 <img src="/2020/02/29/ComputerNetwork/56.jpg" alt></li>
-<li>分组交换网络。也称包交换网络。其原理是将数据分成较短的固定长度<br>的数据块，在每个数据块中加上目的地址、源地址等辅助信息组成分组<br>（包），以储存-转发方式传输 <img src="/2020/02/29/ComputerNetwork/57.jpg" alt></li>
+<li>500 Internal Server Error ：服务器正在执行请求时发生错误</li>
+<li>501 Not Implemented ：表示客户端请求的功能还不支持</li>
+<li>502 Bad Gateway ：通常是服务器作为网关或代理时返回的错误码，表<br>示服务器自身工作正常，访问后端服务器发生了错误</li>
+<li>503 Service Unavailable ：服务器暂时处于超负载或正在进行停机维<br>护，现在无法处理请求</li>
 </ul>
-<ol start="6">
-<li>按传输介质分类</li>
-</ol>
+<h3 id="301和302状态码的区别"><a href="#301和302状态码的区别" class="headerlink" title="301和302状态码的区别"></a>301和302状态码的区别</h3><p>301 和 302 都会在响应头里使用字段 Location，指明后续要跳转的URL，<br>浏览器会自动重定向新的URL</p>
 <ul>
-<li>传输介质可分为有线和无线两大类</li>
-<li><ul>
-<li>有线网络可分为双绞线网络、同轴电缆网络等</li>
+<li>301是永久性重定向(Permanently Moved)，表示一个旧的网址所代表的<br>资源已经被永久地移除了，不能再访问了，并且搜索引擎在获取新的资源的<br>同时也将旧的网址转换为重定向之后的地址</li>
+<li>302是临时重定向(Temporarily Moved)，这个重定向只是临时地从一个<br>旧的地址跳转到一个新的地址，旧的地址的资源还在，还可以继续访问，搜<br>索引擎会获取资源并保存旧的地址</li>
 </ul>
-</li>
-<li><ul>
-<li>无线网络可分为蓝牙、微波、无线电等类型</li>
-</ul>
-</li>
-</ul>
-<h2 id="计算机网络的性能指标"><a href="#计算机网络的性能指标" class="headerlink" title="计算机网络的性能指标"></a>计算机网络的性能指标</h2><p>思维导图 <img src="/2020/02/29/ComputerNetwork/58.jpg" alt></p>
-<h3 id="速率"><a href="#速率" class="headerlink" title="速率"></a>速率</h3><p><img src="/2020/02/29/ComputerNetwork/59.jpg" alt></p>
-<h3 id="带宽"><a href="#带宽" class="headerlink" title="带宽"></a>带宽</h3><p><img src="/2020/02/29/ComputerNetwork/60.jpg" alt></p>
-<h3 id="吞吐量"><a href="#吞吐量" class="headerlink" title="吞吐量"></a>吞吐量</h3><p>PC机和交换机链路带宽100Mb/s，每秒最多传输100Mb的数据。因为两个服<br>务器速率很慢，所以服务器传输数据给交换机，交换机然后传输数据给PC<br>机一秒钟传输数据最大只能是30Mb/s<br><img src="/2020/02/29/ComputerNetwork/61.jpg" alt></p>
-<h3 id="时延"><a href="#时延" class="headerlink" title="时延"></a>时延</h3><p>指数据（一个报文或分组）从网络（或链路）的一端传送到另一端所需要<br>的总时间，它由4部分构成：发送时延、传播时延、处理时延、排队时延<br>总时延=发送时延+传播时延+处理时延+排队时延</p>
-<ol>
-<li>发送时延<br>结点将分组的所有比特推向（传输）链路所需要的时间，即从发送分组的第<br>一个比特算起，到该分组的最后一个比特推向传输链路所需要的时间。也称<br>传输时延。发送时延= 分组长度(数据长度)/信道宽度(发送速率)<br>如下图所示：假设我们的发送速率为10b/s ，数据长度为10个bit，所以<br>我们的发送时延为1秒 <img src="/2020/02/29/ComputerNetwork/62.jpg" alt></li>
-<li>传播时延<br>电磁波在信道中传播一定的距离需要花费的时间，即一个比特从链路的一端<br>传播到另一端所需要的时间。传播时延=信道长度/电磁波在信道中传播速率</li>
-<li>排队时延<br>分组在进入路由器后要先在输入队列中排队等待处理。因为路由器可能也同<br>时在处理其他链路传过来的数据，所以需要等待。然后终于等到路由器来处<br>理你的数据了，路由器处理完你的数据后，会给你一个转发端口，然后你<br>就拿着这个端口号又在输出队列中排队等待转发，因为等待转发的不止你<br>一个啊，路由器一下会处理很多的数据，这就产生了排队时延</li>
-<li>处理时延<br>数据在交换结点为存储转发而进行的一些必要的处理所花费的时间。例如：<br>分析分组的首部、从分组中提取数据部分、进行差错检验或查找适当路由等</li>
-</ol>
-<h3 id="时延带宽积"><a href="#时延带宽积" class="headerlink" title="时延带宽积"></a>时延带宽积</h3><p>指发送端发送的第一个比特即将到达终点时，发送端已经发出了多少个比<br>特。因此又称为以比特为单位的链路长度时延带宽积=传播时延×信道带宽</p>
-<h3 id="往返时延（RTT）"><a href="#往返时延（RTT）" class="headerlink" title="往返时延（RTT）"></a>往返时延（RTT）</h3><p><img src="/2020/02/29/ComputerNetwork/63.jpg" alt></p>
-<h3 id="信道利用率"><a href="#信道利用率" class="headerlink" title="信道利用率"></a>信道利用率</h3><p>指出某一信道有百分之多少的时间是有数据通过的 <img src="/2020/02/29/ComputerNetwork/64.jpg" alt></p>
-<h2 id="计算机网络的分层"><a href="#计算机网络的分层" class="headerlink" title="计算机网络的分层"></a>计算机网络的分层</h2><h3 id="为什么分层"><a href="#为什么分层" class="headerlink" title="为什么分层"></a>为什么分层</h3><p><img src="/2020/02/29/ComputerNetwork/65.jpg" alt><br>这是一台计算机向另一台计算机发送pdf文档的传输过程，传输过程分为大<br>致4个步骤，这4个步骤合起来就是一个数据传输的解决方法。但是这4个步<br>骤合起来，传输显得很复杂，不便于网络的研究、实现和维护。将一个复杂<br>大问题分解成若干子问题，那么子问题就相对来说更加容易研究和处理</p>
-<h3 id="分层的原则"><a href="#分层的原则" class="headerlink" title="分层的原则"></a>分层的原则</h3><p><img src="/2020/02/29/ComputerNetwork/66.jpg" alt><br>分层就根据功能来划分。每个层次即是对相应功能的具体定义d</p>
-<h3 id="分层结构"><a href="#分层结构" class="headerlink" title="分层结构"></a>分层结构</h3><p><img src="/2020/02/29/ComputerNetwork/67.jpg" alt></p>
-<ol>
-<li>协议的组成</li>
-</ol>
-<ul>
-<li>语义 包含在字段中的信息的含义</li>
-<li>语法 报文中的各个字段及其详细描述</li>
-<li>同步 进程何时、如何发送报文，以及对报文进行响应的规则</li>
-</ul>
-<ol start="2">
-<li>服务原语</li>
-</ol>
-<ul>
-<li>在一层内完成的全部功能并非都称之为服务，只有那些能够被高一层实<br>体“看得见”的功能才能称为服务</li>
-<li>上层使用下层所提供的服务必须与下层交换一些指令，这些指令在OSI<br>中被称为服务原语</li>
-<li>OSI将原语划分为4类：</li>
-<li><ul>
-<li>请求(Request)：由服务用户发往服务提供者，请求它完成某项工作</li>
-</ul>
-</li>
-<li><ul>
-<li>指示(Indication)：由服务提供者发往服务用户，指示发生了某些事件</li>
-</ul>
-</li>
-<li><ul>
-<li>响应(Response)：由服务用户发往服务提供者，对前面发生的指示的响应</li>
-</ul>
-</li>
-<li><ul>
-<li>证实(Confirmation)：由服务提供者发往服务用户，对前面发生的请<br>求的证实</li>
-</ul>
-</li>
-</ul>
-<ol start="3">
-<li>协议、接口、服务之间的关系 <img src="/2020/02/29/ComputerNetwork/68.jpg" alt></li>
-</ol>
-<h2 id="OSI参考模型"><a href="#OSI参考模型" class="headerlink" title="OSI参考模型"></a>OSI参考模型</h2><p><img src="/2020/02/29/ComputerNetwork/69.jpg" alt></p>
-<h3 id="OSI的结构"><a href="#OSI的结构" class="headerlink" title="OSI的结构"></a>OSI的结构</h3><p><img src="/2020/02/29/ComputerNetwork/70.jpg" alt></p>
-<h3 id="OSI数据传输"><a href="#OSI数据传输" class="headerlink" title="OSI数据传输"></a>OSI数据传输</h3><p><img src="/2020/02/29/ComputerNetwork/71.jpg" alt></p>
-<h3 id="OSI七层概述"><a href="#OSI七层概述" class="headerlink" title="OSI七层概述"></a>OSI七层概述</h3><ol>
-<li>应用层</li>
-</ol>
-<ul>
-<li>应用层是OSI模型的最高层，是用户与网络的界面</li>
-<li>应用层为特定类型的网络应用提供访问OSI环境的手段</li>
-<li>因为用户的实际应用多种多样，就要求应用层采用不同的协议来解决不<br>同应用类型的需求</li>
-<li>典型的协议有：文件传输协议FTP、电子邮件协议SMTP、万维网HTTP等</li>
-</ul>
-<ol start="2">
-<li>表示层 <img src="/2020/02/29/ComputerNetwork/72.jpg" alt></li>
-</ol>
-<ul>
-<li>主要处理两个通信系统中交换信息的表示方式</li>
-<li>不同机器采用的编码和表示方法不同，使用的数据结构不同</li>
-<li>为了使不同的数据和信息之间能够互相交换，表示层采用抽象的标准方<br>法定义数据结构</li>
-</ul>
-<ol start="3">
-<li>会话层 <img src="/2020/02/29/ComputerNetwork/73.jpg" alt></li>
-</ol>
-<ul>
-<li>会话层允许不同主机上的各个进程进行会话</li>
-<li>会话层利用传输层提供的端到端的服务，向表示层提供它的增值服务</li>
-<li>增值服务即图上最上方的一句话</li>
-</ul>
-<ol start="4">
-<li>传输层 <img src="/2020/02/29/ComputerNetwork/74.jpg" alt></li>
-</ol>
-<ul>
-<li>传输层也称运输层，传输单位是报文段或用户数据报，传输层负责主机<br>中两个进程之间的通信，功能是为端到端连接提供可靠的传输服务，为端<br>到端连接提供流量控制、差错控制、服务质量、数据传输管理等服务</li>
-<li>数据链路层是点到点的通信，传输层是端到端的通信</li>
-<li><ul>
-<li>点到点：可以理解为主机到主机之间的通信，一个点指一个硬件地址或<br>IP地址，网络中参与通信的主机通过硬件地址或IP地址标识的</li>
-</ul>
-</li>
-<li><ul>
-<li>端到端：指运行在不同主机内的两个进程之间的通信，一个进程由一个<br>端口号来标识，所以称端到端通信</li>
-</ul>
-</li>
-</ul>
-<h3 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h3><p>因为因特网的主要网络层协议是无连接的网际协议（Internet Protocol<br>，IP）和许多路由选择协议，因此因特网的网络层也称网际层或IP层 <img src="/2020/02/29/ComputerNetwork/15.jpg" alt></p>
-<h3 id="数据链路层"><a href="#数据链路层" class="headerlink" title="数据链路层"></a>数据链路层</h3><p><img src="/2020/02/29/ComputerNetwork/76.jpg" alt></p>
-<h3 id="物理层"><a href="#物理层" class="headerlink" title="物理层"></a>物理层</h3><p><img src="/2020/02/29/ComputerNetwork/77.jpg" alt></p>
-<h3 id="通信方式"><a href="#通信方式" class="headerlink" title="通信方式"></a>通信方式</h3><h4 id="客户-服务器方式"><a href="#客户-服务器方式" class="headerlink" title="客户-服务器方式"></a>客户-服务器方式</h4><p>客户是请求方，服务器是服务提供方，简称为C/S方式，B/S是浏览器-服<br>务器方式，是C/S的一种特例</p>
-<h4 id="对等连接方式"><a href="#对等连接方式" class="headerlink" title="对等连接方式"></a>对等连接方式</h4><p>不区分请求方和服务方，两台主机都运行了对等连接软件，简称为P2P方式</p>
-<h3 id="C-S和B-S架构"><a href="#C-S和B-S架构" class="headerlink" title="C/S和B/S架构"></a>C/S和B/S架构</h3><h4 id="C-S架构"><a href="#C-S架构" class="headerlink" title="C/S架构"></a>C/S架构</h4><p>即客户机/服务器结构，可以分为客户机和服务器两层</p>
-<ol>
-<li>第一层在客户机系统上结合了界面显示与业务逻辑</li>
-<li>第二层通过网络结合了数据库服务器</li>
-</ol>
-<p>客户端不仅仅是一些简单的操作，它也是会处理一些运算，业务逻辑的处理<br>等。也就是说，客户端也做着一些本该由服务器来做的一些事情，一般需要<br>下载一个客户端软件。优点如下</p>
-<ol>
-<li>C/S架构的界面和操作可以很丰富</li>
-<li>安全性能可以很容易保证，因为只有两层的传输，而不是中间有很多层</li>
-<li>由于只有一层交互，因此响应速度较快，直接相连，中间没有什么阻隔<br>或岔路，比如QQ，每天那么多人在线，也不觉得慢</li>
-</ol>
-<p>缺点如下</p>
-<ol>
-<li>适用面窄，通常用于局域网中</li>
-<li>用户群固定，由于程序需要安装才可使用，因此不适合面向一些不可知<br>的用户</li>
-<li>维护成本高，发生一次升级，则所有客户端的程序都需要改变</li>
-</ol>
-<h4 id="B-S架构"><a href="#B-S架构" class="headerlink" title="B/S架构"></a>B/S架构</h4><p>即浏览器/服务器结构。Browser指的是Web浏览器，极少数事务逻辑在前端<br>实现，但主要事务逻辑在服务器端实现。B/S架构的系统无须特别安装，只<br>有Web浏览器即可。B/S架构有三层 <img src="/2020/02/29/ComputerNetwork/34.jpg" alt></p>
-<ol>
-<li>第一层表现层：主要完成用户和后台的交互及最终查询结果的输出功能</li>
-<li>第二层逻辑层：主要是利用服务器完成客户端的应用逻辑功能</li>
-<li>第三层数据层：主要是接受客户端请求后独立进行各种运算</li>
-</ol>
-<p>优点如下</p>
-<ol>
-<li>客户端无需安装，有Web浏览器即可。 </li>
-<li>BS架构可以直接放在广域网上，通过一定的权限控制实现多客户访问的<br>目的，交互性较强</li>
-<li>BS架构无需升级多个客户端，升级服务器即可。可以随时更新版本，而无<br>需用户重新下载</li>
-</ol>
-<p>缺点如下</p>
-<ol>
-<li>在跨浏览器上，BS架构不尽如人意</li>
-<li>表现要达到CS程序的程度需要花费不少精力</li>
-<li>在速度和安全性上需要花费巨大的设计成本，这是BS架构的最大问题</li>
-<li>客户端服务器端的交互是请求-响应模式，通常需要刷新页面，这并不是<br>客户乐意看到的。在Ajax出现后此问题得到了一定程度的缓解</li>
-</ol>
-<h4 id="B-S架构的几种形式"><a href="#B-S架构的几种形式" class="headerlink" title="B/S架构的几种形式"></a>B/S架构的几种形式</h4><p>客户端-服务器-数据库 <img src="/2020/02/29/ComputerNetwork/41.jpg" alt><br>客户端－web服务器－应用服务器－数据库 <img src="/2020/02/29/ComputerNetwork/42.jpg" alt><br>客户端－负载均衡器(Nginx)－中间服务器(Node)－应用服务器－数据库 <img src="/2020/02/29/ComputerNetwork/43.jpg" alt></p>
-<h3 id="域名系统DNS"><a href="#域名系统DNS" class="headerlink" title="域名系统DNS"></a>域名系统DNS</h3><p>从域名解析出IP地址，互联网上的主机有主机名字和IP 地址，主机名字<br>需要转换为IP地址，因为IP地址是固定的32位，机器处理起来比较容易<br>。目前使用分布式域名系统DNS，DNS使大多数名字在本地解析，仅少量<br>解析在互联网上通信。解析过程如下</p>
-<ol>
-<li>当一个应用进程需要把主机解析为IP地址时，该应用进程就调用解析<br>程序，并成为DNS的一个客户，把要解析的域名放在DNS请求报文中</li>
-<li>以UDP用户数据报的方式发给本地域名服务器，如果找到就放到回答<br>报文中</li>
-<li>没有找到就成为DNS中的另一个客户，并向其他域名服务器发出查询<br>请求</li>
-</ol>
-<p>DNS 可以使用 UDP 或者 TCP 进行传输，使用的端口号都为 53。大多数<br>情况下 DNS 使用 UDP 进行传输，这就要求域名解析器和域名服务器都<br>必须自己处理超时和重传从而保证可靠性。在两种情况下会使用TCP进行<br>传输：</p>
-<ul>
-<li>如果返回的响应超过的 512 字节（UDP 最大只支持512字节的数据）</li>
-<li>区域传送（区域传送是主域名服务器向辅助域名服务器传送变化的那部<br>分数据）</li>
-</ul>
-<h4 id="域名结构"><a href="#域名结构" class="headerlink" title="域名结构"></a>域名结构</h4><p>采用层次树结构的命名方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mail.cctv.com</span><br><span class="line">由左到右域名级别逐级升高</span><br></pre></td></tr></table></figure>
-<ul>
-<li>国家顶级域名 cn us uk</li>
-<li>通用顶级域名 com公司企业 net网络机构 org非盈利组织 int gov</li>
-<li>基础结构域名 arpa</li>
-</ul>
-<h4 id="域名服务器"><a href="#域名服务器" class="headerlink" title="域名服务器"></a>域名服务器</h4><p>一个服务器所负责管辖的范围叫做区，而不是域。本地域名服务器离用户较近<br>，一般不超过几个路由器的距离。主机中也有存放最近使用的域名的高速缓存</p>
-<h3 id="FTP"><a href="#FTP" class="headerlink" title="FTP"></a>FTP</h3><p>文件传送协议FTP提供交互式访问，允许用户指明文件类型和格式，使用 TCP<br>可靠的传输服务，FTP的主要功能是减少或消除在不同操作系统下处理文件的<br>不兼容性，端口号是21。根据数据连接是否是服务器端主动建立，FTP有主动<br>和被动两种模式</p>
-<ol>
-<li>主动模式：服务器端主动建立数据连接，其中服务器端的端口号为20，客<br>户端的端口号随机，但是必须大于1024，因为0~1023 是熟知端口号 <img src="/2020/02/29/ComputerNetwork/44.jpg" alt></li>
-<li>被动模式：客户端主动建立数据连接，其中客户端的端口号由客户端自己<br>指定，服务器端的端口号随机 <img src="/2020/02/29/ComputerNetwork/45.jpg" alt></li>
-</ol>
-<h3 id="TFTP"><a href="#TFTP" class="headerlink" title="TFTP"></a>TFTP</h3><p>TFTP是一个很小且易于实现的文件传送协议，使用UDP数据报，端口号是69</p>
-<h3 id="TELNET"><a href="#TELNET" class="headerlink" title="TELNET"></a>TELNET</h3><p>TELNET是一个简单的远程终端协议，使用TCP可靠的传输服务，TELNET定义<br>了数据和命令应怎样通过互联网，这些定义就是网络虚拟终端NVT</p>
-<h2 id="浏览器生成消息"><a href="#浏览器生成消息" class="headerlink" title="浏览器生成消息"></a>浏览器生成消息</h2><h3 id="DNS查询IP"><a href="#DNS查询IP" class="headerlink" title="DNS查询IP"></a>DNS查询IP</h3><p>浏览器能够解析网址并生成HTTP消息，但是本身不能够将消息发送到网络中，<br>需要委托操作系统实现，在这之前先要查询到服务器的IP地址，在网络中所<br>有的设备都会分配一个IP地址</p>
-<h4 id="IP"><a href="#IP" class="headerlink" title="IP"></a>IP</h4><p>地址就相当于某条路上的“..号..室”。号是分配给整个子网的，室是分配给子<br>网中的计算机的，这就是网络中的地址。号对应的号码称为网络号，室对应的<br>号码称为主机号，这个地址的整体就是IP地址，网络号在互联网内是唯一的，<br>主机号在网络号指明的范围内是唯一的。IP地址实际是一串32比特的数字 <img src="/2020/02/29/ComputerNetwork/12.jpg" alt><br>可以将32位的IP地址分为4组 <img src="/2020/02/29/ComputerNetwork/13.jpg" alt></p>
-<h4 id="硬件地址"><a href="#硬件地址" class="headerlink" title="硬件地址"></a>硬件地址</h4><p>物理地址、硬件地址和MAC地址都是同一个意思 <img src="/2020/02/29/ComputerNetwork/14.jpg" alt></p>
-<h3 id="子网和超网"><a href="#子网和超网" class="headerlink" title="子网和超网"></a>子网和超网</h3><h4 id="划分子网"><a href="#划分子网" class="headerlink" title="划分子网"></a>划分子网</h4><p>之前讲解了IP的构成。这种方式有三个弊端</p>
-<ol>
-<li>IP地址空间的利用率有时很低 地址不够用</li>
-<li>给每一个物理网络分配一个网络号会使路由表变得太大</li>
-<li>两级IP地址不够灵活</li>
-</ol>
-<p>为了解决上述问题，从1985年起在IP地址中有增加了一个子网号字段，使两级<br>IP地址编程三级IP地址，这种做法叫划分子网，或子网寻址或子网路由选择，<br>将一个网络划分为若干个子网，本单位以外的网络看不见这个网络是由多少<br>个子网组成，这个单位对外仍表现为一个网络。<br>从主机号借用若干个位作为子网号 subnet-id，而主机号 host-id 也就相应<br>减少了若干个位</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IP地址 ::&#x3D; &#123;&lt;网络号&gt;, &lt;子网号&gt;, &lt;主机号&gt;&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="/2020/02/29/ComputerNetwork/15.jpg" alt> <img src="/2020/02/29/ComputerNetwork/16.jpg" alt></p>
-<h4 id="子网掩码"><a href="#子网掩码" class="headerlink" title="子网掩码"></a>子网掩码</h4><p>从一个 IP 数据报的首部并无法判断源主机或目的主机所连接的网络是否进行<br>了子网划分，因为32位的IP地址并没有包含任何有关子网划分的信息，可以通<br>过子网掩码找出子网，只需要将IP地址与子网掩码进行与操作就能够得到子网<br>的网络地址 <img src="/2020/02/29/ComputerNetwork/17.jpg" alt></p>
-<ul>
-<li>A类地址默认子网掩码是 255.0.0.0</li>
-<li>B类地址默认子网掩码是 255.255.0.0</li>
-<li>C类地址默认子网掩码是 255.255.255.0</li>
-</ul>
-<h3 id="万维网WWW"><a href="#万维网WWW" class="headerlink" title="万维网WWW"></a>万维网WWW</h3><p>万维网是一个大规模的、联机式的信息储藏所，简称Web，万维网以客户服务器<br>方式工作，客户程序向服务器程序发出请求，服务器程序向客户程序送回客户<br>所要的万维网文档 <img src="/2020/02/29/ComputerNetwork/number1.jpg" alt></p>
-<h4 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h4><p>万维网用统一资源定位符URL 来标志万维网上的各种文档，使每一个文档在互联<br>网中具有唯一的标识符URL。超文本是包含其他文档链接的文本，URL的一般形式<br>由以下四个部分组成，字母不区分大小写</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;协议&gt;:&#x2F;&#x2F;&lt;主机&gt;:&lt;端口&gt;&#x2F;&lt;路径&gt;</span><br><span class="line">http:&#x2F;&#x2F;www.lab.glasscom.com:80&#x2F;dir1&#x2F;file1.html</span><br></pre></td></tr></table></figure>
-<ul>
-<li>协议 使用什么协议来获取万维网文档，例如http（超文本传送协议）<br>ftp（文件传送协议），万维网使用超文本标记语言HTML使页面显示出来</li>
-<li>主机 指主机在互联网的域名</li>
-<li>端口 用来识别要连接的服务器程序的编号，HTTP默认的端口是80</li>
-<li>路径 指向文件的位置信息，如果省略的话就会默认访问主页</li>
-</ul>
-<h3 id="动态主机配置协议"><a href="#动态主机配置协议" class="headerlink" title="动态主机配置协议"></a>动态主机配置协议</h3><p>连接到互联网的计算机的协议软件需要配置的项目包括</p>
-<ol>
-<li>IP地址</li>
-<li>子网掩码</li>
-<li>默认路由器的IP地址</li>
-<li>域名服务器的IP地址</li>
-</ol>
-<p>DHCP (Dynamic Host Configuration Protocol) 提供了即插即用的连网方式<br>，用户不再需要手动配置IP地址等信息。DHCP 配置的内容不仅是 IP 地址，还包<br>括子网掩码、网关IP地址。DHCP工作过程如下 <img src="/2020/02/29/ComputerNetwork/46.jpg" alt></p>
-<ol>
-<li>客户端发送 Discover 报文，该报文的目的地址为 255.255.255.255:67，<br>源地址为 0.0.0.0:68，被放入 UDP 中，该报文被广播到同一个子网的所有主<br>机上。如果客户端和 DHCP 服务器不在同一个子网，就需要使用中继代理</li>
-<li>DHCP 服务器收到 Discover 报文之后，发送 Offer 报文给客户端，该报<br>文包含了客户端所需要的信息。因为客户端可能收到多个DHCP服务器提供的信息<br>，因此客户端需要进行选择。DHCP客户使用的UDP端口是68，而DHCP服务器使用<br>的UDP端口是67</li>
-<li>如果客户端选择了某个 DHCP 服务器提供的信息，那么就发送 Request 报<br>文给该 DHCP 服务器。</li>
-<li>DHCP 服务器发送 Ack 报文，表示客户端此时可以使用提供给它的信息</li>
-</ol>
-<h3 id="常用端口"><a href="#常用端口" class="headerlink" title="常用端口"></a>常用端口</h3><p><img src="/2020/02/29/ComputerNetwork/47.jpg" alt></p>
-<h4 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h4><p>指一系列的信息交换，而这一系列的信息交换是一个不可分割的整体，也就是说要<br>么所有的信息交换都完成或者一次交换也不进行</p>
-<h3 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h3><p>HTTP协议定义了浏览器怎样向万维网服务器请求万维网文档，以及服务器怎么把文<br>档传送给浏览器。从层次的角度看HTTP是面向事务的应用层协议，它是万维网能够<br>可靠交换文件（文本、声音、图像）的重要基础<br><img src="/2020/02/29/ComputerNetwork/number2.jpg" alt><br>每个万维网网点都有一个服务器进程，它不断监听TCP的端口80，以便发现是否有浏<br>览器向它发出建立连接的请求，一旦监听到连接请求并建立TCP连接之后，浏览器就<br>会发出页面请求，服务器返回页面作为响应，最后TCP连接就被释放。在浏览器和服<br>务器之间的请求和响应的交互，必须按照规定的格式和遵循一定的规则，这些格式<br>和规则就是超文本传送协议HTTP。HTTP协议本身是无连接，通信双方在交换HTTP<br>报文之前不需要建立HTTP连接，同时也是无状态的</p>
-<ol>
-<li>HTTP/1.0 每请求一个文档都有两倍RTT的开销和文档的传输时间，另一<br>种开销是每一次建立新的TCP连接都要分配缓存和变量。一个RTT用于连接<br>TCP连接。另一个RTT用于请求和接收万维网文档 <img src="/2020/02/29/ComputerNetwork/24.jpg" alt></li>
-<li>HTTP/1.1 使用持续连接，也就是说服务器在发送响应后仍然在一段时间内保<br>持这条连接，使同一个客户和该服务器可以继续在这条连接上传送后续的HTTP请求和响应报文</li>
-</ol>
-<p>HTTP/1.1协议的持续连接有两种工作方式，即非流水线方式和流水线方式</p>
-<ol>
-<li>非流水线 客户在收到一个响应后才能发出下一个请求，因此TCP建立连接<br>后客户每访问一次对象都要用去一个往返时间RTT，缺点在于服务器发送完一<br>个对象，其TCP就处于空闲状态，浪费了服务器的资源</li>
-<li>流水线 客户在收到HTTP的响应报文之前就能够接着发送新的请求报文，<br>于是一个接一个的请求报文到达服务器后服务器就可连续发回响应报文，客<br>户访问所有的对象只需要花费一个RTT时间</li>
-</ol>
-<h4 id="代理服务器"><a href="#代理服务器" class="headerlink" title="代理服务器"></a>代理服务器</h4><p>代理服务器(proxy server)是一种网络实体，又称为万维网高速缓存服务器，<br>把最近的一些请求和响应暂存在本地磁盘。浏览器请求服务时先与代理服务器建<br>立TCP连接，如果代理服务器已经存放了请求的对象则直接返回否则代表用户与<br>其他服务器建立TCP连接</p>
-<h4 id="HTTP报文结构"><a href="#HTTP报文结构" class="headerlink" title="HTTP报文结构"></a>HTTP报文结构</h4><p>有两类报文</p>
-<ul>
-<li>请求报文 客户向服务器发出请求 <img src="/2020/02/29/ComputerNetwork/25.jpg" alt></li>
-<li>响应报文 服务器响应请求 <img src="/2020/02/29/ComputerNetwork/27.jpg" alt></li>
-</ul>
-<p>方法 <img src="/2020/02/29/ComputerNetwork/26.jpg" alt><br>状态码 <img src="/2020/02/29/ComputerNetwork/28.jpg" alt><br>请求报文具体结构如下</p>
-<ul>
-<li>第一行是包含了请求方法、URL、协议版本</li>
-<li>接下来的多行都是请求首部 Header，每个首部都有一个首部名称，以及对应的值</li>
-<li>一个空行用来分隔首部和内容主体 Body</li>
-<li>最后是请求的内容主体</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">GET http:&#x2F;&#x2F;www.example.com&#x2F; HTTP&#x2F;1.1</span><br><span class="line">Accept: text&#x2F;html,application&#x2F;xhtml+xml,application&#x2F;xml;q&#x3D;0.9,image&#x2F;webp,</span><br><span class="line">image&#x2F;apng,*&#x2F;*;q&#x3D;0.8,application&#x2F;signed-exchange;v&#x3D;b3;q&#x3D;0.9</span><br><span class="line">Accept-Encoding: gzip, deflate</span><br><span class="line">Accept-Language: zh-CN,zh;q&#x3D;0.9,en;q&#x3D;0.8</span><br><span class="line">Cache-Control: max-age&#x3D;0</span><br><span class="line">Host: www.example.com</span><br><span class="line">If-Modified-Since: Thu, 17 Oct 2019 07:18:26 GMT</span><br><span class="line">If-None-Match: &quot;3147526947+gzip&quot;</span><br><span class="line">Proxy-Connection: keep-alive</span><br><span class="line">Upgrade-Insecure-Requests: 1</span><br><span class="line">User-Agent: Mozilla&#x2F;5.0 xxx</span><br><span class="line"></span><br><span class="line">param1&#x3D;1&amp;param2&#x3D;2</span><br></pre></td></tr></table></figure>
-<p>响应报文具体结构如下</p>
-<ul>
-<li>第一行包含协议版本、状态码以及描述，最常见的是 200 OK 表示请求成功了</li>
-<li>接下来多行也是首部内容</li>
-<li>一个空行分隔首部和内容主体</li>
-<li>最后是响应的内容主体</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">HTTP&#x2F;1.1 200 OK</span><br><span class="line">Age: 529651</span><br><span class="line">Cache-Control: max-age&#x3D;604800</span><br><span class="line">Connection: keep-alive</span><br><span class="line">Content-Encoding: gzip</span><br><span class="line">Content-Length: 648</span><br><span class="line">Content-Type: text&#x2F;html; charset&#x3D;UTF-8</span><br><span class="line">Date: Mon, 02 Nov 2020 17:53:39 GMT</span><br><span class="line">Etag: &quot;3147526947+ident+gzip&quot;</span><br><span class="line">Expires: Mon, 09 Nov 2020 17:53:39 GMT</span><br><span class="line">Keep-Alive: timeout&#x3D;4</span><br><span class="line">Last-Modified: Thu, 17 Oct 2019 07:18:26 GMT</span><br><span class="line">Proxy-Connection: keep-alive</span><br><span class="line">Server: ECS (sjc&#x2F;16DF)</span><br><span class="line">Vary: Accept-Encoding</span><br><span class="line">X-Cache: HIT</span><br><span class="line"></span><br><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;title&gt;Example Domain&lt;&#x2F;title&gt;</span><br><span class="line">	&#x2F;&#x2F; 省略... </span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="http-常见字段"><a href="#http-常见字段" class="headerlink" title="http 常见字段"></a>http 常见字段</h3><ol>
+<li>Host 客户端发送请求时，用来指定服务器的域名<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Host: www.A.com</span><br></pre></td></tr></table></figure></li>
+<li>Content-Length 服务器在返回数据时，会有Content-Length 字段，表<br>明本次回应的数据长度<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">本次服务器回应的数据长度是 1000 个字节</span><br><span class="line">Content-Length: 1000</span><br></pre></td></tr></table></figure></li>
+<li>Connection 最常用于客户端要求服务器使用TCP 持久连接，以便其他请<br>求复用，HTTP/1.1版本的默认连接都是持久连接，但为了兼容老版本的HTTP<br>，需要指定Connection 首部字段的值为 Keep-Alive<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Connection: keep-alive</span><br></pre></td></tr></table></figure></li>
+<li>Content-Type 用于服务器回应时，告诉客户端，本次数据是什么格式<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">发送的是网页，而且编码是UTF-8</span><br><span class="line">Content-Type: text&#x2F;html; charset&#x3D;utf-8</span><br></pre></td></tr></table></figure></li>
+<li>Accept 客户端请求的时候，可以使用 Accept 字段声明自己可以接受<br>哪些数据格式<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">客户端声明自己可以接受任何格式的数据</span><br><span class="line">Accept: *&#x2F;*</span><br></pre></td></tr></table></figure></li>
+<li>Content-Encoding 说明数据的压缩方法。表示服务器返回的数据使用了<br>什么压缩格式<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">告知客户端需要用此方式解压</span><br><span class="line">Content-Encoding: gzip</span><br></pre></td></tr></table></figure></li>
+<li>Accept-Encoding 客户端在请求时，用Accept-Encoding 字段说明自<br>己可以接受哪些压缩方法<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Accept-Encoding: gzip, deflate</span><br></pre></td></tr></table></figure>
 
-<h4 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h4><p>HTTP是无状态的，但是网上购物时服务器必须记住用户的身份，可以在HTTP中<br>使用，万维网站点可以使用Cookie来跟踪用户，可以表示为在用户和服务器之<br>间传递的状态信息。当用户A浏览一个使用Cookie的网站时，该网站的服务器<br>就会为A产生唯一一个识别码，并以此作为索引在服务器的后端数据库中产生<br>一个项目，接着在给A的HTTP响应报文中添加一个叫做Set-cookie的首部行<br>，这里首部字段名就是Set-cookie，值就是赋予用户的识别码，比如</p>
+
+</li>
+</ol>
+<h3 id="HTTP1-0和HTTP1-1的区别"><a href="#HTTP1-0和HTTP1-1的区别" class="headerlink" title="HTTP1.0和HTTP1.1的区别"></a>HTTP1.0和HTTP1.1的区别</h3><ol>
+<li>缓存处理 在HTTP/1.0中主要使用header里的If-Modified=Since,<br>Expires来作为缓存判断的标准，HTTP/1.1则引入更多的缓存控制策略<br>例如Entity tag等</li>
+<li>带宽优化及网络连接的使用 HTTP/1.0中客户端只是需要某个对象的<br>一部分，当服务器将整个对象传送过来，并且不支持断点续传功能，<br>HTTP/1.1在请求头中引入range头域，允许只请求资源的某个部分，<br>返回码是206</li>
+<li>错误通知的管理 在HTTP/1.1中新增了24个错误状态响应码，如409<br>表示请求的资源与资源当前状态冲突，410表示服务器上的某个资源被<br>永久性删除</li>
+<li>Host头处理 HTTP/1.0中认为每台服务器都绑定唯一的IP地址，所以<br>在URL中没有传递主机名，但是一个物理服务器上可以有多个虚拟主机，<br>共享一个IP地址，HTTP/1.1支持Host头域</li>
+<li>长连接 HTTP/1.1支持长连接和请求的流水线处理，在一个TCP连接<br>上可以传送多个HTTP请求和响应。在HTTP/1.0中，默认使用的是短连接</li>
+<li>管道网络传输 即可在同一个 TCP 连接里面，客户端可以发起多个<br>请求，只要第一个请求发出去了，不必等其回来，就可以发第二个请求<br>出去，可以减少整体的响应时间</li>
+</ol>
+<h3 id="GET和POST的区别？"><a href="#GET和POST的区别？" class="headerlink" title="GET和POST的区别？"></a>GET和POST的区别？</h3><ol>
+<li>Get 方法的含义是请求从服务器获取资源，这个资源可以是静态的文本、<br>页面、图片视频等。而POST 方法则是相反操作，它向 URI 指定的资源提交<br>数据，数据就放在报文的body 里</li>
+<li>参数位置 GET和POST的请求都能使用额外的参数，但是GET 的参数是<br>以查询字符串出现在URL 中，而POST 的参数存储在实体主体中。不能因<br>为POST参数存储在实体主体中就认为它的安全性更高，因为照样可以通<br>过一些抓包工具（Fiddler）查看</li>
+<li>参数长度 GET方法的URL 长度有限度，POST 长度没有显示</li>
+<li>参数编码 GET方法参数编码是ASCLL 码，POST 没有限制</li>
+<li>TCP数据包 GET方法产生一个TCP数据包，把首部和数据一起发送，POST<br>方法产生两个TCP数据包，先发首部，服务器响应后再发数据</li>
+<li>安全 安全的HTTP 方法不会改变服务器状态，也就是说它只是可读的，<br>GET 方法是安全的，而POST 却不是，因为POST 的目的是传送实体主体内<br>容，这个内容可能是用户上传的表单数据，上传成功之后，服务器可能把<br>这个数据存储到数据库中，因此状态也就发生了改变</li>
+<li>可缓存 如果要对响应进行缓存，需要满足以下条件</li>
+</ol>
+<ul>
+<li>请求报文的HTTP 方法本身是可缓存的，包括GET 和HEAD，但是 PUT<br>和 DELETE 不可缓存，POST 在多数情况下不可缓存的</li>
+<li>响应报文的状态码是可缓存的，包括：200, 203, 204, 206, 300, 301<br>, 404, 405, 410, 414, and 501。</li>
+<li>响应报文的 Cache-Control 首部字段没有指定不进行缓存</li>
+</ul>
+<ol start="8">
+<li>XMLHttpRequest XMLHttpRequest 是一个 API，它为客户端提供了在<br>客户端和服务器之间传输数据的功能。它提供了一个通过 URL 来获取数据的<br>简单方式，并且不会使整个页面刷新。这使得网页只更新一部分页面而不会<br>打扰到用户。XMLHttpRequest 在 AJAX 中被大量使用</li>
+</ol>
+<ul>
+<li>在使用 XMLHttpRequest 的 POST 方法时，浏览器会先发送 Header 再<br>发送 Data。但并不是所有浏览器会这么做，例如火狐就不会</li>
+<li>而 GET 方法 Header 和 Data 会一起发送</li>
+</ul>
+<h3 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h3><p>表示为在用户和服务器之间传递的状态信息</p>
+<ol>
+<li>当用户A浏览一个使用Cookie的网站时，该网站的服务器就会为A产生唯一<br>一个识别码，并以此作为索引在服务器的后端产生</li>
+<li>给A的HTTP响应报文中添加一个叫做Set-cookie的首部行，这里首部字段<br>名就是Set-cookie，值就是赋予用户的识别码</li>
+<li>A接收到响应之后浏览器就在它管理的特定Cookie文件中添加一行，其中<br>就包括这个服务器的主机名和Set-cookie后面给出的识别码，当A继续浏览<br>网站时每发送一个HTTP请求报文其浏览器就会从Cookie文件中取出这个网<br>站的识别码并放到HTTP请求报文的Cookie首部行中，于是网站就能够持续<br>跟踪这个用户的活动，所以可以用于告知服务端两个请求是否来自同一浏<br>览器</li>
+</ol>
+<ul>
+<li>会话期 Cookie：浏览器关闭之后它会被自动删除，也就是说它仅在会话<br>期内有效</li>
+<li>持久性 Cookie：指定过期时间（Expires）或有效期（max-age）之后就<br>成为了持久性的 Cookie</li>
+</ul>
+<h3 id="DHCP"><a href="#DHCP" class="headerlink" title="DHCP"></a>DHCP</h3><p>动态主机配置协议常用于给主机动态地分配IP地址，它提供了即插即用联网<br>的机制，这种机制允许一台计算机加入新的网络和获取IP地址而不用手工参<br>与。DHCP是应用层协议，它是基于UDP的</p>
+<ol>
+<li>使用客户/服务器方式</li>
+<li>需要IP地址的主机在启动时就向DHCP服务器广播发送发现报文，这时该主<br>机就成为DHCP客户。本地网络上所有主机都能收到此广播报文，但只有DHCP服<br>务器才回答此广播报文，这个报文放入具有目的端口67和源端口68的UDP报文<br>段中，放入具有广播IP 目的地址(255.255.255.255)和源IP地址(0.0.0.0)<br>的IP数据报中</li>
+<li>DHCP服务器先在其数据库中查找该计算机的配置信息。若找到，则返回找<br>到的信息</li>
+<li>若找不到，则从服务器的IP地址池中取一个地址分配给该计算机。DHCP服<br>务器的回答报文称为提供报文</li>
+</ol>
+<h3 id="系统调用"><a href="#系统调用" class="headerlink" title="系统调用"></a>系统调用</h3><p>系统调用接口实际上就是应用进程的控制权和操作系统的控制权进行转换的<br>一个接口，应用进程使用网络进行通信时发送socket系统调用，创建一个<br>套接字，实际就是把网络通信需要的一些资源（存储空间、CPU、带宽）分<br>配给应用进程</p>
+<ol>
+<li>bind 绑定套接字的本地地址</li>
+<li>listen 服务器把套接字设置为被动模式，随时接受客户请求，只有TCP<br>需要使用bind</li>
+<li>accept 服务器调用以便将客户发来的连接请求提取出来，指明是哪个<br>套接字发起的连接。服务器支持并发处理多个连接，一调用accept就为每<br>一个新连接创建一个新的套接字，并把套接字标识符返回给客户，同时服<br>务器创建一个从属进程处理新连接</li>
+<li>connect 客户进程调用以便和服务器建立连接</li>
+<li>send 传送数据，需要三个变量：套接字描述符，要发送的数据的地址<br>和数据的长度</li>
+<li>recv 接收数据，需要三个变量：套接字的描述符，缓存的地址和缓存<br>空间的长度</li>
+<li>close 释放连接和撤销套接字</li>
+</ol>
+<h4 id="Cookie-1"><a href="#Cookie-1" class="headerlink" title="Cookie"></a>Cookie</h4><p>HTTP是无状态的，但是网上购物时服务器必须记住用户的身份，可以在HTTP中<br>使用，万维网站点可以使用Cookie来跟踪用户，可以表示为在用户和服务器之<br>间传递的状态信息。当用户A浏览一个使用Cookie的网站时，该网站的服务器<br>就会为A产生唯一一个识别码，并以此作为索引在服务器的后端数据库中产生<br>一个项目，接着在给A的HTTP响应报文中添加一个叫做Set-cookie的首部行<br>，这里首部字段名就是Set-cookie，值就是赋予用户的识别码，比如</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Set-cookie: 31d3h432h4u23</span><br></pre></td></tr></table></figure>
 <p>A接收到响应之后浏览器就在它管理的特定Cookie文件中添加一行，其中就包括<br>这个服务器的主机名和Set-cookie后面给出的识别码，当A继续浏览网站时每<br>发送一个HTTP请求报文其浏览器就会从Cookie文件中取出这个网站的识别码<br>并放到HTTP请求报文的Cookie首部行中，于是网站就能够持续跟踪这个用户<br>的活动</p>
-<h3 id="HTTPS"><a href="#HTTPS" class="headerlink" title="HTTPS"></a>HTTPS</h3><p>参考 <a href="https://www.runoob.com/w3cnote/http-vs-https.html" target="_blank" rel="noopener">https://www.runoob.com/w3cnote/http-vs-https.html</a><br>是一种透过计算机网络进行安全通信的传输协议。HTTPS 经由 HTTP 进行通信，<br>但利用 SSL/TLS 来加密数据包。HTTPS 开发的主要目的，是提供对网站服务器<br>的身份认证，保护交换数据的隐私与完整性。s指的是SSL，即安全套接层。HTTPS<br>默认工作在 TCP协议443端口，它的工作流程一般如以下方式：</p>
-<ol>
-<li>TCP 三次同步握手</li>
-<li>客户端验证服务器数字证书</li>
-<li>DH 算法协商对称加密算法的密钥、hash 算法的密钥</li>
-<li>SSL 安全加密隧道协商完成</li>
-<li>网页以加密的方式传输，用协商的对称加密算法和密钥加密，保证数据机密性<br>；用协商的hash算法进行数据完整性保护，保证数据不被篡改</li>
+<h3 id="怎么理解WebSocket协议？"><a href="#怎么理解WebSocket协议？" class="headerlink" title="怎么理解WebSocket协议？"></a>怎么理解WebSocket协议？</h3><p>websocket是HTML5的一个新协议，它允许服务端向客户端传递信息，实现<br>浏览器和客户端全双工通信。服务器可以主动向客户端推送信息，客户端也<br>可以主动向服务器发送信息，是真正的双向平等对话，属于服务器推送技<br>术的一种</p>
+<h3 id="为什么使用WebSocket？"><a href="#为什么使用WebSocket？" class="headerlink" title="为什么使用WebSocket？"></a>为什么使用WebSocket？</h3><p>当我们在处理页面数据自动更新的时候，在使用js不断的请求服务器，查看<br>是否有新数据，如果有就获取到新数据，进行对页面信息的跟新，但是当页<br>面长时间没有更新数据时，这样就会存在资源浪费的情况，所以才会使用<br>WebSocket来解决</p>
+<h3 id="WebSocket和Socket的区别是什么？"><a href="#WebSocket和Socket的区别是什么？" class="headerlink" title="WebSocket和Socket的区别是什么？"></a>WebSocket和Socket的区别是什么？</h3><p>Socket是应用层与TCP/IP协议通信的中间软件抽象层，它是一组接口。而<br>WebSocket则不同，它是一个完整的应用层协议，包含一套标准的API</p>
+<h3 id="Http与WebSocket的区别？"><a href="#Http与WebSocket的区别？" class="headerlink" title="Http与WebSocket的区别？"></a>Http与WebSocket的区别？</h3><ol>
+<li>http协议是短链接，因为请求之后，都会关闭连接，下次重新请求数据<br>，需要再次打开连接。WebSocket协议是一种长连接，只需要通过一次请求<br>来初始化链接，然后所有的请求和响应都是通过这个TCP 链接进行通信，<br>那么这就不用一次次加入cookie，也就是一个持久化的协议</li>
+<li>WebSocket也借助了HTTP的握手，是HTTP的一个解决特定问题的补丁，<br>多了如下内容<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Upgrade: websocket</span><br><span class="line">Connection: Upgrade</span><br></pre></td></tr></table></figure>
+
+</li>
 </ol>
-<h4 id="HTTP和HTTPS的区别"><a href="#HTTP和HTTPS的区别" class="headerlink" title="HTTP和HTTPS的区别"></a>HTTP和HTTPS的区别</h4><ul>
-<li>HTTP明文传输，数据都是未加密的，安全性较差，HTTPS（SSL+HTTP）数据传<br>输过程是加密的，安全性较好</li>
-<li>使用 HTTPS 协议需要到 CA（Certificate Authority，数字证书认证机构）<br>申请证书，一般免费证书较少，因而需要一定费用。证书颁发机构如：Symantec、<br>Comodo、GoDaddy 和 GlobalSign等</li>
-<li>HTTP 页面响应速度比 HTTPS 快，主要是因为 HTTP 使用 TCP 三次握手建立<br>连接，客户端和服务器需要交换 3 个包，而 HTTPS除了 TCP 的三个包，还要加<br>上 ssl 握手需要的 9 个包，所以一共是 12 个包</li>
-<li>http 和 https 使用的是完全不同的连接方式，用的端口也不一样，前者是80<br>，后者是443</li>
-<li>HTTPS 其实就是建构在 SSL/TLS 之上的 HTTP 协议，所以，要比较 HTTPS比<br>HTTP要更耗费服务器资源</li>
-</ul>
-<h4 id="TLS握手过程"><a href="#TLS握手过程" class="headerlink" title="TLS握手过程"></a>TLS握手过程</h4><p>参考 <a href="https://zhuanlan.zhihu.com/p/37636276" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/37636276</a><br>TLS是一个信道建立和信道的表达方式，向下依托于TCP，向上对应用程序服务。随<br>着TLS的发展，DTLS也开始出现，就是同样的TLS逻辑被应用于UDP业务之上。由于<br>客户端的网络千奇百怪，TCP需要普遍长连接的时候几乎就是不靠谱的代名词，肯<br>定是要断线重连机制的。如果处理的不好，还很容易形成SYN攻击或者过多的耗费<br>服务器资源。因此固定长连接的客户端业务，例如游戏场景，大都倾向于使用UDP<br>作为连接承载，在这种情况下，DTLS就有了很大的用武之地。UDP是一种基础协议<br>，很多人选择了UDP通常也并没有明确原因，很多是基于不想去处理TCP那么多显<br>而易见的麻烦的事情。但是最后用了UDP之后，发现要做的事情甚至比TCP麻烦。<br>但是UDP相对于TCP的一个巨大的优势是UDP相当于四层的IP协议，在此之上可<br>以构造更复杂的取代TCP的协议，而不用改动内核代码。市场上确实是UDP也在<br>大量的使用。所以DTLS也仍然有市场</p>
-<h4 id="代理服务器-1"><a href="#代理服务器-1" class="headerlink" title="代理服务器"></a>代理服务器</h4><p>又称万维网告诉缓存，代理服务器吧最近的一些请求和响应暂存在本地磁盘中，<br>当新请求到达时代理服务器发现这个请求与暂时存放的请求相同，就返回暂存的<br>响应 <img src="/2020/02/29/ComputerNetwork/18.jpg" alt></p>
-<h4 id="HTTP的报文结构"><a href="#HTTP的报文结构" class="headerlink" title="HTTP的报文结构"></a>HTTP的报文结构</h4><p>HTTP有两类报文</p>
+<h3 id="DNS什么情况使用UDP和TCP？"><a href="#DNS什么情况使用UDP和TCP？" class="headerlink" title="DNS什么情况使用UDP和TCP？"></a>DNS什么情况使用UDP和TCP？</h3><ol>
+<li>UDP UDP速度更快，不需要三次握手。DNS 请求和响应通常都很小，一般<br>数据内容不会超过512字节。可以在应用层弥补UDP不可靠的缺点，自己完成<br>超时和重传处理。还有一个点是关于DNS负载均衡，事实上每次返回的IP 地<br>址并不一定都是一样的，资源是分布在许多的服务器，DNS会根据每台机器<br>的负载量该机器距离用户地理位置的距离来返回一个合适的IP</li>
+<li>如果DNS响应超过512个字节那么使用UDP 就会将数据截断为512个字<br>节，多余的部分会抛弃，因为UDP没有字段来表示报文ID。所以当响应报<br>文的长度大于512个字节的时候就会使用TCP</li>
+</ol>
+<h3 id="安全方法和不安全方法有哪些？"><a href="#安全方法和不安全方法有哪些？" class="headerlink" title="安全方法和不安全方法有哪些？"></a>安全方法和不安全方法有哪些？</h3><p>在HTTP 协议里，所谓的安全是指请求方法不会破坏服务器上的资源</p>
+<ol>
+<li>安全的方法除了 GET 之外还有：HEAD、OPTIONS</li>
+<li>不安全的方法除了 POST 之外还有 PUT、DELETE</li>
+</ol>
+<h3 id="幂等性了解吗？"><a href="#幂等性了解吗？" class="headerlink" title="幂等性了解吗？"></a>幂等性了解吗？</h3><p>幂等的HTTP 方法，同样的请求被执行一次与连续执行多次的效果是一样的，<br>服务器的状态也是一样的。换句话说就是，幂等方法不应该具有副作用（统计<br>用途除外）。所有的安全方法也都是幂等的。在正确实现的条件下，GET，<br>HEAD，PUT 和 DELETE 等方法都是幂等的，而POST 方法不是</p>
+<h3 id="HTTP的特性有哪些？"><a href="#HTTP的特性有哪些？" class="headerlink" title="HTTP的特性有哪些？"></a>HTTP的特性有哪些？</h3><ol>
+<li>简单 HTTP 基本的报文格式就是 header + body，头部信息也是<br>key-value 简单文本的形式，易于理解，降低了学习和使用的门槛</li>
+<li>灵活和易于扩展 HTTP协议里的各类请求方法、URI/URL、状态码、头<br>字段等每个组成要求都没有被固定死，都允许开发人员自定义和扩充</li>
+<li>应用广泛和跨平台</li>
+<li>无状态</li>
+</ol>
 <ul>
-<li>请求报文 从客户向服务器发送请求报文 <img src="/2020/02/29/ComputerNetwork/number3.jpg" alt> <img src="/2020/02/29/ComputerNetwork/number4.jpg" alt></li>
-<li>响应报文 从服务器到客户的回答 <img src="/2020/02/29/ComputerNetwork/number5.jpg" alt> <img src="/2020/02/29/ComputerNetwork/number6.jpg" alt></li>
+<li>好处 因为服务器不会去记忆 HTTP 的状态，所以不需要额外的资源来记<br>录状态信息，这能减轻服务器的负担，能够把更多的 CPU 和内存用来对外<br>提供服务</li>
+<li>坏处 既然服务器没有记忆能力，它在完成有关联性的操作时会非常麻烦</li>
 </ul>
-<ol>
-<li>开始行 用于区分是请求报文还是响应报文</li>
-<li>首部行 用来说明浏览器、服务器或报文主体的一些信息</li>
-<li>实体主体 客户端向服务器或者服务器向客户端发送的数据</li>
+<ol start="5">
+<li>明文传输 在传输过程中的信息，是可方便阅读的，很容易就能被窃取</li>
 </ol>
-<h4 id="报文内容"><a href="#报文内容" class="headerlink" title="报文内容"></a>报文内容</h4><p><img src="/2020/02/29/ComputerNetwork/number7.jpg" alt></p>
+<h3 id="HTTP-2-0了解吗？"><a href="#HTTP-2-0了解吗？" class="headerlink" title="HTTP/2.0了解吗？"></a>HTTP/2.0了解吗？</h3><p>参考 <a href="https://segmentfault.com/a/1190000016656529" target="_blank" rel="noopener">https://segmentfault.com/a/1190000016656529</a><br>HTTP/2是HTTP协议的第二个主要版本。HTTP/2主要基于SPDY协议。HTTP2.0<br>的特点是：在不改动HTTP语义、方法、状态码、URI及首部字段的情况下，大<br>幅度提高了web性能。<br>SPDY是Speedy的昵音，意为“更快”。它是Google开发的基于TCP协议的应用层<br>协议。目标是优化HTTP协议的性能，通过压缩、多路复用和优先级等技术，缩<br>短网页的加载时间并提高安全性。SPDY协议的核心思想是尽量减少TCP连接数<br>。SPDY并不是一种用于替代HTTP的协议，而是对HTTP协议的增强。<br>HTTP1.x有以下几个主要缺点：</p>
+<ol>
+<li>HTTP/1.0一次只允许在一个TCP连接上发起一个请求，HTTP/1.1使用<br>的流水线技术也只能部分处理请求并发，仍然会存在队列头阻塞问题，因<br>此客户端在需要发起多次请求时，通常会采用建立多连接来减少延迟</li>
+<li>单向请求，只能由客户端发起</li>
+<li>请求报文与响应报文首部信息冗余量大</li>
+<li>数据未压缩，导致数据的传输量大</li>
+</ol>
+<h3 id="HTTP-2-0优点有哪些？"><a href="#HTTP-2-0优点有哪些？" class="headerlink" title="HTTP/2.0优点有哪些？"></a>HTTP/2.0优点有哪些？</h3><p>HTTP/2 协议是基于 HTTPS 的，所以 HTTP/2 的安全性也是有保障的</p>
+<ol>
+<li>新的二进制格式 HTTP/1.x 的解析是基于文本，基于文本协议的解析<br>存在天然缺陷，文本的表现形式由多样性，要做到健壮性考虑的场景必须<br>很多。二进制则不同，只认0和1的组合。基于这种考虑HTTP/2.0的协议解<br>析决定采用二进制格式，实现方便且健壮，头信息和数据体都是二进制<br>，并且统称为帧（frame）：头信息帧和数据帧。</li>
+<li>多路复用 即连接共享，每一个request都是用做连接共享机制的，一个<br>request对应一个id，这样一个连接上可以有多个request，每个连接的<br>request可以随机混杂在一起，接受方可以根据request的id将request<br>再归属到各自不同的服务端请求中。不需要排队等待，也就不会再出现<br>队头阻塞问题，降低了延迟，大幅度提高了连接的利用率</li>
+<li>header压缩 HTTP/1.x的header带有大量信息，如果你同时发出多个<br>请求，他们的头是一样的或是相似的，那么，协议会帮你消除重复的部分<br>。HPACK 算法：在客户端和服务器同时维护一张头信息表，所有字段都会<br>存入这个表，生成一个索引号，以后就不发送同样字段了，只发送索引号<br>，这样就提高速度了</li>
+<li>服务端推送 同SPDY一样，HTTP/2.0也具有server push功能，服务端<br>可以在客户端某个请求后，主动推送其他资源</li>
+<li>数据流 HTTP/2 的数据包不是按顺序发送的，同一个连接里面连续的数<br>据包，可能属于不同的回应。因此必须要对数据包做标记，指出它属于哪个<br>回应。每个请求或回应的所有数据包，称为一个数据流（Stream）。每个数<br>据流都标记着一个独一无二的编号，其中规定客户端发出的数据流编号为<br>奇数， 服务器发出的数据流编号为偶数</li>
+</ol>
+<h3 id="HTTP-3是什么？"><a href="#HTTP-3是什么？" class="headerlink" title="HTTP/3是什么？"></a>HTTP/3是什么？</h3><ol>
+<li>HTTP/2 主要的问题在于，多个HTTP 请求在复用一个TCP 连接，下层的<br>TCP 协议是不知道有多少个 HTTP 请求的。所以一旦发生了丢包现象，就会<br>触发TCP 的重传机制，这样在一个TCP 连接中的所有的HTTP 请求都必须等<br>待这个丢了的包被重传回来</li>
+<li>HTTP/3 把HTTP 下层的TCP 协议改成了 UDP，UDP 发生是不管顺序，也<br>不管丢包的，所以不会出现HTTP/1.1 的队头阻塞和HTTP/2 的一个丢包全部<br>重传问题。</li>
+<li>基于UDP 的QUIC 协议可以实现类似TCP 的可靠性传输</li>
+<li>HTTPS 要建立一个连接，要花费 6 次交互，先是建立三次握手，然后是<br>TLS/1.3 的三次握手。QUIC 直接把以往的 TCP 和 TLS/1.3 的 6 次交互<br>合并成了 3 次，减少了交互次数</li>
+</ol>
+<h3 id="Session的作用是什么？"><a href="#Session的作用是什么？" class="headerlink" title="Session的作用是什么？"></a>Session的作用是什么？</h3><ol>
+<li>浏览器端第一次发送请求到服务器端，服务器端创建一个Session</li>
+<li>同时会创建一个特殊的Cookie（name为JSESSIONID的固定值，value为<br>session对象的ID）</li>
+<li>然后将该Cookie 发送至浏览器端。浏览器端发送第N（N&gt;1）次请求到服<br>务器端，浏览器端访问服务器端时携带该name为JSESSIONID的Cookie对象</li>
+<li>服务器端根据name为JSESSIONID 的Cookie的value(sessionId)，去<br>查询Session 对象，从而区分不同用户</li>
+</ol>
+<h3 id="Session与Cookie的区别有哪些？"><a href="#Session与Cookie的区别有哪些？" class="headerlink" title="Session与Cookie的区别有哪些？"></a>Session与Cookie的区别有哪些？</h3><p>cookie和session都是用来跟踪浏览器用户身份的会话方式。不同之处如下</p>
+<ol>
+<li>存储位置 Cookie是客户端技术，数据保存在客户端，Session是服务端<br>会话技术，数据保存在服务器端</li>
+<li>存储容量 Cookie一般小于等于4KB，Session无限制</li>
+<li>跨域支持 Cookie支持跨域，Session不支持</li>
+<li>作用 Cookie一般存储少量不太敏感的数据，Token授权机制，时间戳超时<br>机制，签名机制，拒绝重复调用</li>
+<li>Cookie 只能存储 ASCII 码字符串，而 Session 则可以存储任何类型的<br>数据，因此在考虑数据复杂性时首选 Session</li>
+<li>相对来说 Session 安全性更高。如果使用 Cookie 的一些敏感信息不要写<br>入Cookie中，最好能将 Cookie 信息加密然后使用到的时候再去服务器端解密</li>
+<li>Cookie 一般用来保存用户信息，Session 的主要作用就是通过服务端记录<br>用户的状态</li>
+</ol>
+<h3 id="Cookie被禁用怎么办？"><a href="#Cookie被禁用怎么办？" class="headerlink" title="Cookie被禁用怎么办？"></a>Cookie被禁用怎么办？</h3><p>此时无法使用 Cookie 来保存用户信息，只能使用 Session。除此之外，不能<br>再将 Session ID存放到Cookie中，而是使用URL重写技术，将 Session ID<br>作为 URL 的参数进行传递</p>
+<h3 id="Cookie-的属性有哪些？"><a href="#Cookie-的属性有哪些？" class="headerlink" title="Cookie 的属性有哪些？"></a>Cookie 的属性有哪些？</h3><ol>
+<li>domain属性 指定可访问此cookie的域名 非顶级域名，如二级域名或者三<br>级域名，设置的cookie的domain 只能为顶级域名或者二级域名或者三级域名<br>本身，不能设置其他二级域名的cookie。要想cookie 在多个二级域名中共享<br>，需要设置domain为顶级域名，这样就可以在所有二级域名里面或者到这个<br>cookie的值了</li>
+<li>path属性 指定该cookie的页面路径 比如domain是abc.com。path是<br>/test，那么只有/test路径下的页面可以读取此cookie，Cookie的路径<br>是在服务器创建Cookie时设置的，它的作用是决定浏览器访问服务器的<br>某个资源时，需要将浏览器端保存的那些Cookie归还给服务器</li>
+</ol>
+<h3 id="反向代理是什么？"><a href="#反向代理是什么？" class="headerlink" title="反向代理是什么？"></a>反向代理是什么？</h3><ol>
+<li>反向代理方式是指以代理服务器来接收Internet 上的连接请求，然后将请<br>求转发给内部网络上的服务器 ，并将从服务器上得到的结果返回给Internet<br>上请求连接的客户端，此时代理服务器对外就表现为一个服务器</li>
+<li>反向代理服务器对于客户端而言它就像是原始服务器，并且客户端不需要<br>进行任何特别的设置。客户端向反向代理的命名空间(name-space)中的内容<br>发送普通请求，接着反向代理将判断向何处(原始服务器)转交请求，并将获<br>得的内容返回给客户端，就像这些内容原本就是它自己的一样</li>
+</ol>
+<h3 id="跨域产生的原因？"><a href="#跨域产生的原因？" class="headerlink" title="跨域产生的原因？"></a>跨域产生的原因？</h3><p>参考 <a href="https://www.jianshu.com/p/827b041be446" target="_blank" rel="noopener">https://www.jianshu.com/p/827b041be446</a><br>跨域是指从一个域名去请求另一个域名的资源，严格来说，只要域名，协议<br>，端口任何一个不同，就视为跨域。为了网络安全起见，浏览器设置了一个<br>同源策略，规定只有域名，端口，协议全部相同，就叫做同源。当页面在执<br>行一个脚本时，会检查访问的资源是否同源，如果不是，就会报错。可是在<br>实际开发中，经常会有跨域加载资源的需求，避免不了跨域请求，所以就<br>出现了跨域。<br>同源策略（Same Orgin Policy）是一种约定，它是浏览器核心也最基本<br>的安全功能，它会阻止一个域的js脚本和另外一个域的内容进行交互，如<br>果缺少了同源策略，浏览器很容易受到XSS、CSFR等攻击。所谓同源（即在<br>同一个域）就是两个页面具有相同的协议（protocol）、主机（host）<br>和端口号（port）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;www.baidu.com:8080&#x2F;index.html （http协议，www.baidu.com </span><br><span class="line">域名、8080 端口 ，只要这三个有一项不一样的都是跨域，这里不一一举例子）</span><br><span class="line">http:&#x2F;&#x2F;www.baidu.com:8080&#x2F;matsh.html（不跨域）</span><br><span class="line">http:&#x2F;&#x2F;www.baidu.com:8081&#x2F;matsh.html（端口不一样，跨域）</span><br><span class="line">注意：localhost 和127.0.0.1 虽然都指向本机，但也属于跨域</span><br></pre></td></tr></table></figure>
+<p>同源策略限制的具体表现</p>
+<ol>
+<li>cookie、LocalStorage和Index DB 无法读取</li>
+<li>Dom 无法获得</li>
+<li>AJAX请求不能发送</li>
+</ol>
+<h3 id="Cookie如何跨域？"><a href="#Cookie如何跨域？" class="headerlink" title="Cookie如何跨域？"></a>Cookie如何跨域？</h3><p>正常的cookie只能在一个应用中共享，即一个cookie只能由创建它的应用获得</p>
+<ol>
+<li>可在同一应用服务器内共享方法 设置cookie.setPath(“/“)</li>
+<li>跨域共享cookie的方法 设置cookie.setDomain(“.jszx.com”)</li>
+<li>Nginx 反向代理来解决cookie 跨域问题，其实是通过“欺骗”浏览器来实现<br>的，通过nginx，我们可以将不同工程的cookie放到nginx域下，通过nginx反<br>向代理就可以取到不同工程写入的cookie</li>
+</ol>
+<h3 id="如何解决跨域？"><a href="#如何解决跨域？" class="headerlink" title="如何解决跨域？"></a>如何解决跨域？</h3><ol>
+<li>JSONP – 原理就是利用了script标签，在标签外套了一层壳，利用标<br>签特性达到跨域加载资源的效果，JSONP由两部分组成，回调函数和数据，<br>缺点如下。会创建一个查询字符串参数 callback=? ，这个参数会加在请<br>求的URL后面。服务器端应当在JSON 数据前加上回调函数名，以便完成一<br>个有效的JSONP请求，意思就是远程服务端需要对返回的数据做下处理，<br>根据客户端提交的callback的参数，返回一个callback(json)的数据<br>，而客户端将会用script的方式处理返回数据，来对json数据做处理</li>
+</ol>
 <ul>
-<li>请求报文的头字段 <img src="/2020/02/29/ComputerNetwork/number8.jpg" alt> <img src="/2020/02/29/ComputerNetwork/number9.jpg" alt></li>
-<li>响应报文的头字段 <img src="/2020/02/29/ComputerNetwork/number10.jpg" alt> <img src="/2020/02/29/ComputerNetwork/number11.jpg" alt></li>
+<li>只支持GET请求，不支持POST请求</li>
+<li>不够安全。因为JSONP是从其他域中加载代码执行，如果其他域不安全，可<br>能会在响应中带有恶意代码</li>
+<li>不容易确认请求是否失败</li>
 </ul>
-<p>返回响应信息后，浏览器就会将数据提取出来并显示在屏幕上，如果网页只有<br>文字那么就全部处理完毕，如果网页还包含图片等资源，会在网页中的相应位<br>置嵌入表示图片文件的标签的控制信息，浏览器会在显示文字时搜索相应的标<br>签，当遇到图片相关的标签会留出显示图片的空间，并再次访问Web服务器获<br>取图片，每条请求消息只能写一个URI，所以每次只能获取一个文件，如果需<br>要获取多个文件必须发送多条请求</p>
-<h2 id="体系结构"><a href="#体系结构" class="headerlink" title="体系结构"></a>体系结构</h2><h3 id="按范围进行分类的网络"><a href="#按范围进行分类的网络" class="headerlink" title="按范围进行分类的网络"></a>按范围进行分类的网络</h3><h4 id="广域网WAN"><a href="#广域网WAN" class="headerlink" title="广域网WAN"></a>广域网WAN</h4><p>通过长距离运送主机发送的数据，一般要跨国</p>
-<h4 id="城域网MAN"><a href="#城域网MAN" class="headerlink" title="城域网MAN"></a>城域网MAN</h4><p>作用范围在一个城市</p>
-<h4 id="局域网LAN"><a href="#局域网LAN" class="headerlink" title="局域网LAN"></a>局域网LAN</h4><p>学校或企业都可以有自己的局域网</p>
-<h4 id="个人区域网PAN"><a href="#个人区域网PAN" class="headerlink" title="个人区域网PAN"></a>个人区域网PAN</h4><p>在个人工作的地方把属于个人的电子设备通过无线技术连接起来的网络，也称<br>为无线个人区域网WPAN</p>
-<h3 id="计算机网络性能"><a href="#计算机网络性能" class="headerlink" title="计算机网络性能"></a>计算机网络性能</h3><h4 id="速率-1"><a href="#速率-1" class="headerlink" title="速率"></a>速率</h4><p>计算机网络中速率的单位是bit/s，或b/s、bps<br>k=10^3 M=10^6 G=10^9 T=10^12 P=10^15 E=10^18 Z=10^21 Y=10^24</p>
-<h4 id="吞吐量-1"><a href="#吞吐量-1" class="headerlink" title="吞吐量"></a>吞吐量</h4><p>单位时间内通过某个网络的实际的数据量。计算机网络中的带宽是指单位时间内<br>网络中的某信道能通过的最高数据率</p>
-<h4 id="往返时间RTT"><a href="#往返时间RTT" class="headerlink" title="往返时间RTT"></a>往返时间RTT</h4><p>互联网上的信息不仅是单方向传输而是双向交互，RTT就表示双向交互一次所需<br>的时间</p>
-<h4 id="利用率"><a href="#利用率" class="headerlink" title="利用率"></a>利用率</h4><p>信道利用率是指某信道有百分之几的时间是被利用的，网络利用率是全网络的<br>信道利用率的加权平均值，利用率过高会产生非常大的时延</p>
-<h3 id="OSI七层模型"><a href="#OSI七层模型" class="headerlink" title="OSI七层模型"></a>OSI七层模型</h3><p>参考 <a href="https://www.cnblogs.com/qishui/p/5428938.html" target="_blank" rel="noopener">https://www.cnblogs.com/qishui/p/5428938.html</a><br>计算机网络要正确交换数据必须遵循一些约定好的规则，这些规则明确规定了<br>所交换数据的格式以及有关的同步问题。为网络中的数据交换而建立的规则、<br>标准或约定叫做网络协议，主要有三部分组成</p>
-<ol>
-<li>语法 数据与控制信息的结构或格式</li>
-<li>语义 需要发出何种控制信息，完成何种动作以及做出何种响应</li>
-<li>同步 事件实现顺序的详细说明</li>
+<ol start="2">
+<li>CORS– 跨站资源共享，它是跨域的官方解决方案，升级版的JSONP。原<br>理是使用自定义的HTTP 头部让浏览器与服务器进行沟通，从而决定请求或<br>响应是应该成功还是失败。请求和响应都不包含cookie信息。<br>CORS需要浏览器和后端同时支持，浏览器会自动进行CORS通信，实现CORS<br>通信的关键是后端，只要后端实现了CORS，就实现了跨域，服务端设置<br>Access-Control-Allow-Origin 就可以开启CORS，该属性表示哪<br>些域名可以访问资源，如果设置通配符则表示所有网站都可以访问<br>资源</li>
+<li>webSockets – 不受同源策略影响。原理是因为它不使用HTTP协议，而使<br>用一种自定义的协议，专门为快速传输小数据设计</li>
+<li>Nginx代理服务器 – 代理跨域。反向代理跨域</li>
 </ol>
-<p>OSI/RM（Open System Interconnect Reference Model），即开放式系<br>统互联参考模型。 计算机网络的各层及其协议的集合就是网络的体系结构，<br>OSI定义了网络互连的七层框架（物理层、数据链路层、网络层、传输层、会话<br>层、表示层 应用层）。每一层实现各自的功能和协议，并完成与相邻层的接<br>口通信。OSI的服务定义详细说明了各层所提供的服务。某一层的服务就是该<br>层及其下各层的一种能力，它通过接口提供给更高一层 <img src="/2020/02/29/ComputerNetwork/19.jpg" alt><br>我们从最顶层——应用层开始介绍。整个过程以公司A和公司B的一次商业报价<br>单发送为例子进行讲解</p>
-<h4 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h4><p>应用层的任务是通过应用进程间的交互来完成特定网络应用，协议应用层协<br>议定义的是应用进程间通信和交互的规则，进程就是主机中正在运行的程序<br>我们常见应用层的网络服务协议有：HTTP HTTPS FTP POP3 SMTP等。实际<br>公司A的老板就是我们所述的用户，而他要发送的商业报价单，就是应用层<br>提供的一种网络服务，也可以选择其他服务发一份商业合同，发一份询价单</p>
-<h4 id="表示层"><a href="#表示层" class="headerlink" title="表示层"></a>表示层</h4><p>表示层提供各种用于应用层数据的编码和转换功能，确保一个系统的应用层发<br>送的数据能被另一个系统的应用层识别。如果必要，该层可提供一种标准表示<br>形式，用于将计算机内部的多种数据格式转换成通信中采用的标准表示形式。<br>数据压缩和加密也是表示层可提供的转换功能之一。由于公司A和公司B是不同<br>国家的公司，他们之间的商定统一用英语作为交流的语言，所以此时表示层<br>（公司的文秘），就是将应用层的传递信息转翻译成英语。同时为了防止别<br>的公司看到，公司A的人也会对这份报价单做一些加密的处理。这就是表示<br>的作用，将应用层的数据转换翻译等</p>
-<h4 id="会话层"><a href="#会话层" class="headerlink" title="会话层"></a>会话层</h4><p>会话层就是负责建立、管理和终止表示层实体之间的通信会话。该层的通信由<br>不同设备中的应用程序之间的服务请求和响应组成。会话层的同事拿到表示<br>层的同事转换后资料，（会话层的同事类似公司的外联部），会话层的同事<br>那里可能会掌握本公司与其他好多公司的联系方式，这里公司就是实际传递<br>过程中的实体。他们要管理本公司与外界好多公司的联系会话。当接收到表<br>示层的数据后，会话层将会建立并记录本次会话，他首先要找到公司B 的<br>地址信息，然后将整份资料放进信封，并写上地址和联系方式。准备将资<br>料寄出。等到确定公司B接收到此份报价单后，此次会话就算结束了，外<br>联部的同事就会终止此次会话</p>
-<h4 id="运输层"><a href="#运输层" class="headerlink" title="运输层"></a>运输层</h4><p>负责向两台主机中进程之间的通信提供通用的数据传输服务，应用进程利用<br>该服务传送应用层报文。传输层建立了主机端到端的链接，传输层的作用是<br>为上层协议提供端到端的可靠和透明的数据传输服务，包括处理差错控制<br>和流量控制等问题。该层向高层屏蔽了下层数据通信的细节，使高层用户<br>看到的只是在两个传输实体间的一条主机到主机的、可由用户控制和设定<br>的、可靠的数据通路。我们通常说的，TCP/UDP就是在这一层。端口号即是<br>这里的“端”。传输层就相当于公司中的负责快递邮件收发的人，公司自己<br>的投递员，他们负责将上一层的要寄出的资料投递到快递公司或邮局。有<br>以下两种协议</p>
-<ol>
-<li>传输控制协议TCP 提供面向连接的可靠的数据传输服务，其数据传输<br>的单位是报文段</li>
-<li>用户数据报协议UDP 提供无连接的、尽最大努力的数据传输服务，传输<br>单位是用户数据报</li>
+<h3 id="代理和网关是什么？"><a href="#代理和网关是什么？" class="headerlink" title="代理和网关是什么？"></a>代理和网关是什么？</h3><ol>
+<li>代理是一种有转发功能的应用程序，它扮演了位于服务器和客户端’中间人’<br>的角色，接收客户端发送的请求不改变请求的URI并转发给服务器，同时也接<br>收服务器返回的相应并转发客户端</li>
+<li>缓存代理：代理转发响应时会预先将资源缓存在代理服务器上当代理再次<br>接收到对相同资源的请求时，就可以不从源服务器那里获取资源，而是将之<br>前缓存的资源作为响应返回</li>
+<li>透明代理：转发请求或响应时，不对报文做任何加工的代理类型</li>
+<li>网关是转发其他服务器通信数据的服务器，接收从客户端发送来的请求时<br>，它就像自己拥有资源的源服务器一样对请求进行处理，其工作机制和代理<br>类似，而网关能使通信线路上的服务器提供非HTTP协议的服务</li>
 </ol>
-<h4 id="网络层-1"><a href="#网络层-1" class="headerlink" title="网络层"></a>网络层</h4><p>负责为分组交换网上的不同主机提供通信服务，在发送数据时网络层把传输<br>层产生的报文段或用户数据报封装成分组或包，也叫IP数据报。本层通过IP<br>寻址来建立两个节点之间的连接，为源端的运输层送来的分组，选择合适的<br>路由和交换节点，正确无误地按照地址传送给目的端的运输层。就是通常说<br>的IP层。这一层就是我们经常说的IP协议层。IP协议是Internet的基础。网<br>络层就相当于快递公司庞大的快递网络，全国不同的集散中心，比如说，<br>从深圳发往北京的顺丰快递（陆运为例啊，空运好像直接就飞到北京了）<br>，首先要到顺丰的深圳集散中心，从深圳集散中心再送到武汉集散中心，<br>从武汉集散中心再寄到北京顺义集散中心。这个每个集散中心，就相当于<br>网络中的一个IP节点。网络层协议是无连接的网际协议IP 和许多种路由<br>选择协议组成</p>
-<h4 id="数据链路层-1"><a href="#数据链路层-1" class="headerlink" title="数据链路层"></a>数据链路层</h4><p>将比特组合成字节，再将字节组合成帧，帧就是网络层的IP数据报组装而<br>成，每一个帧包括数据和必要的控制信息（同步信息、地址信息、差错控制<br>等），使用链路层地址 (以太网使用MAC地址）来访问介质,并进行差错检<br>测。数据链路层又分为2个子层：逻辑链路控制子层（LLC）和媒体访问控<br>制子层（MAC）。MAC子层处理CSMA/CD算法、数据出错校验、成帧等，LLC<br>子层定义了一些字段使上次协议能共享数据链路层。 在实际使用中，LLC<br>子层并非必需的。使用的是可靠传输协议</p>
-<h4 id="物理层-1"><a href="#物理层-1" class="headerlink" title="物理层"></a>物理层</h4><p>实际最终信号的传输是通过物理层实现的。通过物理介质传输比特流。规定<br>了电平、速度和电缆针脚。常用设备有（各种物理设备）集线器、中继器、<br>调制解调器、网线、双绞线、同轴电缆。这些都是物理层的传输介质。快递<br>寄送过程中的交通工具，就相当于我们的物理层，例如汽车，火车，飞<br>机，船</p>
-<h4 id="通信特点"><a href="#通信特点" class="headerlink" title="通信特点"></a>通信特点</h4><p>OSI参考模型把对等层次之间传送的数据单位称为该层的协议数据单元PDU<br>对等实体采用对等通信，为了使数据分组从源传送到目的地，源端OSI模型<br>的每一层都必须与目的端的对等层进行通信，这种通信方式称为对等层通<br>信。在每一层通信过程中，使用本层自己协议进行通信，两个对等的实体<br>的通信使得本层能够向上一层提供服务，要实现本层还需要下面一层提<br>供的服务。把层与层之间交换的数据单元称为SDU <img src="/2020/02/29/ComputerNetwork/20.jpg" alt></p>
-<h3 id="TCP-IP四层协议模型"><a href="#TCP-IP四层协议模型" class="headerlink" title="TCP/IP四层协议模型"></a>TCP/IP四层协议模型</h3><ul>
-<li>应用层 为特定应用程序提供数据传输服务，例如 HTTP、DNS等协议，应<br>用层交互的数据单位称为报文</li>
-<li>运输层 为进程提供通用数据传输服务。由于应用层协议很多，定义通用的<br>传输层协议就可以支持不断增多的应用层协议。运输层包括两种协议：传输<br>控制协议 TCP，提供面向连接、可靠的数据传输服务，数据单位为报文段<br>，用户数据报协议 UDP，提供无连接、尽最大努力的数据传输服务，数据<br>单位为用户数据报。TCP 主要提供完整性服务，UDP 主要提供及时性服务</li>
-<li>网络层 为主机提供数据传输服务，网络层把传输层传递下来的报文段或者<br>用户数据报封装成分组</li>
-<li>数据链路层 链路层协议就是为同一链路的主机提供数据传输服务。数据链路<br>层把网络层传下来的分组封装成帧</li>
-<li>物理层 物理层的任务就是透明地传输比特流</li>
-</ul>
-<p>四层协议模型把数据链路层和物理层合并为网络接口层 <img src="/2020/02/29/ComputerNetwork/21.jpg" alt><br>每一层的工作都有不同的设备 <img src="/2020/02/29/ComputerNetwork/22.jpg" alt><br>每一层实现的协议也不同 <img src="/2020/02/29/ComputerNetwork/23.jpg" alt></p>
-<h3 id="数据在各层之间的传递过程"><a href="#数据在各层之间的传递过程" class="headerlink" title="数据在各层之间的传递过程"></a>数据在各层之间的传递过程</h3><p>在向下的过程中，需要添加下层协议所需要的首部或者尾部，而在向上的过<br>程中不断拆开首部和尾部。路由器只有下面三层协议，因为路由器位于网络<br>核心中，不需要为进程或者应用程序提供服务，因此也就不需要传输层和<br>应用层</p>
-<h2 id="物理层-2"><a href="#物理层-2" class="headerlink" title="物理层"></a>物理层</h2><h3 id="信道"><a href="#信道" class="headerlink" title="信道"></a>信道</h3><p>信道一般表示向某一个方向传送信息的媒体，一条通信电路往往包含一条发送<br>信道和一条接收信道</p>
-<h4 id="单工通信"><a href="#单工通信" class="headerlink" title="单工通信"></a>单工通信</h4><p>单向通信，只能有一个方向的通信而没有反方向的交互。无线电广播或有线电<br>广播以及电视广播就是这种类型</p>
-<h4 id="半双工通信"><a href="#半双工通信" class="headerlink" title="半双工通信"></a>半双工通信</h4><p>双向交替通信，通信的双方都可以发送信息，但是不能同时发送或接收信息。<br>一方发送另一方接收，过一段时间可以反过来</p>
-<h4 id="全双工通信"><a href="#全双工通信" class="headerlink" title="全双工通信"></a>全双工通信</h4><p>双向同时通信，通信的双方可以同时发送和接收信息</p>
-<h4 id="宽带接入技术"><a href="#宽带接入技术" class="headerlink" title="宽带接入技术"></a>宽带接入技术</h4><p>非对称数字用户线ADSL对现有的模拟电话用户线进行改造</p>
-<h2 id="数据链路层-2"><a href="#数据链路层-2" class="headerlink" title="数据链路层"></a>数据链路层</h2><h3 id="封装成帧"><a href="#封装成帧" class="headerlink" title="封装成帧"></a>封装成帧</h3><p>将网络层传下来的IP数据报添加首部和尾部，用于标记帧的开始和结束。IP数<br>据报就是帧的数据部分，数据部分长度上限–最大传送单元MTU。帧定界符就<br>是用来检测传输中是否出现差错，如果有差错就丢弃帧</p>
-<h3 id="透明传输"><a href="#透明传输" class="headerlink" title="透明传输"></a>透明传输</h3><p>透明表示一个实际存在的事物看起来好像不存在一样。帧使用首部和尾部进行定<br>界，如果帧的数据部分含有和首部尾部相同的内容，那么帧的开始和结束位置<br>就会被错误的判定。需要在数据部分出现首部尾部相同的内容前面插入转义字<br>符。如果数据部分出现转义字符，那么就在转义字符前面再加个转义字符。在<br>接收端进行处理之后可以还原出原始数据。这个过程透明传输的内容是转义<br>字符，用户察觉不到转义字符的存在 <img src="/2020/02/29/ComputerNetwork/29.jpg" alt></p>
-<h3 id="差错检测"><a href="#差错检测" class="headerlink" title="差错检测"></a>差错检测</h3><p>比特在传输过程中可能会出现差错，目前数据链路层广泛使用了循环冗余检验<br>（CRC）来检查比特差错，能够做到无差错接收，但是并没有提供可靠传输的<br>服务。可靠传输就是发送端发送什么接收端就接收什么。传输差错可以分为两<br>大类</p>
-<ol>
-<li>一类就是基本的比特差错</li>
-<li>帧丢失、帧重复或帧失序</li>
+<h3 id="Cookie的类型？"><a href="#Cookie的类型？" class="headerlink" title="Cookie的类型？"></a>Cookie的类型？</h3><ol>
+<li>Session Cookie(会话期 Cookie)：会话期 Cookie 是最简单的Cookie<br>，它不需要指定过期时间（Expires）或者有效期（Max-Age），它仅在会话<br>期内有效，浏览器关闭之后它会被自动删除</li>
+<li>Permanent Cookie(持久性 Cookie)：与会话期 Cookie 不同的是，持<br>久性 Cookie可以指定一个特定的过期时间（Expires）或有效期（Max-Age）</li>
 </ol>
-<p>如果要实现可靠传输，就必须增加帧编号、确认和重传机制，收到正确的帧要<br>向发送端发送确认。对于通信质量良好的有线传输链路数据链路层协议不使用<br>确认和重传机制。如果出现错误并需要改正的时候由上层协议(如TCP)来完成<br>，如果通信质量较差的无线传输链路，数据链路层使用确认和重传机制</p>
-<h3 id="数据链路层常见协议"><a href="#数据链路层常见协议" class="headerlink" title="数据链路层常见协议"></a>数据链路层常见协议</h3><h4 id="点对点ppp协议"><a href="#点对点ppp协议" class="headerlink" title="点对点ppp协议"></a>点对点ppp协议</h4><p>ppp协议就是用户计算机和ISP进行通信时所使用的的数据链路层协议</p>
-<h4 id="局域网"><a href="#局域网" class="headerlink" title="局域网"></a>局域网</h4><p>局域网是一种典型的广播信道，主要特点是网络为一个单位所拥有，且地理范<br>围和站点数目均有限。主要有以太网、令牌环网、FDDI 和 ATM 等局域网技术<br>，目前以太网占领着有线局域网市场。可以按照网络拓扑结构对局域网进行<br>分类 <img src="/2020/02/29/ComputerNetwork/30.jpg" alt></p>
-<h3 id="一对多的以太网"><a href="#一对多的以太网" class="headerlink" title="一对多的以太网"></a>一对多的以太网</h3><p>使用CSMA/CD协议，是不可靠的传输协议，只能使用双向交替通信。<br>目前以太网使用交换机替代了集线器，交换机是一种链路层设备，它不会发生<br>碰撞，能根据 MAC 地址进行存储转发。以太网帧格式 <img src="/2020/02/29/ComputerNetwork/31.jpg" alt></p>
+<h3 id="HTTPS的优缺点有哪些？"><a href="#HTTPS的优缺点有哪些？" class="headerlink" title="HTTPS的优缺点有哪些？"></a>HTTPS的优缺点有哪些？</h3><p>https不是一种新的协议，它是http+SSL(TLS)的结合体，SSL是一种独<br>立协议</p>
+<ol>
+<li>优点：相比于http，https可以提供更加优质保密的信息，保证了用户<br>数据的安全性，此外https 同时也一定程度上保护了服务端，使用恶意攻<br>击和伪装数据的成本大大提高</li>
+<li>缺点：</li>
+</ol>
 <ul>
-<li>类型 ：标记上层使用的协议</li>
-<li>数据 ：长度在 46-1500 之间，如果太小则需要填充</li>
-<li>FCS ：帧检验序列，使用的是 CRC 检验方法</li>
+<li>第一https的技术门槛较高，多数个人或者私人网站难以支撑，CA机构颁<br>发的证书都是需要年费的，此外对接Https协议也需要额外的技术支持</li>
+<li>目前来说大多数网站并不关心数据的安全性和保密性，其https最大的优<br>点对它来说并不适用</li>
+<li>https加重了服务端的负担，相比于http其需要更多的资源来支撑，同时<br>也降低了用户的访问速度</li>
+<li>目前来说Http网站仍然大规模使用，在浏览器侧也没有特别大的差别，很<br>多用户不关心的话根本不感知</li>
 </ul>
-<h3 id="适配器"><a href="#适配器" class="headerlink" title="适配器"></a>适配器</h3><p>计算机与外界局域网的连接时通过通信适配器进行的。计算机的硬件地址保存<br>在适配器的ROM中，ROM是只读存储器，只能读出信息无法写入信息，信息在<br>装机前就已经写入，即使切断电源也不会丢失。IP地址是存放在存储器RAM中<br>，CPU用来生成发送的数据和处理收到的数据，适配器把帧发送到局域网以及<br>接收帧</p>
-<h3 id="MAC地址"><a href="#MAC地址" class="headerlink" title="MAC地址"></a>MAC地址</h3><p>在局域网中硬件地址又称为物理地址或MAC地址，长度为6个字节，用于唯一<br>标识网络适配器（网卡）。一台主机拥有多少个网络适配器就有多少个MAC地<br>址。例如笔记本电脑普遍存在无线网络适配器和有线网络适配器，因此就有<br>两个MAC地址</p>
-<h4 id="网桥"><a href="#网桥" class="headerlink" title="网桥"></a>网桥</h4><p>网桥对受到的帧根据MAC帧的目的地址进行转发和过滤，当网桥收到一个帧时<br>并不是向所有接口发送帧，而是根据帧的目的MAC地址查找网桥中的地址表，<br>然后确认该转发到哪个接口或者丢弃</p>
-<h3 id="交换机"><a href="#交换机" class="headerlink" title="交换机"></a>交换机</h3><p>交换机实际就是一个多接口的网桥。<br>交换机具有自学习能力，学习的是交换表的内容，交换表中存储着 MAC 地址<br>到接口的映射。正是由于这种自学习能力，因此交换机是一种即插即用设备，<br>不需要网络管理员手动配置交换表内容。<br>下图中，交换机有 4 个接口，主机 A 向主机 B 发送数据帧时，交换机把主<br>机 A 到接口 1 的映射写入交换表中。为了发送数据帧到 B，先查交换表，此<br>时没有主机 B 的表项，那么主机 A 就发送广播帧，主机 C 和主机 D 会丢<br>弃该帧，主机 B 回应该帧向主机 A 发送数据包时，交换机查找交换表得到<br>主机 A 映射的接口为 1，就发送数据帧到接口 1，同时交换机添加主机 B<br>到接口 2 的映射 <img src="/2020/02/29/ComputerNetwork/32.jpg" alt></p>
-<h3 id="虚拟局域网"><a href="#虚拟局域网" class="headerlink" title="虚拟局域网"></a>虚拟局域网</h3><p>虚拟局域网可以建立与物理位置无关的逻辑组，只有在同一个虚拟局域网中的<br>成员才会收到链路层广播信息。<br>例如下图中 (A1, A2, A3, A4) 属于一个虚拟局域网，A1 发送的广播会被<br>A2、A3、A4 收到，而其它站点收不到。<br>使用 VLAN 干线连接来建立虚拟局域网，每台交换机上的一个特殊接口被设置<br>为干线接口，以互连VLAN交换机。IEEE定义了一种扩展的以太网帧格式802.1Q<br>，它在标准以太网帧上加进了 4 字节首部 VLAN 标签，用于表示该帧属于哪<br>一个虚拟局域网 <img src="/2020/02/29/ComputerNetwork/33.jpg" alt></p>
-<h2 id="网络安全"><a href="#网络安全" class="headerlink" title="网络安全"></a>网络安全</h2><h3 id="对称加密算法"><a href="#对称加密算法" class="headerlink" title="对称加密算法"></a>对称加密算法</h3><p>在对称加密算法中，数据发信方将明文（原始数据）和加密密钥一起经过特<br>殊加密算法处理后，使其变成复杂的加密密文发送出去。收信方收到密文后<br>，若想解读原文，则需要使用加密用过的密钥及相同算法的逆算法对密文<br>进行解密，才能使其恢复成可读明文。在对称加密算法中，使用的密钥只<br>有一个，发收信双方都使用这个密钥对数据进行加密和解密，这就要求<br>解密方事先必须知道加密密钥。<br>对称加密算法的特点是算法公开、计算量小、加密速度快、加密效率高。不足<br>之处是，交易双方都使用同样钥匙，安全性得不到保证。此外，每对用户每<br>次使用对称加密算法时，都需要使用其他人不知道的惟一钥匙，这会使得<br>发收信双方所拥有的钥匙数量成几何级数增长，密钥管理成为用户的负担<br>。对称加密算法在分布式网络系统上使用较为困难，主要是因为密钥管理<br>困难，使用成本较高。在计算机专网系统中广泛使用的对称加密算法有<br>DES、IDEA和AES。</p>
-<h3 id="非对称加密算法"><a href="#非对称加密算法" class="headerlink" title="非对称加密算法"></a>非对称加密算法</h3><p>不对称加密算法使用两把完全不同但又是完全匹配的一对钥匙—公钥和私钥。<br>在使用不对称加密算法加密文件时，只有使用匹配的一对公钥和私钥，才能<br>完成对明文的加密和解密过程。加密明文时采用公钥加密，解密密文时使用<br>私钥才能完成，而且发信方（加密者）知道收信方的公钥，只有收信方（<br>解密者）才是唯一知道自己私钥的人。不对称加密算法的基本原理是，如<br>果发信方想发送只有收信方才能解读的加密信息，发信方必须首先知道<br>收信方的公钥，然后利用收信方的公钥来加密原文；收信方收到加密密<br>文后，使用自己的私钥才能解密密文。显然，采用不对称加密算法，收<br>发信双方在通信之前，收信方必须将自己早已随机生成的公钥送给发<br>信方，而自己保留私钥。由于不对称算法拥有两个密钥，因而特别适<br>用于分布式系统中的数据加密。广泛应用的不对称加密算法有RSA算<br>法和美国国家标准局提出的DSA。以不对称加密算法为基础的加密技<br>术应用非常广泛。</p>
-<h3 id="常见攻击方式"><a href="#常见攻击方式" class="headerlink" title="常见攻击方式"></a>常见攻击方式</h3><p>参考 <a href="https://www.cnblogs.com/suihang/p/13288540.html" target="_blank" rel="noopener">https://www.cnblogs.com/suihang/p/13288540.html</a><br>常见的浏览器攻击分为两种，一种为XSS（跨站脚本攻击），另一种则为<br>CSRF（跨站请求伪造）<img src="/2020/02/29/ComputerNetwork/5.jpg" alt></p>
-<h4 id="XSS"><a href="#XSS" class="headerlink" title="XSS"></a>XSS</h4><p>XSS 全称是Cross Site Scripting，为了与“CSS”区分开来，故简称XSS<br>，翻译过来就是“跨站脚本”。XSS 攻击是指黑客往 HTML 文件中或者DOM中<br>注入恶意脚本，从而在用户浏览页面时利用注入的恶意脚本对用户实施攻击<br>的一种手段。<br>存在原因浏览器为了在安全和自由之间找到一个平衡点。支持了页面中的引<br>用第三方资源和 跨域资源共享（CORS），这样做带来了很多安全问题，其<br>中最典型的就是 XSS 攻击。</p>
-<h4 id="CSRF"><a href="#CSRF" class="headerlink" title="CSRF"></a>CSRF</h4><p>CSRF 英文全称是 Cross-site request forgery，是指黑客引诱用户打<br>开黑客的网站，在黑客的网站中，利用用户的登录状态发起的跨站请求。简<br>单来讲，CSRF 攻击就是利用了用户的登录状态，并通过第三方的站点来做<br>一些坏事。而且CSRF 攻击并不需要将恶意代码注入用户的页面，仅仅是利<br>用服务器的漏洞和用户的登录状态来实施攻击<br>存在原因利用了web中用户身份验证的一个漏洞：简单的身份验证只能保证<br>请求发自某个用户的浏览器，却不能保证请求本身是用户自愿发出的</p>
-<h2 id="网络层-2"><a href="#网络层-2" class="headerlink" title="网络层"></a>网络层</h2><p>使用IP协议，可以把异构的物理网络连接起来，使得在网络层看起来好像是<br>一个统一的网络。网络层向上只提供简单灵活的、无连接的、尽最大努力交付<br>的数据报服务。与IP协议配套使用的还有三个协议</p>
-<ul>
-<li>地址解析协议 ARP（Address Resolution Protocol）</li>
-<li>网际控制报文协议 ICMP（Internet Control Message Protocol）</li>
-<li>网际组管理协议 IGMP（Internet Group Management Protocol）</li>
-</ul>
-<p>没有一种单一网络能够适应所有用户的需求。要使网络相互连接需要使用一<br>些中间设备</p>
-<ol>
-<li>物理层使用的中间设备交转发器</li>
-<li>数据链路层使用的中间设备是网桥或桥接器</li>
-<li>网络层使用的中间设备是路由器</li>
-<li>网络层以上使用的中间设备是网关。用网关连接两个不兼容的系统需要<br>在高层进行协议的转换</li>
+<h3 id="http通信存在的问题"><a href="#http通信存在的问题" class="headerlink" title="http通信存在的问题"></a>http通信存在的问题</h3><ol>
+<li>容易被监听 http通信都是明文</li>
+<li>被伪装 无法保证通信双方是合法的，通信方可能是伪装的</li>
+<li>被篡改 hacker中间篡改数据后，接收方并不知道数据已经被更改</li>
 </ol>
-<h3 id="分类的IP地址"><a href="#分类的IP地址" class="headerlink" title="分类的IP地址"></a>分类的IP地址</h3><p>IP地址就是给互联网上的每一台主机的每一个接口分配一个在全世界范围内<br>是唯一的32位的标识符。有4(IPv4)和6(IPv6)两个版本，IP地址的编址经<br>历了三个阶段</p>
-<ol>
-<li>分类的IP地址</li>
-<li>子网的划分</li>
-<li>构成超网</li>
+<h3 id="HTTPS-怎么建立连接？"><a href="#HTTPS-怎么建立连接？" class="headerlink" title="HTTPS 怎么建立连接？"></a>HTTPS 怎么建立连接？</h3><ol>
+<li>客户端发送请求到服务器端</li>
+<li>服务器端返回证书和公开密钥，公开密钥作为证书的一部分而存在</li>
+<li>客户端验证证书和公开密钥的有效性，如果有效，则生成共享密钥并使用<br>公开密钥加密发送到服务器端</li>
+<li>服务器端使用私有密钥解密数据，并使用收到的共享密钥加密数据，发送<br>到客户端</li>
+<li>客户端使用共享密钥解密数据</li>
+<li>SSL加密建立</li>
 </ol>
-<p>分类的IP地址是将IP地址分为若干固定类，每一类都由两个固定长度的字<br>段组成，第一个字段是网络号，标志主机所连接到的网络，第二个字段是<br>主机号，主机号在网络号所指明的网络范围必须是唯一的 <img src="/2020/02/29/ComputerNetwork/1.jpg" alt><br>一个网络是具有相同网络号的主机的集合，因此用转发器或网桥连接起来<br>的若干个局域网仍是一个网络</p>
-<h3 id="硬件地址-1"><a href="#硬件地址-1" class="headerlink" title="硬件地址"></a>硬件地址</h3><p>物理地址是数据链路层和物理层使用的地址，而IP地址是网络层和以上各<br>层使用的地址，是一种逻辑地址。硬件地址也叫MAC地址 <img src="/2020/02/29/ComputerNetwork/2.jpg" alt><br>路由器转发过程中，IP地址是不会改变的，MAC帧首部的源地址和目的地<br>址要发生变化</p>
-<h3 id="ARP"><a href="#ARP" class="headerlink" title="ARP"></a>ARP</h3><p>不管网络层使用什么协议，在实际的网络链路上传送数据帧时最终还是需<br>要使用硬件地址。ARP协议就是用来通过IP地址解析出MAC地址，RARP 协<br>议是将MAC地址解析出IP地址。在主机ARP高速缓存中存放一个从IP 地址<br>到硬件地址的映射表，这个映射表会动态更新。每一台主机都有一个ARP<br>高速缓存，里面有本局域网上各主机和路由器的IP地址到硬件地址的映<br>射表。MTU一般是1500个字节</p>
-<h3 id="IP数据报"><a href="#IP数据报" class="headerlink" title="IP数据报"></a>IP数据报</h3><p>一个IP数据报由首部和数据两部分组成。首部的前一部分是固定长度，共20<br>字节，是所有IP数据报必须具有的。在首部的固定部分的后面是一些可选字<br>段，其长度是可变的 <img src="/2020/02/29/ComputerNetwork/3.jpg" alt></p>
-<h3 id="划分子网-1"><a href="#划分子网-1" class="headerlink" title="划分子网"></a>划分子网</h3><p>在IP地址中加入一个子网号字段，使两级IP变为三级IP，本质是将主机号<br>再划分，而不改变网络号 <img src="/2020/02/29/ComputerNetwork/4.jpg" alt> <img src="/2020/02/29/ComputerNetwork/5.jpg" alt></p>
-<h4 id="子网掩码-1"><a href="#子网掩码-1" class="headerlink" title="子网掩码"></a>子网掩码</h4><p>从一个IP数据报的首部并无法判断源主机或目的主机所连接的网络是否进<br>行了子网划分，子网掩码与IP地址相与操作就可以得到子网的网络地址 <img src="/2020/02/29/ComputerNetwork/6.jpg" alt></p>
-<h3 id="无分类编址CIDR"><a href="#无分类编址CIDR" class="headerlink" title="无分类编址CIDR"></a>无分类编址CIDR</h3><p>无分类编址 CIDR 消除了传统 A 类、B 类和 C 类地址以及划分子网的概<br>念，使用网络前缀和主机号来对 IP 地址进行编码，网络前缀的长度可以<br>根据需要变化。网络前缀都相同的连续的IP地址就组成一个CIDR地址块。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IP 地址 ::&#x3D; &#123;&lt; 网络前缀号 &gt;, &lt; 主机号 &gt;&#125;</span><br></pre></td></tr></table></figure>
-<p>CIDR 的记法上采用在 IP 地址后面加上网络前缀长度的方法，也就是斜线<br>记法。例如 128.14.35.7/20 表示前20位为网络前缀，后12位是主机号。<br>CIDR 的地址掩码可以继续称为子网掩码，子网掩码首1长度为网络前缀的<br>长度。一个CIDR地址块中有很多地址，一个CIDR表示的网络就可以表示原<br>来的很多个网络，并且在路由表中只需要一个路由就可以代替原来的多个<br>路由，减少了路由表项的数量。把这种通过使用网络前缀来减少路由表项<br>的方式称为路由聚合，也称为构成超网</p>
-<h3 id="网际控制报文协议ICMP"><a href="#网际控制报文协议ICMP" class="headerlink" title="网际控制报文协议ICMP"></a>网际控制报文协议ICMP</h3><p>ICMP 是为了更有效地转发 IP 数据报和提高交付成功的机会。它封装在IP<br>数据报中，但是不属于高层协议，ICMP允许主机或路由器报告差错情况和<br>提供有关异常情况的报告 <img src="/2020/02/29/ComputerNetwork/35.jpg" alt><br>ICMP 报文分为差错报告报文和询问报文 <img src="/2020/02/29/ComputerNetwork/36.jpg" alt></p>
-<h4 id="ping"><a href="#ping" class="headerlink" title="ping"></a>ping</h4><p>Ping是ICMP的一个重要应用，主要用来测试两台主机之间的连通性。Ping<br>的原理是通过向目的主机发送 ICMP Echo 请求报文，目的主机收到之后<br>会发送 Echo 回答报文。Ping 会根据时间和成功响应的次数估算出数据<br>包往返时间以及丢包率。只需输入 ping hostname 即可</p>
-<h4 id="Traceroute"><a href="#Traceroute" class="headerlink" title="Traceroute"></a>Traceroute</h4><p>Traceroute是ICMP的另一个应用，用来跟踪一个分组从源点到终点的路径。<br>Traceroute 发送的 IP 数据报封装的是无法交付的 UDP 用户数据报，并<br>由目的主机发送终点不可达差错报告报文。 tracert hostname</p>
-<ol>
-<li>源主机向目的主机发送一连串的 IP 数据报。第一个数据报 P1 的生存<br>时间 TTL 设置为 1，当 P1 到达路径上的第一个路由器 R1 时，R1收下<br>它并把 TTL 减 1，此时 TTL 等于 0，R1 就把 P1丢弃，并向源主机发<br>送一个 ICMP 时间超过差错报告报文</li>
-<li>源主机接着发送第二个数据报 P2，并把 TTL 设置为 2。P2 先到达R1<br>，R1 收下后把 TTL 减 1 再转发给 R2，R2 收下后也把 TTL 减 1，由<br>于此时 TTL 等于 0，R2 就丢弃 P2，并向源主机发送一个 ICMP时间超<br>过差错报文</li>
-<li>不断执行这样的步骤，直到最后一个数据报刚刚到达目的主机，主机不<br>转发数据报，也不把TTL值减1。但是因为数据报封装的是无法交付的UDP，<br>因此目的主机要向源主机发送ICMP终点不可达差错报告报文。之后源主<br>机知道了到达目的主机所经过的路由器IP地址以及到达每个路由器的<br>往返时间</li>
+<h3 id="https（问为什么要对称加密数据，而不用非对称加密数据呢）？"><a href="#https（问为什么要对称加密数据，而不用非对称加密数据呢）？" class="headerlink" title="https（问为什么要对称加密数据，而不用非对称加密数据呢）？"></a>https（问为什么要对称加密数据，而不用非对称加密数据呢）？</h3><ol>
+<li>因为非对称加密加密解密算法效率较低，不适合客户端和服务器端这样高<br>频率的通信过程，在某些极端情况下，甚至能比非对称加密慢上1000倍</li>
+<li>非对称加密的优势在于它可以很好帮助完成秘钥的交换，所以前期交换秘<br>钥必须使用非对称加密算法</li>
 </ol>
-<h3 id="IPv6"><a href="#IPv6" class="headerlink" title="IPv6"></a>IPv6</h3><p>IPv6仍支持无连接的传送</p>
+<h3 id="为什么http一定要用TCP呢？"><a href="#为什么http一定要用TCP呢？" class="headerlink" title="为什么http一定要用TCP呢？"></a>为什么http一定要用TCP呢？</h3><ol>
+<li>如果用UDP，网页源文件传输后可能出现错误，浏览器解析出错</li>
+</ol>
+<h3 id="长连接的好处？"><a href="#长连接的好处？" class="headerlink" title="长连接的好处？"></a>长连接的好处？</h3><ol>
+<li>减少CPU及内存的使用，因为不需要经常的建立及关闭连接</li>
+<li>减少网络的堵塞，因为减少了TCP请求，单个客户端不允许开启2个以上<br>的长连接，这个标准的目的是减少HTTP响应的时候，减少网络堵塞</li>
+<li>减少后续请求的响应时间，因为此时不需要建立TCP，也不需要TCP握手<br>等过程</li>
+<li>当发生错误时，可以在不关闭连接的情况下进行提示</li>
+<li>缺点：可能会损害服务器的整体性能，如apache的长连接时间的长短，直<br>接影响到服务器的并发数</li>
+</ol>
+<h3 id="写一个简单的webserver？"><a href="#写一个简单的webserver？" class="headerlink" title="写一个简单的webserver？"></a>写一个简单的webserver？</h3><ol>
+<li>服务器是属于被动的一方，当浏览器发起请求的时候，服务器才能和浏览<br>器通信，在此之前，服务器都处于一个等待监听的状态</li>
+<li>实现服务器的第一步是建立一个 socket 连接，socket 套接字是对<br>TCP/UDP协议 的一个封装，socket()用于创建一个套接字，该套接字用<br>于监听某个端口</li>
+<li>解析http请求 在bind()中套接字与端口绑定，随后通过listen()进行监<br>听，这时候就进入服务器程序的主循环，当有连接建立后，accpet()被调用<br>并返回一个新的套接字用于处理连接，这时派生一个子进程进行处理，子进<br>程中recv()从缓冲区读取数据交由相关函数处理</li>
+<li>构造响应报文 拿到了请求报文并将其解析后，我们可以开始构造响应报文<br>的内容了，处理完毕后的结果通过send()发送出去，随后关闭用于处理的套<br>接字，子进程退出</li>
+</ol>
+<h3 id="web-server实现了什么？"><a href="#web-server实现了什么？" class="headerlink" title="web server实现了什么？"></a>web server实现了什么？</h3><p>Web服务器可以解析(handles)HTTP协议。当Web服务器接收到一个HTTP请<br>求(request)，会返回一个HTTP响应(response)</p>
+<h3 id="URI和URL的区别是什么？"><a href="#URI和URL的区别是什么？" class="headerlink" title="URI和URL的区别是什么？"></a>URI和URL的区别是什么？</h3><ol>
+<li>URI(Uniform Resource Identifier) 是统一资源标志符，可以唯一标<br>识一个资源</li>
+<li>URL(Uniform Resource Location) 是统一资源定位符，可以提供该资<br>源的路径。它是一种具体的 URI，即 URL 可以用来标识一个资源，而且还指<br>明了如何locate 这个资源</li>
+<li>URI一般由三部组成</li>
+</ol>
 <ul>
-<li>更大的地址空间，由32位增大到128位</li>
-<li>扩展的地址层次结构</li>
-<li>灵活的首部格式</li>
-<li>改进的选项 数据报首部长度固定，是40个字节</li>
+<li>访问资源的命名机制</li>
+<li>存放资源的主机名</li>
+<li>资源自身的名称，由路径表示，着重强调于资源</li>
 </ul>
-<h3 id="虚拟专用网VPN"><a href="#虚拟专用网VPN" class="headerlink" title="虚拟专用网VPN"></a>虚拟专用网VPN</h3><p>由于 IP 地址的紧缺，一个机构能申请到的 IP 地址数往往远小于本机构所<br>拥有的主机数。并且一个机构并不需要把所有的主机接入到外部的互联网中，<br>机构内的计算机可以使用仅在本机构有效的IP地址，不需要申请全球唯一的<br>IP地址。在互联网中的所有路由器，对目的地址是专用地址的数据报一律不<br>进行转发，有三个专用地址块</p>
+<ol start="4">
+<li>URL</li>
+</ol>
 <ul>
-<li>10.0.0.0 ~ 10.255.255.255</li>
-<li>172.16.0.0 ~ 172.31.255.255</li>
-<li>192.168.0.0 ~ 192.168.255.255</li>
+<li>协议(或称为服务方式)</li>
+<li>存有该资源的主机IP地址(有时也包括端口号)</li>
+<li>主机资源的具体地址。如目录和文件名等</li>
 </ul>
-<p>VPN 使用公用的互联网作为本机构各专用网之间的通信载体。专用指机构内的<br>主机只与本机构内的其它主机通信；虚拟指好像是，而实际上并不是，它有经<br>过公用的互联网。<br>下图中，场所 A 和 B 的通信经过互联网，如果场所 A 的主机 X 要和另一个<br>场所 B 的主机Y通信，IP数据报的源地址是10.1.0.1，目的地址是10.2.0.3。<br>数据报先发送到与互联网相连的路由器 R1，R1对内部数据进行加密，然后重新<br>加上数据报的首部，源地址是路由器 R1 的全球地址 125.1.2.3，目的地址是<br>路由器 R2 的全球地址 194.4.5.6。路由器R2收到数据报后将数据部分进行解<br>密，恢复原来的数据报，此时目的地址为10.2.0.3，就交付给Y <img src="/2020/02/29/ComputerNetwork/37.jpg" alt></p>
-<h3 id="网络地址转换NAT"><a href="#网络地址转换NAT" class="headerlink" title="网络地址转换NAT"></a>网络地址转换NAT</h3><p>专用网内部的主机使用本地 IP 地址又想和互联网上的主机通信时，可以使用<br>NAT来将本地IP转换为全球IP。在以前，NAT将本地 IP 和全球IP 一一对应，<br>这种方式下拥有 n 个全球 IP 地址的专用网内最多只可以同时有n台主机接<br>入互联网。为了更有效地利用全球 IP 地址，现在常用的NAT转换表把传输层<br>的端口号也用上了，使得多个专用网内部的主机共用一个全球 IP 地址。使<br>用端口号的 NAT 也叫做网络地址与端口转换NAPT <img src="/2020/02/29/ComputerNetwork/38.jpg" alt></p>
-<h3 id="路由器"><a href="#路由器" class="headerlink" title="路由器"></a>路由器</h3><p>路由器从功能上可以划分为：路由选择和分组转发。分组转发结构由三个部分<br>组成：交换结构、一组输入端口和一组输出端口 <img src="/2020/02/29/ComputerNetwork/39.jpg" alt></p>
-<h4 id="路由器分组转发的流程"><a href="#路由器分组转发的流程" class="headerlink" title="路由器分组转发的流程"></a>路由器分组转发的流程</h4><p><img src="/2020/02/29/ComputerNetwork/40.jpg" alt></p>
-<ul>
-<li>从数据报的首部提取目的主机的 IP 地址 D，得到目的网络地址 N</li>
-<li>若 N 就是与此路由器直接相连的某个网络地址，则进行直接交付</li>
-<li>若路由表中有目的地址为 D 的特定主机路由，则把数据报传送给表中所指<br>明的下一跳路由器</li>
-<li>若路由表中有到达网络 N 的路由，则把数据报传送给路由表中所指明的下<br>一跳路由器</li>
-<li>若路由表中有一个默认路由，则把数据报传送给路由表中所指明的默认路由器</li>
-<li>报告转发分组出错</li>
-</ul>
+<p>URI的作用像身份证号一样，URL的作用更像家庭住址一样。URL是一种具体的<br>URI，它不仅唯一标识资源，而且还提供了定位该资源的信息</p>
 </div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">高明</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://skysea-gaoming.github.io/2020/02/29/ComputerNetwork/">https://skysea-gaoming.github.io/2020/02/29/ComputerNetwork/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/NetWork/">NetWork</a></div><nav id="pagination"><div class="prev-post pull-left"><a href="/2020/02/29/Redis/"><i class="fa fa-chevron-left">  </i><span>Redis</span></a></div><div class="next-post pull-right"><a href="/2020/02/29/Linux/"><span>Linux</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="disqus_thread"></div><script>var unused = null;
 var disqus_config = function () {
   this.page.url = 'https://skysea-gaoming.github.io/2020/02/29/ComputerNetwork/';
   this.page.identifier = '2020/02/29/ComputerNetwork/';
-  this.page.title = '计算机网络';
+  this.page.title = '应用层总结';
 }
 var d = document, s = d.createElement('script');
 s.src = "https://" + '你的disqus的 short-name' +".disqus.com/embed.js";

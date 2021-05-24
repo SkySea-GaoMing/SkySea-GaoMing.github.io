@@ -1,0 +1,114 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="项目总结"><meta name="keywords" content="项目"><meta name="author" content="高明"><meta name="copyright" content="高明"><title>项目总结 | SkySea-GaoMing</title><link rel="shortcut icon" href="/img/favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.7.0"><link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css?version=1.7.0"><meta name="format-detection" content="telephone=no"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  }
+} </script><meta name="generator" content="Hexo 4.2.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="Toggle article">Toggle site</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#项目简介"><span class="toc-number">1.</span> <span class="toc-text">项目简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#框架搭建"><span class="toc-number">1.1.</span> <span class="toc-text">框架搭建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#项目云端部署"><span class="toc-number">1.2.</span> <span class="toc-text">项目云端部署</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#压测指标"><span class="toc-number">1.3.</span> <span class="toc-text">压测指标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#单机容量问题"><span class="toc-number">1.4.</span> <span class="toc-text">单机容量问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#水平扩展优化"><span class="toc-number">1.5.</span> <span class="toc-text">水平扩展优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分布式会话"><span class="toc-number">1.6.</span> <span class="toc-text">分布式会话</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查询优化之多级缓存"><span class="toc-number">1.7.</span> <span class="toc-text">查询优化之多级缓存</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#redis缓存第一级"><span class="toc-number">1.7.1.</span> <span class="toc-text">redis缓存第一级</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#本地缓存第二级"><span class="toc-number">1.7.2.</span> <span class="toc-text">本地缓存第二级</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#OpenResty-Shared-Dict-Nginx-Lua缓存第三级"><span class="toc-number">1.7.3.</span> <span class="toc-text">OpenResty Shared Dict+Nginx+Lua缓存第三级</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#交易优化"><span class="toc-number">2.</span> <span class="toc-text">交易优化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#交易验证优化"><span class="toc-number">2.1.</span> <span class="toc-text">交易验证优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#库存扣减优化"><span class="toc-number">2.2.</span> <span class="toc-text">库存扣减优化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#索引优化"><span class="toc-number">2.2.1.</span> <span class="toc-text">索引优化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#库存扣减缓存优化"><span class="toc-number">2.2.2.</span> <span class="toc-text">库存扣减缓存优化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#异步扣减库存"><span class="toc-number">2.2.3.</span> <span class="toc-text">异步扣减库存</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#事务型消息"><span class="toc-number">2.3.</span> <span class="toc-text">事务型消息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#库存流水"><span class="toc-number">2.4.</span> <span class="toc-text">库存流水</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#流量削峰"><span class="toc-number">2.5.</span> <span class="toc-text">流量削峰</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#限流—队列泄洪"><span class="toc-number">2.6.</span> <span class="toc-text">限流—队列泄洪</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#防刷限流"><span class="toc-number">2.7.</span> <span class="toc-text">防刷限流</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分布式会话存储策略"><span class="toc-number">3.</span> <span class="toc-text">分布式会话存储策略</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mysql性能提升"><span class="toc-number">4.</span> <span class="toc-text">mysql性能提升</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2762516417,1589137703&amp;fm=26&amp;gp=0.jpg"></div><div class="author-info__name text-center">高明</div><div class="author-info__description text-center">JAVA工程师</div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">Articles</span><span class="pull-right">81</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">Tags</span><span class="pull-right">17</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">Categories</span><span class="pull-right">12</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2333247715,1420619508&amp;fm=26&amp;gp=0.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">SkySea-GaoMing</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a></span><span class="pull-right"></span></div><div id="post-info"><div id="post-title">项目总结</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-05-21</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E7%A7%8B%E6%8B%9B/">秋招</a><span class="post-meta__separator">|</span><i class="fa fa-comment-o post-meta__icon" aria-hidden="true"></i><a href="/2021/05/21/%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/#disqus_thread"><span class="disqus-comment-count" data-disqus-identifier="2021/05/21/项目总结/"></span></a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h2 id="项目简介"><a href="#项目简介" class="headerlink" title="项目简介"></a>项目简介</h2><p>该选课项目，采用多种优化技术，包括分布式扩展、查询多级缓存、<br>交易泄压、流量错峰和防刷限流等，并用Jemeter进行压测</p>
+<h3 id="框架搭建"><a href="#框架搭建" class="headerlink" title="框架搭建"></a>框架搭建</h3><p>Vue+SpringBoot，关系型数据库采用MySQL，非关系型数据库采用Redis，<br>消息队列采用rocketmq</p>
+<h3 id="项目云端部署"><a href="#项目云端部署" class="headerlink" title="项目云端部署"></a>项目云端部署</h3><ol>
+<li>数据库部署在单独的阿里云服务器</li>
+<li>项目打成jar包部署在阿里云服务器</li>
+</ol>
+<h3 id="压测指标"><a href="#压测指标" class="headerlink" title="压测指标"></a>压测指标</h3><ol>
+<li>TPS(Transactions Per Second)<br>即服务器每秒处理的事务数。TPS包括一条消息入和一条消息出，加上一次用<br>户数据库访问。TPS是软件测试结果的测量单位。一个事务是指一个客户机向<br>服务器发送请求然后服务器做出反应的过程。客户机在发送请求时开始计时<br>，收到服务器响应后结束计时，以此来计算使用的时间和完成的事务个数</li>
+<li>QPS<br>每秒查询率，是一台服务器每秒能够响应的查询次数（数据库中的每秒执行<br>查询sql的次数）</li>
+</ol>
+<h3 id="单机容量问题"><a href="#单机容量问题" class="headerlink" title="单机容量问题"></a>单机容量问题</h3><p>CPU使用率高，memory占用增加，网络带宽使用增加</p>
+<h3 id="水平扩展优化"><a href="#水平扩展优化" class="headerlink" title="水平扩展优化"></a>水平扩展优化</h3><ol>
+<li>Ajax请求通过Nginx反向代理到两台应用服务器，实现负载分担</li>
+<li>Nginx服务器与前端的连接是长连接，但是与后端的代理服务器，默认是<br>短连接，长连接优化</li>
+</ol>
+<h3 id="分布式会话"><a href="#分布式会话" class="headerlink" title="分布式会话"></a>分布式会话</h3><p>Spring Boot在Redis存入的SessionId有多项，不够简洁，通过UUID生成登<br>录token，将token和UserModel存到Redis服务器上，redis是一个集中式的<br>缓存中间件，登录凭证必须是唯一不能重复的，设置超时时间是一个小时。将<br>生成的token返回给前端，前端在登录成功之后将token存放到localStorage<br>里面</p>
+<h3 id="查询优化之多级缓存"><a href="#查询优化之多级缓存" class="headerlink" title="查询优化之多级缓存"></a>查询优化之多级缓存</h3><p>所谓缓存，就是将磁盘中的热点数据，暂时存到内存里面，以后查询直接从<br>内存中读取，减少磁盘I/O，提高速度。所谓多级，就是在多个层次设置缓<br>存，一个层次没有就去另一个层次查询</p>
+<h4 id="redis缓存第一级"><a href="#redis缓存第一级" class="headerlink" title="redis缓存第一级"></a>redis缓存第一级</h4><p>controller层缓存在service层才能获取的数据</p>
+<ol>
+<li>每次查询课程详情的时候都需要查询课程的基本信息、容量信息和活动信息，<br>根据课程id到redis中获取，使用opsForValue方法设置数据到redis中，设置<br>10分钟失效时间</li>
+</ol>
+<h4 id="本地缓存第二级"><a href="#本地缓存第二级" class="headerlink" title="本地缓存第二级"></a>本地缓存第二级</h4><p>Redis缓存虽好，但是有网络I/O，没有本地缓存快，缓存热点数据，这里使用<br>的JVM内存，由于JVM内存有限，仅存放多次查询的数据，脏读不敏感。<br>本地缓存，说白了就是一个HashMap，但是HashMap不支持并发读写，肯定是不<br>行的。j.u.c包里面的ConcurrentHashMap虽然也能用，但是无法高效处理过期<br>时限、没有淘汰机制等问题，所以这里使用了Google的Guava Cache方案。<br>Guava Cache除了线程安全外，还可以控制超时时间，提供淘汰机制。</p>
+<h4 id="OpenResty-Shared-Dict-Nginx-Lua缓存第三级"><a href="#OpenResty-Shared-Dict-Nginx-Lua缓存第三级" class="headerlink" title="OpenResty Shared Dict+Nginx+Lua缓存第三级"></a>OpenResty Shared Dict+Nginx+Lua缓存第三级</h4><p>通过Redis缓存，避免了MySQL大量的重复查询，提高了部分效率；通过本地缓存<br>，减少了与Redis服务器的网络I/O，提高了大量效率。但实际上，前端（客户端<br>）请求Nginx服务器，Nginx有分发过程，需要去请求后面的两台应用服务器，<br>有一定网络I/O，直接把热点数据存放到Nginx服务器上。<br>Nginx Proxy Cache的原理是基于文件系统的，它把后端返回的响应内容，作为<br>文件存放在Nginx指定目录下。依靠内存缓存文件地址。<br>可以使用Nginx lua脚本来做缓存</p>
+<h2 id="交易优化"><a href="#交易优化" class="headerlink" title="交易优化"></a>交易优化</h2><h3 id="交易验证优化"><a href="#交易验证优化" class="headerlink" title="交易验证优化"></a>交易验证优化</h3><p>交易验证完全依赖于数据库还有库存行锁的问题，首先要去数据库查询课程信息<br>，而在查询课程信息的过程中，又要去查询秒杀活动信息，最后还要查询学生信<br>息，减库存操作还存在行锁阻塞，所以下单接口并发性能很低</p>
+<ol>
+<li>用户校验缓存优化 先从Redis里面获取用户信息，没有再去数据库里查</li>
+<li>活动校验缓存优化 活动信息，由于具有时效性，需要具备紧急下线的能力<br>，可以编写一个接口，清除活动信息的缓存</li>
+</ol>
+<h3 id="库存扣减优化"><a href="#库存扣减优化" class="headerlink" title="库存扣减优化"></a>库存扣减优化</h3><h4 id="索引优化"><a href="#索引优化" class="headerlink" title="索引优化"></a>索引优化</h4><p>为课程id字段添加一个唯一索引，这样在修改的时候，只会锁行</p>
+<h4 id="库存扣减缓存优化"><a href="#库存扣减缓存优化" class="headerlink" title="库存扣减缓存优化"></a>库存扣减缓存优化</h4><p>之前下单，是直接操作数据库，一旦秒杀活动开始，大量的流量涌入扣减库<br>存接口，数据库压力很大。那么先在缓存中下单，如果要在缓存中扣减库存<br>，需要解决两个问题，第一个是活动开始前，将数据库的库存信息，同步<br>到缓存中。第二个是下单之后，要将缓存中的库存信息同步到数据库中</p>
+<ol>
+<li>活动发布同库存进缓存</li>
+<li>异步扣减库存 在缓存中减库存，这里的问题就是数据库记录不一致</li>
+<li>异步消息扣减数据库内库存</li>
+</ol>
+<h4 id="异步扣减库存"><a href="#异步扣减库存" class="headerlink" title="异步扣减库存"></a>异步扣减库存</h4><ol>
+<li>完成一次减库存操作之后发送一条异步库存扣减消息，然后在异步回调<br>最终实现数据库扣减库存</li>
+<li>发送异步消息在最后一步执行，因为订单入库、增加销量的操作可能失败<br>，如果失败那么redis和已经发送的异步消息无法回滚，会导致数据库的不<br>一致</li>
+<li>Spring的@Transactional标签，会在事务方法返回后才提交，如果提<br>交的过程中，发生了异常，可能是网络或者磁盘容量问题，则数据库回滚<br>，但是Redis库存已扣，还是无法保证一致性。我们需要在事务提交成功<br>后，再发送异步消息</li>
+</ol>
+<h3 id="事务型消息"><a href="#事务型消息" class="headerlink" title="事务型消息"></a>事务型消息</h3><p>上面的做法，依然不能保证万无一失。假设现在事务提交成功了，等着执行<br>afterCommit方法，这个时候突然宕机了，那么订单已然入库，销量已然<br>增加，但是去数据库扣减库存的这条消息却“丢失”了。这里就需要引入<br>RocketMQ的事务型消息。<br>所谓事务型消息，也会被发送到消息队列里面，这条消息处于prepared状态<br>，broker会接受到这条消息，但是不会把这条消息给消费者消费。</p>
+<ol>
+<li>在事务型消息中去执行下单操作，下单失败，则消息回滚，不会去数据<br>库扣减库存。下单成功，则消息被消费，扣减数据库库存</li>
+<li>OrderController里面直接调用transactionAsyncReduceStock方法<br>，发送一个事务型消息，然后在事务型消息中调用createOrder方法，进<br>行下单</li>
+</ol>
+<h3 id="库存流水"><a href="#库存流水" class="headerlink" title="库存流水"></a>库存流水</h3><p>当执行orderService.createOrder后，突然又宕机了，根本没有返回，这<br>个时候事务型消息就会进入UNKNOWN状态，我们需要处理这个状态。<br>在匿名类TransactionListener里面，还需要覆写checkLocalTransaction<br>方法，这个方法就是用来处理UNKNOWN状态的。应该怎么处理？这就需要引入<br>库存流水。引入库存流水，来记录库存的状态，以便在事务型消息处于不同状<br>态时进行处理</p>
+<ol>
+<li>在下单之前初始化一条库存流水，对应的库存流水就可以追踪对应的异步<br>扣减消息</li>
+<li>执行Redis扣减库存、订单入库、销量增加的操作，当这些操作都完成后，<br>就说明下单完成了，等着异步更新数据库了。那么需要修改订单流水的状态</li>
+<li>设置一个库存售罄的标识，售罄之后就不会进行之后下单的操作，售罄<br>时通知各系统售罄</li>
+</ol>
+<h3 id="流量削峰"><a href="#流量削峰" class="headerlink" title="流量削峰"></a>流量削峰</h3><ol>
+<li>引入秒杀令牌，秒杀接口需要依靠令牌才能进入，秒杀的令牌由秒杀活<br>动模块负责生成，用户风控策略和库存售罄判断前置到令牌发送中</li>
+<li>引入秒杀大闸进行限流，控制令牌数量</li>
+</ol>
+<h3 id="限流—队列泄洪"><a href="#限流—队列泄洪" class="headerlink" title="限流—队列泄洪"></a>限流—队列泄洪</h3><ol>
+<li>让多余的请求排队等待。排队有时候比多线程并发效率更高，使用线程<br>池处理下单请求</li>
+</ol>
+<h3 id="防刷限流"><a href="#防刷限流" class="headerlink" title="防刷限流"></a>防刷限流</h3><ol>
+<li>验证码 之前的流程是，用户点击下单后，会直接拿到令牌然后执行下单<br>流程。现在，用户点击下单后，前端会弹出一个“验证码”，用户输入之后，<br>才能请求下单接口。限制部分流量</li>
+<li>限并发 维护一个全局计数器，当请求进入接口时，计数器-1，并且判断<br>计数器是否&gt;0，大于0则处理请求，小于0则拒绝等待</li>
+<li>令牌桶 客户端请求接口，必须先从令牌桶中获取令牌，令牌是由一个“定<br>时器”定期填充的。在一个时间内，令牌的数量是有限的。令牌桶的大小为100<br>，那么TPS就为100，使用RateLimiter实现限流</li>
+</ol>
+<h2 id="分布式会话存储策略"><a href="#分布式会话存储策略" class="headerlink" title="分布式会话存储策略"></a>分布式会话存储策略</h2><ol>
+<li>分布式会话持久性管理</li>
+</ol>
+<ul>
+<li>安全性管理 用安全传输的https</li>
+<li>自定义协议</li>
+</ul>
+<ol start="2">
+<li>强登录态和与弱登录态</li>
+</ol>
+<ul>
+<li>强登录态 </li>
+<li>无登录态</li>
+<li>弱登录态</li>
+</ul>
+<ol start="3">
+<li>SSO单点登录</li>
+</ol>
+<ul>
+<li>同域名</li>
+<li>根域名相同子域名不同</li>
+<li>域名都不相同</li>
+</ul>
+<h2 id="mysql性能提升"><a href="#mysql性能提升" class="headerlink" title="mysql性能提升"></a>mysql性能提升</h2><ol>
+<li>mysql应用性能优化扩展</li>
+<li>mysql单机配置性能优化扩展</li>
+<li>mysql分布式配置性能优化扩展</li>
+</ol>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">高明</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://skysea-gaoming.github.io/2021/05/21/%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/">https://skysea-gaoming.github.io/2021/05/21/%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E9%A1%B9%E7%9B%AE/">项目</a></div><nav id="pagination"><div class="prev-post pull-left"><a href="/2021/05/24/shell%E6%80%BB%E7%BB%93/"><i class="fa fa-chevron-left">  </i><span>Shell总结</span></a></div><div class="next-post pull-right"><a href="/2021/05/17/Spring%E6%80%BB%E7%BB%93/"><span>Spring总结</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="disqus_thread"></div><script>var unused = null;
+var disqus_config = function () {
+  this.page.url = 'https://skysea-gaoming.github.io/2021/05/21/%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/';
+  this.page.identifier = '2021/05/21/项目总结/';
+  this.page.title = '项目总结';
+}
+var d = document, s = d.createElement('script');
+s.src = "https://" + '你的disqus的 short-name' +".disqus.com/embed.js";
+s.setAttribute('data-timestamp', '' + +new Date());
+(d.head || d.body).appendChild(s);</script><script id="dsq-count-scr" src="https://你的disqus的 short-name.disqus.com/count.js" async></script></div></div><footer class="footer-bg" style="background-image: url(https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2333247715,1420619508&amp;fm=26&amp;gp=0.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2013 - 2021 By 高明</div><div class="framework-info"><span>Driven - </span><a href="http://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody" target="_blank" rel="noopener"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file-o"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="/js/third-party/anime.min.js"></script><script src="/js/third-party/jquery.min.js"></script><script src="/js/third-party/jquery.fancybox.min.js"></script><script src="/js/third-party/velocity.min.js"></script><script src="/js/third-party/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.7.0"></script><script src="/js/fancybox.js?version=1.7.0"></script><script src="/js/sidebar.js?version=1.7.0"></script><script src="/js/copy.js?version=1.7.0"></script><script src="/js/fireworks.js?version=1.7.0"></script><script src="/js/transition.js?version=1.7.0"></script><script src="/js/scroll.js?version=1.7.0"></script><script src="/js/head.js?version=1.7.0"></script><script>if(/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+  $('#top-container').addClass('is-mobile')
+}</script></body></html>

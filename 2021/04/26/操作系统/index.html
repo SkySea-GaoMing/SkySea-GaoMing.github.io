@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="操作系统"><meta name="keywords" content="System"><meta name="author" content="高明"><meta name="copyright" content="高明"><title>操作系统 | SkySea-GaoMing</title><link rel="shortcut icon" href="/img/favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.7.0"><link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css?version=1.7.0"><meta name="format-detection" content="telephone=no"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><script>var GLOBAL_CONFIG = { 
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="操作系统总结1"><meta name="keywords" content="System"><meta name="author" content="高明"><meta name="copyright" content="高明"><title>操作系统总结1 | SkySea-GaoMing</title><link rel="shortcut icon" href="/img/favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.7.0"><link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css?version=1.7.0"><meta name="format-detection" content="telephone=no"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><script>var GLOBAL_CONFIG = { 
   root: '/',
   algolia: undefined,
   localSearch: undefined,
@@ -7,204 +7,144 @@
     error: 'Copy error',
     noSupport: 'The browser does not support'
   }
-} </script><meta name="generator" content="Hexo 4.2.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="Toggle article">Toggle site</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">1.</span> <span class="toc-text">参考</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#操作系统概述"><span class="toc-number">2.</span> <span class="toc-text">操作系统概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#常见操作系统"><span class="toc-number">2.1.</span> <span class="toc-text">常见操作系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#操作系统层次结构"><span class="toc-number">2.2.</span> <span class="toc-text">操作系统层次结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#操作系统的概念"><span class="toc-number">2.3.</span> <span class="toc-text">操作系统的概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#操作系统功能和目标"><span class="toc-number">2.4.</span> <span class="toc-text">操作系统功能和目标</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#操作系统的特征"><span class="toc-number">3.</span> <span class="toc-text">操作系统的特征</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#并发"><span class="toc-number">3.1.</span> <span class="toc-text">并发</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#共享"><span class="toc-number">3.2.</span> <span class="toc-text">共享</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#异步"><span class="toc-number">3.3.</span> <span class="toc-text">异步</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#操作系统的分类"><span class="toc-number">4.</span> <span class="toc-text">操作系统的分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#操作系统的运行机制和体系结构"><span class="toc-number">5.</span> <span class="toc-text">操作系统的运行机制和体系结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#操作系统内核"><span class="toc-number">5.1.</span> <span class="toc-text">操作系统内核</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#操作系统体系结构类比"><span class="toc-number">5.2.</span> <span class="toc-text">操作系统体系结构类比</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#操作系统用户态和核心态的转换"><span class="toc-number">5.3.</span> <span class="toc-text">操作系统用户态和核心态的转换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#中断和异常"><span class="toc-number">6.</span> <span class="toc-text">中断和异常</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#系统调用"><span class="toc-number">7.</span> <span class="toc-text">系统调用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进程"><span class="toc-number">8.</span> <span class="toc-text">进程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#程序"><span class="toc-number">8.1.</span> <span class="toc-text">程序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程的概念"><span class="toc-number">8.2.</span> <span class="toc-text">进程的概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程和程序的区别"><span class="toc-number">8.3.</span> <span class="toc-text">进程和程序的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程的定义"><span class="toc-number">8.4.</span> <span class="toc-text">进程的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程的特征"><span class="toc-number">8.5.</span> <span class="toc-text">进程的特征</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程的组成"><span class="toc-number">8.6.</span> <span class="toc-text">进程的组成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程的组织"><span class="toc-number">8.7.</span> <span class="toc-text">进程的组织</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进程的状态"><span class="toc-number">9.</span> <span class="toc-text">进程的状态</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#进程的状态-1"><span class="toc-number">9.1.</span> <span class="toc-text">进程的状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#状态切换"><span class="toc-number">9.2.</span> <span class="toc-text">状态切换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#原语实现对进程的控制"><span class="toc-number">10.</span> <span class="toc-text">原语实现对进程的控制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#进程控制"><span class="toc-number">10.1.</span> <span class="toc-text">进程控制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程的组织-1"><span class="toc-number">10.2.</span> <span class="toc-text">进程的组织</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程控制-1"><span class="toc-number">10.3.</span> <span class="toc-text">进程控制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程控制原语"><span class="toc-number">10.4.</span> <span class="toc-text">进程控制原语</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进程的通信"><span class="toc-number">11.</span> <span class="toc-text">进程的通信</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#进程通信概述"><span class="toc-number">11.1.</span> <span class="toc-text">进程通信概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#共享存储"><span class="toc-number">11.2.</span> <span class="toc-text">共享存储</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#管道通信"><span class="toc-number">11.3.</span> <span class="toc-text">管道通信</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#消息传递"><span class="toc-number">11.4.</span> <span class="toc-text">消息传递</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#线程"><span class="toc-number">12.</span> <span class="toc-text">线程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#引入线程"><span class="toc-number">12.1.</span> <span class="toc-text">引入线程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#线程概述"><span class="toc-number">12.2.</span> <span class="toc-text">线程概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程线程比较"><span class="toc-number">12.3.</span> <span class="toc-text">进程线程比较</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#线程属性"><span class="toc-number">12.4.</span> <span class="toc-text">线程属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#线程的实现方式"><span class="toc-number">12.5.</span> <span class="toc-text">线程的实现方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多线程模型"><span class="toc-number">12.6.</span> <span class="toc-text">多线程模型</span></a></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2762516417,1589137703&amp;fm=26&amp;gp=0.jpg"></div><div class="author-info__name text-center">高明</div><div class="author-info__description text-center">JAVA工程师</div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">Articles</span><span class="pull-right">75</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">Tags</span><span class="pull-right">15</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">Categories</span><span class="pull-right">10</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2333247715,1420619508&amp;fm=26&amp;gp=0.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">SkySea-GaoMing</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a></span><span class="pull-right"></span></div><div id="post-info"><div id="post-title">操作系统</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-04-26</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a><span class="post-meta__separator">|</span><i class="fa fa-comment-o post-meta__icon" aria-hidden="true"></i><a href="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/#disqus_thread"><span class="disqus-comment-count" data-disqus-identifier="2021/04/26/操作系统/"></span></a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://blog.csdn.net/weixin_43914604/article/details/104415990" target="_blank" rel="noopener">https://blog.csdn.net/weixin_43914604/article/details/104415990</a></p>
-<h2 id="操作系统概述"><a href="#操作系统概述" class="headerlink" title="操作系统概述"></a>操作系统概述</h2><h3 id="常见操作系统"><a href="#常见操作系统" class="headerlink" title="常见操作系统"></a>常见操作系统</h3><p>Windows Android ios MacOS Linux</p>
-<h3 id="操作系统层次结构"><a href="#操作系统层次结构" class="headerlink" title="操作系统层次结构"></a>操作系统层次结构</h3><p><img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/1.jpg" alt></p>
-<h3 id="操作系统的概念"><a href="#操作系统的概念" class="headerlink" title="操作系统的概念"></a>操作系统的概念</h3><p><img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/2.jpg" alt></p>
-<ol>
-<li>是系统最基本最核心的软件，属于系统软件</li>
-<li>控制和管理整个计算机的硬件和软件资源</li>
-<li>合理的组织、调度计算机的工作与资源的分配</li>
-<li>为用户和其它软件提供方便的接口和环境</li>
+} </script><meta name="generator" content="Hexo 4.2.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="Toggle article">Toggle site</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">1.</span> <span class="toc-text">参考</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#操作系统概述"><span class="toc-number">2.</span> <span class="toc-text">操作系统概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是操作系统"><span class="toc-number">2.1.</span> <span class="toc-text">什么是操作系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#命令接口和程序接口"><span class="toc-number">2.2.</span> <span class="toc-text">命令接口和程序接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#操作系统的功能"><span class="toc-number">2.3.</span> <span class="toc-text">操作系统的功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#操作系统的特征"><span class="toc-number">2.4.</span> <span class="toc-text">操作系统的特征</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用户态和内核态"><span class="toc-number">2.5.</span> <span class="toc-text">用户态和内核态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#系统调用"><span class="toc-number">2.6.</span> <span class="toc-text">系统调用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进程和线程"><span class="toc-number">3.</span> <span class="toc-text">进程和线程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#进程"><span class="toc-number">3.1.</span> <span class="toc-text">进程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PCB"><span class="toc-number">3.2.</span> <span class="toc-text">PCB</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程的状态"><span class="toc-number">3.3.</span> <span class="toc-text">进程的状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程间通信的方式"><span class="toc-number">3.4.</span> <span class="toc-text">进程间通信的方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程和线程的区别"><span class="toc-number">3.5.</span> <span class="toc-text">进程和线程的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#线程间的同步方式"><span class="toc-number">3.6.</span> <span class="toc-text">线程间的同步方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程的调度算法"><span class="toc-number">3.7.</span> <span class="toc-text">进程的调度算法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进程的同步和互斥"><span class="toc-number">4.</span> <span class="toc-text">进程的同步和互斥</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2762516417,1589137703&amp;fm=26&amp;gp=0.jpg"></div><div class="author-info__name text-center">高明</div><div class="author-info__description text-center">JAVA工程师</div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">Articles</span><span class="pull-right">81</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">Tags</span><span class="pull-right">17</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">Categories</span><span class="pull-right">12</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2333247715,1420619508&amp;fm=26&amp;gp=0.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">SkySea-GaoMing</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a></span><span class="pull-right"></span></div><div id="post-info"><div id="post-title">操作系统总结1</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-04-26</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E7%A7%8B%E6%8B%9B/">秋招</a><span class="post-meta__separator">|</span><i class="fa fa-comment-o post-meta__icon" aria-hidden="true"></i><a href="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/#disqus_thread"><span class="disqus-comment-count" data-disqus-identifier="2021/04/26/操作系统/"></span></a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://blog.csdn.net/weixin_43914604/article/details/104415990" target="_blank" rel="noopener">https://blog.csdn.net/weixin_43914604/article/details/104415990</a></p>
+<h2 id="操作系统概述"><a href="#操作系统概述" class="headerlink" title="操作系统概述"></a>操作系统概述</h2><h3 id="什么是操作系统"><a href="#什么是操作系统" class="headerlink" title="什么是操作系统"></a>什么是操作系统</h3><ol>
+<li>操作系统本质上是一个运行在计算机上的软件程序 ，用于管理计算机硬<br>件和软件资源</li>
+<li>操作系统的内核是操作系统的核心部分，它负责系统的内存管理，硬件设<br>备的管理，文件系统的管理以及应用程序的管理</li>
 </ol>
-<h3 id="操作系统功能和目标"><a href="#操作系统功能和目标" class="headerlink" title="操作系统功能和目标"></a>操作系统功能和目标</h3><p><img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/3.jpg" alt></p>
-<ol>
-<li>作为计算机系统资源的管理者<br>管理软硬件资源、合理的组织、调度计算机的工作与资源的分配</li>
+<h3 id="命令接口和程序接口"><a href="#命令接口和程序接口" class="headerlink" title="命令接口和程序接口"></a>命令接口和程序接口</h3><ol>
+<li>命令接口：用户可以直接使用的，利用这些操作命令来组织和控制作业的执行</li>
+<li>程序接口：用户通过程序间接使用的，可以使用它们来请求操作系统服务</li>
 </ol>
-<ul>
-<li>处理器管理<br>在多道程序环境下，cpu的分配和运行都以进程（或线程）为基本单位<br>，因此对cpu的管理可理解为对进程的管理。进程管理的主要功能包括<br>进程控制、进程同步、进程通信、死锁处理、处理机调度等</li>
-<li>存储器管理<br>为多道程序的运行提供良好的环境，方便用户使用及提高内存的利用率<br>，主要包括内存分配与回收、地址映射、内存保护与共享和内存扩充等<br>功能</li>
-<li>文件管理<br>计算机中所有的信息都是以文件的形式存在的，操作系统中负责文件的<br>管理的部分称为文件系统，文件管理包括文件存储空间的管理、目录管<br>理及文件读写管理和保护等</li>
-<li>设备管理<br>设备管理的主要任务是完成用户的I/O请求，方便用户使用各种设备，<br>并提高设备的利用率，主要包括缓存管理、设备分配、设备处理和虚拟<br>设备等功能</li>
-</ul>
-<ol start="2">
-<li>作为用户与计算机硬件系统之间的接口<br>为了让用户方便、快捷、可靠的操作计算机硬件并执行自己的程序，操<br>作系统提供了用户接口操作系统提供的接口分为两类：命令接口和程<br>序接口。  系统调用=系统调用命令=广义指令</li>
+<h3 id="操作系统的功能"><a href="#操作系统的功能" class="headerlink" title="操作系统的功能"></a>操作系统的功能</h3><ol>
+<li>处理机管理：处理机分配都是以进程为单位，所以处理机管理也被看<br>做是进程管理。包括进程控制，进程同步，进程通信和进程调度</li>
+<li>存储器管理：内存分配，内存保护，地址映射，内存扩充</li>
+<li>设备管理：管理所有外围设备，包括完成用户的IO请求，为用户进程<br>分配IO设备，提高IO设备利用率，提高IO速度，方便IO的使用</li>
+<li>文件管理：管理用户文件和系统文件，方便使用同时保证安全性。包括<br>：磁盘存储空间管理，目录管理，文件读写管理以及文件共享和保护</li>
+<li>提供用户接口：程序接口（如API）和用户接口（如GUI）</li>
+</ol>
+<h3 id="操作系统的特征"><a href="#操作系统的特征" class="headerlink" title="操作系统的特征"></a>操作系统的特征</h3><ol>
+<li>两个或多个事件在同一时间间隔内发生，这些事件在宏观上是同时发生的，在<br>微观上是交替发生的，操作系统的并发性指系统中同时存在着多个运行的程序</li>
+<li>并行：两个或多个事件在同一时刻发生</li>
+<li>资源共享即共享，是指系统中的资源可以供内存中多个并发执行的进程共同使用</li>
 </ol>
 <ul>
-<li>命令接口：用户可以直接使用的，利用这些操作命令来组织和控制<br>作业的执行。命令接口分为两类：联机命令接口和脱机命令接口，用<br>户可以直接调用</li>
-<li><ul>
-<li>联机命令接口：又称交互式命令接口，适用于分时或实时系统的接<br>口，由一组键盘操作命令组成。用户输入一条指令，操作系统就执行一<br>条指令 <img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/4.jpg" alt></li>
-</ul>
-</li>
-<li><ul>
-<li>脱机命令接口：又称批处理接口，使用于批处理系统，由一组作业<br>控制命令组成。用户输入一堆指令，操作系统运行一堆指令。在操作系<br>统运行这些命令时用户不可干预。批处理(Batch)，也称为批处理脚本<br>。顾名思义，批处理就是对某对象进行批量的处理，通常被认为是一种<br>简化的脚本语言，它应用于DOS和Windows系统中。批处理文件的扩展<br>名为bat <img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/5.jpg" alt></li>
-</ul>
-</li>
-<li>程序接口：用户通过程序间接使用的，编程人员可以使用它们来请<br>求操作系统服务</li>
-<li><ul>
-<li>由一组系统调用（也称广义指令）组成</li>
-</ul>
-</li>
-<li><ul>
-<li>用户通过在程序中使用这些系统调用来请求操作系统为其提供服务<br>，只能通过用户程序间接调用</li>
-</ul>
-</li>
-<li><ul>
-<li>如使用各种外部设备、申请分配和回收内存及其它各种要求 <img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/6.jpg" alt><br>动态链接库英文为DLL，是Dynamic Link Library的缩写。DLL是一个<br>包含可由多个程序，同时使用的代码和数据的库</li>
-</ul>
-</li>
-<li><ul>
-<li>比如常见的图形用户界面程序接口GUI <img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/7.jpg" alt></li>
-</ul>
-</li>
-</ul>
-<ol start="3">
-<li>作为扩充机器（虚拟机）</li>
-</ol>
-<ul>
-<li>没有任何软件支持的计算机称为裸机</li>
-<li>覆盖了软件的机器称为扩充机器或虚拟机</li>
-</ul>
-<h2 id="操作系统的特征"><a href="#操作系统的特征" class="headerlink" title="操作系统的特征"></a>操作系统的特征</h2><p>思维导图 <img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/8.jpg" alt></p>
-<h3 id="并发"><a href="#并发" class="headerlink" title="并发"></a>并发</h3><ol>
-<li>并发 两个或多个事件在同一时间间隔内发生，这些事件在宏观上是同<br>时发生的，在微观上是交替发生的，操作系统的并发性指系统中同时存在<br>着多个运行的程序</li>
-<li>并行 两个或多个事件在同一时刻发生</li>
-<li>一个单核(CPU)同一时刻只能执行一个程序，因此操作系统会协调多个<br>程序使他们交替进行（这些程序在宏观上是同时发生的，在微观上是交替<br>进行的）</li>
-<li>操作系统是伴随着“多道程序技术出现的”，因此操作系统和并发是一同<br>诞生的</li>
-<li>在如今的计算机中，一般都是多核cpu的，即在同一时刻可以并行执行<br>多个程序 <img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/9.jpg" alt></li>
-</ol>
-<h3 id="共享"><a href="#共享" class="headerlink" title="共享"></a>共享</h3><ol>
-<li>资源共享即共享，是指系统中的资源可以供内存中多个并发执行的进程<br>共同使用</li>
-<li>共享分为两类：互斥共享和同时共享</li>
-</ol>
-<ul>
-<li>互斥共享</li>
-<li><ul>
-<li>计算机中的某个资源在一段时间内只能允许一个进程访问，别的进程没<br>有使用权</li>
-</ul>
-</li>
-<li><ul>
-<li>临界资源(独占资源)：在一段时间内只允许一个进程访问的资源，计算<br>机中大多数物理设备及某些软件中的栈、变量和表格都属于临界资源，它们<br>被要求互斥共享</li>
-</ul>
-</li>
-<li>同时共享</li>
-<li><ul>
-<li>计算机中的某个资源在在一段时间内可以同时允许多个进程访问</li>
-</ul>
-</li>
-<li><ul>
-<li>同时共享通常要求一个请求分为几个时间片段间隔的完成，即交替进行<br>，“分时共享”</li>
-</ul>
-</li>
-<li><ul>
-<li>这里的同时指在宏观上是同时的，在微观上是交替进行访问的，只是cpu<br>处理速度很快，我们感觉不到，在宏观上感觉是在同时进行</li>
-</ul>
-</li>
-<li>并发性和共享性互为存在条件 <img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/10.jpg" alt></li>
-</ul>
-<ol start="3">
-<li>虚拟<br>多道程序设计：是指在计算机内存中同时存放几道相互独立的程序，使它们<br>在管理程序控制之下，相互穿插的运行。两个或两个以上程序在计算机系统<br>中同处于开始到结束之间的状态。这就称为多道程序设计。多道程序技术运<br>行的特征：多道、宏观上并行、微观上串行</li>
-</ol>
-<ul>
-<li>虚拟是把一个物理上的实体变为若干逻辑上的对应物</li>
-<li>物理实体（前者）是实际存在的；而后者是虚的，是用户感觉上的事务</li>
-<li>虚拟技术：用于实现虚拟的技术</li>
-<li>虚拟处理器（CPU）：通过多道程序设计技术，采用让多道程序并发执行<br>的方法，分时来使用一个CPU，实际物理上只有一个CPU，但是用户感觉到<br>有多个CPU</li>
-<li>虚拟存储器：从逻辑上扩充存储器容量，用户感觉到的但实际不存在的存<br>储器</li>
-<li>虚拟设备：将一台物理设备虚拟为逻辑上的多台设备，使多个用户在同一<br>时间段内访问同一台设备，即同时共享，用户宏观上感觉是同时的，但实际<br>上是微观交替访问同一台设备的</li>
-<li>操作系统的虚拟技术科归纳为</li>
-<li><ul>
-<li>时分复用技术：如处理器的分时共享</li>
-</ul>
-</li>
-<li><ul>
-<li>空间复用技术：如虚拟存储器</li>
-</ul>
-</li>
-</ul>
-<h3 id="异步"><a href="#异步" class="headerlink" title="异步"></a>异步</h3><p>多道程序环境允许多个程序并发执行，但由于资源有限，如cpu只有一个，进<br>程的执行并不是一贯到底的，而是走走停停的，它以不可预知的速度向前推进</p>
-<ul>
-<li>比如A进程正在占用CPU计算，B进程这时也想占用CPU计算，B进程只有等<br>，等A进程算完了，A进程去访问磁盘资源了，这时B进程再占用CPU 进行计<br>算，B进程还没计算完，A进程从磁盘取出资源了，A进程发现B 这时在占用<br>CPU，这时A进程就需要等待，等B算完后再继续到CPU 中进行计算。由于每<br>个进程占用资源的时间不固定，所以进程的执行以不可预知的速度前进</li>
-<li>同步强调的是顺序性，谁先谁后。异步则不存在这种顺序性</li>
-</ul>
-<h2 id="操作系统的分类"><a href="#操作系统的分类" class="headerlink" title="操作系统的分类"></a>操作系统的分类</h2><p>思维导图 <img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/11.jpg" alt> <img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/12.jpg" alt><br>操作系统发展历程 <img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/13.jpg" alt></p>
-<h2 id="操作系统的运行机制和体系结构"><a href="#操作系统的运行机制和体系结构" class="headerlink" title="操作系统的运行机制和体系结构"></a>操作系统的运行机制和体系结构</h2><p>思维导图 <img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/14.jpg" alt> <img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/15.jpg" alt></p>
-<h3 id="操作系统内核"><a href="#操作系统内核" class="headerlink" title="操作系统内核"></a>操作系统内核</h3><p><img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/16.jpg" alt></p>
-<h3 id="操作系统体系结构类比"><a href="#操作系统体系结构类比" class="headerlink" title="操作系统体系结构类比"></a>操作系统体系结构类比</h3><p><img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/17.jpg" alt></p>
-<h3 id="操作系统用户态和核心态的转换"><a href="#操作系统用户态和核心态的转换" class="headerlink" title="操作系统用户态和核心态的转换"></a>操作系统用户态和核心态的转换</h3><p><img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/18.jpg" alt></p>
-<h2 id="中断和异常"><a href="#中断和异常" class="headerlink" title="中断和异常"></a>中断和异常</h2><p>思维导图 <img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/19.jpg" alt> <img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/20.jpg" alt></p>
-<h2 id="系统调用"><a href="#系统调用" class="headerlink" title="系统调用"></a>系统调用</h2><p>思维导图 <img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/21.jpg" alt><br>系统调用和库函数的区别 <img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/22.jpg" alt><br>系统调用的执行过程 <img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/23.jpg" alt></p>
-<h2 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h2><h3 id="程序"><a href="#程序" class="headerlink" title="程序"></a>程序</h3><p>就是一个指令序列。程序的代码放在程序段内，程序运行过程处理的数据<br>放在数据段内</p>
-<h3 id="进程的概念"><a href="#进程的概念" class="headerlink" title="进程的概念"></a>进程的概念</h3><p><img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/24.jpg" alt></p>
-<h3 id="进程和程序的区别"><a href="#进程和程序的区别" class="headerlink" title="进程和程序的区别"></a>进程和程序的区别</h3><ol>
-<li>进程是动态的，程序是静态的</li>
-<li>进程有独立性，能并发执行，程序不能并发执行</li>
-<li>二者无一一对应关系</li>
-<li>进程异步运行，会相互制约，程序不具备此特征，但是进程与程序又有<br>密切的联系：进程不能脱离具体程序而虚设，程序规定了相应进程所要完<br>成的动作</li>
-<li>组成不同。进程包含PCB、程序段、数据段。程序包含数据和指令代码</li>
-<li>程序是一个包含了所有指令和数据的静态实体。本身除占用磁盘的存储<br>空间外，并不占用系统如CPU、内存等运行资源</li>
-<li>进程由程序段、数据段和PCB构成,会占用系统如CPU、内存等运行资源。</li>
-<li>一个程序可以启动多个进程来共同完成。联系：进程不能脱离具体程序<br>而虚设，程序规定了相应进程所要完成的动作</li>
-</ol>
-<h3 id="进程的定义"><a href="#进程的定义" class="headerlink" title="进程的定义"></a>进程的定义</h3><p><img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/25.jpg" alt></p>
-<h3 id="进程的特征"><a href="#进程的特征" class="headerlink" title="进程的特征"></a>进程的特征</h3><p><img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/26.jpg" alt></p>
-<h3 id="进程的组成"><a href="#进程的组成" class="headerlink" title="进程的组成"></a>进程的组成</h3><p>进程由程序段、数据段和PCB组成</p>
-<ol>
-<li>PCB<br>PCB中记录了操作系统所需的，用于描述进程的当前情况以及控制进程运行<br>的全部信息。PCB的作用是使一个在多道程序环境下不能独立运行的程序（<br>含数据），成为一个能独立运行的基本单位，一个能与其他进程并发执行<br>的进程，或者说OS是根据PCB来对并发执行的进程进行控制和管理的。<br>例如，当OS要调度某进程执行时，要从该进程的PCB中查处其现行状态及优<br>先级，在调度到某进程后，要根据其PCB中所保存的处理机状态信息，设置<br>该进程恢复运行的现场，并根据其PCB中的程序和数据的内存始址，找到其<br>程序和数据。进程在执行过程中，当需要和与之合作的进程实现同步，通信<br>或者访问文件时，也都需要访问PCB。当进程由于某种原因而暂停执行时，<br>又须将器断点的处理机环境保存在PCB中。可见，在进程的整个生命期中，<br>系统总是通过PCB对进程进行控制的，即系统是根据进程的PCB而不是任何<br>别的什么而感知到该进程的存在的。所以说PCB是进程存在的唯一标志<br><img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/27.jpg" alt></li>
-</ol>
-<h3 id="进程的组织"><a href="#进程的组织" class="headerlink" title="进程的组织"></a>进程的组织</h3><p><img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/28.jpg" alt></p>
-<ol>
-<li>链接方式 <img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/29.jpg" alt></li>
-<li>索引方式 <img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/30.jpg" alt></li>
-</ol>
-<h2 id="进程的状态"><a href="#进程的状态" class="headerlink" title="进程的状态"></a>进程的状态</h2><p>思维导图 <img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/31.jpg" alt></p>
-<h3 id="进程的状态-1"><a href="#进程的状态-1" class="headerlink" title="进程的状态"></a>进程的状态</h3><p>三种基本状态 <img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/32.jpg" alt><br>创建态和结束态 <img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/33.jpg" alt> <img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/34.jpg" alt> <img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/35.jpg" alt></p>
-<h3 id="状态切换"><a href="#状态切换" class="headerlink" title="状态切换"></a>状态切换</h3><p><img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/36.jpg" alt></p>
-<h2 id="原语实现对进程的控制"><a href="#原语实现对进程的控制" class="headerlink" title="原语实现对进程的控制"></a>原语实现对进程的控制</h2><p>思维导图 <img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/37.jpg" alt></p>
-<h3 id="进程控制"><a href="#进程控制" class="headerlink" title="进程控制"></a>进程控制</h3><p><img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/38.jpg" alt></p>
-<h3 id="进程的组织-1"><a href="#进程的组织-1" class="headerlink" title="进程的组织"></a>进程的组织</h3><p>进程在操作系统中的组织使各个进程能够有序的进行切换和运行 <img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/39.jpg" alt></p>
-<h3 id="进程控制-1"><a href="#进程控制-1" class="headerlink" title="进程控制"></a>进程控制</h3><p>调度是指决定资源分配给哪个进程的行为，是一种决策行为。切换是指<br>实际分配的行为，是执行行为一般来说现有资源调度，后有进程切换<br><img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/40.jpg" alt></p>
-<h3 id="进程控制原语"><a href="#进程控制原语" class="headerlink" title="进程控制原语"></a>进程控制原语</h3><p>相同点 <img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/41.jpg" alt></p>
-<ol>
-<li>进程的创建源语 <img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/42.jpg" alt></li>
-<li>进程的终止原语 <img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/43.jpg" alt></li>
-<li>进程的唤醒和阻塞原语 <img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/44.jpg" alt></li>
-</ol>
-<ul>
-<li>进程的阻塞和唤醒原语是成对存在的，必须成对使用</li>
-<li>阻塞原语是由被阻塞进程自我调用实现的</li>
-<li>唤醒原语是由一个被唤醒进程合作或被其他相关的进程调用实现的</li>
+<li>互斥共享 某个资源在一段时间内只能允许一个进程访问，资源称为临界资源，需<br>要用同步机制来实现对临界资源的访问</li>
+<li>同时共享 在一段时间内可以同时允许多个进程访问</li>
 </ul>
 <ol start="4">
-<li>进程的切换原语 <img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/45.jpg" alt></li>
+<li>虚拟 虚拟是把一个物理上的实体变为若干逻辑上的对应物</li>
 </ol>
-<h2 id="进程的通信"><a href="#进程的通信" class="headerlink" title="进程的通信"></a>进程的通信</h2><p>思维导图 <img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/46.jpg" alt></p>
-<h3 id="进程通信概述"><a href="#进程通信概述" class="headerlink" title="进程通信概述"></a>进程通信概述</h3><p><img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/47.jpg" alt></p>
-<h3 id="共享存储"><a href="#共享存储" class="headerlink" title="共享存储"></a>共享存储</h3><p>共享是一块大家都可以访问的空间，一次只能有一个进程进行读或写操作<br><img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/48.jpg" alt></p>
-<h3 id="管道通信"><a href="#管道通信" class="headerlink" title="管道通信"></a>管道通信</h3><p><img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/49.jpg" alt></p>
-<h3 id="消息传递"><a href="#消息传递" class="headerlink" title="消息传递"></a>消息传递</h3><p>发送信息的进程将消息头写好，接受信息进程根据消息头读取信息或寻找<br>信封是哪一个 <img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/50.jpg" alt></p>
-<h2 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h2><p>思维导图 <img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/51.jpg" alt></p>
-<h3 id="引入线程"><a href="#引入线程" class="headerlink" title="引入线程"></a>引入线程</h3><p><img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/52.jpg" alt></p>
-<h3 id="线程概述"><a href="#线程概述" class="headerlink" title="线程概述"></a>线程概述</h3><p><img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/53.jpg" alt></p>
-<h3 id="进程线程比较"><a href="#进程线程比较" class="headerlink" title="进程线程比较"></a>进程线程比较</h3><p><img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/54.jpg" alt></p>
-<h3 id="线程属性"><a href="#线程属性" class="headerlink" title="线程属性"></a>线程属性</h3><p><img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/55.jpg" alt></p>
-<h3 id="线程的实现方式"><a href="#线程的实现方式" class="headerlink" title="线程的实现方式"></a>线程的实现方式</h3><p>线程的实现分为两类：用户级线程(User-Level Thread,UTL)和内核级<br>线程(Kernel-Level Thread,KTL)。内核级线程又称内核支持的线程</p>
+<ul>
+<li>时分复用技术：如处理器的分时共享</li>
+<li>空间复用技术：如虚拟存储器</li>
+</ul>
+<ol start="5">
+<li>异步 多道程序环境允许多个程序并发执行，但由于资源有限，如cpu只有一个，<br>进程的执行并不是一贯到底的，而是走走停停的，它以不可预知的速度向前推进，<br>每个进程占用资源的时间不固定，所以进程的执行以不可预知的速度前进</li>
+</ol>
+<h3 id="用户态和内核态"><a href="#用户态和内核态" class="headerlink" title="用户态和内核态"></a>用户态和内核态</h3><p>根据进程访问资源的特点，我们可以把进程在系统上的运行分为两个级别</p>
 <ol>
-<li>用户级线程 <img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/56.jpg" alt></li>
-<li>内核级线程 <img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/57.jpg" alt></li>
-<li>特殊的组合方式 <img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/58.jpg" alt></li>
+<li>用户态: 用户态运行的进程可以直接读取用户程序的数据</li>
+<li>内核态:可以简单的理解系统态运行的进程或程序几乎可以访问计算机的<br>任何资源，不受限制</li>
 </ol>
-<h3 id="多线程模型"><a href="#多线程模型" class="headerlink" title="多线程模型"></a>多线程模型</h3><p>前面我们提到了线程的实现方式，有用户级和内核级。那么这两种模式的交<br>叉组合就会产生几种不一样的组织结构，即不一样的模型</p>
+<h3 id="系统调用"><a href="#系统调用" class="headerlink" title="系统调用"></a>系统调用</h3><p>我们运行的程序基本都是运行在用户态，如果调用操作系统提供的内核态级别<br>的功能那就需要系统调用，也就是说在我们运行的用户程序中，凡是与系统态<br>级别的资源有关的操作（如文件管理、进程控制、内存管理等），都必须通过<br>系统调用方式向操作系统提出服务请求，并由操作系统代为完成，系统调用<br>按功能可分为如下</p>
 <ol>
-<li>一对多模型 <img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/59.jpg" alt></li>
-<li>一对一模型 <img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/60.jpg" alt></li>
-<li>多对多模型 此种模型效率是三种模型中最好的 <img src="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/61.jpg" alt></li>
+<li>设备管理。完成设备的请求或释放，以及设备启动等功能</li>
+<li>文件管理。完成文件的读、写、创建及删除等功能</li>
+<li>进程控制。完成进程的创建、撤销、阻塞及唤醒等功能</li>
+<li>进程通信。完成进程之间的消息传递或信号传递等功能</li>
+<li>内存管理。完成内存的分配、回收以及获取作业占用内存区大小及地址等功能</li>
 </ol>
-</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">高明</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://skysea-gaoming.github.io/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">https://skysea-gaoming.github.io/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/System/">System</a></div><nav id="pagination"><div class="prev-post pull-left"><a href="/2021/04/27/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F2/"><i class="fa fa-chevron-left">  </i><span>操作系统2</span></a></div><div class="next-post pull-right"><a href="/2021/04/23/Linux2/"><span>'Linux2'</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="disqus_thread"></div><script>var unused = null;
+<h2 id="进程和线程"><a href="#进程和线程" class="headerlink" title="进程和线程"></a>进程和线程</h2><h3 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h3><p>进程是对正在运行程序的一个抽象，一个进程就是一个正在执行程序的实例。<br>由三部分组成：程序、数据及进程控制块(PCB)，进程控制块描述进程的基本<br>信息和运行状态，所谓的创建进程和撤销进程，都是指对PCB的操作，PCB中<br>保存程序运行的现场（进程标识、处理机状态、进程调度、进程控制等信息）</p>
+<ul>
+<li>优点 内存隔离，单个进程的崩溃不会导致这个系统的崩溃。而且进程方便<br>测试以及编程简单</li>
+<li>缺点 创建销毁比较麻烦，进程间数据的共享麻烦，并且消耗的资源比较多</li>
+</ul>
+<h3 id="PCB"><a href="#PCB" class="headerlink" title="PCB"></a>PCB</h3><p>系统利用PCB来控制和管理进程，所以PCB是系统感知进程存在的唯一标志。<br>进程与PCB是一一对应的，PCB中记录了操作系统所需的，用于描述进程的<br>当前情况以及控制进程运行的全部信息。<br>当OS要调度某进程执行时，要从该进程的PCB中查处其现行状态及优先级；在<br>调度到某进程后，要根据其PCB中所保存的处理机状态信息，设置该进程恢复<br>运行的现场，并根据其PCB中的程序和数据的内存始址，找到其程序和数据</p>
+<ol>
+<li>进程标识符 每个进程都必须有一个唯一的标识符，可以是字符串，也可<br>以是一个数字</li>
+<li>进程当前状态 说明进程当前所处的状态。为了管理的方便，系统设计时<br>会将相同的状态的 进程组成一个队列，如就绪进程队列，等待进程则要根<br>据等待的事件组成多个等待队列，如等待打印机队列</li>
+<li>进程优先级 表示获得CPU控制权的优先级大小</li>
+<li>特征信息 一般分系统进程、用户进程、或者内核进程等</li>
+<li>程序开始地址 程序开始地址规定该进程的程序以此地址开始执行</li>
+<li>CPU现场保护结构 寄存器值（通用、程序计数器PC、状态PSW，地址包括<br>栈指针）</li>
+<li>描述虚拟地址空间的信息（如虚拟地址与物理地址之间的映射关系）</li>
+</ol>
+<h3 id="进程的状态"><a href="#进程的状态" class="headerlink" title="进程的状态"></a>进程的状态</h3><p>进程有三种基本状态：运行态，就绪态，阻塞态</p>
+<ol>
+<li><p>运行态 该时刻进程实际占用CPU</p>
+</li>
+<li><p>就绪态 可运行，当因为其他进程正在运行而暂时停止，这是系统技术上的<br>原因引起的，比如没有足够CPU</p>
+</li>
+<li><p>阻塞态 除非某种外部事件发生，否则进程不能运行，这是程序自身固有<br>原因（键入用户命令之前无法执行命令）</p>
+</li>
+<li><p>创建状态：进程正在被创建，尚未到就绪状态</p>
+</li>
+<li><p>结束状态：进程正在从系统中消失。可能是进程正常结束或其他原因中断退出运行</p>
+</li>
+<li><p>运行 -&gt; 阻塞 等待I/O或事件完成</p>
+</li>
+<li><p>运行 -&gt; 就绪 进程的CPU时间片用完</p>
+</li>
+<li><p>就绪 -&gt; 运行 获得了CPU的时间片</p>
+</li>
+<li><p>阻塞 -&gt; 就绪 I/O或事件完成</p>
+</li>
+</ol>
+<h3 id="进程间通信的方式"><a href="#进程间通信的方式" class="headerlink" title="进程间通信的方式"></a>进程间通信的方式</h3><ol>
+<li>匿名管道：用于具有亲缘关系的父子进程间或者兄弟进程之间的通信。管<br>道传输数据是单向的，如果想相互通信，我们需要创建两个管道才行，所谓<br>的管道，就是内核里面的一串缓存。从管道的一端写入的数据，另一端读取<br>。没有名字标识，匿名管道是特殊文件只存在于内存，通过pipe函数创建的<br>这两个文件描述符fd[0]和fd[1]分别构成管道的两端，fd[1]一端只能进<br>行写操作，fd[0]一端只能进行读操作</li>
+<li>有名管道：突破了匿名管道只能在亲缘关系进程间的通信限制，因为使用<br>命名管道的前提，需要在文件系统创建一个类型为p的设备文件，可以实现本<br>机任意两个进程通信，有名管道的名字存在于文件系统，内容存放在内存中</li>
+<li>信号 信号是进程间通信机制中唯一的异步通信机制，信号可以在任何时<br>候发给某一进程，信号可以在应用进程和内核之间直接交互，内核也可以利<br>用信号来通知用户空间的进程发生了哪些系统事件，信号事件主要有两个来<br>源：</li>
+</ol>
+<ul>
+<li>硬件来源：用户按键输入Ctrl+C退出、硬件异常如无效的存储访问等</li>
+<li>软件终止：终止进程信号、其他进程调用kill函数、软件异常产生信号</li>
+</ul>
+<ol start="4">
+<li>消息队列 消息队列是消息的链表，具有特定的格式，存放在内存中并由<br>消息队列标识符标识，消息队列存放在内核中</li>
+<li>信号量 信号量是一个计数器，用于多进程对共享数据的访问，信号量的<br>意图在于进程间同步。这种通信方式主要用于解决与同步相关的问题并避免<br>竞争条件</li>
+<li>共享内存 使得多个进程可以访问同一块内存空间，不同进程可以及时看<br>到对方进程中对共享内存中数据的更新。这种方式需要依靠某种同步操作，<br>如互斥锁和信号量等</li>
+<li>套接字 用于在客户端和服务器之间通过网络进行通信。套接字是支持<br>TCP/IP 的网络通信的基本操作单元，可以看做是不同主机之间的进程进<br>行双向通信的端点，用套接字中的相关函数来完成通信过程</li>
+</ol>
+<p>消息队列(Message Queuing) ：消息队列是消息的链表,具有特定的格式,存放在内存中并由消息队列标识符标识。管道和消息队列的通信数据都是先进先出的原则。与管道（无名管道：只存在于内存中的文件；命名管道：存在于实际的磁盘介质或者文件系统）不同的是消息队列存放在内核中，只有在内核重启(即，操作系统重启)或者显示地删除一个消息队列时，该消息队列才会被真正的删除。消息队列可以实现消息的随机查询,消息不一定要以先进先出的次序读取,也可以按消息的类型读取.比 FIFO 更有优势。消息队列克服了信号承载信息量少，管道只能承载无格式字 节流以及缓冲区大小受限等缺。<br>信号量(Semaphores) ：信号量是一个计数器，用于多进程对共享数据的访问，信号量的意图在于进程间同步。这种通信方式主要用于解决与同步相关的问题并避免竞争条件。<br>共享内存(Shared memory) ：使得多个进程可以访问同一块内存空间，不同进程可以及时看到对方进程中对共享内存中数据的更新。这种方式需要依靠某种同步操作，如互斥锁和信号量等。可以说这是最有用的进程间通信方式。<br>套接字(Sockets) : 此方法主要用于在客户端和服务器之间通过网络进行通信。套接字是支持 TCP/IP 的网络通信的基本操作单元，可以看做是不同主机之间的进程进行双向通信的端点，简单的说就是通信的两方的一种约定，用套接字中的相关函数来完成通信过程。</p>
+<p>进程通信是指进程之间的信息交换。PV操作是低级通信方式，髙级通信方式<br>是指以较高的效率传输大量数据的通信方式。高级通信方法有以下三个类</p>
+<ol>
+<li>共享存储<br>在通信的进程之间存在一块可直接访问的共享空间，通过对这片共享空间进<br>行写/读操作实现进程之间的信息交换。在对共享空间进行写/读操作时，需<br>要使用同步互斥工具（如 P操作、V操作），对共享空间的写/读进行控制。<br>共享存储又分为两种：低级方式的共享是基于数据结构的共享，高级方式<br>则是基于存储区的共享。操作系统只负责为通信进程提供可共享使用的存<br>储空间和同步互斥工具，而数据交换则由用户自己安排读/写指令完成。</li>
+<li>消息传递<br>在消息传递系统中，进程间的数据交换是以格式化的消息(Message)为单位<br>的。若通信的进程之间不存在可直接访问的共享空间，则必须利用操作系统<br>提供的消息传递方法实现进程通信。进程通过系统提供的发送消息和接收消<br>息两个原语进行数据交换。</li>
+</ol>
+<ul>
+<li>直接通信方式：发送进程直接把消息发送给接收进程，并将它挂在接收进<br>程的消息缓冲队列上，接收进程从消息缓冲队列中取得消息</li>
+<li>间接通信方式：发送进程把消息发送到某个中间实体中，接收进程从中间<br>实体中取得消息。这种中间实体一般称为信箱，这种通信方式又称为信箱通<br>信方式。该通信方式广泛应用于计算机网络中，相应的通信系统称为电子邮<br>件系统</li>
+</ul>
+<h3 id="进程和线程的区别"><a href="#进程和线程的区别" class="headerlink" title="进程和线程的区别"></a>进程和线程的区别</h3><ol>
+<li>调度方面：进程是资源分配和调度的基本单位，线程是CPU调度的基<br>本单位</li>
+<li>并发性：引入了线程的OS中，进程间可以并发，而且一个进程内部的<br>多个线程之间也是可以并发的，这就使OS具有更好的并发性，有效的提<br>高了系统资源利用率和吞吐量</li>
+<li>拥有资源：无论OS是否支持线程，进程都是基本的资源拥有单位，线<br>程只拥有很少的基本的资源，但是线程可以访问所隶属的进程的资源（<br>进程的代码段，数据段和所拥有的系统资源如fd）</li>
+<li>内存空间：系统运行时，不同的进程的占有独立的地址空间，而一个<br>进程内的多个线程可以共享进程的地址空间</li>
+<li>系统开销：创建或者撤销进程的时候，系统要为之创建或回收PCB，<br>系统资源等，切换时也需要保存和恢复CPU环境。而线程的切换只需要保<br>存和恢复少量的寄存器，不涉及存储器管理方面的工作</li>
+<li>通信：同一个进程中的多个线程共享地址空间，所以通信同步等都比<br>进程要更为方便</li>
+</ol>
+<h3 id="线程间的同步方式"><a href="#线程间的同步方式" class="headerlink" title="线程间的同步方式"></a>线程间的同步方式</h3><ol>
+<li>互斥量：采用互斥对象机制，只有拥有互斥对象的线程才有访问公共<br>资源的权限。因为互斥对象只有一个，所以可以保证公共资源不会被多个<br>线程同时访问。比如Java 中的synchronized 关键词和各种Lock 都是<br>这种机制</li>
+<li>信号量：它允许同一时刻多个线程访问同一资源，但是需要控制同一<br>时刻访问此资源的最大线程数量</li>
+<li>事件:Wait/Notify：通过通知操作的方式来保持多线程同步，还可以<br>方便的实现多线程优先级的比较</li>
+</ol>
+<p>临界区、互斥量、事件、信号量四种方式</p>
+<ol>
+<li>临界区<br>通过对多线程串行化访问公共资源或一段代码，适合控制数据的访问。在任意<br>时刻只允许一个线程对共享资源进行访问，如果有多个线程试图访问公共资<br>源，那么在有一个线程进入后，其他试图访问公共资源的线程将被挂起，并<br>一直等到进入临界区的线程离开，临界区在被释放后，其他线程才可以抢占</li>
+<li>互斥量<br>采用互斥对象机制。 只有拥有互斥对象的线程才有访问公共资源的权限，因<br>为互斥对象只有一个，所以能保证公共资源不会同时被多个线程访问。互斥<br>不仅能实现同一应用程序的公共资源安全共享，还能实现不同应用程序的<br>公共资源安全共享 .互斥量比临界区复杂。因为使用互斥不仅仅能够在同<br>一应用程序不同线程中实现资源的安全共享，而且可以在不同应用程序<br>的线程之间实现对资源的安全共享</li>
+<li>信号量<br>信号量对象对线程的同步方式与前面几种方法不同，它允许多个线程在同一<br>时刻访问同一资源，但是需要限制在同一时刻访问此资源的最大线程数目。<br>信号允许多个线程同时使用共享资源，这与操作系统中的PV操作相同。PV<br>操作及信号量的概念都是由荷兰科学家E.W.Dijkstra提出的。信号量S是<br>一个整数，S大于等于零时代表可供并发进程/线程使用的资源实体数，但<br>S小于零时则表示正在等待使用共享资源的进程数</li>
+<li>事件<br>通过通知操作的方式来保持线程的同步，还可以方便实现对多个线程的优<br>先级比较的操作</li>
+</ol>
+<h3 id="进程的调度算法"><a href="#进程的调度算法" class="headerlink" title="进程的调度算法"></a>进程的调度算法</h3><p>为了确定首先执行哪个进程以及最后执行哪个进程以实现最大CPU利用率，<br>计算机科学家已经定义了一些算法</p>
+<ol>
+<li>先到先服务(FCFS)调度算法 : 从就绪队列中选择一个最先进入该队列的进程为之分配资源，使它立即执行并一直执行到完成或发生某事件而被阻塞放弃占用 CPU 时再重新调度。<br>短作业优先(SJF)的调度算法 : 从就绪队列中选出一个估计运行时间最短的进程为之分配资源，使它立即执行并一直执行到完成或发生某事件而被阻塞放弃占用 CPU 时再重新调度。<br>时间片轮转调度算法 : 时间片轮转调度是一种最古老，最简单，最公平且使用最广的算法，又称 RR(Round robin)调度。每个进程被分配一个时间段，称作它的时间片，即该进程允许运行的时间。<br>多级反馈队列调度算法 ：前面介绍的几种进程调度的算法都有一定的局限性。如短进程优先的调度算法，仅照顾了短进程而忽略了长进程 。多级反馈队列调度算法既能使高优先级的作业得到响应又能使短作业（进程）迅速完成。，因而它是目前被公认的一种较好的进程调度算法，UNIX 操作系统采取的便是这种调度算法。<br>优先级调度 ： 为每个流程分配优先级，首先执行具有最高优先级的进程，依此类推。具有相同优先级的进程以 FCFS 方式执行。可以根据内存要求，时间要求或任何其他资源要求来确定优先级。</li>
+</ol>
+<h2 id="进程的同步和互斥"><a href="#进程的同步和互斥" class="headerlink" title="进程的同步和互斥"></a>进程的同步和互斥</h2></div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">高明</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://skysea-gaoming.github.io/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">https://skysea-gaoming.github.io/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/System/">System</a></div><nav id="pagination"><div class="prev-post pull-left"><a href="/2021/04/27/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F2/"><i class="fa fa-chevron-left">  </i><span>操作系统总结2</span></a></div><div class="next-post pull-right"><a href="/2021/04/23/Linux2/"><span>Linux2</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="disqus_thread"></div><script>var unused = null;
 var disqus_config = function () {
   this.page.url = 'https://skysea-gaoming.github.io/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/';
   this.page.identifier = '2021/04/26/操作系统/';
-  this.page.title = '操作系统';
+  this.page.title = '操作系统总结1';
 }
 var d = document, s = d.createElement('script');
 s.src = "https://" + '你的disqus的 short-name' +".disqus.com/embed.js";

@@ -1,0 +1,450 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="Redis总结"><meta name="keywords" content="数据库"><meta name="author" content="高明"><meta name="copyright" content="高明"><title>Redis总结 | SkySea-GaoMing</title><link rel="shortcut icon" href="/img/favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.7.0"><link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css?version=1.7.0"><meta name="format-detection" content="telephone=no"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  }
+} </script><meta name="generator" content="Hexo 4.2.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="Toggle article">Toggle site</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">1.</span> <span class="toc-text">参考</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Redis概述"><span class="toc-number">2.</span> <span class="toc-text">Redis概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Redis概述-1"><span class="toc-number">2.1.</span> <span class="toc-text">Redis概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分布式缓存"><span class="toc-number">2.2.</span> <span class="toc-text">分布式缓存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Redis-和Memcached-的区别"><span class="toc-number">2.3.</span> <span class="toc-text">Redis 和Memcached 的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Redis的优点"><span class="toc-number">2.4.</span> <span class="toc-text">Redis的优点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Redis的缺点"><span class="toc-number">2.5.</span> <span class="toc-text">Redis的缺点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Redis的特点"><span class="toc-number">2.6.</span> <span class="toc-text">Redis的特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#高可用技术"><span class="toc-number">2.7.</span> <span class="toc-text">高可用技术</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么要用Redis而不用map-guava做缓存"><span class="toc-number">2.8.</span> <span class="toc-text">为什么要用Redis而不用map&#x2F;guava做缓存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Redis为什么快"><span class="toc-number">2.9.</span> <span class="toc-text">Redis为什么快</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Redis应用场景"><span class="toc-number">2.10.</span> <span class="toc-text">Redis应用场景</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据结构与对象"><span class="toc-number">3.</span> <span class="toc-text">数据结构与对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#字符串"><span class="toc-number">3.1.</span> <span class="toc-text">字符串</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#SDS的定义"><span class="toc-number">3.1.1.</span> <span class="toc-text">SDS的定义</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SDS和C字符串的区别"><span class="toc-number">3.2.</span> <span class="toc-text">SDS和C字符串的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#键值对类型"><span class="toc-number">3.3.</span> <span class="toc-text">键值对类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字符串对象"><span class="toc-number">3.4.</span> <span class="toc-text">字符串对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#字符串常用命令"><span class="toc-number">3.4.1.</span> <span class="toc-text">字符串常用命令</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#列表对象"><span class="toc-number">3.5.</span> <span class="toc-text">列表对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#列表常用命令"><span class="toc-number">3.5.1.</span> <span class="toc-text">列表常用命令</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#哈希对象"><span class="toc-number">3.6.</span> <span class="toc-text">哈希对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#哈希常用命令"><span class="toc-number">3.6.1.</span> <span class="toc-text">哈希常用命令</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#集合对象"><span class="toc-number">3.7.</span> <span class="toc-text">集合对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#集合常用命令"><span class="toc-number">3.7.1.</span> <span class="toc-text">集合常用命令</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#有序集合"><span class="toc-number">3.8.</span> <span class="toc-text">有序集合</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#有序集合常用命令"><span class="toc-number">3.8.1.</span> <span class="toc-text">有序集合常用命令</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#单机数据库"><span class="toc-number">4.</span> <span class="toc-text">单机数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#键的生存时间"><span class="toc-number">4.1.</span> <span class="toc-text">键的生存时间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#过期键的判定"><span class="toc-number">4.2.</span> <span class="toc-text">过期键的判定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#过期键删除策略"><span class="toc-number">4.3.</span> <span class="toc-text">过期键删除策略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Redis-给缓存数据设置过期时间的作用"><span class="toc-number">4.4.</span> <span class="toc-text">Redis 给缓存数据设置过期时间的作用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Redis-单线程模型"><span class="toc-number">5.</span> <span class="toc-text">Redis 单线程模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#单线程怎么监听大量的客户端连接"><span class="toc-number">5.1.</span> <span class="toc-text">单线程怎么监听大量的客户端连接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么不使用多线程"><span class="toc-number">5.2.</span> <span class="toc-text">为什么不使用多线程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Redis6-0-之后为何引入了多线程"><span class="toc-number">5.3.</span> <span class="toc-text">Redis6.0 之后为何引入了多线程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#持久化机制"><span class="toc-number">6.</span> <span class="toc-text">持久化机制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#RDB持久化"><span class="toc-number">6.1.</span> <span class="toc-text">RDB持久化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#其余自动触发机制"><span class="toc-number">6.1.1.</span> <span class="toc-text">其余自动触发机制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#RDB优缺点"><span class="toc-number">6.1.2.</span> <span class="toc-text">RDB优缺点</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AOF持久化"><span class="toc-number">6.2.</span> <span class="toc-text">AOF持久化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#AOF持久化的实现"><span class="toc-number">6.2.1.</span> <span class="toc-text">AOF持久化的实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#文件重写能压缩的原因"><span class="toc-number">6.2.2.</span> <span class="toc-text">文件重写能压缩的原因</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#文件重写的触发"><span class="toc-number">6.2.3.</span> <span class="toc-text">文件重写的触发</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#AOF优缺点"><span class="toc-number">6.2.4.</span> <span class="toc-text">AOF优缺点</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#两种持久化方式的选择"><span class="toc-number">6.3.</span> <span class="toc-text">两种持久化方式的选择</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#事务"><span class="toc-number">7.</span> <span class="toc-text">事务</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#WATCH命令"><span class="toc-number">7.1.</span> <span class="toc-text">WATCH命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#事务的ACID"><span class="toc-number">7.2.</span> <span class="toc-text">事务的ACID</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#原子性"><span class="toc-number">7.2.1.</span> <span class="toc-text">原子性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#为什么不支持回滚"><span class="toc-number">7.2.2.</span> <span class="toc-text">为什么不支持回滚</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#一致性"><span class="toc-number">7.2.3.</span> <span class="toc-text">一致性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#隔离性"><span class="toc-number">7.2.4.</span> <span class="toc-text">隔离性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#持久性"><span class="toc-number">7.2.5.</span> <span class="toc-text">持久性</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#持久化策略的选择"><span class="toc-number">7.3.</span> <span class="toc-text">持久化策略的选择</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#缓存穿透"><span class="toc-number">8.</span> <span class="toc-text">缓存穿透</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#缓存穿透情况的处理流程"><span class="toc-number">8.1.</span> <span class="toc-text">缓存穿透情况的处理流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#缓存穿透解决方法"><span class="toc-number">8.2.</span> <span class="toc-text">缓存穿透解决方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#缓存雪崩"><span class="toc-number">9.</span> <span class="toc-text">缓存雪崩</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#缓存雪崩解决办法"><span class="toc-number">9.1.</span> <span class="toc-text">缓存雪崩解决办法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#事件"><span class="toc-number">10.</span> <span class="toc-text">事件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内存相关"><span class="toc-number">11.</span> <span class="toc-text">内存相关</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#如何保证redis中的数据都是热点数据"><span class="toc-number">11.1.</span> <span class="toc-text">如何保证redis中的数据都是热点数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Redis的内存用完了会发生什么"><span class="toc-number">11.2.</span> <span class="toc-text">Redis的内存用完了会发生什么</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#主从复制"><span class="toc-number">12.</span> <span class="toc-text">主从复制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#主从复制流程"><span class="toc-number">12.1.</span> <span class="toc-text">主从复制流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#主从复制实现原理"><span class="toc-number">12.2.</span> <span class="toc-text">主从复制实现原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#全量复制和部分复制"><span class="toc-number">12.3.</span> <span class="toc-text">全量复制和部分复制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#全量复制"><span class="toc-number">12.3.1.</span> <span class="toc-text">全量复制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#部分复制"><span class="toc-number">12.3.2.</span> <span class="toc-text">部分复制</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#心跳机制"><span class="toc-number">12.4.</span> <span class="toc-text">心跳机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#主从复制的问题"><span class="toc-number">12.5.</span> <span class="toc-text">主从复制的问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#哨兵"><span class="toc-number">13.</span> <span class="toc-text">哨兵</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#哨兵的功能"><span class="toc-number">13.1.</span> <span class="toc-text">哨兵的功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#哨兵架构"><span class="toc-number">13.2.</span> <span class="toc-text">哨兵架构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#哨兵的启动"><span class="toc-number">13.3.</span> <span class="toc-text">哨兵的启动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#获取服务器信息"><span class="toc-number">13.4.</span> <span class="toc-text">获取服务器信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本原理"><span class="toc-number">13.5.</span> <span class="toc-text">基本原理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#集群"><span class="toc-number">14.</span> <span class="toc-text">集群</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#集群的作用"><span class="toc-number">14.1.</span> <span class="toc-text">集群的作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#集群的搭建"><span class="toc-number">14.2.</span> <span class="toc-text">集群的搭建</span></a></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2762516417,1589137703&amp;fm=26&amp;gp=0.jpg"></div><div class="author-info__name text-center">高明</div><div class="author-info__description text-center">JAVA工程师</div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">Articles</span><span class="pull-right">81</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">Tags</span><span class="pull-right">17</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">Categories</span><span class="pull-right">12</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2333247715,1420619508&amp;fm=26&amp;gp=0.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">SkySea-GaoMing</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a></span><span class="pull-right"></span></div><div id="post-info"><div id="post-title">Redis总结</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-05-17</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E7%A7%8B%E6%8B%9B/">秋招</a><span class="post-meta__separator">|</span><i class="fa fa-comment-o post-meta__icon" aria-hidden="true"></i><a href="/2021/05/17/Redis%E6%80%BB%E7%BB%93/#disqus_thread"><span class="disqus-comment-count" data-disqus-identifier="2021/05/17/Redis总结/"></span></a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://blog.csdn.net/yerenyuan_pku/category_9141443.html" target="_blank" rel="noopener">https://blog.csdn.net/yerenyuan_pku/category_9141443.html</a><br>《Redis设计与实现》</p>
+<h2 id="Redis概述"><a href="#Redis概述" class="headerlink" title="Redis概述"></a>Redis概述</h2><h3 id="Redis概述-1"><a href="#Redis概述-1" class="headerlink" title="Redis概述"></a>Redis概述</h3><p>Redis是用C语言开发的一个开源的高性能键值对数据库。它通过提供多种<br>键值数据类型来适应不同场景下的存储需求。Redis 的数据是存在内存中<br>的，所以读写速度非常快，因此 redis 被广泛应用于缓存方向，每秒可<br>以处理超过10万次读写操作，Redis 也经常用来做分布式锁，除此还支<br>持事务、持久化、LUA脚本、LRU驱动事件、多种集群方案</p>
+<h3 id="分布式缓存"><a href="#分布式缓存" class="headerlink" title="分布式缓存"></a>分布式缓存</h3><p>分布式缓存主要解决的是单机缓存的容量受服务器限制并且无法保存通用<br>的信息。因为本地缓存只在当前服务里有效，比如如果你部署了两个相同<br>的服务，他们两者之间的缓存数据是无法共同的</p>
+<h3 id="Redis-和Memcached-的区别"><a href="#Redis-和Memcached-的区别" class="headerlink" title="Redis 和Memcached 的区别"></a>Redis 和Memcached 的区别</h3><p>共同点</p>
+<ol>
+<li>都是基于内存的数据库，一般都用来当做缓存使用</li>
+<li>都有过期策略</li>
+<li>两者的性能都非常高</li>
+</ol>
+<p>区别</p>
+<ol>
+<li>Redis 支持更丰富的数据类型。Redis 不仅仅支持简单的k/v 类型的<br>数据，同时还提供list set zset hash等数据结构的存储。Memcached<br>只支持最简单的 k/v 数据类型</li>
+<li>Redis 支持数据的持久化，可以将内存中的数据保持在磁盘中，重启<br>的时候可以再次加载进行使用，而Memecache 把数据全部存在内存之中</li>
+<li>Redis 有灾难恢复机制。 因为可以把缓存中的数据持久化到磁盘上</li>
+<li>Redis 在服务器内存使用完之后，可以将不用的数据放到磁盘上。但是<br>Memcached 在服务器内存使用完之后，就会直接报异常</li>
+<li>Memcached 没有原生的集群模式，需要依靠客户端来实现往集群中分<br>片写入数据；但是Redis 目前是原生支持cluster 模式的</li>
+<li>Memcached 是多线程，非阻塞 IO 复用的网络模型；Redis 使用单线<br>程的多路 IO 复用模型。 （Redis 6.0 引入了多线程 IO ）</li>
+<li>Redis 支持发布订阅模型、Lua 脚本、事务等功能，而 Memcached 不<br>支持。并且Redis 支持更多的编程语言</li>
+<li>Memcached 过期数据的删除策略只用了惰性删除，而 Redis 同时使<br>用了惰性删除与定期删除</li>
+</ol>
+<h3 id="Redis的优点"><a href="#Redis的优点" class="headerlink" title="Redis的优点"></a>Redis的优点</h3><ol>
+<li>读写性能优异，Redis读速度是110000次/s，写的速度是81000次/s</li>
+<li>支持数据持久化，支持AOF和RDB两种持久化方式</li>
+<li>数据结构丰富，除了支持string类型的value外多种类型</li>
+<li>支持主从复制，主机会自动将数据同步到从机，可以进行读写分离</li>
+</ol>
+<h3 id="Redis的缺点"><a href="#Redis的缺点" class="headerlink" title="Redis的缺点"></a>Redis的缺点</h3><ol>
+<li>数据库容量受到物理内存的限制，不能用作海量数据的高性能读写，因<br>此Redis适合的场景主要局限在较小数据量的高性能操作和运算上</li>
+</ol>
+<h3 id="Redis的特点"><a href="#Redis的特点" class="headerlink" title="Redis的特点"></a>Redis的特点</h3><p>为了解决高并发、高负载、高可扩展（也即高可用）、大数据存储问题而产生<br>的数据库解决方案，就是NoSQL数据库。NoSQL 泛指非关系型的数据库可以<br>作为关系型数据库的良好补充</p>
+<ol>
+<li>易扩展<br>数据之间无关系，这样就非常容易扩展，也无形之间，在架构的层面上带来了<br>可扩展的能力</li>
+<li>高性能<br>NoSQL数据库都具有非常高的读写性能，尤其在大数据量下，同样表现优秀，<br>这得益于它的无关系性，数据库的结构简单</li>
+<li>灵活的数据模型<br>NoSQL无需事先为要存储的数据建立字段，随时可以存储自定义的数据格式。而<br>在关系型数据库里，增删字段是一件非常麻烦的事情</li>
+<li>高可用<br>NoSQL在不太影响性能的情况，就可以方便的实现高可用的架构。比如Cassandra<br>、HBase模型，通过复制模型也能实现高可用</li>
+<li>高并发<br>直接操作缓存能够承受的请求是远远大于直接访问数据库的，所以我们可以<br>考虑把数据库中的部分数据转移到缓存中去，这样用户的一部分请求会直接<br>到缓存这里而不用经过数据库</li>
+</ol>
+<h3 id="高可用技术"><a href="#高可用技术" class="headerlink" title="高可用技术"></a>高可用技术</h3><p>除了保证提供正常服务（如主从分离、快速容灾技术），还需要考虑数据容<br>量的扩展、数据安全不会丢失等，实现高可用的技术主要包括持久化、复制<br>、哨兵和集群</p>
+<ol>
+<li>持久化：持久化是最简单的高可用方法，主要作用是数据备份，即将数<br>据存储在硬盘，保证数据不会因进程退出而丢失</li>
+<li>复制：复制是高可用Redis的基础，哨兵和集群都是在复制基础上实现<br>高可用的。复制主要实现了数据的多机备份，以及对于读操作的负载均衡<br>和简单的故障恢复。缺陷：故障恢复无法自动化；写操作无法负载均衡；<br>存储能力受到单机的限制</li>
+<li>哨兵：在复制的基础上，哨兵实现了自动化的故障恢复。缺陷：写操作<br>无法负载均衡；存储能力受到单机的限制</li>
+<li>集群：通过集群，Redis解决了写操作无法负载均衡，以及存储能力受<br>到单机限制的问题，实现了较为完善的高可用方案</li>
+</ol>
+<h3 id="为什么要用Redis而不用map-guava做缓存"><a href="#为什么要用Redis而不用map-guava做缓存" class="headerlink" title="为什么要用Redis而不用map/guava做缓存"></a>为什么要用Redis而不用map/guava做缓存</h3><p>缓存分为本地缓存和分布式缓存</p>
+<ol>
+<li>Java 自带的map 或者guava 实现的是本地缓存，最主要的特点是轻量<br>以及快速，生命周期随着jvm的销毁而结束，并且在多实例的情况下，每个<br>实例都需要各自保存一份缓存，缓存不具有一致性</li>
+<li>使用redis 或memcached 之类的称为分布式缓存，在多实例的情况下，<br>各实例共用一份缓存数据，缓存具有一致性。缺点是需要保持redis服务的高<br>可用，整个程序架构上较为复杂</li>
+</ol>
+<h3 id="Redis为什么快"><a href="#Redis为什么快" class="headerlink" title="Redis为什么快"></a>Redis为什么快</h3><ol>
+<li>完全基于内存，绝大部分请求是纯粹的内存操作，非常快速。数据存<br>在内存中，类似于 HashMap，HashMap 的优势就是查找和操作的时间<br>复杂度都是O(1)</li>
+<li>数据结构简单，对数据操作也简单，Redis中的数据结构是专门进行设计的</li>
+<li>采用单线程，避免了不必要的上下文切换和竞争条件，也不存在多进程<br>或者多线程导致的切换而消耗CPU，不用去考虑各种锁的问题，不存在加锁<br>释放锁操作，没有因为可能出现死锁而导致的性能消耗</li>
+<li>使用多路 I/O 复用模型，非阻塞 IO</li>
+</ol>
+<h3 id="Redis应用场景"><a href="#Redis应用场景" class="headerlink" title="Redis应用场景"></a>Redis应用场景</h3><ol>
+<li><p>缓存，例如数据查询、短连接、新闻内容、商品内容等等</p>
+</li>
+<li><p>分布式集群架构中的session分离</p>
+</li>
+<li><p>聊天室的在线好友列表</p>
+</li>
+<li><p>任务队列，例如秒杀、抢购、12306抢票等等</p>
+</li>
+<li><p>应用排行榜</p>
+</li>
+<li><p>网站访问统计</p>
+</li>
+<li><p>数据过期处理（可以精确到毫秒）</p>
+</li>
+<li><p>计数器 可以对String 进行自增自减运算，从而实现计数器功能</p>
+</li>
+<li><p>缓存 将热点数据放到内存中，设置内存的最大使用量以及淘汰策略来<br>保证缓存的命中率</p>
+</li>
+<li><p>会话缓存 可以使用Redis 来统一存储多台应用服务器的会话信息。当<br>应用服务器不再存储用户的会话信息，也就不再具有状态，一个用户可以<br>请求任意一个应用服务器，从而更容易实现高可用性以及可伸缩性</p>
+</li>
+<li><p>查找表 例如DNS 记录就很适合使用Redis 进行存储。查找表和缓存类<br>似，也是利用了Redis 快速的查找特性。但是查找表的内容不能失效，而<br>缓存的内容可以失效，因为缓存不作为可靠的数据来源</p>
+</li>
+<li><p>消息队列（发布/订阅功能） List是一个双向链表，可以通过lpush和<br>rpop写入和读取消息。不过最好使用Kafka、RabbitMQ 等消息中间件</p>
+</li>
+<li><p>分布式锁实现 在分布式场景下，无法使用单机环境下的锁来对多个节<br>点上的进程进行同步。可以使用Redis 自带的SETNX 命令实现分布式锁</p>
+</li>
+</ol>
+<h2 id="数据结构与对象"><a href="#数据结构与对象" class="headerlink" title="数据结构与对象"></a>数据结构与对象</h2><h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p>Redis并没有使用C字符串表示，而是自己构建了一种简单动态字符串SDS</p>
+<ol>
+<li>C字符串作为字符串字面量，用在无需修改的地方，比如打印日志</li>
+<li>SDS用在可以修改字符串值的情况，键值对底层由SDS实现，还可以用<br>作缓冲区</li>
+</ol>
+<h4 id="SDS的定义"><a href="#SDS的定义" class="headerlink" title="SDS的定义"></a>SDS的定义</h4><p>sdshdr结构表示一个SDS值</p>
+<ol>
+<li>len 保存字符串的长度</li>
+<li>free buf数组中未使用的字节数量</li>
+<li>buf 字节数组，用于保存字符串</li>
+</ol>
+<h3 id="SDS和C字符串的区别"><a href="#SDS和C字符串的区别" class="headerlink" title="SDS和C字符串的区别"></a>SDS和C字符串的区别</h3><ol>
+<li>SDS常数时间复杂度获取字符串长度，C字符串时间复杂度为O(N)</li>
+<li>SDS杜绝缓冲区溢出 如果空间不够会自动扩展空间</li>
+<li>减少修改字符串带来的内存重分配次数 通过未使用空间实现空间预分配<br>和惰性空间释放两种优化</li>
+</ol>
+<ul>
+<li>空间预分配 空间扩展时额外分配未使用的空间</li>
+<li>惰性空间释放 不必内存重分配回收空间，而是使用free记录字节</li>
+</ul>
+<ol start="4">
+<li>二进制安全 Redis 的SDS 不光可以保存文本数据还可以保存二进制数<br>据，会以处理二进制的方式来处理SDS存放在buf数组里的数据，使用len<br>属性来判断字符串的结束而不是空字符</li>
+<li>SDS兼容部分C字符串函数 以空字符结尾可以重用部分C字符串函数</li>
+</ol>
+<h3 id="键值对类型"><a href="#键值对类型" class="headerlink" title="键值对类型"></a>键值对类型</h3><p>键总是一个字符串，键值数据类型（指的就是键值对中值的数据类型）如下</p>
+<ol>
+<li>字符串类型 string</li>
+<li>散列类型（哈希对象） hash</li>
+<li>列表类型 list</li>
+<li>集合类型 set</li>
+<li>有序集合类型 zset</li>
+</ol>
+<p>object encoding key 可以查看一个数据库键的值对象的编码</p>
+<h3 id="字符串对象"><a href="#字符串对象" class="headerlink" title="字符串对象"></a>字符串对象</h3><p>字符串对象的编码可以是int raw embstr</p>
+<ol>
+<li>int 可以用long类型保存的整数 </li>
+<li>raw 字符串长度大于39字节</li>
+<li>embstr 字符串长度小于等于39字节</li>
+</ol>
+<h4 id="字符串常用命令"><a href="#字符串常用命令" class="headerlink" title="字符串常用命令"></a>字符串常用命令</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">set key value #赋值</span><br><span class="line">get key #取值，只能用于获取string类型的value</span><br><span class="line">getset key value #先获取该key的值，然后再设置该key的值</span><br><span class="line">del key</span><br><span class="line">incr key #自动加1</span><br><span class="line">decr key #自动减1</span><br><span class="line">incrby key number #加number</span><br><span class="line">decrby key number #减number</span><br><span class="line">append key xxx #添加字符串，key也可以不存在</span><br><span class="line">exists key  # 判断某个 key 是否存在</span><br><span class="line">strlen key #获取字符串长度</span><br></pre></td></tr></table></figure>
+
+<h3 id="列表对象"><a href="#列表对象" class="headerlink" title="列表对象"></a>列表对象</h3><p>列表对象的编码可以是ziplist或linkedlist</p>
+<ol>
+<li>ziplist 字符串元素长度都小于等于64字节，元素数量小于等于512</li>
+<li>linkedlist 不满意以上条件</li>
+</ol>
+<h4 id="列表常用命令"><a href="#列表常用命令" class="headerlink" title="列表常用命令"></a>列表常用命令</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">lpush list xx #向list中添加值，从左边插入</span><br><span class="line">lrange list 0 -1 #获取所以值</span><br><span class="line">rpush list xx #从右边插入</span><br><span class="line">lpop list #从左边移除一个元素</span><br><span class="line">rpop list #从右边移除一个元素</span><br><span class="line">lindex list index #获取对应下标的值</span><br><span class="line">llen list #获取长度</span><br><span class="line">lrem list count value #移除指定数量的value值，count为0则所有，count为负从右开始移除</span><br><span class="line">ltrim list start stop #截断list得到start到stop的值</span><br><span class="line">rpoplpush list1 list2 #将list1最右边一个元素移动到list2</span><br><span class="line">lset list inde xx #更新值，前提是必须存在list和正确index</span><br><span class="line">linsert list before&#x2F;after xx value #在指定元素的前面或后面添加值</span><br><span class="line">lpushx key value #指定的key存在时，头部插入value。如果不存在，那么将不进行插入</span><br><span class="line">rpushx key value</span><br></pre></td></tr></table></figure>
+
+<h3 id="哈希对象"><a href="#哈希对象" class="headerlink" title="哈希对象"></a>哈希对象</h3><p>哈希对象的编码可以是ziplist或hashtable</p>
+<ol>
+<li>ziplist 键和值的字符串长度都小于等于64字节，键值对数量小于等于512</li>
+<li>hashtable 不满足以上条件</li>
+</ol>
+<h4 id="哈希常用命令"><a href="#哈希常用命令" class="headerlink" title="哈希常用命令"></a>哈希常用命令</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">hset hash field value #设置key-value</span><br><span class="line">hget hash field #获取value</span><br><span class="line">hmset hash key1 value1 key2 value2 #设置多个值</span><br><span class="line">hget hash key1 key2 #获取多个值</span><br><span class="line">hgetall myhash #获取所有值</span><br><span class="line">hdel hash key #删除指定的key-value</span><br><span class="line">hlen hash #key-val的数量</span><br><span class="line">hexists hash key #判断key是否存在</span><br><span class="line">hkeys hash #获取所有key</span><br><span class="line">hvals hash #获取所有value</span><br><span class="line">hincrby hash key number #加number</span><br><span class="line">hsetnx hash key value #如果存在不能设置否则可以设置</span><br></pre></td></tr></table></figure>
+
+<h3 id="集合对象"><a href="#集合对象" class="headerlink" title="集合对象"></a>集合对象</h3><p>集合对象的编码可以是intset或hashtable</p>
+<ol>
+<li>intset 保存的元素是整数值，数量不超过512个</li>
+<li>hashtable 不满足以上条件</li>
+</ol>
+<h4 id="集合常用命令"><a href="#集合常用命令" class="headerlink" title="集合常用命令"></a>集合常用命令</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">sadd set xx #添加元素</span><br><span class="line">smembers set #查看所有元素</span><br><span class="line">sismember set value #set中是否存在value</span><br><span class="line">scard set #获取元素数量</span><br><span class="line">srem set xx #移除指定元素</span><br><span class="line">srandmember set count #获取指定数量的随机元素</span><br><span class="line">spop set #随机删除元素</span><br><span class="line">smove set1 set2 value #将set1中的value移动到set2</span><br><span class="line">sdiff set1 set2 #以set1为参照两个set的差集</span><br><span class="line">sinter set1 set2 #交集</span><br><span class="line">sunion set1 set2 #并集</span><br></pre></td></tr></table></figure>
+
+<h3 id="有序集合"><a href="#有序集合" class="headerlink" title="有序集合"></a>有序集合</h3><p>有序集合的编码可以是ziplist或skiplist</p>
+<ol>
+<li>ziplist 元素数量小于等于128，元素成员的长度小于等于64字节</li>
+<li>skiplist 不满足以上元素</li>
+</ol>
+<h4 id="有序集合常用命令"><a href="#有序集合常用命令" class="headerlink" title="有序集合常用命令"></a>有序集合常用命令</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">zadd set score xx #添加值</span><br><span class="line">zrange set 0 -1 #获取所有值</span><br><span class="line">zrevrange set 0 -1 #获取所有值，从小到大</span><br><span class="line">zrangebyscore set -inf +inf #从负无穷到正无穷正序排列</span><br><span class="line">zrangebyscore set -inf +inf withscores #带上score</span><br><span class="line">zrevrangebyscore salary +inf -inf withscores #倒序排列</span><br><span class="line">zrem set xx #移除xx</span><br><span class="line">zcard set #获取有序集合的个数</span><br><span class="line">zcount set min max #获取指定范围的数量</span><br></pre></td></tr></table></figure>
+
+<h2 id="单机数据库"><a href="#单机数据库" class="headerlink" title="单机数据库"></a>单机数据库</h2><p>一个Redis实例可以包括多个数据库，客户端可以指定连接某个Redis实例<br>的哪个数据库，一个Redis实例最多可提供16个数据库，下标从0到15，客<br>户端默认连接的是第0号数据库，dict字典保存数据库中所有键值对，这<br>个字典称为键空间</p>
+<h3 id="键的生存时间"><a href="#键的生存时间" class="headerlink" title="键的生存时间"></a>键的生存时间</h3><ol>
+<li>EXPIRE和PEXPIRE命令可以为键设置生存时间</li>
+<li>TTL和PTTL命令可以返回这个键的剩余生存时间</li>
+<li>PERSIST移除一个键的过期时间</li>
+</ol>
+<h3 id="过期键的判定"><a href="#过期键的判定" class="headerlink" title="过期键的判定"></a>过期键的判定</h3><p>expires字典保存数据库中所有键的过期时间，这个字典是过期字典，<br>通过is_expire(key)或TTL判断</p>
+<ol>
+<li>检查给定键是否存在于过期字典，如果存在则取得过期时间</li>
+<li>判断当前UNIX时间戳是否大于键的过期时间</li>
+</ol>
+<h3 id="过期键删除策略"><a href="#过期键删除策略" class="headerlink" title="过期键删除策略"></a>过期键删除策略</h3><p>Redis中同时使用了惰性删除和定期删除两种过期策略</p>
+<ol>
+<li>定时删除：每个设置过期时间的key都需要创建一个定时器，到过期<br>时间就会立即清除。该策略可以立即清除过期的数据，对内存很友好，<br>但是会占用大量的CPU资源去处理过期的数据，从而影响缓存的响应时<br>间和吞吐量</li>
+<li>惰性删除：只有当访问一个key时，才会判断该key是否已过期，过期<br>则清除。该策略可以最大化地节省CPU资源，却对内存非常不友好。极端情<br>况可能出现大量的过期key没有再次被访问，从而不会被清除，占用大量<br>内存</li>
+<li>定期过期：每隔一定的时间，会扫描一定数量的数据库的expires字<br>典中一定数量的key，并清除其中已过期的key。通过调整定时扫描的时<br>间间隔和每次扫描的限定耗时，可以在不同情况下使得CPU和内存资源<br>达到最优的平衡效果</li>
+</ol>
+<h3 id="Redis-给缓存数据设置过期时间的作用"><a href="#Redis-给缓存数据设置过期时间的作用" class="headerlink" title="Redis 给缓存数据设置过期时间的作用"></a>Redis 给缓存数据设置过期时间的作用</h3><ol>
+<li>因为内存是有限的，如果缓存中的所有数据都是一直保存的话，直接<br>Out of memory</li>
+<li>很多时候，我们的业务场景就是需要某个数据只在某一时间段内存在<br>，比如我们的短信验证码可能只在1 分钟内有效，用户登录的token 可<br>能只在 1 天内有效。如果使用传统的数据库来处理的话，一般都是自己<br>判断过期，这样更麻烦并且性能要差很多</li>
+</ol>
+<h2 id="Redis-单线程模型"><a href="#Redis-单线程模型" class="headerlink" title="Redis 单线程模型"></a>Redis 单线程模型</h2><p>Redis 基于Reactor 模式来设计开发了自己的一套高效的事件处理模型，<br>这套事件处理模型对应的是 Redis 中的文件事件处理器。由于文件事件处<br>理器是单线程方式运行的，所以我们一般都说Redis 是单线程模型</p>
+<h3 id="单线程怎么监听大量的客户端连接"><a href="#单线程怎么监听大量的客户端连接" class="headerlink" title="单线程怎么监听大量的客户端连接"></a>单线程怎么监听大量的客户端连接</h3><p>Redis 通过IO 多路复用程序来监听来自客户端的大量连接（或者说是监<br>听多个 socket），它会将感兴趣的事件及类型（读、写）注册到内核中<br>并监听每个事件是否发生。<br>I/O 多路复用技术的使用让Redis 不需要额外创建多余的线程来监听<br>客户端的大量连接，降低了资源的消耗。文件事件处理器主要是包含4<br>个部分：</p>
+<ol>
+<li>多个 socket（客户端连接）</li>
+<li>IO 多路复用程序（支持多个客户端连接的关键）</li>
+<li>文件事件分派器（将 socket 关联到相应的事件处理器）</li>
+<li>事件处理器（连接应答处理器、命令请求处理器、命令回复处理器）</li>
+</ol>
+<h3 id="为什么不使用多线程"><a href="#为什么不使用多线程" class="headerlink" title="为什么不使用多线程"></a>为什么不使用多线程</h3><ol>
+<li>单线程编程容易并且更容易维护</li>
+<li>Redis 的性能瓶颈不再 CPU ，主要在内存和网络</li>
+<li>多线程就会存在死锁、线程上下文切换等问题，甚至会影响性能</li>
+</ol>
+<h3 id="Redis6-0-之后为何引入了多线程"><a href="#Redis6-0-之后为何引入了多线程" class="headerlink" title="Redis6.0 之后为何引入了多线程"></a>Redis6.0 之后为何引入了多线程</h3><p>Redis6.0 引入多线程主要是为了提高网络 IO 读写性能，因为这个算是<br>Redis 中的一个性能瓶颈（Redis 的瓶颈主要受限于内存和网络）。<br>虽然 Redis6.0 引入了多线程，但是 Redis 的多线程只是在网络数据<br>的读写这类耗时操作上使用了， 执行命令仍然是单线程顺序执行。因此<br>你也不需要担心线程安全问题。<br>Redis6.0 的多线程默认是禁用的，只使用主线程。如需开启需要修改<br>redis 配置文件redis.conf</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">io-threads-do-reads yes</span><br><span class="line">#开启多线程后，还需要设置线程数，否则是不生效的</span><br><span class="line">io-threads 4 #官网建议4核的机器建议设置为2或3个线程，8核的建议设置为6个线程</span><br></pre></td></tr></table></figure>
+
+<h2 id="持久化机制"><a href="#持久化机制" class="headerlink" title="持久化机制"></a>持久化机制</h2><p>很多时候我们需要持久化数据也就是将内存中的数据写入到硬盘里面，大部<br>分原因是为了之后重用数据（比如重启机器、机器故障之后恢复数据），或<br>者是为了防止系统故障而将数据备份到一个远程位置。Redis的一种持久化<br>方式叫快照（RDB），另一种方式是只追加文件（AOF）。前者保存当前数<br>据，后者保存每次执行的命令</p>
+<h3 id="RDB持久化"><a href="#RDB持久化" class="headerlink" title="RDB持久化"></a>RDB持久化</h3><p>Redis 可以通过创建快照来获得存储在内存里面的数据在某个时间点上的<br>副本。对应产生的数据文件为dump.rdb，是一个经过压缩的二进制文件。<br>通过配置文件中的save参数来定义快照的周期或通过以下命令手动触发</p>
+<ol>
+<li>SAVE 生成RDB文件，会阻塞服务器进程，期间不能处理任何命令请求</li>
+<li>BGSAVE 子进程负责创建RDB文件，父进程继续处理请求</li>
+</ol>
+<p>Redis 创建快照之后，可以对快照进行备份，可以将快照复制到其他服务器<br>从而创建具有相同数据的服务器副本（Redis主从结构，主要用来提高Redis<br>性能），还可以将快照留在原地以便重启服务器的时候使用。<br>快照持久化是 Redis 默认采用的持久化方式，在Redis.conf 配置文件中<br>默认有此下配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">save 900 1 #在900秒之后，如果至少有1个key发生变化，Redis就自动触发BGSAVE命令创建快照</span><br><span class="line"></span><br><span class="line">save 300 10 #在300秒之后，如果至少有10个key发生变化，Redis就自动触发BGSAVE命令创建快照</span><br><span class="line"></span><br><span class="line">save 60 10000 #在60秒之后如果至少10000个key发生变化，Redis自动触发BGSAVE命令创建快照</span><br></pre></td></tr></table></figure>
+<p>serverCron是Redis服务器的周期性操作函数，默认每隔100ms执行一次；<br>该函数对服务器的状态进行维护，检查配置是否满足</p>
+<ol>
+<li>saveparams 保存一个save选项设置的保存条件</li>
+<li>dirty计数器 记录距离上一次成功执行SAVE命令后对数据库的修改次数</li>
+<li>lastsave 记录上一次成功执行SAVE命令的时间，是一个UNIX时间戳</li>
+</ol>
+<p>RDB文件的载入工作是在服务器启动时自动执行的，并没有专门的命令，服务<br>器载入RDB文件期间处于阻塞状态，直到载入完成为止</p>
+<h4 id="其余自动触发机制"><a href="#其余自动触发机制" class="headerlink" title="其余自动触发机制"></a>其余自动触发机制</h4><ol>
+<li>在主从复制场景下，如果从节点执行全量复制操作，则主节点会执行bgsave<br>命令，并将rdb文件发送给从节点</li>
+<li>执行shutdown命令时，自动执行rdb持久化</li>
+</ol>
+<h4 id="RDB优缺点"><a href="#RDB优缺点" class="headerlink" title="RDB优缺点"></a>RDB优缺点</h4><p>优点</p>
+<ol>
+<li>只有一个文件dump.rdb，方便持久化</li>
+<li>容灾性好，一个文件可以保存到安全的磁盘</li>
+<li>性能最大化，fork 子进程来完成写操作，让主进程继续处理命令，所以<br>是IO 最大化。使用单独子进程来进行持久化，主进程不会进行任何IO 操作<br>，保证了redis 的高性能</li>
+<li>比AOF 的启动效率更高<br>缺点</li>
+<li>数据安全性低。RDB 是间隔一段时间进行持久化，如果持久化之间redis<br>发生故障，会发生数据丢失。所以这种方式更适合数据要求不严谨的时候</li>
+</ol>
+<h3 id="AOF持久化"><a href="#AOF持久化" class="headerlink" title="AOF持久化"></a>AOF持久化</h3><p>将Redis执行的每次写命令记录到单独的日志文件中，与快照持久化相比，<br>AOF持久化的实时性更好优先使用。默认情况下Redis没有开启AOF方式的持<br>久化，可通过appendonly参数开启</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">appendonly yes</span><br></pre></td></tr></table></figure>
+
+<p>开启AOF 持久化后每执行一条会更改Redis 中的数据的命令，Redis 就<br>会将该命令写入硬盘中的AOF 文件。AOF 文件的保存位置和RDB 文件的<br>位置相同，都是通过dir参数设置的，默认的文件名是appendonly.aof<br>在Redis 的配置文件中存在三种不同的AOF 持久化方式，它们分别是：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">appendfsync always    #每次有数据修改发生时都会写入AOF文件,这样会严重降低Redis的速度</span><br><span class="line">appendfsync everysec  #每秒钟同步一次，显示地将多个写命令同步到硬盘</span><br><span class="line">appendfsync no        #让操作系统决定何时进行同步</span><br></pre></td></tr></table></figure>
+
+
+<p>为了兼顾数据和写入性能，用户可以考虑 appendfsync everysec 选项<br>，让Redis 每秒同步一次AOF 文件，Redis 性能几乎没受到任何影响。<br>而且这样即使出现系统崩溃，用户最多只会丢失一秒之内产生的数据。<br>当硬盘忙于执行写入操作的时候，Redis 还会优雅的放慢自己的速度<br>以便适应硬盘的最大写入速度</p>
+<h4 id="AOF持久化的实现"><a href="#AOF持久化的实现" class="headerlink" title="AOF持久化的实现"></a>AOF持久化的实现</h4><p>AOF持久化的实现可以分为命令追加、文件写入和文件同步三个步骤</p>
+<ol>
+<li>命令追加 服务器执行完一个写命令就会以协议格式把命令追加到服<br>务器状态的aof_buf缓冲区末尾</li>
+<li>写入与同步 根据不同的同步策略将aof_buf中的内容同步到硬盘。<br>涉及到操作系统的write函数和fsync函数，write函数将数据写入文<br>件时通常会将数据暂存到一个内存缓冲区里，当缓冲区被填满或超过<br>了指定时限后，才真正将缓冲区的数据写入到硬盘里。如果计算机停<br>机，内存缓冲区中的数据会丢失。<br>因此系统同时提供了fsync、fdatasync等同步函数，可以强制操作系<br>统立刻将缓冲区中的数据写入到硬盘里，从而确保数据的安全性<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#每次有数据修改发生时立即调用fsync写入AOF文件，硬盘IO成为性能瓶颈</span><br><span class="line">appendfsync always</span><br><span class="line">#命令写入aof_buf后调用write；fsync同步文件操作由专门的线程每秒调用一次</span><br><span class="line">appendfsync everysec</span><br><span class="line">#调用系统write操作，不对AOF文件做fsync同步；同步由操作系统负责，通常同步周期为30秒</span><br><span class="line">appendfsync no</span><br></pre></td></tr></table></figure></li>
+<li>文件重写 定期重写AOF文件，达到压缩的目的，AOF重写是把Redis<br>进程内的数据转化为写命令，同步到新的AOF文件；不会对旧的AOF文件<br>进行任何读取、写入操作</li>
+</ol>
+<h4 id="文件重写能压缩的原因"><a href="#文件重写能压缩的原因" class="headerlink" title="文件重写能压缩的原因"></a>文件重写能压缩的原因</h4><p>文件重写既可以减少文件占用的空间，也可以加快恢复速度</p>
+<ol>
+<li>过期的数据不再写入文件</li>
+<li>无效的命令不再写入文件：如有些数据被重复设值、有些数据被删除了等等</li>
+<li>多条命令可以合并为一个</li>
+</ol>
+<h4 id="文件重写的触发"><a href="#文件重写的触发" class="headerlink" title="文件重写的触发"></a>文件重写的触发</h4><ol>
+<li>手动触发 直接调用bgrewriteaof命令，该命令的执行与bgsave有些类<br>似：都是fork子进程进行具体的工作，且都只有在fork时阻塞</li>
+<li>自动触发 执行AOF重写时，文件的最小体积要达到64MB自动执行执行<br>BGREWRITEAOF命令，重写期间Redis执行的写命令，需要追加到新的AOF<br>文件中，为此Redis引入了aof_rewrite_buf缓存。<br>执行期间，Redis的写命令同时追加到aof_buf和aof_rewirte_buf两个<br>缓冲区，保证原有AOF机制的正确，子进程根据内存快照，按照命令合并<br>规则写入到新的AOF文件，使用新的AOF文件替换老文件，完成AOF重写</li>
+</ol>
+<h4 id="AOF优缺点"><a href="#AOF优缺点" class="headerlink" title="AOF优缺点"></a>AOF优缺点</h4><ol>
+<li>数据安全，aof 持久化可以配置appendfsync属性always，每进行一次<br>命令操作就记录到aof 文件中一次，当不推荐这种，支持秒级持久化</li>
+<li>通过append 模式写文件即使中途服务器宕机，可通过redis-check-aof<br>工具解决数据一致性问题</li>
+<li>AOF机制的rewrite 模式。AOF 文件没被rewrite 之前（文件过大时会<br>对命令进行合并重写），可删除其中的某些命令（比如误操作的flushall）<br>缺点</li>
+<li>AOF 文件比RDB 文件大，且恢复速度慢</li>
+<li>数据集大的时候，比rdb 启动效率低</li>
+</ol>
+<h3 id="两种持久化方式的选择"><a href="#两种持久化方式的选择" class="headerlink" title="两种持久化方式的选择"></a>两种持久化方式的选择</h3><ol>
+<li>AOF文件比RDB更新频率高，优先使用AOF还原数据</li>
+<li>AOF比RDB更安全也更大</li>
+<li>RDB性能比AOF好</li>
+<li>如果两个都配了优先加载AOF</li>
+</ol>
+<h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><p>Redis可以通过MULTI，EXEC，DISCARD和WATCH 等命令来实现事务功能。<br>使用MULTI命令后可以输入多个命令。Redis不会立即执行这些命令，而是<br>将它们放到队列，当调用了EXEC命令将执行所有命令。过程如下</p>
+<ol>
+<li>开始事务（MULTI）</li>
+<li>命令入队(批量操作Redis 的命令，先进先出（FIFO）的顺序执行)</li>
+<li>执行事务(EXEC)</li>
+</ol>
+<p>Redis 是不支持roll back 的，因而不满足原子性的（而且不满足持久性）。<br>Redis 开发者们觉得没必要支持回滚，这样更简单便捷并且性能更好。Redis<br>开发者觉得即使命令执行错误也应该在开发过程中就被发现而不是生产过程中。</p>
+<h3 id="WATCH命令"><a href="#WATCH命令" class="headerlink" title="WATCH命令"></a>WATCH命令</h3><p>WATCH 命令是一个乐观锁，在EXEC命令执行之前监控一个或多个键，一旦<br>其中有一个键被修改（或删除），之后的事务就不会执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">watch &quot;name&quot;</span><br><span class="line">multi</span><br><span class="line">set name peter</span><br><span class="line">exec</span><br></pre></td></tr></table></figure>
+
+<h3 id="事务的ACID"><a href="#事务的ACID" class="headerlink" title="事务的ACID"></a>事务的ACID</h3><p>Redis的事务总是具有ACID中的一致性和隔离性，当服务器运行在AOF持久<br>化模式下，并且appendfsync选项的值为always时，事务也具有耐久性</p>
+<h4 id="原子性"><a href="#原子性" class="headerlink" title="原子性"></a>原子性</h4><ol>
+<li>命令可能会产生语法错误，事务的所有命令都不会执行</li>
+<li>事务中的命令可能处理了错误类型的键，比如将列表命令用在了字符串<br>键上面，该条语句会执行失败，但事务中的其他命令仍会执行</li>
+</ol>
+<h4 id="为什么不支持回滚"><a href="#为什么不支持回滚" class="headerlink" title="为什么不支持回滚"></a>为什么不支持回滚</h4><p>Redis 命令只会因为错误的语法而失败，或是命令用在了错误类型的键上<br>面：这也就是说，从实用性的角度来说，失败的命令是由编程错误造成的<br>，而这些错误应该在开发的过程中被发现，而不应该出现在生产环境中</p>
+<h4 id="一致性"><a href="#一致性" class="headerlink" title="一致性"></a>一致性</h4><ol>
+<li>入队错误 服务器会拒绝执行入队过程中出现错误的事务</li>
+<li>执行错误 出错的命令不会对数据库产生修改，不会对一致性造成影响</li>
+<li>服务器停机 重启之后要么是空白的要么使用RDB或AOF恢复数据</li>
+</ol>
+<h4 id="隔离性"><a href="#隔离性" class="headerlink" title="隔离性"></a>隔离性</h4><p>Redis 是单进程程序，并且它保证在执行事务时，不会对事务进行中断，<br>事务可以运行直到执行完所有事务队列中的命令为止。因此Redis 的事务<br>是总是带有隔离性的</p>
+<h4 id="持久性"><a href="#持久性" class="headerlink" title="持久性"></a>持久性</h4><p>持久性是指一个事务一旦被提交，它对数据库中数据的改变就是永久性的<br>，接下来即使数据库发生故障也不应该对其有任何影响，Redis的持久化<br>由持久化模式决定。</p>
+<ol>
+<li>无持久化的内存模式不能保证持久性</li>
+<li>RDB模式不能保证持久性</li>
+<li>AOF模式always，总会在执行命令后调用同步函数，具有持久性</li>
+<li>AOF模式everysec，每一秒同步一次命令数据到磁盘，停机可能恰好<br>发生在同步的那一秒内，不具有持久性</li>
+<li>AOF模式no，数据可能在等待同步的过程丢失，不具有持久性</li>
+</ol>
+<h3 id="持久化策略的选择"><a href="#持久化策略的选择" class="headerlink" title="持久化策略的选择"></a>持久化策略的选择</h3><ol>
+<li>如果Redis中的数据完全丢弃也没有关系，可以不进行任何持久化</li>
+<li>在单机环境下如果可以接受十几分钟或更多的数据丢失，选择RDB对Redis<br>的性能更加有利；如果只能接受秒级别的数据丢失，应该选择AOF</li>
+</ol>
+<h2 id="缓存穿透"><a href="#缓存穿透" class="headerlink" title="缓存穿透"></a>缓存穿透</h2><p>缓存穿透说简单点就是大量请求的 key 根本不存在于缓存中，导致请求直接<br>到了数据库上，根本没有经过缓存这一层。举个例子：某个黑客故意制造我们<br>缓存中不存在的key 发起大量请求，导致大量请求落到数据库</p>
+<h3 id="缓存穿透情况的处理流程"><a href="#缓存穿透情况的处理流程" class="headerlink" title="缓存穿透情况的处理流程"></a>缓存穿透情况的处理流程</h3><ol>
+<li>用户请求</li>
+<li>缓存中是否存在对应的数据</li>
+<li>数据库中是否存在对应的数据</li>
+</ol>
+<h3 id="缓存穿透解决方法"><a href="#缓存穿透解决方法" class="headerlink" title="缓存穿透解决方法"></a>缓存穿透解决方法</h3><p>最基本的就是首先做好参数校验，一些不合法的参数请求直接抛出异常信息返<br>回给客户端。比如查询的数据库id 不能小于 0、传入的邮箱格式不对的时候直<br>接返回错误消息给客户端等等</p>
+<ol>
+<li>缓存无效key 如果缓存和数据库都查不到某个key的数据就写一个到Redis<br>中去并设置过期时间，具体命令如下： SET key value EX 10086 。这种方<br>式可以解决请求的 key 变化不频繁的情况，如果黑客恶意攻击，每次构建不<br>同的请求 key，会导致Redis 中缓存大量无效的key 。很明显，这种方案并<br>不能从根本上解决此问题<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> Object <span class="title">getObjectInclNullById</span><span class="params">(Integer id)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 从缓存中获取数据</span></span><br><span class="line">    Object cacheValue = cache.get(id);</span><br><span class="line">    <span class="comment">// 缓存为空</span></span><br><span class="line">    <span class="keyword">if</span> (cacheValue == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="comment">// 从数据库中获取</span></span><br><span class="line">        Object storageValue = storage.get(key);</span><br><span class="line">        <span class="comment">// 缓存空对象</span></span><br><span class="line">        cache.set(key, storageValue);</span><br><span class="line">        <span class="comment">// 如果存储数据为空，需要设置一个过期时间(300秒)</span></span><br><span class="line">        <span class="keyword">if</span> (storageValue == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="comment">// 必须设置过期时间，否则有被攻击的风险</span></span><br><span class="line">            cache.expire(key, <span class="number">60</span> * <span class="number">5</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> storageValue;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> cacheValue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>布隆过滤器 布隆过滤器是一个非常神奇的数据结构，通过它我们可以非常<br>方便地判断一个给定数据是否存在于海量数据中。我们需要的就是判断key 是<br>否合法，具体是这样做的：把所有可能存在的请求的值都存放在布隆过滤器中<br>，当用户请求过来，先判断用户发来的请求的值是否存在于布隆过滤器中。不<br>存在的话，直接返回请求参数错误信息给客户端，存在的话才会走下面的流程</li>
+</ol>
+<h2 id="缓存雪崩"><a href="#缓存雪崩" class="headerlink" title="缓存雪崩"></a>缓存雪崩</h2><p>缓存在同一时间大面积的失效，后面的请求都直接落到了数据库上，造成数据<br>库短时间内承受大量请求。 这就好比雪崩一样。还有一种缓存雪崩的场景是：<br>有一些被大量访问数据（热点缓存）在某一时刻大面积失效，导致对应的请<br>求直接落到了数据库上</p>
+<h3 id="缓存雪崩解决办法"><a href="#缓存雪崩解决办法" class="headerlink" title="缓存雪崩解决办法"></a>缓存雪崩解决办法</h3><ol>
+<li>针对 Redis 服务不可用的情况：</li>
+</ol>
+<ul>
+<li>采用 Redis 集群，避免单机出现问题整个缓存服务都没办法使用</li>
+<li>限流，避免同时处理大量的请求</li>
+</ul>
+<ol start="2">
+<li>针对热点缓存失效的情况</li>
+</ol>
+<ul>
+<li>设置不同的失效时间比如随机设置缓存的失效时间</li>
+<li>缓存永不失效</li>
+</ul>
+<h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><ol>
+<li>文件事件 服务器和客户端的通信产生文件事件</li>
+<li>时间事件 服务器定时操作</li>
+</ol>
+<h2 id="内存相关"><a href="#内存相关" class="headerlink" title="内存相关"></a>内存相关</h2><h3 id="如何保证redis中的数据都是热点数据"><a href="#如何保证redis中的数据都是热点数据" class="headerlink" title="如何保证redis中的数据都是热点数据"></a>如何保证redis中的数据都是热点数据</h3><p>redis内存数据集大小上升到一定大小的时候，就会实行数据淘汰策略。<br>全局的键空间选择性移除</p>
+<ol>
+<li>noeviction：当内存不足以容纳新写入数据时，新写入操作会报错</li>
+<li>allkeys-lru：当内存不足以容纳新写入数据时，在键空间中，移除<br>最近最少使用的key</li>
+<li>allkeys-random：当内存不足以容纳新写入数据时，在键空间中，随<br>机移除某个key</li>
+</ol>
+<p>设置过期时间的键空间选择性移除</p>
+<ol>
+<li>volatile-lru：当内存不足以容纳新写入数据时，在设置了过期时间<br>的键空间中，移除最近最少使用的key</li>
+<li>volatile-random：当内存不足以容纳新写入数据时，在设置了过期时<br>间的键空间中，随机移除某个key</li>
+<li>volatile-ttl：当内存不足以容纳新写入数据时，在设置了过期时间<br>的键空间中，有更早过期时间的key优先移除</li>
+</ol>
+<h3 id="Redis的内存用完了会发生什么"><a href="#Redis的内存用完了会发生什么" class="headerlink" title="Redis的内存用完了会发生什么"></a>Redis的内存用完了会发生什么</h3><p>如果达到设置的上限，Redis的写命令会返回错误信息（但是读命令还可以正<br>常返回。）或者你可以配置内存淘汰机制，当Redis达到内存上限时会移除掉<br>旧的内容</p>
+<h2 id="主从复制"><a href="#主从复制" class="headerlink" title="主从复制"></a>主从复制</h2><p>主从复制是指将一台Redis服务器的数据，复制到其他的Redis服务器，数<br>据的复制是单向的，前者是主服务器，后者是从服务器</p>
+<h3 id="主从复制流程"><a href="#主从复制流程" class="headerlink" title="主从复制流程"></a>主从复制流程</h3><p>主从复制的开启，完全是在从节点发起的，主从服务器保存相同的数据，称<br>为数据库状态一致</p>
+<ol>
+<li>执行命令 slaveof masterip masterport</li>
+<li>slaveof no one 不会删除已有的数据，只是不再接受主节点新的数据变化</li>
+</ol>
+<h3 id="主从复制实现原理"><a href="#主从复制实现原理" class="headerlink" title="主从复制实现原理"></a>主从复制实现原理</h3><ol>
+<li>建立连接</li>
+<li>数据同步阶段 根据主从节点当前状态的不同，可以分为全量复制和部分<br>复制</li>
+<li>命令传播阶段 在这个阶段主节点将自己执行的写命令发送给从节点，从<br>节点接收命令并执行，从而保证主从节点数据的一致性，命令传播是异步的<br>过程，因此实际上主从节点之间很难保持实时的一致性</li>
+</ol>
+<h3 id="全量复制和部分复制"><a href="#全量复制和部分复制" class="headerlink" title="全量复制和部分复制"></a>全量复制和部分复制</h3><p>在Redis2.8以前，从节点向主节点发送sync命令请求同步数据，此时的同步<br>方式是全量复制；在Redis2.8及以后，从节点可以发送psync命令请求同步<br>数据，此时根据主从节点当前状态的不同，同步方式可能是全量复制或部分<br>复制</p>
+<h4 id="全量复制"><a href="#全量复制" class="headerlink" title="全量复制"></a>全量复制</h4><p>用于初次复制或其他无法进行部分复制的情况，将主节点中的所有数据都发<br>送给从节点</p>
+<ol>
+<li>主节点收到全量复制的命令后，执行bgsave，在后台生成RDB文件，并<br>使用一个缓冲区（称为复制缓冲区）记录从现在开始执行的所有写命令</li>
+<li>主节点的bgsave执行完成后，将RDB文件发送给从节点；从节点首先清<br>除自己的旧数据，然后载入接收的RDB文件，将数据库状态更新至主节点<br>执行bgsave时的数据库状态</li>
+<li>主节点将前述复制缓冲区中的所有写命令发送给从节点，从节点执行这<br>些写命令，将数据库状态更新至主节点的最新状态</li>
+<li>如果从节点开启了AOF，则会触发bgrewriteaof的执行，从而保证AOF文件<br>更新至主节点的最新状态</li>
+</ol>
+<h4 id="部分复制"><a href="#部分复制" class="headerlink" title="部分复制"></a>部分复制</h4><p>用于网络中断等情况后的复制，只将中断期间主节点执行的写命令发送给从<br>节点，与全量复制相比更加高效。需要注意的是，如果网络中断时间过长，<br>导致主节点没有能够完整地保存中断期间执行的写命令，则无法进行部分<br>复制，仍使用全量复制。部分复制的实现，依赖于三个部分</p>
+<ol>
+<li>复制偏移量 主节点和从节点分别维护一个复制偏移量，代表的是主节<br>点向从节点传递的字节数；主节点每次向从节点传播N 个字节数据时，主<br>节点的offset增加N；从节点每次收到主节点传来的N 个字节数据时，从<br>节点的offset增加N。offset用于判断主从节点的数据库状态是否一致，<br>如果不一致找出从节点缺少的那部分数据</li>
+<li>复制积压缓冲区 复制积压缓冲区是由主节点维护的、固定长度的、先进<br>先出(FIFO)队列，默认大小1MB；当主节点开始有从节点时创建，其作用<br>是备份主节点最近发送给从节点的数据。注意，无论主节点有一个还是多<br>个从节点，都只需要一个复制积压缓冲区。保存一部分最近传播的写命令<br>从节点将offset发送给主节点后，主节点根据offset和缓冲区大小决定<br>能否执行部分复制：</li>
+</ol>
+<ul>
+<li>如果offset偏移量之后的数据，仍然都在复制积压缓冲区里，则执行<br>部分复制</li>
+<li>如果offset偏移量之后的数据已不在复制积压缓冲区中，则执行全量<br>复制</li>
+</ul>
+<ol start="3">
+<li>服务器运行ID 每个Redis节点(无论主从)，在启动时都会自动生成一<br>个随机ID(每次启动都不一样)，由40个随机的十六进制字符组成；runid<br>用来唯一识别一个Redis节点。<br>主从节点初次复制时，主节点将自己的runid发送给从节点，从节点将这<br>个runid保存起来；当断线重连时，从节点会将这个runid发送给主节点<br>；主节点根据runid判断能否进行部分复制：</li>
+</ol>
+<ul>
+<li>如果从节点保存的runid与主节点现在的runid相同，说明主从节点之<br>前同步过，主节点会继续尝试使用部分复制</li>
+<li>如果从节点保存的runid与主节点现在的runid不同，说明从节点在断<br>线前同步的Redis节点并不是当前的主节点，只能进行全量复制</li>
+</ul>
+<h3 id="心跳机制"><a href="#心跳机制" class="headerlink" title="心跳机制"></a>心跳机制</h3><p>在命令传播阶段，除了发送写命令，主从节点还维持着心跳机制：PING和<br>REPLCONF ACK</p>
+<ol>
+<li>ping 每隔10s的时间，主节点会向从节点发送PING命令，这个PING<br>命令的作用，主要是为了让从节点进行超时判断。</li>
+<li>REPLCONF ACK 在命令传播阶段，从节点会向主节点发送该命令，频<br>率是每秒1次</li>
+</ol>
+<ul>
+<li>实时监测主从节点网络状态，如果超过1s说明连接出现故障</li>
+<li>检测命令丢失 从节点发送了自身的offset，主节点会与自己的offset<br>对比，如果从节点数据缺失，主节点会推送缺失的数据</li>
+<li>辅助保证从节点的数量和延迟 如果从节点数量小于3个，或所有从节点<br>的延迟值都大于10s，则主节点拒绝执行写命令</li>
+</ul>
+<h3 id="主从复制的问题"><a href="#主从复制的问题" class="headerlink" title="主从复制的问题"></a>主从复制的问题</h3><ol>
+<li>读写分离 在主从复制基础上实现的读写分离，可以实现Redis的读负<br>载均衡：由主节点提供写服务，由一个或多个从节点提供读服务；在读负<br>载较大的应用场景下，可以大大提高Redis服务器的并发量</li>
+</ol>
+<h2 id="哨兵"><a href="#哨兵" class="headerlink" title="哨兵"></a>哨兵</h2><p>在复制的基础上，哨兵实现了自动化的故障恢复</p>
+<h3 id="哨兵的功能"><a href="#哨兵的功能" class="headerlink" title="哨兵的功能"></a>哨兵的功能</h3><ol>
+<li>监控：哨兵会不断地检查主节点和从节点是否运作正常</li>
+<li>自动故障转移：当主节点不能正常工作时，哨兵会开始自动故障转移<br>操作，它会将失效主节点的其中一个从节点升级为新的主节点，并让其<br>他从节点改为复制新的主节点</li>
+<li>配置提供者：客户端在初始化时，通过连接哨兵来获得当前Redis服<br>务的主节点地址</li>
+<li>通知：哨兵可以将故障转移的结果发送给客户端</li>
+</ol>
+<h3 id="哨兵架构"><a href="#哨兵架构" class="headerlink" title="哨兵架构"></a>哨兵架构</h3><p>由两部分组成，哨兵节点和数据节点：</p>
+<ol>
+<li>哨兵节点：哨兵系统由一个或多个哨兵节点组成，哨兵节点是特殊的<br>redis节点，不存储数据</li>
+<li>数据节点：主节点和从节点都是数据节点</li>
+</ol>
+<h3 id="哨兵的启动"><a href="#哨兵的启动" class="headerlink" title="哨兵的启动"></a>哨兵的启动</h3><p>哨兵节点的启动有两种方式，二者作用是完全相同的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">redis-sentinel sentinel-26379.conf</span><br><span class="line">redis-server sentinel-26379.conf --sentinel</span><br></pre></td></tr></table></figure>
+<ol>
+<li>初始化服务器</li>
+<li>将普通Redis服务器使用的代码替换成Sentinel专用代码</li>
+<li>初始化Sentinel状态</li>
+<li>根据给定的配置文件，初始化Sentinel监视的主服务器列表</li>
+<li>创建连向主服务器的网络连接</li>
+</ol>
+<h3 id="获取服务器信息"><a href="#获取服务器信息" class="headerlink" title="获取服务器信息"></a>获取服务器信息</h3><p>每10s向被监视的服务器发送INFO命令，获取主服务器的当前信息，获取<br>两方面信息</p>
+<ol>
+<li>主服务器本身的信息</li>
+<li>从服务器的信息</li>
+</ol>
+<h3 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h3><ol>
+<li>定时任务：每个哨兵节点维护了3个定时任务。定时任务的功能分别<br>如下：通过向主从节点发送info 命令获取最新的主从结构；通过发布<br>订阅功能获取其他哨兵节点的信息；通过向其他节点发送ping命令进<br>行心跳检测，判断是否下线</li>
+<li>主观下线：在心跳检测的定时任务中，如果其他节点超过一定时间没<br>有回复，哨兵节点就会将其进行主观下线。顾名思义，主观下线的意思是<br>一个哨兵节点“主观地”判断下线；与主观下线相对应的是客观下线</li>
+<li>客观下线：哨兵节点在对主节点进行主观下线后，会通过sentinel<br>is-master-down-by-addr命令询问其他哨兵节点该主节点的状态；如<br>果判断主节点下线的哨兵数量达到一定数值，对该主节点进行客观下线</li>
+<li>选举领导者哨兵节点：当主节点被判断客观下线以后，各个哨兵节<br>点会进行协商，选举出一个领导者哨兵节点，并由该领导者节点对其<br>进行故障转移操作</li>
+<li>故障转移：选举出的领导者哨兵，开始进行故障转移操作</li>
+</ol>
+<ul>
+<li>已下线主服务器属下的所有从服务器挑选一个从服务器转换为主服务器</li>
+<li>已下线主服务器属下的所有从服务器改为复制新的主服务器</li>
+<li>已下线主服务器设置为新的主服务器的从服务器</li>
+</ul>
+<h2 id="集群"><a href="#集群" class="headerlink" title="集群"></a>集群</h2><p>集群通过分片来进行数据共享，并提供复制和故障转移功能。集群由多个<br>节点(Node)组成，Redis的数据分布在这些节点中。集群中的节点分为主<br>节点和从节点：只有主节点负责读写请求和集群信息的维护；从节点只<br>进行主节点数据和状态信息的复制</p>
+<h3 id="集群的作用"><a href="#集群的作用" class="headerlink" title="集群的作用"></a>集群的作用</h3><ol>
+<li>数据分区<br>集群将数据分散到多个节点，一方面突破了Redis单机内存大小的限制，存<br>储容量大大增加；另一方面每个主节点都可以对外提供读服务和写服务，<br>大大提高了集群的响应能力</li>
+<li>高可用：集群支持主从复制和主节点的自动故障转移（与哨兵类似）；<br>当任一节点发生故障时，集群仍然可以对外提供服务</li>
+</ol>
+<h3 id="集群的搭建"><a href="#集群的搭建" class="headerlink" title="集群的搭建"></a>集群的搭建</h3><ol>
+<li>启动节点：将节点以集群模式启动，此时节点是独立的，并没有建立联系</li>
+<li>节点握手：让独立的节点连成一个网络，使用cluster meet {ip} {port}<br>命令实现</li>
+<li>分配槽：将16384个槽分配给主节点 集群有16384个槽，槽是数据管理<br>和迁移的基本单位。当数据库中的16384个槽都分配了节点时，集群处于上<br>线状态；如果有任意一个槽没有分配节点，则集群处于下线状态</li>
+<li>指定主从关系：为从节点指定主节点</li>
+</ol>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">高明</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://skysea-gaoming.github.io/2021/05/17/Redis%E6%80%BB%E7%BB%93/">https://skysea-gaoming.github.io/2021/05/17/Redis%E6%80%BB%E7%BB%93/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></div><nav id="pagination"><div class="prev-post pull-left"><a href="/2021/05/17/Spring%E6%80%BB%E7%BB%93/"><i class="fa fa-chevron-left">  </i><span>Spring总结</span></a></div><div class="next-post pull-right"><a href="/2021/05/16/MySQL%E5%AE%9E%E6%88%98/"><span>MySQL总结2</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="disqus_thread"></div><script>var unused = null;
+var disqus_config = function () {
+  this.page.url = 'https://skysea-gaoming.github.io/2021/05/17/Redis%E6%80%BB%E7%BB%93/';
+  this.page.identifier = '2021/05/17/Redis总结/';
+  this.page.title = 'Redis总结';
+}
+var d = document, s = d.createElement('script');
+s.src = "https://" + '你的disqus的 short-name' +".disqus.com/embed.js";
+s.setAttribute('data-timestamp', '' + +new Date());
+(d.head || d.body).appendChild(s);</script><script id="dsq-count-scr" src="https://你的disqus的 short-name.disqus.com/count.js" async></script></div></div><footer class="footer-bg" style="background-image: url(https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2333247715,1420619508&amp;fm=26&amp;gp=0.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2013 - 2021 By 高明</div><div class="framework-info"><span>Driven - </span><a href="http://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody" target="_blank" rel="noopener"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file-o"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="/js/third-party/anime.min.js"></script><script src="/js/third-party/jquery.min.js"></script><script src="/js/third-party/jquery.fancybox.min.js"></script><script src="/js/third-party/velocity.min.js"></script><script src="/js/third-party/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.7.0"></script><script src="/js/fancybox.js?version=1.7.0"></script><script src="/js/sidebar.js?version=1.7.0"></script><script src="/js/copy.js?version=1.7.0"></script><script src="/js/fireworks.js?version=1.7.0"></script><script src="/js/transition.js?version=1.7.0"></script><script src="/js/scroll.js?version=1.7.0"></script><script src="/js/head.js?version=1.7.0"></script><script>if(/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+  $('#top-container').addClass('is-mobile')
+}</script></body></html>

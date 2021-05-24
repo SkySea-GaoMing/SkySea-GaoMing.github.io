@@ -1,0 +1,330 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="Spring总结"><meta name="keywords" content="Java"><meta name="author" content="高明"><meta name="copyright" content="高明"><title>Spring总结 | SkySea-GaoMing</title><link rel="shortcut icon" href="/img/favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.7.0"><link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css?version=1.7.0"><meta name="format-detection" content="telephone=no"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  }
+} </script><meta name="generator" content="Hexo 4.2.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="Toggle article">Toggle site</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Spring-IOC总结"><span class="toc-number">1.</span> <span class="toc-text">Spring IOC总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring-框架"><span class="toc-number">1.1.</span> <span class="toc-text">Spring 框架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring模块"><span class="toc-number">1.2.</span> <span class="toc-text">Spring模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring框架的好处"><span class="toc-number">1.3.</span> <span class="toc-text">Spring框架的好处</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RestController和-Controller"><span class="toc-number">1.4.</span> <span class="toc-text">@RestController和@Controller</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JavaBean"><span class="toc-number">1.5.</span> <span class="toc-text">JavaBean</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring-IOC和AOP"><span class="toc-number">1.6.</span> <span class="toc-text">Spring IOC和AOP</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#IOC"><span class="toc-number">1.6.1.</span> <span class="toc-text">IOC</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#IOC的好处"><span class="toc-number">1.6.2.</span> <span class="toc-text">IOC的好处</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#依赖注入"><span class="toc-number">1.7.</span> <span class="toc-text">依赖注入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IOC（依赖注入）方式"><span class="toc-number">1.8.</span> <span class="toc-text">IOC（依赖注入）方式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#AOP"><span class="toc-number">1.8.1.</span> <span class="toc-text">AOP</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么使用AOP"><span class="toc-number">1.9.</span> <span class="toc-text">为什么使用AOP</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Spring-AOP和AspectJ-AOP"><span class="toc-number">1.9.1.</span> <span class="toc-text">Spring AOP和AspectJ AOP</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BeanFactory和ApplicationContext的区别"><span class="toc-number">1.10.</span> <span class="toc-text">BeanFactory和ApplicationContext的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BeanFactory和ApplicationContext的优缺点"><span class="toc-number">1.11.</span> <span class="toc-text">BeanFactory和ApplicationContext的优缺点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring提供的配置方式"><span class="toc-number">1.12.</span> <span class="toc-text">Spring提供的配置方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring中的bean的作用域"><span class="toc-number">1.13.</span> <span class="toc-text">Spring中的bean的作用域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#懒加载"><span class="toc-number">1.14.</span> <span class="toc-text">懒加载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自定义组件作用域"><span class="toc-number">1.15.</span> <span class="toc-text">自定义组件作用域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring中的单例bean的线程安全问题"><span class="toc-number">1.16.</span> <span class="toc-text">Spring中的单例bean的线程安全问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#将一个类声明为bean-的注解"><span class="toc-number">1.17.</span> <span class="toc-text">将一个类声明为bean 的注解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Bean的创建方式"><span class="toc-number">1.18.</span> <span class="toc-text">Bean的创建方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring-中的bean-生命周期"><span class="toc-number">1.19.</span> <span class="toc-text">Spring 中的bean 生命周期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#定义初始化和销毁方法"><span class="toc-number">1.20.</span> <span class="toc-text">定义初始化和销毁方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#指定初始化和销毁方法的使用场景"><span class="toc-number">1.21.</span> <span class="toc-text">指定初始化和销毁方法的使用场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#初始化和销毁方法调用的时机"><span class="toc-number">1.22.</span> <span class="toc-text">初始化和销毁方法调用的时机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#InitializingBean和DisposableBean"><span class="toc-number">1.23.</span> <span class="toc-text">InitializingBean和DisposableBean</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#afterPropertiesSet-方法调用时机"><span class="toc-number">1.23.1.</span> <span class="toc-text">afterPropertiesSet()方法调用时机</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#destroy-方法调用时机"><span class="toc-number">1.23.2.</span> <span class="toc-text">destroy()方法调用时机</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PostConstruct注解和-PreDestroy注解"><span class="toc-number">1.24.</span> <span class="toc-text">@PostConstruct注解和@PreDestroy注解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BeanPostProcessor"><span class="toc-number">1.25.</span> <span class="toc-text">BeanPostProcessor</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#BeanPostProcessor后置处理器作用"><span class="toc-number">1.25.1.</span> <span class="toc-text">BeanPostProcessor后置处理器作用</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自定义组件中注入Spring底层的组件"><span class="toc-number">1.26.</span> <span class="toc-text">自定义组件中注入Spring底层的组件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#XxxAware原理"><span class="toc-number">1.26.1.</span> <span class="toc-text">XxxAware原理</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注解"><span class="toc-number">2.</span> <span class="toc-text">注解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SpringBootApplication"><span class="toc-number">2.1.</span> <span class="toc-text">@SpringBootApplication</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Autowired"><span class="toc-number">2.2.</span> <span class="toc-text">@Autowired</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Component"><span class="toc-number">2.3.</span> <span class="toc-text">Component</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Component-和-Bean-的区别"><span class="toc-number">2.4.</span> <span class="toc-text">@Component 和@Bean 的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RestController"><span class="toc-number">2.5.</span> <span class="toc-text">@RestController</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Scope"><span class="toc-number">2.6.</span> <span class="toc-text">@Scope</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Configuration"><span class="toc-number">2.7.</span> <span class="toc-text">@Configuration</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#处理常见的HTTP-请求类型"><span class="toc-number">2.8.</span> <span class="toc-text">处理常见的HTTP 请求类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PathVariable-和-RequestParam"><span class="toc-number">2.9.</span> <span class="toc-text">@PathVariable 和 @RequestParam</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RequestBody"><span class="toc-number">2.10.</span> <span class="toc-text">@RequestBody</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Value"><span class="toc-number">2.11.</span> <span class="toc-text">@Value</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Qualifier"><span class="toc-number">2.12.</span> <span class="toc-text">@Qualifier</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Primary注解"><span class="toc-number">2.13.</span> <span class="toc-text">@Primary注解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Resource"><span class="toc-number">2.14.</span> <span class="toc-text">@Resource</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Inject"><span class="toc-number">2.15.</span> <span class="toc-text">@Inject</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Profile"><span class="toc-number">2.16.</span> <span class="toc-text">@Profile</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#全局处理Controller-层异常"><span class="toc-number">2.17.</span> <span class="toc-text">全局处理Controller 层异常</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Spring事务"><span class="toc-number">3.</span> <span class="toc-text">Spring事务</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#作用位置"><span class="toc-number">3.1.</span> <span class="toc-text">作用位置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring事务管理的方式"><span class="toc-number">3.2.</span> <span class="toc-text">Spring事务管理的方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#两种事务管理方式的优劣"><span class="toc-number">3.3.</span> <span class="toc-text">两种事务管理方式的优劣</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring事务传播行为"><span class="toc-number">3.4.</span> <span class="toc-text">Spring事务传播行为</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#支持当前事务的情况"><span class="toc-number">3.4.1.</span> <span class="toc-text">支持当前事务的情况</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#不支持当前事务的情况"><span class="toc-number">3.4.2.</span> <span class="toc-text">不支持当前事务的情况</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#其他情况"><span class="toc-number">3.4.3.</span> <span class="toc-text">其他情况</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NESTED与REQUIRES-NEW的区别"><span class="toc-number">3.5.</span> <span class="toc-text">NESTED与REQUIRES_NEW的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#回滚规则"><span class="toc-number">3.6.</span> <span class="toc-text">回滚规则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#事务的隔离级别"><span class="toc-number">3.7.</span> <span class="toc-text">事务的隔离级别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#事务超时属性"><span class="toc-number">3.8.</span> <span class="toc-text">事务超时属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#事务只读属性"><span class="toc-number">3.9.</span> <span class="toc-text">事务只读属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么数据查询操作还要启用事务"><span class="toc-number">3.10.</span> <span class="toc-text">为什么数据查询操作还要启用事务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Transactional的常用配置参数"><span class="toc-number">3.11.</span> <span class="toc-text">@Transactional的常用配置参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Transactional-事务注解原理"><span class="toc-number">3.12.</span> <span class="toc-text">@Transactional 事务注解原理</span></a></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2762516417,1589137703&amp;fm=26&amp;gp=0.jpg"></div><div class="author-info__name text-center">高明</div><div class="author-info__description text-center">JAVA工程师</div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">Articles</span><span class="pull-right">81</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">Tags</span><span class="pull-right">17</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">Categories</span><span class="pull-right">12</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2333247715,1420619508&amp;fm=26&amp;gp=0.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">SkySea-GaoMing</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a></span><span class="pull-right"></span></div><div id="post-info"><div id="post-title">Spring总结</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-05-17</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E9%9D%A2%E8%AF%95/">面试</a><span class="post-meta__separator">|</span><i class="fa fa-comment-o post-meta__icon" aria-hidden="true"></i><a href="/2021/05/17/Spring%E6%80%BB%E7%BB%93/#disqus_thread"><span class="disqus-comment-count" data-disqus-identifier="2021/05/17/Spring总结/"></span></a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h2 id="Spring-IOC总结"><a href="#Spring-IOC总结" class="headerlink" title="Spring IOC总结"></a>Spring IOC总结</h2><h3 id="Spring-框架"><a href="#Spring-框架" class="headerlink" title="Spring 框架"></a>Spring 框架</h3><p>Spring 是一个java企业级应用的开源开发框架。Spring主要用来开发<br>Java 应用，但是有些扩展是针对构建J2EE平台的web 应用。它是很多<br>模块的集合，使用这些模块可以很方便地协助我们进行开发</p>
+<h3 id="Spring模块"><a href="#Spring模块" class="headerlink" title="Spring模块"></a>Spring模块</h3><ol>
+<li>Spring Core：Spring 其他所有的功能都需要依赖于该类库。主要提<br>供IoC 依赖注入功能</li>
+<li>Spring AOP：提供了面向切面的编程实现</li>
+<li>Spring JDBC：Java数据库连接</li>
+<li>Spring Web：为创建Web应用程序提供支持</li>
+</ol>
+<h3 id="Spring框架的好处"><a href="#Spring框架的好处" class="headerlink" title="Spring框架的好处"></a>Spring框架的好处</h3><ol>
+<li>轻量：Spring 是轻量的，基本的版本大约2MB</li>
+<li>声明式事务的支持：在Spring中，我们可以从单调烦闷的事务管理代<br>码中解脱出来，通过声明式方式灵活地进行事务的管理，提高开发效率和<br>质量</li>
+<li>面向切面的编程(AOP)：通过Spring提供的AOP功能，方便进行面向切面<br>的编程，许多不容易用传统OOP实现的功能可以通过AOP轻松应付</li>
+<li>方便解耦，简化开发：通过Spring提供的IoC容器，我们可以将对象之间<br>的依赖关系交由Spring 进行控制</li>
+</ol>
+<h3 id="RestController和-Controller"><a href="#RestController和-Controller" class="headerlink" title="@RestController和@Controller"></a>@RestController和@Controller</h3><ol>
+<li>Controller返回一个页面<br>单独使用@Controller 不加@ResponseBody的话一般使用在要返回一个视图<br>的情况，这种情况属于Spring MVC的应用，对应于前后端不分离的情况</li>
+<li>@RestController返回JSON 或XML 形式数据<br>但@RestController只返回对象，对象数据直接以JSON 或 XML 形式写入<br>HTTP响应(Response)中，这种情况属于 RESTful Web服务，这也是目前<br>日常开发所接触的最常用的情况（前后端分离）</li>
+<li>@Controller +@ResponseBody 返回JSON 或XML 形式数据<br>@ResponseBody 注解的作用是将Controller 的方法返回的对象通过适当的<br>转换器转换为指定的格式之后，写入到HTTP响应(Response)对象的body 中<br>，通常用来返回JSON 或者XML 数据，返回JSON 数据的情况比较多</li>
+</ol>
+<h3 id="JavaBean"><a href="#JavaBean" class="headerlink" title="JavaBean"></a>JavaBean</h3><ol>
+<li>所有属性为private</li>
+<li>提供默认构造方法</li>
+<li>提供getter和setter</li>
+<li>实现serializable接口</li>
+</ol>
+<h3 id="Spring-IOC和AOP"><a href="#Spring-IOC和AOP" class="headerlink" title="Spring IOC和AOP"></a>Spring IOC和AOP</h3><h4 id="IOC"><a href="#IOC" class="headerlink" title="IOC"></a>IOC</h4><p>IoC（控制反转）是一种设计思想，就是将原本在程序中手动创建对象的<br>控制权，交由Spring框架来管理。IoC 容器是Spring 用来实现IoC 的<br>载体，IoC 容器实际上就是个Map(key，value)，Map中存放的是各种<br>对象。一般通过XML 文件来配置Bean，后来开发人员觉得XML 文件来配<br>置不太好，于是SpringBoot 注解配置就慢慢开始流行起来</p>
+<h4 id="IOC的好处"><a href="#IOC的好处" class="headerlink" title="IOC的好处"></a>IOC的好处</h4><p>将对象之间的相互依赖关系交给IoC 容器来管理，并由IoC容器完成对象<br>的注入。这样可以很大程度上简化应用的开发，把应用从复杂的依赖关系<br>中解放出来。 IoC 容器就像是一个工厂一样，当我们需要创建一个对象<br>的时候，只需要配置好配置文件/ 注解即可，完全不用考虑对象是如何<br>被创建出来的。 在实际项目中一个 Service 类可能有几百甚至上千个<br>类作为它的底层，假如我们需要实例化这个Service，你可能要每次都<br>要搞清这个Service 所有底层类的构造函数。如果利用 IoC 的话，你<br>只需要配置好，然后在需要的地方引用就行了，这大大增加了项目的可<br>维护性且降低了开发难度</p>
+<h3 id="依赖注入"><a href="#依赖注入" class="headerlink" title="依赖注入"></a>依赖注入</h3><p>在依赖注入中，您不必创建对象，但必须描述如何创建它们。您不是直接<br>在代码中将组件和服务连接在一起，而是描述配置文件中哪些组件需要<br>哪些服务。由IoC 容器将它们装配在一起</p>
+<h3 id="IOC（依赖注入）方式"><a href="#IOC（依赖注入）方式" class="headerlink" title="IOC（依赖注入）方式"></a>IOC（依赖注入）方式</h3><ol>
+<li>构造器依赖注入：构造器依赖注入通过容器触发一个类的构造器来实<br>现的，该类有一系列参数，每个参数代表一个对其他类的依赖</li>
+<li>Setter方法注入：Setter方法注入是容器通过调用无参构造器或无<br>参static工厂，方法实例化bean之后，调用该bean的setter方法，即<br>实现了基于setter的依赖注入。底层通过反射实现</li>
+</ol>
+<h4 id="AOP"><a href="#AOP" class="headerlink" title="AOP"></a>AOP</h4><p>AOP(面向切面编程)能够将那些与业务无关，却为业务模块所共同调用的<br>逻辑或责任（例如事务处理、日志管理、权限控制等）封装起来，便于减<br>少系统的重复代码，降低模块间的耦合度，并有利于未来的可拓展性和<br>可维护性。<br>Spring AOP就是基于动态代理的，如果要代理的对象，实现了某个接口<br>，那么Spring AOP会使用JDK Proxy，去创建代理对象，而对于没有实<br>现接口的对象，就无法使用 JDK Proxy 去进行代理了，这时候Spring<br>AOP会使用Cglib ，这时候 Spring AOP会使用Cglib 生成一个被代理<br>对象的子类来作为代理</p>
+<h3 id="为什么使用AOP"><a href="#为什么使用AOP" class="headerlink" title="为什么使用AOP"></a>为什么使用AOP</h3><p>比如有几个方法含有一些相同代码，如果把这些代码抽成一个方法，这就是面<br>向对象编程，如果这个方法改名字那么所有引用这个方法的地方都要改名字，<br>如果这个方法因为逻辑要改变位置那么所有引用这个方法的地方都要进行修<br>改。以上问题可以用AOP解决。根据以上如果许多方法需要使用这个抽取的方<br>法，不需要写在那些方法中，直接切入那些方法中，如果修改抽取方法的名<br>字或位置时不需要修改，因为这些方法并没有引用</p>
+<h4 id="Spring-AOP和AspectJ-AOP"><a href="#Spring-AOP和AspectJ-AOP" class="headerlink" title="Spring AOP和AspectJ AOP"></a>Spring AOP和AspectJ AOP</h4><ol>
+<li>Spring AOP属于运行时增强，而AspectJ 是编译时增强。 Spring<br>AOP 基于代理(Proxying)，而AspectJ 基于字节码操作</li>
+<li>Spring AOP 已经集成了AspectJ ，AspectJ 应该算的上是 Java<br>生态系统中最完整的 AOP 框架了。AspectJ 相比于 Spring AOP 功能<br>更加强大，但是 Spring AOP 相对来说更简单</li>
+<li>如果我们的切面比较少，那么两者性能差异不大。但是当切面太多的<br>话，最好选择AspectJ，它比Spring AOP快很多</li>
+<li>Spring AOP 基于动态代理方式实现，AspectJ 基于静态代理方式实现<br>。Spring AOP 仅支持方法级别的PointCut，提供了完全的AOP 支持，它<br>还支持属性级别的 PointCut</li>
+</ol>
+<h3 id="BeanFactory和ApplicationContext的区别"><a href="#BeanFactory和ApplicationContext的区别" class="headerlink" title="BeanFactory和ApplicationContext的区别"></a>BeanFactory和ApplicationContext的区别</h3><p>是Spring的两大核心接口，都可以当做Spring的容器。其中<br>ApplicationContext是BeanFactory的子接口</p>
+<ol>
+<li>加载方式 第一个使用懒加载，第二个使用即时加载</li>
+<li>第一个不支持基于依赖的注解，第二个支持基于依赖的注解</li>
+<li>BeanFactory：是Spring里面最底层的接口，包含了各种Bean的定义<br>，读取bean配置文档，管理bean的加载、实例化，控制bean的生命周期<br>，维护bean之间的依赖关系</li>
+<li>ApplicationContext接口作为BeanFactory的派生，除了提供<br>BeanFactory所具有的功能外，还提供了更完整的框架功能</li>
+<li>BeanFactroy采用的是延迟加载形式来注入Bean的，即只有在使用到某<br>个Bean时(调用getBean())，才对该Bean进行加载实例化。这样，我们就<br>不能发现一些存在的Spring的配置问题。如果Bean的某一个属性没有注入<br>，BeanFacotry加载后，直至第一次使用调用getBean方法才会抛出异常</li>
+<li>ApplicationContext，它是在容器启动时，一次性创建了所有的Bean。<br>这样，在容器启动时，我们就可以发现Spring中存在的配置错误，这样有利<br>于检查所依赖属性是否注入。 ApplicationContext启动后预载入所有的单<br>实例Bean，通过预载入单实例bean，确保当你需要的时候，你就不用等待<br>，因为它们已经创建好了</li>
+</ol>
+<h3 id="BeanFactory和ApplicationContext的优缺点"><a href="#BeanFactory和ApplicationContext的优缺点" class="headerlink" title="BeanFactory和ApplicationContext的优缺点"></a>BeanFactory和ApplicationContext的优缺点</h3><ol>
+<li>BeanFactory的优缺点：</li>
+</ol>
+<ul>
+<li>优点：应用启动的时候占用资源很少，对资源要求较高的应用，比较有优势</li>
+<li>缺点：运行速度会相对来说慢一些。而且有可能会出现空指针异常的错误，<br>而且通过Bean工厂创建的Bean生命周期会简单一些</li>
+</ul>
+<ol start="2">
+<li>ApplicationContext的优缺点：</li>
+</ol>
+<ul>
+<li>优点：所有的Bean在启动的时候都进行了加载，系统运行的速度快，在系<br>统启动的时候，可以发现系统中的配置问题</li>
+<li>缺点：把费时的操作放到系统启动中完成，所有的对象都可以预加载，缺点<br>就是内存占用较大</li>
+</ul>
+<h3 id="Spring提供的配置方式"><a href="#Spring提供的配置方式" class="headerlink" title="Spring提供的配置方式"></a>Spring提供的配置方式</h3><ol>
+<li>通过XML配置文件注入JavaBean<br>配置bean所需的依赖项和服务在XML格式的配置文件中指定。这些配置文件<br>通常包含许多bean定义和特定于应用程序的配置选项。它们通常以bean标<br>签开头</li>
+<li>通过注解注入JavaBean<br>在类上添加@Configuration注解来标注该类是一个Spring 的配置类，也<br>就是告诉Spring它是一个配置类，最后通过@Bean注解将类注入到Spring<br>的IOC容器中</li>
+<li>使用@ComponentScan自动扫描组件<br>在配置类上添加@ComponentScan注解并指定扫描包，在指定的包或其子<br>包中的类上标注@Repository、@Service、@Controller、@Component<br>注解的类都会被扫描到，并将这个类注入到Spring容器中</li>
+<li>@Import注解，快速向Spring容器中导入一个组件</li>
+</ol>
+<h3 id="Spring中的bean的作用域"><a href="#Spring中的bean的作用域" class="headerlink" title="Spring中的bean的作用域"></a>Spring中的bean的作用域</h3><p>@Scope注解能够设置组件的作用域</p>
+<ol>
+<li>singleton : 唯一bean实例，Spring中的bean默认都是单例的，启动<br>spring 容器，便会创建对象</li>
+<li>prototype : 每次从容器中获取时都会创建一个新的bean实例</li>
+<li>request : 每一次HTTP请求都会产生一个新的bean，该bean仅在当前<br>HTTP request内有效，request作用域要在Spring容器的Web环境中</li>
+<li>session : 同一个session范围内，该bean仅在当前HTTP session<br>内有效</li>
+<li>application：全局Web应用级别的作用域，也是在Web环境中使用，<br>一个Web应用程序对应一个bean实例，和单例效果类似</li>
+</ol>
+<p>request和session作用域是需要Web环境来支持的，这两个值基本上使用<br>不到。当我们使用Web容器来运行Spring应用时，如果需要将组件的实例<br>对象的作用域设置为request和session，那么我们通常会使用</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">request.setAttribute(<span class="string">"key"</span>, object);</span><br><span class="line">session.setAttribute(<span class="string">"key"</span>, object);</span><br></pre></td></tr></table></figure>
+
+<h3 id="懒加载"><a href="#懒加载" class="headerlink" title="懒加载"></a>懒加载</h3><p>懒加载，也称延时加载，仅针对单实例bean生效。 单实例bean是在Spring<br>容器启动的时候加载的，添加@Lazy注解后就会延迟加载，在Spring容器启<br>动的时候并不会加载，而是在第一次使用此bean 的时候才会加载，但当你<br>多次获取bean 的时候并不会重复加载，只是在第一次获取的时候才会加载<br>，这不是延迟加载的特性，而是单实例bean的特性</p>
+<h3 id="自定义组件作用域"><a href="#自定义组件作用域" class="headerlink" title="自定义组件作用域"></a>自定义组件作用域</h3><ol>
+<li>第一步实现Scope接口</li>
+<li>第二步将自定义Scope注册到容器中，通过registerScope方法</li>
+<li>使用自定义的作用域。也就是在定义bean的时候，指定bean的scope属性<br>为自定义的作用域名称</li>
+</ol>
+<h3 id="Spring中的单例bean的线程安全问题"><a href="#Spring中的单例bean的线程安全问题" class="headerlink" title="Spring中的单例bean的线程安全问题"></a>Spring中的单例bean的线程安全问题</h3><p>单实例bean是整个应用所共享的，所以需要考虑到线程安全问题，对这个对<br>象的成员变量的写操作会存在线程安全问题，但是，一般情况下我们常用的<br>Controller、Service、Dao 这些Bean 是无状态的。无状态的Bean 不能保<br>存数据，因此是线程安全的。有两种解决办法</p>
+<ol>
+<li>在类中定义一个 ThreadLocal 成员变量，将需要的可变成员变量保存<br>在 ThreadLocal 中</li>
+<li>改变Bean 的作用域为 “prototype”：每次请求都会创建一个新的bean<br>实例，自然不会存在线程安全问题</li>
+</ol>
+<h3 id="将一个类声明为bean-的注解"><a href="#将一个类声明为bean-的注解" class="headerlink" title="将一个类声明为bean 的注解"></a>将一个类声明为bean 的注解</h3><p>一般使用@Autowired 注解自动装配bean</p>
+<ol>
+<li>@Component ：通用的注解，可标注任意类为Spring组件。如果一个Bean<br>不知道属于哪个层，可以使用@Component 注解标注</li>
+<li>@Repository : 对应持久层即 Dao 层，主要用于数据库相关操作</li>
+<li>@Controller : 对应Spring MVC 控制层，主要用于接受用户请求并调<br>用Service 层返回数据给前端页面</li>
+<li>@Service : 对应服务层，主要涉及一些复杂的逻辑，需要用到Dao层</li>
+</ol>
+<h3 id="Bean的创建方式"><a href="#Bean的创建方式" class="headerlink" title="Bean的创建方式"></a>Bean的创建方式</h3><ol>
+<li><p>利用默认的构造方法 在applicationContext.xml文件中配置id和class<br>使用有参数构造器进行定义，使用此中方式，可以指定构造器参数值，其中<br>index表示位置，value表示常量值，也可以指定引用，指定引用使用ref来<br>引用另一个Bean定义</p>
+</li>
+<li><p>利用静态工厂方法 使用这种方式除了指定必须的class属性，还要指定<br>factory-method属性来指定实例化Bean的方法，而且使用静态工厂方法也<br>允许指定方法参数，spring IoC容器将调用此属性指定的方法来获取Bean<br>，spring容器只负责调用静态工厂方法，而这个静态工厂方法内部实现由<br>程序员完成</p>
+</li>
+<li><p>利用实例工厂方法 使用这种方式不能指定class属性，此时必须使用<br>factory-bean属性来指定工厂Bean，factory-method属性指定实例化<br>Bean的方法，而且使用实例工厂方法允许指定方法参数，方式和使用构<br>造器方式一样</p>
+</li>
+<li><p>利用setter方式 这种方式，只要写上对应的set、get方法，然后再<br>bean.xml文件中利用property注入值即可</p>
+</li>
+<li><p>通过反射机制利用bean的class属性指定实现类来实例化bean的</p>
+</li>
+<li><p>使用FactoryBean向Spring容器中注册bean，重写getObject方法<br>，实现该定制实例化bean的逻辑</p>
+</li>
+</ol>
+<h3 id="Spring-中的bean-生命周期"><a href="#Spring-中的bean-生命周期" class="headerlink" title="Spring 中的bean 生命周期"></a>Spring 中的bean 生命周期</h3><p>bean的生命周期，指的是bean从创建到初始化，经过一系列的流程，最终<br>销毁的过程。在Spring中，我们可以自己来指定bean的初始化和销毁的方<br>法。当容器在bean进行到当前生命周期的阶段时，会自动调用我们自定义<br>的初始化和销毁方法。流程如下</p>
+<ol>
+<li>Bean 容器找到配置文件中 Spring Bean 的定义</li>
+<li>Bean 容器利用 Java Reflection API 创建一个Bean的实例</li>
+<li>如果涉及到一些属性值利用set()方法设置一些属性值</li>
+<li>如果Bean 实现了BeanNameAware 接口，调用setBeanName()方法，<br>传入Bean的名字</li>
+<li>如果Bean实现BeanClassLoaderAware接口，调用setBeanClassLoader()<br>方法，传入 ClassLoader对象的实例</li>
+<li>与上面的类似，如果实现了其他*.Aware接口，就调用相应的方法</li>
+<li>如果有和加载这个Bean 的Spring 容器相关的BeanPostProcessor<br>对象，执行postProcessBeforeInitialization()方法</li>
+<li>如果Bean实现了InitializingBean接口，执行afterPropertiesSet()方法</li>
+<li>如果Bean 在配置文件中的定义包含init-method 属性，执行指定的方法</li>
+<li>如果有和加载这个Bean的 Spring 容器相关的 BeanPostProcessor<br>对象，执行postProcessAfterInitialization()方法</li>
+<li>当要销毁Bean 的时候，如果Bean 实现了DisposableBean 接<br>口，执行 destroy() 方法</li>
+<li>当要销毁 Bean 的时候，如果 Bean 在配置文件中的定义包含<br>destroy-method 属性，执行指定的方法</li>
+</ol>
+<h3 id="定义初始化和销毁方法"><a href="#定义初始化和销毁方法" class="headerlink" title="定义初始化和销毁方法"></a>定义初始化和销毁方法</h3><ol>
+<li>使用XML配置文件的方式配置bean<br>指定 init-method=”init” destroy-method=”destroy”，在类中需要<br>存在init()方法和destroy()方法。而且Spring中还规定这两个方法必须<br>是无参方法，但可以抛出异常</li>
+<li>通过@Bean注解指定初始化和销毁方法<br>@Bean(initMethod=”init”, destroyMethod=”destroy”)，先是调用<br>类的构造方法来创建对象，接下来调用对象的init()方法来进行初始化<br>，bean的销毁方法是在容器关闭的时候被调用的</li>
+<li>实现InitializingBean接口和DisposableBean接口</li>
+<li>@PostConstruct注解和@PreDestroy注解</li>
+<li>BeanPostProcessor后置处理器</li>
+</ol>
+<h3 id="指定初始化和销毁方法的使用场景"><a href="#指定初始化和销毁方法的使用场景" class="headerlink" title="指定初始化和销毁方法的使用场景"></a>指定初始化和销毁方法的使用场景</h3><p>一个典型的使用场景就是对于数据源的管理。例如在配置数据源时，在初始<br>化的时候，会对很多的数据源的属性进行赋值操作；在销毁的时候，我们<br>需要对数据源的连接等信息进行关闭和清理。这个时候，我们就可以在自<br>定义的初始化和销毁方法中来做这些事情了</p>
+<h3 id="初始化和销毁方法调用的时机"><a href="#初始化和销毁方法调用的时机" class="headerlink" title="初始化和销毁方法调用的时机"></a>初始化和销毁方法调用的时机</h3><ol>
+<li>bean对象的初始化方法调用的时机：对象创建完成，如果对象中存在<br>一些属性，并且这些属性也都赋好值之后，那么就会调用bean 的初始化<br>方法。对于单实例bean来说，在Spring容器创建完成后，Spring容器会<br>自动调用bean的初始化方法；对于多实例bean来说，在每次获取bean对<br>象的时候，调用bean的初始化方法</li>
+<li>bean对象的销毁方法调用的时机：对于单实例bean来说，在容器关闭<br>的时候，会调用bean的销毁方法；对于多实例bean来说，Spring容器不<br>会管理这个bean，也就不会自动调用这个bean的销毁方法了</li>
+</ol>
+<h3 id="InitializingBean和DisposableBean"><a href="#InitializingBean和DisposableBean" class="headerlink" title="InitializingBean和DisposableBean"></a>InitializingBean和DisposableBean</h3><ol>
+<li>Spring中提供了一个InitializingBean接口，该接口为bean提供了<br>属性初始化后的处理方法，它只包括afterPropertiesSet方法，凡是继<br>承该接口的类，在bean的属性初始化后都会执行该方法</li>
+<li>bean在销毁前，Spring将会调用DisposableBean接口的destroy()<br>方法</li>
+</ol>
+<h4 id="afterPropertiesSet-方法调用时机"><a href="#afterPropertiesSet-方法调用时机" class="headerlink" title="afterPropertiesSet()方法调用时机"></a>afterPropertiesSet()方法调用时机</h4><p>先调用afterPropertiesSet方法，后执行init-method指定的方法。如<br>果调用afterPropertiesSet 方法出错，那么就不会调用init-method<br>指定的方法</p>
+<h4 id="destroy-方法调用时机"><a href="#destroy-方法调用时机" class="headerlink" title="destroy()方法调用时机"></a>destroy()方法调用时机</h4><p>多实例bean的生命周期不归Spring容器来管理，如果一个多实例bean实<br>现了DisposableBean接口是没有意义的</p>
+<h3 id="PostConstruct注解和-PreDestroy注解"><a href="#PostConstruct注解和-PreDestroy注解" class="headerlink" title="@PostConstruct注解和@PreDestroy注解"></a>@PostConstruct注解和@PreDestroy注解</h3><ol>
+<li>@PostConstruct注解是Java中的注解，用来修饰一个非静态的void()<br>方法，在构造函数之后，init()方法之前执行</li>
+<li>@PreDestroy注解同样是Java提供的，会在destroy()方法之后执行</li>
+</ol>
+<h3 id="BeanPostProcessor"><a href="#BeanPostProcessor" class="headerlink" title="BeanPostProcessor"></a>BeanPostProcessor</h3><p>是一个接口，其中有两个方法，即postProcessBeforeInitialization<br>和postProcessAfterInitialization这两个方法，这两个方法分别是<br>在Spring容器中的bean初始化前后执行</p>
+<ol>
+<li>postProcessBeforeInitialization方法会在bean实例化和属性设<br>置之后，自定义初始化方法之前被调用</li>
+<li>postProcessAfterInitialization方法会在自定义初始化方法之后<br>被调用</li>
+</ol>
+<h4 id="BeanPostProcessor后置处理器作用"><a href="#BeanPostProcessor后置处理器作用" class="headerlink" title="BeanPostProcessor后置处理器作用"></a>BeanPostProcessor后置处理器作用</h4><p>后置处理器可用于bean对象初始化前后进行逻辑增强，用于@Autowired<br>注解的实现，用于Spring AOP的动态代理等等，bean对象初始化完成之<br>后，后置处理器会判断该bean是否注册了切面，若是，则生成代理对象<br>注入到容器中</p>
+<h3 id="自定义组件中注入Spring底层的组件"><a href="#自定义组件中注入Spring底层的组件" class="headerlink" title="自定义组件中注入Spring底层的组件"></a>自定义组件中注入Spring底层的组件</h3><p>自定义的组件要想使用Spring容器底层一些组件，ApplicationContext<br>（IOC容器）、底层的BeanFactory 等等，那么只需要让自定义组件实现<br>XxxAware接口即可。Spring在创建对象的时候，会调用XxxAware接口中<br>定义的方法注入相关的组件。<br>Spring中形如XxxAware这样的接口都继承了Aware接口</p>
+<ol>
+<li>通过BeanNameAware接口获取到当前bean在Spring容器中的名称</li>
+<li>ApplicationContextAware接口我们可以获取到IOC容器</li>
+</ol>
+<h4 id="XxxAware原理"><a href="#XxxAware原理" class="headerlink" title="XxxAware原理"></a>XxxAware原理</h4><p>XxxAware接口的底层原理是由XxxAwareProcessor实现类实现的，也就是<br>说每一个XxxAware接口都有它自己对应的XxxAwareProcessor实现类，其<br>实现了BeanPostProcessor接口，本质上是一个后置处理器。<br>在容器初始化的时候有一个refresh()方法，向spring容器注册了后置处<br>理器，postProcessBeforeInitialization方法会在每个bean实例化后<br>，初始化前被调用，实现Aware接口的类调用各个Aware接口中setXxx方<br>法将需要的对象传入</p>
+<h2 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h2><h3 id="SpringBootApplication"><a href="#SpringBootApplication" class="headerlink" title="@SpringBootApplication"></a>@SpringBootApplication</h3><p>这个注解是Spring Boot 项目的基石，创建SpringBoot 项目之后会默<br>认在主类加上，标注在某个类上就说明该类是主配置类，运行该类main<br>方法启动应用。<br>可以把该注解看作是三个注解的集合</p>
+<ol>
+<li>@Configuration 允许在Spring上下文中注册额外的bean或导入其<br>他配置类</li>
+<li>@EnableAutoConfiguration 启用SpringBoot 的自动配置机制</li>
+<li>@ComponentScan 扫描被@Component注解的bean，注解默认会扫描<br>该类所在的包下所有的类</li>
+</ol>
+<h3 id="Autowired"><a href="#Autowired" class="headerlink" title="@Autowired"></a>@Autowired</h3><p>@Autowired注解可以对类成员变量、方法和构造函数进行标注，完成自动<br>装配的工作，支持Spring的@Primary注解优先注入</p>
+<ol>
+<li>默认是优先按照类型去容器中找对应的组件</li>
+<li>如果找到多个相同类型的组件，那么是将属性名称作为组件的id</li>
+</ol>
+<h3 id="Component"><a href="#Component" class="headerlink" title="Component"></a>Component</h3><p>我们一般使用 @Autowired 注解让Spring 容器帮我们自动装配 bean。要<br>想把类标识成可用于@Autowired 注解自动装配的bean 的类，可以采用以<br>下注解实现：</p>
+<ol>
+<li>@Component ：通用的注解，可标注任意类为 Spring 组件。如果一个<br>Bean 不知道属于哪个层，可以使用@Component 注解标注</li>
+<li>@Repository : 对应持久层即Dao 层，主要用于数据库相关操作</li>
+<li>@Service : 对应服务层，主要涉及一些复杂的逻辑，需要用到Dao层</li>
+<li>@Controller : 对应Spring MVC 控制层，主要用户接受用户请求并<br>调用Service 层返回数据给前端页面</li>
+</ol>
+<h3 id="Component-和-Bean-的区别"><a href="#Component-和-Bean-的区别" class="headerlink" title="@Component 和@Bean 的区别"></a>@Component 和@Bean 的区别</h3><ol>
+<li>作用对象不同: @Component 注解作用于类，而@Bean注解作用于方法</li>
+<li>@Component通常是通过类路径扫描来自动侦测以及自动装配到Spring容<br>器中（我们可以使用 @ComponentScan注解定义要扫描的路径从中找出标识<br>了需要装配的类自动装配到Spring 的bean 容器中）。@Bean注解通常是我<br>们在标有该注解的方法中定义产生这个bean</li>
+<li>@Bean 注解比 Component 注解的自定义性更强，而且很多地方我们只<br>能通过 @Bean 注解来注册bean。比如当我们引用第三方库中的类需要装配<br>到 Spring容器时，则只能通过@Bean来实现</li>
+</ol>
+<p>下面这个例子是通过 @Component 无法实现的</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> OneService <span class="title">getService</span><span class="params">(status)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">case</span> (status)  &#123;</span><br><span class="line">        when <span class="number">1</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> serviceImpl1();</span><br><span class="line">        when <span class="number">2</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> serviceImpl2();</span><br><span class="line">        when <span class="number">3</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> serviceImpl3();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="RestController"><a href="#RestController" class="headerlink" title="@RestController"></a>@RestController</h3><p>@RestController 注解是@Controller 和@ResponseBody 的合集，<br>表示这是个控制器bean，并且是将函数的返回值直接填入HTTP 响应<br>体中，是REST 风格的控制器，返回JSON 或XML 形式数据</p>
+<h3 id="Scope"><a href="#Scope" class="headerlink" title="@Scope"></a>@Scope</h3><p>声明Spring Bean 的作用域，四种常见的Spring Bean 的作用域：</p>
+<ol>
+<li>singleton : 唯一bean 实例，Spring 中的bean 默认都是单例的</li>
+<li>prototype : 每次请求都会创建一个新的bean 实例</li>
+<li>request : 每一次HTTP 请求都会产生一个新的bean，该bean 仅<br>在当前 HTTP request 内有效</li>
+<li>session : 每一次HTTP 请求都会产生一个新的 bean，该 bean<br>仅在当前 HTTP session 内有效</li>
+</ol>
+<h3 id="Configuration"><a href="#Configuration" class="headerlink" title="@Configuration"></a>@Configuration</h3><p>一般用来声明配置类，可以使用 @Component 注解替代，不过使用<br>Configuration 注解声明配置类更加语义化</p>
+<h3 id="处理常见的HTTP-请求类型"><a href="#处理常见的HTTP-请求类型" class="headerlink" title="处理常见的HTTP 请求类型"></a>处理常见的HTTP 请求类型</h3><ol>
+<li>Get 请求<br>@GetMapping(“users”) 等价于 @RequestMapping(value=”/users”,<br>method=RequestMethod.GET)，请求从服务器获取特定资源</li>
+<li>POST 请求<br>@PostMapping(“users”) 等价于 @RequestMapping(value=”/users”,<br>method=RequestMethod.POST)，在服务器上创建一个新的资源</li>
+<li>PUT 请求<br>@PutMapping(“/users/{userId}”) 等价于 @RequestMapping(<br>value=”/users/{userId}”,method=RequestMethod.PUT)，更<br>新服务器上的资源（客户端提供更新后的整个资源）。举个例子：<br>PUT /users/12（更新编号为 12 的学生）</li>
+<li>DELETE 请求<br>@DeleteMapping(“/users/{userId}”) 等价于 @RequestMapping(<br>value=”/users/{userId}”,method=RequestMethod.DELETE)，从<br>服务器删除特定的资源</li>
+<li>PATCH 请求<br>更新服务器上的资源（客户端提供更改的属性，可以看做作是部分更新）,<br>一般实际项目中，我们都是PUT不够用了之后才用PATCH请求去更新数据</li>
+</ol>
+<h3 id="PathVariable-和-RequestParam"><a href="#PathVariable-和-RequestParam" class="headerlink" title="@PathVariable 和 @RequestParam"></a>@PathVariable 和 @RequestParam</h3><p>@PathVariable用于获取路径参数，@RequestParam用于获取查询参数</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SpringMvcHandler</span></span>&#123; </span><br><span class="line">		<span class="meta">@RequestMapping</span>(<span class="string">"welcome/&#123;name&#125;"</span>) </span><br><span class="line">		<span class="function"><span class="keyword">public</span> String <span class="title">welcome</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">			@PathVariable(<span class="string">"name"</span>)</span> String name,</span></span><br><span class="line"><span class="function">			@<span class="title">RequestParam</span><span class="params">(value=<span class="string">"uage"</span>,required=<span class="keyword">false</span>,defaultValue=<span class="string">"23"</span>)</span> </span></span><br><span class="line"><span class="function">			String type)</span>&#123;</span><br><span class="line">			..</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="RequestBody"><a href="#RequestBody" class="headerlink" title="@RequestBody"></a>@RequestBody</h3><p>用于读取Request 请求（可能是POST,PUT,DELETE,GET 请求）的body<br>部分并且Content-Type 为 application/json 格式的数据，接收到<br>数据之后会自动将数据绑定到 Java 对象上去</p>
+<h3 id="Value"><a href="#Value" class="headerlink" title="@Value"></a>@Value</h3><p>@Value注解可以为bean中的属性赋值，可以标注在字段、方法、参数以及<br>注解上，而且在程序运行期间生效，也可以读取比较简单的配置信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;不通过配置文件注入</span><br><span class="line">@Value(&quot;李阿昀&quot;)</span><br><span class="line">private String name; &#x2F;&#x2F; 注入普通字符串</span><br><span class="line">&#x2F;&#x2F;通过配置文件注入属性的情况</span><br><span class="line">@Value(&quot;$&#123;person.nickName&#125;&quot;)</span><br><span class="line">private String nickName; &#x2F;&#x2F; 昵称</span><br></pre></td></tr></table></figure>
+
+<h3 id="Qualifier"><a href="#Qualifier" class="headerlink" title="@Qualifier"></a>@Qualifier</h3><p>@Autowired是根据类型进行自动装配的，如果需要按名称进行装配，那么<br>就需要配合@Qualifier注解来使用了，组件的id默认是类名首字母小写</p>
+<h3 id="Primary注解"><a href="#Primary注解" class="headerlink" title="@Primary注解"></a>@Primary注解</h3><p>使用@Primary注解来标注优先使用哪一个实现类</p>
+<h3 id="Resource"><a href="#Resource" class="headerlink" title="@Resource"></a>@Resource</h3><p>该注解默认按照名称进行装配，名称可以通过name属性进行指定，如果没<br>有指定name属性，当注解写在字段上时，那么默认取字段名将其作为组件<br>的名称在IOC容器中进行查找，不支持@Primary注解优先注入的功能</p>
+<h3 id="Inject"><a href="#Inject" class="headerlink" title="@Inject"></a>@Inject</h3><p>该注解默认是根据参数名去寻找bean注入，支持Spring的@Primary注解优<br>先注入，@Inject注解还可以增加@Named注解指定要注入的bean</p>
+<h3 id="Profile"><a href="#Profile" class="headerlink" title="@Profile"></a>@Profile</h3><p>@Profile注解是Spring为我们提供的可以根据当前环境，动态地激活和切<br>换一系列组件的功能，开发环境、测试环境、生产环境使用不同的数据源</p>
+<ol>
+<li>@Profile注解不仅可以标注在方法上，也可以标注在配置类上</li>
+<li>如果@Profile注解标注在配置类上，那么只有是在指定的环境的时候，<br>整个配置类里面的所有配置才会生效</li>
+<li>如果一个bean上没有使用@Profile注解进行标注，那么这个bean在任<br>何环境下都会被注册到IOC容器中，前提是在整个配置类生效的情况下</li>
+</ol>
+<h3 id="全局处理Controller-层异常"><a href="#全局处理Controller-层异常" class="headerlink" title="全局处理Controller 层异常"></a>全局处理Controller 层异常</h3><p>介绍一下我们Spring 项目必备的全局处理Controller 层异常</p>
+<ol>
+<li>@ControllerAdvice :注解定义全局异常处理类</li>
+<li>@ExceptionHandler :注解声明异常处理方法</li>
+</ol>
+<p>新建异常处理类，只需要在类上加上@ControllerAdvice注解这个类就成<br>为了全局异常处理类，@ExceptionHandler作用在方法上，拦截所有异常</p>
+<h2 id="Spring事务"><a href="#Spring事务" class="headerlink" title="Spring事务"></a>Spring事务</h2><h3 id="作用位置"><a href="#作用位置" class="headerlink" title="作用位置"></a>作用位置</h3><ol>
+<li>作用于类：当把@Transactional 注解放在类上时，表示所有该类的<br>public 方法都配置相同的事务属性信息</li>
+<li>作用于方法：当类配置@Transactional，方法也配置@Transactional<br>，方法的事务会覆盖类的事务配置信息</li>
+</ol>
+<h3 id="Spring事务管理的方式"><a href="#Spring事务管理的方式" class="headerlink" title="Spring事务管理的方式"></a>Spring事务管理的方式</h3><p>Spring支持两种类型的事务管理：</p>
+<ol>
+<li>编程式事务管理：所谓编程式事务指的是通过编码方式实现事务，允许<br>用户在代码中精确定义事务的边界。即类似于JDBC编程实现事务管理</li>
+<li>声明式事务管理：管理建立在AOP之上的。其本质是对方法前后进行拦截<br>，然后在目标方法开始之前创建或者加入一个事务，在执行完目标方法之后<br>根据执行情况提交或者回滚事务。声明式事务最大的优点就是不需要通过编<br>程的方式管理事务，这样就不需要在业务逻辑代码中掺杂事务管理的代码<br>，只需在配置文件中做相关事务规则声明(或通过基于 @Transactional<br>注解的方式)，便可以将事务规则应用到业务逻辑中。你只需要通过注解<br>或者XML配置管理事务</li>
+</ol>
+<h3 id="两种事务管理方式的优劣"><a href="#两种事务管理方式的优劣" class="headerlink" title="两种事务管理方式的优劣"></a>两种事务管理方式的优劣</h3><ol>
+<li>编程式事务每次实现都要单独实现，但业务量大功能复杂时，使用编程式<br>事务无疑是痛苦的，而声明式事务不同，声明式事务属于无侵入式，不会影<br>响业务逻辑的实现，只需要在配置文件中做相关的事务规则声明或者通过注<br>解的方式，便可以将事务规则应用到业务逻辑中</li>
+<li>显然声明式事务管理要优于编程式事务管理，这正是Spring倡导的非侵<br>入式的编程方式。唯一不足的地方就是声明式事务管理的粒度是方法级别，<br>而编程式事务管理是可以到代码块的，但是可以通过提取方法的方式完成<br>声明式事务管理的配置</li>
+</ol>
+<h3 id="Spring事务传播行为"><a href="#Spring事务传播行为" class="headerlink" title="Spring事务传播行为"></a>Spring事务传播行为</h3><p>事务的传播性一般用在事务嵌套的场景，比如一个事务方法里面调用了另外一<br>个事务方法，那么两个方法是各自作为独立的方法提交还是内层的事务合并到<br>外层的事务一起提交，这就是需要事务传播机制的配置来确定怎么样执行，<br>方法可能继续在现有事务中运行，也可能开启一个新事务，并在自己的事务<br>中运行。spring使用AOP来支持声明式事务，会根据事务属性，自动在方法<br>调用之前决定是否开启一个事务，并在方法执行之后决定事务提交或回滚<br>事务</p>
+<h4 id="支持当前事务的情况"><a href="#支持当前事务的情况" class="headerlink" title="支持当前事务的情况"></a>支持当前事务的情况</h4><ol>
+<li>REQUIRED： </li>
+</ol>
+<ul>
+<li>表示当前方法必须运行在事务中。如果外层有事务，则当前事务加入到<br>外层事务，一块提交，一块回滚。如果外层没有事务，新建一个事务执行<br>，Spring默认的传播机制</li>
+<li>比如两个方法A和B的事务传播属性都是REQUIRED，A包含B。比如单独调<br>用B，那么B就是一个事务级别的方法，如果调用A，那么B就加入到A所在<br>的事务中，如果B中抛出异常整个A都会回滚</li>
+</ul>
+<ol start="2">
+<li>SUPPORTS：</li>
+</ol>
+<ul>
+<li>如果外层有事务，则加入外层事务，如果外层没有事务，则直接使用非<br>事务方式执行。完全依赖外层的事务</li>
+<li>A方法事务属性是REQUIRED，B方法事务属性是SUPPORTS，A包含B。单<br>独调用B时是非事务的执行的，调用A时那么B也事务地执行</li>
+</ul>
+<ol start="3">
+<li>MANDATORY：</li>
+</ol>
+<ul>
+<li>表示该方法必须在事务中运行，如果当前事务不存在，则会抛出一个异常</li>
+<li>A方法事务属性是REQUIRED，B方法事务属性是MANDATORY，A包含B，单<br>独调用B时因为当前没有一个活动的事务，则会抛出异常，调用A时B也事务<br>地执行</li>
+</ul>
+<h4 id="不支持当前事务的情况"><a href="#不支持当前事务的情况" class="headerlink" title="不支持当前事务的情况"></a>不支持当前事务的情况</h4><ol>
+<li>REQUIRES_NEW：</li>
+</ol>
+<ul>
+<li>表示当前方法必须运行在它自己的事务中。一个新的事务将被启动。如果<br>存在当前事务，在该方法执行期间，当前事务会被挂起，如果外层没有事<br>务，执行当前新开启的事务即可</li>
+<li>A方法事务属性是REQUIRED，B方法事务属性是REQUIRES_NEW，A包含B<br>，比如A的内容是A1、B和A2，首先执行A1的逻辑部分，然后挂起A事务，<br>然后执行B事务，B执行完后执行A2部分，如果在A2部分抛出异常，那么<br>A会回滚，但是B事务已经提交不受影响，所以只有A1和A2回滚</li>
+</ul>
+<ol start="2">
+<li>NOT_SUPPORTED： 以非事务方式运行，如果当前存在事务，则把当前<br>事务挂起，无论是否异常都不会回滚当前的代码</li>
+<li>NEVER：以非事务方式运行，如果当前存在事务，则抛出异常</li>
+</ol>
+<h4 id="其他情况"><a href="#其他情况" class="headerlink" title="其他情况"></a>其他情况</h4><p>NESTED：</p>
+<ul>
+<li>表示如果当前已经存在一个事务，那么该方法将会在嵌套事务中运行。嵌<br>套的事务可以独立于当前事务进行单独地提交或回滚。如果当前事务不存在<br>，那么其行为与PROPAGATION_REQUIRED一样</li>
+<li>A方法事务属性是 REQUIRED，B方法事务属性是NESTED，A包含B。单独调<br>用B方法，则按REQUIRED属性执行，如果调用A 方法，比如A分为A1、B和A2<br>，在A1中设置一个保存点，如果B中失败那么会回到A1中的保存点，如果A2<br>中失败那么会回滚全部。嵌套事务一个非常重要的概念就是内层事务依赖于<br>外层事务。外层事务失败时，会回滚内层事务所做的动作。而内层事务操作<br>失败并不会引起外层事务的回滚</li>
+</ul>
+<h3 id="NESTED与REQUIRES-NEW的区别"><a href="#NESTED与REQUIRES-NEW的区别" class="headerlink" title="NESTED与REQUIRES_NEW的区别"></a>NESTED与REQUIRES_NEW的区别</h3><ol>
+<li>都像一个嵌套事务，如果不存在一个活动的事务，都会开启一个新的事务</li>
+<li>使用 REQUIRES_NEW时，内层事务与外层事务就像两个独立的事务一样<br>，一旦内层事务进行了提交后，外层事务不能对其进行回滚。两个事务互不<br>影响。两个事务不是一个真正的嵌套事务</li>
+<li>使用 NESTED时，外层事务的回滚可以引起内层事务的回滚。而内层事务<br>的异常并不会导致外层事务的回滚，它是一个真正的嵌套事务，只有外部事<br>务结束后它才会被提交</li>
+</ol>
+<h3 id="回滚规则"><a href="#回滚规则" class="headerlink" title="回滚规则"></a>回滚规则</h3><p>在默认设置下，事务只在出现运行时异常时回滚，而在出现受检查异常时<br>不回滚不过，可以声明在出现特定受检查异常时像运行时异常一样回滚。<br>同样，也可以声明一个事务在出现特定的异常时不回滚，即使特定的异<br>常是运行时异常</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Transactional</span>(rollbackFor = Exception<span class="class">.<span class="keyword">class</span>)</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="事务的隔离级别"><a href="#事务的隔离级别" class="headerlink" title="事务的隔离级别"></a>事务的隔离级别</h3><ol>
+<li>ISOLATION_DEFAULT:使用后端数据库默认的隔离级别，MySQL 默认采<br>用的 REPEATABLE_READ 隔离级别Oracle 默认采用的 READ_COMMITTED<br>隔离级别</li>
+<li>READ_UNCOMMITTED：最低的隔离级别，使用这个隔离级别很少，因为<br>它允许读取尚未提交的数据变更，可能会导致脏读、幻读或不可重复读</li>
+<li>READ_COMMITTED:允许读取并发事务已经提交的数据，可以阻止脏读<br>，但是幻读或不可重复读仍有可能发生</li>
+<li>REPEATABLE_READ:对同一字段的多次读取结果都是一致的，除非数据<br>是被本身事务自己所修改，可以阻止脏读和不可重复读，但幻读仍有可能<br>发生</li>
+<li>SERIALIZABLE:最高的隔离级别，完全服从ACID 的隔离级别。所有的<br>事务依次逐个执行，这样事务之间就完全不可能产生干扰，也就是说，该<br>级别可以防止脏读、不可重复读以及幻读。但是这将严重影响程序的性能<br>。通常情况下也不会用到该级别</li>
+</ol>
+<p>InnoDB存储引擎在分布式事务的情况下一般会用到SERIALIZABLE 隔离级<br>别。InnoDB存储引擎提供了对XA事务的支持，并通过XA事务来支持分布式<br>事务的实现。分布式事务指的是允许多个独立的事务资源参与到一个全局<br>的事务中。事务资源通常是关系型数据库系统，但也可以是其他类型的资<br>源。全局事务要求在其中的所有参与的事务要么都提交，要么都回滚，这<br>对于事务原有的ACID要求又有了提高。另外在使用分布式事务时InnoDB<br>存储引擎的事务隔离级别必须设置为SERIALIZABLE</p>
+<h3 id="事务超时属性"><a href="#事务超时属性" class="headerlink" title="事务超时属性"></a>事务超时属性</h3><p>所谓事务超时，就是指一个事务所允许执行的最长时间，如果超过该时间<br>限制但事务还没有完成，则自动回滚事务。在TransactionDefinition<br>中以int 的值来表示超时时间timeout，其单位是秒，默认值为-1，这<br>里的超时时间是指sql的执行时间，而不是整个业务</p>
+<h3 id="事务只读属性"><a href="#事务只读属性" class="headerlink" title="事务只读属性"></a>事务只读属性</h3><p>对于只有读取数据查询的事务，可以指定事务类型为readonly，即只读事<br>务。只读事务不涉及数据的修改，数据库会提供一些优化手段，适合用在<br>有多条数据库查询操作的方法中</p>
+<h3 id="为什么数据查询操作还要启用事务"><a href="#为什么数据查询操作还要启用事务" class="headerlink" title="为什么数据查询操作还要启用事务"></a>为什么数据查询操作还要启用事务</h3><p>MySQL 默认对每一个新建立的连接都启用了autocommit模式。在该模式下<br>，每一个发送到 MySQL 服务器的sql语句都会在一个单独的事务中进行处<br>理，执行结束后会自动提交事务，并开启一个新的事务。<br>但是，如果你给方法加上了Transactional注解的话，这个方法执行的所<br>有sql会被放在一个事务中。如果声明了只读事务的话，数据库就会去优化<br>它的执行，并不会带来其他的什么收益。如果不加Transactional，每条<br>sql会开启一个单独的事务，中间被其它事务改了数据，都会实时读取到<br>最新值</p>
+<ol>
+<li>如果你一次执行单条查询语句，则没有必要启用事务支持，数据库默<br>认支持 SQL 执行期间的读一致性</li>
+<li>如果你一次执行多条查询语句，例如统计查询，报表查询，在这种场景<br>下，多条查询 SQL 必须保证整体的读一致性，否则，在前条 SQL 查询之<br>后，后条 SQL 查询之前，数据被其他用户改变，则该次整体的统计查询<br>将会出现读数据不一致的状态，此时应该启用事务支持</li>
+</ol>
+<h3 id="Transactional的常用配置参数"><a href="#Transactional的常用配置参数" class="headerlink" title="@Transactional的常用配置参数"></a>@Transactional的常用配置参数</h3><ol>
+<li>propagation 事务的传播行为，默认值为REQUIRED</li>
+<li>isolation 事务的隔离级别，默认值采用DEFAULT</li>
+<li>timeout 事务的超时时间，默认值为-1（不会超时）。如果超过该时间<br>限制但事务还没有完成，则自动回滚事务</li>
+<li>readOnly    指定事务是否为只读事务，默认值为false</li>
+<li>rollbackFor 用于指定能够触发事务回滚的异常类型，并且可以指定<br>多个异常类型</li>
+</ol>
+<h3 id="Transactional-事务注解原理"><a href="#Transactional-事务注解原理" class="headerlink" title="@Transactional 事务注解原理"></a>@Transactional 事务注解原理</h3><p>@Transactional 的工作机制是基于AOP 实现的，AOP 又是使用动态代<br>理实现的。如果目标对象实现了接口，默认情况下会采用JDK的动态代理<br>，如果目标对象没有实现了接口，会使用 CGLIB 动态代理</p>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">高明</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://skysea-gaoming.github.io/2021/05/17/Spring%E6%80%BB%E7%BB%93/">https://skysea-gaoming.github.io/2021/05/17/Spring%E6%80%BB%E7%BB%93/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Java/">Java</a></div><nav id="pagination"><div class="prev-post pull-left"><a href="/2021/05/21/%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/"><i class="fa fa-chevron-left">  </i><span>项目总结</span></a></div><div class="next-post pull-right"><a href="/2021/05/17/Redis%E6%80%BB%E7%BB%93/"><span>Redis总结</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="disqus_thread"></div><script>var unused = null;
+var disqus_config = function () {
+  this.page.url = 'https://skysea-gaoming.github.io/2021/05/17/Spring%E6%80%BB%E7%BB%93/';
+  this.page.identifier = '2021/05/17/Spring总结/';
+  this.page.title = 'Spring总结';
+}
+var d = document, s = d.createElement('script');
+s.src = "https://" + '你的disqus的 short-name' +".disqus.com/embed.js";
+s.setAttribute('data-timestamp', '' + +new Date());
+(d.head || d.body).appendChild(s);</script><script id="dsq-count-scr" src="https://你的disqus的 short-name.disqus.com/count.js" async></script></div></div><footer class="footer-bg" style="background-image: url(https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2333247715,1420619508&amp;fm=26&amp;gp=0.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2013 - 2021 By 高明</div><div class="framework-info"><span>Driven - </span><a href="http://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody" target="_blank" rel="noopener"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file-o"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="/js/third-party/anime.min.js"></script><script src="/js/third-party/jquery.min.js"></script><script src="/js/third-party/jquery.fancybox.min.js"></script><script src="/js/third-party/velocity.min.js"></script><script src="/js/third-party/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.7.0"></script><script src="/js/fancybox.js?version=1.7.0"></script><script src="/js/sidebar.js?version=1.7.0"></script><script src="/js/copy.js?version=1.7.0"></script><script src="/js/fireworks.js?version=1.7.0"></script><script src="/js/transition.js?version=1.7.0"></script><script src="/js/scroll.js?version=1.7.0"></script><script src="/js/head.js?version=1.7.0"></script><script>if(/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+  $('#top-container').addClass('is-mobile')
+}</script></body></html>
