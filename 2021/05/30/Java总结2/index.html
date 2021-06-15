@@ -1,0 +1,175 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="Java总结2"><meta name="keywords" content="Java"><meta name="author" content="高明"><meta name="copyright" content="高明"><title>Java总结2 | SkySea-GaoMing</title><link rel="shortcut icon" href="/img/favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.7.0"><link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css?version=1.7.0"><meta name="format-detection" content="telephone=no"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  }
+} </script><meta name="generator" content="Hexo 4.2.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="Toggle article">Toggle site</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#枚举"><span class="toc-number">1.</span> <span class="toc-text">枚举</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#枚举类"><span class="toc-number">1.1.</span> <span class="toc-text">枚举类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Java-注解是什么？"><span class="toc-number">1.2.</span> <span class="toc-text">Java 注解是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Java-注解有什么作用？"><span class="toc-number">1.3.</span> <span class="toc-text">Java 注解有什么作用？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#元注解是什么？"><span class="toc-number">1.4.</span> <span class="toc-text">元注解是什么？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IO"><span class="toc-number">2.</span> <span class="toc-text">IO</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#常见的IO-模型"><span class="toc-number">2.1.</span> <span class="toc-text">常见的IO 模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Java-常见IO-模型"><span class="toc-number">2.2.</span> <span class="toc-text">Java 常见IO 模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Java-IO流的分类"><span class="toc-number">2.3.</span> <span class="toc-text">Java IO流的分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#既然有了字节流-为什么还要有字符流"><span class="toc-number">2.4.</span> <span class="toc-text">既然有了字节流,为什么还要有字符流</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字节流如何转为字符流"><span class="toc-number">2.5.</span> <span class="toc-text">字节流如何转为字符流</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字符流与字节流的区别"><span class="toc-number">2.6.</span> <span class="toc-text">字符流与字节流的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是阻塞IO？什么是非阻塞IO？"><span class="toc-number">2.7.</span> <span class="toc-text">什么是阻塞IO？什么是非阻塞IO？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#同步IO和异步IO的区别？"><span class="toc-number">2.8.</span> <span class="toc-text">同步IO和异步IO的区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BIO-NIO-AIO-有什么区别？"><span class="toc-number">2.9.</span> <span class="toc-text">BIO,NIO,AIO 有什么区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Java-IO都有哪些设计模式？"><span class="toc-number">2.10.</span> <span class="toc-text">Java IO都有哪些设计模式？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#有了解过Java中的NIO吗？原理是什么？"><span class="toc-number">2.11.</span> <span class="toc-text">有了解过Java中的NIO吗？原理是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#获取用键盘输入常用的两种方法"><span class="toc-number">2.12.</span> <span class="toc-text">获取用键盘输入常用的两种方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用键盘输入常用的两种方法"><span class="toc-number">2.13.</span> <span class="toc-text">用键盘输入常用的两种方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RPC具体过程"><span class="toc-number">2.14.</span> <span class="toc-text">RPC具体过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RPC用到的技术？"><span class="toc-number">2.15.</span> <span class="toc-text">RPC用到的技术？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java命名规范"><span class="toc-number">3.</span> <span class="toc-text">Java命名规范</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#驼峰命名法"><span class="toc-number">3.1.</span> <span class="toc-text">驼峰命名法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#蛇形命名法"><span class="toc-number">3.2.</span> <span class="toc-text">蛇形命名法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常见规范"><span class="toc-number">3.3.</span> <span class="toc-text">常见规范</span></a></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2762516417,1589137703&amp;fm=26&amp;gp=0.jpg"></div><div class="author-info__name text-center">高明</div><div class="author-info__description text-center">JAVA工程师</div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">Articles</span><span class="pull-right">85</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">Tags</span><span class="pull-right">17</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">Categories</span><span class="pull-right">11</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2333247715,1420619508&amp;fm=26&amp;gp=0.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">SkySea-GaoMing</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a></span><span class="pull-right"></span></div><div id="post-info"><div id="post-title">Java总结2</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-05-30</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E7%A7%8B%E6%8B%9B/">秋招</a><span class="post-meta__separator">|</span><i class="fa fa-comment-o post-meta__icon" aria-hidden="true"></i><a href="/2021/05/30/Java%E6%80%BB%E7%BB%932/#disqus_thread"><span class="disqus-comment-count" data-disqus-identifier="2021/05/30/Java总结2/"></span></a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h2 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h2><p>enum关键字在java5中引入表示一种特殊类型的类，其总是继承java.lang.Enum<br>类，以这种方式定义的常量使代码更具可读性，允许进行编译时检查，预先记录<br>可接受值的列表，并避免由于传入无效值而引起的意外行为</p>
+<h3 id="枚举类"><a href="#枚举类" class="headerlink" title="枚举类"></a>枚举类</h3><p>当定义一个枚举类型时，每一个枚举类型成员都可以看作是Enum 类的实例，这些<br>枚举成员默认都被 final、public、static 修饰，当使用枚举类型成员时，直接<br>使用枚举名称调用成员即可</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">values()	以数组形式返回枚举类型的所有成员</span><br><span class="line">valueOf()	将普通字符串转换为枚举实例</span><br><span class="line">compareTo()	比较两个枚举成员在定义时的顺序</span><br><span class="line">ordinal()	获取枚举成员的索引位置</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="Java-注解是什么？"><a href="#Java-注解是什么？" class="headerlink" title="Java 注解是什么？"></a>Java 注解是什么？</h3><p>Java 注解用于为Java 代码提供元数据。作为元数据，注解不直接影响你的<br>代码执行，但也有一些类型的注解实际上可以用于这一目的，注解可以放在<br>类或者方法上,在类、方法、成员变量、形参位置</p>
+<ol>
+<li>自定义注解 自定义注解就是我们自己写的注解</li>
+<li>JDK内置注解 @Override @Deprecated</li>
+<li>还有第三方框架提供的注解 SpringMVC的 @Controller</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> MyTestAnnotation &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>@Override，表示当前的方法定义将覆盖超类中的方法</li>
+<li>@Deprecated，如果程序员使用了注解为它的元素，那么编译器会发出警告信息</li>
+<li>@SuppressWarnings，关闭不当的编译器警告信息。在java SE5之前的<br>版本中，也可以使用该注解，不过会被忽略不起作用。</li>
+</ul>
+<h3 id="Java-注解有什么作用？"><a href="#Java-注解有什么作用？" class="headerlink" title="Java 注解有什么作用？"></a>Java 注解有什么作用？</h3><ol>
+<li>生成帮助文档</li>
+<li>在编译时进行格式检查。如@override 放在方法前，如果你这个方法并<br>不是覆盖了超类方法，则编译时就能检查出，@Deprecated标识方法过期</li>
+<li>提供信息给编译器 编译器可以利用注解来检测出错误或者警告信息，<br>打印出日志</li>
+</ol>
+<h3 id="元注解是什么？"><a href="#元注解是什么？" class="headerlink" title="元注解是什么？"></a>元注解是什么？</h3><p>注解的注解，它是作用在注解中，方便我们使用注解实现想要的功能</p>
+<ol>
+<li>@Retention 表示注解存在阶段是保留在源码（编译期），字节码（类<br>加载）或者运行期（JVM中运行），使用枚举来表示注解保留时期</li>
+<li>@Target 表示注解作用的范围可以是类，方法，方法参数变量</li>
+<li>@Documented 将注解中的元素包含到 Javadoc 中去</li>
+<li>@Inherited 该注解了的注解修饰了一个父类，如果他的子类没有被其<br>他注解修饰，则它的子类也继承了父类的注解</li>
+<li>@Repeatable 被这个元注解修饰的注解可以同时作用一个对象多次，但<br>是每次作用注解又可以代表不同的含义</li>
+</ol>
+<h2 id="IO"><a href="#IO" class="headerlink" title="IO"></a>IO</h2><p>I/O（Input/Outpu）即输入/输出。从计算机结构的视角来看的话，I/O 描述了<br>计算机系统与外部设备之间通信的过程。用户空间的程序不能直接访问内核空间<br>必须通过系统调用来间接访问内核空间，主要是磁盘IO（读写文件）和网络IO<br>（网络请求和响应）。当应用程序发起I/O 调用后，会经历两个步骤：</p>
+<ol>
+<li>内核等待I/O 将数据加载到内核缓存</li>
+<li>内核将数据从内核空间拷贝到用户空间</li>
+</ol>
+<p>同步和异步，阻塞和非阻塞</p>
+<ol>
+<li>同步和异步的概念描述的是用户线程与内核的交互方式</li>
+<li>阻塞和非阻塞的概念描述的是用户线程调用内核IO操作的方式</li>
+</ol>
+<h3 id="常见的IO-模型"><a href="#常见的IO-模型" class="headerlink" title="常见的IO 模型"></a>常见的IO 模型</h3><p>UNIX 系统下，IO 模型一共有5种：同步阻塞 I/O、同步非阻塞 I/O、I/O 多路<br>复用、信号驱动I/O 和异步I/O</p>
+<ol>
+<li>同步阻塞 应用程序发起read 调用后，会一直阻塞，直到在内核把数据拷贝<br>到用户空间</li>
+<li>同步非阻塞 应用程序会一直发起read 调用，等待数据从内核空间拷贝到用<br>户空间的这段时间里，线程依然是阻塞的，直到在内核把数据拷贝到用户空间。<br>也就是在数据准备阶段是不阻塞的，通过轮询操作，避免了一直阻塞。问题：<br>应用程序不断进行 I/O 系统调用轮询数据是否已经准备好的过程是十分消<br>耗CPU 资源的</li>
+<li>I/O 多路复用模型 线程首先发起select 调用，询问内核数据是否准备就绪<br>，等内核把数据准备好了，用户线程再发起read 调用。read 调用的过程（数据<br>从内核空间-&gt;用户空间）还是阻塞的。也叫做异步阻塞IO<br>目前支持IO 多路复用的系统调用，有select，epoll 等等。select 系统调用<br>，是目前几乎在所有的操作系统上都有支持</li>
+</ol>
+<ul>
+<li>select 调用 ：内核提供的系统调用，它支持一次查询多个系统调用的可用状<br>态。几乎所有的操作系统都支持</li>
+<li>epoll 调用 ：linux 2.6 内核，属于 select 调用的增强版本，优化了IO<br>的执行效率<br>IO 多路复用模型，通过减少无效的系统调用，减少了对CPU 资源的消耗。Java中<br>的NIO，有一个非常重要的选择器 (Selector) 的概念，也可以被称为多路复用<br>器。通过它只需要一个线程便可以管理多个客户端连接。当客户端数据到了之后，<br>才会为其服务，如果有一个文件描述符就绪，则返回，否则阻塞直到超时</li>
+</ul>
+<ol start="4">
+<li>异步IO 异步一定是非阻塞的。应用无需等待数据和复制数据到指定内存中，全<br>都是由后台完成，然后通过回调函数告诉应用。只有用户线程在操作IO的时候根本<br>不去考虑IO的执行全部都交给CPU去完成，而自己只等待一个完成信号的时候，才<br>是真正的异步IO</li>
+</ol>
+<h3 id="Java-常见IO-模型"><a href="#Java-常见IO-模型" class="headerlink" title="Java 常见IO 模型"></a>Java 常见IO 模型</h3><ol>
+<li>BIO(Blocking I/O) BIO属于同步阻塞IO 模型。同步阻塞IO 模型中，应用<br>程序发起 read 调用后会一直阻塞，直到在内核把数据拷贝到用户空间。在客户<br>端连接数量不高的情况下是没问题的。但是当面对十万甚至百万级连接的时候，<br>传统的 BIO 模型是无能为力的。因此我们需要一种更高效的I/O 处理模型来应<br>对更高的并发量</li>
+<li>NIO(Non-blocking/New I/O) 对应java.nio包，提供了Channel, Selector<br>，Buffer 等抽象。NIO 中的N 可以理解为Non-blocking，不单纯是New。它支持面<br>向缓冲的，基于通道的 I/O 操作方法。 对于高负载、高并发的（网络）应用，应使<br>用NIO。NIO 可以看作是I/O 多路复用模型</li>
+<li>AIO (Asynchronous I/O) 异步IO 模型。异步IO 是基于事件和回调机制实<br>现的，也就是应用操作之后会直接返回，不会堵塞在那里，当后台处理完成，操<br>作系统会通知相应的线程进行后续的操作</li>
+</ol>
+<h3 id="Java-IO流的分类"><a href="#Java-IO流的分类" class="headerlink" title="Java IO流的分类"></a>Java IO流的分类</h3><p>IO流用来处理设备之间的数据传输</p>
+<ol>
+<li>按照流的流向分 输入流和输出流</li>
+<li>按照实现功能分 节点流（可以从或者向一个特定的地方读写数据，如<br>FileReader）和处理流（是对一个已存在的流的连接和封装，通过所封<br>装的流的功能调用实现数据读写， BufferedReader）</li>
+<li>按照处理数据的单位 字节流和字符流</li>
+</ol>
+<ul>
+<li>字节流 InputStream OutputStream</li>
+<li>字符流 Reader Writer</li>
+</ul>
+<ol start="4">
+<li>4个抽象基类</li>
+</ol>
+<ul>
+<li>InputStream/Reader: 所有的输入流的基类，前者是字节输入流，后者是字<br>符输入流</li>
+<li>OutputStream/Writer: 所有输出流的基类，前者是字节输出流，后者是字<br>符输出流</li>
+</ul>
+<h3 id="既然有了字节流-为什么还要有字符流"><a href="#既然有了字节流-为什么还要有字符流" class="headerlink" title="既然有了字节流,为什么还要有字符流"></a>既然有了字节流,为什么还要有字符流</h3><p>字符流是由Java 虚拟机将字节转换得到的，问题就出在这个过程还算是非常耗时<br>，并且如果我们不知道编码类型就很容易出现乱码问题。所以I/O 流就干脆提供了<br>一个直接操作字符的接口，方便我们平时对字符进行流操作。如果音频文件、图片<br>等媒体文件用字节流比较好，如果涉及到字符的话使用字符流比较好</p>
+<h3 id="字节流如何转为字符流"><a href="#字节流如何转为字符流" class="headerlink" title="字节流如何转为字符流"></a>字节流如何转为字符流</h3><ol>
+<li>字节输入流转字符输入流通过InputStreamReader 实现，该类的构造<br>函数可以传入InputStream 对象</li>
+<li>字节输出流转字符输出流通过 OutputStreamWriter 实现，该类的构<br>造函数可以传入OutputStream 对象</li>
+</ol>
+<h3 id="字符流与字节流的区别"><a href="#字符流与字节流的区别" class="headerlink" title="字符流与字节流的区别"></a>字符流与字节流的区别</h3><ol>
+<li>读写的时候字节流是按字节读写，字符流按字符读写</li>
+<li>字节流适合所有类型文件的数据传输，因为计算机字节（Byte）是电脑<br>中表示信息含义的最小单位。字符流只能够处理纯文本数据，其他类型数据<br>不行，但是字符流处理文本要比字节流处理文本要方便</li>
+<li>在读写文件需要对内容按行处理，比如比较特定字符，处理某一行数据<br>的时候一般会选择字符流</li>
+<li>只是读写文件，和文件内容无关时，一般选择字节流</li>
+</ol>
+<h3 id="什么是阻塞IO？什么是非阻塞IO？"><a href="#什么是阻塞IO？什么是非阻塞IO？" class="headerlink" title="什么是阻塞IO？什么是非阻塞IO？"></a>什么是阻塞IO？什么是非阻塞IO？</h3><p>IO操作包括：对硬盘的读写、对socket的读写以及外设的读写。<br>当用户线程发起一个IO请求操作（本文以读请求操作为例），内核会去查看要读<br>取的数据是否就绪，对于阻塞IO来说，如果数据没有就绪，则会一直在那等待，<br>直到数据就绪，对于非阻塞IO来说，如果数据没有就绪，则会返回一个标志信息<br>告知用户线程当前要读的数据没有就绪。当数据就绪之后，便将数据拷贝到用户<br>线程，这样才完成了一个完整的IO读请求操作，也就是说一个完整的IO读请求<br>操作包括两个阶段：</p>
+<ul>
+<li>查看数据是否就绪</li>
+<li>进行数据拷贝（内核将数据拷贝到用户线程）</li>
+</ul>
+<p>那么阻塞（blocking IO）和非阻塞（non-blocking IO）的区别就在于第一<br>个阶段，如果数据没有就绪，在查看数据是否就绪的过程中是一直等待，还是<br>直接返回一个标志信息。Java中传统的IO都是阻塞IO，比如通过socket 来读<br>数据，调用read() 方法之后，如果数据没有就绪，当前线程就会一直阻塞在<br>read 方法调用那里，直到有数据才返回，而如果是非阻塞IO的话，当数据没<br>有就绪，read()方法应该返回一个标志信息，告知当前线程数据没有就绪，<br>而不是一直在那里等待</p>
+<h3 id="同步IO和异步IO的区别？"><a href="#同步IO和异步IO的区别？" class="headerlink" title="同步IO和异步IO的区别？"></a>同步IO和异步IO的区别？</h3><ol>
+<li>同步IO：当用户发出IO请求操作后，内核会去查看要读取的数据是否就<br>绪，如果没有，就一直等待。期间用户线程或内存会不断地轮询数据是否就<br>绪。当数据就绪时，再把数据从内核拷贝到用户空间</li>
+<li>异步IO：用户线程只需发出IO请求和接收IO操作完成通知，期间的IO操<br>作由内核自动完成，并发送通知告知用户线程IO操作已经完成。也就是说，<br>在异步IO中，并不会对用户线程产生任何阻塞</li>
+</ol>
+<h3 id="BIO-NIO-AIO-有什么区别？"><a href="#BIO-NIO-AIO-有什么区别？" class="headerlink" title="BIO,NIO,AIO 有什么区别？"></a>BIO,NIO,AIO 有什么区别？</h3><ol>
+<li>BIO：Block IO 同步阻塞式IO，就是我们平常使用的传统IO，它的特点<br>是模式简单使用方便，并发处理能力低。在服务器中实现的模式为一个连接<br>一个线程。也就是说客户端有连接请求的时候，服务器就需要启动一个线程<br>进行处理，如果这个连接不做任何事情会造成不必要的线程开销，当然这<br>也可以通过线程池机制改善。BIO 一般适用于连接数目小且固定的架构，<br>这种方式对于服务器资源要求比较高，而且并发局限于应用中，是<br>JDK1.4之前的唯一选择，但好在程序直观简单，易理解</li>
+<li>NIO：Non IO 同步非阻塞 IO，是传统 IO 的升级，客户端和服务器端<br>通过Channel（通道）通讯，实现了多路复用。同步并非阻塞，在服务器中<br>实现的模式为一个请求一个线程，也就是说客户端发送的连接请求都会注<br>册到多路复用器上，多路复用器轮询到有连接IO请求时才会启动一个线程<br>进行处理。NIO一般适用于连接数目多且连接比较短（轻操作）的架构，并<br>发局限于应用中，编程比较复杂，从JDK1.4开始支持</li>
+<li>AIO：Asynchronous IO 是 NIO 的升级，也叫 NIO2，实现了异步非<br>堵塞IO ，异步 IO 的操作基于事件和回调机制。异步并非阻塞，在服务器<br>中实现的模式为一个有效请求一个线程，也就是说，客户端的IO请求都是<br>通过操作系统先完成之后，再通知服务器应用去启动线程进行处理。AIO<br>一般适用于连接数目多且连接比较长（重操作）的架构，充分调用操作<br>系统参与并发操作，编程比较复杂，从JDK1.7开始支持</li>
+</ol>
+<h3 id="Java-IO都有哪些设计模式？"><a href="#Java-IO都有哪些设计模式？" class="headerlink" title="Java IO都有哪些设计模式？"></a>Java IO都有哪些设计模式？</h3><p>使用了适配器模式和装饰器模式</p>
+<ol>
+<li>适配器模式 把一个类的接口变换成客户端所期待的另一种接口，从而<br>使原本因接口不匹配而无法在一起工作的两个类能够在一起工作<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Reader reader = <span class="keyword">new</span> INputStreamReader(inputStream);</span><br></pre></td></tr></table></figure></li>
+<li>装饰器模式 一种动态地往一个类中添加新的行为的设计模式。就功能而<br>言，装饰器模式相比生成子类更为灵活，这样可以给某个对象而不是整个<br>类添加一些功能<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> BufferedInputStream(<span class="keyword">new</span> FileInputStream(inputStream));</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="有了解过Java中的NIO吗？原理是什么？"><a href="#有了解过Java中的NIO吗？原理是什么？" class="headerlink" title="有了解过Java中的NIO吗？原理是什么？"></a>有了解过Java中的NIO吗？原理是什么？</h3><ol>
+<li>基于直接内存实现</li>
+<li>NIO底层原理，同步非阻塞的IO模型，它是面向缓冲区的</li>
+</ol>
+<h3 id="获取用键盘输入常用的两种方法"><a href="#获取用键盘输入常用的两种方法" class="headerlink" title="获取用键盘输入常用的两种方法"></a>获取用键盘输入常用的两种方法</h3><ol>
+<li>通过 Scanner<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">String s  = input.nextLine();</span><br><span class="line">input.close();</span><br></pre></td></tr></table></figure></li>
+<li>通过 BufferedReader<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">BufferedReader input = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(System.in));</span><br><span class="line">String s = input.readLine();</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="用键盘输入常用的两种方法"><a href="#用键盘输入常用的两种方法" class="headerlink" title="用键盘输入常用的两种方法"></a>用键盘输入常用的两种方法</h3><ol>
+<li>通过 Scanner<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">String s  = input.nextLine();</span><br><span class="line">input.close();</span><br></pre></td></tr></table></figure></li>
+<li>通过 BufferedReader<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">BufferedReader input = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(System.in));</span><br><span class="line">String s = input.readLine();</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="RPC具体过程"><a href="#RPC具体过程" class="headerlink" title="RPC具体过程"></a>RPC具体过程</h3><p>当远程过程调用，简称为RPC，是一个计算机通信协议，它允许运行于一台<br>计算机的程序调用另一台计算机的子程序，而无需额外地为这个交互作用<br>编程</p>
+<ol>
+<li>传输效率高(二进制传输)，发起调用的一方无需知道RPC的具体实现，如同<br>调用本地函数般调用</li>
+<li>通用性不如HTTP好(HTTP是标准协议)</li>
+<li>RPC适合内部服务间的通信调用；HTTP适合面向用户与服务间的通信调用</li>
+</ol>
+<h3 id="RPC用到的技术？"><a href="#RPC用到的技术？" class="headerlink" title="RPC用到的技术？"></a>RPC用到的技术？</h3><ol>
+<li>动态代理</li>
+<li>序列化</li>
+<li>NIO</li>
+<li>服务注册中心</li>
+</ol>
+<h2 id="Java命名规范"><a href="#Java命名规范" class="headerlink" title="Java命名规范"></a>Java命名规范</h2><h3 id="驼峰命名法"><a href="#驼峰命名法" class="headerlink" title="驼峰命名法"></a>驼峰命名法</h3><ol>
+<li>大驼峰命名法<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;类名需要使用大驼峰命名法</span><br><span class="line">ServiceDiscovery、ServiceInstance、LruCacheFactory</span><br></pre></td></tr></table></figure></li>
+<li>小驼峰命名法<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;方法名、参数名、成员变量、局部变量需要使用小驼峰命名法</span><br><span class="line">getUserInfo()、createCustomThreadPool()、setNameFormat(String nameFormat)</span><br><span class="line">uservice userService;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="蛇形命名法"><a href="#蛇形命名法" class="headerlink" title="蛇形命名法"></a>蛇形命名法</h3><p>测试方法名、常量、枚举名称需要使用蛇形命名法，在蛇形命名法中，各个单词<br>之间通过下划线“_”连接</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">should_get_200_status_code_when_request_is_valid</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  ......</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="常见规范"><a href="#常见规范" class="headerlink" title="常见规范"></a>常见规范</h3><ol>
+<li>包名统一使用小写，尽量使用单个名词作为包名，各个单词通过 “.” 分隔符连<br>接，并且各个单词必须为单数</li>
+<li>抽象类命名使用 Abstract 开头</li>
+<li>异常类命名使用 Exception 结尾</li>
+<li>测试类命名以它要测试的类的名称开始，以Test 结尾</li>
+<li>项目名全部小写，多个单词用中划线分隔‘-’</li>
+</ol>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">高明</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://skysea-gaoming.github.io/2021/05/30/Java%E6%80%BB%E7%BB%932/">https://skysea-gaoming.github.io/2021/05/30/Java%E6%80%BB%E7%BB%932/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Java/">Java</a></div><nav id="pagination"><div class="prev-post pull-left"><a href="/2021/05/31/RPC%E6%80%BB%E7%BB%93/"><i class="fa fa-chevron-left">  </i><span>RPC总结</span></a></div><div class="next-post pull-right"><a href="/2021/05/24/shell%E6%80%BB%E7%BB%93/"><span>Shell总结</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="disqus_thread"></div><script>var unused = null;
+var disqus_config = function () {
+  this.page.url = 'https://skysea-gaoming.github.io/2021/05/30/Java%E6%80%BB%E7%BB%932/';
+  this.page.identifier = '2021/05/30/Java总结2/';
+  this.page.title = 'Java总结2';
+}
+var d = document, s = d.createElement('script');
+s.src = "https://" + '你的disqus的 short-name' +".disqus.com/embed.js";
+s.setAttribute('data-timestamp', '' + +new Date());
+(d.head || d.body).appendChild(s);</script><script id="dsq-count-scr" src="https://你的disqus的 short-name.disqus.com/count.js" async></script></div></div><footer class="footer-bg" style="background-image: url(https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2333247715,1420619508&amp;fm=26&amp;gp=0.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2013 - 2021 By 高明</div><div class="framework-info"><span>Driven - </span><a href="http://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody" target="_blank" rel="noopener"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file-o"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="/js/third-party/anime.min.js"></script><script src="/js/third-party/jquery.min.js"></script><script src="/js/third-party/jquery.fancybox.min.js"></script><script src="/js/third-party/velocity.min.js"></script><script src="/js/third-party/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.7.0"></script><script src="/js/fancybox.js?version=1.7.0"></script><script src="/js/sidebar.js?version=1.7.0"></script><script src="/js/copy.js?version=1.7.0"></script><script src="/js/fireworks.js?version=1.7.0"></script><script src="/js/transition.js?version=1.7.0"></script><script src="/js/scroll.js?version=1.7.0"></script><script src="/js/head.js?version=1.7.0"></script><script>if(/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+  $('#top-container').addClass('is-mobile')
+}</script></body></html>

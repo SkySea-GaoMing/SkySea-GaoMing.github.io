@@ -7,68 +7,253 @@
     error: 'Copy error',
     noSupport: 'The browser does not support'
   }
-} </script><meta name="generator" content="Hexo 4.2.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="Toggle article">Toggle site</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#项目简介"><span class="toc-number">1.</span> <span class="toc-text">项目简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#框架搭建"><span class="toc-number">1.1.</span> <span class="toc-text">框架搭建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#项目云端部署"><span class="toc-number">1.2.</span> <span class="toc-text">项目云端部署</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#压测指标"><span class="toc-number">1.3.</span> <span class="toc-text">压测指标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#单机容量问题"><span class="toc-number">1.4.</span> <span class="toc-text">单机容量问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#水平扩展优化"><span class="toc-number">1.5.</span> <span class="toc-text">水平扩展优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分布式会话"><span class="toc-number">1.6.</span> <span class="toc-text">分布式会话</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查询优化之多级缓存"><span class="toc-number">1.7.</span> <span class="toc-text">查询优化之多级缓存</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#redis缓存第一级"><span class="toc-number">1.7.1.</span> <span class="toc-text">redis缓存第一级</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#本地缓存第二级"><span class="toc-number">1.7.2.</span> <span class="toc-text">本地缓存第二级</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#OpenResty-Shared-Dict-Nginx-Lua缓存第三级"><span class="toc-number">1.7.3.</span> <span class="toc-text">OpenResty Shared Dict+Nginx+Lua缓存第三级</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#交易优化"><span class="toc-number">2.</span> <span class="toc-text">交易优化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#交易验证优化"><span class="toc-number">2.1.</span> <span class="toc-text">交易验证优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#库存扣减优化"><span class="toc-number">2.2.</span> <span class="toc-text">库存扣减优化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#索引优化"><span class="toc-number">2.2.1.</span> <span class="toc-text">索引优化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#库存扣减缓存优化"><span class="toc-number">2.2.2.</span> <span class="toc-text">库存扣减缓存优化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#异步扣减库存"><span class="toc-number">2.2.3.</span> <span class="toc-text">异步扣减库存</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#事务型消息"><span class="toc-number">2.3.</span> <span class="toc-text">事务型消息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#库存流水"><span class="toc-number">2.4.</span> <span class="toc-text">库存流水</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#流量削峰"><span class="toc-number">2.5.</span> <span class="toc-text">流量削峰</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#限流—队列泄洪"><span class="toc-number">2.6.</span> <span class="toc-text">限流—队列泄洪</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#防刷限流"><span class="toc-number">2.7.</span> <span class="toc-text">防刷限流</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分布式会话存储策略"><span class="toc-number">3.</span> <span class="toc-text">分布式会话存储策略</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mysql性能提升"><span class="toc-number">4.</span> <span class="toc-text">mysql性能提升</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2762516417,1589137703&amp;fm=26&amp;gp=0.jpg"></div><div class="author-info__name text-center">高明</div><div class="author-info__description text-center">JAVA工程师</div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">Articles</span><span class="pull-right">81</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">Tags</span><span class="pull-right">17</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">Categories</span><span class="pull-right">12</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2333247715,1420619508&amp;fm=26&amp;gp=0.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">SkySea-GaoMing</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a></span><span class="pull-right"></span></div><div id="post-info"><div id="post-title">项目总结</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-05-21</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E7%A7%8B%E6%8B%9B/">秋招</a><span class="post-meta__separator">|</span><i class="fa fa-comment-o post-meta__icon" aria-hidden="true"></i><a href="/2021/05/21/%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/#disqus_thread"><span class="disqus-comment-count" data-disqus-identifier="2021/05/21/项目总结/"></span></a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h2 id="项目简介"><a href="#项目简介" class="headerlink" title="项目简介"></a>项目简介</h2><p>该选课项目，采用多种优化技术，包括分布式扩展、查询多级缓存、<br>交易泄压、流量错峰和防刷限流等，并用Jemeter进行压测</p>
-<h3 id="框架搭建"><a href="#框架搭建" class="headerlink" title="框架搭建"></a>框架搭建</h3><p>Vue+SpringBoot，关系型数据库采用MySQL，非关系型数据库采用Redis，<br>消息队列采用rocketmq</p>
-<h3 id="项目云端部署"><a href="#项目云端部署" class="headerlink" title="项目云端部署"></a>项目云端部署</h3><ol>
-<li>数据库部署在单独的阿里云服务器</li>
-<li>项目打成jar包部署在阿里云服务器</li>
-</ol>
-<h3 id="压测指标"><a href="#压测指标" class="headerlink" title="压测指标"></a>压测指标</h3><ol>
-<li>TPS(Transactions Per Second)<br>即服务器每秒处理的事务数。TPS包括一条消息入和一条消息出，加上一次用<br>户数据库访问。TPS是软件测试结果的测量单位。一个事务是指一个客户机向<br>服务器发送请求然后服务器做出反应的过程。客户机在发送请求时开始计时<br>，收到服务器响应后结束计时，以此来计算使用的时间和完成的事务个数</li>
-<li>QPS<br>每秒查询率，是一台服务器每秒能够响应的查询次数（数据库中的每秒执行<br>查询sql的次数）</li>
-</ol>
-<h3 id="单机容量问题"><a href="#单机容量问题" class="headerlink" title="单机容量问题"></a>单机容量问题</h3><p>CPU使用率高，memory占用增加，网络带宽使用增加</p>
-<h3 id="水平扩展优化"><a href="#水平扩展优化" class="headerlink" title="水平扩展优化"></a>水平扩展优化</h3><ol>
-<li>Ajax请求通过Nginx反向代理到两台应用服务器，实现负载分担</li>
-<li>Nginx服务器与前端的连接是长连接，但是与后端的代理服务器，默认是<br>短连接，长连接优化</li>
-</ol>
-<h3 id="分布式会话"><a href="#分布式会话" class="headerlink" title="分布式会话"></a>分布式会话</h3><p>Spring Boot在Redis存入的SessionId有多项，不够简洁，通过UUID生成登<br>录token，将token和UserModel存到Redis服务器上，redis是一个集中式的<br>缓存中间件，登录凭证必须是唯一不能重复的，设置超时时间是一个小时。将<br>生成的token返回给前端，前端在登录成功之后将token存放到localStorage<br>里面</p>
-<h3 id="查询优化之多级缓存"><a href="#查询优化之多级缓存" class="headerlink" title="查询优化之多级缓存"></a>查询优化之多级缓存</h3><p>所谓缓存，就是将磁盘中的热点数据，暂时存到内存里面，以后查询直接从<br>内存中读取，减少磁盘I/O，提高速度。所谓多级，就是在多个层次设置缓<br>存，一个层次没有就去另一个层次查询</p>
-<h4 id="redis缓存第一级"><a href="#redis缓存第一级" class="headerlink" title="redis缓存第一级"></a>redis缓存第一级</h4><p>controller层缓存在service层才能获取的数据</p>
+} </script><meta name="generator" content="Hexo 4.2.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="Toggle article">Toggle site</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#项目背景"><span class="toc-number">1.</span> <span class="toc-text">项目背景</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#RESTful-API"><span class="toc-number">1.1.</span> <span class="toc-text">RESTful API</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#REST"><span class="toc-number">1.1.1.</span> <span class="toc-text">REST</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#优化方式"><span class="toc-number">1.2.</span> <span class="toc-text">优化方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用到的技术"><span class="toc-number">1.3.</span> <span class="toc-text">使用到的技术</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据模型"><span class="toc-number">1.4.</span> <span class="toc-text">数据模型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#表的设计"><span class="toc-number">2.</span> <span class="toc-text">表的设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#学生表和密码表分开存储"><span class="toc-number">2.1.</span> <span class="toc-text">学生表和密码表分开存储</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#课程表和容量表分开存储"><span class="toc-number">2.2.</span> <span class="toc-text">课程表和容量表分开存储</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#交易表的主键"><span class="toc-number">2.3.</span> <span class="toc-text">交易表的主键</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#功能概述"><span class="toc-number">3.</span> <span class="toc-text">功能概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#通用返回对象"><span class="toc-number">3.1.</span> <span class="toc-text">通用返回对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#异常拦截器处理自定义异常"><span class="toc-number">3.2.</span> <span class="toc-text">异常拦截器处理自定义异常</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解决跨域"><span class="toc-number">3.3.</span> <span class="toc-text">解决跨域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#优化校验"><span class="toc-number">3.4.</span> <span class="toc-text">优化校验</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mysql插入优化"><span class="toc-number">3.5.</span> <span class="toc-text">mysql插入优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#课程信息展示"><span class="toc-number">3.6.</span> <span class="toc-text">课程信息展示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#密码传输安全"><span class="toc-number">3.7.</span> <span class="toc-text">密码传输安全</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#核心流程"><span class="toc-number">4.</span> <span class="toc-text">核心流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#注册流程"><span class="toc-number">4.1.</span> <span class="toc-text">注册流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#登录流程"><span class="toc-number">4.2.</span> <span class="toc-text">登录流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#获取课程信息流程"><span class="toc-number">4.3.</span> <span class="toc-text">获取课程信息流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#抢课流程"><span class="toc-number">4.4.</span> <span class="toc-text">抢课流程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#项目用到的命令"><span class="toc-number">5.</span> <span class="toc-text">项目用到的命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分布式扩展优化"><span class="toc-number">6.</span> <span class="toc-text">分布式扩展优化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring-Boot项目部署"><span class="toc-number">6.1.</span> <span class="toc-text">Spring Boot项目部署</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Jmeter"><span class="toc-number">6.2.</span> <span class="toc-text">Jmeter</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pv可以用来作为性能测试的指标么"><span class="toc-number">6.3.</span> <span class="toc-text">pv可以用来作为性能测试的指标么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TPS和QPS的区别"><span class="toc-number">6.4.</span> <span class="toc-text">TPS和QPS的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查询接口压测结果"><span class="toc-number">6.5.</span> <span class="toc-text">查询接口压测结果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tomcat线程优化"><span class="toc-number">6.6.</span> <span class="toc-text">Tomcat线程优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tomcat网络连接优化"><span class="toc-number">6.7.</span> <span class="toc-text">Tomcat网络连接优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用OpenResty"><span class="toc-number">6.8.</span> <span class="toc-text">使用OpenResty</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Nginx反向代理负载均衡"><span class="toc-number">6.9.</span> <span class="toc-text">Nginx反向代理负载均衡</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Nginx反向代理长连接优化"><span class="toc-number">6.10.</span> <span class="toc-text">Nginx反向代理长连接优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分布式会话管理"><span class="toc-number">6.11.</span> <span class="toc-text">分布式会话管理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查询优化之多级缓存"><span class="toc-number">7.</span> <span class="toc-text">查询优化之多级缓存</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#redis缓存第一级"><span class="toc-number">7.1.</span> <span class="toc-text">redis缓存第一级</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#序列化格式"><span class="toc-number">7.2.</span> <span class="toc-text">序列化格式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#本地缓存第二级"><span class="toc-number">7.2.1.</span> <span class="toc-text">本地缓存第二级</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#OpenResty-Shared-Dict-Nginx-Lua-OpenResty-redis缓存第三级"><span class="toc-number">7.2.2.</span> <span class="toc-text">OpenResty Shared Dict+Nginx+Lua+OpenResty redis缓存第三级</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#交易优化"><span class="toc-number">8.</span> <span class="toc-text">交易优化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#课程容量扣减行锁优化"><span class="toc-number">8.1.</span> <span class="toc-text">课程容量扣减行锁优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#课程容量扣减缓存化"><span class="toc-number">8.2.</span> <span class="toc-text">课程容量扣减缓存化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#异步扣减课程容量"><span class="toc-number">8.3.</span> <span class="toc-text">异步扣减课程容量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#事务型消息"><span class="toc-number">9.</span> <span class="toc-text">事务型消息</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#transactionMQProducer"><span class="toc-number">9.1.</span> <span class="toc-text">transactionMQProducer</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#库存流水"><span class="toc-number">10.</span> <span class="toc-text">库存流水</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#选课人数已满处理"><span class="toc-number">10.1.</span> <span class="toc-text">选课人数已满处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#小结"><span class="toc-number">10.2.</span> <span class="toc-text">小结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#流量削峰"><span class="toc-number">11.</span> <span class="toc-text">流量削峰</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#选课令牌"><span class="toc-number">11.1.</span> <span class="toc-text">选课令牌</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#令牌大闸"><span class="toc-number">11.2.</span> <span class="toc-text">令牌大闸</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#队列泄洪"><span class="toc-number">11.3.</span> <span class="toc-text">队列泄洪</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#防刷限流"><span class="toc-number">12.</span> <span class="toc-text">防刷限流</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分布式会话存储策略"><span class="toc-number">13.</span> <span class="toc-text">分布式会话存储策略</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mysql性能提升"><span class="toc-number">14.</span> <span class="toc-text">mysql性能提升</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Nginx"><span class="toc-number">15.</span> <span class="toc-text">Nginx</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Nginx-常用配置"><span class="toc-number">15.1.</span> <span class="toc-text">Nginx 常用配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#正向代理和反向代理"><span class="toc-number">15.2.</span> <span class="toc-text">正向代理和反向代理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Nginx-和Apache的区别"><span class="toc-number">15.3.</span> <span class="toc-text">Nginx 和Apache的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Nginx-如何处理HTTP-请求"><span class="toc-number">15.4.</span> <span class="toc-text">Nginx 如何处理HTTP 请求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Nginx-是如何实现高并发"><span class="toc-number">15.5.</span> <span class="toc-text">Nginx 是如何实现高并发</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#epoll多路复用"><span class="toc-number">15.6.</span> <span class="toc-text">epoll多路复用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#master-worker进程模型"><span class="toc-number">15.7.</span> <span class="toc-text">master worker进程模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#协程机制"><span class="toc-number">15.8.</span> <span class="toc-text">协程机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#动静分离"><span class="toc-number">15.9.</span> <span class="toc-text">动静分离</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#负载均衡策略"><span class="toc-number">15.10.</span> <span class="toc-text">负载均衡策略</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#页面静态化"><span class="toc-number">16.</span> <span class="toc-text">页面静态化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#CDN的使用"><span class="toc-number">16.1.</span> <span class="toc-text">CDN的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cache-controll响应头"><span class="toc-number">16.2.</span> <span class="toc-text">cache controll响应头</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#有效性验证"><span class="toc-number">16.3.</span> <span class="toc-text">有效性验证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#浏览器三种刷新方式"><span class="toc-number">16.4.</span> <span class="toc-text">浏览器三种刷新方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自定义缓存策略"><span class="toc-number">16.5.</span> <span class="toc-text">自定义缓存策略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#静态资源部署策略"><span class="toc-number">16.6.</span> <span class="toc-text">静态资源部署策略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#全页面静态化"><span class="toc-number">16.7.</span> <span class="toc-text">全页面静态化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RocketMQ"><span class="toc-number">17.</span> <span class="toc-text">RocketMQ</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#核心概念"><span class="toc-number">17.1.</span> <span class="toc-text">核心概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#消息队列的优势"><span class="toc-number">17.2.</span> <span class="toc-text">消息队列的优势</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RocketMQ的优势"><span class="toc-number">17.3.</span> <span class="toc-text">RocketMQ的优势</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分布式算法"><span class="toc-number">18.</span> <span class="toc-text">分布式算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#三种架构"><span class="toc-number">18.1.</span> <span class="toc-text">三种架构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#单机结构"><span class="toc-number">18.1.1.</span> <span class="toc-text">单机结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#集群结构"><span class="toc-number">18.1.2.</span> <span class="toc-text">集群结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#分布式结构"><span class="toc-number">18.1.3.</span> <span class="toc-text">分布式结构</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Raft算法"><span class="toc-number">18.2.</span> <span class="toc-text">Raft算法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Raft算法应用场景"><span class="toc-number">18.2.1.</span> <span class="toc-text">Raft算法应用场景</span></a></li></ol></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2762516417,1589137703&amp;fm=26&amp;gp=0.jpg"></div><div class="author-info__name text-center">高明</div><div class="author-info__description text-center">JAVA工程师</div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">Articles</span><span class="pull-right">85</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">Tags</span><span class="pull-right">17</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">Categories</span><span class="pull-right">11</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2333247715,1420619508&amp;fm=26&amp;gp=0.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">SkySea-GaoMing</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a></span><span class="pull-right"></span></div><div id="post-info"><div id="post-title">项目总结</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-05-21</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E7%A7%8B%E6%8B%9B/">秋招</a><span class="post-meta__separator">|</span><i class="fa fa-comment-o post-meta__icon" aria-hidden="true"></i><a href="/2021/05/21/%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/#disqus_thread"><span class="disqus-comment-count" data-disqus-identifier="2021/05/21/项目总结/"></span></a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h2 id="项目背景"><a href="#项目背景" class="headerlink" title="项目背景"></a>项目背景</h2><p>在开学时学生会进行选课操作，对于部分热点课程来说容量是有限制的，所<br>以对这些课程可以设置一个开始时间和结束时间，在这个时间内才可以抢课<br>，当到达开始时间的时候，会有大量请求涌入，这个系统的核心就是着重处<br>理大量请求，尽可能多的承载容量</p>
+<h3 id="RESTful-API"><a href="#RESTful-API" class="headerlink" title="RESTful API"></a>RESTful API</h3><p>API翻译过来是应用程序编程接口的意思。我们在进行后端开发的时候，主要的<br>工作就是为前端或者其他后端服务提供API比如查询用户数据的API。前端调用<br>API 向后台发起HTTP 请求，后台响应请求将处理结果反馈给前端。也就是说<br>Restful 是典型的基于HTTP的协议</p>
+<h4 id="REST"><a href="#REST" class="headerlink" title="REST"></a>REST</h4><p>REST翻译过来就是“表现层状态转化”。也就是“资源”在网络传输中以某种“表现<br>形式”进行“状态转移”。</p>
 <ol>
-<li>每次查询课程详情的时候都需要查询课程的基本信息、容量信息和活动信息，<br>根据课程id到redis中获取，使用opsForValue方法设置数据到redis中，设置<br>10分钟失效时间</li>
+<li>资源：我们可以把真实的对象数据称为资源。一个资源既可以是一个集合，<br>也可以是单个个体。比如我们的班级classes 是代表一个集合形式的资源，而<br>特定的class 代表单个个体资源。每一种资源都有特定的URI（统一资源标识<br>符）与之对应，如果我们需要获取这个资源，访问这个URI 就可以了</li>
+<li>表现形式：”资源”是一种信息实体，它可以有多种外在表现形式。我们把”资<br>源”具体呈现出来的形式比如json xml image txt 等等叫做它的”表现层/表现<br>形式”</li>
+<li>状态转移：REST 中的状态转移更多地描述的服务器端资源的状态，比如你<br>通过增删改查（通过HTTP 动词实现）引起资源状态的改变</li>
 </ol>
-<h4 id="本地缓存第二级"><a href="#本地缓存第二级" class="headerlink" title="本地缓存第二级"></a>本地缓存第二级</h4><p>Redis缓存虽好，但是有网络I/O，没有本地缓存快，缓存热点数据，这里使用<br>的JVM内存，由于JVM内存有限，仅存放多次查询的数据，脏读不敏感。<br>本地缓存，说白了就是一个HashMap，但是HashMap不支持并发读写，肯定是不<br>行的。j.u.c包里面的ConcurrentHashMap虽然也能用，但是无法高效处理过期<br>时限、没有淘汰机制等问题，所以这里使用了Google的Guava Cache方案。<br>Guava Cache除了线程安全外，还可以控制超时时间，提供淘汰机制。</p>
-<h4 id="OpenResty-Shared-Dict-Nginx-Lua缓存第三级"><a href="#OpenResty-Shared-Dict-Nginx-Lua缓存第三级" class="headerlink" title="OpenResty Shared Dict+Nginx+Lua缓存第三级"></a>OpenResty Shared Dict+Nginx+Lua缓存第三级</h4><p>通过Redis缓存，避免了MySQL大量的重复查询，提高了部分效率；通过本地缓存<br>，减少了与Redis服务器的网络I/O，提高了大量效率。但实际上，前端（客户端<br>）请求Nginx服务器，Nginx有分发过程，需要去请求后面的两台应用服务器，<br>有一定网络I/O，直接把热点数据存放到Nginx服务器上。<br>Nginx Proxy Cache的原理是基于文件系统的，它把后端返回的响应内容，作为<br>文件存放在Nginx指定目录下。依靠内存缓存文件地址。<br>可以使用Nginx lua脚本来做缓存</p>
-<h2 id="交易优化"><a href="#交易优化" class="headerlink" title="交易优化"></a>交易优化</h2><h3 id="交易验证优化"><a href="#交易验证优化" class="headerlink" title="交易验证优化"></a>交易验证优化</h3><p>交易验证完全依赖于数据库还有库存行锁的问题，首先要去数据库查询课程信息<br>，而在查询课程信息的过程中，又要去查询秒杀活动信息，最后还要查询学生信<br>息，减库存操作还存在行锁阻塞，所以下单接口并发性能很低</p>
+<p>总结为三点</p>
 <ol>
-<li>用户校验缓存优化 先从Redis里面获取用户信息，没有再去数据库里查</li>
-<li>活动校验缓存优化 活动信息，由于具有时效性，需要具备紧急下线的能力<br>，可以编写一个接口，清除活动信息的缓存</li>
+<li>每一个 URI 代表一种资源</li>
+<li>客户端和服务器之间，传递这种资源的某种表现形式比如json xml image<br>txt 等等</li>
+<li>客户端通过特定的HTTP 动词，对服务器端资源进行操作，实现”表现层状<br>态转化”</li>
 </ol>
-<h3 id="库存扣减优化"><a href="#库存扣减优化" class="headerlink" title="库存扣减优化"></a>库存扣减优化</h3><h4 id="索引优化"><a href="#索引优化" class="headerlink" title="索引优化"></a>索引优化</h4><p>为课程id字段添加一个唯一索引，这样在修改的时候，只会锁行</p>
-<h4 id="库存扣减缓存优化"><a href="#库存扣减缓存优化" class="headerlink" title="库存扣减缓存优化"></a>库存扣减缓存优化</h4><p>之前下单，是直接操作数据库，一旦秒杀活动开始，大量的流量涌入扣减库<br>存接口，数据库压力很大。那么先在缓存中下单，如果要在缓存中扣减库存<br>，需要解决两个问题，第一个是活动开始前，将数据库的库存信息，同步<br>到缓存中。第二个是下单之后，要将缓存中的库存信息同步到数据库中</p>
+<h3 id="优化方式"><a href="#优化方式" class="headerlink" title="优化方式"></a>优化方式</h3><p>我采用了多种优化方式提升性能，并且使用Jemeter进行压测发现性能问题<br>并进行优化</p>
 <ol>
-<li>活动发布同库存进缓存</li>
-<li>异步扣减库存 在缓存中减库存，这里的问题就是数据库记录不一致</li>
-<li>异步消息扣减数据库内库存</li>
+<li>分布式扩展 包括nginx反向代理到多台应用服务器和使用分布式会话管理</li>
+<li>查询优化采用多级缓存技术 包括redis缓存、本地缓存、热点nginx lua<br>缓存解决缓存前置的性能容量瓶颈、动态请求缓存和静态请求cdn解决页面静<br>态化，使用PhantomJS无头浏览器做全页面静态化</li>
+<li>交易泄压 包括缓存库存模型解决交易缓存的验证技术、交易异步化模型和<br>使用异步化的事务来保证应用的最终一致性问题，使用库存售罄防击穿的优化<br>解决后置流量问题</li>
+<li>流量错峰 包括秒杀令牌、秒杀大闸和队列泄洪技术来解决流量涌入问题防<br>止系统被击穿</li>
+<li>防刷限流 包括验证码、限流器和防黄牛技术解决风控问题</li>
 </ol>
-<h4 id="异步扣减库存"><a href="#异步扣减库存" class="headerlink" title="异步扣减库存"></a>异步扣减库存</h4><ol>
-<li>完成一次减库存操作之后发送一条异步库存扣减消息，然后在异步回调<br>最终实现数据库扣减库存</li>
-<li>发送异步消息在最后一步执行，因为订单入库、增加销量的操作可能失败<br>，如果失败那么redis和已经发送的异步消息无法回滚，会导致数据库的不<br>一致</li>
+<h3 id="使用到的技术"><a href="#使用到的技术" class="headerlink" title="使用到的技术"></a>使用到的技术</h3><p>Vue+SpringBoot+MyBatis-generator+MySQL+Redis+Rocketmq<br>项目部署在阿里云ECS服务器，采用MVC+领域模型的设计模式</p>
+<h3 id="数据模型"><a href="#数据模型" class="headerlink" title="数据模型"></a>数据模型</h3><ol>
+<li>接入层模型 View Object 可以返回给前端的数据对象</li>
+<li>业务层模型 Domain Model 多个数据对象的融合，不提供服务功能</li>
+<li>数据层模型 Data Object 数据模型，与数据库映射</li>
+</ol>
+<h2 id="表的设计"><a href="#表的设计" class="headerlink" title="表的设计"></a>表的设计</h2><h3 id="学生表和密码表分开存储"><a href="#学生表和密码表分开存储" class="headerlink" title="学生表和密码表分开存储"></a>学生表和密码表分开存储</h3><ol>
+<li>用户密码可以存储在加密机、加密数据库或其他系统中</li>
+<li>除了登录和修改密码操作之外其余学生相关信息的操作不需要密码，比如<br>展示学生信息，这里只用到学生数据表即可，节省存储空间</li>
+</ol>
+<h3 id="课程表和容量表分开存储"><a href="#课程表和容量表分开存储" class="headerlink" title="课程表和容量表分开存储"></a>课程表和容量表分开存储</h3><ol>
+<li>单独做课程容量表进行优化</li>
+<li>对课程容量的操作非常耗时耗性能，每次减容量都会对该记录进行行锁操作<br>，容量表也可以进行分库分表，根据不同的课程id进行拆分来减少数据库性能<br>的消耗</li>
+</ol>
+<h3 id="交易表的主键"><a href="#交易表的主键" class="headerlink" title="交易表的主键"></a>交易表的主键</h3><p>这个主键是由交易号组成，一共16位。前8位是选课时间，中间6位是自增序列<br>通过保存当前值和每次递增的值组成，最后两位是分库分表位。这是一种雪花<br>模型</p>
+<h2 id="功能概述"><a href="#功能概述" class="headerlink" title="功能概述"></a>功能概述</h2><h3 id="通用返回对象"><a href="#通用返回对象" class="headerlink" title="通用返回对象"></a>通用返回对象</h3><p>定义通用的返回对象返回正确信息。归化为一个统一的status+data的格式。<br>status就是返回的处理成功或失败结果。data是要返回给前端的数据。<br>使用枚举类定义各种不同的错误信息，比如参数不合法、学号不存在、学生未<br>登录等精确信息，如果程序出现错误就会返回错误信息，有两个属性，一个<br>是错误码一个是错误信息</p>
+<h3 id="异常拦截器处理自定义异常"><a href="#异常拦截器处理自定义异常" class="headerlink" title="异常拦截器处理自定义异常"></a>异常拦截器处理自定义异常</h3><p>抛出自定义的异常使用拦截器拦截，使用@ControllerAdvice注解添加在异<br>常处理类上，使用@ExceptionHandler添加在处理异常的方法上，抛出的异<br>常，就会先进入这个方法进行处理，封装错误码和错误信息返回给前端</p>
+<h3 id="解决跨域"><a href="#解决跨域" class="headerlink" title="解决跨域"></a>解决跨域</h3><ol>
+<li>前端ajax解决跨域<br>由于浏览器的安全机制，JS只能访问与所在页面同一个域的内容，但是我们这<br>里需要通过Ajax请求去请求后端接口并返回数据，这时候就会受到浏览器的安<br>全限制，产生跨域问题（如果只是通过Ajax向后端服务器发送请求而不要求返<br>回数据，是不受跨域限制的）。<br>前端的HTML页面，在Ajax请求体里面，需要设置<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">contentType:&quot;application&#x2F;x-www-form-urlencoded&quot;，</span><br><span class="line">并添加一个额外的字段xhrFields:&#123;withCredentials: true&#125;</span><br></pre></td></tr></table></figure></li>
+<li>Vue解决跨域<br>Vue 框架中有一个Vue.config.js 配置文件，包含生成环境和开发环境以及一<br>些打包的配置，其中有一个devServer 的部分用来配置跨域请求，配置主机端<br>口和目标代理服务器的地址，允许这个地址跨域</li>
+<li>后端解决跨域</li>
+</ol>
+<ul>
+<li>@CrossOrigin 在controller 层的类或者方法上添加这个注解，指定属性<br>allowedCredentials 为true，表示允许跨域请求上传cookie或用户凭证等<br>信息，指定属性allowedHeaders 为true，允许跨域请求传入的header字段</li>
+<li>全局配置 创建一个配置类CrosConfig 实现WebMvcConfigurer，使用注<br>解@Configuration 表示这是一个配置类，实现addCorsMappings方法，<br>允许所有类型的请求方法和头字段跨域</li>
+</ul>
+<p>跨域产生的条件</p>
+<ol>
+<li>使用ajax请求</li>
+<li>访问的域名不同</li>
+</ol>
+<p>解决跨域</p>
+<ol>
+<li>JSONP</li>
+<li>CORS</li>
+<li>代理法 打破不同源的限制，只要让它同源即可。将对应的服务部署在不同<br>的机器上，使用一个公共的域名作为nginx反向代理的入口域名，将静态服务<br>和动态服务分别挂在后面的被代理局域网服务器内</li>
+</ol>
+<h3 id="优化校验"><a href="#优化校验" class="headerlink" title="优化校验"></a>优化校验</h3><p>前端的数据传给后端后直接使用validator来进行校验，直接可以对字段添加<br>注解实现校验规则</p>
+<h3 id="mysql插入优化"><a href="#mysql插入优化" class="headerlink" title="mysql插入优化"></a>mysql插入优化</h3><ol>
+<li>使用批量插入的sql语句，而不要用for循环逐个插入</li>
+<li>使用事务包括所有的插入语句，而不是每一个插入都开启一个事务</li>
+<li>插入的时候尽量保证插入的条目顺序是按照索引顺序递增插入</li>
+</ol>
+<h3 id="课程信息展示"><a href="#课程信息展示" class="headerlink" title="课程信息展示"></a>课程信息展示</h3><p>展示课程的图片、学分和选课人数。这里根据选课人数倒排排序展示所有课程<br>信息，不过课程还需要进行封装，通过stream().map 将课程信息表和课程<br>容量表组合在一个模型中返回给前端，前端点击相应课程就会进行该课程的<br>详细页面</p>
+<h3 id="密码传输安全"><a href="#密码传输安全" class="headerlink" title="密码传输安全"></a>密码传输安全</h3><p>唯一的解决方法就是数据加密，有三种加密方式</p>
+<ol>
+<li>哈希散列</li>
+<li>对称加密 由于客户端的秘钥容易泄露，只适用于服务端与服务端的交互</li>
+<li>非对称加密</li>
+</ol>
+<p>最好的选择是使用https协议</p>
+<h2 id="核心流程"><a href="#核心流程" class="headerlink" title="核心流程"></a>核心流程</h2><h3 id="注册流程"><a href="#注册流程" class="headerlink" title="注册流程"></a>注册流程</h3><ol>
+<li>首先在前端展示获取验证码页面，这里输入学号获取验证码</li>
+<li>后端接收到学号后通过random.nextInt(90000)+10000生成5位验证码，<br>并发送给前端展示，将学号和验证码以键值对的形式保存在redis中，并设置<br>过期时间为1分钟</li>
+<li>学生收到验证码后进入注册页面，输入学生的基本信息、密码和验证码进<br>行注册操作</li>
+<li>后端收到学生信息和验证码后从缓存中取出相应学生的验证码对比是否一<br>致，如果一致说明学号验证无误，调用注册接口，通过RandomStringUtils<br>类为学号生成16位的盐，使用DigestUtils.md5Hex加密算法将密码和盐的<br>组合进行加密并保存在学生密码表，密码是长度为32的字符串，学生的盐信<br>息保存在单独的学生密码盐表。这步操作就是加盐加密操作</li>
+<li>注册成功后前端通过window.location.href跳转到登录页</li>
+</ol>
+<h3 id="登录流程"><a href="#登录流程" class="headerlink" title="登录流程"></a>登录流程</h3><ol>
+<li>在登录页面输入学号和密码选择登录选项</li>
+<li>后端根据学号查询密码，学号添加了唯一索引加快查询，如果密码存在那<br>么根据学生id取出相应的盐拼接一起并进行加密操作，如果与密码表中的密<br>码一致那么学生信息无误</li>
+<li>使用UUID生成唯一登录凭证token，然后将生成的token作为KEY，学生信<br>息作为VALUE存入到Redis服务器，并将token返回给前端</li>
+<li>前端在登录成功之后，将token存放到localStorage里面，跳转到课程信<br>息页</li>
+</ol>
+<h3 id="获取课程信息流程"><a href="#获取课程信息流程" class="headerlink" title="获取课程信息流程"></a>获取课程信息流程</h3><ol>
+<li>课程信息页展示所有课程信息，包括课程的图片、课程名、学分和已选课人<br>数，点击课程触发window.location.href进入该课程的详细信息页</li>
+<li>前端向后端发送HTTP请求传入课程id，后端首先查询本地缓存中是否有课<br>程信息，这里使用Guava Cache，本质是利用本地JVM的内存，这里没有使用<br>ConcurrentHashMap 是因为无法高效处理过期时限、没有淘汰机制。Guava<br>Cache 除了线程安全外，还可以控制超时时间，提供淘汰机制。这里使用设<br>置本地缓存初始容量为10，最大容量为100，超过后会按照LRU策略移除，<br>设置写缓存60s之后过期</li>
+<li>如果本地缓存没有相应课程数据那么从redis数据库中获取缓存数据，并<br>设置过期时间为10分钟，如果redis中也没有缓存那么就调用相应接口从数<br>据库中取数据，取出之后在redis中设置</li>
+<li>通过数据库获取课程信息时也会查询课程的活动信息，如果活动信息表中<br>该课程信息不为空，那么就会根据当前时间判断课程的活动状态，这里有三<br>种状态：第一种就是活动还未开始不能选择该课程，第二种状态是当前时间<br>处于活动时间可以选课，第三种状态是活动时间已经结束不能选择该课程。</li>
+<li>前端接收到后端传来的课程信息后根据课程的活动状态进行操作，如果<br>活动还未开始显示倒计时时间，选课键不能点击，当差值为0的时候变为可<br>选状态，当活动结束后选课键不能点击</li>
+</ol>
+<h3 id="抢课流程"><a href="#抢课流程" class="headerlink" title="抢课流程"></a>抢课流程</h3><ol>
+<li><p>当课程处于活动时间时可以进行选课操作，点击选课时请求会带上之前登<br>录成功时保存的token，后端根据token从redis缓存中取出学生信息，如果<br>不为空说明验证成功，后端生成一个验证码和验证码图像，验证码由4 位英<br>文字母和数字组成并放入redis缓存中，通过ImageIO.write向前端返回一<br>个验证码图片，用户根据图片识别验证码输入之后点击验证，会生成 HTTP<br>请求调用获取选课令牌的接口</p>
+</li>
+<li><p>请求选课令牌接口的时候带上课程id、活动id和验证码和token，从缓存<br>中根据学生id获取验证码进行验证，这里验证码的过期时间设置为10分钟，<br>如果验证成功就生成选课令牌，使用选课令牌的目的是使校验逻辑和选课逻<br>辑分离，将活动、课程、学生信息校验逻辑封装在请求令牌的接口方法里通过<br>UUID生成令牌，以活动id、学生id和课程id为KEY令牌为token保存在redis<br>缓存中，设置超时时间是5s。</p>
+</li>
+<li><p>完成以上两步操作后会生成HTTP请求带上选课令牌请求下单接口，</p>
+</li>
+<li><p>前端进行选课操作时首先查询课程信息，然后查询课程活动信息，最后查<br>询学生信息。查询学生信息，是为了用户风控策略，判断学生信息是否存在是<br>最基本的策略。查询课程信息、活动信息，是为了活动校验策略。课程和学生<br>信息先从redis缓存中获取，如果没有再从数据库查。过期时间设置为10分<br>钟</p>
+</li>
+<li><p>加入课程容量流水的初始状态再调用事务型消息去选课，课程容量流水<br>的状态有三种状态，第一种就是刚刚初始化，第二种表示选课扣减课程容<br>量成功，第三种是回滚。当选课操作完成也就是执行Redis扣减库存、订单<br>入库、选课人数增加的操作之后，就说明选课完成了，等着异步更新数据<br>库了。那么需要修改流水的状态。使用课程容量流水的作用就是说如果在<br>执行选课操作的时候，突然宕机了，此时事务型消息的状态是UNKNOWN<br>，需要在回调方法中根据课程容量流水的状态进行处理。在初始化课程<br>流水之前先在缓存中判断该课程是否人数已满，如果人数已满那么就不<br>需要初始化课程容量流水，容量不足选课失败</p>
+</li>
+<li><p>在redis中完成扣减课程容量的操作之后，那么就发送消息到消息队列，<br>准备异步扣减，通过new Message生成消息，指定topic和标签，通过send<br>将消息发送出去，如果消息发送失败，需要回滚Redis。但是数据库扣减失败<br>redis不能回滚，所以这一步只负责扣减Redis库存，不发送异步消息。在事<br>务提交成功后，执行发送消息操作。所以最终的优化结果是在事务型消息中<br>去执行选课操作，选课失败，则消息回滚，不会去数据库扣减课程容量。选<br>课成功，则消息被消费，扣减数据库课程容量。选课操作的具体内容就是创<br>建订单和redis扣减课程容量的操作</p>
+</li>
+</ol>
+<h2 id="项目用到的命令"><a href="#项目用到的命令" class="headerlink" title="项目用到的命令"></a>项目用到的命令</h2><ol>
+<li>java -Xms400m -Xmx400m -XX:NewSize=200m -XX:MaxNewSize=200m </li>
+</ol>
+<p>-jar miaosha.jar –spring.config.additional-location=/usr<br>/projects/application.properties 启动Java的命令并指定Java虚拟机参<br>数和配置文件。JVM参数需要根据不断的压测以及线上环境进行设置，最大堆栈<br>和最小堆栈设置一样保证不会频繁从操作系统分配内存<br>2. ./deploy.sh &amp;  启动Java项目<br>3. tail -f nohup.out  查看项目启动信息<br>4. ps -ef | grep java 检查java进程是否存在，|管道命令符的作用能用<br>一句话来概括：把前一个命令原本要输出到屏幕的数据当作是后一个命令的<br>标准输入。ps显示进程信息的，-e显示所有进程，-f全格式。grep命令是查<br>找，使用正则表达式搜索文本，然后把匹配的行显示出来<br>5. netstat -anp | grep port  查看端口占用情况。netstat命令用于显<br>示网络状态，-a显示所有，-n不用别名显示只用数字显示，-p显示进程号和<br>进程名<br>6. pstree -p pid | wc -l  查看Java进程一共维护了多少个线程<br>7. top -H  查看CPU的使用情况。us表示用户进程占用的CPU，sy表示内核进<br>程占用的CPU，load average反映了CPU的负载强度，表示一些很耗时的操作<br>8. systemctl start mariadb.service 启动MySQL需要的服务器<br>9. mysql -uroot -pXX 连接数据库<br>10. sbin/nginx -c conf/nginx.conf 启动nginx<br>11. sbin/nginx -s reload 修改配置后直接无缝重启<br>12. src/redis-server ./redis.conf &amp; 启动redis<br>13. nohup sh bin/mqnamesrv &amp;  启动nameserver，默认在9876端口<br>14. tail -f ~/logs/rocketmqlogs/namesrv.log 查看启动情况<br>15. nohup sh ./mqbroker -n IP:9876 &amp; 启动broker<br>16. export NAMESRV_ADDR=IP:PORT<br>17. sh bin/tools.sh org.apache.rocketmq.example.quickstart.<br>Producer 投放消息<br>18. sh bin/tools.sh org.apache.rocketmq.example.quickstart.<br>Consumer 消费消息<br>19. ./mqadmin updateTopic -n IP:PORT -t stock -c DefaultCluster<br>创建自定义的topic</p>
+<h2 id="分布式扩展优化"><a href="#分布式扩展优化" class="headerlink" title="分布式扩展优化"></a>分布式扩展优化</h2><h3 id="Spring-Boot项目部署"><a href="#Spring-Boot项目部署" class="headerlink" title="Spring Boot项目部署"></a>Spring Boot项目部署</h3><p>将jar包部署在两台阿里云服务器，有的时候线上环境需要更改一些配置，比如<br>在9090端口部署等等。<br>Spring Boot 支持在线上环境中使用spring.config.additional-location<br>指定线上环境的配置文件，而不是打到jar包里的配置文件。<br>创建一个自定义的外挂配置文件，SpringBoot会优先使用这个文件里面的配置<br>信息。然后编写一个启动脚本deploy.sh 用于启动应用。使用nohup启动应用程<br>序并且退出终端也不影响程序运行，可以在nohup.out文件查看项目运行信息。<br>如果要做到自动化部署可以通过批处理脚本和集成Jenkins</p>
+<h3 id="Jmeter"><a href="#Jmeter" class="headerlink" title="Jmeter"></a>Jmeter</h3><p>使用jmeter来进行并发压测，新建一个线程组，添加需要压测的接口地址，查看<br>结果树和聚合报告，接口化压测应用还包括FTP LDAP TCP SMTP</p>
+<ol>
+<li><p>线程组 启动多个并发线程，并发送一些接口的请求。设置线程数、Ramp-Up时<br>间（在该时间内要启动的线程数）、循环次数（每个线程发送多少个请求）</p>
+</li>
+<li><p>Http请求 发送http请求，需要设置协议、方法和路径</p>
+</li>
+<li><p>查看结果树 http请求响应的结果</p>
+</li>
+<li><p>聚合报告 性能压测报告，包括响应时间、TPS和QPS的数据</p>
+</li>
+<li><p>TPS<br>即服务器每秒处理的事务数。TPS包括一条消息入和一条消息出，加上一次用<br>户数据库访问。TPS是软件测试结果的测量单位。一个事务是指一个客户机向<br>服务器发送请求然后服务器做出反应的过程。客户机在发送请求时开始计时<br>，收到服务器响应后结束计时，以此来计算使用的时间和完成的事务个数</p>
+</li>
+<li><p>QPS<br>每秒查询率，是一台服务器每秒能够响应的查询次数（数据库中的每秒执行<br>查询sql的次数），这个不够全面，不能描述增删改</p>
+</li>
+</ol>
+<h3 id="pv可以用来作为性能测试的指标么"><a href="#pv可以用来作为性能测试的指标么" class="headerlink" title="pv可以用来作为性能测试的指标么"></a>pv可以用来作为性能测试的指标么</h3><p>即 page view，页面浏览量。用户每一次对网站中的每个页面访问均被记录1<br>次。用户对同一页面的多次刷新，访问量累计</p>
+<h3 id="TPS和QPS的区别"><a href="#TPS和QPS的区别" class="headerlink" title="TPS和QPS的区别"></a>TPS和QPS的区别</h3><p>如果是对一个查询接口（单场景）压测，且这个接口内部不会再去请求其它接<br>口，那么tps=qps，否则tps≠qps。jmeter聚合报告中，Throughput 是用来<br>衡量请求的吞吐量，也就是tps，tps =样本数/运行时间；我们定义的是tps<br>，不是qps。如果没有定义事务，会把每个请求作为一个事务</p>
+<h3 id="查询接口压测结果"><a href="#查询接口压测结果" class="headerlink" title="查询接口压测结果"></a>查询接口压测结果</h3><ol>
+<li>单机压测 200*50个请求，200TPS</li>
+<li>分布式压测 发送1000*30个请求，900TPS</li>
+<li>分布式缓存压测 发送1000*20个请求，1300TPS</li>
+</ol>
+<h3 id="Tomcat线程优化"><a href="#Tomcat线程优化" class="headerlink" title="Tomcat线程优化"></a>Tomcat线程优化</h3><p>Spring Boot内嵌Tomcat默认的线程设置，默认最大等待队列为100，默认最<br>大可连接数为10000，默认最大工作线程数为200，默认最小工作线程数为10。<br>当请求超过200+100后，会拒绝处理；当连接超过10000后，会拒绝连接。对<br>于最大连接数，一般默认的10000就行了。在配置文件中进行修改tomcat 配<br>置，最大线程数400（操作系统切换线程也有开销），最小线程数50（解决<br>突发容量问题有充足时间反应），最大等待队列设置为500（受到内存的限<br>制，二是大量的出队入队操作耗费CPU性能）</p>
+<h3 id="Tomcat网络连接优化"><a href="#Tomcat网络连接优化" class="headerlink" title="Tomcat网络连接优化"></a>Tomcat网络连接优化</h3><p>Spring Boot并没有把内嵌Tomcat的所有配置都导出。一些配置需要通过接口<br>来实现自定义，自定义KeepAlive长连接的配置，减少客户端和服务器的连接<br>请求次数，避免重复建立连接，提高性能，设置Timeout为30秒，设置10000<br>个请求则自动断开，实现WebServerFactoryCustomizer接口做定制化配置<br>HTTP 1.1的长连接</p>
+<h3 id="使用OpenResty"><a href="#使用OpenResty" class="headerlink" title="使用OpenResty"></a>使用OpenResty</h3><p>OpenResty 是一个基于Nginx 与Lua 的高性能Web 平台，其内部集成了大<br>量精良的 Lua 库、第三方模块以及大多数的依赖项。用于方便地搭建能够处<br>理超高并发、扩展性极高的动态Web 应用、Web 服务和动态网关。<br>在nginx.conf中进行配置</p>
+<ol>
+<li>location节点path指定resources：静态资源路径</li>
+<li>location节点其他路径：动态资源用</li>
+<li>server节点可以配置多个，做域名解析</li>
+</ol>
+<h3 id="Nginx反向代理负载均衡"><a href="#Nginx反向代理负载均衡" class="headerlink" title="Nginx反向代理负载均衡"></a>Nginx反向代理负载均衡</h3><p>单机有容量问题（CPU使用率高，内存占用高，网络带宽高），进行水平扩展<br>。使用nginx反向代理，采用负载均衡轮询策略，Ajax请求则会通过Nginx反<br>向代理到两台不同的应用服务器，MySQL 部署在单独的应用服务器，需要在<br>Java应用的配置文件中添加数据库连接池</p>
+<ol>
+<li>web服务器 动态web和静态web服务器，动静分离，将动态请求反向代理<br>到后端服务器。通过/resources/访问的是静态资源，否则就是动态请求</li>
+</ol>
+<p>反向代理具体配置操作</p>
+<ol>
+<li>配置upstream server用来做对应的反向代理服务器节点，指定后端服务<br>器的局域网IP地址和端口，使用weight表示权重，两个weight都为1</li>
+<li>设置动态请求location为proxy pass路径，反向代理到两台应用服务器</li>
+<li>开启tomcat access log验证 开启这个功能可以查看是哪个IP发过来的<br>请求，在application.properties里面添加server.tomcat.accesslog.<br>enabled=true</li>
+</ol>
+<h3 id="Nginx反向代理长连接优化"><a href="#Nginx反向代理长连接优化" class="headerlink" title="Nginx反向代理长连接优化"></a>Nginx反向代理长连接优化</h3><p>Nginx服务器与前端的连接是长连接，但是与后端的代理服务器，默认是短连接<br>，设置Nginx服务器和应用服务器之间的长连接。在nginx.conf中配置HTTP1.1<br>和keepalive 30。通过nestat -an | grep IP | grep ESTABILSHED可以判<br>断是否是长连接，如果是长连接Nginx连接端口不会改变。nginx 高性能的原因<br>总结如下</p>
+<ol>
+<li>首先依靠epoll模型的多路复用机制，解决的IO阻塞的一个回调通知的问题</li>
+<li>第二，依靠master worker进程模型可以完成平滑的过度，平滑的重启，并<br>且基于worker单线程的模型，结合epoll多路复用的机制完成高效的操作</li>
+<li>第三基于协程的机制，将每个用户的请求对应到线程中的某个协程中，然后<br>在协程中使用epoll 多路复用的机制，来完成对应一个同步调用的开发，完成<br>高性能的操作</li>
+</ol>
+<h3 id="分布式会话管理"><a href="#分布式会话管理" class="headerlink" title="分布式会话管理"></a>分布式会话管理</h3><p>将token存到Redis服务器上，从而实现分布式会话。Java对象会被存到Redis里<br>面，需要被序列化，序列化的目的是为了对象可以跨平台存储和进行网络传输。<br>一般常用UUID生成类似SessionId的唯一登录凭证token，然后将生成的token<br>作为KEY，UserModel作为VALUE存入到Redis服务器。设置超时时间是一个小时<br>使用redisTemplate可以操作SpringBoot中内嵌的redis的bean。<br>redisTemplate.opsForValue().set(uuidToken,userModel);<br>redisTemplate.expire(uuidToken,1,TimeUnit.HOURS);<br>前端收到后端传来的uuidToken，使用window.localStorage存储token。<br>localStorage用于长久保存整个网站的数据，保存的数据没有过期时间，直到<br>手动去删除</p>
+<h2 id="查询优化之多级缓存"><a href="#查询优化之多级缓存" class="headerlink" title="查询优化之多级缓存"></a>查询优化之多级缓存</h2><p>所谓缓存，就是将磁盘中的热点数据，暂时存到内存里面，以后查询直接从<br>内存中读取，减少磁盘I/O，提高速度。所谓多级，就是在多个层次设置缓<br>存，一个层次没有就去另一个层次查询。<br>缓存的局限性是缓存具有丢失性的特点，数据必须保存在磁盘上。缓存数据也<br>必须同步更新</p>
+<h3 id="redis缓存第一级"><a href="#redis缓存第一级" class="headerlink" title="redis缓存第一级"></a>redis缓存第一级</h3><p>redis集中式管理缓存，所有的应用服务器都在这台redis服务器中操作。<br>但是单机版的redis也有缺点：若单机redis宕机那么整个系统都会受影响，<br>单机redis还有容量上限问题。<br>两种方式解决：sentinal哨兵模式和集群cluster模式。<br>每次查询课程详情的时候都需要查询课程的基本信息、容量信息和活动信息，<br>这里需要查询三个表太耗时。设置model到redis中，根据课程id到redis中<br>获取，设置10分钟失效时间</p>
+<h3 id="序列化格式"><a href="#序列化格式" class="headerlink" title="序列化格式"></a>序列化格式</h3><p>Java对象存到Redis里面的VALUE是类似/x05/x32的二进制格式，我们需要自<br>定义RedisTemplate的序列化格式，以JSON的格式存储和显示</p>
+<h4 id="本地缓存第二级"><a href="#本地缓存第二级" class="headerlink" title="本地缓存第二级"></a>本地缓存第二级</h4><p>Redis缓存虽好，但是有网络I/O，没有本地缓存快，缓存热点数据，这里使用<br>的JVM内存，由于JVM内存有限，仅存放多次查询的数据，脏读不敏感。<br>本地缓存，说白了就是一个HashMap，但是HashMap不支持并发读写，肯定是不<br>行的。j.u.c包里面的ConcurrentHashMap虽然也能用，但是无法高效处理过期<br>时限、没有淘汰机制等问题，所以这里使用了Google的Guava Cache方案。<br>Guava Cache除了线程安全外，还可以控制超时时间，提供淘汰机制。<br>最大100个KEY，超过后会按照LRU策略移除，设置60s的过期时间。本地缓存是不<br>能保证一致性的，分布式环境下需要广播消息给每台机器去清除对应的缓存，可<br>以用rocketmq的广播消息</p>
+<h4 id="OpenResty-Shared-Dict-Nginx-Lua-OpenResty-redis缓存第三级"><a href="#OpenResty-Shared-Dict-Nginx-Lua-OpenResty-redis缓存第三级" class="headerlink" title="OpenResty Shared Dict+Nginx+Lua+OpenResty redis缓存第三级"></a>OpenResty Shared Dict+Nginx+Lua+OpenResty redis缓存第三级</h4><p>通过Redis缓存，避免了MySQL大量的重复查询，提高了部分效率；通过本地缓存<br>，减少了与Redis服务器的网络I/O，提高了大量效率。但实际上，前端（客户端<br>）请求Nginx服务器，Nginx 有分发过程，需要去请求后面的两台应用服务器有<br>一定网络I/O，可以直接把热点数据存放到Nginx服务器上。</p>
+<ol>
+<li>Nginx Proxy Cache原理是基于文件系统的，它把后端返回的响应内容作为<br>文件存放在Nginx指定目录下，依靠内存缓存文件地址。有磁盘I/O，虽然减少了<br>一定的网络I/O，但是磁盘I/O 并没有内存快，得不偿失，所以不建议使用。在<br>nginx.conf配置文件中声明一个cache缓存节点，levels=1:2 表示以二级目<br>录存放，文件内容被分散到多个目录减少寻址操作</li>
+<li>Nginx lua脚本基于“内存”的缓存策略，lua也是基于协程机制的。lua脚本<br>可以挂载在Nginx 处理请求的起始、worker进程启动、内容输出等阶段。协程是<br>依附于线程的内存模型，切换开销小。遇到阻塞则释放执行权，代码同步。无需<br>加锁。<br>创建一个lua脚本文件，在nginx.conf里面添加一个init_by_lua_file的字段<br>，指定上述lua脚本的位置，这样当Nginx 启动的时候就会执行这个lua脚本，<br>新建一个helloworld.lua，使用ngx.exec(“/item/get?id=1”)访问某个URL。<br>同样在nginx.conf添加一个helloworld location。这样当访问/helloworld<br>的时候就会跳转到item/get?id=1这个URL上。使用lua脚本的方式在nginx上<br>完成对应的业务处理，避免访问后端服务器</li>
+<li>OpenResty—Shared dict Shared dict是一种类似于HashMap的Key-Value<br>内存结构，对所有worker进程可见，并且可以指定LRU淘汰规则。<br>在nginx.conf指定一个名为my_cache，大小为128m的lua_shared_dict。<br>在lua文件夹下，新建一个itemshareddict.lua脚本，编写两个函数，一个是获<br>取缓存对象，一个是设置缓存对象。在main函数中根据课程id从缓存中取出课程<br>信息，如果取不到就去请求后端的接口，并把后端返回的数据存入缓存中，新建<br>一个luaitem/get的location</li>
+</ol>
+<ul>
+<li>ngx.shared.my_cache 缓存对象</li>
+<li>ngx.req.get_uri_args() 得到请求的参数</li>
+<li>ngx.location.capture(“/item/get?id=”..id) 请求后端接口</li>
+<li>ngx.say() 输出一段字符串<br>使用Ngxin的Shared dict，把压力转移到了Nginx服务器，后面两个Tomcat服务<br>器压力减小。同时减少了与后面两个Tomcat服务器、Redis服务器和数据库服务器<br>的网络I/O，当网络I/O成为瓶颈时，Shared dict不失为一种好方法，依然受制<br>于缓存容量和缓存更新问题。</li>
+</ul>
+<ol start="4">
+<li>OpenResty redis支持 Nginx可以连在redis服务器上只读不写，若redis没<br>有对应的数据那么请求应用服务器。应用服务器中当数据发生改变的时候也可以更<br>改redis中的数据，那么nginx就可以实时获取redis的数据，可以使用redis 集<br>群分散压力</li>
+</ol>
+<h2 id="交易优化"><a href="#交易优化" class="headerlink" title="交易优化"></a>交易优化</h2><h3 id="课程容量扣减行锁优化"><a href="#课程容量扣减行锁优化" class="headerlink" title="课程容量扣减行锁优化"></a>课程容量扣减行锁优化</h3><p>之前扣减课程容量的操作，会执行以下这条SQL语句，给itemId加上唯一索引，<br>当修改某个课程的剩余容量时只会锁住该行数据，串行化减课程容量依然会有<br>阻塞</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">update stock set stock &#x3D; stock -#&#123;amount&#125; where item_id &#x3D; </span><br><span class="line">#&#123;itemId&#125; and stock &gt;&#x3D; #&#123;amount&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="课程容量扣减缓存化"><a href="#课程容量扣减缓存化" class="headerlink" title="课程容量扣减缓存化"></a>课程容量扣减缓存化</h3><p>之前选课，是直接操作数据库，一旦活动开始，大量的流量涌入扣减库存接口<br>，数据库压力很大。那么先在缓存中进行选课，如果要在缓存中扣减课程容量<br>，需要解决两个问题，第一个是活动开始前，将数据库的课程容量信息，同<br>步到缓存中。第二个是选课之后，要将缓存中的容量信息同步到数据库中</p>
+<ol>
+<li>活动发布同步课程容量信息进缓存，把数据库的缓存存到Redis里面去，<br>当我们把库存存到Redis的时候商品可能被下单，这样数据库的库存和Redis<br>的库存就不一致了。解决方法就是活动未开始的时候商品是下架状态，不能<br>被下单</li>
+<li>异步扣减课程容量在缓存中减，这里的问题就是数据库记录不一致，在<br>Redis里面扣减容量，使用redisTemplate.opsForValue().increment<br>修改容量数据，返回值是完成减操作后的剩余结果，如果大于等于0那么<br>更新成功</li>
+<li>异步消息扣减数据库内课程容量数据 使用rocketmq修改mqnamesrv.xml<br>保证内存足够使用。在配置文件中指定rocketmq的地址和topic</li>
+</ol>
+<h3 id="异步扣减课程容量"><a href="#异步扣减课程容量" class="headerlink" title="异步扣减课程容量"></a>异步扣减课程容量</h3><ol>
+<li>创建生产者和消费者类并初始化，初始化方法添加@PostConstruct注解<br>，在生产者和消费者中指定group，对生产者没有意义。通过start方法连接</li>
+<li>消费者的初始化方法中通过subscribe(topicName,”*“);监听topic<br>话题下的所有消息</li>
+<li>创建匿名类会监听消息队列中的消息，从消息中获取要扣减容量的课程信<br>息，扣减成功后返回消费成功<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">consumer.registerMessageListener(<span class="keyword">new</span> MessageListenerConcurrently() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> ConsumeConcurrentlyStatus <span class="title">consumeMessage</span><span class="params">(List&lt;MessageExt&gt; </span></span></span><br><span class="line"><span class="function"><span class="params">            	list, ConsumeConcurrentlyContext consumeConcurrentlyContext)</span> </span>&#123;</span><br><span class="line">                <span class="comment">//实现缓存数据真正到数据库扣减的逻辑</span></span><br><span class="line">                <span class="comment">//从消息队列中获取消息</span></span><br><span class="line">                Message message=list.get(<span class="number">0</span>);</span><br><span class="line">                <span class="comment">//反序列化消息</span></span><br><span class="line">                String jsonString=<span class="keyword">new</span> String(message.getBody());</span><br><span class="line">                Map&lt;String,Object&gt; map=JSON.parseObject(jsonString, Map<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line">                Integer itemId= (Integer) map.get(<span class="string">"itemId"</span>);</span><br><span class="line">                Integer amount= (Integer) map.get(<span class="string">"amount"</span>);</span><br><span class="line">                <span class="comment">//去数据库扣减库存</span></span><br><span class="line">                itemStockDOMapper.decreaseStock(itemId,amount);</span><br><span class="line">                <span class="comment">//返回消息消费成功</span></span><br><span class="line">                <span class="keyword">return</span> ConsumeConcurrentlyStatus.CONSUME_SUCCESS;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>有两个问题需要注意</p>
+<ol>
+<li>发送异步消息在最后一步执行，因为订单入库、增加选课人数的操作可能失<br>败，如果失败那么redis和已经发送的异步消息无法回滚，会导致数据库的不<br>一致</li>
 <li>Spring的@Transactional标签，会在事务方法返回后才提交，如果提<br>交的过程中，发生了异常，可能是网络或者磁盘容量问题，则数据库回滚<br>，但是Redis库存已扣，还是无法保证一致性。我们需要在事务提交成功<br>后，再发送异步消息</li>
 </ol>
-<h3 id="事务型消息"><a href="#事务型消息" class="headerlink" title="事务型消息"></a>事务型消息</h3><p>上面的做法，依然不能保证万无一失。假设现在事务提交成功了，等着执行<br>afterCommit方法，这个时候突然宕机了，那么订单已然入库，销量已然<br>增加，但是去数据库扣减库存的这条消息却“丢失”了。这里就需要引入<br>RocketMQ的事务型消息。<br>所谓事务型消息，也会被发送到消息队列里面，这条消息处于prepared状态<br>，broker会接受到这条消息，但是不会把这条消息给消费者消费。</p>
+<h2 id="事务型消息"><a href="#事务型消息" class="headerlink" title="事务型消息"></a>事务型消息</h2><p>消费端从数据库扣减操作执行失败，那么创建选课订单事务会回滚，扣减课<br>程容量事务也回滚，但是Redis的扣减操作却不能回滚，会导致数据不一致</p>
 <ol>
-<li>在事务型消息中去执行下单操作，下单失败，则消息回滚，不会去数据<br>库扣减库存。下单成功，则消息被消费，扣减数据库库存</li>
-<li>OrderController里面直接调用transactionAsyncReduceStock方法<br>，发送一个事务型消息，然后在事务型消息中调用createOrder方法，进<br>行下单</li>
+<li>在订单入库、增加该课程选课人数成功之后，再发送异步消息</li>
+<li>Spring的@Transactional标签，会在事务方法返回后才提交，如果提交<br>的过程中，发生了异常，则数据库回滚，但是Redis库存已扣，还是无法保证<br>一致性。我们需要在事务提交成功后，再发送异步消息。</li>
+<li>TransactionSynchronizationAdapter的匿名类，通过afterCommit方<br>法，在事务提交成功后，执行发送消息操作</li>
 </ol>
-<h3 id="库存流水"><a href="#库存流水" class="headerlink" title="库存流水"></a>库存流水</h3><p>当执行orderService.createOrder后，突然又宕机了，根本没有返回，这<br>个时候事务型消息就会进入UNKNOWN状态，我们需要处理这个状态。<br>在匿名类TransactionListener里面，还需要覆写checkLocalTransaction<br>方法，这个方法就是用来处理UNKNOWN状态的。应该怎么处理？这就需要引入<br>库存流水。引入库存流水，来记录库存的状态，以便在事务型消息处于不同状<br>态时进行处理</p>
+<h3 id="transactionMQProducer"><a href="#transactionMQProducer" class="headerlink" title="transactionMQProducer"></a>transactionMQProducer</h3><ol>
+<li>上面的做法，依然不能保证万无一失。假设现在事务提交成功了，等着执行<br>afterCommit方法，这个时候突然宕机了，那么订单已然入库，销量已然增加<br>，但是去数据库扣减库存的这条消息却“丢失”了。这里就需要引入RocketMQ的<br>事务型消息transactionMQProducer</li>
+<li>所谓事务型消息，也会被发送到消息队列里面，这条消息处于prepared状<br>态，broker会接受到这条消息，但是不会把这条消息给消费者消费，在该状态<br>下会去执行对应的executeLocalTransaction 方法，这个方法里就是创建订<br>单的操作，返回的结果有三种类型，如果创建订单的操作失败那么回滚，如果<br>成功完成就返回COMMITED</li>
+</ol>
+<ul>
+<li>第一种就是将prepared消息转化为COMMITED消息给消费者消费</li>
+<li>第二种就是将prepared消息撤回</li>
+<li>第三种就是未知状态</li>
+</ul>
+<p>只要数据库事务提交对应消息必定发送成功，数据库事务回滚消息必定不发送<br>，数据库状态未知消息必须是处理中的状态。事务型消息有一个二阶段提交的<br>概念，消息发出后并不是可被消费状态。</p>
+<h2 id="库存流水"><a href="#库存流水" class="headerlink" title="库存流水"></a>库存流水</h2><p>当执行选课操作后，突然又宕机了，根本没有返回，这个时候事务型消息就会<br>进入UNKNOWN状态，我们需要处理这个状态。在匿名类TransactionListener<br>里面，还需要覆写checkLocalTransaction方法，这个方法就是用来处理<br>UNKNOWN状态的。消息中间件会定期回调这个方法，根据redis中是否扣减<br>课程容量成功来判断是返回COMMITED还是ROLLBACK还是继续UNKNOWN</p>
 <ol>
-<li>在下单之前初始化一条库存流水，对应的库存流水就可以追踪对应的异步<br>扣减消息</li>
-<li>执行Redis扣减库存、订单入库、销量增加的操作，当这些操作都完成后，<br>就说明下单完成了，等着异步更新数据库了。那么需要修改订单流水的状态</li>
-<li>设置一个库存售罄的标识，售罄之后就不会进行之后下单的操作，售罄<br>时通知各系统售罄</li>
+<li>这就需要引入库存操作流水来记录容量的状态，以便在事务型消息处于不<br>同状态时进行处理，可以追踪对应的异步扣减消息。数据可以分为主业务数据<br>和操作型数据，操作型数据是说库存扣减发生了这样的操作就记录下来，便<br>于追踪库存操作流水的状态，消息中间件就可以根据这个状态得到系统当前<br>状态</li>
+<li>执行Redis扣减库存、订单入库、选课人数增加的操作，当这些操作都完<br>成后，就说明选课完成了，等着异步更新数据库了。那么需要修改订单流水<br>的状态，回调函数就可以处理。有一个问题就是如果选课操作失败但是缓存<br>已经扣减数据库没有更新那么就会出现数据不一致问题，一种解决方法是<br>超时释放，如果长时间没有返回结果那么就会回补缓存</li>
 </ol>
-<h3 id="流量削峰"><a href="#流量削峰" class="headerlink" title="流量削峰"></a>流量削峰</h3><ol>
-<li>引入秒杀令牌，秒杀接口需要依靠令牌才能进入，秒杀的令牌由秒杀活<br>动模块负责生成，用户风控策略和库存售罄判断前置到令牌发送中</li>
-<li>引入秒杀大闸进行限流，控制令牌数量</li>
+<h3 id="选课人数已满处理"><a href="#选课人数已满处理" class="headerlink" title="选课人数已满处理"></a>选课人数已满处理</h3><p>如果选课人数已满但是还是会初始化一次流水，大量的学生进行请求抢夺少<br>数的课程，但是每个学生都会初始化一次课程流水，设置一个选课人数已满<br>的标识，初始化流水之前，先判断一下是否选课人数已满，人数已满了就直<br>接抛出异常选课失败，在redis中保存该课程选课已满的状态，如果已经没<br>有剩余容量那么就在redis中设置该课程选课已满的标志</p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>通过引入课程流水，来记录课程容量的状态，以便在事务型消息处于不同状<br>态时进行处理。事务型消息提交后，会在broker里面处于prepare状态，也<br>即是UNKNOWN状态，等待被消费端消费，或者是回滚。prepare状态下，会<br>执行创建选课单方法。此时有两种情况：</p>
+<ol>
+<li>创建课程交易单执行完没有宕机，要么执行成功，要么抛出异常。执行成<br>功，那么就说明下单成功了，订单入库了，Redis里的库存扣了，选课人数<br>增加了，等待着异步扣减课程容量，所以将事务型消息的状态，从UNKNOWN<br>变为COMMIT，这样消费端就会消费这条消息，异步扣减课程容量。抛出异常<br>，那么订单入库、Redis库存、选课人数增加，就会被数据库回滚，此时去异<br>步扣减的消息，就应该“丢弃”，所以发回ROLLBACK，进行回滚</li>
+<li>创建课程交易单执行完宕机了，那么这条消息会是UNKNOWN状态，这个时<br>候就需要在checkLocalTransaction进行处理。如果创建订单执行完毕，此<br>时stockLog.status==2，就说明下单成功，需要去异步扣减库存，所以返<br>回COMMIT。如果status==1，说明下单还未完成，还需要继续执行下单操作<br>，所以返回UNKNOWN。如果status==3，说明下单失败，需要回滚，不需要<br>异步扣减库存，所以返回ROLLBACK</li>
+<li>目前只是扣减库存异步化，实际上选课人数增加逻辑和选课交易逻辑都可<br>以异步化</li>
 </ol>
-<h3 id="限流—队列泄洪"><a href="#限流—队列泄洪" class="headerlink" title="限流—队列泄洪"></a>限流—队列泄洪</h3><ol>
-<li>让多余的请求排队等待。排队有时候比多线程并发效率更高，使用线程<br>池处理下单请求</li>
+<h2 id="流量削峰"><a href="#流量削峰" class="headerlink" title="流量削峰"></a>流量削峰</h2><p>在活动开始的一瞬间，有大量流量涌入，优化不当会导致服务器停滞，甚至<br>宕机。所以引入流量削峰技术十分有必要。将最开始的流量使用平滑的方式<br>过渡掉</p>
+<h3 id="选课令牌"><a href="#选课令牌" class="headerlink" title="选课令牌"></a>选课令牌</h3><ol>
+<li>利用选课令牌，使校验逻辑和选课逻辑分离。将活动、课程、学生信息校验<br>逻辑抽离出选课逻辑，选课接口需要依靠选课令牌才能进入，选课令牌由活<br>动模块进行生成，在选课接口中只需要验证令牌的有效性即可，只有活动正<br>在进行时这个令牌才会生成，在redis中保存这个token，设置5分钟的时限<br>，这个token的key由活动id和学生id和课程id为标志生成</li>
 </ol>
-<h3 id="防刷限流"><a href="#防刷限流" class="headerlink" title="防刷限流"></a>防刷限流</h3><ol>
-<li>验证码 之前的流程是，用户点击下单后，会直接拿到令牌然后执行下单<br>流程。现在，用户点击下单后，前端会弹出一个“验证码”，用户输入之后，<br>才能请求下单接口。限制部分流量</li>
-<li>限并发 维护一个全局计数器，当请求进入接口时，计数器-1，并且判断<br>计数器是否&gt;0，大于0则处理请求，小于0则拒绝等待</li>
-<li>令牌桶 客户端请求接口，必须先从令牌桶中获取令牌，令牌是由一个“定<br>时器”定期填充的。在一个时间内，令牌的数量是有限的。令牌桶的大小为100<br>，那么TPS就为100，使用RateLimiter实现限流</li>
+<h3 id="令牌大闸"><a href="#令牌大闸" class="headerlink" title="令牌大闸"></a>令牌大闸</h3><p>有大量的学生发送抢课请求，但是每个学生都生成抢课令牌太消耗性能，令<br>牌的数量是有限的，当令牌用完时，就不再发放令牌了，那么下单将无法进<br>行</p>
+<ol>
+<li>将令牌总量也发布到Redis上，这里我们设定令牌总量是课程容量的2倍<br>，在生成令牌之前，首先将Redis里的令牌总量减1，然后再判断是否剩余</li>
+</ol>
+<h3 id="队列泄洪"><a href="#队列泄洪" class="headerlink" title="队列泄洪"></a>队列泄洪</h3><p>队列泄洪，就是让多余的请求排队等待。排队有时候比多线程并发效率更高，<br>多线程毕竟有锁的竞争、上下文的切换，很消耗性能。而排队是无锁的，单线<br>程的，某些情况下效率更高。<br>比如Redis就是单线程模型，多个用户同时执行set操作，只能一一等待。<br>MySQL的insert和update语句，会维护一个行锁。阿里SQL就不会，而是让<br>多个SQL语句排队，然后依次执行。</p>
+<ol>
+<li>依靠排队去限制并发流量</li>
+<li>使用@PostConstruce注解创建一个init方法初始化一个大小为20的线程<br>池用来队列化泄洪，也就是同一时刻只有20个线程可以被执行，在拿到秒杀<br>令牌后，使用线程池来处理下单请求</li>
+</ol>
+<h2 id="防刷限流"><a href="#防刷限流" class="headerlink" title="防刷限流"></a>防刷限流</h2><ol>
+<li><p>之前的流程是，学生点击选课后，会直接拿到令牌然后执行选课流程。现在<br>学生点击下单后，前端会弹出一个“验证码”，学生输入之后才能请求选课接口。<br>之前获取秒杀令牌的generateToken接口，需要添加验证码校验逻辑。这样就<br>实现了在下单之前，添加一个验证码，限制部分流量的功能。</p>
+</li>
+<li><p>限并发 维护一个全局计数器，当请求进入接口时，计数器-1，并且判断<br>计数器是否&gt;0，大于0则处理请求，小于0则拒绝等待</p>
+</li>
+<li><p>令牌桶 客户端请求接口，必须先从令牌桶中获取令牌，令牌是由一个“定<br>时器”定期填充的。在一个时间内，令牌的数量是有限的。令牌桶的大小为100<br>，那么TPS就为100，使用RateLimiter实现限流</p>
+</li>
 </ol>
 <h2 id="分布式会话存储策略"><a href="#分布式会话存储策略" class="headerlink" title="分布式会话存储策略"></a>分布式会话存储策略</h2><ol>
 <li>分布式会话持久性管理</li>
@@ -98,7 +283,120 @@
 <li>mysql单机配置性能优化扩展</li>
 <li>mysql分布式配置性能优化扩展</li>
 </ol>
-</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">高明</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://skysea-gaoming.github.io/2021/05/21/%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/">https://skysea-gaoming.github.io/2021/05/21/%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E9%A1%B9%E7%9B%AE/">项目</a></div><nav id="pagination"><div class="prev-post pull-left"><a href="/2021/05/24/shell%E6%80%BB%E7%BB%93/"><i class="fa fa-chevron-left">  </i><span>Shell总结</span></a></div><div class="next-post pull-right"><a href="/2021/05/17/Spring%E6%80%BB%E7%BB%93/"><span>Spring总结</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="disqus_thread"></div><script>var unused = null;
+<h2 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h2><p>Nginx是一个web服务器、反向代理服务器和动静分离服务器，用于HTTP、HTTPS<br>、SMTP、POP3和IMAP协议。Web服务器一般指网站服务器，是指驻留于因特网上<br>某种类型计算机的程序，可以处理浏览器等Web客户端的请求并返回相应响应。<br>反向代理服务器位于用户与目标服务器之间，但是对于用户而言，反向代理服<br>务器就相当于目标服务器，即用户直接访问反向代理服务器就可以获得目标服<br>务器的资源</p>
+<ol>
+<li>web服务器</li>
+<li>反向代理服务器</li>
+<li>动静分离服务器</li>
+</ol>
+<h3 id="Nginx-常用配置"><a href="#Nginx-常用配置" class="headerlink" title="Nginx 常用配置"></a>Nginx 常用配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">worker_processes  8; # 工作进程个数</span><br><span class="line">worker_connections  65535; </span><br><span class="line">listen       80; # 监听端口</span><br><span class="line">server_name  rrc.test.jiedaibao.com; # 允许域名</span><br><span class="line">root  &#x2F;data&#x2F;release&#x2F;rrc&#x2F;web; # 项目根目录</span><br><span class="line">index  index.php index.html index.htm; # 访问根文件</span><br></pre></td></tr></table></figure>
+
+<h3 id="正向代理和反向代理"><a href="#正向代理和反向代理" class="headerlink" title="正向代理和反向代理"></a>正向代理和反向代理</h3><p>在开发的时候，前端用前端的服务器（Nginx），后端用后端的服务器（Tomcat）<br>，当我开发前端内容的时候，可以把前端的请求通过前端服务器转发给后端（称<br>为反向代理）</p>
+<ol>
+<li>正向代理 正向代理是一个位于客户端和原始服务器之间的服务器，为了从原<br>始服务器获取数据，客户端向代理发送请求并指定目标（原始服务器），然后代<br>理向原始服务器转交请求并将获得的内容返回给客户端。正向代理的过程隐藏了<br>真实的请求客户端，服务端不知道真实的客户端是是谁</li>
+<li>反向代理 隐藏了真实的服务端，对于客户端而言它就像是原始服务器，并且<br>客户端不需要进行任何特别的设置，对于客户端而言它就像是原始服务器</li>
+<li>正向代理代理的对象是客户端，反向代理代理的对象是服务端</li>
+</ol>
+<h3 id="Nginx-和Apache的区别"><a href="#Nginx-和Apache的区别" class="headerlink" title="Nginx 和Apache的区别"></a>Nginx 和Apache的区别</h3><ol>
+<li>轻量级，同样是web 服务，Nginx 比 Apache 占用更少的内存及资源</li>
+<li>抗并发，Nginx 处理请求是异步非阻塞的，而Apache 则是阻塞型的，在高并<br>发下 Nginx 能保持低资源低消耗高性能</li>
+<li>最核心的区别在于Apache 是同步多进程模型，一个连接对应一个进程；Nginx<br>是异步的，多个连接（万级别）可以对应一个进程</li>
+<li>Nginx 高度模块化的设计，编写模块相对简单</li>
+</ol>
+<h3 id="Nginx-如何处理HTTP-请求"><a href="#Nginx-如何处理HTTP-请求" class="headerlink" title="Nginx 如何处理HTTP 请求"></a>Nginx 如何处理HTTP 请求</h3><ol>
+<li>Nginx 在启动时，会解析配置文件，得到需要监听的端口与IP 地址，然后在<br>Nginx 的Master 进程里面先初始化好这个监控的Socket(创建Socket设置addr<br>、reuse 等选项，绑定到指定的ip 地址端口，再listen 监听)</li>
+<li>再fork(一个现有进程可以调用fork 函数创建一个新进程。由fork 创建的新<br>进程被称为子进程)出多个子进程出来</li>
+<li>子进程会竞争accept 新的连接。此时客户端就可以向nginx 发起连接了。当<br>客户端与nginx进行三次握手，与nginx 建立好一个连接后。此时某一个子进程<br>会accept 成功，得到这个建立好的连接的Socket ，然后创建nginx 对连接<br>的封装，即ngx_connection_t 结构体</li>
+<li>设置读写事件处理函数，并添加读写事件来与客户端进行数据的交换</li>
+</ol>
+<h3 id="Nginx-是如何实现高并发"><a href="#Nginx-是如何实现高并发" class="headerlink" title="Nginx 是如何实现高并发"></a>Nginx 是如何实现高并发</h3><p>如果一个server 采用一个进程(或者线程)负责一个request的方式，那么进程数<br>就是并发数。那么显而易见的，就是会有很多进程在等待中，也就是等待网络传输<br>。Nginx 的异步非阻塞工作方式正是利用了这点等待的时间。在需要等待的时候，<br>这些进程就空闲出来待命了。<br>Nginx 每进来一个request ，会有一个worker 进程去处理。但不是全程的处理，<br>处理到什么程度呢？处理到可能发生阻塞的地方，比如向上游（后端）服务器转发<br>request，并等待请求返回。那么这个处理的worker 不会这么傻等着，他会在发<br>送完请求后，注册一个事件：“如果upstream 返回了，告诉我一声，我再接着干”<br>。于是他就<br>休息去了。此时，如果再有 request 进来，他就可以很快再按这种<br>方式处理。而一旦上游服务器返回<br>了，就会触发这个事件，worker 才会来接手，这个 request 才会接着往下走。</p>
+<h3 id="epoll多路复用"><a href="#epoll多路复用" class="headerlink" title="epoll多路复用"></a>epoll多路复用</h3><p>在了解epoll多路复用之前，先看看Java BIO模型，也就是Blocking IO阻塞<br>模型。当客户端与服务器建立连接之后，通过Socket.write()向服务器发送数<br>据，只有当数据写完到缓冲区之后才会发送。如果当Socket缓冲区满了，那就<br>不得不阻塞等待。<br>Linux Select模型。该模式下会监听一定数量的客户端连接，一旦发现有变动<br>，就会唤醒自己，然后遍历这些连接，看哪些连接发生了变化，执行IO操作。<br>相比阻塞式的BIO，效率更高，但是也有个问题，如果10000个连接变动了1个<br>，那么效率将会十分低下。此外Java NIO就借鉴了Linux Select模型。理论<br>上最多连接数1024<br>而epoll模型，在Linux Select模型之上新增了回调函数，一旦某个连接发生<br>变化，直接执行回调函数不用遍历，效率更高</p>
+<h3 id="master-worker进程模型"><a href="#master-worker进程模型" class="headerlink" title="master worker进程模型"></a>master worker进程模型</h3><p>通过ps -ef|grep nginx命令可以看到有两个Nginx进程，一个标注为master<br>，一个标注为worker，而且worker进程是master进程的子进程。这种父子关系<br>的好处就是，master进程可以管理worker进程。<br>客户端的请求，并不会被master进程处理，而是交给下面的worker进程来处理<br>，多个worker 进程通过“抢占”的方式，取得处理权。如果某个worker 挂了，<br>master会立刻感知到，用一个新的worker代替。这就是Nginx高效率的原因之<br>一，也是可以平滑重启的原理。<br>此外worker进程是单线程的，没有阻塞的情况下，效率很高。而epoll模型避免<br>了阻塞。综上epoll机制+master-worker机制使得worker进程可以高效率地执<br>行单线程I/O操作</p>
+<h3 id="协程机制"><a href="#协程机制" class="headerlink" title="协程机制"></a>协程机制</h3><p>Nginx引入了一种比线程更小的概念，那就是“协程”。协程依附于内存模型，切<br>换开销更小；遇到阻塞Nginx 会立刻剥夺执行权；由于在同一个线程内，也不<br>需要加锁。<br>nginx的每个Worker进程都是在epoll或kqueue这种事件模型之上封装成协程。<br>每一个请求都有一个协程进行处理，即使ngx_lua需要运行lua，相对C有一定<br>开销，但依旧能保证高并发能力。<br>lua代码调用io等异步接口时，协程被挂起，切换上下文数据。io异步操作完成<br>后还原协程上下文，代码继续执行。<br>nginx lua的常用插载点</p>
+<ol>
+<li>init_by_lua 系统启动时调用</li>
+<li>init_worker_by_lua worker进程启动时调用</li>
+<li>set_by_lua nginx变量用复杂lua return</li>
+<li>rewrite_by_lua 重写url规则</li>
+<li>access_by_lua 权限验证阶段</li>
+<li>content_by_lua 内存输出节点</li>
+</ol>
+<h3 id="动静分离"><a href="#动静分离" class="headerlink" title="动静分离"></a>动静分离</h3><p>动态资源、静态资源分离，是让动态网站里的动态网页根据一定规则把不变的资<br>源和经常变的资源区分开来，动静资源做好了拆分以后我们就可以根据静态资<br>源的特点将其做缓存操作，这就是网站静态化处理的核心思路。<br>有些请求是需要后台处理的（如：.jsp,.do 等等），有些请求是不需要经过后<br>台处理的（如： css、html、jpg、js 等等文件），这些不需要经过后台处理的<br>文件称为静态文件，否则动态文件。使用这种动静分离的策略去解决动、静分离<br>将网站静态资源（HTML，JavaScript，CSS，img等文件）与后台应用分开部<br>署，提高用户访问静态代码的速度，降低对后台应用访问。</p>
+<h3 id="负载均衡策略"><a href="#负载均衡策略" class="headerlink" title="负载均衡策略"></a>负载均衡策略</h3><p>负载均衡，即是代理服务器将接收的请求均衡的分发到各服务器中</p>
+<ol>
+<li>轮询<br>每个请求按时间顺序逐一分配到不同的后端服务器，如果后端服务器down 掉，<br>能自动剔除</li>
+<li>IP哈希<br>每个请求按访问ip 的hash 结果分配，这样每个访客固定访问一个后端服务器</li>
+<li>最少连接<br>下一个请求将被分派到活动连接数量最少的服务器</li>
+</ol>
+<h2 id="页面静态化"><a href="#页面静态化" class="headerlink" title="页面静态化"></a>页面静态化</h2><p>CDN是内容分发网络，一般用来存储（缓存）项目的静态资源。访问静态资源，会<br>从离用户最近的CDN服务器上返回静态资源。如果该CDN服务器上没有静态资源，<br>则会执行回源操作，从Nginx服务器上获取静态资源</p>
+<h3 id="CDN的使用"><a href="#CDN的使用" class="headerlink" title="CDN的使用"></a>CDN的使用</h3><ol>
+<li>购买一个CDN服务器，选择要加速的域名（比如miaoshaserver.jiasu.com）<br>，同时要填写源站IP，也就是Nginx服务器，便于回源操作</li>
+<li>接下来要配置miaoshaserver.jiasu.com的DNS解析规则。一般的解析规则是<br>A记录类型，也就是把一个域名直接解析成IP地址。这里使用CNAME进行解析，将<br>一个域名解析到另外一个域名。而这个”另一个域名“是云服务器厂商提供的，它<br>会把请求解析到相应的CDN服务器上</li>
+<li>访问miaoshaserver.jiasu.com/resources/getitem.html?id=1即可以<br>CDN的方式访问静态资源</li>
+</ol>
+<h3 id="cache-controll响应头"><a href="#cache-controll响应头" class="headerlink" title="cache controll响应头"></a>cache controll响应头</h3><p>在响应里面有一个cache controll响应头，这个响应头表示客户端是否可以缓存<br>响应</p>
+<ol>
+<li>private    客户端可以缓存</li>
+<li>public    客户端和代理服务器（中间层的节点）都可以缓存</li>
+<li>max-age=xxx    缓存的内容将在xxx秒后失效</li>
+<li>no-cache    也会缓存，但是使用缓存之前会询问服务器，该缓存是否可用</li>
+<li>no-store    不缓存任何响应内容</li>
+</ol>
+<h3 id="有效性验证"><a href="#有效性验证" class="headerlink" title="有效性验证"></a>有效性验证</h3><p>ETag：第一次请求资源的时候，服务器会根据资源内容生成一个唯一标示ETag，<br>并返回给浏览器。浏览器下一次请求，会把ETag（If-None-Match）发送给服务<br>器，与服务器的ETag进行对比。如果一致，就返回一个304响应，即Not Modify<br>，表示浏览器缓存的资源文件依然是可用的，直接使用就行了，不用重新请求</p>
+<h3 id="浏览器三种刷新方式"><a href="#浏览器三种刷新方式" class="headerlink" title="浏览器三种刷新方式"></a>浏览器三种刷新方式</h3><ol>
+<li>a标签/回车刷新<br>查看max-age是否有效，有效直接从缓存中获取，无效进入缓存协商逻辑</li>
+<li>F5刷新<br>取消max-age或者将其设置为0，直接进入缓存协商逻辑</li>
+<li>CTRL+F5强制刷新<br>直接去掉cache-control和协商头，重新请求资源</li>
+</ol>
+<h3 id="自定义缓存策略"><a href="#自定义缓存策略" class="headerlink" title="自定义缓存策略"></a>自定义缓存策略</h3><p>CDN服务器，既充当了浏览器的服务端，又充当了Nginx的客户端。所以它的缓存策<br>略尤其重要。除了按照服务器的max-age，CDN服务器还可以自己设置过期时间。<br>总的规则就是：源站没有配置，遵从CDN控制台的配置；CDN控制台没有配置，遵从<br>服务器提供商的默认配置。源站有配置，CDN控制台有配置，遵从CDN控制台的配置<br>；CDN控制台没有配置，遵从源站配置</p>
+<h3 id="静态资源部署策略"><a href="#静态资源部署策略" class="headerlink" title="静态资源部署策略"></a>静态资源部署策略</h3><p>假如服务器端的静态资源更新了，但是由于客户端的max-age还未失效，用的<br>还是老的资源，文件名又一样，用户不得不使用CTRL+F5强制刷新，才能请求<br>更新的静态资源。解决方法</p>
+<ol>
+<li>版本号：在静态资源文件后面追加一个版本号，比如a.js?v=1.0。这种方法<br>维护起来十分麻烦，比如只有一个js文件做了修改，那其它html、css文件要不<br>要追加版本号呢？</li>
+<li>摘要：对静态资源的内容进行哈希操作，得到一个摘要，比如a.js?v=45edw<br>，维护起来更加方便。但是会导致是先部署js 还是先部署html的问题。比如先部<br>署js，那么html 页面引用的还是老的js，js直接失效；如果先部署html，那么<br>引用的js又是老版本的js</li>
+<li>摘要作为文件名：比如45edw.js，会同时存在新老两个版本，方便回滚</li>
+</ol>
+<h3 id="全页面静态化"><a href="#全页面静态化" class="headerlink" title="全页面静态化"></a>全页面静态化</h3><p>现在的架构是，用户通过CDN请求到了静态资源，然后静态页面会在加载的时候，<br>发送一个Ajax请求到后端，接收到后端的响应后，再用DOM渲染。也就是每一个用<br>户请求，都有一个请求后端接口并渲染的过程。那能不能取消这个过程，直接在服<br>务器端把页面渲染好，返回一个纯html文件给客户端呢？</p>
+<ol>
+<li>phantomJS实现全页面静态化<br>phantomJS就像一个爬虫，会把页面中的JS执行完毕后，返回一个渲染完成的html<br>文件</li>
+</ol>
+<h2 id="RocketMQ"><a href="#RocketMQ" class="headerlink" title="RocketMQ"></a>RocketMQ</h2><p>RocketMQ是阿里巴巴在RabbitMQ基础上改进的一个高性能、高并发、分布式消息<br>中间件。典型应用场景：分布式事务，异步解耦</p>
+<h3 id="核心概念"><a href="#核心概念" class="headerlink" title="核心概念"></a>核心概念</h3><ol>
+<li>生产者Producer<br>负责生产消息，一般由业务系统负责生产消息。一个消息生产者会把业务应用系统里<br>产生的消息发送到broker服务器。RocketMQ提供多种发送方式，同步发送、异步发<br>送、顺序发送、单向发送。同步和异步方式均需要Broker返回确认信息，单向发送<br>不需要</li>
+<li>消费者Consumer<br>负责消费消息，一般是后台系统负责异步消费。一个消息消费者会从Broker服务器拉<br>取消息、并将其提供给应用程序。从用户应用的角度而言提供了两种消费形式：拉取<br>式消费、推动式消费（主动，被动）</li>
+<li>代理服务器Broker Server<br>消息中转角色，负责存储消息、转发消息。代理服务器在RocketMQ系统中负责接收<br>从生产者发送来的消息并存储、同时为消费者的拉取请求作准备。代理服务器也存<br>储消息相关的元数据，包括消费者组、消费进度偏移和主题和队列消息等。（主要<br>操作消息组件）</li>
+<li>消息主题Topic<br>表示一类消息的集合，每个主题包含若干条消息，每条消息只能属于一个主题，是<br>RocketMQ进行消息订阅的基本单位</li>
+<li>消息队列MessageQueue<br>对于每个Topic都可以设置一定数量的消息队列用来进行数据的读取</li>
+<li>名字服务Name Server<br>名称服务充当路由消息的提供者。生产者或消费者能够通过名字服务查找各主题<br>相应的Broker IP列表。多个Namesrv实例组成集群，但相互独立，没有信息交<br>换（绑定IP，匹配IP）</li>
+<li>标签Tag<br>为消息设置的标志，用于同一主题下区分不同类型的消息。来自同一业务单元的<br>消息，可以根据不同业务目的在同一主题下设置不同标签。标签能够有效地保持<br>代码的清晰度和连贯性，并优化RocketMQ提供的查询系统。消费者可以根据Tag<br>实现对不同子主题的不同消费逻辑，实现更好的扩展性</li>
+</ol>
+<h3 id="消息队列的优势"><a href="#消息队列的优势" class="headerlink" title="消息队列的优势"></a>消息队列的优势</h3><ol>
+<li>削峰填谷（主要解决瞬时写压力大于应用服务能力导致消息丢失、系统奔溃<br>等问题）</li>
+<li>系统解耦（解决不同重要程度、不同能力级别系统之间依赖导致一死全死）</li>
+<li>提升性能（当存在一对多调用时，可以发一条消息给消息系统，让消息系统<br>通知相关系统）</li>
+<li>蓄流压测（线上有些链路不好压测，可以通过堆积一定量消息再放开来压测）</li>
+</ol>
+<h3 id="RocketMQ的优势"><a href="#RocketMQ的优势" class="headerlink" title="RocketMQ的优势"></a>RocketMQ的优势</h3><ol>
+<li>支持事务型消息（消息发送和DB操作保持两方的最终一致性，rabbitmq和<br>kafka不支持）</li>
+<li>支持结合rocketmq的多个系统之间数据最终一致性（多方事务，二方事务是<br>前提）</li>
+<li>支持18个级别的延迟消息（rabbitmq和kafka不支持）</li>
+<li>支持指定次数和时间间隔的失败消息重发（kafka不支持，rabbitmq需要手<br>动确认）</li>
+<li>支持consumer端tag过滤，减少不必要的网络传输（rabbitmq和kafka不支持）</li>
+<li>支持重复消费（rabbitmq不支持，kafka支持）</li>
+</ol>
+<h2 id="分布式算法"><a href="#分布式算法" class="headerlink" title="分布式算法"></a>分布式算法</h2><h3 id="三种架构"><a href="#三种架构" class="headerlink" title="三种架构"></a>三种架构</h3><h4 id="单机结构"><a href="#单机结构" class="headerlink" title="单机结构"></a>单机结构</h4><p>一个系统业务量很小的时候所有的代码都放在一个项目中就好了，然后这个项<br>目部署在一台服务器上就好了。整个项目所有的服务都由这台服务器提供。这<br>就是单机结构</p>
+<h4 id="集群结构"><a href="#集群结构" class="headerlink" title="集群结构"></a>集群结构</h4><p>单机处理到达瓶颈的时候，你就把单机复制几份，这样就构成了一个“集群”。集<br>群中每台服务器就叫做这个集群的一个“节点”，所有节点构成了一个集群。每个<br>节点都提供相同的服务，那么这样系统的处理能力就相当于提升了好几倍。<br>但问题是用户的请求究竟由哪个节点来处理呢？最好能够让此时此刻负载较小的<br>节点来处理，这样使得每个节点的压力都比较平均。要实现这个功能，就需要在<br>所有节点之前增加一个“调度者”的角色，用户的所有请求都先交给它，然后它<br>根据当前所有节点的负载情况，决定将这个请求交给哪个节点处理。这个“调度<br>者”有一个名字——负载均衡服务器。<br>集群结构的好处就是系统扩展非常容易。如果随着你们系统业务的发展，当前的系<br>统又支撑不住了，那么给这个集群再增加节点就行了。但是，当你的业务发展到一<br>定程度的时候，你会发现一个问题——无论怎么增加节点，貌似整个集群性能的提<br>升效果并不明显了。这时候，你就需要使用微服务结构了。</p>
+<h4 id="分布式结构"><a href="#分布式结构" class="headerlink" title="分布式结构"></a>分布式结构</h4><p>分布式结构就是将一个完整的系统，按照业务功能，拆分成一个个独立的子系统<br>，在分布式结构中，每个子系统就被称为“服务”。这些子系统能够独立运行在web<br>容器中，它们之间通过RPC方式通信。<br>举个例子，假设需要开发一个在线商城。按照微服务的思想，我们需要按照功能模<br>块拆分成多个独立的服务，如：用户服务、产品服务、订单服务、后台管理服务、数<br>据分析服务等等。这一个个服务都是一个个独立的项目，可以独立运行。如果服务<br>之间有依赖关系，那么通过RPC方式调用。好处如下</p>
+<ul>
+<li>系统之间的耦合度大大降低，可以独立开发、独立部署、独立测试，系统与系统<br>之间的边界非常明确，排错也变得相当容易，开发效率大大提升</li>
+<li>系统之间的耦合度降低，从而系统更易于扩展。我们可以针对性地扩展某些服务<br>。假设这个商城要搞一次大促，下单量可能会大大提升，因此我们可以针对性地提<br>升订单系统、产品系统的节点数量，而对于后台管理系统、数据分析系统而言，节<br>点数量维持原有水平即可</li>
+<li>服务的复用性更高。比如，当我们将用户系统作为单独的服务后，该公司所有<br>的产品都可以使用该系统作为用户系统，无需重复开发</li>
+</ul>
+<h3 id="Raft算法"><a href="#Raft算法" class="headerlink" title="Raft算法"></a>Raft算法</h3><p>Raft是一种共识算法，它在容错性和性能上相当于Paxos。不同之处在于它被分<br>解成相对独立的子问题，并且清晰地处理了实际系统所需的所有主要部分</p>
+<ol>
+<li>Raft属于算法，而非协议</li>
+<li>共识描述的是算法过程，而一致性描述的多副本的读取结果</li>
+</ol>
+<h4 id="Raft算法应用场景"><a href="#Raft算法应用场景" class="headerlink" title="Raft算法应用场景"></a>Raft算法应用场景</h4></div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">高明</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://skysea-gaoming.github.io/2021/05/21/%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/">https://skysea-gaoming.github.io/2021/05/21/%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E9%A1%B9%E7%9B%AE/">项目</a></div><nav id="pagination"><div class="prev-post pull-left"><a href="/2021/05/24/shell%E6%80%BB%E7%BB%93/"><i class="fa fa-chevron-left">  </i><span>Shell总结</span></a></div><div class="next-post pull-right"><a href="/2021/05/17/Spring%E6%80%BB%E7%BB%93/"><span>Spring总结</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="disqus_thread"></div><script>var unused = null;
 var disqus_config = function () {
   this.page.url = 'https://skysea-gaoming.github.io/2021/05/21/%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/';
   this.page.identifier = '2021/05/21/项目总结/';
