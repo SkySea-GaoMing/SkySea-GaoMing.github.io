@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="Linux2"><meta name="keywords" content="System"><meta name="author" content="高明"><meta name="copyright" content="高明"><title>Linux2 | SkySea-GaoMing</title><link rel="shortcut icon" href="/img/favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.7.0"><link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css?version=1.7.0"><meta name="format-detection" content="telephone=no"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><script>var GLOBAL_CONFIG = { 
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="Linux常用命令"><meta name="keywords" content="System"><meta name="author" content="高明"><meta name="copyright" content="高明"><title>Linux常用命令 | SkySea-GaoMing</title><link rel="shortcut icon" href="/img/favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.7.0"><link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css?version=1.7.0"><meta name="format-detection" content="telephone=no"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><script>var GLOBAL_CONFIG = { 
   root: '/',
   algolia: undefined,
   localSearch: undefined,
@@ -7,18 +7,102 @@
     error: 'Copy error',
     noSupport: 'The browser does not support'
   }
-} </script><meta name="generator" content="Hexo 4.2.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="Toggle article">Toggle site</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">1.</span> <span class="toc-text">参考</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#进程上下文切换？"><span class="toc-number">1.1.</span> <span class="toc-text">进程上下文切换？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#线程上下文切换？"><span class="toc-number">1.2.</span> <span class="toc-text">线程上下文切换？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#中断上下文切换？"><span class="toc-number">1.3.</span> <span class="toc-text">中断上下文切换？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么线程切换会有消耗，消耗啥？"><span class="toc-number">1.4.</span> <span class="toc-text">为什么线程切换会有消耗，消耗啥？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何查看上下文切换情况？"><span class="toc-number">1.5.</span> <span class="toc-text">如何查看上下文切换情况？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程同步、互斥和通信的区别？"><span class="toc-number">1.6.</span> <span class="toc-text">进程同步、互斥和通信的区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#临界资源和临界区的区别？"><span class="toc-number">1.7.</span> <span class="toc-text">临界资源和临界区的区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程间通信方式（六种方式，各自的概念，区别都要搞清楚）"><span class="toc-number">1.8.</span> <span class="toc-text">进程间通信方式（六种方式，各自的概念，区别都要搞清楚）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#管道、消息队列、共享内存它们三者哪个开销最小？"><span class="toc-number">1.9.</span> <span class="toc-text">管道、消息队列、共享内存它们三者哪个开销最小？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#信号与信号量的区别？"><span class="toc-number">1.10.</span> <span class="toc-text">信号与信号量的区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程同步的方式"><span class="toc-number">1.11.</span> <span class="toc-text">进程同步的方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#线程同步的方式？"><span class="toc-number">1.12.</span> <span class="toc-text">线程同步的方式？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件描述符是什么？"><span class="toc-number">1.13.</span> <span class="toc-text">文件描述符是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#协程是什么？"><span class="toc-number">1.14.</span> <span class="toc-text">协程是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么是轻量级的线程？"><span class="toc-number">1.15.</span> <span class="toc-text">为什么是轻量级的线程？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#协程和线程的区别？"><span class="toc-number">1.16.</span> <span class="toc-text">协程和线程的区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux下如何查看tcp连接？"><span class="toc-number">1.17.</span> <span class="toc-text">Linux下如何查看tcp连接？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#网络监听需要什么函数？"><span class="toc-number">1.18.</span> <span class="toc-text">网络监听需要什么函数？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#互斥锁和信号量的区别？"><span class="toc-number">1.19.</span> <span class="toc-text">互斥锁和信号量的区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#互斥锁与自旋锁的区别？"><span class="toc-number">1.20.</span> <span class="toc-text">互斥锁与自旋锁的区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sleep让进程睡眠，那我们能不能做到微妙级别的sleep呢？"><span class="toc-number">1.21.</span> <span class="toc-text">sleep让进程睡眠，那我们能不能做到微妙级别的sleep呢？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#磁盘坏掉了，操作系统是怎么处理应对的？"><span class="toc-number">1.22.</span> <span class="toc-text">磁盘坏掉了，操作系统是怎么处理应对的？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#缓存？"><span class="toc-number">1.23.</span> <span class="toc-text">缓存？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程的内存空间分布？"><span class="toc-number">1.24.</span> <span class="toc-text">进程的内存空间分布？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是中断？"><span class="toc-number">1.25.</span> <span class="toc-text">什么是中断？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CPU在中断时会干嘛？"><span class="toc-number">1.26.</span> <span class="toc-text">CPU在中断时会干嘛？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#中断分为几种？"><span class="toc-number">1.27.</span> <span class="toc-text">中断分为几种？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何处理中断？"><span class="toc-number">1.28.</span> <span class="toc-text">如何处理中断？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#中断程序处理过程？"><span class="toc-number">1.29.</span> <span class="toc-text">中断程序处理过程？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么要内核态-用户态？"><span class="toc-number">1.30.</span> <span class="toc-text">为什么要内核态&#x2F;用户态？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#fd是什么？"><span class="toc-number">1.31.</span> <span class="toc-text">fd是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多路复用怎么解决阻塞IO-存在的问题？"><span class="toc-number">1.32.</span> <span class="toc-text">多路复用怎么解决阻塞IO 存在的问题？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查看内存的命令？"><span class="toc-number">1.33.</span> <span class="toc-text">查看内存的命令？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查看日志的命令？"><span class="toc-number">1.34.</span> <span class="toc-text">查看日志的命令？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux-查看文件中是否存在某字符"><span class="toc-number">1.35.</span> <span class="toc-text">Linux 查看文件中是否存在某字符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#linux如何分割文件字符串？"><span class="toc-number">1.36.</span> <span class="toc-text">linux如何分割文件字符串？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用的消息队列以及区别？"><span class="toc-number">1.37.</span> <span class="toc-text">常用的消息队列以及区别？</span></a></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2762516417,1589137703&amp;fm=26&amp;gp=0.jpg"></div><div class="author-info__name text-center">高明</div><div class="author-info__description text-center">JAVA工程师</div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">Articles</span><span class="pull-right">85</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">Tags</span><span class="pull-right">17</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">Categories</span><span class="pull-right">11</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2333247715,1420619508&amp;fm=26&amp;gp=0.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">SkySea-GaoMing</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a></span><span class="pull-right"></span></div><div id="post-info"><div id="post-title">Linux2</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-04-23</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a><span class="post-meta__separator">|</span><i class="fa fa-comment-o post-meta__icon" aria-hidden="true"></i><a href="/2021/04/23/Linux2/#disqus_thread"><span class="disqus-comment-count" data-disqus-identifier="2021/04/23/Linux2/"></span></a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>《鸟哥的Linux私房菜》 《现代操作系统》<br><a href="https://blog.csdn.net/SakuraA6/article/details/108810916" target="_blank" rel="noopener">https://blog.csdn.net/SakuraA6/article/details/108810916</a></p>
+} </script><meta name="generator" content="Hexo 4.2.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="Toggle article">Toggle site</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">1.</span> <span class="toc-text">参考</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文件管理命令"><span class="toc-number">2.</span> <span class="toc-text">文件管理命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#cat命令"><span class="toc-number">2.1.</span> <span class="toc-text">cat命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#chmod-命令"><span class="toc-number">2.2.</span> <span class="toc-text">chmod 命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#chown-命令"><span class="toc-number">2.3.</span> <span class="toc-text">chown 命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#文件的操作命令-增删改查"><span class="toc-number">2.3.1.</span> <span class="toc-text">文件的操作命令(增删改查)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux-目录树"><span class="toc-number">2.4.</span> <span class="toc-text">Linux 目录树</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux-基本命令"><span class="toc-number">2.5.</span> <span class="toc-text">Linux 基本命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#目录切换命令"><span class="toc-number">2.5.1.</span> <span class="toc-text">目录切换命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#目录的操作命令-增删改查"><span class="toc-number">2.5.2.</span> <span class="toc-text">目录的操作命令(增删改查)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#压缩文件的操作命令"><span class="toc-number">2.5.3.</span> <span class="toc-text">压缩文件的操作命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#解压压缩包"><span class="toc-number">2.5.4.</span> <span class="toc-text">解压压缩包</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Linux-的权限命令"><span class="toc-number">2.5.5.</span> <span class="toc-text">Linux 的权限命令</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他常用命令"><span class="toc-number">2.6.</span> <span class="toc-text">其他常用命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#网络通信命令"><span class="toc-number">2.6.1.</span> <span class="toc-text">网络通信命令</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程上下文切换？"><span class="toc-number">2.7.</span> <span class="toc-text">进程上下文切换？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#中断上下文切换？"><span class="toc-number">2.8.</span> <span class="toc-text">中断上下文切换？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么线程切换会有消耗，消耗啥？"><span class="toc-number">2.9.</span> <span class="toc-text">为什么线程切换会有消耗，消耗啥？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何查看上下文切换情况？"><span class="toc-number">2.10.</span> <span class="toc-text">如何查看上下文切换情况？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程同步、互斥和通信的区别？"><span class="toc-number">2.11.</span> <span class="toc-text">进程同步、互斥和通信的区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#协程是什么？"><span class="toc-number">2.12.</span> <span class="toc-text">协程是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么是轻量级的线程？"><span class="toc-number">2.13.</span> <span class="toc-text">为什么是轻量级的线程？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#协程和线程的区别？"><span class="toc-number">2.14.</span> <span class="toc-text">协程和线程的区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux下如何查看tcp连接？"><span class="toc-number">2.15.</span> <span class="toc-text">Linux下如何查看tcp连接？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#网络监听需要什么函数？"><span class="toc-number">2.16.</span> <span class="toc-text">网络监听需要什么函数？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#互斥锁和信号量的区别？"><span class="toc-number">2.17.</span> <span class="toc-text">互斥锁和信号量的区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#互斥锁与自旋锁的区别？"><span class="toc-number">2.18.</span> <span class="toc-text">互斥锁与自旋锁的区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sleep让进程睡眠，那我们能不能做到微妙级别的sleep呢？"><span class="toc-number">2.19.</span> <span class="toc-text">sleep让进程睡眠，那我们能不能做到微妙级别的sleep呢？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#磁盘坏掉了，操作系统是怎么处理应对的？"><span class="toc-number">2.20.</span> <span class="toc-text">磁盘坏掉了，操作系统是怎么处理应对的？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#缓存？"><span class="toc-number">2.21.</span> <span class="toc-text">缓存？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程的内存空间分布？"><span class="toc-number">2.22.</span> <span class="toc-text">进程的内存空间分布？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是中断？"><span class="toc-number">2.23.</span> <span class="toc-text">什么是中断？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CPU在中断时会干嘛？"><span class="toc-number">2.24.</span> <span class="toc-text">CPU在中断时会干嘛？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#中断分为几种？"><span class="toc-number">2.25.</span> <span class="toc-text">中断分为几种？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何处理中断？"><span class="toc-number">2.26.</span> <span class="toc-text">如何处理中断？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#中断程序处理过程？"><span class="toc-number">2.27.</span> <span class="toc-text">中断程序处理过程？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么要内核态-用户态？"><span class="toc-number">2.28.</span> <span class="toc-text">为什么要内核态&#x2F;用户态？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#fd是什么？"><span class="toc-number">2.29.</span> <span class="toc-text">fd是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多路复用怎么解决阻塞IO-存在的问题？"><span class="toc-number">2.30.</span> <span class="toc-text">多路复用怎么解决阻塞IO 存在的问题？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查看内存的命令？"><span class="toc-number">2.31.</span> <span class="toc-text">查看内存的命令？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查看日志的命令？"><span class="toc-number">2.32.</span> <span class="toc-text">查看日志的命令？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux-查看文件中是否存在某字符"><span class="toc-number">2.33.</span> <span class="toc-text">Linux 查看文件中是否存在某字符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#linux如何分割文件字符串？"><span class="toc-number">2.34.</span> <span class="toc-text">linux如何分割文件字符串？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用的消息队列以及区别？"><span class="toc-number">2.35.</span> <span class="toc-text">常用的消息队列以及区别？</span></a></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2762516417,1589137703&amp;fm=26&amp;gp=0.jpg"></div><div class="author-info__name text-center">高明</div><div class="author-info__description text-center">JAVA工程师</div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">Articles</span><span class="pull-right">86</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">Tags</span><span class="pull-right">13</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">Categories</span><span class="pull-right">11</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2333247715,1420619508&amp;fm=26&amp;gp=0.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">SkySea-GaoMing</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a></span><span class="pull-right"></span></div><div id="post-info"><div id="post-title">Linux常用命令</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-04-23</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E7%A7%8B%E6%8B%9B/">秋招</a><span class="post-meta__separator">|</span><i class="fa fa-comment-o post-meta__icon" aria-hidden="true"></i><a href="/2021/04/23/Linux2/#disqus_thread"><span class="disqus-comment-count" data-disqus-identifier="2021/04/23/Linux2/"></span></a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><p>1</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>《鸟哥的Linux私房菜》 《现代操作系统》<br><a href="https://blog.csdn.net/SakuraA6/article/details/108810916" target="_blank" rel="noopener">https://blog.csdn.net/SakuraA6/article/details/108810916</a></p>
+<h2 id="文件管理命令"><a href="#文件管理命令" class="headerlink" title="文件管理命令"></a>文件管理命令</h2><h3 id="cat命令"><a href="#cat命令" class="headerlink" title="cat命令"></a>cat命令</h3><p>cat命令用于连接文件并打印到标准输出设备上，cat主要有三大功能：<br>-b 对非空输出行号<br>-n 输出所有行号</p>
+<ol>
+<li>一次显示整个文件:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat filename</span><br></pre></td></tr></table></figure></li>
+<li>从键盘创建一个文件:只能创建新文件，不能编辑已有文件<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat &gt; filename</span><br></pre></td></tr></table></figure></li>
+<li>将几个文件合并为一个文件:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat file1 file2 &gt; file</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="chmod-命令"><a href="#chmod-命令" class="headerlink" title="chmod 命令"></a>chmod 命令</h3><p>文件调用权限分为三级:文件拥有者、群组、其他。用于改变linux 系统文件或目<br>录的访问权限。该命令有两种用法。一种是包含字母和操作符表达式的文字设定<br>法；另一种是包含数字的数字设定法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ls -l log2012.log </span><br><span class="line">-rw-r--r-- 1 root root 296K 11-13 06:03 log2012.log</span><br></pre></td></tr></table></figure>
+<p>第一列共有10个位置，第一个字符指定了文件类型。在通常意义上，一个目录也是<br>一个文件。如果第一个字符是横线，表示是一个非目录的文件。如果是d，表示是一<br>个目录。从第二个字符开始到第十个字符，3个字符一组，分别表示了3组用户对文<br>件或者目录的权限。权限字符用横线代表空许可，r代表只读，w代表写，x代表可<br>执行。权限代号如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">r ：读权限，用数字4表示</span><br><span class="line">w ：写权限，用数字2表示</span><br><span class="line">x ：执行权限，用数字1表示</span><br><span class="line">- ：删除权限，用数字0表示</span><br><span class="line">s ：特殊权限</span><br></pre></td></tr></table></figure>
+<p>实际例子</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">增加文件 t.log 所有用户可执行权限</span><br><span class="line">chmod a+x t.log</span><br><span class="line"></span><br><span class="line">给file的属主分配读、写、执行(7)的权限，给file的所在组分配读、执行(5)的权限，给其他</span><br><span class="line">用户分配执行(1)的权限</span><br><span class="line">chmod 751 t.log（或者：chmod u&#x3D;rwx,g&#x3D;rx,o&#x3D;x t.log)</span><br></pre></td></tr></table></figure>
+
+<h3 id="chown-命令"><a href="#chown-命令" class="headerlink" title="chown 命令"></a>chown 命令</h3><p>chown 将指定文件的拥有者改为指定的用户或组，用户可以是用户名或者用户<br>ID；组可以是组名或者组ID；文件是以空格分开的要改变权限的文件列表，支<br>持通配符</p>
+<h4 id="文件的操作命令-增删改查"><a href="#文件的操作命令-增删改查" class="headerlink" title="文件的操作命令(增删改查)"></a>文件的操作命令(增删改查)</h4><ol>
+<li>touch 文件名称: 文件的创建（增）</li>
+<li>cat/more/less/tail 文件名称 ：文件的查看（查）。命令 tail -f文件<br>可以对某个文件进行动态监控，例如 tomcat 的日志文件，会随着程序的运行<br>，日志会变化，可以使用 tail -f catalina-2016-11-11.log 监控文件的<br>变化</li>
+<li>修改文件的内容（改）。输入wq 代表写入内容并退出，即保存；输入q!代<br>表强制退出不保存</li>
+<li>rm -rf 文件： 删除文件（删）</li>
+</ol>
+<h3 id="Linux-目录树"><a href="#Linux-目录树" class="headerlink" title="Linux 目录树"></a>Linux 目录树</h3><ol>
+<li>/bin：存放二进制可执行文件(ls、cat、mkdir等)，常用命令一般都在这里</li>
+<li>/etc：存放系统管理和配置文件</li>
+<li>/home：存放所有用户文件的根目录，是用户主目录的基点，比如用户user<br>的主目录就是/home/user，可以用~user 表示</li>
+<li>/usr：用于存放系统应用程序</li>
+<li>/opt：额外安装的可选应用程序包所放置的位置。一般情况下，我们可以把<br>tomcat 等都安装到这里</li>
+<li>/proc：虚拟文件系统目录，是系统内存的映射。可直接访问这个目录来获<br>取系统信息</li>
+<li>/root：超级用户（系统管理员）的主目录</li>
+<li>/sbin:存放二进制可执行文件，只有root 才能访问。这里存放的是系统管<br>理员使用的系统级别的管理命令和程序。如ifconfig 等</li>
+<li>/dev：用于存放设备文件</li>
+<li>/mnt：系统管理员安装临时文件系统的安装点，系统提供这个目录是让用<br>户临时挂载其他的文件系统</li>
+<li>/boot：存放用于系统引导时使用的各种文件</li>
+<li>/lib：存放着和系统运行相关的库文件</li>
+<li>/tmp：用于存放各种临时文件，是公用的临时文件存储点</li>
+<li>/var：用于存放运行时需要改变数据的文件，也是某些大文件的溢出区，<br>比方说各种服务的日志文件（系统启动日志等）等</li>
+<li>/lost+found： 这个目录平时是空的，系统非正常关机而留下“无家可归<br>”的文件（windows 下叫什么.chk）就在这里</li>
+</ol>
+<h3 id="Linux-基本命令"><a href="#Linux-基本命令" class="headerlink" title="Linux 基本命令"></a>Linux 基本命令</h3><h4 id="目录切换命令"><a href="#目录切换命令" class="headerlink" title="目录切换命令"></a>目录切换命令</h4><ol>
+<li>cd usr： 切换到该目录下 usr 目录</li>
+<li>cd ..： 切换到上一层目录</li>
+<li>cd /： 切换到系统根目录</li>
+<li>cd ~： 切换到用户主目录</li>
+<li>cd -： 切换到上一个操作所在目录</li>
+</ol>
+<h4 id="目录的操作命令-增删改查"><a href="#目录的操作命令-增删改查" class="headerlink" title="目录的操作命令(增删改查)"></a>目录的操作命令(增删改查)</h4><ol>
+<li>mkdir 目录名称： 增加目录</li>
+<li>ls/ll（ll 是 ls -l 的别名，ll 命令可以看到该目录下的所有目录和文<br>件的详细信息）：查看目录信息</li>
+<li>find 目录 参数： 寻找目录（查）</li>
+</ol>
+<ul>
+<li>列出当前目录及子目录下所有文件和文件夹: find .</li>
+<li>在/home目录下查找以.txt 结尾的文件名:find /home -name “*.txt”，<br>忽略大小写: find /home -iname “*.txt”</li>
+<li>当前目录及子目录下查找所有以.txt 和.pdf 结尾的文件:find . ( -name<br>*.txt” -o -name “*.pdf” )或find . -name “*.txt” -o -name “*<br>.pdf”</li>
+</ul>
+<ol start="4">
+<li>mv 目录名称 新目录名称： 修改目录的名称（改）。注意：mv 的语法不仅<br>可以对目录进行重命名而且也可以对各种文件，压缩包等进行重命名的操作。mv<br>命令用来对文件或目录重新命名，或者将文件从一个目录移到另一个目录中。后<br>面会介绍到mv 命令的另一个用法</li>
+<li>mv 目录名称 目录的新位置： 移动目录的位置—剪切（改）。注意：mv语<br>法不仅可以对目录进行剪切操作，对文件和压缩包等都可执行剪切操作。另外mv<br>与cp 的结果不同，mv 好像文件“搬家”，文件个数并未增加。而cp 对文件进行<br>复制，文件个数增加了</li>
+<li>cp -r 目录名称 目录拷贝的目标位置： 拷贝目录（改），-r 代表递归拷<br>贝 。注意：cp 命令不仅可以拷贝目录还可以拷贝文件，压缩包等，拷贝文件和<br>压缩包时不用写-r 递归</li>
+<li>rm [-rf] 目录 : 删除目录（删）。注意：rm 不仅可以删除目录，也可以<br>删除其他文件或压缩包，为了增强大家的记忆， 无论删除任何目录或文件，都<br>直接使用rm -rf 目录/文件/压缩包</li>
+</ol>
+<h4 id="压缩文件的操作命令"><a href="#压缩文件的操作命令" class="headerlink" title="压缩文件的操作命令"></a>压缩文件的操作命令</h4><p>Linux 中的打包文件一般是以.tar 结尾的，压缩的文件一般是以.gz 结尾的。<br>而一般情况下打包和压缩是一起进行的，打包并压缩后的文件的后缀名一般<br>.tar.gz。命令：tar -zcvf 打包压缩后的文件名 要打包压缩的文件</p>
+<ol>
+<li>z：调用 gzip 压缩命令进行压缩</li>
+<li>c：打包文件</li>
+<li>v：显示运行过程</li>
+<li>f：指定文件名</li>
+</ol>
+<p>假如 test 目录下有三个文件分别是：aaa.txt bbb.txt ccc.txt，如果我<br>们要打包 test 目录并指定压缩后的压缩包名称为 test.tar.gz 可以使用<br>命令：tar -zcvf test.tar.gz aaa.txt bbb.txt ccc.txt 或<br>tar -zcvf test.tar.gz /test/</p>
+<h4 id="解压压缩包"><a href="#解压压缩包" class="headerlink" title="解压压缩包"></a>解压压缩包</h4><p>命令：tar [-xvf] 压缩文件，其中：x：代表解压</p>
+<ol>
+<li>将 /test 下的 test.tar.gz 解压到当前目录下可以使用命令：<br>tar -xvf test.tar.gz</li>
+<li>将 /test 下的 test.tar.gz 解压到根目录/usr 下:<br>tar -xvf test.tar.gz -C /usr（- C 代表指定解压的位置）</li>
+</ol>
+<h4 id="Linux-的权限命令"><a href="#Linux-的权限命令" class="headerlink" title="Linux 的权限命令"></a>Linux 的权限命令</h4><p>操作系统中每个文件都拥有特定的权限、所属用户和所属组。权限是操作系统<br>用来限制资源访问的机制，在Linux 中权限一般分为读、写和执行，分为三<br>组。分别对应文件的属主，属组和其他用户，通过这样的机制来限制哪些用<br>户、哪些组可以对特定的文件进行什么样的操作</p>
+<h3 id="其他常用命令"><a href="#其他常用命令" class="headerlink" title="其他常用命令"></a>其他常用命令</h3><ol>
+<li>pwd 显示当前所在位置</li>
+<li>sudo + 其他命令：以系统管理者的身份执行指令，也就是说，经由sudo<br>所执行的指令就好像是root 亲自执行</li>
+<li>grep 要搜索的字符串 要搜索的文件 –color：搜索命令，–color 代<br>表高亮显示</li>
+<li>ps -ef/ps -aux： 这两个命令都是查看当前系统正在运行进程，两者的<br>区别是展示格式不同。如果想要查看特定的进程可以使用这样的格式：ps aux<br>|grep redis（查看包括redis字符串的进程），也可使用pgrep redis -a</li>
+<li>kill -9 进程的pid： 杀死进程（-9 表示强制终止。）</li>
+</ol>
+<h4 id="网络通信命令"><a href="#网络通信命令" class="headerlink" title="网络通信命令"></a>网络通信命令</h4><ol>
+<li>查看当前系统的网卡信息：ifconfig</li>
+<li>查看与某台机器的连接情况：ping</li>
+<li>查看当前系统的端口使用：netstat -an</li>
+</ol>
 <h3 id="进程上下文切换？"><a href="#进程上下文切换？" class="headerlink" title="进程上下文切换？"></a>进程上下文切换？</h3><p>进程执行过程中所涉及到的CPU上下文切换，我们称之为特权模式切换。从用<br>户态到内核态的转变就发生一次特权模式切换，如从磁盘上读取一个文件，<br>就发生了一次内核调用，也就发生一次特权模式切换</p>
 <ol>
 <li>CPU需要将寄存器中的用户态的指令位置保存起来，截至执行内核态的代码</li>
 <li>CPU寄存器需要更新为内核态的新位置，最后跳转到内核态执行内核调用。<br>之后再恢复之前的用户态，这样的一次系统调用过程实际上发生了两次CPU上<br>下文切换</li>
 </ol>
 <p>这不是进程上下文切换，进程上下文切换只是说一个进程切换到另一个进程<br>首先进程的管理是有内核进行管理和调度的。进程的切换只能发生在内核态<br>所以进程的上下文切换不仅仅包括了虚拟内存，栈，全局变量等用户空间<br>资源，还包括了内核态堆栈，寄存器等内核空间状态</p>
-<h3 id="线程上下文切换？"><a href="#线程上下文切换？" class="headerlink" title="线程上下文切换？"></a>线程上下文切换？</h3><ol>
-<li>当进程拥有多个线程时，线程会共享虚拟内存和全局变量等资源，这些资<br>源在上下文切换中不需要修改</li>
-<li>线程的上下文切换也需要保存自己的一些数据，比如栈，寄存器。这些在上<br>下文切换时是需要保存的</li>
-<li>线程的调度是在内核态运行的，而线程中的代码是在用户态运行</li>
-</ol>
 <h3 id="中断上下文切换？"><a href="#中断上下文切换？" class="headerlink" title="中断上下文切换？"></a>中断上下文切换？</h3><p>中断是为了快速响应硬件事件的，跟进程上下文不同，中断上下文不涉及进程<br>的用户态。即便打断的是一个用户态的进程，也不需要保存和恢复这个进程的<br>虚拟内存，全局变量等用户态资源。中断上下文只包括内核态中断服务程序执<br>行必需的状态。CPU寄存器，内核堆栈，硬件中断参数</p>
 <h3 id="为什么线程切换会有消耗，消耗啥？"><a href="#为什么线程切换会有消耗，消耗啥？" class="headerlink" title="为什么线程切换会有消耗，消耗啥？"></a>为什么线程切换会有消耗，消耗啥？</h3><p>线程切换过程包括：线程上下文的保存和恢复，用户态和内核态的转换，CPU<br>上下文的切换，这些工作都需要CPU去完成</p>
 <ol>
@@ -41,85 +125,6 @@
 <li>某些进程为完成同一任务需要分工协作，这就需要相互协作的进程在某些协<br>调点上协调各自的工作。这种协作进程之间相互等待对方消息或信号的协调关<br>系称为进程同步，也就是说进程同步指两个以上进程基于某个条件来协调它<br>们的活动。一个进程的执行依赖于另一个协作进程的消息或信号，当一个进<br>程没有得到来自于另一个进程的消息或信号时则需等待，直到消息或信号<br>到达才被唤醒</li>
 <li>进程之间互相交换信息的工作称之为进程通信IPC，主要是指大量数据的交换</li>
 </ul>
-<h3 id="临界资源和临界区的区别？"><a href="#临界资源和临界区的区别？" class="headerlink" title="临界资源和临界区的区别？"></a>临界资源和临界区的区别？</h3><ol>
-<li>临界资源 临界资源是一次仅允许一个进程使用的共享资源。各进程采取互<br>斥的方式，实现共享的资源称作临界资源。属于临界资源的硬件有，打印机，<br>磁带机等；软件有消息队列，变量，数组，缓冲区等。诸进程间采取互斥方<br>式，实现对这种资源的共享</li>
-<li>临界区 每个进程中访问临界资源的那段代码称为临界区。每次只允许一个<br>进程进入临界区，进入后，不允许其他进程进入。不论是硬件临界资源还是软<br>件临界资源，多个进程必须互斥的对它进行访问。多个进程涉及到同一个临界<br>资源的的临界区称为相关临界区。使用临界区时，一般不允许其运行时间过长<br>，只要运行在临界区的线程还没有离开，其他所有进入此临界区的线程都会<br>被挂起而进入等待状态，并在一定程度上影响程序的运行性能。</li>
-<li>临界区是用户态下的对象，即只能在同一进程中实现线程互斥。因无需在用<br>户态和核心态之间切换</li>
-</ol>
-<h3 id="进程间通信方式（六种方式，各自的概念，区别都要搞清楚）"><a href="#进程间通信方式（六种方式，各自的概念，区别都要搞清楚）" class="headerlink" title="进程间通信方式（六种方式，各自的概念，区别都要搞清楚）"></a>进程间通信方式（六种方式，各自的概念，区别都要搞清楚）</h3><p><a href="https://blog.csdn.net/watermelonmk/article/details/109002753" target="_blank" rel="noopener">https://blog.csdn.net/watermelonmk/article/details/109002753</a><br><a href="https://blog.csdn.net/qq_34796146/article/details/107825875" target="_blank" rel="noopener">https://blog.csdn.net/qq_34796146/article/details/107825875</a></p>
-<ol>
-<li>管道 管道传输数据是单向的，如果想相互通信，我们需要创建两个管道<br>才行。管道这种通信方式效率低，不适合进程间频繁地交换数据，所谓的管<br>道，就是内核里面的一串缓存。从管道的一端写入的数据，实际上是缓存在<br>内核中的，另一端读取，也就是从内核中读取这段数据。另外，管道传输的<br>数据是无格式的流且大小受限</li>
-</ol>
-<ul>
-<li>匿名管道 没有名字标识，匿名管道是特殊文件只存在于内存，没有存在<br>于文件系统中，shell 命令中的「|」竖线就是匿名管道，通信的数据是无<br>格式的流并且大小受限，通信的方式是单向的，数据只能在一个方向上<br>流动，如果要双向通信，需要创建两个管道，再来匿名管道是只能用于<br>存在父子关系的进程间通信，匿名管道的生命周期随着进程创建而建立<br>，随着进程终止而消失</li>
-<li>命名管道 突破了匿名管道只能在亲缘关系进程间的通信限制，因为使用<br>命名管道的前提，需要在文件系统创建一个类型为p 的设备文件，那么毫<br>无关系的进程就可以通过这个设备文件进行通信。另外，不管是匿名管道<br>还是命名管道，进程写入的数据都是缓存在内核中，另一个进程读取数<br>据时候自然也是从内核中获取，同时通信数据都遵循先进先出原则，不<br>支持lseek 之类的文件定位操作</li>
-</ul>
-<ol start="2">
-<li>消息队列 A 进程要给B 进程发送消息，A 进程把数据放在对应的消息<br>队列后就可以正常返回了，B进程需要的时候再去读取数据就可以了。同理<br>，B 进程要给A 进程发送消息也是如此。<br>消息队列克服了管道通信的数据是无格式的字节流的问题，消息队列实际<br>上是保存在内核的「消息链表」，消息队列的消息体是可以用户自定义的数<br>据类型，发送数据时，会被分成一个一个独立的消息体，当然接收数据时<br>，也要与发送方发送的消息体的数据类型保持一致，这样才能保证读取的<br>数据是正确的。消息队列通信的速度不是最及时的，毕竟每次数据的写入<br>和读取都需要经过用户态与内核态之间的拷贝过程。消息队列生命周期随<br>内核，如果没有释放消息队列或者没有关闭操作系统，消息队列会一直<br>存在，如果进程从消息队列中读取了消息体，内核就会把这个消息体删<br>除而前面提到的匿名管道的生命周期，是随进程的创建而建立，随进程<br>的结束而销毁</li>
-<li>共享内存 共享内存的机制，就是拿出一块虚拟地址空间来，映射到相<br>同的物理内存中。这样这个进程写入的东西，另外一个进程马上就能看到<br>了，都不需要拷贝来拷贝去，传来传去，大大提高了进程间通信的速度。<br>共享内存可以解决消息队列通信中用户态与内核态之间数据拷贝过程带来<br>的开销，它直接分配一个共享空间，每个进程都可以直接访问，就像访问<br>进程自己的空间一样快捷方便，不需要陷入内核态或者系统调用，大大提<br>高了通信的速度，享有最快的进程间通信方式之名。但是便捷高效的共享<br>内存通信，这种方式需要依靠某种同步操作，如互斥锁和信号量等</li>
-<li>信号量 信号量其实是一个整型的计数器，主要用于实现进程间的互斥<br>与同步，而不是用于缓存进程间通信的数据</li>
-<li>信号 信号是进程间通信机制中唯一的异步通信机制，信号可以在应用<br>进程和内核之间直接交互，内核也可以利用信号来通知用户空间的进程发<br>生了哪些系统事件</li>
-<li>SOCKET 前面提到的方式都是在同一台主机上进行进程间通信，那要想<br>跨网络与不同主机上的进程之间通信，就需要Socket 通信了。可根据创建<br>Socket 的类型不同，分为三种常见的通信方式，一个是基于TCP 协议的<br>通信方式，一个是基于UDP协议的通信方式，一个是本地进程间通信方式</li>
-</ol>
-<h3 id="管道、消息队列、共享内存它们三者哪个开销最小？"><a href="#管道、消息队列、共享内存它们三者哪个开销最小？" class="headerlink" title="管道、消息队列、共享内存它们三者哪个开销最小？"></a>管道、消息队列、共享内存它们三者哪个开销最小？</h3><p><a href="https://blog.csdn.net/qq_41999455/article/details/105275981" target="_blank" rel="noopener">https://blog.csdn.net/qq_41999455/article/details/105275981</a></p>
-<ol>
-<li>进程间的通信手段大体可以分为两类：通信类和同步类</li>
-<li>本质来讲管道也是一片内存区域，默认大小是65536字节</li>
-<li>相比于管道来讲，消息队列机制中，双方是通过消息来通信的，无需花<br>费精力从字节流中解析出完整的消息</li>
-<li>消息队列的作用是进程之间传递消息。而信号量的作用是为了同步多个<br>进程的操作</li>
-<li>共享内存是所有IPC手段中最快的一种。它之所以快是因为共享内存一旦<br>映射到进程的地址空间，进程之间数据的传递就不须要涉及内核了</li>
-<li>共享内存是开销最小的通信方式，源于它和内核的交流比较少，从而降<br>低了开销</li>
-</ol>
-<h3 id="信号与信号量的区别？"><a href="#信号与信号量的区别？" class="headerlink" title="信号与信号量的区别？"></a>信号与信号量的区别？</h3><ol>
-<li>信号事件的来源主要有两种</li>
-</ol>
-<ul>
-<li>硬件来源（如键盘Cltr+C ） 产生SIGINT 信号，表示终止该进程</li>
-<li>Ctrl+Z 产生 SIGTSTP 信号，表示停止该进程，但还未结束</li>
-<li>软件来源（如kill命令）</li>
-</ul>
-<p>信号是进程间通信机制中唯一的异步通信机制，因为可以在任何时候发送信号给<br>某一进程，一旦有信号产生一旦有信号发生，进程有三种方式响应信号</p>
-<ol>
-<li>执行默认操作 Linux 对每种信号都规定了默认操作，例如，上面列表中<br>的SIGTERM 信号，就是终止进程的意思。Core 的意思是 Core Dump，也即<br>终止进程后，通过 Core Dump 将当前进程的运行状态保存在文件里面，方<br>便程序员事后进行分析问题在哪里</li>
-<li>捕捉信号 我们可以为信号定义一个信号处理函数。当信号发生时，我们就<br>执行相应的信号处理函数</li>
-<li>忽略信号 当我们不希望处理某些信号的时候，就可以忽略该信号，不做任<br>何处理。有两个信号是应用进程无法捕捉和忽略的，即SIGKILL 和SEGSTOP，<br>它们用于在任何时候中断或结束某一进程</li>
-</ol>
-<h3 id="进程同步的方式"><a href="#进程同步的方式" class="headerlink" title="进程同步的方式"></a>进程同步的方式</h3><ol>
-<li>信号量 用于进程间传递信号的一个整数值。用于实现进程间的互斥与同步<br>，在信号量上只有三种操作可以进行，这三种操作都是原子操作</li>
-</ol>
-<ul>
-<li>初始化</li>
-<li>P操作 可以用于阻塞一个进程</li>
-<li>V操作 用于解除阻塞一个进程</li>
-</ul>
-<p>基本原理是两个或多个进程可以通过简单的信号进行合作，一个进程可以被迫<br>在某一位置停止，直到它接收到一个特定的信号。该信号即为信号量</p>
-<ol start="2">
-<li>管程 管程是由一个或多个过程、一个初始化序列和局部数据组成的软件<br>模块。局部数据变量只能被管程的过程访问，任何外部过程都不能访问。一<br>个进程通过调用管程的一个过程进入管程。在任何时候，只能有一个进程<br>在管程中执行，调用管程的任何其他进程都被阻塞，以等待管程可用。管<br>程通过使用条件变量提供对同步的支持，这些条件变量包含在管程中，<br>并且只有在管程中才能被访问。有两个函数可以操作条件变量</li>
-</ol>
-<ul>
-<li>cwait(c) 调用进程的执行在条件c上阻塞，管程现在可被另一个进程使用</li>
-<li>csignal(c) 恢复执行在cwait之后因为某些条件而阻塞的进程。如果有多<br>个这样的进程，选择其中一个，如果没有这样的进程，什么也不做</li>
-</ul>
-<ol start="3">
-<li>消息传递 消息传递的实际功能以一对原语的形式提供</li>
-</ol>
-<ul>
-<li>send(destination,message)</li>
-<li>receive(source,message)</li>
-</ul>
-<p>这是进程间进程消息传递所需要的最小操作集，一个进程以消息的形式给另一<br>个指定的目标进程发送消息，进程通过执行receive原语接收消息，receive<br>原语中指明发送消息的源进程和消息</p>
-<h3 id="线程同步的方式？"><a href="#线程同步的方式？" class="headerlink" title="线程同步的方式？"></a>线程同步的方式？</h3><ol>
-<li>信号量的用法和互斥的用法很相似，不同的是它可以同一时刻允许多个线程<br>访问同一个资源，PV操作</li>
-<li>事件(信号)，Wait/Notify：通过通知操作的方式来保持多线程同步，还可<br>以方便的实现多线程优先级的比较操作</li>
-<li>互斥量 互斥与临界区很相似，但是使用时相对复杂一些（互斥量为内核<br>对象），不仅可以在同一应用程序的线程间实现同步，还可以在不同的进程<br>间实现同步，从而实现资源的安全共享</li>
-<li>临界区 临界区对应着一个CcriticalSection对象，当线程需要访问保护数<br>据时，调用EnterCriticalSection函数，当对保护数据的操作完成之后，调用<br>LeaveCriticalSection函数释放对临界区对象的拥有权，以使另一个线程可以<br>夺取临界区对象并访问受保护的数据</li>
-</ol>
-<h3 id="文件描述符是什么？"><a href="#文件描述符是什么？" class="headerlink" title="文件描述符是什么？"></a>文件描述符是什么？</h3><p>文件描述符是内核为了高效管理已被打开的文件所创建的索引，用于指代被打<br>开的文件，对文件所有I/O 操作相关的系统调用都需要通过文件描述符</p>
-<ol>
-<li>进程级别的文件描述符表：内核为每个进程维护一个文件描述符表，该表<br>记录了文件描述符的相关信息，包括文件描述符、指向打开文件表中记录的<br>指针</li>
-<li>系统级别的打开文件表：内核对所有打开文件维护了一个进程共享的打开<br>文件描述表，表中存储了处于打开状态文件的相关信息，包括文件类型、访<br>问权限、文件操作函数等</li>
-<li>系统级别的i-node 表：i-node 结构体记录了文件相关的信息，包括文<br>件长度，文件所在设备，文件物理位置，创建、修改和更新时间等，”ls -i”<br>命令可以查看文件i-node 节点</li>
-</ol>
 <h3 id="协程是什么？"><a href="#协程是什么？" class="headerlink" title="协程是什么？"></a>协程是什么？</h3><p>协程是比线程更小的一种执行单元，你可以认为是轻量级的线程，一个线<br>程也可以拥有多个协程，协程不是被操作系统内核所管理，而完全是由程<br>序所控制（也就是在用户态执行）</p>
 <h3 id="为什么是轻量级的线程？"><a href="#为什么是轻量级的线程？" class="headerlink" title="为什么是轻量级的线程？"></a>为什么是轻量级的线程？</h3><p>协成是基于线程实现的，协程的创建、切换、销毁都是在某个线程中来进行的<br>，协程占用内存少，只需要极少的栈内存（大概是4～5KB），默认情况下，<br>线程栈的大小为1MB</p>
 <h3 id="协程和线程的区别？"><a href="#协程和线程的区别？" class="headerlink" title="协程和线程的区别？"></a>协程和线程的区别？</h3><ol>
@@ -216,7 +221,7 @@
 var disqus_config = function () {
   this.page.url = 'https://skysea-gaoming.github.io/2021/04/23/Linux2/';
   this.page.identifier = '2021/04/23/Linux2/';
-  this.page.title = 'Linux2';
+  this.page.title = 'Linux常用命令';
 }
 var d = document, s = d.createElement('script');
 s.src = "https://" + '你的disqus的 short-name' +".disqus.com/embed.js";

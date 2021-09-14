@@ -7,14 +7,15 @@
     error: 'Copy error',
     noSupport: 'The browser does not support'
   }
-} </script><meta name="generator" content="Hexo 4.2.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="Toggle article">Toggle site</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">1.</span> <span class="toc-text">参考</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#操作系统概述"><span class="toc-number">2.</span> <span class="toc-text">操作系统概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是操作系统"><span class="toc-number">2.1.</span> <span class="toc-text">什么是操作系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#命令接口和程序接口"><span class="toc-number">2.2.</span> <span class="toc-text">命令接口和程序接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#操作系统的功能"><span class="toc-number">2.3.</span> <span class="toc-text">操作系统的功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#操作系统的特征"><span class="toc-number">2.4.</span> <span class="toc-text">操作系统的特征</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用户态和内核态"><span class="toc-number">2.5.</span> <span class="toc-text">用户态和内核态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用户空间与内核空间"><span class="toc-number">2.6.</span> <span class="toc-text">用户空间与内核空间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#系统调用"><span class="toc-number">2.7.</span> <span class="toc-text">系统调用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进程和线程"><span class="toc-number">3.</span> <span class="toc-text">进程和线程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#进程"><span class="toc-number">3.1.</span> <span class="toc-text">进程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PCB"><span class="toc-number">3.2.</span> <span class="toc-text">PCB</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程的状态"><span class="toc-number">3.3.</span> <span class="toc-text">进程的状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程间通信的方式"><span class="toc-number">3.4.</span> <span class="toc-text">进程间通信的方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程和线程的区别"><span class="toc-number">3.5.</span> <span class="toc-text">进程和线程的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#线程间的同步方式"><span class="toc-number">3.6.</span> <span class="toc-text">线程间的同步方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程的调度算法"><span class="toc-number">3.7.</span> <span class="toc-text">进程的调度算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程切换"><span class="toc-number">3.8.</span> <span class="toc-text">进程切换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程阻塞"><span class="toc-number">3.9.</span> <span class="toc-text">进程阻塞</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进程的同步和互斥"><span class="toc-number">4.</span> <span class="toc-text">进程的同步和互斥</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#死锁"><span class="toc-number">5.</span> <span class="toc-text">死锁</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#死锁-1"><span class="toc-number">5.1.</span> <span class="toc-text">死锁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是死锁"><span class="toc-number">5.2.</span> <span class="toc-text">什么是死锁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#产生死锁的四个必要条件"><span class="toc-number">5.3.</span> <span class="toc-text">产生死锁的四个必要条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何解决死锁"><span class="toc-number">5.4.</span> <span class="toc-text">如何解决死锁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是鸵鸟策略？"><span class="toc-number">5.5.</span> <span class="toc-text">什么是鸵鸟策略？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何预防死锁？"><span class="toc-number">5.6.</span> <span class="toc-text">如何预防死锁？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何避免死锁？"><span class="toc-number">5.7.</span> <span class="toc-text">如何避免死锁？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何死锁检测与恢复？"><span class="toc-number">5.8.</span> <span class="toc-text">如何死锁检测与恢复？</span></a></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2762516417,1589137703&amp;fm=26&amp;gp=0.jpg"></div><div class="author-info__name text-center">高明</div><div class="author-info__description text-center">JAVA工程师</div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">Articles</span><span class="pull-right">85</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">Tags</span><span class="pull-right">17</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">Categories</span><span class="pull-right">11</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2333247715,1420619508&amp;fm=26&amp;gp=0.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">SkySea-GaoMing</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a></span><span class="pull-right"></span></div><div id="post-info"><div id="post-title">操作系统总结1</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-04-26</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E7%A7%8B%E6%8B%9B/">秋招</a><span class="post-meta__separator">|</span><i class="fa fa-comment-o post-meta__icon" aria-hidden="true"></i><a href="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/#disqus_thread"><span class="disqus-comment-count" data-disqus-identifier="2021/04/26/操作系统/"></span></a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://blog.csdn.net/weixin_43914604/article/details/104415990" target="_blank" rel="noopener">https://blog.csdn.net/weixin_43914604/article/details/104415990</a></p>
+} </script><meta name="generator" content="Hexo 4.2.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="Toggle article">Toggle site</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#操作系统概述"><span class="toc-number">1.</span> <span class="toc-text">操作系统概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是操作系统"><span class="toc-number">1.1.</span> <span class="toc-text">什么是操作系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用户接口"><span class="toc-number">1.2.</span> <span class="toc-text">用户接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#操作系统的功能"><span class="toc-number">1.3.</span> <span class="toc-text">操作系统的功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#操作系统的特征"><span class="toc-number">1.4.</span> <span class="toc-text">操作系统的特征</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用户态和内核态"><span class="toc-number">1.5.</span> <span class="toc-text">用户态和内核态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用户态切换到内核态的方式"><span class="toc-number">1.6.</span> <span class="toc-text">用户态切换到内核态的方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#系统调用"><span class="toc-number">1.7.</span> <span class="toc-text">系统调用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux-的系统调用函数"><span class="toc-number">1.8.</span> <span class="toc-text">Linux 的系统调用函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用户空间与内核空间"><span class="toc-number">1.9.</span> <span class="toc-text">用户空间与内核空间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#宏内核和微内核"><span class="toc-number">1.10.</span> <span class="toc-text">宏内核和微内核</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进程和线程"><span class="toc-number">2.</span> <span class="toc-text">进程和线程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#进程"><span class="toc-number">2.1.</span> <span class="toc-text">进程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PCB"><span class="toc-number">2.2.</span> <span class="toc-text">PCB</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程的状态"><span class="toc-number">2.3.</span> <span class="toc-text">进程的状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#临界区和临界资源"><span class="toc-number">2.4.</span> <span class="toc-text">临界区和临界资源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程和线程的区别"><span class="toc-number">2.5.</span> <span class="toc-text">进程和线程的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用户级线程和内核级线程"><span class="toc-number">2.6.</span> <span class="toc-text">用户级线程和内核级线程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程同步、互斥和通信的区别"><span class="toc-number">2.7.</span> <span class="toc-text">进程同步、互斥和通信的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程同步的实现方式"><span class="toc-number">2.8.</span> <span class="toc-text">进程同步的实现方式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#信号量"><span class="toc-number">2.8.1.</span> <span class="toc-text">信号量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#管程"><span class="toc-number">2.8.2.</span> <span class="toc-text">管程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#消息传递"><span class="toc-number">2.8.3.</span> <span class="toc-text">消息传递</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#线程同步的方式"><span class="toc-number">2.9.</span> <span class="toc-text">线程同步的方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#生产者消费者问题"><span class="toc-number">2.10.</span> <span class="toc-text">生产者消费者问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#线程间的同步方式"><span class="toc-number">2.11.</span> <span class="toc-text">线程间的同步方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程间通信的方式"><span class="toc-number">2.12.</span> <span class="toc-text">进程间通信的方式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#信号量-1"><span class="toc-number">2.12.1.</span> <span class="toc-text">信号量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#管道通信"><span class="toc-number">2.12.2.</span> <span class="toc-text">管道通信</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#消息队列"><span class="toc-number">2.12.3.</span> <span class="toc-text">消息队列</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#共享内存"><span class="toc-number">2.12.4.</span> <span class="toc-text">共享内存</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#信号"><span class="toc-number">2.12.5.</span> <span class="toc-text">信号</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Socket"><span class="toc-number">2.12.6.</span> <span class="toc-text">Socket</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#线程通信方式"><span class="toc-number">2.13.</span> <span class="toc-text">线程通信方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程通信哪种方式开销最小"><span class="toc-number">2.14.</span> <span class="toc-text">进程通信哪种方式开销最小</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程的调度算法"><span class="toc-number">2.15.</span> <span class="toc-text">进程的调度算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程切换"><span class="toc-number">2.16.</span> <span class="toc-text">进程切换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#线程上下文切换"><span class="toc-number">2.17.</span> <span class="toc-text">线程上下文切换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程阻塞"><span class="toc-number">2.18.</span> <span class="toc-text">进程阻塞</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件描述符"><span class="toc-number">2.19.</span> <span class="toc-text">文件描述符</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#死锁"><span class="toc-number">3.</span> <span class="toc-text">死锁</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是死锁"><span class="toc-number">3.1.</span> <span class="toc-text">什么是死锁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是饥饿"><span class="toc-number">3.2.</span> <span class="toc-text">什么是饥饿</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#产生死锁的四个必要条件"><span class="toc-number">3.3.</span> <span class="toc-text">产生死锁的四个必要条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什么时候会发生死锁"><span class="toc-number">3.4.</span> <span class="toc-text">什么时候会发生死锁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何解决死锁"><span class="toc-number">3.5.</span> <span class="toc-text">如何解决死锁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是鸵鸟策略？"><span class="toc-number">3.6.</span> <span class="toc-text">什么是鸵鸟策略？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何预防死锁"><span class="toc-number">3.7.</span> <span class="toc-text">如何预防死锁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何避免死锁"><span class="toc-number">3.8.</span> <span class="toc-text">如何避免死锁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何死锁检测与恢复"><span class="toc-number">3.9.</span> <span class="toc-text">如何死锁检测与恢复</span></a></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2762516417,1589137703&amp;fm=26&amp;gp=0.jpg"></div><div class="author-info__name text-center">高明</div><div class="author-info__description text-center">JAVA工程师</div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">Articles</span><span class="pull-right">86</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">Tags</span><span class="pull-right">13</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">Categories</span><span class="pull-right">11</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2333247715,1420619508&amp;fm=26&amp;gp=0.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">SkySea-GaoMing</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a></span><span class="pull-right"></span></div><div id="post-info"><div id="post-title">操作系统总结1</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-04-26</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E7%A7%8B%E6%8B%9B/">秋招</a><span class="post-meta__separator">|</span><i class="fa fa-comment-o post-meta__icon" aria-hidden="true"></i><a href="/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/#disqus_thread"><span class="disqus-comment-count" data-disqus-identifier="2021/04/26/操作系统/"></span></a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><p>1</p>
 <h2 id="操作系统概述"><a href="#操作系统概述" class="headerlink" title="操作系统概述"></a>操作系统概述</h2><h3 id="什么是操作系统"><a href="#什么是操作系统" class="headerlink" title="什么是操作系统"></a>什么是操作系统</h3><ol>
 <li>操作系统本质上是一个运行在计算机上的软件程序 ，用于管理计算机硬<br>件和软件资源</li>
 <li>操作系统的内核是操作系统的核心部分，它负责系统的内存管理，硬件设<br>备的管理，文件系统的管理以及应用程序的管理</li>
 </ol>
-<h3 id="命令接口和程序接口"><a href="#命令接口和程序接口" class="headerlink" title="命令接口和程序接口"></a>命令接口和程序接口</h3><ol>
+<h3 id="用户接口"><a href="#用户接口" class="headerlink" title="用户接口"></a>用户接口</h3><ol>
 <li>命令接口：用户可以直接使用的，利用这些操作命令来组织和控制作业的执行</li>
 <li>程序接口：用户通过程序间接使用的，可以使用它们来请求操作系统服务</li>
+<li>图形接口：用户利用鼠标或通过菜单和对话框，调用OS完成相应功能</li>
 </ol>
 <h3 id="操作系统的功能"><a href="#操作系统的功能" class="headerlink" title="操作系统的功能"></a>操作系统的功能</h3><ol>
 <li>处理机管理：处理机分配都是以进程为单位，所以处理机管理也被看<br>做是进程管理。包括进程控制，进程同步，进程通信和进程调度</li>
@@ -36,8 +37,8 @@
 <li>虚拟 虚拟是把一个物理上的实体变为若干逻辑上的对应物</li>
 </ol>
 <ul>
-<li>时分复用技术：如处理器的分时共享</li>
-<li>空间复用技术：如虚拟存储器</li>
+<li>时分复用技术：如处理器的分时共享，分时来使用一个CPU</li>
+<li>空间复用技术：如虚拟存储器，从逻辑上扩充存储器容量</li>
 </ul>
 <ol start="5">
 <li>异步 多道程序环境允许多个程序并发执行，但由于资源有限，如cpu只有一个，<br>进程的执行并不是一贯到底的，而是走走停停的，它以不可预知的速度向前推进，<br>每个进程占用资源的时间不固定，所以进程的执行以不可预知的速度前进</li>
@@ -46,8 +47,14 @@
 <ol>
 <li>用户态: 用户态运行的进程可以直接读取用户程序的数据</li>
 <li>内核态:可以简单的理解系统态运行的进程或程序几乎可以访问计算机的<br>任何资源，不受限制</li>
+<li>用程序状态寄存器PWS中的某标志位来表示处理器处于什么状态如：0是<br>用户态，1是内核态。也就是特权指令比如IO指令、置中断指令和非特权指令<br>比如加减乘除指令的切换</li>
 </ol>
-<h3 id="用户空间与内核空间"><a href="#用户空间与内核空间" class="headerlink" title="用户空间与内核空间"></a>用户空间与内核空间</h3><p>操作系统的核心是内核，独立于普通的应用程序，可以访问受保护的内存空间<br>，也有访问底层硬件设备的所有权限。为了保证用户进程不能直接操作内核，<br>保证内核的安全，操心系统将虚拟空间划分为两部分，一部分为内核空间，<br>一部分为用户空间。针对linux操作系统而言，将最高的1G字节（从虚拟地<br>址0xC0000000到0xFFFFFFFF），供内核使用，称为内核空间，而将较低<br>的3G字节（从虚拟地址0x00000000到0xBFFFFFFF），供各个进程使用，<br>称为用户空间</p>
+<h3 id="用户态切换到内核态的方式"><a href="#用户态切换到内核态的方式" class="headerlink" title="用户态切换到内核态的方式"></a>用户态切换到内核态的方式</h3><p>3种方式本质都是通过中断机制实现的，中断是用户态进入内核态的唯一方法<br>，系统调用和异常也称为内中断，外围设备的中断称为外中断</p>
+<ol>
+<li>系统调用<br>这是用户进程主动要求切换到内核态的一种方式，用户进程通过系统调用<br>申请操作系统提供的服务程序完成工作。而系统调用的机制其核心还是使<br>用了操作系统为用户特别开放的一个中断来实现，用户态执行trap陷入<br>指令进入内核态，这个指令是唯一不能在内核态执行的指令</li>
+<li>异常<br>当CPU在执行运行在用户态的程序时，发现了某些事件不可知的异常，这是<br>会触发由当前运行进程切换到处理此异常的内核相关程序中，也就到了内<br>核态，比如缺页异常</li>
+<li>外围设备的中断<br>当外围设备完成用户请求的操作之后，会向CPU发出相应的中断信号，这时<br>CPU 会暂停执行下一条将要执行的指令转而去执行中断信号的处理程序，<br>如果先执行的指令是用户态下的程序，那么这个转换的过程自然也就发生<br>了有用户态到内核态的切换。比如硬盘读写操作完成，系统会切换到硬盘<br>读写的中断处理程序中执行后续操作等。如I/O完成中断，表示设备输入<br>输出处理已经完成，处理器能够发送下一个输入输出请求</li>
+</ol>
 <h3 id="系统调用"><a href="#系统调用" class="headerlink" title="系统调用"></a>系统调用</h3><p>我们运行的程序基本都是运行在用户态，如果调用操作系统提供的内核态级别<br>的功能那就需要系统调用，也就是说在我们运行的用户程序中，凡是与系统态<br>级别的资源有关的操作（如文件管理、进程控制、内存管理等），都必须通过<br>系统调用方式向操作系统提出服务请求，并由操作系统代为完成，系统调用<br>按功能可分为如下</p>
 <ol>
 <li>设备管理。完成设备的请求或释放，以及设备启动等功能</li>
@@ -55,6 +62,20 @@
 <li>进程控制。完成进程的创建、撤销、阻塞及唤醒等功能</li>
 <li>进程通信。完成进程之间的消息传递或信号传递等功能</li>
 <li>内存管理。完成内存的分配、回收以及获取作业占用内存区大小及地址等功能</li>
+</ol>
+<h3 id="Linux-的系统调用函数"><a href="#Linux-的系统调用函数" class="headerlink" title="Linux 的系统调用函数"></a>Linux 的系统调用函数</h3><ol>
+<li>进程控制    fork(); exit(); wait();</li>
+<li>进程通信    pipe(); shmget(); mmap();</li>
+<li>文件操作    open(); read(); write();</li>
+<li>设备操作    ioctl(); read(); write();</li>
+<li>信息维护    getpid(); alarm(); sleep();</li>
+<li>安全    chmod(); umask(); chown();</li>
+</ol>
+<h3 id="用户空间与内核空间"><a href="#用户空间与内核空间" class="headerlink" title="用户空间与内核空间"></a>用户空间与内核空间</h3><p>操作系统的核心是内核，独立于普通的应用程序，可以访问受保护的内存空间<br>，也有访问底层硬件设备的所有权限。为了保证用户进程不能直接操作内核，<br>保证内核的安全，操心系统将虚拟空间划分为两部分，一部分为内核空间，<br>一部分为用户空间。针对linux操作系统而言，将最高的1G字节（从虚拟地<br>址0xC0000000到0xFFFFFFFF），供内核使用，称为内核空间，而将较低<br>的3G字节（从虚拟地址0x00000000到0xBFFFFFFF），供各个进程使用，<br>称为用户空间</p>
+<h3 id="宏内核和微内核"><a href="#宏内核和微内核" class="headerlink" title="宏内核和微内核"></a>宏内核和微内核</h3><ol>
+<li>宏内核是将操作系统功能作为一个紧密结合的整体放到内核，不管是用户<br>服务还是内核服务事实上都是内核在统一管理，它们是运行在同一地址空间<br>中的。由于各模块共享信息，因此有很高的性能，但是很难定位bug，拓展<br>性比较差，每次需要增加新的功能，都要将新的代码和原来的内核代码重<br>新编译</li>
+<li>在微内核中用户服务和内核服务在不同的地址空间中实现。在内核架构中，<br>用户服务是独立于内核服务的，因此任何用户服务崩溃都不会影响到内核服务<br>，这就加强了操作系统的健壮性，这是微内核的优势所在。另一点，微内核的<br>扩展性强，添加一个功能，只需要建立一个新的服务到用户空间当中，而内<br>核空间不需要任何的修改。因此，微内核可移植性强、安全并且易于扩展。</li>
+<li>微内核就是内核的最基本功能时钟管理、中断机制和CPU切换等功能依然<br>保留在内核，而对资源进行管理的功能比如进程管理、存储器管理和设备管<br>理等功能转移到用户态，需要在用户态和内核态频繁切换</li>
 </ol>
 <h2 id="进程和线程"><a href="#进程和线程" class="headerlink" title="进程和线程"></a>进程和线程</h2><h3 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h3><p>进程是对正在运行程序的一个抽象，一个进程就是一个正在执行程序的实例。<br>由三部分组成：程序、数据及进程控制块(PCB)，进程控制块描述进程的基本<br>信息和运行状态，所谓的创建进程和撤销进程，都是指对PCB的操作，PCB中<br>保存程序运行的现场（进程标识、处理机状态、进程调度、进程控制等信息）</p>
 <ul>
@@ -73,73 +94,125 @@
 </ol>
 <h3 id="进程的状态"><a href="#进程的状态" class="headerlink" title="进程的状态"></a>进程的状态</h3><p>进程有三种基本状态：运行态，就绪态，阻塞态</p>
 <ol>
-<li><p>运行态 该时刻进程实际占用CPU</p>
-</li>
-<li><p>就绪态 可运行，当因为其他进程正在运行而暂时停止，这是系统技术上的<br>原因引起的，比如没有足够CPU</p>
-</li>
-<li><p>阻塞态 除非某种外部事件发生，否则进程不能运行，这是程序自身固有<br>原因（键入用户命令之前无法执行命令）</p>
-</li>
-<li><p>创建状态：进程正在被创建，尚未到就绪状态</p>
-</li>
-<li><p>结束状态：进程正在从系统中消失。可能是进程正常结束或其他原因中断退出运行</p>
-</li>
-<li><p>运行 -&gt; 阻塞 等待I/O或事件完成</p>
-</li>
-<li><p>运行 -&gt; 就绪 进程的CPU时间片用完</p>
-</li>
-<li><p>就绪 -&gt; 运行 获得了CPU的时间片</p>
-</li>
-<li><p>阻塞 -&gt; 就绪 I/O或事件完成</p>
-</li>
+<li>运行态 该时刻进程实际占用CPU</li>
+<li>就绪态 可运行，当因为其他进程正在运行而暂时停止，这是系统技术上的<br>原因引起的，比如没有足够CPU</li>
+<li>阻塞态 除非某种外部事件发生，否则进程不能运行，这是程序自身固有<br>原因（请求IO、键入用户命令之前无法执行命令）</li>
 </ol>
-<h3 id="进程间通信的方式"><a href="#进程间通信的方式" class="headerlink" title="进程间通信的方式"></a>进程间通信的方式</h3><ol>
-<li>匿名管道：用于具有亲缘关系的父子进程间或者兄弟进程之间的通信。管<br>道传输数据是单向的，如果想相互通信，我们需要创建两个管道才行，所谓<br>的管道，就是内核里面的一串缓存。从管道的一端写入的数据，另一端读取<br>。没有名字标识，匿名管道是特殊文件只存在于内存，通过pipe函数创建的<br>这两个文件描述符fd[0]和fd[1]分别构成管道的两端，fd[1]一端只能进<br>行写操作，fd[0]一端只能进行读操作</li>
-<li>有名管道：突破了匿名管道只能在亲缘关系进程间的通信限制，因为使用<br>命名管道的前提，需要在文件系统创建一个类型为p的设备文件，可以实现本<br>机任意两个进程通信，有名管道的名字存在于文件系统，内容存放在内存中</li>
-<li>信号 信号是进程间通信机制中唯一的异步通信机制，信号可以在任何时<br>候发给某一进程，信号可以在应用进程和内核之间直接交互，内核也可以利<br>用信号来通知用户空间的进程发生了哪些系统事件，信号事件主要有两个来<br>源：</li>
-</ol>
-<ul>
-<li>硬件来源：用户按键输入Ctrl+C退出、硬件异常如无效的存储访问等</li>
-<li>软件终止：终止进程信号、其他进程调用kill函数、软件异常产生信号</li>
-</ul>
-<ol start="4">
-<li>消息队列 消息队列是消息的链表，具有特定的格式，存放在内存中并由<br>消息队列标识符标识，消息队列存放在内核中</li>
-<li>信号量 信号量是一个计数器，用于多进程对共享数据的访问，信号量的<br>意图在于进程间同步。这种通信方式主要用于解决与同步相关的问题并避免<br>竞争条件</li>
-<li>共享内存 使得多个进程可以访问同一块内存空间，不同进程可以及时看<br>到对方进程中对共享内存中数据的更新。这种方式需要依靠某种同步操作，<br>如互斥锁和信号量等</li>
-<li>套接字 用于在客户端和服务器之间通过网络进行通信。套接字是支持<br>TCP/IP 的网络通信的基本操作单元，可以看做是不同主机之间的进程进<br>行双向通信的端点，用套接字中的相关函数来完成通信过程</li>
-</ol>
-<p>消息队列(Message Queuing) ：消息队列是消息的链表,具有特定的格式,存放在内存中并由消息队列标识符标识。管道和消息队列的通信数据都是先进先出的原则。与管道（无名管道：只存在于内存中的文件；命名管道：存在于实际的磁盘介质或者文件系统）不同的是消息队列存放在内核中，只有在内核重启(即，操作系统重启)或者显示地删除一个消息队列时，该消息队列才会被真正的删除。消息队列可以实现消息的随机查询,消息不一定要以先进先出的次序读取,也可以按消息的类型读取.比 FIFO 更有优势。消息队列克服了信号承载信息量少，管道只能承载无格式字 节流以及缓冲区大小受限等缺。<br>信号量(Semaphores) ：信号量是一个计数器，用于多进程对共享数据的访问，信号量的意图在于进程间同步。这种通信方式主要用于解决与同步相关的问题并避免竞争条件。<br>共享内存(Shared memory) ：使得多个进程可以访问同一块内存空间，不同进程可以及时看到对方进程中对共享内存中数据的更新。这种方式需要依靠某种同步操作，如互斥锁和信号量等。可以说这是最有用的进程间通信方式。<br>套接字(Sockets) : 此方法主要用于在客户端和服务器之间通过网络进行通信。套接字是支持 TCP/IP 的网络通信的基本操作单元，可以看做是不同主机之间的进程进行双向通信的端点，简单的说就是通信的两方的一种约定，用套接字中的相关函数来完成通信过程。</p>
-<p>进程通信是指进程之间的信息交换。PV操作是低级通信方式，髙级通信方式<br>是指以较高的效率传输大量数据的通信方式。高级通信方法有以下三个类</p>
+<p>还有两种状态</p>
 <ol>
-<li>共享存储<br>在通信的进程之间存在一块可直接访问的共享空间，通过对这片共享空间进<br>行写/读操作实现进程之间的信息交换。在对共享空间进行写/读操作时，需<br>要使用同步互斥工具（如 P操作、V操作），对共享空间的写/读进行控制。<br>共享存储又分为两种：低级方式的共享是基于数据结构的共享，高级方式<br>则是基于存储区的共享。操作系统只负责为通信进程提供可共享使用的存<br>储空间和同步互斥工具，而数据交换则由用户自己安排读/写指令完成。</li>
-<li>消息传递<br>在消息传递系统中，进程间的数据交换是以格式化的消息(Message)为单位<br>的。若通信的进程之间不存在可直接访问的共享空间，则必须利用操作系统<br>提供的消息传递方法实现进程通信。进程通过系统提供的发送消息和接收消<br>息两个原语进行数据交换。</li>
+<li>创建状态：进程正在被创建，尚未到就绪状态</li>
+<li>结束状态：进程正在从系统中消失。可能是进程正常结束或其他原因中断退<br>出运行</li>
 </ol>
-<ul>
-<li>直接通信方式：发送进程直接把消息发送给接收进程，并将它挂在接收进<br>程的消息缓冲队列上，接收进程从消息缓冲队列中取得消息</li>
-<li>间接通信方式：发送进程把消息发送到某个中间实体中，接收进程从中间<br>实体中取得消息。这种中间实体一般称为信箱，这种通信方式又称为信箱通<br>信方式。该通信方式广泛应用于计算机网络中，相应的通信系统称为电子邮<br>件系统</li>
-</ul>
+<p>状态切换情况，不能由阻塞态直接切换到运行态或就绪态切换为阻塞态，因为<br>进入阻塞态是进程主动请求的，必须在运行态才能发出请求</p>
+<ol>
+<li>运行 -&gt; 阻塞 等待I/O或事件完成</li>
+<li>运行 -&gt; 就绪 进程的CPU时间片用完或被更高优先级的进程抢占</li>
+<li>就绪 -&gt; 运行 获得了CPU的时间片</li>
+<li>阻塞 -&gt; 就绪 I/O或事件完成</li>
+</ol>
+<h3 id="临界区和临界资源"><a href="#临界区和临界资源" class="headerlink" title="临界区和临界资源"></a>临界区和临界资源</h3><ol>
+<li>临界区<br>通过对多线程串行化访问公共资源或一段代码，适合控制数据的访问。在任意<br>时刻只允许一个线程对共享资源进行访问，如果有多个线程试图访问公共资<br>源，那么在有一个线程进入后，其他试图访问公共资源的线程将被挂起，并<br>一直等到进入临界区的线程离开，临界区在被释放后，其他线程才可以抢占</li>
+<li>临界资源<br>临界资源是一个时刻只能由一个进程使用的资源，比如硬件资源：许多都属于<br>临界资源，如打印机，磁带机等和软件资源：如变量、表格、队列等</li>
+</ol>
 <h3 id="进程和线程的区别"><a href="#进程和线程的区别" class="headerlink" title="进程和线程的区别"></a>进程和线程的区别</h3><ol>
-<li>调度方面：进程是资源分配和调度的基本单位，线程是CPU调度的基<br>本单位</li>
+<li>调度方面：进程是资源分配的基本单位，线程是CPU调度的基本单位</li>
 <li>并发性：引入了线程的OS中，进程间可以并发，而且一个进程内部的<br>多个线程之间也是可以并发的，这就使OS具有更好的并发性，有效的提<br>高了系统资源利用率和吞吐量</li>
 <li>拥有资源：无论OS是否支持线程，进程都是基本的资源拥有单位，线<br>程只拥有很少的基本的资源，但是线程可以访问所隶属的进程的资源（<br>进程的代码段，数据段和所拥有的系统资源如fd）</li>
 <li>内存空间：系统运行时，不同的进程的占有独立的地址空间，而一个<br>进程内的多个线程可以共享进程的地址空间</li>
 <li>系统开销：创建或者撤销进程的时候，系统要为之创建或回收PCB，<br>系统资源等，切换时也需要保存和恢复CPU环境。而线程的切换只需要保<br>存和恢复少量的寄存器，不涉及存储器管理方面的工作</li>
 <li>通信：同一个进程中的多个线程共享地址空间，所以通信同步等都比<br>进程要更为方便</li>
 </ol>
+<h3 id="用户级线程和内核级线程"><a href="#用户级线程和内核级线程" class="headerlink" title="用户级线程和内核级线程"></a>用户级线程和内核级线程</h3><ol>
+<li>用户级线程 线程的处理不通过内核实现，线程的状态信息等全部存放在<br>用户空间中，内核不能感知用户级线程</li>
+</ol>
+<ul>
+<li>优点 线程的调度不需要内核直接参与，控制简单</li>
+<li>缺点 一个用户级线程的阻塞将会引起整个进程的阻塞</li>
+</ul>
+<ol start="2">
+<li>内核级线程 线程的处理均由内核实现，内核为线程保留TCB，并通过TCB<br>感知线程</li>
+</ol>
+<ul>
+<li>优点 当有多个处理机时，一个进程的多个线程可以同时执行</li>
+<li>缺点 线程在用户态的运行，而线程的调度和管理在内核实现</li>
+</ul>
+<h3 id="进程同步、互斥和通信的区别"><a href="#进程同步、互斥和通信的区别" class="headerlink" title="进程同步、互斥和通信的区别"></a>进程同步、互斥和通信的区别</h3><p>进程之间存在两种基本关系：竞争关系和协作关系。进程的互斥、同步、通信都<br>是基于这两种基本关系而存在的</p>
+<ol>
+<li>为了解决进程间竞争关系（间接制约关系）而引入进程互斥</li>
+<li>不同进程之间存在着不同的相互制约关系。为了协调进程之间的相互制约关、<br>系，如等待、传递信息等，引入了进程同步的概念</li>
+<li>为了解决进程间紧密的协作关系而引入进程通信</li>
+</ol>
+<h3 id="进程同步的实现方式"><a href="#进程同步的实现方式" class="headerlink" title="进程同步的实现方式"></a>进程同步的实现方式</h3><p>进程同步：信号量、管程、消息传递</p>
+<h4 id="信号量"><a href="#信号量" class="headerlink" title="信号量"></a>信号量</h4><p>信号量是一种特殊的调度变量，由一个初始值为1的整数mutex，和一个任务<br>队列queue 组成，并且提供两个原子操作，wait 和signal，用于管理。<br>互斥问题信号量初值为1，临界区之前对信号量执行P操作，临界区之后对初<br>始量执行V操作。同步问题信号量初值为0，比如进程A生成数据，进程B消费<br>数据，那么进程A生成数据后进行V操作，进程B先进行P操作然后读取数据，<br>可以保证进程A 应在进程B 之前执行</p>
+<ol>
+<li>wait 操作，也称为P 操作。首先将mutex 减1，如果mutex 小于0那么<br>将进程放入指定阻塞队列，意味着请求一个资源，请求不到就block进程</li>
+<li>signal 操作又名V 操作。A 任务结束，首先给mutex 加1，如果mutex<br>小于等于0说明还有别的进程等待资源那么把阻塞队列的第一个进程唤醒，<br>意味着释放一个资源，wakeup一个进程</li>
+</ol>
+<h4 id="管程"><a href="#管程" class="headerlink" title="管程"></a>管程</h4><p>管程是由一个或多个过程、一个初始化序列和局部数据组成的软件模块。局部<br>数据变量只能被管程的过程访问，任何外部过程都不能访问。一个进程通过<br>调用管程的一个过程进入管程。在任何时候，只能有一个进程在管程中执行<br>，调用管程的任何其他进程都被阻塞，以等待管程可用。管程通过使用条件<br>变量提供对同步的支持，这些条件变量包含在管程中，并且只有在管程中<br>才能被访问。有两个函数可以操作条件变量</p>
+<ul>
+<li>cwait(c) 调用进程的执行在条件c上阻塞，管程现在可被另一个进程使用</li>
+<li>csignal(c) 恢复执行在cwait之后因为某些条件而阻塞的进程。如果有多<br>个这样的进程，选择其中一个，如果没有这样的进程，什么也不做</li>
+</ul>
+<h4 id="消息传递"><a href="#消息传递" class="headerlink" title="消息传递"></a>消息传递</h4><p>消息传递的实际功能以一对原语的形式提供：</p>
+<ul>
+<li>send(destination,message)</li>
+<li>receive(source,message)</li>
+</ul>
+<p>这是进程间进程消息传递所需要的最小操作集，一个进程以消息的形式给另一<br>个指定的目标进程发送消息，进程通过执行receive原语接收消息，receive<br>原语中指明发送消息的源进程和消息</p>
+<h3 id="线程同步的方式"><a href="#线程同步的方式" class="headerlink" title="线程同步的方式"></a>线程同步的方式</h3><ol>
+<li>信号量的用法和互斥量的用法很相似，不同的是它可以同一时刻允许多个线<br>程访问同一个资源，PV操作</li>
+<li>事件(信号)，Wait/Notify：通过通知操作的方式来保持多线程同步，还可<br>以方便的实现多线程优先级的比较操作</li>
+<li>互斥量 互斥对象只有一个，只有拥有互斥对象的线程才具有访问资源的权<br>限。互斥与临界区很相似，但是使用时相对复杂一些（互斥量为内核对象），<br>不仅可以在同一应用程序的线程间实现同步，还可以在不同的进程间实现同<br>步，从而实现资源的安全共享</li>
+<li>临界区 通过对多线程的串行化来访问公共资源或一段代码，速度快，适合<br>控制数据访问</li>
+</ol>
+<h3 id="生产者消费者问题"><a href="#生产者消费者问题" class="headerlink" title="生产者消费者问题"></a>生产者消费者问题</h3><p>系统中有一组生产者进程和一组消费者进程，生产者进程每次生产一个产品放<br>入缓冲区，消费者进程每次从缓冲区中取出一个产品并使用。消费者与消费者<br>，生产者与生产者，消费者与生产者之间，同一时间能且仅能有一者使用缓<br>冲区，否则阻塞。<br>于是需要三个信号量。生产者私有信号量empty 保证时刻有空位，消费者私有<br>信号量full 保证时刻有数据，公共信号量mutex 用于保证任意n个任务有且<br>仅有一个在访问缓冲区。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;生产者</span><br><span class="line">wait(empty)</span><br><span class="line">wait(mutex)</span><br><span class="line">写缓冲</span><br><span class="line">signal(mutex)</span><br><span class="line">signal(full)</span><br><span class="line">&#x2F;&#x2F;消费者</span><br><span class="line">wait(full)</span><br><span class="line">wait(mutex)</span><br><span class="line">读缓冲</span><br><span class="line">signal(mutex)</span><br><span class="line">signal(empty)</span><br></pre></td></tr></table></figure>
+
 <h3 id="线程间的同步方式"><a href="#线程间的同步方式" class="headerlink" title="线程间的同步方式"></a>线程间的同步方式</h3><ol>
 <li>互斥量：采用互斥对象机制，只有拥有互斥对象的线程才有访问公共<br>资源的权限。因为互斥对象只有一个，所以可以保证公共资源不会被多个<br>线程同时访问。比如Java 中的synchronized 关键词和各种Lock 都是<br>这种机制</li>
 <li>信号量：它允许同一时刻多个线程访问同一资源，但是需要控制同一<br>时刻访问此资源的最大线程数量</li>
-<li>事件:Wait/Notify：通过通知操作的方式来保持多线程同步，还可以<br>方便的实现多线程优先级的比较</li>
-</ol>
-<p>临界区、互斥量、事件、信号量四种方式</p>
-<ol>
-<li>临界区<br>通过对多线程串行化访问公共资源或一段代码，适合控制数据的访问。在任意<br>时刻只允许一个线程对共享资源进行访问，如果有多个线程试图访问公共资<br>源，那么在有一个线程进入后，其他试图访问公共资源的线程将被挂起，并<br>一直等到进入临界区的线程离开，临界区在被释放后，其他线程才可以抢占</li>
-<li>互斥量<br>采用互斥对象机制。 只有拥有互斥对象的线程才有访问公共资源的权限，因<br>为互斥对象只有一个，所以能保证公共资源不会同时被多个线程访问。互斥<br>不仅能实现同一应用程序的公共资源安全共享，还能实现不同应用程序的<br>公共资源安全共享 .互斥量比临界区复杂。因为使用互斥不仅仅能够在同<br>一应用程序不同线程中实现资源的安全共享，而且可以在不同应用程序<br>的线程之间实现对资源的安全共享</li>
-<li>信号量<br>信号量对象对线程的同步方式与前面几种方法不同，它允许多个线程在同一<br>时刻访问同一资源，但是需要限制在同一时刻访问此资源的最大线程数目。<br>信号允许多个线程同时使用共享资源，这与操作系统中的PV操作相同。PV<br>操作及信号量的概念都是由荷兰科学家E.W.Dijkstra提出的。信号量S是<br>一个整数，S大于等于零时代表可供并发进程/线程使用的资源实体数，但<br>S小于零时则表示正在等待使用共享资源的进程数</li>
+<li>事件:Wait/Notify：通过通知操作的方式来保持多线程同步，还可以<br>方便的实现多线程优先级的比较  </li>
 <li>事件<br>通过通知操作的方式来保持线程的同步，还可以方便实现对多个线程的优<br>先级比较的操作</li>
 </ol>
-<h3 id="进程的调度算法"><a href="#进程的调度算法" class="headerlink" title="进程的调度算法"></a>进程的调度算法</h3><p>为了确定首先执行哪个进程以及最后执行哪个进程以实现最大CPU利用率，<br>计算机科学家已经定义了一些算法</p>
+<h3 id="进程间通信的方式"><a href="#进程间通信的方式" class="headerlink" title="进程间通信的方式"></a>进程间通信的方式</h3><p>进程通信是指进程之间的信息交换。进程是分配系统资源的单位，因此各个进程<br>拥有的内存地址相互独立，为了保证安全，一个进程不能直接访问另一个进程<br>的地址空间，但内核空间是每个进程都共享的，所以进程之间要通信必须通过<br>内核。为了实现进程通信，操作系统提供了以下方法</p>
+<h4 id="信号量-1"><a href="#信号量-1" class="headerlink" title="信号量"></a>信号量</h4><p>用了共享内存通信方式，带来新的问题，那就是如果多个进程同时修改同一个共<br>享内存，很有可能就冲突了。信号量是一个计数器，用于多进程对共享数据的访<br>问，信号量的意图在于进程间同步。这种通信方式主要用于解决与同步相关的问<br>题并避免竞争条件。</p>
+<h4 id="管道通信"><a href="#管道通信" class="headerlink" title="管道通信"></a>管道通信</h4><p>管道传输数据是单向的，如果想相互通信，我们需要创建两个管道才行。管道<br>这种通信方式效率低，不适合进程间频繁地交换数据，所谓的管道，就是内<br>核里面的一串缓存。从管道的一端写入的数据，实际上是缓存在内核中的，<br>另一端读取，也就是从内核中读取这段数据。另外，管道传输的数据是无格<br>式的流且大小受限。管道通信可以分为两种：匿名管道和有名管道</p>
 <ol>
-<li>先到先服务(FCFS)调度算法 : 从就绪队列中选择一个最先进入该队列的进程为之分配资源，使它立即执行并一直执行到完成或发生某事件而被阻塞放弃占用 CPU 时再重新调度。<br>短作业优先(SJF)的调度算法 : 从就绪队列中选出一个估计运行时间最短的进程为之分配资源，使它立即执行并一直执行到完成或发生某事件而被阻塞放弃占用 CPU 时再重新调度。<br>时间片轮转调度算法 : 时间片轮转调度是一种最古老，最简单，最公平且使用最广的算法，又称 RR(Round robin)调度。每个进程被分配一个时间段，称作它的时间片，即该进程允许运行的时间。<br>多级反馈队列调度算法 ：前面介绍的几种进程调度的算法都有一定的局限性。如短进程优先的调度算法，仅照顾了短进程而忽略了长进程 。多级反馈队列调度算法既能使高优先级的作业得到响应又能使短作业（进程）迅速完成。，因而它是目前被公认的一种较好的进程调度算法，UNIX 操作系统采取的便是这种调度算法。<br>优先级调度 ： 为每个流程分配优先级，首先执行具有最高优先级的进程，依此类推。具有相同优先级的进程以 FCFS 方式执行。可以根据内存要求，时间要求或任何其他资源要求来确定优先级。</li>
+<li>匿名管道：用于具有亲缘关系的父子进程间或者兄弟进程之间的通信。<br>通过调用pipe 函数创建，fd[0] 用于读，fd[1] 用于写。没有名字标识<br>，匿名管道是特殊文件只存在于内存，没有存在于文件系统中，shell命<br>令中的「|」竖线就是匿名管道。可以使用 fork 创建子进程，创建的子进<br>程会复制父进程的文件描述符，这样就做到了两个进程各有两个 fd[0]<br>与fd[1]，两个进程就可以通过各自的fd 写入和读取同一个管道文件实<br>现跨进程通信了。在shell 里面执行A | B 命令的时候，A 进程和B 进<br>程都是shell 创建出来的子进程，A 和B 之间不存在父子关系，它俩的<br>父进程都是shell</li>
+<li>有名管道：突破了匿名管道只能在亲缘关系进程间的通信限制，因为使<br>用命名管道的前提，需要在文件系统创建一个类型为管道的设备文件，可<br>以实现任意两个进程通信，有名管道的名字存在于文件系统，内容存放在<br>内存中。在使用命名管道前，先需要通过mkfifo 命令来创建，并且指定<br>管道名字。只有当管道里的数据被读完后，命令才可以正常退出，通过<br>echo “hello”&gt; myPipe 将数据写进管道，通过cat &lt; myPipe 读取<br>管道里的数据。不管是匿名管道还是命名管道，进程写入的数据都是缓<br>存在内核中，另一个进程读取数据时候自然也是从内核中获取，同时<br>通信数据都遵循先进先出原则，不支持lseek 之类的文件定位操作</li>
+</ol>
+<h4 id="消息队列"><a href="#消息队列" class="headerlink" title="消息队列"></a>消息队列</h4><p>A 进程要给B 进程发送消息，A 进程把数据放在对应的消息队列后就可以<br>正常返回了，B进程需要的时候再去读取数据就可以了。消息队列是保存在<br>内核中的消息链表，在发送数据时，会分成一个一个独立的数据单元，也<br>就是消息体（数据块），消息体是用户自定义的数据类型，消息的发送方<br>和接收方要约定好消息体的数据类型，所以每个消息体都是固定大小的存<br>储块，不像管道是无格式的字节流数据。如果进程从消息队列中读取了消<br>息体，内核就会把这个消息体删除。消息队列生命周期随内核，如果没有<br>释放消息队列或者没有关闭操作系统，消息队列会一直存在，而前面提<br>到的匿名管道的生命周期，是随进程的创建而建立，随进程的结束而销<br>毁。通过msgsnd发送消息和msgrcv接收消息<br>消息队列不适合比较大数据的传输，因为在内核中每个消息体都有一个最<br>大长度的限制，同时所有队列所包含的全部消息体的总长度也是有上限。<br>在Linux 内核中，会有两个宏定义MSGMAX 和MSGMNB，它们以字节为单<br>位，分别定义了一条消息的最大长度和一个队列的最大长度。<br>消息队列通信过程中，存在用户态与内核态之间的数据拷贝开销，因为进<br>程写入数据到内核中的消息队列时，会发生从用户态拷贝数据到内核态的<br>过程，同理另一进程读取内核中的消息数据时，会发生从内核态拷贝数据<br>到用户态的过程</p>
+<h4 id="共享内存"><a href="#共享内存" class="headerlink" title="共享内存"></a>共享内存</h4><p>现代操作系统对于内存管理采用的是虚拟内存技术，也就是每个进程都有<br>自己独立的虚拟内存空间，不同进程的虚拟内存映射到不同的物理内存中<br>。所以即使进程A 和 进程B 的虚拟地址是一样的，其实访问的是不同的<br>物理内存地址，对于数据的增删查改互不影响。<br>共享内存的机制，就是拿出一块虚拟地址空间来，映射到相同的物理内存<br>中。这样这个进程写入的东西，另外一个进程马上就能看到了，都不需要<br>拷贝来拷贝去，传来传去，大大提高了进程间通信的速度。<br>共享内存可以解决消息队列通信中用户态与内核态之间数据拷贝过程带来<br>的开销，它直接分配一个共享空间，每个进程都可以直接访问，就像访问<br>进程自己的空间一样快捷方便，不需要陷入内核态或者系统调用，大大提<br>高了通信的速度，享有最快的进程间通信方式之名。但是便捷高效的共享<br>内存通信，这种方式需要依靠某种同步操作，如互斥锁和信号量等</p>
+<h4 id="信号"><a href="#信号" class="headerlink" title="信号"></a>信号</h4><p>信号是进程间通信机制中唯一的异步通信机制，信号可以在任何时候发给某<br>一进程，信号可以在应用进程和内核之间直接交互，内核也可以利用信号来<br>通知用户空间的进程发生了哪些系统事件，信号事件主要有两个来源：</p>
+<ul>
+<li>硬件来源：用户按键输入Ctrl+C退出、硬件异常如无效的存储访问等</li>
+<li>软件终止：终止进程信号、其他进程调用kill函数、软件异常产生信号</li>
+</ul>
+<p>一旦有信号发生，进程有三种方式响应信号1. 执行默认操作、2. 捕捉信号<br>、3. 忽略信号。有两个信号是应用进程无法捕捉和忽略的，即 SIGKILL 和<br>SEGSTOP，这是为了方便我们能在任何时候结束或停止某个进程</p>
+<h4 id="Socket"><a href="#Socket" class="headerlink" title="Socket"></a>Socket</h4><p>用于在客户端和服务器之间通过网络进行通信。套接字是支持TCP/IP 的网<br>络通信的基本操作单元，可以看做是不同主机之间的进程进行双向通信的<br>端点，用套接字中的相关函数来完成通信过程。可根据创建Socket 的类<br>型不同，分为三种常见的通信方式，一个是基于 TCP 协议的通信方式，<br>一个是基于UDP 协议的通信方式，一个是本地进程间通信方式</p>
+<h3 id="线程通信方式"><a href="#线程通信方式" class="headerlink" title="线程通信方式"></a>线程通信方式</h3><ol>
+<li>使用全局变量<br>主要由于多个线程可能更改全局变量，因此全局变量最好声明为volatile</li>
+<li>使用消息实现通信<br>在Windows程序设计中，每一个线程都可以拥有自己的消息队列（UI线程默认<br>自带消息队列和消息循环，工作线程需要手动实现消息循环），因此可以采用<br>消息进行线程间通信sendMessage,postMessage</li>
+</ol>
+<h3 id="进程通信哪种方式开销最小"><a href="#进程通信哪种方式开销最小" class="headerlink" title="进程通信哪种方式开销最小"></a>进程通信哪种方式开销最小</h3><ol>
+<li>进程间的通信手段大体可以分为两类：通信类和同步类</li>
+<li>本质来讲管道也是一片内存区域，默认大小是65536字节</li>
+<li>相比于管道来讲，消息队列机制中，双方是通过消息来通信的，无需花<br>费精力从字节流中解析出完整的消息</li>
+<li>消息队列的作用是进程之间传递消息。而信号量的作用是为了同步多个<br>进程的操作</li>
+<li>共享内存是所有IPC手段中最快的一种。它之所以快是因为共享内存一旦<br>映射到进程的地址空间，进程之间数据的传递就不须要涉及内核了</li>
+<li>共享内存是开销最小的通信方式，源于它和内核的交流比较少，从而降<br>低了开销</li>
+</ol>
+<h3 id="进程的调度算法"><a href="#进程的调度算法" class="headerlink" title="进程的调度算法"></a>进程的调度算法</h3><p>批处理系统没有太多的用户操作，在该系统中，调度算法目标是保证吞吐量<br>和周转时间（从提交到终止的时间）</p>
+<ol>
+<li>先到先服务(FCFS)调度算法 :<br>从就绪队列中选择一个最先进入该队列的进程为之分配资源，使它立即执行并<br>一直执行到完成或发生某事件而被阻塞放弃占用CPU 时再重新调度。有利于长<br>作业，但不利于短作业，因为短作业必须一直等待前面的长作业执行完毕才能<br>执行，而长作业又需要执行很长时间，造成了短作业等待时间过长</li>
+<li>短作业优先(SJF)的调度算法 :<br>从就绪队列中选出一个估计运行时间最短的进程为之分配资源，使它立即执行<br>并一直执行到完成或发生某事件而被阻塞放弃占用 CPU 时再重新调度。可能<br>导致长作业或进程长时间不被调度</li>
+<li>最短剩余时间优先(SRTN)：<br>最短作业优先的抢占式版本，按剩余运行时间的顺序进行调度。 当一个新的作<br>业到达时，其整个运行时间与当前进程的剩余时间作比较。如果新的进程需要<br>的时间更少，则挂起当前进程，运行新的进程。否则新的进程等待</li>
+</ol>
+<p>交互式系统有大量的用户交互操作，在该系统中调度算法的目标是快速地进行<br>响应</p>
+<ol>
+<li>时间片轮转算法<br>将所有就绪进程按先来先服务排成队列，每次调度时，把 CPU 时间分配给队<br>首进程，该进程可以执行一个时间片。当时间片用完时，由计时器发出时钟中<br>断，调度程序便停止该进程的执行，并将它送往就绪队列的末尾，同时继续<br>把CPU 时间分配给队首的进程</li>
+<li>优先级调度算法<br>为每个进程分配一个优先级，按优先级进行调度。为了防止低优先级的进程永<br>远等不到调度，可以随着时间的推移增加等待进程的优先级</li>
+<li>多级反馈队列算法<br>一个进程需要执行100 个时间片，如果采用时间片轮转调度算法，那么需要交<br>换100 次。多级队列是为这种需要连续执行多个时间片的进程考虑，它设置了<br>多个队列，每个队列时间片大小都不同，例如 1,2,4,8,..。进程在第一个队<br>列没执行完，就会被移到下一个队列。每个队列优先权也不同，最上面的优先<br>权最高。因此只有上一个队列没有进程在排队，才能调度当前队列上的进程。<br>可以将这种调度算法看成是时间片轮转调度算法和优先级调度算法的结合。<br>UNIX 操作系统采取的便是这种调度算法</li>
 </ol>
 <h3 id="进程切换"><a href="#进程切换" class="headerlink" title="进程切换"></a>进程切换</h3><p>为了控制进程的执行，内核必须有能力挂起正在CPU上运行的进程，并恢复以前<br>挂起的某个进程的执行。这种行为被称为进程切换。因此可以说，任何进程都是<br>在操作系统内核的支持下运行的，是与内核紧密相关的。<br>从一个进程的运行转到另一个进程上运行，这个过程中经过下面这些变化：</p>
 <ol>
@@ -150,14 +223,31 @@
 <li>更新内存管理的数据结构</li>
 <li>恢复处理机上下文</li>
 </ol>
+<h3 id="线程上下文切换"><a href="#线程上下文切换" class="headerlink" title="线程上下文切换"></a>线程上下文切换</h3><ol>
+<li>当进程拥有多个线程时，线程会共享虚拟内存和全局变量等资源，这些资<br>源在上下文切换中不需要修改</li>
+<li>线程的上下文切换也需要保存自己的一些数据，比如栈，寄存器。这些在上<br>下文切换时是需要保存的</li>
+<li>线程的调度是在内核态运行的，而线程中的代码是在用户态运行</li>
+</ol>
 <h3 id="进程阻塞"><a href="#进程阻塞" class="headerlink" title="进程阻塞"></a>进程阻塞</h3><p>正在执行的进程，由于期待的某些事件未发生，如请求系统资源失败、等待某<br>种操作的完成、新数据尚未到达或无新工作做等，则由系统自动执行阻塞原语<br>(Block)，使自己由运行状态变为阻塞状态。可见，进程的阻塞是进程自身的<br>一种主动行为，也因此只有处于运行态的进程(获得CPU)，才可能将其转为<br>阻塞状态。当进程进入阻塞状态，是不占用CPU资源的</p>
-<h2 id="进程的同步和互斥"><a href="#进程的同步和互斥" class="headerlink" title="进程的同步和互斥"></a>进程的同步和互斥</h2><h2 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h2><h3 id="死锁-1"><a href="#死锁-1" class="headerlink" title="死锁"></a>死锁</h3><p>在两个或多个并发进程中，如果一个进程集合中的每个进程都在等待只能由<br>该进程集合中的其他进程才能引发的事件，那么该进程集合就产生了死锁</p>
-<h3 id="什么是死锁"><a href="#什么是死锁" class="headerlink" title="什么是死锁"></a>什么是死锁</h3><p>多个进程可以竞争有限数量的资源。当一个进程申请资源时，如果这时没<br>有可用资源，那么这个进程进入等待状态。有时，如果所申请的资源被其<br>他等待进程占有，那么该等待进程有可能再也无法改变状态。这种情况成<br>为死锁。</p>
-<h3 id="产生死锁的四个必要条件"><a href="#产生死锁的四个必要条件" class="headerlink" title="产生死锁的四个必要条件"></a>产生死锁的四个必要条件</h3><ol>
+<h3 id="文件描述符"><a href="#文件描述符" class="headerlink" title="文件描述符"></a>文件描述符</h3><p>文件描述符是内核为了高效管理已被打开的文件所创建的索引，用于指代被打<br>开的文件，对文件所有I/O 操作相关的系统调用都需要通过文件描述符</p>
+<ol>
+<li>进程级别的文件描述符表：内核为每个进程维护一个文件描述符表，该表<br>记录了文件描述符的相关信息，包括文件描述符、指向打开文件表中记录的<br>指针</li>
+<li>系统级别的打开文件表：内核对所有打开文件维护了一个进程共享的打开<br>文件描述表，表中存储了处于打开状态文件的相关信息，包括文件类型、访<br>问权限、文件操作函数等</li>
+<li>系统级别的i-node 表：i-node 结构体记录了文件相关的信息，包括文<br>件长度，文件所在设备，文件物理位置，创建、修改和更新时间等，”ls -i”<br>命令可以查看文件i-node 节点</li>
+</ol>
+<h2 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h2><h3 id="什么是死锁"><a href="#什么是死锁" class="headerlink" title="什么是死锁"></a>什么是死锁</h3><p>多个进程可以竞争有限数量的资源。当一个进程申请资源时，如果这时没<br>有可用资源，那么这个进程进入等待状态。有时，如果所申请的资源被其<br>他等待进程占有，那么该等待进程有可能再也无法改变状态。这种情况成<br>为死锁</p>
+<h3 id="什么是饥饿"><a href="#什么是饥饿" class="headerlink" title="什么是饥饿"></a>什么是饥饿</h3><p>长期获取不到想要的资源，某进程无法向前推进</p>
+<h3 id="产生死锁的四个必要条件"><a href="#产生死锁的四个必要条件" class="headerlink" title="产生死锁的四个必要条件"></a>产生死锁的四个必要条件</h3><p>必须同时满足这四个条件要不然死锁就不会发生</p>
+<ol>
 <li>互斥：资源必须处于非共享模式，即一次只有一个进程可以使用。如果<br>另一进程申请该资源，那么必须等待直到该资源被释放为止</li>
 <li>占有和等待：一个进程至少应该占有一个资源，并等待另一资源，而该<br>资源被其他进程所占有</li>
 <li>不可抢占：资源不能被抢占。只能在持有资源的进程完成任务后，该资<br>源才会被释放</li>
 <li>循环等待：有两个或者两个以上的进程组成一条环路，该环路中的每个<br>进程都在等待下一个进程所占有的资源</li>
+</ol>
+<h3 id="什么时候会发生死锁"><a href="#什么时候会发生死锁" class="headerlink" title="什么时候会发生死锁"></a>什么时候会发生死锁</h3><ol>
+<li>对系统资源的竞争。各进程对不可抢占资源的竞争可能引起死锁</li>
+<li>进程推进顺序非法。请求和释放资源的顺序不当，也同样会导致死锁</li>
+<li>信号量的使用不当也会造成死锁。在生产者消费者问题中如果实现互<br>斥的P操作在实现同步的P操作之前就可能导致死锁</li>
 </ol>
 <h3 id="如何解决死锁"><a href="#如何解决死锁" class="headerlink" title="如何解决死锁"></a>如何解决死锁</h3><p>对于死锁，主要有4种解决策略</p>
 <ol>
@@ -167,21 +257,21 @@
 <li>死锁检测和恢复</li>
 </ol>
 <h3 id="什么是鸵鸟策略？"><a href="#什么是鸵鸟策略？" class="headerlink" title="什么是鸵鸟策略？"></a>什么是鸵鸟策略？</h3><p>不采取任务措施，当发生死锁时不会对用户造成多大影响，或发生死锁的概<br>率很低</p>
-<h3 id="如何预防死锁？"><a href="#如何预防死锁？" class="headerlink" title="如何预防死锁？"></a>如何预防死锁？</h3><p>死锁预防是指通过破坏死锁产生的四个必要条件中的一个或多个，以避免发生死锁</p>
+<h3 id="如何预防死锁"><a href="#如何预防死锁" class="headerlink" title="如何预防死锁"></a>如何预防死锁</h3><p>死锁预防是指通过破坏死锁产生的四个必要条件中的一个或多个，以避免发生死锁</p>
 <ol>
-<li>破坏互斥条件 不让资源被一个进程独占</li>
+<li>破坏互斥条件 把互斥的资源改为共享使用</li>
 <li>破坏占有和等待条件 已拥有资源的进程不能再去请求其他资源，要求进程在<br>开始执行前请求需要的所有资源或先暂时释放其当前拥有的所有资源，再尝试</li>
-<li>破坏不可抢占条件 有些资源可以通过虚拟化方式实现可抢占</li>
+<li>破坏不可抢占条件 当某个进程请求的资源得不到满足时，必须立即释放所<br>保持的所有资源，待以后需要时再申请</li>
 <li>破坏环路等待 每个进程在任何时刻只能占用一个资源，如果要请求另一个<br>资源，必须先释放第一个资源或要求进程必须按照顺序请求资源</li>
 <li>锁排序法 指定获取锁的顺序，比如某个线程只有获得A锁和B锁，才能对某资<br>源进行操作，通过指定锁的获取顺序，比如规定，只有获得A锁的线程才有资格<br>获取B锁，按顺序获取锁就可以避免死锁。这通常被认为是解决死锁很好的一种<br>方法</li>
 <li>使用显式锁中的ReentrantLock.try(long,TimeUnit)来申请锁</li>
 </ol>
-<h3 id="如何避免死锁？"><a href="#如何避免死锁？" class="headerlink" title="如何避免死锁？"></a>如何避免死锁？</h3><p>为了避免因为预防死锁而导致所有线程变慢，死锁避免采用了与死锁预防相反<br>的措施，通过算法判断资源请求是否可能导致循环等待的形成并相应决策，来<br>避免死锁点的产生，其前提是知道当前资源使用的整体情况，以及申请资源线<br>程本身所占有的资源细节</p>
+<h3 id="如何避免死锁"><a href="#如何避免死锁" class="headerlink" title="如何避免死锁"></a>如何避免死锁</h3><p>为了避免因为预防死锁而导致所有线程变慢，死锁避免采用了与死锁预防相反<br>的措施，通过算法判断资源请求是否可能导致循环等待的形成并相应决策，来<br>避免死锁点的产生，其前提是知道当前资源使用的整体情况，以及申请资源线<br>程本身所占有的资源细节</p>
 <ol>
 <li>线程启动拒绝：如果一个线程的请求会引发死锁，则不允许其启动</li>
 <li>资源分配拒绝：如果一个线程增加的资源请求会导致死锁，则不允许此申请</li>
 </ol>
-<h3 id="如何死锁检测与恢复？"><a href="#如何死锁检测与恢复？" class="headerlink" title="如何死锁检测与恢复？"></a>如何死锁检测与恢复？</h3><ol>
+<h3 id="如何死锁检测与恢复"><a href="#如何死锁检测与恢复" class="headerlink" title="如何死锁检测与恢复"></a>如何死锁检测与恢复</h3><ol>
 <li>死锁检测 维护一个系统的资源分配图，找到不会阻塞又不独立的进程结点<br>，使该进程获得其所需资源并运行，运行完毕后，再释放其所占有的全部资源</li>
 <li>死锁恢复</li>
 </ol>
@@ -191,7 +281,7 @@
 <li>连续取消死锁线程直到死锁解除，顺序基于特定最小代价原则</li>
 <li>连续抢占资源直到死锁解除</li>
 </ul>
-</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">高明</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://skysea-gaoming.github.io/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">https://skysea-gaoming.github.io/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/System/">System</a></div><nav id="pagination"><div class="prev-post pull-left"><a href="/2021/04/27/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F2/"><i class="fa fa-chevron-left">  </i><span>操作系统总结2</span></a></div><div class="next-post pull-right"><a href="/2021/04/23/Linux2/"><span>Linux2</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="disqus_thread"></div><script>var unused = null;
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">高明</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://skysea-gaoming.github.io/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">https://skysea-gaoming.github.io/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/System/">System</a></div><nav id="pagination"><div class="prev-post pull-left"><a href="/2021/04/27/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F2/"><i class="fa fa-chevron-left">  </i><span>操作系统总结2</span></a></div><div class="next-post pull-right"><a href="/2021/04/23/Linux2/"><span>Linux常用命令</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="disqus_thread"></div><script>var unused = null;
 var disqus_config = function () {
   this.page.url = 'https://skysea-gaoming.github.io/2021/04/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/';
   this.page.identifier = '2021/04/26/操作系统/';
